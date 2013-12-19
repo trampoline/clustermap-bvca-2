@@ -15,6 +15,8 @@ html(lang='en')
 
     script(type='text/javascript', src='/js/vendor.js')
     script(type='text/javascript' src='/js/app.js')
+    script(type='text/javascript', src='/js/templates.js')
+    script(type='text/javascript') require('initialize');
 
   body.view-map
     #wrap
@@ -254,9 +256,6 @@ html(lang='en')
 
 
 
-
-    script(type='text/javascript', src='assets/js/jquery-1.10.2.min.js')
-    script(type='text/javascript', src='assets/js/bootstrap.min.js')
     script(type='text/javascript').
       $(function(){
         $('#nav .search > a').on('click', function(e){

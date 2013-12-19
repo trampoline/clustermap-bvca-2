@@ -4,3 +4,4 @@ $ ->
   require 'lib/static_jsonp'
 
   mapMod = require 'models/map'
+  navMod = require 'models/nav'

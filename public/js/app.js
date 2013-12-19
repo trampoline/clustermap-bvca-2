@@ -92,11 +92,12 @@
 })();
 require.register("initialize", function(exports, require, module) {
 $(function() {
-  var mapMod;
+  var mapMod, navMod;
   require('lib/first_timer');
   require('lib/regexp_quote');
   require('lib/static_jsonp');
-  return mapMod = require('models/map');
+  mapMod = require('models/map');
+  return navMod = require('models/nav');
 });
 });
 
@@ -277,6 +278,49 @@ panToShow = function() {
 exports.map = map;
 
 exports.panToShow = panToShow;
+});
+
+;require.register("models/nav", function(exports, require, module) {
+$('#nav .search > a').on('click', function(e) {
+  e.preventDefault();
+  $(this).parent().toggleClass('open');
+  return $('#search').toggle();
+});
+
+$('#nav .map > a, #nav .lists > a').on('click', function(e) {
+  var li;
+  e.preventDefault();
+  li = $(this).parent();
+  li.addClass('active').siblings('.active').removeClass('active');
+  if (li.is('.map')) {
+    return $('body').removeClass().addClass('view-map');
+  } else {
+    return $('body').removeClass().addClass('view-lists');
+  }
+});
+
+$('#search button').on('click', function() {
+  return $('#search input').val('').focus();
+});
+
+$('#map-report > a').on('click', function(e) {
+  var map;
+  e.preventDefault();
+  map = $('#map-report');
+  if (map.hasClass('open')) {
+    return $('#map-report').animate({
+      right: '-270px'
+    }, 400, function() {
+      return $(this).removeClass('open');
+    });
+  } else {
+    return $('#map-report').animate({
+      right: '0'
+    }, 400, function() {
+      return $(this).addClass('open');
+    });
+  }
+});
 });
 
 ;

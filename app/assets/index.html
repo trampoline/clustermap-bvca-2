@@ -263,42 +263,5 @@
         </div>
       </section>
     </div>
-    <script type="text/javascript">
-      $(function(){
-        $('#nav .search > a').on('click', function(e){
-          e.preventDefault();
-          $(this).parent().toggleClass('open');
-          $('#search').toggle();
-        });
-        $('#nav .map > a, #nav .lists > a').on('click', function(e){
-          e.preventDefault();
-          var $li = $(this).parent();
-          $li.addClass('active').siblings('.active').removeClass('active');
-          if ($li.is('.map')) {
-            $('body').removeClass().addClass('view-map');
-          }
-          else {
-            $('body').removeClass().addClass('view-lists');
-          }
-        });
-        $('#search button').on('click', function(){
-          $('#search input').val('').focus();
-        });
-        $('#map-report > a').on('click', function(e){
-          e.preventDefault();
-          var $map = $('#map-report');
-          if ($map.hasClass('open')) {
-            $('#map-report').animate({right: '-270px'}, 400, function(){
-              $(this).removeClass('open');
-            });
-          }
-          else {
-            $('#map-report').animate({right: '0'}, 400, function(){
-              $(this).addClass('open');
-            });
-          }
-        });
-      });
-    </script>
   </body>
 </html>

@@ -259,7 +259,10 @@ window.staticJsonpResponse = response;
 var map, panToShow,
   __slice = [].slice;
 
-map = L.mapbox.map('map', 'mccraigmccraig.map-gqkcbi1g').setView([55.5, -3.5], 6);
+map = L.mapbox.map('map', 'mccraigmccraig.map-gqkcbi1g').fitBounds([[61, 2.5], [48.7, -11.5]], {
+  paddingTopLeft: [0, 0],
+  paddingBottomRight: [0, 0]
+});
 
 panToShow = function() {
   var all_bounds, fb, fb_copy, super_bounds;

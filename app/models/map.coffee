@@ -1,7 +1,10 @@
 map = L
   .mapbox
   .map('map', 'mccraigmccraig.map-gqkcbi1g')
-  .setView([55.5, -3.5], 6)
+  .fitBounds([
+    [61,2.5],
+    [48.7,-11.5]],
+    {paddingTopLeft: [0,0], paddingBottomRight: [0,0]})
 
 # pan the map to show all the bounds given
 panToShow = (all_bounds...)->

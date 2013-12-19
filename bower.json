@@ -1,0 +1,14 @@
+{
+  "name": "clustermap-bvca",
+  "version": "0.1.0",
+  "main": ["_public/css/app.css", "_public/js/vendor.js", "_public/js/templates.js", "_public/js/app.js"],
+  "dependencies": {
+    "console-polyfill": "~0.1.0",
+    "html5shiv": "~3.7.0",
+    "lodash": "~2.4.1",
+    "jquery": "~1.10.2",
+    "knockback": "~0.18.2",
+    "jquery.cookie": "~1.4.0",
+    "bootstrap": "~3.0.3"
+  }
+}

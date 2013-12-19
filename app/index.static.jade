@@ -1,0 +1,295 @@
+!!! 5
+html(lang='en')
+  head
+    title BVCA v2
+    meta(charset='utf-8')
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    //- meta(http-equiv="X-UA-Compatible", content="IE=edge,chrome=1")
+    meta(name='viewport', content='width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0')
+    meta(name='description', content='')
+    meta(name='author', content='')
+    //- link(rel='shortcut icon', type='image/x-icon', href='assets/favicon.ico')
+    link(type='text/css', rel='stylesheet', href='css/app.css')
+    //if lte IE 8
+      script(type='text/javascript', src='/js/html5.js')
+
+    script(type='text/javascript', src='/js/vendor.js')
+    script(type='text/javascript' src='/js/app.js')
+
+  body.view-map
+    #wrap
+      aside#nav
+        ul
+          li.search: a(href='#') Search
+          li.map.active: a(href='#') Map
+          li.lists: a(href='#') Lists
+          li.info: a(href='#') Info
+          li.logo: a(href='#') BVCA
+
+      section#main
+        .container
+          header#main-header
+            #search
+              h2 Search
+              div
+                input(type='text', placeholder='Enter your search')
+                button(type='reset') &times;
+            #page-title
+              button(type='button').btn View on map
+              h2 Company
+              h3 ABC XYZ Company Name Limited
+
+          #main-content
+
+            #page-map
+              #map-report
+                a(href='#')
+                  i Show / hide
+
+                aside
+                  header.primary
+                    h1 Welcome to the BVCA Private Equity Map
+                    h2 View Investment across the UK
+
+                  header.secondary
+                    h2 Rt Hon Thersa May MP, Conservative
+                    h3 Maidenhead
+
+                  ul
+                    li
+                      | 44
+                      small Companies
+                    li
+                      | 10
+                      small Investors
+                    li
+                      | 1.8bn
+                      small Revenue (&pound;)
+                    li
+                      | 7,511
+                      small Employees
+
+                  button(type='button').btn
+                    i.icon-lists-sm
+                    | Full report
+
+                  p View advanced tabular results
+
+              #map
+
+            #page-lists
+              .inner
+                .div-scroll
+                  .div-fixed
+
+                    h4 2013 Overview
+
+                    .table-responsive
+                      table.table-stats
+                        thead
+                          tr
+                            th &nbsp;
+                            th Companies
+                            th Investors
+                            th Revenue (&pound;)
+                            th Employees
+                        tbody
+                          tr
+                            th
+                              i.icon-info
+                              | Total
+                            td
+                              span.totals 44
+                            td
+                              span.totals 10
+                            td
+                              span.totals 1.8bn
+                            td
+                              span.totals 7,511
+                          tr
+                            th
+                              i.icon-info
+                              | Average
+                            td
+                              span.averages 37
+                            td
+                              span.averages 12
+                            td
+                              span.averages 80.0m
+                            td
+                              span.averages 3,566
+
+                    .table-responsive
+                      table.table
+                        thead
+                          tr
+                            th Company
+                            th Postcode
+                            th Investor
+                            th Revenue
+                            th Rev. change
+                            th Employess
+                            th Emp. change
+                        tbody
+                          - var i = 1;
+                          - while(i--)
+                            tr
+                              td
+                                a(href='#') Compny name
+                              td EC1 9XY
+                              td
+                                a(href='#') Investor name
+                              td
+                                | &pound;78.9m
+                                small &nbsp;(2011)
+                              td
+                                | &pound;7.1m
+                                i.icon-negative
+                              td
+                                | 1,234
+                                small &nbsp;(2011)
+                              td
+                                | 987
+                                i.icon-positive
+                            tr
+                              td
+                                a(href='#') Compny name
+                              td N1 2AB
+                              td
+                                a(href='#') Investor name
+                              td
+                                | &pound;34.5m
+                                small &nbsp;(2011)
+                              td
+                                | &pound;2.5m
+                                i.icon-positive
+                              td
+                                | 987
+                                small &nbsp;(2011)
+                              td
+                                | 123
+                                i.icon-negative
+
+                    .grid
+                      .tbl
+                        .tbl-cell.charts
+                          .tbl
+                            .tbl-row
+                              .tbl-cell
+                                .box.box-first
+                                  header Box Title
+                                  div
+                                    p Duis elementum vulputate blandit. Suspendisse dignissim nisi orci, a venenatis dolor eleifend ac? Ut adipiscing tellus enim, eu pharetra eros consequat eget!
+                                    p Donec sit amet turpis quis magna dictum aliquet. Vestibulum dictum vestibulum risus dictum facilisis! Etiam semper nulla vitae nunc porttitor pretium sit amet vel tellus.
+                                    p Aenean ut diam sit amet est sagittis sagittis. Donec quis diam eleifend, tempus turpis fringilla, dictum eros.
+                              .tbl-cell
+                                .box.box-last
+                                  header Box Title
+                                  div
+                                    p Duis elementum vulputate blandit. Suspendisse dignissim nisi orci, a venenatis dolor eleifend ac? Ut adipiscing tellus enim, eu pharetra eros consequat eget!
+                                    p Donec sit amet turpis quis magna dictum aliquet. Vestibulum dictum vestibulum risus dictum facilisis! Etiam semper nulla vitae nunc porttitor pretium sit amet vel tellus.
+                            .tbl-row
+                              .tbl-cell
+                                .box.box-first
+                                  header Box Title
+                                  div
+                                    p Duis elementum vulputate blandit. Suspendisse dignissim nisi orci, a venenatis dolor eleifend ac?
+                                    p Aenean ut diam sit amet est sagittis sagittis. Donec quis diam eleifend, tempus turpis fringilla, dictum eros.
+                              .tbl-cell
+                                .box.box-last
+                                  header Box Title
+                                  div
+                                    p Duis elementum vulputate blandit. Suspendisse dignissim nisi orci, a venenatis dolor eleifend ac? Ut adipiscing tellus enim, eu pharetra eros consequat eget!
+                                    p Donec sit amet turpis quis magna dictum aliquet. Vestibulum dictum vestibulum risus dictum facilisis! Etiam semper nulla vitae nunc porttitor pretium sit amet vel tellus.
+                                    p Aenean ut diam sit amet est sagittis sagittis. Donec quis diam eleifend, tempus turpis fringilla, dictum eros.
+
+                        .tbl-cell.details
+                          .tbl
+                            .tbl-cell
+                              .box
+                                header Box Title
+                                div
+                                  ul
+                                    li Donec sit amet turpis quis magna dictum aliquet.
+                                    li Donec sit amet turpis quis magna dictum aliquet.
+                                    li Donec sit amet turpis quis magna dictum aliquet.
+                                    li Donec sit amet turpis quis magna dictum aliquet.
+                                  p: a(href='#') Show more...
+                          .tbl
+                            .tbl-cell
+                              .box
+                                header Box Title
+                                div
+                                  ul
+                                    li Donec sit amet turpis quis magna dictum aliquet.
+                                    li Donec sit amet turpis quis magna dictum aliquet.
+                                    li Donec sit amet turpis quis magna dictum aliquet.
+                                    li Donec sit amet turpis quis magna dictum aliquet.
+                                  p: a(href='#') Show more...
+                          .tbl
+                            .tbl-cell
+                              .box
+                                header Box Title
+                                div
+                                  ul
+                                    li Donec sit amet turpis quis magna dictum aliquet.
+                                    li Donec sit amet turpis quis magna dictum aliquet.
+                                    li Donec sit amet turpis quis magna dictum aliquet.
+                                    li Donec sit amet turpis quis magna dictum aliquet.
+                                  p: a(href='#') Show more...
+
+          footer#main-footer
+            .inner
+              .trampoline
+                p
+                  | Produced by the
+                  a(href='#') BVCA
+                  | and
+                  a(href='#') Trampoline Systems
+                p
+                  a(href='#') Terms
+              .issues
+                p
+                  a(href='#') Report issue
+
+
+
+
+    script(type='text/javascript', src='assets/js/jquery-1.10.2.min.js')
+    script(type='text/javascript', src='assets/js/bootstrap.min.js')
+    script(type='text/javascript').
+      $(function(){
+        $('#nav .search > a').on('click', function(e){
+          e.preventDefault();
+          $(this).parent().toggleClass('open');
+          $('#search').toggle();
+        });
+        $('#nav .map > a, #nav .lists > a').on('click', function(e){
+          e.preventDefault();
+          var $li = $(this).parent();
+          $li.addClass('active').siblings('.active').removeClass('active');
+          if ($li.is('.map')) {
+            $('body').removeClass().addClass('view-map');
+          }
+          else {
+            $('body').removeClass().addClass('view-lists');
+          }
+        });
+        $('#search button').on('click', function(){
+          $('#search input').val('').focus();
+        });
+        $('#map-report > a').on('click', function(e){
+          e.preventDefault();
+          var $map = $('#map-report');
+          if ($map.hasClass('open')) {
+            $('#map-report').animate({right: '-270px'}, 400, function(){
+              $(this).removeClass('open');
+            });
+          }
+          else {
+            $('#map-report').animate({right: '0'}, 400, function(){
+              $(this).addClass('open');
+            });
+          }
+        });
+      });

@@ -1,0 +1,1 @@
+../../bower_components/console-polyfill/index.js

@@ -1,0 +1,39 @@
+{
+  "author": "craig mcmillan <craig@trampolinesystems.com>",
+  "name": "clustermap-bvca-2",
+  "description": "brunch + a bunch of stuff",
+  "version": "0.0.3",
+  "homepage": "https://github.com/trampoline/clustermap-bvca-2",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/trampoline/clustermap-bvca-2"
+  },
+  "engines": {
+    "node": "~0.9 || ~0.10"
+  },
+  "scripts": {
+    "start": "node node_modules/.bin/brunch watch --server",
+    "test": "node node_modules/.bin/testacular start test/testacular.conf.js"
+  },
+  "dependencies": {
+    "brunch": ">= 1.7 < 1.8",
+
+    "javascript-brunch": ">= 1.7 < 1.8",
+    "coffee-script-brunch": ">= 1.7 < 1.8",
+    "coffeelint-brunch": ">= 1.5 < 1.6",
+
+    "css-brunch": ">= 1.7 < 1.8",
+    "less-brunch": ">= 1.7 < 1.8",
+
+    "auto-reload-brunch": ">= 1.7 < 1.8",
+
+    "uglify-js-brunch": ">= 1.7 < 1.8",
+    "clean-css-brunch": ">= 1.7 < 1.8",
+
+    "jade-brunch": ">= 1.7 < 1.8",
+    "static-jade-brunch": ">= 1.7 < 1.8",
+
+    "bower": ">= 1.2 < 1.3"
+
+  }
+}

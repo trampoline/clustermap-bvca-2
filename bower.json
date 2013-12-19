@@ -10,5 +10,23 @@
     "knockback": "~0.18.2",
     "jquery.cookie": "~1.4.0",
     "bootstrap": "~3.0.3"
+  },
+  "overrides": {
+
+    "knockback": {
+      "dependencies": {
+        "lodash": ">=2.4.0",
+        "backbone": ">=0.5.1",
+        "knockout": ">=1.2.1"
+      }
+    },
+
+    "backbone": {
+      "main": "backbone.js"
+    },
+
+    "knockout": {
+      "main": "build/output/knockout-latest.debug.js"
+    }
   }
 }

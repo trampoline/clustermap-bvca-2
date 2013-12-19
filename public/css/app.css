@@ -1627,6 +1627,9 @@ body.view-map #page-map {
   display: block;
   *height: 100%;
 }
+body.view-map #page-map #map {
+  height: 100%;
+}
 body.view-map #page-lists {
   display: none;
 }

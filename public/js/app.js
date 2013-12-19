@@ -92,9 +92,11 @@
 })();
 require.register("initialize", function(exports, require, module) {
 $(function() {
+  var mapMod;
   require('lib/first_timer');
   require('lib/regexp_quote');
-  return require('lib/static_jsonp');
+  require('lib/static_jsonp');
+  return mapMod = require('models/map');
 });
 });
 
@@ -250,6 +252,31 @@ exports.request = request;
 exports.response = response;
 
 window.staticJsonpResponse = response;
+});
+
+;require.register("models/map", function(exports, require, module) {
+var map, panToShow,
+  __slice = [].slice;
+
+map = L.mapbox.map('map', 'mccraigmccraig.map-gqkcbi1g').setView([55.5, -3.5], 6);
+
+panToShow = function() {
+  var all_bounds, fb, fb_copy, super_bounds;
+  all_bounds = 1 <= arguments.length ? __slice.call(arguments, 0) : [];
+  fb = _.first(all_bounds);
+  fb_copy = new L.LatLngBounds(fb.getSouthWest(), fb.getNorthEast());
+  super_bounds = _.reduce(all_bounds, (function(sb, bounds) {
+    return sb.extend(bounds);
+  }), fb_copy);
+  map.fitBounds(super_bounds);
+  if (all_bounds.length === 1) {
+    return map.setZoom(map.getZoom() - 1);
+  }
+};
+
+exports.map = map;
+
+exports.panToShow = panToShow;
 });
 
 ;

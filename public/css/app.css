@@ -1533,8 +1533,11 @@ input[type="button"].btn-block {
 }
 .grid .box li {
   margin: 0;
-  padding: 0 10px 10px;
+  padding: 10px;
   border-bottom: 1px solid #eeeeee;
+}
+.grid .box li:first-child {
+  padding-top: 0;
 }
 .grid .box ul + p {
   margin: 10px 0 0 0;
@@ -1555,6 +1558,14 @@ input[type="button"].btn-block {
   height: 12px;
   line-height: 12px;
   margin: 0 5px;
+  background-image: url('../img/sprite.png');
+  background-image: url('../img/sprite.svg'), none;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+  *white-space: normal;
+  *text-indent: -9999em;
 }
 .icon-info {
   background-position: -66px -258px;
@@ -1793,6 +1804,7 @@ body.view-lists #page-lists {
   background: #fff;
   border: 1px solid #eeeeee;
   border-right: 0 none;
+  border-top: 0 none;
   width: 28px;
   height: 28px;
 }
@@ -1809,7 +1821,7 @@ body.view-lists #page-lists {
   *white-space: normal;
   *text-indent: -9999em;
   background-position: -66px -272px;
-  margin: 7px 11px 7px 10px;
+  margin: 8px 11px 7px 10px;
 }
 #map-report > a:hover i {
   background-position: -80px -272px;
@@ -1817,6 +1829,7 @@ body.view-lists #page-lists {
 #map-report > aside {
   background: #fff;
   border: 1px solid #eeeeee;
+  border-top: 0 none;
   padding: 10px 20px;
   margin-left: 28px;
 }
@@ -1850,13 +1863,13 @@ body.view-lists #page-lists {
 }
 #map-report li {
   border-top: 1px solid #eeeeee;
-  font-size: 40px;
+  font-size: 285.714285714286%;
   line-height: 1;
   font-family: Georgia, "Times New Roman", Times, serif;
   padding: 5px 20px;
 }
 #map-report li small {
-  font-size: 14px;
+  font-size: 35%;
   font-style: italic;
   line-height: 1;
   display: block;
@@ -2022,12 +2035,25 @@ body.view-lists #page-lists {
   *width: auto;
 }
 .totals {
-  font-size: 40px;
+  font-size: 250%;
 }
 .averages {
-  font-size: 20px;
+  font-size: 150%;
+}
+.leaflet-top .leaflet-control {
+  margin-top: 71px!important;
 }
 @media (max-width: 768px) {
+  body {
+    font-size: 12px;
+    line-height: 1.25;
+  }
+  h3 {
+    font-size: 18px;
+  }
+  #main-header h3 {
+    line-height: 20px;
+  }
   body.view-map #wrap,
   body.view-lists #wrap {
     border-collapse: collapse;
@@ -2038,6 +2064,7 @@ body.view-lists #page-lists {
     height: 100%;
     *display: block;
     *overflow: hidden;
+    min-height: 0;
   }
   body.view-map #nav,
   body.view-lists #nav,
@@ -2075,6 +2102,7 @@ body.view-lists #page-lists {
     *display: block;
     width: 100%;
     top: auto;
+    position: static;
   }
   #nav {
     display: table-row;
@@ -2159,6 +2187,21 @@ body.view-lists #page-lists {
   #nav li.logo a {
     background-position: -128px -192px;
   }
+  #map-report {
+    height: 100%;
+  }
+  #map-report aside {
+    max-height: 99%;
+    overflow-y: auto;
+  }
+  #map-report li {
+    font-size: 200%;
+  }
+  #map-report li small {
+    font-size: 50%;
+    display: inline;
+    margin: 0 0 0 5px;
+  }
   .grid .charts .tbl-cell {
     display: table-row;
     *display: block;
@@ -2177,6 +2220,13 @@ body.view-lists #page-lists {
   }
   .grid .details .box {
     margin-left: 10px;
+  }
+  #main-footer {
+    height: auto;
+  }
+  #main-footer .trampoline,
+  #main-footer .issues {
+    padding: 5px;
   }
 }
 @media (max-width: 480px) {

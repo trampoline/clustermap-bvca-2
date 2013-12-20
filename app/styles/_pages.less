@@ -67,7 +67,7 @@
 .tbl-row {
   display: table-row;
   *display: block;
-}
+}        
 .tbl-cell {
   border: 0 none;
   display: table-cell;
@@ -116,8 +116,11 @@
     }
     li {
       margin: 0;
-      padding: 0 @grid-spacing @grid-spacing;
+      padding: @grid-spacing;
       border-bottom: 1px solid @gray-lighter;
+      &:first-child {
+        padding-top: 0;
+      }
     }
     ul + p {
       margin: @grid-spacing 0 0 0;
@@ -140,7 +143,7 @@
   height: 12px;
   line-height: 12px;
   margin: 0 5px;
-  // .image-sprite;
+  .image-sprite;
 }
 
 .icon-info {
@@ -384,6 +387,7 @@ body {
     background: #fff;
     border: 1px solid @gray-lighter;
     border-right: 0 none;
+    border-top: 0 none;
     .square(@map-arrow-size);
     i {
       display: block;
@@ -391,7 +395,7 @@ body {
       height: 12px;
       .image-sprite;
       background-position: -66px -272px;
-      margin: 7px 11px 7px 10px;
+      margin: 8px 11px 7px 10px;
     }
     &:hover {
       i {
@@ -402,6 +406,7 @@ body {
   > aside {
     background: #fff;
     border: 1px solid @gray-lighter;
+    border-top: 0 none;
     padding: 10px 20px;
     margin-left: @map-arrow-size;
   }
@@ -440,12 +445,12 @@ body {
   }
   li {
     border-top: 1px solid @gray-lighter;
-    font-size: 40px;
+    font-size: 285.714285714286%;
     line-height: 1;
     font-family: @font-family-serif;
     padding: 5px 20px;
     small {
-      font-size: 14px;
+      font-size: 35%;
       font-style: italic;
       line-height: 1;
       display: block;
@@ -499,7 +504,7 @@ body {
   background: #f1f0ee;
   h2, h3 {
     margin: 0 0 4px;
-    padding: 0 20px;
+    padding: 0 20px; 
   }
   h2 {
     font-size: 12px;
@@ -596,17 +601,31 @@ body {
 }
 
 .totals {
-  font-size: 40px;
+  font-size: 250%;
 }
 .averages {
-  font-size: 20px;
+  font-size: 150%;
 }
 
+.leaflet-top .leaflet-control {
+  margin-top: 71px!important;
+}
 
 @media (max-width: 768px) {
+  body {
+    font-size: 12px;
+    line-height: 1.25;
+  }
+  h3 {
+    font-size: 18px;
+  }
+  #main-header h3 {
+    line-height: 20px;
+  }
   body.view-map, body.view-lists {
     #wrap {
       .tbl;
+      min-height: 0;
     }
     #nav, #main {
       position: static;
@@ -625,6 +644,7 @@ body {
         .tbl-row;
         width: 100%;
         top: auto;
+        position: static;
     }
   }
 
@@ -705,6 +725,22 @@ body {
       }
     }
   }
+  #map-report {
+    height: 100%;
+    aside {
+      max-height: 99%;
+      overflow-y: auto;
+    }
+    li {
+      font-size: 200%;
+      small {
+        font-size: 50%;
+        display: inline;
+        margin: 0 0 0 5px;
+      }
+    }
+  }
+
   .grid {
     .charts {
       .tbl-cell {
@@ -727,6 +763,14 @@ body {
       }
     }
   }
+
+  #main-footer {
+    height: auto;
+    .trampoline, .issues {
+      padding: 5px;
+    }
+  }
+
 }
 
 

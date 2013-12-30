@@ -15,12 +15,12 @@ exports.config =
         before: [
           'vendor/scripts/console-polyfill.js',
           'vendor/scripts/jquery.js',
-          'vendor/scripts/jquery.cookie.js',
-          'vendor/scripts/lodash.js',
+          # 'vendor/scripts/jquery.cookie.js',
+          # 'vendor/scripts/lodash.js',
           'vendor/scripts/bootstrap.js',
-          'vendor/scripts/backbone.js',
-          'vendor/scripts/knockout.js',
-          'vendor/scripts/knockback.js'
+          # 'vendor/scripts/backbone.js',
+          # 'vendor/scripts/knockout.js',
+          # 'vendor/scripts/knockback.js'
         ]
 
     stylesheets:

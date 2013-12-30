@@ -21,12 +21,25 @@ html(lang='en')
       script(type='text/javascript', src='/js/html5.js')
 
     script(type='text/javascript', src='http://api.tiles.mapbox.com/mapbox.js/v1.5.2/mapbox.js')
+
     script(type='text/javascript', src='/js/vendor.js')
-    script(type='text/javascript' src='/js/app.js')
-    script(type='text/javascript', src='/js/templates.js')
-    script(type='text/javascript') require('initialize');
+    // script(type='text/javascript' src='/js/app.js')
+    // script(type='text/javascript', src='/js/templates.js')
+    // script(type='text/javascript') require('initialize');
+
+    //begin-static-app-config
+    script(type='text/javascript').
+      window.config={}
+    //end-static-app-config
+    //app-config
+      script(type='text/javascript').
+        window.config={{{app-config}}}
 
   body.view-map
+    input(id="query", type="text")
+    button.btn(id="search") Search
+    p(id="results")
+
     #wrap
       aside#nav
         ul
@@ -252,12 +265,22 @@ html(lang='en')
             .inner
               .trampoline
                 p
-                  | Produced by the 
-                  a(href='#') BVCA 
-                  | and 
-                  a(href='#') Trampoline Systems 
+                  | Produced by the
+                  a(href='#') BVCA
+                  | and
+                  a(href='#') Trampoline Systems
                 p
-                  a(href='#') Terms 
+                  a(href='#') Terms
               .issues
                 p
                   a(href='#') Report issue
+
+    script(type="text/javascript", src="out/goog/base.js")
+    script(type="text/javascript", src="clustermap.js")
+    script(type="text/javascript") goog.require("clustermap.core");
+
+    //begin-static-repl-js
+    //end-static-repl-js
+    //repl-js
+      script(type='text/javascript').
+        {{{repl-js}}}

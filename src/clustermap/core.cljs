@@ -9,8 +9,6 @@
   (:import [goog.net Jsonp]
            [goog Uri]))
 
-;; (repl/connect "http://localhost:9000/repl")
-
 (def wiki-search-url
   "http://en.wikipedia.org/w/api.php?action=opensearch&format=json&search=")
 

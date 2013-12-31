@@ -24,14 +24,12 @@
                   (fn [e]
                     (events/prevent-default e)
                     (let [target (events/target e)
-                          parent (xpath/xpath target "..")
-                          active-links (css/sel parent "> .active")]
-                      (dom/remove-class! active-links "active")
-                      (dom/add-class! parent "active")
-                      )
-                    ))
+                          li (xpath/xpath target "..")
+                          ul (xpath/xpath li "..")
+                          active-li (css/sel ul "> .active")]
 
-  )
+                      (dom/remove-class! active-li "active")
+                      (dom/add-class! li "active")))))
 
 
 (defn init

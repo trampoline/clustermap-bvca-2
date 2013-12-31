@@ -17,8 +17,10 @@ return $(cljs.core.first.call(null,domina.nodes.call(null,domina.css.sel.call(nu
 }));
 });
 clustermap.nav.switch_view = (function switch_view(){return domina.events.listen_BANG_.call(null,domina.css.sel.call(null,"#nav .map > a, #nav .lists > a"),new cljs.core.Keyword(null,"click","click",1108654330),(function (e){domina.events.prevent_default.call(null,e);
-var target = domina.events.target.call(null,e);var parent = domina.xpath.xpath.call(null,target,"..");var active_links = domina.css.sel.call(null,parent,"> .active");domina.remove_class_BANG_.call(null,active_links,"active");
-return domina.add_class_BANG_.call(null,parent,"active");
+var target = domina.events.target.call(null,e);var li = domina.xpath.xpath.call(null,target,"..");var ul = domina.xpath.xpath.call(null,li,"..");var active_li = domina.css.sel.call(null,ul,"> .active");console.log(cljs.core.to_array.call(null,domina.nodes.call(null,li)));
+console.log(cljs.core.to_array.call(null,domina.nodes.call(null,active_li)));
+domina.remove_class_BANG_.call(null,active_li,"active");
+return domina.add_class_BANG_.call(null,li,"active");
 }));
 });
 clustermap.nav.init = (function init(){clustermap.nav.toggle_nav_search.call(null);

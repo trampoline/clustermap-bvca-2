@@ -9,8 +9,6 @@
   (:import [goog.net Jsonp]
            [goog Uri]))
 
-;; (repl/connect "http://localhost:9000/repl")
-
 (def wiki-search-url
   "http://en.wikipedia.org/w/api.php?action=opensearch&format=json&search=")
 
@@ -43,15 +41,15 @@
 (defn init []
   (nav/init)
 
-  (let [clicks (listen (dom/getElement "query") "keyup")
-        results-view (dom/getElement "results")]
-    (go (while true
-          (<! clicks)
-          (let [[_ results] (<! (jsonp (query-url (user-query))))
-                long-results (conj (vec results) "bar")]
-            (.log js/console results)
+  ;; (let [clicks (listen (dom/getElement "query") "keyup")
+  ;;       results-view (dom/getElement "results")]
+  ;;   (go (while true
+  ;;         (<! clicks)
+  ;;         (let [[_ results] (<! (jsonp (query-url (user-query))))
+  ;;               long-results (conj (vec results) "bar")]
+  ;;           (.log js/console results)
 
-            (set! (.-innerHTML results-view) (render-query long-results))))))
+  ;;           (set! (.-innerHTML results-view) (render-query long-results))))))
   )
 
 (init)

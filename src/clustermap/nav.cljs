@@ -1,27 +1,41 @@
 (ns clustermap.nav
-  (:require [goog.dom :as dom]
-            [goog.dom.classes :as cl]
-            [goog.events :as events]
-            [cljs.core.async :refer [put! chan <!]])
-  (:import [goog.dom query]))
+  (:require [domina :as dom]
+            [domina.css :as css]
+            [domina.xpath :as xpath]
+            [domina.events :as events]
+            [cljs.core.async :refer [put! chan <!]]))
 
-(defn listen [el type]
-  (let [out (chan)]
-    (events/listen el type
-      (fn [e] (put! out e)))
-    out))
+(defn toggle-nav-search
+  []
+  (events/listen! (css/sel "#nav .search > a")
+                  :click
+                  (fn [e]
+                    (events/prevent-default e)
+                    (let [target (events/target e)
+                          parent (xpath/xpath target "..")]
+
+                      (dom/toggle-class! parent "open")
+                      (-> (css/sel "#search") dom/nodes first js/$ .toggle)))))
+
+(defn switch-view
+  []
+  (events/listen! (css/sel "#nav .map > a, #nav .lists > a")
+                  :click
+                  (fn [e]
+                    (events/prevent-default e)
+                    (let [target (events/target e)
+                          parent (xpath/xpath target "..")
+                          active-links (css/sel parent "> .active")]
+                      (dom/remove-class! active-links "active")
+                      (dom/add-class! parent "active")
+                      )
+                    ))
+
+  )
+
 
 (defn init
   []
-  (events/listen (aget (query "#nav .search > a") 0)
-                 "click"
-                 (fn [e]
-                   (.log js/console "boo")
-                   (.preventDefault e)
-;;                   (cl/toggle)
-                   ))
-
-;;  (clicks (listen dom/ ""))
-;;  (go (while true)
-;;      (<! )  )
+  (toggle-nav-search)
+  (switch-view)
   )

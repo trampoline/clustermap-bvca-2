@@ -3,9 +3,9 @@
   (:require [goog.dom :as dom]
             [goog.events :as events]
             [cljs.core.async :refer [put! chan <!]]
-            [clustermap.nav :as nav]
             [clojure.browser.repl :as repl]
-            )
+            [clustermap.nav :as nav]
+            [clustermap.map :as map])
   (:import [goog.net Jsonp]
            [goog Uri]))
 
@@ -40,6 +40,7 @@
 
 (defn init []
   (nav/init)
+  (map/init)
 
   ;; (let [clicks (listen (dom/getElement "query") "keyup")
   ;;       results-view (dom/getElement "results")]

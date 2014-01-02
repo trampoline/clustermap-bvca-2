@@ -8,6 +8,7 @@
                  [org.clojure/google-closure-library-third-party "0.0-20130212-95c19e7f0f5f"]
                  [org.clojure/core.async "0.1.256.0-1bf8cf-alpha"]
                  [domina "1.0.2"]
+                 [im.chit/purnam "0.1.8"]
                  [jayq "2.5.0"]]
 
 ;;  :exclusions [org.clojure/google-closure-library

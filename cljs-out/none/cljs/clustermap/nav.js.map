@@ -2,13 +2,18 @@
  "file":
  "/Users/mccraig/dev/clustermap.all/clustermap-bvca-2/cljs-out/none/cljs/clustermap/nav.js",
  "sources":["nav.cljs"],
- "lineCount":30,
+ "lineCount":57,
  "mappings":
- "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",
+ "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",
  "names":
  ["clustermap.nav/toggle-nav-search", "domina.events/listen!",
-  "domina.css/sel", "e", "domina.events/prevent-default", "target",
-  "domina.events/target", "parent", "domina.xpath/xpath",
+  "domina.css/sel", "e", "target", "domina.events/target", "parent",
+  "domina.xpath/xpath", "domina.events/prevent-default",
   "domina/toggle-class!", "domina/nodes", "cljs.core/first",
-  "jayq.core/$", "clustermap.nav/switch-view", "li", "ul", "active-li",
-  "domina/remove-class!", "domina/add-class!", "clustermap.nav/init"]}
+  "jayq.core/$", "clustermap.nav/clear-search", "search-input",
+  "domina/set-value!", "clustermap.nav/body-view-classes",
+  "clustermap.nav/switch-view", "li", "ul", "active-li", "body",
+  "domina/remove-class!", "domina/add-class!", "cljs.core/map",
+  "p__14867", "vec__14868", "cljs.core/nth", "li-class", "body-class",
+  "domina/has-class?", "cljs.core/dorun", "clustermap.nav/map-report",
+  "mr", "jayq.core/anim", "clustermap.nav/init"]}

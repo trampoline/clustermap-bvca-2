@@ -5,7 +5,8 @@
             [cljs.core.async :refer [put! chan <!]]
             [clojure.browser.repl :as repl]
             [clustermap.nav :as nav]
-            [clustermap.map :as map])
+            [clustermap.map :as map]
+            [clustermap.api :as api])
   (:import [goog.net Jsonp]
            [goog Uri]))
 

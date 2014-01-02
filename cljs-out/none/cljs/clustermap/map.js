@@ -34,9 +34,9 @@ var all_bounds = null;if (arguments.length > 1) {
   all_bounds = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
 return pan_to_show__delegate.call(this,map,all_bounds);};
 pan_to_show.cljs$lang$maxFixedArity = 1;
-pan_to_show.cljs$lang$applyTo = (function (arglist__19822){
-var map = cljs.core.first(arglist__19822);
-var all_bounds = cljs.core.rest(arglist__19822);
+pan_to_show.cljs$lang$applyTo = (function (arglist__14984){
+var map = cljs.core.first(arglist__14984);
+var all_bounds = cljs.core.rest(arglist__14984);
 return pan_to_show__delegate(map,all_bounds);
 });
 pan_to_show.cljs$core$IFn$_invoke$arity$variadic = pan_to_show__delegate;

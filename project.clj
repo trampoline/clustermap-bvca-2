@@ -23,12 +23,28 @@
   :source-paths ["src"]
 
   :cljsbuild {
-              :builds [{:id "clustermap"
-                        :source-paths ["src"]
+              :builds {:none
+                       {:source-paths ["src"]
                         :compiler {
-                                   :output-to  "cljs-out/clustermap.js"
-                                   :source-map true ; "cljs-out/clustermap.js.map"
-                                   :output-dir "cljs-out/cljs"
+                                   :output-to  "cljs-out/none/clustermap.js"
+                                   :source-map true
+                                   :output-dir "cljs-out/none/cljs"
                                    :optimizations :none
-                                   :pretty-print true
-                                   }}]})
+                                   :pretty-print true}}
+
+                       :whitespace
+                       {:source-paths ["src"]
+                        :compiler {
+                                   :output-to  "cljs-out/whitespace/clustermap.js"
+                                   :source-map "cljs-out/whitespace/clustermap.js.map"
+                                   :output-dir "cljs-out/whitespace/cljs"
+                                   :optimizations :whitespace
+                                   :pretty-print true}}
+
+                       :advanced
+                       {:source-paths ["src"]
+                        :compiler {
+                                   :output-to  "cljs-out/advanced/clustermap.js"
+                                   :source-map "cljs-out/advanced/clustermap.js.map"
+                                   :output-dir "cljs-out/advanced/cljs"
+                                   :optimizations :advanced}}}})

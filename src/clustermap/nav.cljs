@@ -3,6 +3,7 @@
             [domina.css :as css]
             [domina.xpath :as xpath]
             [domina.events :as events]
+            [jayq.core :refer [$]]
             [cljs.core.async :refer [put! chan <!]]))
 
 (defn toggle-nav-search
@@ -15,7 +16,7 @@
                           parent (xpath/xpath target "..")]
 
                       (dom/toggle-class! parent "open")
-                      (-> (css/sel "#search") dom/nodes first js/$ .toggle)))))
+                      (-> (css/sel "#search") dom/nodes first $ .toggle)))))
 
 (defn switch-view
   []

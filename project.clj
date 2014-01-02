@@ -27,7 +27,7 @@
                         :source-paths ["src"]
                         :compiler {
                                    :output-to  "cljs-out/clustermap.js"
-                                   :source-map "cljs-out/clustermap.js.map"
+                                   :source-map true ; "cljs-out/clustermap.js.map"
                                    :output-dir "cljs-out/cljs"
                                    :optimizations :none
                                    :pretty-print true

@@ -16,13 +16,7 @@ exports.config =
           'vendor/scripts/console-polyfill.js',
           'vendor/scripts/android-xpath.js',
           'vendor/scripts/javascript-xpath.js',
-          'vendor/scripts/jquery.js',
-          # 'vendor/scripts/jquery.cookie.js',
-          # 'vendor/scripts/lodash.js',
-          'vendor/scripts/bootstrap.js',
-          # 'vendor/scripts/backbone.js',
-          # 'vendor/scripts/knockout.js',
-          # 'vendor/scripts/knockback.js'
+          'vendor/scripts/bootstrap.js'
         ]
 
     stylesheets:

@@ -6,12 +6,13 @@
                  [org.clojure/clojurescript "0.0-2080"]
                  [org.clojure/google-closure-library "0.0-20130212-95c19e7f0f5f"]
                  [org.clojure/google-closure-library-third-party "0.0-20130212-95c19e7f0f5f"]
+                 [org.clojure/core.async "0.1.256.0-1bf8cf-alpha"]
                  [domina "1.0.2"]
-                 [org.clojure/core.async "0.1.256.0-1bf8cf-alpha"]]
+                 [jayq "2.5.0"]]
 
-  :exclusions [org.clojure/google-closure-library
-               org.clojure/google-closure-library-third-party
-               goog-jar]
+;;  :exclusions [org.clojure/google-closure-library
+;;               org.clojure/google-closure-library-third-party
+;;               goog-jar]
 
   :jvm-opts ["-Xmx1g"
              "-server"
@@ -21,13 +22,13 @@
 
   :source-paths ["src"]
 
-;;  :profiles {:dev {:plugins [[com.cemerick/austin "0.1.4-SNAPSHOT"]]}}
-
   :cljsbuild {
-    :builds [{:id "clustermap"
-              :source-paths ["src"]
-              :compiler {
-                :output-to "app/assets/clustermap.js"
-                :output-dir "app/assets/out"
-                :optimizations :none
-                :source-map true}}]})
+              :builds [{:id "clustermap"
+                        :source-paths ["src"]
+                        :compiler {
+                                   :output-to  "cljs-out/clustermap.js"
+                                   :source-map "cljs-out/clustermap.js.map"
+                                   :output-dir "cljs-out/cljs"
+                                   :optimizations :none
+                                   :pretty-print true
+                                   }}]})

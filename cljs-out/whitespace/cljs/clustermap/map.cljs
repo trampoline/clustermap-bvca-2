@@ -39,13 +39,6 @@
 
 (defn display-sites
   [m sites]
-  (.log js/console "display-sites")
-  (.log js/console m)
-  (.log js/console sites)
-  ;; (->> sites
-  ;;      (map (partial display-site m))
-  ;;      dorun)
   (->> sites
        (casync/map-async (partial display-site m))
-       casync/dorun-async)
-  )
+       casync/dorun-async))

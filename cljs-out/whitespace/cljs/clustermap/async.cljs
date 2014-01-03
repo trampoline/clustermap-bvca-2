@@ -5,6 +5,7 @@
    [cljs.core.async :as async :refer [chan <! >! onto-chan]]))
 
 (defn map-async
+  "asynchronously maps a function over some colls"
   [f & colls]
   (let [coll-chs (->> colls (map (fn [coll]
                                    (let [ch (chan)]
@@ -13,6 +14,7 @@
     (async/map f coll-chs)))
 
 (defn dorun-async
+  "asynch consume all values from a channel"
   [ch & {:keys [log]}]
   (go
    (while (when-let [v (<! ch)]

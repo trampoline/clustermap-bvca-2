@@ -3,7 +3,7 @@
    [purnam.js :refer [?]]
    [cljs.core.async.macros :refer [go]])
   (:require
-   [cljs.core.async :refer [put! chan <! >! close!]]
+   [cljs.core.async :refer [put! chan <! close!]]
    [purnam.cljs :as pjs :refer [aget-in aset-in js-lookup]]
    [goog.net.XhrIo :as xhr]))
 

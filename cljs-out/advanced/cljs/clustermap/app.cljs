@@ -1,9 +1,7 @@
 (ns clustermap.app
   (:require-macros
-   [purnam.js :refer [?]]
    [cljs.core.async.macros :refer [go]])
   (:require
-   [purnam.cljs :as pjs :refer [aget-in aset-in js-lookup]]
    [cljs.core.async :refer [<!]]
    [clustermap.api :as api]
    [clustermap.map :as map]))
@@ -18,9 +16,14 @@
   (go
    (let [pcs (<! (api/portfolio-company-sites))]
      (set-state :portfolio-company-sites pcs)
-     (map/display-sites (:map @state) (:portfolio-company-sites @state)))))
+     (map/display-sites (:map @state) (:portfolio-company-sites @state))
+     )))
 
 (defn init
   []
-  (set-state :map (map/create-map))
-  (load-sites))
+  ;; TODO remove this timeout when we aren't starting a REPL : the
+  ;; map creation seems to cause the crosspagechannel used by the REPL to fail
+  (js/setTimeout (fn []
+                   (set-state :map (map/create-map))
+                   (load-sites))
+                 1000))

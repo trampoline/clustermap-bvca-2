@@ -4,14 +4,14 @@
  "sources":["map.cljs"],
  "lineCount":52,
  "mappings":
- ";AAAC;;;;;;;;;;;;;;;;;;;AAaA,4BAAA,uBAAA,nDAAMA,mDAEJ,gGAAA,5FAAMC,aAAW,AAAA,AAAIC,iBACfC,IAAE,qBAAA,MAAA,3BAACF,0DACP,2CAAA,2CAAA,yBAAA,/GAAYE,YACA,CAAA,CAAA,CAAA,MAAA,KAAA,CAAA,MAAA,sEACkB,CAAA,CAAA,EAAA,yBACI,CAAA,CAAA,EAAA;AAClCA;;AAEJ;;;6BAAA,7BAAMC;oDAAN,dACGD,EAAIE,YACL,IAAMC,KAAG,AAACC,0BAAMF,gBACVG,UAAQ,KAAKC,eAAkB,AAAeH,kBAAI,AAAeA,wBACjEI,eAAa,AAACC,2BAAO;6BAAA,XAAKC,GAAGC,QAAQ,OAASD,UAAGC;;uCAFvD,tCAG2BL,QACA,AAACM,yBAAKR,KAC/B,OAAYH,YAAEO;;4BANfP;IAAIE;EAAAA;uCAAJF,EAAIE;;;IAAJF;IAAIE;6BAAJF,EAAIE;;;;;;AAQP,8BAAA,+BAAA,7DAAMU,qDACHZ,EAAEa,MACH,8iBAAA,1iBAAMC,WAAS,+BAAA,4DAAID,hCAAK,qCAAA,rCAACE,5BAAsBC,/BAAQC,kHACjDC,UAAQ,+BAAA,2CAAA,uDAAY,2EAAA,oFAAA,hJAAK,qCAAA,rCAACH,gCAAUF,gDAAkB,qCAAA,rCAACE,gCAAUF,oDAAsB,qCAAA,rCAACE,gCAAUF,pVAAqBI,+XACvHE,SAAO,AAACC,SAAYN,SAASI,SACjC,OAAQC,aAAOnB;;AAEnB,+BAAA,iCAAA,hEAAMqB,uDACHrB,EAAEsB,OACH,8IAAKA,hGACA,AAACC,qCAAiB,AAACC,4BAAQZ,4BAAaZ,pIACxCyB",
+ ";AAAA;;;;;;;;;;;;;;;;;AAUA,4BAAA,wBAAA,pDAAMA,iDACHC,GACC,OAAYA,YACA,+BAAA,mFAAA,mFAAA,MAAA,YAAA,mFAAA,MAAA,hTAACC,wUACD,+BAAA,2CAAA,iBAAA,mFAAA,EAAA,UAAA,qBAAA,mFAAA,EAAA,pSAACA;;AAGjB,4BAAA,uBAAA,nDAAMC,mDAEJ,gGAAA,5FAAMC,aAAW,AAAA,AAAIC,iBACfJ,IAAE,qBAAA,MAAA,3BAACG,0DACP,AAACJ,oCAAWC;AACZA;;AAEJ;;;6BAAA,7BAAMK;oDAAN,dACGL,EAAIM,YACL,IAAMC,KAAG,AAACC,0BAAMF,gBACVG,UAAQ,KAAKC,eAAkB,AAAeH,kBAAI,AAAeA,wBACjEI,eAAa,AAACC,2BAAO;6BAAA,XAAKC,GAAGC,QAAQ,OAASD,UAAGC;;uCAFvD,tCAG2BL,QACA,AAACM,yBAAKR,KAC/B,OAAYP,YAAEW;;4BANfX;IAAIM;EAAAA;uCAAJN,EAAIM;;;IAAJN;IAAIM;6BAAJN,EAAIM;;;;;;AAQP,8BAAA,+BAAA,7DAAMU,qDACHhB,EAAEiB,MACH,sbAAA,lbAAMC,WAAS,+BAAA,6BAAID,DAAK,MAAA,lCAAkBE,/BAAQlB,oFAC5CmB,UAAQ,+BAAA,2CAAA,uDAAY,6CAAA,sDAAA,pFAAK,MAAA,LAAMH,iDAAkB,MAAA,LAAMA,qDAAsB,MAAA,LAAMA,zPAAqBhB,qSACxGoB,SAAO,AAACC,SAAYJ,SAASE,SACjC,OAAQC,aAAOrB;;AAEnB,+BAAA,iCAAA,hEAAMuB,uDACHvB,EAAEwB,OACH,8IAAKA,hGACA,AAACC,qCAAiB,AAACC,4BAAQV,4BAAahB,pIACxC2B",
  "names":
- ["clustermap.map/create-map", "factory-fn", "js/L", "m",
+ ["clustermap.map/locate-map", "m", "cljs.core/clj->js",
+  "clustermap.map/create-map", "factory-fn", "js/L",
   "clustermap.map/pan-to-show", "all-bounds", "fb", "cljs.core/first",
   "fb-copy", "js/L.LatLngBounds", "super-bounds", "cljs.core/reduce",
   "sb", "bounds", "cljs.core/rest", "clustermap.map/display-site",
-  "site", "location", "purnam.cljs/js-lookup", "cljs.core/reverse",
-  "cljs.core/clj->js", "options", "marker", "js/L.marker",
-  "clustermap.map/display-sites", "sites",
+  "site", "location", "cljs.core/reverse", "options", "marker",
+  "js/L.marker", "clustermap.map/display-sites", "sites",
   "clustermap.async/map-async", "cljs.core/partial",
   "clustermap.async/dorun-async"]}

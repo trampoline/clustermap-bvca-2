@@ -1,5 +1,5 @@
 (ns clustermap.core
-  (:require [clojure.browser.repl :as repl]
+  (:require clustermap.repl
             [clustermap.api :as api]
             [clustermap.nav :as nav]
             [clustermap.map :as map]
@@ -7,6 +7,7 @@
 
 (defn init []
   (nav/init)
-  (app/init))
+  (app/init)
+  )
 
 (init)

@@ -2,8 +2,8 @@
  "file":
  "/Users/mccraig/dev/clustermap.all/clustermap-bvca-2/cljs-out/none/cljs/clustermap/core.js",
  "sources":["core.cljs"],
- "lineCount":19,
+ "lineCount":18,
  "mappings":
- ";AAAC;;;;;;;;;;;;AAOA,uBAAA,iBAAA,xCAAMA,wCACJ,AAACC;AACD,OAACC;;AAEH,AAACF",
+ ";AAAA;;;;;;;;;;;AAOA,uBAAA,iBAAA,xCAAMA,wCACJ,AAACC;AACD,OAACC;;AAGH,AAACF",
  "names":
  ["clustermap.core/init", "clustermap.nav/init", "clustermap.app/init"]}

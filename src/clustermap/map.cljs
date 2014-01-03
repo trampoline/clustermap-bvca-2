@@ -4,21 +4,22 @@
    [domina.css :as css]
    [domina.xpath :as xpath]
    [domina.events :as events]
-   [purnam.cljs :refer [aget-in aset-in js-lookup]]
    [jayq.core :as jayq :refer [$]]
    [cljs.core.async :refer [put! chan <!]]
-   [clustermap.async :as casync])
-  (:require-macros
-   [purnam.js :as p]))
+   [clustermap.async :as casync]))
+
+(defn locate-map
+  [m]
+    (.fitBounds m
+                (clj->js [[59.54 2.3] [49.29 -11.29]])
+                (clj->js {"paddingTopLeft" [0 0]
+                          "paddingBottomRight" [0 0]})))
 
 (defn create-map
   []
   (let [factory-fn (-> js/L .-mapbox .-map)
         m (factory-fn "map" "mccraigmccraig.map-gqkcbi1g")]
-    (.fitBounds m
-                (p/arr [[59.54 2.3] [49.29 -11.29]])
-                {"paddingTopLeft" (p/arr [0 0])
-                 "paddingBottomRight" (p/arr [0 0])})
+    (locate-map m)
     m))
 
 (defn pan-to-show
@@ -32,8 +33,8 @@
 
 (defn display-site
   [m site]
-  (let [location (-> site (js-lookup "location") reverse clj->js)
-        options (-> {:title (str (js-lookup site "name") ", " (js-lookup site "postcode") ", " (js-lookup site "company_no"))} clj->js)
+  (let [location (-> site (aget "location") reverse clj->js)
+        options (-> {:title (str (aget site "name") ", " (aget site "postcode") ", " (aget site "company_no"))} clj->js)
         marker (js/L.marker location options)]
     (.addTo marker m)))
 

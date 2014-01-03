@@ -58,8 +58,6 @@ goog.addDependency("mochikit/async/deferred.js", ['goog.async.Deferred', 'goog.a
 goog.addDependency("uri/uri.js", ['goog.Uri', 'goog.Uri.QueryData'], ['goog.array', 'goog.string', 'goog.structs', 'goog.structs.Map', 'goog.uri.utils', 'goog.uri.utils.ComponentIndex']);
 goog.addDependency("async/delay.js", ['goog.Delay', 'goog.async.Delay'], ['goog.Disposable', 'goog.Timer']);
 goog.addDependency("net/xpc/transport.js", ['goog.net.xpc.Transport'], ['goog.Disposable', 'goog.dom', 'goog.net.xpc']);
-goog.addDependency("net/jsloader.js", ['goog.net.jsloader', 'goog.net.jsloader.Error'], ['goog.array', 'goog.async.Deferred', 'goog.debug.Error', 'goog.dom', 'goog.userAgent']);
-goog.addDependency("net/jsonp.js", ['goog.net.Jsonp'], ['goog.Uri', 'goog.dom', 'goog.net.jsloader']);
 goog.addDependency("messaging/messagechannel.js", ['goog.messaging.MessageChannel'], []);
 goog.addDependency("messaging/abstractchannel.js", ['goog.messaging.AbstractChannel'], ['goog.Disposable', 'goog.debug', 'goog.debug.Logger', 'goog.json', 'goog.messaging.MessageChannel']);
 goog.addDependency("events/eventhandler.js", ['goog.events.EventHandler'], ['goog.Disposable', 'goog.array', 'goog.events', 'goog.events.EventWrapper']);

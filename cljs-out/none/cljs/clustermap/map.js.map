@@ -2,13 +2,16 @@
  "file":
  "/Users/mccraig/dev/clustermap.all/clustermap-bvca-2/cljs-out/none/cljs/clustermap/map.js",
  "sources":["map.cljs"],
- "lineCount":49,
+ "lineCount":52,
  "mappings":
- ";AAAC;;;;;;;;;;;;;;;;;AAYA,AAAKA,qBAAI,yBAAA,zBAACC;AAEV,4BAAA,uBAAA,nDAAMC,mDAEJ,kGAAA,9FAAMC,aAAW,AAAA,AAAIC,iBACfC,MAAI,qBAAA,MAAA,3BAACF,0DACT,wCAAA,2CAAA,yBAAA,5GAAYE,cACA,CAAA,CAAA,CAAA,GAAA,KAAA,CAAA,KAAA,qEACkB,CAAA,CAAA,EAAA,yBACI,CAAA,CAAA,EAAA;AAClCA;;AAEJ;;;6BAAA,7BAAMC;sDAAN,hBACGD,IAAME,YACP,IAAMC,KAAG,AAACC,0BAAMF,gBACVG,UAAQ,KAAKC,eAAkB,AAAeH,kBAAI,AAAeA,wBACjEI,eAAa,AAACC,2BAAO;6BAAA,XAAKC,GAAGC,QAAQ,OAASD,UAAGC;;uCAFvD,tCAG2BL,QACA,AAACM,yBAAKR,KAC/B,OAAYH,cAAIO;;4BANjBP;IAAME;EAAAA;uCAANF,IAAME;;;IAANF;IAAME;6BAANF,IAAME;;;;;;AAQT,sBAAA,iBAAA,vCAAMU,uCAEJ,OAACC,gCAAOlB,mBAAI,AAACE",
+ ";AAAC;;;;;;;;;;;;;;;;;;;AAaA,4BAAA,uBAAA,nDAAMA,mDAEJ,gGAAA,5FAAMC,aAAW,AAAA,AAAIC,iBACfC,IAAE,qBAAA,MAAA,3BAACF,0DACP,2CAAA,2CAAA,yBAAA,/GAAYE,YACA,CAAA,CAAA,CAAA,MAAA,KAAA,CAAA,MAAA,sEACkB,CAAA,CAAA,EAAA,yBACI,CAAA,CAAA,EAAA;AAClCA;;AAEJ;;;6BAAA,7BAAMC;oDAAN,dACGD,EAAIE,YACL,IAAMC,KAAG,AAACC,0BAAMF,gBACVG,UAAQ,KAAKC,eAAkB,AAAeH,kBAAI,AAAeA,wBACjEI,eAAa,AAACC,2BAAO;6BAAA,XAAKC,GAAGC,QAAQ,OAASD,UAAGC;;uCAFvD,tCAG2BL,QACA,AAACM,yBAAKR,KAC/B,OAAYH,YAAEO;;4BANfP;IAAIE;EAAAA;uCAAJF,EAAIE;;;IAAJF;IAAIE;6BAAJF,EAAIE;;;;;;AAQP,8BAAA,+BAAA,7DAAMU,qDACHZ,EAAEa,MACH,8iBAAA,1iBAAMC,WAAS,+BAAA,4DAAID,hCAAK,qCAAA,rCAACE,5BAAsBC,/BAAQC,kHACjDC,UAAQ,+BAAA,2CAAA,uDAAY,2EAAA,oFAAA,hJAAK,qCAAA,rCAACH,gCAAUF,gDAAkB,qCAAA,rCAACE,gCAAUF,oDAAsB,qCAAA,rCAACE,gCAAUF,pVAAqBI,+XACvHE,SAAO,AAACC,SAAYN,SAASI,SACjC,OAAQC,aAAOnB;;AAEnB,+BAAA,iCAAA,hEAAMqB,uDACHrB,EAAEsB,OACH,8IAAKA,hGACA,AAACC,qCAAiB,AAACC,4BAAQZ,4BAAaZ,pIACxCyB",
  "names":
- ["clustermap.map/map", "cljs.core/atom", "clustermap.map/create-map",
-  "factory-fn", "js/L", "map", "clustermap.map/pan-to-show",
-  "all-bounds", "fb", "cljs.core/first", "fb-copy",
-  "js/L.LatLngBounds", "super-bounds", "cljs.core/reduce", "sb",
-  "bounds", "cljs.core/rest", "clustermap.map/init",
-  "cljs.core/reset!"]}
+ ["clustermap.map/create-map", "factory-fn", "js/L", "m",
+  "clustermap.map/pan-to-show", "all-bounds", "fb", "cljs.core/first",
+  "fb-copy", "js/L.LatLngBounds", "super-bounds", "cljs.core/reduce",
+  "sb", "bounds", "cljs.core/rest", "clustermap.map/display-site",
+  "site", "location", "purnam.cljs/js-lookup", "cljs.core/reverse",
+  "cljs.core/clj->js", "options", "marker", "js/L.marker",
+  "clustermap.map/display-sites", "sites",
+  "clustermap.async/map-async", "cljs.core/partial",
+  "clustermap.async/dorun-async"]}

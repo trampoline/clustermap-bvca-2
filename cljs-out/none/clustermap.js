@@ -20,7 +20,9 @@ goog.addDependency("../clojure/browser/event.js", ['clojure.browser.event'], ['c
 goog.addDependency("../purnam/common.js", ['purnam.common'], ['cljs.core']);
 goog.addDependency("../purnam/cljs.js", ['purnam.cljs'], ['cljs.core', 'goog.array', 'goog.object', 'purnam.common', 'clojure.string']);
 goog.addDependency("../clustermap/api.js", ['clustermap.api'], ['cljs.core', 'goog.net.XhrIo', 'cljs.core.async', 'purnam.cljs']);
-goog.addDependency("../clustermap/map.js", ['clustermap.map'], ['cljs.core', 'domina.events', 'domina.xpath', 'domina', 'cljs.core.async', 'domina.css', 'purnam.cljs', 'jayq.core']);
+goog.addDependency("../clustermap/async.js", ['clustermap.async'], ['cljs.core', 'cljs.core.async']);
+goog.addDependency("../clustermap/map.js", ['clustermap.map'], ['cljs.core', 'domina.events', 'domina.xpath', 'clustermap.async', 'domina', 'cljs.core.async', 'domina.css', 'purnam.cljs', 'jayq.core']);
 goog.addDependency("../clojure/browser/net.js", ['clojure.browser.net'], ['goog.net.xpc.CrossPageChannel', 'clojure.browser.event', 'goog.net.xpc.CfgFields', 'cljs.core', 'goog.net.EventType', 'goog.json', 'goog.net.XhrIo']);
 goog.addDependency("../clojure/browser/repl.js", ['clojure.browser.repl'], ['clojure.browser.event', 'clojure.browser.net', 'cljs.core']);
-goog.addDependency("../clustermap/core.js", ['clustermap.core'], ['clustermap.api', 'cljs.core', 'goog.net.Jsonp', 'goog.dom', 'clustermap.map', 'clojure.browser.repl', 'clustermap.nav', 'cljs.core.async', 'goog.events', 'goog.Uri']);
+goog.addDependency("../clustermap/app.js", ['clustermap.app'], ['clustermap.api', 'cljs.core', 'clustermap.map', 'cljs.core.async', 'purnam.cljs']);
+goog.addDependency("../clustermap/core.js", ['clustermap.core'], ['clustermap.api', 'cljs.core', 'clustermap.map', 'clojure.browser.repl', 'clustermap.nav', 'clustermap.app']);

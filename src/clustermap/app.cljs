@@ -19,11 +19,17 @@
      (map/display-sites (:map @state) (:portfolio-company-sites @state))
      )))
 
+(defn do-init
+  []
+  (set-state :map (map/create-map))
+  (load-sites))
+
 (defn init
   []
-  ;; TODO remove this timeout when we aren't starting a REPL : the
-  ;; map creation seems to cause the crosspagechannel used by the REPL to fail
-  (js/setTimeout (fn []
-                   (set-state :map (map/create-map))
-                   (load-sites))
-                 1000))
+  (cond
+
+   js/config.repl
+   (js/setTimeout do-init 1000)
+
+   true
+   do-init))

@@ -2,7 +2,7 @@
   (:require-macros
    [cljs.core.async.macros :refer [go]])
   (:require
-   [cljs.core.async :as async :refer [chan <! >! onto-chan]]))
+   [cljs.core.async :as async :refer [chan <! >! onto-chan timeout]]))
 
 (defn map-async
   "asynchronously maps a function over some colls"
@@ -15,9 +15,10 @@
 
 (defn dorun-async
   "asynch consume all values from a channel"
-  [ch & {:keys [log]}]
+  [ch & {:keys [log delay]}]
   (go
    (while (when-let [v (<! ch)]
+            (if delay (<! (timeout delay)))
             (if log (.log js/console (clj->js v)))
             v)))
   nil)

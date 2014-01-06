@@ -375,6 +375,7 @@ body {
 
 @map-arrow-size: 28px;
 @map-details-size: 270px;
+@shadow: -2px 2px 2px rgba(0,0,0,.15);
 
 #map-report {
   position: absolute;
@@ -389,6 +390,7 @@ body {
     border-right: 0 none;
     border-top: 0 none;
     .square(@map-arrow-size);
+    .box-shadow(@shadow);
     i {
       display: block;
       width: 7px;
@@ -409,6 +411,7 @@ body {
     border-top: 0 none;
     padding: 10px 20px;
     margin-left: @map-arrow-size;
+    .box-shadow(@shadow);
   }
   &.open {
     > a {

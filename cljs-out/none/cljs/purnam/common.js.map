@@ -1,7 +1,0 @@
-{"version":3,
- "file":
- "/Users/mccraig/dev/clustermap.all/clustermap-bvca-2/cljs-out/none/cljs/purnam/common.js",
- "sources":["common.cljs"],
- "lineCount":7,
- "mappings":";AAAC;;AAEA,AAAeA,sBAAM,iBAAAC,WAAA,GAAA,AAAAA",
- "names":["purnam.common/flags", "obj19868"]}

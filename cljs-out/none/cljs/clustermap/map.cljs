@@ -4,33 +4,42 @@
    [domina.css :as css]
    [domina.xpath :as xpath]
    [domina.events :as events]
-   [purnam.cljs :refer [aget-in aset-in]]
    [jayq.core :as jayq :refer [$]]
-   [cljs.core.async :refer [put! chan <!]])
-  (:require-macros
-   [purnam.js :as p]))
+   [cljs.core.async :refer [put! chan <!]]
+   [clustermap.async :as casync]))
 
-(def map (atom nil))
+(defn locate-map
+  [m]
+    (.fitBounds m
+                (clj->js [[59.54 2.3] [49.29 -11.29]])
+                (clj->js {"paddingTopLeft" [0 0]
+                          "paddingBottomRight" [0 0]})))
 
 (defn create-map
   []
   (let [factory-fn (-> js/L .-mapbox .-map)
-        map (factory-fn "map" "mccraigmccraig.map-gqkcbi1g")]
-    (.fitBounds map
-                (p/arr [[61 2.5] [48.7 -11.5]])
-                {"paddingTopLeft" (p/arr [0 0])
-                 "paddingBottomRight" (p/arr [0 0])})
-    map))
+        m (factory-fn "map" "mccraigmccraig.map-gqkcbi1g")]
+    (locate-map m)
+    m))
 
 (defn pan-to-show
-  [map & all-bounds]
+  [m & all-bounds]
   (let [fb (first all-bounds)
         fb-copy (new js/L.LatLngBounds (.getSouthWest fb) (.getNorthEast fb))
         super-bounds (reduce (fn [sb bounds] (.extend sb bounds))
                              fb-copy
                              (rest fb))]
-    (.fitBounds map super-bounds)))
+    (.fitBounds m super-bounds)))
 
-(defn init
-  []
-  (reset! map (create-map)))
+(defn display-site
+  [m site]
+  (let [location (-> site (aget "location") reverse clj->js)
+        options (-> {:title (str (aget site "name") ", " (aget site "postcode") ", " (aget site "company_no"))} clj->js)
+        marker (js/L.marker location options)]
+    (.addTo marker m)))
+
+(defn display-sites
+  [m sites]
+  (->> sites
+       (casync/map-async (partial display-site m))
+       casync/dorun-async))

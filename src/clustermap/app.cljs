@@ -32,4 +32,4 @@
    (js/setTimeout do-init 1000)
 
    true
-   do-init))
+   (do-init)))

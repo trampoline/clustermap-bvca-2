@@ -7,7 +7,6 @@
 
 (defn init []
   (nav/init)
-  (app/init)
-  )
+  (app/init))
 
 (init)

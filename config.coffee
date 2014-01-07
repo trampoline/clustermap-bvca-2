@@ -14,6 +14,7 @@ exports.config =
       order:
         before: [
           'vendor/scripts/console-polyfill.js',
+          'vendor/scripts/es5-shim.js',
           'vendor/scripts/android-xpath.js',
           'vendor/scripts/javascript-xpath.js',
           'vendor/scripts/bootstrap.js'

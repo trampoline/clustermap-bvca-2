@@ -5,28 +5,12 @@
   "dependencies": {
     "console-polyfill": "~0.1.0",
     "html5shiv": "~3.7.0",
-    "lodash": "~2.4.1",
-    "jquery": "~1.10.2",
-    "knockback": "~0.18.2",
-    "jquery.cookie": "~1.4.0",
+    "es5-shim": "https://github.com/es-shims/es5-shim.git#~2.3.0",
     "bootstrap": "~3.0.3"
   },
   "overrides": {
-
-    "knockback": {
-      "dependencies": {
-        "lodash": ">=2.4.0",
-        "backbone": ">=0.5.1",
-        "knockout": ">=1.2.1"
-      }
-    },
-
-    "backbone": {
-      "main": "backbone.js"
-    },
-
-    "knockout": {
-      "main": "build/output/knockout-latest.debug.js"
+    "es5-shim": {
+      "main": "es5-shim.js"
     }
   }
 }

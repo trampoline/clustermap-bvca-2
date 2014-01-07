@@ -1,0 +1,18 @@
+{"version":3,
+ "file":
+ "/Users/mccraig/dev/clustermap.all/clustermap-bvca-2/cljs-out/none/cljs/clustermap/map_report.js",
+ "sources":["map_report.cljs"],
+ "lineCount":51,
+ "mappings":
+ ";AAAA;;;;;;;;;AAKA,+BAAA,uBAAA,tDAAMA,gDAAQE,MACZ,AAAA,GAAA,OAAAC;CAAA;CAAA,AAAA,AAAA;;;;;;;;;;;AAAA,AAAA,AAAAA,8CAAA;AAAA,AAAA,AAAAA,iDAAA;AAAA,AAAA,AAAAA,sDAAA,WAAAC,mBAAAC,qBAAAC,mBAAA,AAAA,OAAAC,2BAAAF,qBAAA;;AAAA,AAAA,AAAA,AAAA,AAAAF,0DAAA;AAAA,AAAA,AAAA,AAAAA,wEAAA,WAAAK;AAAA,AAAA,IAAAA,0BAAA,KAAA,AACC,IAAAI,mHAAA,AAAA,GAAA,AAAAC,+BAAAD,xIAAY,AAAA,yFAAUV;CAAtB,OAAAY,cAAA,AAAAC,sCAAA,AAAAC,wCAAA,mCAAAJ,aAAA;;CAAA,OAAAE,cAAA,GAAA,AAAAG,qCAAAL;;;AADD,AAAA,AAAA,AAAAT,uEAAA,WAAAM;AAAA,AAAA,IAAAA,aAAA,KAAA,AAAAC;;AAAA,AAAA,AAAA,AAAAP,gFAAA,WAAAM,OAAAC;2EADIT,ZAAQC,/DACZ,AAAA,IAAAO,aAAA,KAAA,AAAA,YAAAN,uDAAAO;;mEADIT,wEAAAA,jFAAQC,wEAAAA,lIACZ,AAAAS,oCAAA,0CAAAD,WAAA,AAAA,YAAAP,iDAAAO;;AAAAP;8CADIF,LAAQC,zCACZ,YAAAC,yCAAA;;AAGF,AAAKe,4BAAI,yBAAA,zBAACC;AAEV,8BAAA,uBAAA,rDAAMC,8CACHC,OACD,OAACC,uBAAQD,MAAMrB,6BAAO,wBAAA,xBAAiBuB",
+ "names":
+ ["clustermap.map-report/widget", "widget", "data",
+  "clustermap.map-report/t15684", "this__3968__auto__",
+  "writer__3969__auto__", "opt__3970__auto__", "cljs.core/-write",
+  "this__10375__auto__", "_15686", "meta15685",
+  "clustermap.map-report/->t15684", "attrs15687", "cljs.core/map?",
+  "js/React.DOM.div", "sablono.render/render-attrs",
+  "sablono.util/merge-with-class", "sablono.render/render-html",
+  "clustermap.map-report/app", "cljs.core/atom",
+  "clustermap.map-report/mount", "state", "om.core/root",
+  "js/document"]}

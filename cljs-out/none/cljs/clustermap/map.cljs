@@ -42,4 +42,5 @@
   [m sites]
   (->> sites
        (casync/map-async (partial display-site m))
-       casync/dorun-async))
+       ((fn [c] (casync/dorun-async c :delay nil)))
+       ))

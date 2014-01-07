@@ -23,5 +23,12 @@ goog.addDependency("../cljs/reader.js", ['cljs.reader'], ['cljs.core', 'goog.str
 goog.addDependency("../jayq/core.js", ['jayq.core'], ['cljs.core', 'clojure.string', 'cljs.reader']);
 goog.addDependency("../clustermap/map.js", ['clustermap.map'], ['cljs.core', 'domina.events', 'domina.xpath', 'clustermap.async', 'domina', 'cljs.core.async', 'domina.css', 'jayq.core']);
 goog.addDependency("../clustermap/nav.js", ['clustermap.nav'], ['cljs.core', 'domina.events', 'domina.xpath', 'domina', 'cljs.core.async', 'domina.css', 'jayq.core']);
-goog.addDependency("../clustermap/app.js", ['clustermap.app'], ['clustermap.api', 'cljs.core', 'clustermap.map', 'cljs.core.async']);
+goog.addDependency("../om/dom.js", ['om.dom'], ['cljs.core']);
+goog.addDependency("../om/core.js", ['om.core'], ['cljs.core', 'om.dom']);
+goog.addDependency("../clojure/walk.js", ['clojure.walk'], ['cljs.core']);
+goog.addDependency("../sablono/util.js", ['sablono.util'], ['cljs.core', 'clojure.string', 'goog.Uri']);
+goog.addDependency("../sablono/render.js", ['sablono.render'], ['cljs.core', 'clojure.walk', 'clojure.string', 'sablono.util']);
+goog.addDependency("../sablono/core.js", ['sablono.core'], ['cljs.core', 'clojure.walk', 'clojure.string', 'sablono.util', 'sablono.render']);
+goog.addDependency("../clustermap/map_report.js", ['clustermap.map_report'], ['sablono.core', 'cljs.core', 'om.core', 'om.dom']);
+goog.addDependency("../clustermap/app.js", ['clustermap.app'], ['clustermap.api', 'cljs.core', 'om.core', 'clustermap.map_report', 'clustermap.map', 'om.dom', 'cljs.core.async']);
 goog.addDependency("../clustermap/core.js", ['clustermap.core'], ['clustermap.api', 'cljs.core', 'clustermap.map', 'clustermap.nav', 'clustermap.app', 'clustermap.repl']);

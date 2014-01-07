@@ -4,6 +4,6 @@
  "sources":["core.cljs"],
  "lineCount":18,
  "mappings":
- ";AAAA;;;;;;;;;;;AAOA,uBAAA,iBAAA,xCAAMA,wCACJ,AAACC;AACD,OAACC;;AAGH,AAACF",
+ ";AAAA;;;;;;;;;;;AAOA,uBAAA,iBAAA,xCAAMA,wCACJ,AAACC;AACD,OAACC;;AAEH,AAACF",
  "names":
  ["clustermap.core/init", "clustermap.nav/init", "clustermap.app/init"]}

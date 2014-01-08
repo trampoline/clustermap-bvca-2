@@ -13,9 +13,9 @@
   [exp]
   (or (money-suffixes exp) (str "x10^" exp)))
 
-(defn format-readable-money
-  [n & {:keys [sigfigs curr plus?] :or {curr "£"}}]
-  (let [[sig exp] (nform/eng-notation n :sigfigs sigfigs)
+(defn readable
+  [n & {:keys [sf curr plus?] :or {curr "£"}}]
+  (let [[sig exp] (nform/eng-notation n :sf sf)
         abs-sig (js/Math.abs sig)
         suffix (money-suffix exp)]
     (apply str (filter identity

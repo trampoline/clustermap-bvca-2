@@ -32,7 +32,7 @@
   "splits a number into a [coefficient, exponent] pair, where
    exponent is a multiple of 3
    :sigfigs : # of significant figures"
-  [n & {:keys [sigfigs]}]
+  [n & {:keys [sf]}]
   (let [sign (cond (> n 0) 1 (= n 0) 0 (< n 0) -1)
         abs-n (js/Math.abs n)
         ;; [i d] (.split (goog.string.format "%.20f" abs-n) ".") ;; format is better, but slow
@@ -45,24 +45,24 @@
 
         ;; now truncate to a given number of significant figures... first need to round,
         ;; then textually truncate to deal with fp junk
-        ;; [usig-i usig-d] (when sigfigs (.split (goog.string.format "%.20f" usig) ".")) ;; format is better, but slow
-        [usig-i usig-d] (when sigfigs (.split (str usig) "."))
-        sigmult (when (and sigfigs (> usig 0)) (js/Math.pow 10 (- (count usig-i) sigfigs)))
+        ;; [usig-i usig-d] (when sf (.split (goog.string.format "%.20f" usig) ".")) ;; format is better, but slow
+        [usig-i usig-d] (when sf (.split (str usig) "."))
+        sigmult (when (and sf (> usig 0)) (js/Math.pow 10 (- (count usig-i) sf)))
         round-usig-str (when sigmult (str (* sigmult (js/Math.round (/ usig sigmult)))))
         [round-usig-i round-usig-d] (when round-usig-str (.split round-usig-str "."))
-        trunc-usig-str (when round-usig-str (->> [(take sigfigs round-usig-i)
-                                                  (repeat (- (count round-usig-i) sigfigs) "0")
+        trunc-usig-str (when round-usig-str (->> [(take sf round-usig-i)
+                                                  (repeat (- (count round-usig-i) sf) "0")
                                                   (if (> (count round-usig-d) 0)
-                                                    ["." (take (- sigfigs (count round-usig-i)) round-usig-d)])]
+                                                    ["." (take (- sf (count round-usig-i)) round-usig-d)])]
                                                  flatten
                                                  (filter identity)
                                                  concat
                                                  (apply str)))
-        trunc-usig (js/parseFloat trunc-usig-str)
+        trunc-usig (when trunc-usig-str (js/parseFloat trunc-usig-str))
         sig (* sign (or trunc-usig usig))]
     [sig exp]))
 
-(defn format-readable-number
+(defn readable
   "format a human readable number, with commas between groups of thousands
    :dec - number of decimal places
    :plus? - include a leading + for positive numbers"

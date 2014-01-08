@@ -35,9 +35,9 @@ var all_bounds = null;if (arguments.length > 1) {
   all_bounds = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
 return pan_to_show__delegate.call(this,m,all_bounds);};
 pan_to_show.cljs$lang$maxFixedArity = 1;
-pan_to_show.cljs$lang$applyTo = (function (arglist__24779){
-var m = cljs.core.first(arglist__24779);
-var all_bounds = cljs.core.rest(arglist__24779);
+pan_to_show.cljs$lang$applyTo = (function (arglist__28423){
+var m = cljs.core.first(arglist__28423);
+var all_bounds = cljs.core.rest(arglist__28423);
 return pan_to_show__delegate(m,all_bounds);
 });
 pan_to_show.cljs$core$IFn$_invoke$arity$variadic = pan_to_show__delegate;
@@ -46,5 +46,6 @@ return pan_to_show;
 ;
 clustermap.map.display_site = (function display_site(m,site){var location = cljs.core.clj__GT_js.call(null,cljs.core.reverse.call(null,(site["location"])));var options = cljs.core.clj__GT_js.call(null,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"title","title",1124275658),[cljs.core.str((site["name"])),cljs.core.str(", "),cljs.core.str((site["postcode"])),cljs.core.str(", "),cljs.core.str((site["company_no"]))].join('')], null));var marker = L.marker(location,options);return marker.addTo(m);
 });
-clustermap.map.display_sites = (function display_sites(m,sites){return clustermap.async.dorun_async.call(null,clustermap.async.map_async.call(null,cljs.core.partial.call(null,clustermap.map.display_site,m),sites));
+clustermap.map.display_sites = (function display_sites(m,sites){return (function (c){return clustermap.async.dorun_async.call(null,c,new cljs.core.Keyword(null,"delay","delay",1109372149),null);
+}).call(null,clustermap.async.map_async.call(null,cljs.core.partial.call(null,clustermap.map.display_site,m),sites));
 });

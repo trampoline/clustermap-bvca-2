@@ -1794,7 +1794,7 @@ body.view-lists #page-lists {
 }
 #map-report {
   position: absolute;
-  right: -270px;
+  right: 0px;
   width: 298px;
   z-index: 100;
 }

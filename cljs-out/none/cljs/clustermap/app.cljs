@@ -9,10 +9,9 @@
    [clustermap.map :as map]
    [clustermap.map-report :as map-report]))
 
-(def state (atom {:selection {:type nil
-                              :value nil}
-                  :all-portfolio-company-sites []
-                  :all-portfolio-companies-summary {}
+(def state (atom {:selection nil
+                  :all-portfolio-company-sites nil
+                  :all-portfolio-companies-summary nil
                   :message "boo"
                   }))
 (defn set-state
@@ -35,15 +34,17 @@
 (defn do-init
   []
   (set-state :map (map/create-map))
-  (load-all-portfolio-company-sites)
+  ;;  (load-all-portfolio-company-sites)
+  (load-all-portfolio-companies-summary)
   (map-report/mount state))
 
 (defn init
   []
   (cond
 
+   ;; need this delay here when developing, otherwise Leaflet.js init seems to bork cljs REPL init
    js/config.repl
-   (js/setTimeout do-init 1000)
+   (js/setTimeout do-init 2000)
 
    true
    (do-init)))

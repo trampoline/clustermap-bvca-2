@@ -35,16 +35,17 @@ var all_bounds = null;if (arguments.length > 1) {
   all_bounds = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
 return pan_to_show__delegate.call(this,m,all_bounds);};
 pan_to_show.cljs$lang$maxFixedArity = 1;
-pan_to_show.cljs$lang$applyTo = (function (arglist__16876){
-var m = cljs.core.first(arglist__16876);
-var all_bounds = cljs.core.rest(arglist__16876);
+pan_to_show.cljs$lang$applyTo = (function (arglist__19569){
+var m = cljs.core.first(arglist__19569);
+var all_bounds = cljs.core.rest(arglist__19569);
 return pan_to_show__delegate(m,all_bounds);
 });
 pan_to_show.cljs$core$IFn$_invoke$arity$variadic = pan_to_show__delegate;
 return pan_to_show;
 })()
 ;
-clustermap.map.display_site = (function display_site(m,site){var location = cljs.core.clj__GT_js(cljs.core.reverse((site["location"])));var options = cljs.core.clj__GT_js(new cljs.core.PersistentArrayMap(null, 1, [cljs.core.constant$keyword$105,[cljs.core.str((site["name"])),cljs.core.str(", "),cljs.core.str((site["postcode"])),cljs.core.str(", "),cljs.core.str((site["company_no"]))].join('')], null));var marker = L.marker(location,options);return marker.addTo(m);
+clustermap.map.display_site = (function display_site(m,site){var location = cljs.core.clj__GT_js(cljs.core.reverse((site["location"])));var options = cljs.core.clj__GT_js(new cljs.core.PersistentArrayMap(null, 1, [cljs.core.constant$keyword$191,[cljs.core.str((site["name"])),cljs.core.str(", "),cljs.core.str((site["postcode"])),cljs.core.str(", "),cljs.core.str((site["company_no"]))].join('')], null));var marker = L.marker(location,options);return marker.addTo(m);
 });
-clustermap.map.display_sites = (function display_sites(m,sites){return clustermap.async.dorun_async(clustermap.async.map_async.cljs$core$IFn$_invoke$arity$variadic(cljs.core.partial.cljs$core$IFn$_invoke$arity$2(clustermap.map.display_site,m),cljs.core.array_seq([sites], 0)));
+clustermap.map.display_sites = (function display_sites(m,sites){return (function (c){return clustermap.async.dorun_async.cljs$core$IFn$_invoke$arity$variadic(c,cljs.core.array_seq([cljs.core.constant$keyword$178,null], 0));
+}).call(null,clustermap.async.map_async.cljs$core$IFn$_invoke$arity$variadic(cljs.core.partial.cljs$core$IFn$_invoke$arity$2(clustermap.map.display_site,m),cljs.core.array_seq([sites], 0)));
 });

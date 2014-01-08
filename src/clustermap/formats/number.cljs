@@ -31,7 +31,7 @@
 (defn eng-notation
   "splits a number into a [coefficient, exponent] pair, where
    exponent is a multiple of 3
-   :sigfigs : # of significant figures"
+   :sf : # of significant figures"
   [n & {:keys [sf]}]
   (when n
     (let [sign (cond (> n 0) 1 (= n 0) 0 (< n 0) -1)
@@ -66,13 +66,17 @@
 (defn readable
   "format a human readable number, with commas between groups of thousands
    :dec - number of decimal places
-   :plus? - include a leading + for positive numbers"
-  [n & {:keys [dec plus?]}]
-  (when n
+   :plus? - include a leading + for positive numbers
+   :default - default result when (nil? n)"
+  [n & {:keys [dec plus? default]}]
+  (if n
     (let [abs-n (js/Math.abs n)
           round-n (round-decimal abs-n dec)
           round-n-str (str round-n)
           [i-str d-str] (str/split round-n-str #"\.")
           t-str (split-thousands i-str)
           t-dec-str (str/join "." (filter identity [t-str d-str]))]
-      (prefix-sign t-dec-str n plus?))))
+      (prefix-sign t-dec-str n plus?))
+    default))
+
+(def fnum readable)

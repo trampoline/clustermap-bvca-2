@@ -19,17 +19,21 @@
            [:li "-" [:small "Employees"]]]])))
 
 (defn all-portfolio-companies-summary-report
-  [summary]
-  (om/component
-   (html [:div
-          [:header.secondary
-           [:h2 "All portfolio companies"]
-           [:h3 "UK wide"]]
-          [:ul
-           [:li (nform/readable (aget summary "count")) [:small "Companies"]]
-           [:li "2" [:small "Investors"]]
-           [:li (mform/readable (aget summary "latest_turnover_stats" "total") :sf 2) [:small "Turnover"]]
-           [:li (nform/readable (aget summary "latest_employee_count_stats" "total")) [:small "Employees"]]]])))
+  [data]
+  (let [pc-summ (:all-portfolio-companies-summary data)
+        ic-summ (:all-investor-companies-summary data)]
+
+    (om/component
+     (html [:div
+            [:header.secondary
+             [:h2 "All portfolio companies"]
+             [:h3 "UK wide"]]
+            [:ul
+             [:li (nform/readable (some-> pc-summ (aget "count"))) [:small "Companies"]]
+             [:li (nform/readable (some-> ic-summ (aget "count"))) [:small "Investors"]]
+             [:li (mform/readable (some-> pc-summ (aget "latest_turnover_stats" "total")) :sf 2) [:small "Turnover"]]
+             [:li (nform/readable (some-> pc-summ (aget "latest_employee_count_stats" "total"))) [:small "Employees"]]
+             ]]))))
 
 (defn selection-report
   [data]
@@ -38,8 +42,7 @@
 
 (defn widget [data]
   (cond
-   (and (-> data :selection nil?)  (-> data :all-portfolio-companies-summary nil?)) (empty-report)
-   (-> data :selection nil?) (all-portfolio-companies-summary-report (:all-portfolio-companies-summary data))
+   (-> data :selection nil?) (all-portfolio-companies-summary-report data)
    (= :portfolio-company (get-in data [:selection :type])) (selection-report (:selection data))))
 
 (defn mount

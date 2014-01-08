@@ -12,6 +12,7 @@
 (def state (atom {:selection nil
                   :all-portfolio-company-sites nil
                   :all-portfolio-companies-summary nil
+                  :all-investor-companies-summary nil
                   :message "boo"
                   }))
 (defn set-state
@@ -24,6 +25,12 @@
    (let [pcs (<! (api/all-portfolio-companies-summary))]
      (set-state :all-portfolio-companies-summary pcs))))
 
+(defn load-all-investor-companies-summary
+  []
+  (go
+   (let [pcs (<! (api/all-investor-companies-summary))]
+     (set-state :all-investor-companies-summary pcs))))
+
 (defn load-all-portfolio-company-sites
   []
   (go
@@ -31,11 +38,14 @@
        (set-state :all-portfolio-company-sites pcs)
        (map/display-sites (:map @state) (:all-portfolio-company-sites @state)))))
 
+
+
 (defn do-init
   []
   (set-state :map (map/create-map))
   ;;  (load-all-portfolio-company-sites)
   (load-all-portfolio-companies-summary)
+  (load-all-investor-companies-summary)
   (map-report/mount state))
 
 (defn init

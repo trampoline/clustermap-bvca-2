@@ -10,7 +10,7 @@
                  [domina "1.0.2"]
                  [jayq "2.5.0"]
                  [om "0.1.5"]
-                 [sablono "0.1.5"]
+                 [sablono "0.1.6"]
                  ]
 
 ;;  :exclusions [org.clojure/google-closure-library

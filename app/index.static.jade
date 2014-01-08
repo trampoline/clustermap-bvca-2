@@ -60,7 +60,7 @@ html(lang='en')
           #main-content
 
             #page-map
-              #map-report
+              #map-report.open
                 a(href='#')
                   i Show / hide
 
@@ -69,23 +69,24 @@ html(lang='en')
                     h1 Welcome to the BVCA Private Equity Map
                     h2 View Investment across the UK
 
-                  header.secondary
-                    h2 Rt Hon Thersa May MP, Conservative
-                    h3 Maidenhead
+                  #map-report-content
+                    header.secondary
+                      h2 Rt Hon Thersa May MP, Conservative
+                      h3 Maidenhead
 
-                  ul
-                    li
-                      | 44
-                      small Companies
-                    li
-                      | 10
-                      small Investors
-                    li
-                      | 1.8bn
-                      small Revenue (&pound;)
-                    li
-                      | 7,511
-                      small Employees
+                    ul
+                      li
+                        | 44
+                        small Companies
+                      li
+                        | 10
+                        small Investors
+                      li
+                        | 1.8bn
+                        small Revenue (&pound;)
+                      li
+                        | 7,511
+                        small Employees
 
                   button(type='button').btn
                     i.icon-lists-sm

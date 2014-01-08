@@ -15,12 +15,13 @@
 
 (defn readable
   [n & {:keys [sf curr plus?] :or {curr "£"}}]
-  (let [[sig exp] (nform/eng-notation n :sf sf)
-        abs-sig (js/Math.abs sig)
-        suffix (money-suffix exp)]
-    (apply str (filter identity
-                       [(cond (and plus? (> sig 0)) "+"
-                              (< sig 0) "-")
-                        curr
-                        abs-sig
-                        suffix]))))
+  (when n
+    (let [[sig exp] (nform/eng-notation n :sf sf)
+          abs-sig (js/Math.abs sig)
+          suffix (money-suffix exp)]
+      (apply str (filter identity
+                         [(cond (and plus? (> sig 0)) "+"
+                                (< sig 0) "-")
+                          curr
+                          abs-sig
+                          suffix])))))

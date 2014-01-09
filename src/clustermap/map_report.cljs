@@ -46,5 +46,5 @@
    (= :portfolio-company (get-in data [:selection :type])) (selection-report (:selection data))))
 
 (defn mount
-  [app-state]
-  (om/root app-state widget (.getElementById js/document "map-report-content")))
+  [app-state elem-id]
+  (om/root app-state widget (.getElementById js/document elem-id)))

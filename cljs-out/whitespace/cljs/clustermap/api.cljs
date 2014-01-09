@@ -38,6 +38,11 @@
   (go
    (<! (GET (str "/api/bvca/portfolio-company-detail/" id)))))
 
+(defn all-investor-companies-summary
+  []
+  (go
+   (<! (GET "/api/bvca/all-investor-companies-summary"))))
+
 (defn investor-company-detail
   [id]
   (go

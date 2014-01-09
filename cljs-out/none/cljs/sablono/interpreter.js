@@ -5,7 +5,7 @@ goog.require('sablono.util');
 goog.require('clojure.string');
 goog.require('sablono.util');
 goog.require('clojure.string');
-sablono.interpreter.IInterpreter = (function (){var obj15613 = {};return obj15613;
+sablono.interpreter.IInterpreter = (function (){var obj15727 = {};return obj15727;
 })();
 sablono.interpreter.interpret = (function interpret(this$){if((function (){var and__3394__auto__ = this$;if(and__3394__auto__)
 {return this$.sablono$interpreter$IInterpreter$interpret$arity$1;
@@ -36,7 +36,7 @@ return attrs__$1;
 /**
 * Render an element vector as a HTML element.
 */
-sablono.interpreter.element = (function element(element__$1){var vec__15615 = sablono.util.normalize_element.call(null,element__$1);var tag = cljs.core.nth.call(null,vec__15615,0,null);var attrs = cljs.core.nth.call(null,vec__15615,1,null);var content = cljs.core.nth.call(null,vec__15615,2,null);var dom_fn = (React.DOM[cljs.core.name.call(null,tag)]);if(cljs.core.truth_(content))
+sablono.interpreter.element = (function element(element__$1){var vec__15729 = sablono.util.normalize_element.call(null,element__$1);var tag = cljs.core.nth.call(null,vec__15729,0,null);var attrs = cljs.core.nth.call(null,vec__15729,1,null);var content = cljs.core.nth.call(null,vec__15729,2,null);var dom_fn = (React.DOM[cljs.core.name.call(null,tag)]);if(cljs.core.truth_(content))
 {return dom_fn.call(null,sablono.interpreter.attributes.call(null,attrs),sablono.interpreter.interpret.call(null,content));
 } else
 {return dom_fn.call(null,sablono.interpreter.attributes.call(null,attrs));

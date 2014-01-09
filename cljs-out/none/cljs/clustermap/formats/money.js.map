@@ -2,16 +2,16 @@
  "file":
  "/Users/mccraig/dev/clustermap.all/clustermap-bvca-2/cljs-out/none/cljs/clustermap/formats/money.js",
  "sources":["money.cljs"],
- "lineCount":46,
+ "lineCount":52,
  "mappings":
- ";AAAA;;;;AAGA,0CAAA,2CAAA,EAAA,GAAA,EAAA,IAAA,EAAA,IAAA,EAAA,KAAA,GAAA,hHAAeA;AAOf;;;wCAAA,4BAAA,pEAAOC,+DAEJC,KACD,IAAAC,0EAAA,AAAA,oBAAAA,3EAAI,AAACH,kDAAeE;CAApBC;;CAAyB,sBAAA,sBAAYD;;;AAEvC;;;oCAAA,pCAAMQ;qCAANN,UAAA,AAAA,IAAAC,aAAAD,aAAAC,iBAAA,EAAA,AAAAC,+BAAAD,aAAA,AAAAE,0BAAAC,mBAAAH,YAAAA,8BAAA,AAAAI,wBAAAJ,eAAA,mEAAA,AAAAI,wBAAAJ,eAAA,qDAAA,mBAAA,AAAAI,wBAAAJ,eAAA,kDAAA,lfACGM,oZAAYC,jHAAGC,jHAAKC,gUACrB,oBAAMH;CAAN,AACE,IAAAI,+HAAA,AAAAC,wBAAAD,WAAA,EAAA,gBAAA,AAAAC,wBAAAD,WAAA,EAAA,oGAAA,pMAAOE,qDAAIf,jKAAK,mDAAA,nDAACgB,iDAAmBP,mDAAMC,kHACpCO,UAAQ,AAACC,SAAYH,SACrBI,SAAO,AAACpB,gDAAaC,KACzB,OAACK,0BAAMe,cAAI,8CAAA,9CAACC,2BAAOC,sGACC,kBAAM,iBAAAC,gCAAA,AAAA,oBAAAA,hCAAKX;CAAM,cAAA,NAAGG;;CAAdQ;;MAAN,IAAA,aAAA,IAAA,fACM,OAAA,NAAGR,qBACTJ,KACAM,QACAE;;CATxB;;;yBADCV;IADHP;EAAAA;sCAAAA,FACGO;;;IAAAA;IADHP;4BAAAA,FACGO",
+ ";AAAA;;;;AAGA,0CAAA,2CAAA,EAAA,GAAA,EAAA,IAAA,EAAA,IAAA,EAAA,KAAA,GAAA,hHAAeA;AAOf;;;wCAAA,4BAAA,pEAAOC,+DAEJC,KACD,IAAAC,0EAAA,AAAA,oBAAAA,3EAAI,AAACH,kDAAeE;CAApBC;;CAAyB,sBAAA,sBAAYD;;;AAEvC;;;;;;;;oCAAA,pCAAMQ;qCAANN,UAAA,AAAA,IAAAC,aAAAD,aAAAC,iBAAA,EAAA,AAAAC,+BAAAD,aAAA,AAAAE,0BAAAC,mBAAAH,YAAAA,2BAAA,AAAAI,wBAAAJ,eAAA,8EAAA,AAAAI,wBAAAJ,eAAA,mEAAA,AAAAI,wBAAAJ,eAAA,qDAAA,mBAAA,AAAAI,wBAAAJ,eAAA,kDAAA,pmBAMGM,sgBAAYC,jHAAGC,jHAAKC,lHAAMC,kbAC3B,oBAAIJ;CACF,IAAAK,+HAAA,AAAAC,wBAAAD,WAAA,EAAA,gBAAA,AAAAC,wBAAAD,WAAA,EAAA,oGAAA,pMAAOE,qDAAIhB,jKAAK,mDAAA,nDAACiB,iDAAmBR,mDAAMC,kHACpCQ,UAAQ,AAACC,SAAYH,SACrBI,SAAO,AAACrB,gDAAaC,KACzB,OAACK,0BAAMgB,cAAI,8CAAA,9CAACC,2BAAOC,sGACC,kBAAM,iBAAAC,gCAAA,AAAA,oBAAAA,hCAAKZ;CAAM,cAAA,NAAGI;;CAAdQ;;MAAN,IAAA,aAAA,IAAA,fACM,OAAA,NAAGR,qBACTL,KACAO,QACAE;;CACtBP;;;yBAXDJ;IANHP;EAAAA;sCAAAA,FAMGO;;;IAAAA;IANHP;4BAAAA,FAMGO;;;;;;AAaH,AAAKgB,kCAAOjB",
  "names":
  ["clustermap.formats.money/money-suffixes",
   "clustermap.formats.money/money-suffix", "exp", "or__3406__auto__",
-  "p__10867", "map__10870", "cljs.core/seq?", "cljs.core/apply",
+  "p__10778", "map__10781", "cljs.core/seq?", "cljs.core/apply",
   "cljs.core/hash-map", "cljs.core/get",
   "clustermap.formats.money/readable", "n", "sf", "curr", "plus?",
-  "vec__10871", "cljs.core/nth", "sig",
+  "default", "vec__10782", "cljs.core/nth", "sig",
   "clustermap.formats.number/eng-notation", "abs-sig", "js/Math.abs",
   "suffix", "cljs.core/str", "cljs.core/filter", "cljs.core/identity",
-  "and__3394__auto__"]}
+  "and__3394__auto__", "clustermap.formats.money/fmoney"]}

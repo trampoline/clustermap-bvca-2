@@ -52,7 +52,7 @@
 
 ;; =============================================================================
 ;; A Truly Pure Component
-;; 
+;;
 ;; This React class takes an immutable value as its props and an instance that
 ;; must at a minimum implement IRender as its children.
 ;;
@@ -65,7 +65,7 @@
       c)))
 
 (defn get-props
-  "Given an owning Pure node return the Om props. Analogous to React 
+  "Given an owning Pure node return the Om props. Analogous to React
    component props."
   [x]
   (aget (.-props x) "__om_cursor"))
@@ -315,8 +315,6 @@
 ;; =============================================================================
 ;; API
 
-(def ^:private refresh-queued false)
-
 (defn root
   "Takes an immutable value or value wrapped in an atom, an initial
    function f, and a DOM target. Installs an Om/React render loop. f
@@ -336,18 +334,19 @@
   (let [state (if (instance? Atom value)
                 value
                 (atom value))
+        refresh-queued (atom false)
         rootf (fn []
-                (set! refresh-queued false)
+                (reset! refresh-queued false)
                 (let [value  @state
                       cursor (to-cursor value state)]
                   (dom/render
                     (pure #js {:__om_cursor cursor}
                       (fn [this] (allow-reads (f cursor this))))
                     target)))]
-    (add-watch state ::root
+    (add-watch state (gensym)
       (fn [_ _ _ _]
-        (when-not refresh-queued
-          (set! refresh-queued true)
+        (when-not @refresh-queued
+          (reset! refresh-queued true)
           (if (exists? js/requestAnimationFrame)
             (js/requestAnimationFrame rootf)
             (js/setTimeout rootf 16)))))

@@ -7,7 +7,8 @@
    [om.dom :as dom :include-macros true]
    [clustermap.api :as api]
    [clustermap.map :as map]
-   [clustermap.map-report :as map-report]))
+   [clustermap.map-report :as map-report]
+   [clustermap.search :as search]))
 
 (def state (atom {:selection nil
                   :all-portfolio-company-sites nil
@@ -43,10 +44,14 @@
 (defn do-init
   []
   (set-state :map (map/create-map))
+
   ;;  (load-all-portfolio-company-sites)
   (load-all-portfolio-companies-summary)
   (load-all-investor-companies-summary)
-  (map-report/mount state))
+
+  (search/mount state "search-component")
+  (map-report/mount state "map-report-content")
+  )
 
 (defn init
   []

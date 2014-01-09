@@ -49,7 +49,7 @@
   (load-all-portfolio-companies-summary)
   (load-all-investor-companies-summary)
 
-  (search/mount state "search-component")
+;;  (search/mount state "search-component")
   (map-report/mount state "map-report-content")
   )
 

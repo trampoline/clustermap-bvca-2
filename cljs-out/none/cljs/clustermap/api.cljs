@@ -13,6 +13,11 @@
                 (close! ch)))
     ch))
 
+(defn search
+  [q]
+  (go
+   (<! (GET (str "/api/bvca/search/" q)))))
+
 (defn all-portfolio-company-sites
   []
   (go

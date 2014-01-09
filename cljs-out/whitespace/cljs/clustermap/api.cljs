@@ -13,37 +13,40 @@
                 (close! ch)))
     ch))
 
+(defn log-api
+  [f & args]
+  (let [ch (apply f args)]
+    (go
+     (.log js/console (<! ch)))))
+
+(defn search
+  [q]
+  (GET (str "/api/bvca/search?q=" q)))
+
 (defn all-portfolio-company-sites
   []
-  (go
-   (<! (GET "/api/bvca/all-portfolio-company-sites"))))
+  (GET "/api/bvca/all-portfolio-company-sites"))
 
 (defn all-constituencies
   []
-  (go
-   (<! (GET "/api/bvca/all-constituencies"))))
+  (GET "/api/bvca/all-constituencies"))
 
 (defn constituency-detail
   [id]
-  (go
-   (<! (GET (str "/api/bvca/constituency-detail/" id)))))
+  (GET (str "/api/bvca/constituency-detail/" id)))
 
 (defn all-portfolio-companies-summary
   []
-  (go
-   (<! (GET "/api/bvca/all-portfolio-companies-summary"))))
+  (GET "/api/bvca/all-portfolio-companies-summary"))
 
 (defn portfolio-company-detail
   [id]
-  (go
-   (<! (GET (str "/api/bvca/portfolio-company-detail/" id)))))
+  (GET (str "/api/bvca/portfolio-company-detail/" id)))
 
 (defn all-investor-companies-summary
   []
-  (go
-   (<! (GET "/api/bvca/all-investor-companies-summary"))))
+  (GET "/api/bvca/all-investor-companies-summary"))
 
 (defn investor-company-detail
   [id]
-  (go
-   (<! (GET (str "/api/bvca/investor-company-detail/" id)))))
+  (GET (str "/api/bvca/investor-company-detail/" id)))

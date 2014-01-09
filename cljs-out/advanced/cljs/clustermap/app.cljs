@@ -2,7 +2,7 @@
   (:require-macros
    [cljs.core.async.macros :refer [go]])
   (:require
-   [cljs.core.async :refer [<!]]
+   [cljs.core.async :refer [chan <!]]
    [om.core :as om :include-macros true]
    [om.dom :as dom :include-macros true]
    [clustermap.api :as api]
@@ -14,7 +14,7 @@
                   :all-portfolio-company-sites nil
                   :all-portfolio-companies-summary nil
                   :all-investor-companies-summary nil
-                  :message "boo"
+                  :search-results nil
                   }))
 (defn set-state
   [key value]
@@ -40,6 +40,22 @@
        (map/display-sites (:map @state) (:all-portfolio-company-sites @state)))))
 
 
+(defn search
+  [q]
+  (if (> (count q) 0)
+    (go
+     (let [sr (<! (api/search q))]
+       (set-state :search-results (js->clj sr))))
+    (set-state :search-results nil)))
+
+(defn handle-event
+  [type val]
+
+  (.log js/console type)
+  (.log js/console val)
+
+  (cond
+   (= type :search) (search val)))
 
 (defn do-init
   []
@@ -49,9 +65,14 @@
   (load-all-portfolio-companies-summary)
   (load-all-investor-companies-summary)
 
-  (search/mount state "search-component")
-  (map-report/mount state "map-report-content")
-  )
+  (let [comm (chan)]
+    (search/mount state "search-component" comm)
+    (map-report/mount state "map-report-content")
+
+    (go
+     (while true
+       (let [[type val] (<! comm)]
+         (handle-event type val))))))
 
 (defn init
   []

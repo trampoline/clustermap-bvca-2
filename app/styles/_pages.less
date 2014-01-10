@@ -236,7 +236,7 @@ body {
       display: block;
       width: 40%;
       min-width: 350px;
-      z-index: 100;
+      z-index: 10000;
     }
     #main-header {
       top: 0;
@@ -535,7 +535,7 @@ body {
     height: 40px;
     line-height: 40px;
     width: 100%;
-    padding: 0 20px;
+    padding: 0 36px 0 20px;
   }
   button {
     display: inline-block;
@@ -548,16 +548,15 @@ body {
     border: 1px solid transparent;
     white-space: nowrap;
     position: absolute;
-    right: 0;
-    top: 0;
+    right: 2px;
+    top: 2px;
     background: #fff;
     color: @gray-light;
-    .button-size(0; 10px; 20px; 34px; 0);
+    .button-size(6px; 10px; 20px; 20px; 0);
     .user-select(none);
 
     &:focus {
       .tab-focus();
-      top: 1px;
     }
 
     &:hover,
@@ -569,7 +568,7 @@ body {
     &:active {
       outline: 0;
       background-image: none;
-      top: 1px;
+      top: 3px;
     }
   }
 }

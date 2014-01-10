@@ -1748,7 +1748,7 @@ body.view-map #main-footer {
   display: block;
   width: 40%;
   min-width: 350px;
-  z-index: 100;
+  z-index: 10000;
 }
 body.view-map #main-header {
   top: 0;
@@ -2064,7 +2064,7 @@ body.view-lists #page-lists {
   height: 40px;
   line-height: 40px;
   width: 100%;
-  padding: 0 20px;
+  padding: 0 36px 0 20px;
 }
 #search button {
   display: inline-block;
@@ -2079,13 +2079,13 @@ body.view-lists #page-lists {
   border: 1px solid transparent;
   white-space: nowrap;
   position: absolute;
-  right: 0;
-  top: 0;
+  right: 2px;
+  top: 2px;
   background: #fff;
   color: #999999;
-  padding: 0 10px;
+  padding: 6px 10px;
   font-size: 20px;
-  line-height: 34px;
+  line-height: 20px;
   border-radius: 0;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -2097,7 +2097,6 @@ body.view-lists #page-lists {
   outline: thin dotted #333;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
-  top: 1px;
 }
 #search button:hover,
 #search button:focus {
@@ -2107,7 +2106,7 @@ body.view-lists #page-lists {
 #search button:active {
   outline: 0;
   background-image: none;
-  top: 1px;
+  top: 3px;
 }
 #page-title {
   padding: 4px 20px 0 0;

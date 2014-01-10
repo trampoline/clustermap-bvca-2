@@ -2,16 +2,17 @@
   (:require-macros
    [cljs.core.async.macros :refer [go]])
   (:require
-   [cljs.core.async :refer [put! chan <! close!]]
+   [clojure.string :as str]
+   [cljs.core.async :refer [put! chan <! close! to-chan]]
    [goog.net.XhrIo :as xhr]))
 
 (defn GET [url]
-  (let [ch (chan 1)]
+  (let [comm (chan 1)]
     (xhr/send url
               (fn [event]
-                (put! ch (-> event .-target .getResponseText JSON/parse (aget "data")))
-                (close! ch)))
-    ch))
+                (put! comm (-> event .-target .getResponseText JSON/parse (aget "data")))
+                (close! comm)))
+    comm))
 
 (defn log-api
   [f & args]
@@ -21,7 +22,9 @@
 
 (defn search
   [q]
-  (GET (str "/api/bvca/search?q=" q)))
+  (if (> (-> q str/trim count) 0)
+    (GET (str "/api/bvca/search?q=" q))
+    (to-chan [#js {}])))
 
 (defn all-portfolio-company-sites
   []

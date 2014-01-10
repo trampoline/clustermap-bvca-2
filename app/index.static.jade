@@ -286,7 +286,12 @@ html(lang='en')
                 p
                   a(href='#') Report issue
 
+    //begin-static-base-js
     script(type="text/javascript", src="cljs/goog/base.js")
+    //end-static-base-js
+    //base-js
+      {{{base-js}}}
+
     script(type="text/javascript", src="clustermap.js")
     script(type="text/javascript") goog.require("clustermap.core");
 

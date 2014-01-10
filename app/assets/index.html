@@ -19,9 +19,9 @@
     <script type="text/javascript" src="/js/html5.js"></script>
     <![endif]-->
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="/js/vendor.js"></script>
     <script type="text/javascript" src="http://api.tiles.mapbox.com/mapbox.js/v1.5.2/mapbox.js"></script>
     <script type="text/javascript" src="http://fb.me/react-0.8.0.js"></script>
-    <script type="text/javascript" src="/js/vendor.js"></script>
     <!--begin-static-app-config-->
     <script type="text/javascript">window.config={}</script>
     <!--end-static-app-config-->
@@ -53,7 +53,7 @@
                   <input type="text" placeholder="Enter your search">
                   <button type="reset">&times;</button>
                 </div>
-                <div id="results">
+                <div id="search-results">
                   <ul>
                     <li><a href="#">Hackney<small>Constituency</small></a></li>
                     <li><a href="#">3i<small>Investor</small></a></li>
@@ -112,14 +112,14 @@
                         </thead>
                         <tbody>
                           <tr>
-                            <th><i data-toggle="tooltip" title="Total" class="icon-info"></i>Total</th>
+                            <th><i data-toggle="tooltip" data-container="body" title="Total" class="icon-info"></i>Total</th>
                             <td><span class="totals">44</span></td>
                             <td><span class="totals">10</span></td>
                             <td><span class="totals">1.8bn</span></td>
                             <td><span class="totals">7,511</span></td>
                           </tr>
                           <tr>
-                            <th><i data-toggle="tooltip" title="Average" class="icon-info"></i>Average</th>
+                            <th><i data-toggle="tooltip" data-container="body" title="Average" class="icon-info"></i>Average</th>
                             <td><span class="averages">37</span></td>
                             <td><span class="averages">12</span></td>
                             <td><span class="averages">80.0m</span></td>

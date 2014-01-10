@@ -21,7 +21,7 @@ goog.addDependency("../domina/support.js", ['domina.support'], ['cljs.core', 'go
 goog.addDependency("../domina.js", ['domina'], ['goog.dom.classes', 'cljs.core', 'goog.string', 'goog.dom', 'clojure.string', 'goog.dom.xml', 'goog.style', 'goog.dom.forms', 'domina.support', 'goog.events']);
 goog.addDependency("../domina/xpath.js", ['domina.xpath'], ['cljs.core', 'goog.dom', 'domina']);
 goog.addDependency("../clojure/browser/event.js", ['clojure.browser.event'], ['cljs.core', 'goog.events.EventType', 'goog.events.EventTarget', 'goog.events']);
-goog.addDependency("../clustermap/api.js", ['clustermap.api'], ['cljs.core', 'goog.net.XhrIo', 'cljs.core.async']);
+goog.addDependency("../clustermap/api.js", ['clustermap.api'], ['cljs.core', 'clojure.string', 'goog.net.XhrIo', 'cljs.core.async']);
 goog.addDependency("../domina/events.js", ['domina.events'], ['cljs.core', 'goog.object', 'domina', 'goog.events']);
 goog.addDependency("../clustermap/async.js", ['clustermap.async'], ['cljs.core', 'cljs.core.async']);
 goog.addDependency("../domina/css.js", ['domina.css'], ['cljs.core', 'goog.dom', 'domina', 'goog.dom.query']);

@@ -8,10 +8,9 @@
 (defn search-result-link
   [search-result owner opts]
   (om/component
-   (dom/li nil
-           (dom/a {:href= "#"}
-                  (search-result "name")
-                  (dom/small nil (str " (" (:type opts) ")"))))))
+   (dom/li #js {}
+           (dom/a #js {}
+                  (search-result "name")))))
 
 (defn search-box
   [comm {:keys [search-results] :as data} owner]
@@ -24,14 +23,19 @@
                                        :placeholder "Enter your search"
                                        :onChange (fn [e]  (put! comm [:search (.. e -target -value)]))})
                        (dom/button #js {:type "reset"} "\u00D7"))
-              (if (or (not-empty constituencies) (not-empty portfolio_companies) (not-empty investor_companies))
-                (dom/div #js {:id "results"}
-                         (dom/ul nil
-                                 (om/build-all search-result-link constituencies {:opts {:comm comm :type "Constituency"}}))
-                         (dom/ul nil
-                                 (om/build-all search-result-link portfolio_companies {:opts {:comm comm :type "Company"}}))
-                         (dom/ul nil
-                                 (om/build-all search-result-link investor_companies {:opts {:comm comm :type "Investor"}}))))))))
+              (when (or (not-empty constituencies) (not-empty portfolio_companies) (not-empty investor_companies))
+                (dom/div #js {:className "search-results"}
+                         (apply dom/ul #js {}
+                                (concat
+                                 (when (not-empty constituencies)
+                                   [(dom/li #js {:className "search-results-header"} "Constituencies")
+                                    (om/build-all search-result-link constituencies {:opts {:comm comm :type "Constituency"}})])
+                                 (when (not-empty portfolio_companies)
+                                   [(dom/li #js {:className "search-results-header"} "Companies")
+                                    (om/build-all search-result-link portfolio_companies {:opts {:comm comm :type "Company"}})])
+                                 (when (not-empty investor_companies)
+                                   [(dom/li #js {:className "search-results-header"} "Investors")
+                                    (om/build-all search-result-link investor_companies {:opts {:comm comm :type "Investor"}})])))))))))
 
 (defn mount
   [app-state elem-id comm]

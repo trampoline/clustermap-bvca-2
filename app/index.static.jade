@@ -21,10 +21,10 @@ html(lang='en')
       script(type='text/javascript', src='/js/html5.js')
 
     script(type='text/javascript', src='http://code.jquery.com/jquery-1.10.2.min.js')
+    script(type='text/javascript', src='/js/vendor.js')
     script(type='text/javascript', src='http://api.tiles.mapbox.com/mapbox.js/v1.5.2/mapbox.js')
     script(type='text/javascript', src='http://fb.me/react-0.8.0.js')
 
-    script(type='text/javascript', src='/js/vendor.js')
 
     //begin-static-app-config
     script(type='text/javascript').
@@ -53,7 +53,7 @@ html(lang='en')
                 div
                   input(type='text', placeholder='Enter your search')
                   button(type='reset') &times;
-                #results
+                #search-results
                   ul
                     li
                       a(href='#')
@@ -130,7 +130,7 @@ html(lang='en')
                         tbody
                           tr
                             th
-                              i.icon-info(data-toggle='tooltip', title='Total')
+                              i.icon-info(data-toggle='tooltip', data-container='body', title='Total')
                               | Total
                             td
                               span.totals 44
@@ -142,7 +142,7 @@ html(lang='en')
                               span.totals 7,511
                           tr
                             th
-                              i.icon-info(data-toggle='tooltip', title='Average')
+                              i.icon-info(data-toggle='tooltip', data-container='body', title='Average')
                               | Average
                             td
                               span.averages 37

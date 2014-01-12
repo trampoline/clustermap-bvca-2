@@ -61,7 +61,7 @@
   (load-all-portfolio-companies-summary)
   (load-all-investor-companies-summary)
 
-  (let [comm (chan)
+  (let [comm (chan (sliding-buffer 1))
         {:keys [searches] :as order-ops} {:searches (chan)}
         _ (process-search-results searches)]
 

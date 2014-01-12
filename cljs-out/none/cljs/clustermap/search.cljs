@@ -9,7 +9,8 @@
   [search-result owner opts]
   (om/component
    (dom/li #js {}
-           (dom/a #js {}
+           (dom/a #js {:href= "#"
+                       :onClick (fn [e] (.log js/console #js [e search-result]))}
                   (search-result "name")))))
 
 (defn search-box

@@ -52,7 +52,7 @@
 
 ;; =============================================================================
 ;; A Truly Pure Component
-;;
+;; 
 ;; This React class takes an immutable value as its props and an instance that
 ;; must at a minimum implement IRender as its children.
 ;;
@@ -65,7 +65,7 @@
       c)))
 
 (defn get-props
-  "Given an owning Pure node return the Om props. Analogous to React
+  "Given an owning Pure node return the Om props. Analogous to React 
    component props."
   [x]
   (aget (.-props x) "__om_cursor"))
@@ -315,6 +315,13 @@
 ;; =============================================================================
 ;; API
 
+(def ^:private refresh-queued false)
+(def ^:private refresh-set (atom #{}))
+
+(defn ^:private render-all []
+  (doseq [f @refresh-set] (f))
+  (set! refresh-queued false))
+
 (defn root
   "Takes an immutable value or value wrapped in an atom, an initial
    function f, and a DOM target. Installs an Om/React render loop. f
@@ -327,16 +334,15 @@
    Example:
 
    (root {:message :hello}
-     (fn [data]
+     (fn [data owner]
        ...)
      js/document.body)"
   [value f target]
   (let [state (if (instance? Atom value)
                 value
                 (atom value))
-        refresh-queued (atom false)
-        rootf (fn []
-                (reset! refresh-queued false)
+        rootf (fn rootf []
+                (swap! refresh-set disj rootf)
                 (let [value  @state
                       cursor (to-cursor value state)]
                   (dom/render
@@ -345,11 +351,13 @@
                     target)))]
     (add-watch state (gensym)
       (fn [_ _ _ _]
-        (when-not @refresh-queued
-          (reset! refresh-queued true)
+        (when-not (contains? @refresh-set rootf)
+          (swap! refresh-set conj rootf))
+        (when-not refresh-queued
+          (set! refresh-queued true)
           (if (exists? js/requestAnimationFrame)
-            (js/requestAnimationFrame rootf)
-            (js/setTimeout rootf 16)))))
+            (js/requestAnimationFrame render-all)
+            (js/setTimeout render-all 16)))))
     (rootf)))
 
 (defn ^:private valid? [m]
@@ -620,9 +628,10 @@
   ([f cursor a b c d & args]
     (fn [e] (allow-reads (apply f e cursor a b c d args)))))
 
-(defn rhizome
+(defn graft
   "Create a cursor instance by attaching to an existing cursor. This
-   supports building components which don't need to set app state."
+   supports building components which don't need to set app state but
+   need to be added to the render tree."
   [value cursor]
   (specify value
     ICursor

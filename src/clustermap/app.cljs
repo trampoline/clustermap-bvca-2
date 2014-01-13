@@ -41,13 +41,12 @@
        (map/display-sites (:map @state) (:all-portfolio-company-sites @state)))))
 
 (defn process-search-results
-  "process a search
-   - api-comm : the channel containing the API call results"
+  "process a search"
   [results]
   (set-state :search-results (js->clj results)))
 
 (def event-handlers
-  {:search (debounce/debounce-api (fn [q] (api/search q)) process-search-results)})
+  {:search (api/ordered-api (fn [q] (api/search q)) process-search-results)})
 
 (defn handle-event
   [type val]

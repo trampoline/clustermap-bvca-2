@@ -3,7 +3,7 @@
    [cljs.core.async.macros :refer [go]])
   (:require
    [clojure.string :as str]
-   [cljs.core.async :refer [put! chan <! close! to-chan]]
+   [cljs.core.async :refer [<! chan close! put! sliding-buffer to-chan]]
    [goog.net.XhrIo :as xhr]))
 
 (defn GET [url]
@@ -13,6 +13,27 @@
                 (put! comm (-> event .-target .getResponseText JSON/parse (aget "data")))
                 (close! comm)))
     comm))
+
+(defn- ordered-api-results
+  [db-comm handler]
+  (go
+   (while true
+     (let [rcomm (<! db-comm)
+           result (<! rcomm)]
+       (handler result)))))
+
+(defn ordered-api
+  "order responses from an async API according to the order of requests
+   - request-handler: fn to send an async API request, returning a channel of a single result value
+   - result-handler: single-param function of API result"
+  [request-handler result-handler]
+
+  (let [db-comm (chan (sliding-buffer 1))
+        _ (ordered-api-results db-comm result-handler)]
+    (fn [& req-args]
+      (let [rcomm (apply request-handler req-args)]
+        (put! db-comm rcomm)))))
+
 
 (defn log-api
   [f & args]

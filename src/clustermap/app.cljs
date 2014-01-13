@@ -54,7 +54,7 @@
   (condp == type
     :portfolio-company [(api/portfolio-company-detail (get val "company_no")) type]
     :investor-company [(api/investor-company-detail (get val "name")) type]
-    :constituency [(api/constituency-detail (get val "constituency_id")) type]
+    :constituency [(api/constituency-detail (get val "boundaryline_id")) type]
     nil))
 
 (def event-handlers

@@ -45,16 +45,17 @@
   (set-state :search-results (js->clj results)))
 
 (defn process-selection
-  [results]
-  (.log js/console results))
+  [results type]
+  (.log js/console (clj->js [results type])))
 
 (defn make-selection
   [[type val]]
+  (.log js/console (clj->js val))
   (condp == type
-    :portfolio-company (api/portfolio-company-detail (get val "company_no"))
-    nil)
-
-  )
+    :portfolio-company [(api/portfolio-company-detail (get val "company_no")) type]
+    :investor-company [(api/investor-company-detail (get val "name")) type]
+    :constituency [(api/constituency-detail (get val "constituency_id")) type]
+    nil))
 
 (def event-handlers
   {:search (api/ordered-api api/search process-search-results)

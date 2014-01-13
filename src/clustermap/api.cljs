@@ -19,22 +19,25 @@
   [ocomm handler]
   (go
    (while true
-     (let [rcomm (<! ocomm)
+     (let [[rcomm result-handler-args] (<! ocomm)
            result (<! rcomm)]
-       (handler result)))))
+       (apply handler result result-handler-args)))))
 
 (defn ordered-api
   "order responses from an async API according to the order of requests
-   - request-handler: fn to send an async API request, returning a channel of a single result value
-   - result-handler: single-param function of API result"
+   - request-handler: fn to send an async API request, returning a channel of a single result value,
+                      and optional additional args for the result-handler. return nil to
+                      abandon request
+   - result-handler: function of API result and optional additional args from request-handler result"
   [request-handler result-handler]
 
   (let [ocomm (chan (sliding-buffer 1))
         _ (ordered-api-results ocomm result-handler)]
     (fn [& req-args]
-      (let [rcomm (apply request-handler req-args)]
-        (put! ocomm rcomm)))))
-
+      (if-let [r (apply request-handler req-args)]
+        (let [rseq (if (sequential? r) r [r])
+              [rcomm & result-handler-args] rseq]
+          (put! ocomm [rcomm result-handler-args]))))))
 
 (defn log-api
   [f & args]

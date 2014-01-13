@@ -5,7 +5,7 @@ goog.require('sablono.util');
 goog.require('clojure.string');
 goog.require('sablono.util');
 goog.require('clojure.string');
-sablono.interpreter.IInterpreter = (function (){var obj24733 = {};return obj24733;
+sablono.interpreter.IInterpreter = (function (){var obj25048 = {};return obj25048;
 })();
 sablono.interpreter.interpret = (function interpret(this$){if((function (){var and__3394__auto__ = this$;if(and__3394__auto__)
 {return this$.sablono$interpreter$IInterpreter$interpret$arity$1;
@@ -27,7 +27,7 @@ sablono.interpreter.interpret = (function interpret(this$){if((function (){var a
 })().call(null,this$);
 }
 });
-sablono.interpreter.attributes = (function attributes(attrs){var attrs__$1 = cljs.core.clj__GT_js(attrs);var class$ = clojure.string.join.cljs$core$IFn$_invoke$arity$2(" ",cljs.core.flatten(cljs.core.seq(attrs__$1.className)));if(cljs.core.not(clojure.string.blank_QMARK_(class$)))
+sablono.interpreter.attributes = (function attributes(attrs){var attrs__$1 = cljs.core.clj__GT_js(sablono.util.html_to_dom_attrs(attrs));var class$ = clojure.string.join.cljs$core$IFn$_invoke$arity$2(" ",cljs.core.flatten(cljs.core.seq(attrs__$1.className)));if(cljs.core.not(clojure.string.blank_QMARK_(class$)))
 {attrs__$1.className = class$;
 } else
 {}
@@ -36,7 +36,7 @@ return attrs__$1;
 /**
 * Render an element vector as a HTML element.
 */
-sablono.interpreter.element = (function element(element__$1){var vec__24735 = sablono.util.normalize_element(element__$1);var tag = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__24735,0,null);var attrs = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__24735,1,null);var content = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__24735,2,null);var dom_fn = (React.DOM[cljs.core.name(tag)]);if(cljs.core.truth_(content))
+sablono.interpreter.element = (function element(element__$1){var vec__25050 = sablono.util.normalize_element(element__$1);var tag = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__25050,0,null);var attrs = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__25050,1,null);var content = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__25050,2,null);var dom_fn = (React.DOM[cljs.core.name(tag)]);if(cljs.core.truth_(content))
 {return (dom_fn.cljs$core$IFn$_invoke$arity$2 ? dom_fn.cljs$core$IFn$_invoke$arity$2(sablono.interpreter.attributes(attrs),sablono.interpreter.interpret(content)) : dom_fn.call(null,sablono.interpreter.attributes(attrs),sablono.interpreter.interpret(content)));
 } else
 {return (dom_fn.cljs$core$IFn$_invoke$arity$1 ? dom_fn.cljs$core$IFn$_invoke$arity$1(sablono.interpreter.attributes(attrs)) : dom_fn.call(null,sablono.interpreter.attributes(attrs)));

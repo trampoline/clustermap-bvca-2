@@ -14,7 +14,7 @@
                   :all-portfolio-company-sites nil
                   :all-portfolio-companies-summary nil
                   :all-investor-companies-summary nil
-                  :search-results nil
+                  :search-results {}
                   }))
 (defn set-state
   [key value]
@@ -40,18 +40,34 @@
        (map/display-sites (:map @state) (:all-portfolio-company-sites @state)))))
 
 (defn process-search-results
-  [comm]
-  (go
-   (while true
-     (let [srchan (<! comm)
-           sr (<! srchan)]
-       (set-state :search-results (js->clj sr))))))
+  "process a search"
+  [results]
+  (set-state :search-results (js->clj results)))
+
+(defn process-selection
+  [result type]
+  (.log js/console (clj->js [result type]))
+  (set-state :selection {:type type
+                         :value result}))
+
+(defn make-selection
+  [[type val]]
+  (.log js/console (clj->js val))
+  (condp == type
+    :portfolio-company [(api/portfolio-company-detail (get val "company_no")) type]
+    :investor-company [(api/investor-company-detail (get val "name")) type]
+    :constituency [(api/constituency-detail (get val "boundaryline_id")) type]
+    nil))
+
+(def event-handlers
+  {:search (api/ordered-api api/search process-search-results)
+   :select (api/ordered-api make-selection process-selection)})
 
 (defn handle-event
-  [{:keys [searches]} type val]
-
-  (cond
-     (= type :search) (put! searches (api/search val))))
+  [type val]
+  (let [handler (get event-handlers type)]
+    (if-not handler (throw (js/Error. (str "no handler for event-type: " type))))
+    (handler val)))
 
 (defn do-init
   []
@@ -61,9 +77,7 @@
   (load-all-portfolio-companies-summary)
   (load-all-investor-companies-summary)
 
-  (let [comm (chan (sliding-buffer 1))
-        {:keys [searches] :as order-ops} {:searches (chan)}
-        _ (process-search-results searches)]
+  (let [comm (chan)]
 
     (search/mount state "search-component" comm)
     (map-report/mount state "map-report-content")
@@ -71,8 +85,7 @@
     (go
      (while true
        (let [[type val] (<! comm)]
-
-         (handle-event order-ops type val))))))
+         (handle-event type val))))))
 
 (defn init
   []

@@ -5,19 +5,6 @@
             [clustermap.formats.number :as nf :refer [fnum]]
             [clustermap.formats.money :as mf :refer [fmoney]]))
 
-(defn empty-report
-  []
-  (om/component
-   (html [:div
-          [:header.secondary
-           [:h2 "-"]
-           [:h3 "-"]]
-          [:ul
-           [:li "-" [:small "Companies"]]
-           [:li "-" [:small "Investors"]]
-           [:li "-" [:small "Turnover"]]
-           [:li "-" [:small "Employees"]]]])))
-
 (defn all-portfolio-companies-summary-report
   [data]
   (let [pc-summ (:all-portfolio-companies-summary data)
@@ -38,7 +25,13 @@
 (defn selection-report
   [data]
   (om/component
-   (html [:div "boo"])))
+   (html [:div
+          [:header.secondary
+           [:h2 (aget data "name")]]
+          [:ul
+           [:li (fnum (some-> data (aget "sites") count)) [:small "Investors"]]
+           [:li (fmoney (some-> data (aget "latest_turnover")) :sf 2 :default "-") [:small "Turnover"]]
+           [:li (fnum (some-> data (aget "latest_employee_count")) :default "-") [:small "Employees"]]]])))
 
 (defn widget [data]
   (let [type (get-in data [:selection :type])

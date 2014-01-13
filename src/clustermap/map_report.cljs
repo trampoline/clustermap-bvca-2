@@ -41,9 +41,13 @@
    (html [:div "boo"])))
 
 (defn widget [data]
-  (cond
-   (-> data :selection nil?) (all-portfolio-companies-summary-report data)
-   (= :portfolio-company (get-in data [:selection :type])) (selection-report (:selection data))))
+  (let [type (get-in data [:selection :type])
+        value (get-in data [:selection :value])]
+    (condp == type
+        :portfolio-company (selection-report value)
+        :investor-company (selection-report value)
+        :constituency (selection-report value)
+        (all-portfolio-companies-summary-report data))))
 
 (defn mount
   [app-state elem-id]

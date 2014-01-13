@@ -45,8 +45,10 @@
   (set-state :search-results (js->clj results)))
 
 (defn process-selection
-  [results type]
-  (.log js/console (clj->js [results type])))
+  [result type]
+  (.log js/console (clj->js [result type]))
+  (set-state :selection {:type type
+                         :value result}))
 
 (defn make-selection
   [[type val]]

@@ -8,13 +8,15 @@ exports.config =
     javascripts:
       joinTo:
         'js/app.js': /^app/
-        'js/vendor.js': /^vendor\/scripts/
         'js/html5.js': /^vendor\/html5_scripts/
+        'js/vendor.js': /^vendor\/scripts/
         'test/scenarios.js': /^test(\/|\\)e2e/
       order:
         before: [
+          'vendor/html5_scripts/es5-shim.js',
+          'vendor/html5_scripts/es5-sham.js',
+          'vendor/html5_scripts/html5shiv.js',
           'vendor/scripts/console-polyfill.js',
-          'vendor/scripts/es5-shim.js',
           'vendor/scripts/android-xpath.js',
           'vendor/scripts/javascript-xpath.js',
           'vendor/scripts/bootstrap.js'

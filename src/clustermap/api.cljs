@@ -7,6 +7,7 @@
    [goog.net.XhrIo :as xhr]))
 
 (defn GET [url]
+  "send a GET request, returning a channel with a single result value"
   (let [comm (chan 1)]
     (xhr/send url
               (fn [event]
@@ -15,10 +16,10 @@
     comm))
 
 (defn- ordered-api-results
-  [db-comm handler]
+  [ocomm handler]
   (go
    (while true
-     (let [rcomm (<! db-comm)
+     (let [rcomm (<! ocomm)
            result (<! rcomm)]
        (handler result)))))
 
@@ -28,11 +29,11 @@
    - result-handler: single-param function of API result"
   [request-handler result-handler]
 
-  (let [db-comm (chan (sliding-buffer 1))
-        _ (ordered-api-results db-comm result-handler)]
+  (let [ocomm (chan (sliding-buffer 1))
+        _ (ordered-api-results ocomm result-handler)]
     (fn [& req-args]
       (let [rcomm (apply request-handler req-args)]
-        (put! db-comm rcomm)))))
+        (put! ocomm rcomm)))))
 
 
 (defn log-api

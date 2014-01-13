@@ -5,7 +5,6 @@
    [cljs.core.async :refer [chan <! put! sliding-buffer]]
    [om.core :as om :include-macros true]
    [om.dom :as dom :include-macros true]
-   [clustermap.debounce :as debounce]
    [clustermap.api :as api]
    [clustermap.map :as map]
    [clustermap.map-report :as map-report]
@@ -46,7 +45,7 @@
   (set-state :search-results (js->clj results)))
 
 (def event-handlers
-  {:search (api/ordered-api (fn [q] (api/search q)) process-search-results)})
+  {:search (api/ordered-api api/search process-search-results)})
 
 (defn handle-event
   [type val]

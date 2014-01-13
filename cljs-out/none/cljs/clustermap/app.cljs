@@ -14,7 +14,7 @@
                   :all-portfolio-company-sites nil
                   :all-portfolio-companies-summary nil
                   :all-investor-companies-summary nil
-                  :search-results nil
+                  :search-results {}
                   }))
 (defn set-state
   [key value]
@@ -44,8 +44,21 @@
   [results]
   (set-state :search-results (js->clj results)))
 
+(defn process-selection
+  [results]
+  (.log js/console results))
+
+(defn make-selection
+  [[type val]]
+  (condp == type
+    :portfolio-company (api/portfolio-company-detail (get val "company_no"))
+    nil)
+
+  )
+
 (def event-handlers
-  {:search (api/ordered-api api/search process-search-results)})
+  {:search (api/ordered-api api/search process-search-results)
+   :select (api/ordered-api make-selection process-selection)})
 
 (defn handle-event
   [type val]

@@ -1,6 +1,7 @@
 (ns sablono.util
          (:import goog.Uri)
-  (:require [clojure.string :refer [join split]]))
+  (:require [clojure.set :refer [rename-keys]]
+            [clojure.string :refer [capitalize join split]]))
 
 (def ^:dynamic *base-url* nil)
 
@@ -18,6 +19,24 @@
   [& xs]
   (apply str (map to-str xs)))
 
+(defn camelcase-key
+  "Returns camelcased version of the key, e.g. :http-equiv becomes :httpEquiv."
+  [k]
+  (let [[first-word & words] (split (name k) #"-")]
+    (if (empty? words)
+      k
+      (-> (map capitalize words)
+          (conj first-word)
+          join
+          keyword))))
+
+(defn html-to-dom-attrs
+  "Converts all HTML attributes to their DOM equivalents."
+  [attrs]
+  (let [dom-attrs (merge (zipmap (keys attrs) (map camelcase-key (keys attrs)))
+                         {:class :className :for :htmlFor})]
+    (rename-keys attrs dom-attrs)))
+
 (defn compact-map
   "Removes all map entries where value is nil."
   [m]
@@ -28,17 +47,17 @@
    m (keys m)))
 
 (defn merge-with-class
-  "Like clojure.core/merge but concat :className entries."
+  "Like clojure.core/merge but concat :class entries."
   [& maps]
   (let [classes (->> (mapcat #(cond
                                (list? %1) [%1]
                                (vector? %1) %1
                                :else [%1])
-                             (map :className maps))
+                             (map :class maps))
                      (remove nil?) vec)
         maps (apply merge maps)]
     (if (empty? classes)
-      maps (assoc maps :className classes))))
+      maps (assoc maps :class classes))))
 
 (defn normalize-element
   "Ensure an element vector is of the form [tag-name attrs content]."
@@ -46,7 +65,7 @@
   (when (not (or (keyword? tag) (symbol? tag) (string? tag)))
     (throw (ex-info (str tag " is not a valid element name.") {:tag tag :content content})))
   (let [[_ tag id class] (re-matches re-tag (name tag))
-        tag-attrs {:id id :className (if class (split class #"\."))}
+        tag-attrs {:id id :class (if class (split class #"\."))}
         map-attrs (first content)]
     (if (map? map-attrs)
       [tag (compact-map (merge-with-class tag-attrs map-attrs)) (next content)]

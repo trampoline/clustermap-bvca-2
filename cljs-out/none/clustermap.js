@@ -15,7 +15,8 @@ goog.addDependency("../jayq/core.js", ['jayq.core'], ['cljs.core', 'clojure.stri
 goog.addDependency("../clustermap/search.js", ['clustermap.search'], ['cljs.core', 'om.core', 'om.dom', 'cljs.core.async', 'jayq.core']);
 goog.addDependency("../clustermap/formats/number.js", ['clustermap.formats.number'], ['cljs.core', 'goog.string', 'goog.string.format', 'clojure.string']);
 goog.addDependency("../clustermap/formats/money.js", ['clustermap.formats.money'], ['cljs.core', 'clustermap.formats.number']);
-goog.addDependency("../sablono/util.js", ['sablono.util'], ['cljs.core', 'clojure.string', 'goog.Uri']);
+goog.addDependency("../clojure/set.js", ['clojure.set'], ['cljs.core']);
+goog.addDependency("../sablono/util.js", ['sablono.util'], ['cljs.core', 'clojure.string', 'clojure.set', 'goog.Uri']);
 goog.addDependency("../sablono/interpreter.js", ['sablono.interpreter'], ['cljs.core', 'clojure.string', 'sablono.util']);
 goog.addDependency("../domina/support.js", ['domina.support'], ['cljs.core', 'goog.dom', 'goog.events']);
 goog.addDependency("../domina.js", ['domina'], ['goog.dom.classes', 'cljs.core', 'goog.string', 'goog.dom', 'clojure.string', 'goog.dom.xml', 'goog.style', 'goog.dom.forms', 'domina.support', 'goog.events']);

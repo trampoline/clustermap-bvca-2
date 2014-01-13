@@ -1,13 +1,13 @@
 (ns sablono.interpreter
   (:require [clojure.string :refer [blank? join]]
-            [sablono.util :refer [normalize-element]]))
+            [sablono.util :refer [html-to-dom-attrs normalize-element]]))
 
 (defprotocol IInterpreter
   (interpret [this] "Interpret a Clojure data structure as a React fn call."))
 
       
 (defn attributes [attrs]
-  (let [attrs (clj->js attrs)
+  (let [attrs (clj->js (html-to-dom-attrs attrs))
         class (join " " (flatten (seq (.-className attrs))))]
     (if-not (blank? class)
       (set! (.-className attrs) class))

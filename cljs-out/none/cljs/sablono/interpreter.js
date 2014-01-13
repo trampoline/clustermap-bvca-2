@@ -5,7 +5,7 @@ goog.require('sablono.util');
 goog.require('clojure.string');
 goog.require('sablono.util');
 goog.require('clojure.string');
-sablono.interpreter.IInterpreter = (function (){var obj15741 = {};return obj15741;
+sablono.interpreter.IInterpreter = (function (){var obj15861 = {};return obj15861;
 })();
 sablono.interpreter.interpret = (function interpret(this$){if((function (){var and__3394__auto__ = this$;if(and__3394__auto__)
 {return this$.sablono$interpreter$IInterpreter$interpret$arity$1;
@@ -27,7 +27,7 @@ sablono.interpreter.interpret = (function interpret(this$){if((function (){var a
 })().call(null,this$);
 }
 });
-sablono.interpreter.attributes = (function attributes(attrs){var attrs__$1 = cljs.core.clj__GT_js.call(null,attrs);var class$ = clojure.string.join.call(null," ",cljs.core.flatten.call(null,cljs.core.seq.call(null,attrs__$1.className)));if(cljs.core.not.call(null,clojure.string.blank_QMARK_.call(null,class$)))
+sablono.interpreter.attributes = (function attributes(attrs){var attrs__$1 = cljs.core.clj__GT_js.call(null,sablono.util.html_to_dom_attrs.call(null,attrs));var class$ = clojure.string.join.call(null," ",cljs.core.flatten.call(null,cljs.core.seq.call(null,attrs__$1.className)));if(cljs.core.not.call(null,clojure.string.blank_QMARK_.call(null,class$)))
 {attrs__$1.className = class$;
 } else
 {}
@@ -36,7 +36,7 @@ return attrs__$1;
 /**
 * Render an element vector as a HTML element.
 */
-sablono.interpreter.element = (function element(element__$1){var vec__15743 = sablono.util.normalize_element.call(null,element__$1);var tag = cljs.core.nth.call(null,vec__15743,0,null);var attrs = cljs.core.nth.call(null,vec__15743,1,null);var content = cljs.core.nth.call(null,vec__15743,2,null);var dom_fn = (React.DOM[cljs.core.name.call(null,tag)]);if(cljs.core.truth_(content))
+sablono.interpreter.element = (function element(element__$1){var vec__15863 = sablono.util.normalize_element.call(null,element__$1);var tag = cljs.core.nth.call(null,vec__15863,0,null);var attrs = cljs.core.nth.call(null,vec__15863,1,null);var content = cljs.core.nth.call(null,vec__15863,2,null);var dom_fn = (React.DOM[cljs.core.name.call(null,tag)]);if(cljs.core.truth_(content))
 {return dom_fn.call(null,sablono.interpreter.attributes.call(null,attrs),sablono.interpreter.interpret.call(null,content));
 } else
 {return dom_fn.call(null,sablono.interpreter.attributes.call(null,attrs));

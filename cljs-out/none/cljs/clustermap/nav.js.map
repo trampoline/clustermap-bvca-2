@@ -14,6 +14,6 @@
   "domina/set-value!", "clustermap.nav/body-view-classes",
   "clustermap.nav/switch-view", "li", "ul", "active-li", "body",
   "domina/remove-class!", "domina/add-class!", "cljs.core/map",
-  "p__10862", "vec__10863", "cljs.core/nth", "li-class", "body-class",
+  "p__10939", "vec__10940", "cljs.core/nth", "li-class", "body-class",
   "domina/has-class?", "cljs.core/dorun", "clustermap.nav/map-report",
   "mr", "jayq.core/anim", "clustermap.nav/init"]}

@@ -51,30 +51,30 @@
     (GET (str "/api/bvca/search?q=" q))
     (to-chan [#js {}])))
 
-(defn all-portfolio-company-sites
+(defn portfolio-company-sites
   []
-  (GET "/api/bvca/all-portfolio-company-sites"))
+  (GET "/api/bvca/portfolio-company-sites"))
 
-(defn all-constituencies
+(defn constituencies
   []
-  (GET "/api/bvca/all-constituencies"))
+  (GET "/api/bvca/constituencies"))
 
-(defn constituency-detail
+(defn constituency
   [id]
-  (GET (str "/api/bvca/constituency-detail/" id)))
+  (GET (str "/api/bvca/constituencies/" id)))
 
-(defn all-portfolio-companies-summary
+(defn portfolio-companies-summary
   []
-  (GET "/api/bvca/all-portfolio-companies-summary"))
+  (GET "/api/bvca/portfolio-companies-summary"))
 
-(defn portfolio-company-detail
+(defn portfolio-company
   [id]
-  (GET (str "/api/bvca/portfolio-company-detail/" id)))
+  (GET (str "/api/bvca/portfolio-companies/" id)))
 
-(defn all-investor-companies-summary
+(defn investor-companies-summary
   []
-  (GET "/api/bvca/all-investor-companies-summary"))
+  (GET "/api/bvca/investor-companies-summary"))
 
-(defn investor-company-detail
+(defn investor-company
   [id]
-  (GET (str "/api/bvca/investor-company-detail/" id)))
+  (GET (str "/api/bvca/investor-company/" id)))

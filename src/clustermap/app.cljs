@@ -23,19 +23,19 @@
 (defn load-all-portfolio-companies-summary
   []
   (go
-   (let [pcs (<! (api/all-portfolio-companies-summary))]
+   (let [pcs (<! (api/portfolio-companies-summary))]
      (set-state :all-portfolio-companies-summary pcs))))
 
 (defn load-all-investor-companies-summary
   []
   (go
-   (let [pcs (<! (api/all-investor-companies-summary))]
+   (let [pcs (<! (api/investor-companies-summary))]
      (set-state :all-investor-companies-summary pcs))))
 
 (defn load-all-portfolio-company-sites
   []
   (go
-     (let [pcs (<! (api/all-portfolio-company-sites))]
+     (let [pcs (<! (api/portfolio-company-sites))]
        (set-state :all-portfolio-company-sites pcs)
        (map/display-sites (:map @state) (:all-portfolio-company-sites @state)))))
 
@@ -54,9 +54,9 @@
   [[type val]]
   ;; (.log js/console (clj->js val))
   (condp == type
-    :portfolio-company [(api/portfolio-company-detail (get val "company_no")) type]
-    :investor-company [(api/investor-company-detail (get val "name")) type]
-    :constituency [(api/constituency-detail (get val "boundaryline_id")) type]
+    :portfolio-company [(api/portfolio-company (get val "company_no")) type]
+    :investor-company [(api/investor-company (get val "name")) type]
+    :constituency [(api/constituency (get val "boundaryline_id")) type]
     nil))
 
 (def event-handlers

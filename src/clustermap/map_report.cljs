@@ -30,6 +30,7 @@
            [:h2 (aget data "name")]]
           [:ul
            [:li (fnum (some-> data (aget "sites") count)) [:small "Investors"]]
+           [:li (fnum (some-> data (aget "boundarylinecolls" "uk_constituencies") count)) [:small "Constituencies"]]
            [:li (fmoney (some-> data (aget "latest_turnover")) :sf 2 :default "-") [:small "Turnover"]]
            [:li (fnum (some-> data (aget "latest_employee_count")) :default "-") [:small "Employees"]]]])))
 
@@ -41,6 +42,7 @@
            [:h2 (aget data "name")]]
           [:ul
            [:li (fnum (some-> data (aget "portfolio_companies") count)) [:small "Companies"]]
+           [:li (fnum (some-> data (aget "boundarylinecolls" "uk_constituencies") count)) [:small "Constituencies"]]
            [:li (fmoney (some-> data (aget "latest_turnover")) :sf 2 :default "-") [:small "Total Company Turnover"]]
            [:li (fnum (some-> data (aget "latest_employee_count")) :default "-") [:small "Total Company Employees"]]]])))
 
@@ -49,7 +51,9 @@
   (om/component
    (html [:div
           [:header.secondary
-           [:h2 (aget data "name")]]
+           [:h2 (aget data "name")]
+           [:h3 (aget data "mp")
+            [:small "(" (aget data "political_party") ")"]]]
           [:ul
            [:li (fnum (some-> data (aget "investor_companies") count)) [:small "Investors"]]
            [:li (fnum (some-> data (aget "portfolio_companies") count)) [:small "Companies"]]

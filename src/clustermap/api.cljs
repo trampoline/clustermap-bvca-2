@@ -77,4 +77,4 @@
 
 (defn investor-company
   [id]
-  (GET (str "/api/bvca/investor-company/" id)))
+  (GET (str "/api/bvca/investor-companies/" id)))

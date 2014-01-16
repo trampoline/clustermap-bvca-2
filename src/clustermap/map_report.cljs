@@ -43,8 +43,8 @@
           [:ul
            [:li (fnum (some-> data (aget "portfolio_companies") count)) [:small "Companies"]]
            [:li (fnum (some-> data (aget "boundarylinecolls" "uk_constituencies") count)) [:small "Constituencies"]]
-           [:li (fmoney (some-> data (aget "latest_turnover")) :sf 2 :default "-") [:small "Total Company Turnover"]]
-           [:li (fnum (some-> data (aget "latest_employee_count")) :default "-") [:small "Total Company Employees"]]]])))
+           [:li (fmoney (some-> data (aget "total_turnover")) :sf 2 :default "-") [:small "Total Company Turnover"]]
+           [:li (fnum (some-> data (aget "total_employee_count")) :default "-") [:small "Total Company Employees"]]]])))
 
 (defn constituency-report
   [data]
@@ -57,8 +57,8 @@
           [:ul
            [:li (fnum (some-> data (aget "investor_companies") count)) [:small "Investors"]]
            [:li (fnum (some-> data (aget "portfolio_companies") count)) [:small "Companies"]]
-           [:li (fmoney (some-> data (aget "latest_turnover")) :sf 2 :default "-") [:small "Total Turnover"]]
-           [:li (fnum (some-> data (aget "latest_employee_count")) :default "-") [:small "Total Employees"]]]])))
+           [:li (fmoney (some-> data (aget "total_turnover")) :sf 2 :default "-") [:small "Total Turnover"]]
+           [:li (fnum (some-> data (aget "total_employee_count")) :default "-") [:small "Total Employees"]]]])))
 
 (defn widget [data]
   (let [type (get-in data [:selection :type])

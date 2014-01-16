@@ -7,36 +7,36 @@ goog.require('cljs.core.async.impl.dispatch');
 goog.require('cljs.core.async.impl.dispatch');
 goog.require('cljs.core.async.impl.protocols');
 goog.require('cljs.core.async.impl.protocols');
-cljs.core.async.impl.channels.box = (function box(val){if(typeof cljs.core.async.impl.channels.t14645 !== 'undefined')
+cljs.core.async.impl.channels.box = (function box(val){if(typeof cljs.core.async.impl.channels.t14897 !== 'undefined')
 {} else
 {
 /**
 * @constructor
 */
-cljs.core.async.impl.channels.t14645 = (function (val,box,meta14646){
+cljs.core.async.impl.channels.t14897 = (function (val,box,meta14898){
 this.val = val;
 this.box = box;
-this.meta14646 = meta14646;
+this.meta14898 = meta14898;
 this.cljs$lang$protocol_mask$partition1$ = 0;
 this.cljs$lang$protocol_mask$partition0$ = 425984;
 })
-cljs.core.async.impl.channels.t14645.cljs$lang$type = true;
-cljs.core.async.impl.channels.t14645.cljs$lang$ctorStr = "cljs.core.async.impl.channels/t14645";
-cljs.core.async.impl.channels.t14645.cljs$lang$ctorPrWriter = (function (this__3968__auto__,writer__3969__auto__,opt__3970__auto__){return cljs.core._write.call(null,writer__3969__auto__,"cljs.core.async.impl.channels/t14645");
+cljs.core.async.impl.channels.t14897.cljs$lang$type = true;
+cljs.core.async.impl.channels.t14897.cljs$lang$ctorStr = "cljs.core.async.impl.channels/t14897";
+cljs.core.async.impl.channels.t14897.cljs$lang$ctorPrWriter = (function (this__3968__auto__,writer__3969__auto__,opt__3970__auto__){return cljs.core._write.call(null,writer__3969__auto__,"cljs.core.async.impl.channels/t14897");
 });
-cljs.core.async.impl.channels.t14645.prototype.cljs$core$IDeref$_deref$arity$1 = (function (_){var self__ = this;
+cljs.core.async.impl.channels.t14897.prototype.cljs$core$IDeref$_deref$arity$1 = (function (_){var self__ = this;
 var ___$1 = this;return self__.val;
 });
-cljs.core.async.impl.channels.t14645.prototype.cljs$core$IMeta$_meta$arity$1 = (function (_14647){var self__ = this;
-var _14647__$1 = this;return self__.meta14646;
+cljs.core.async.impl.channels.t14897.prototype.cljs$core$IMeta$_meta$arity$1 = (function (_14899){var self__ = this;
+var _14899__$1 = this;return self__.meta14898;
 });
-cljs.core.async.impl.channels.t14645.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = (function (_14647,meta14646__$1){var self__ = this;
-var _14647__$1 = this;return (new cljs.core.async.impl.channels.t14645(self__.val,self__.box,meta14646__$1));
+cljs.core.async.impl.channels.t14897.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = (function (_14899,meta14898__$1){var self__ = this;
+var _14899__$1 = this;return (new cljs.core.async.impl.channels.t14897(self__.val,self__.box,meta14898__$1));
 });
-cljs.core.async.impl.channels.__GT_t14645 = (function __GT_t14645(val__$1,box__$1,meta14646){return (new cljs.core.async.impl.channels.t14645(val__$1,box__$1,meta14646));
+cljs.core.async.impl.channels.__GT_t14897 = (function __GT_t14897(val__$1,box__$1,meta14898){return (new cljs.core.async.impl.channels.t14897(val__$1,box__$1,meta14898));
 });
 }
-return (new cljs.core.async.impl.channels.t14645(val,box,null));
+return (new cljs.core.async.impl.channels.t14897(val,box,null));
 });
 
 /**
@@ -78,12 +78,12 @@ var this$__$1 = this;if(self__.closed)
 } else
 {self__.closed = true;
 while(true){
-var taker_14648 = self__.takes.pop();if((taker_14648 == null))
+var taker_14900 = self__.takes.pop();if((taker_14900 == null))
 {} else
-{if(cljs.core.async.impl.protocols.active_QMARK_.call(null,taker_14648))
-{var take_cb_14649 = cljs.core.async.impl.protocols.commit.call(null,taker_14648);cljs.core.async.impl.dispatch.run.call(null,((function (take_cb_14649,taker_14648){
-return (function (){return take_cb_14649.call(null,null);
-});})(take_cb_14649,taker_14648))
+{if(cljs.core.async.impl.protocols.active_QMARK_.call(null,taker_14900))
+{var take_cb_14901 = cljs.core.async.impl.protocols.commit.call(null,taker_14900);cljs.core.async.impl.dispatch.run.call(null,((function (take_cb_14901,taker_14900){
+return (function (){return take_cb_14901.call(null,null);
+});})(take_cb_14901,taker_14900))
 );
 } else
 {}

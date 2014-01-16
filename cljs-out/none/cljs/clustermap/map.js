@@ -18,7 +18,8 @@ goog.require('domina.xpath');
 goog.require('jayq.core');
 clustermap.map.locate_map = (function locate_map(m){return m.fitBounds(cljs.core.clj__GT_js.call(null,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [59.54,2.3], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [49.29,-11.29], null)], null)),cljs.core.clj__GT_js.call(null,new cljs.core.PersistentArrayMap(null, 2, ["paddingTopLeft",new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [0,0], null),"paddingBottomRight",new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [0,0], null)], null)));
 });
-clustermap.map.create_map = (function create_map(){var factory_fn = L.mapbox.map;var m = factory_fn.call(null,"map","mccraigmccraig.map-gqkcbi1g");clustermap.map.locate_map.call(null,m);
+clustermap.map.create_map = (function create_map(){var factory_fn = L.mapbox.map;var m = factory_fn.call(null,"map","mccraigmccraig.map-gqkcbi1g",{"zoomControl": false});var zoom = L.control.zoom.call(null,{"position": "bottomright"});m.addControl(zoom);
+clustermap.map.locate_map.call(null,m);
 return m;
 });
 /**
@@ -35,9 +36,9 @@ var all_bounds = null;if (arguments.length > 1) {
   all_bounds = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
 return pan_to_show__delegate.call(this,m,all_bounds);};
 pan_to_show.cljs$lang$maxFixedArity = 1;
-pan_to_show.cljs$lang$applyTo = (function (arglist__10876){
-var m = cljs.core.first(arglist__10876);
-var all_bounds = cljs.core.rest(arglist__10876);
+pan_to_show.cljs$lang$applyTo = (function (arglist__11002){
+var m = cljs.core.first(arglist__11002);
+var all_bounds = cljs.core.rest(arglist__11002);
 return pan_to_show__delegate(m,all_bounds);
 });
 pan_to_show.cljs$core$IFn$_invoke$arity$variadic = pan_to_show__delegate;

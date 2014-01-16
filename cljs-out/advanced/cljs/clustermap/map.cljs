@@ -18,7 +18,9 @@
 (defn create-map
   []
   (let [factory-fn (-> js/L .-mapbox .-map)
-        m (factory-fn "map" "mccraigmccraig.map-gqkcbi1g")]
+        m (factory-fn "map" "mccraigmccraig.map-gqkcbi1g" #js {:zoomControl false})
+        zoom ((-> js/L .-control .-zoom) #js {:position "bottomright"})]
+    (.addControl m zoom)
     (locate-map m)
     m))
 

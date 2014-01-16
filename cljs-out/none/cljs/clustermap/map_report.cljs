@@ -22,7 +22,7 @@
              [:li (fnum (some-> pc-summ (aget "latest_employee_count_stats" "total")) :default "-") [:small "Employees"]]
              ]]))))
 
-(defn selection-report
+(defn portfolio-company-report
   [data]
   (om/component
    (html [:div
@@ -30,16 +30,43 @@
            [:h2 (aget data "name")]]
           [:ul
            [:li (fnum (some-> data (aget "sites") count)) [:small "Investors"]]
+           [:li (fnum (some-> data (aget "boundarylinecolls" "uk_constituencies") count)) [:small "Constituencies"]]
            [:li (fmoney (some-> data (aget "latest_turnover")) :sf 2 :default "-") [:small "Turnover"]]
            [:li (fnum (some-> data (aget "latest_employee_count")) :default "-") [:small "Employees"]]]])))
+
+(defn investor-company-report
+  [data]
+  (om/component
+   (html [:div
+          [:header.secondary
+           [:h2 (aget data "name")]]
+          [:ul
+           [:li (fnum (some-> data (aget "portfolio_companies") count)) [:small "Companies"]]
+           [:li (fnum (some-> data (aget "boundarylinecolls" "uk_constituencies") count)) [:small "Constituencies"]]
+           [:li (fmoney (some-> data (aget "total_turnover")) :sf 2 :default "-") [:small "Total Company Turnover"]]
+           [:li (fnum (some-> data (aget "total_employee_count")) :default "-") [:small "Total Company Employees"]]]])))
+
+(defn constituency-report
+  [data]
+  (om/component
+   (html [:div
+          [:header.secondary
+           [:h2 (aget data "name")]
+           [:h3 (aget data "mp")
+            [:small "(" (aget data "political_party") ")"]]]
+          [:ul
+           [:li (fnum (some-> data (aget "investor_companies") count)) [:small "Investors"]]
+           [:li (fnum (some-> data (aget "portfolio_companies") count)) [:small "Companies"]]
+           [:li (fmoney (some-> data (aget "total_turnover")) :sf 2 :default "-") [:small "Total Turnover"]]
+           [:li (fnum (some-> data (aget "total_employee_count")) :default "-") [:small "Total Employees"]]]])))
 
 (defn widget [data]
   (let [type (get-in data [:selection :type])
         value (get-in data [:selection :value])]
     (condp == type
-        :portfolio-company (selection-report value)
-        :investor-company (selection-report value)
-        :constituency (selection-report value)
+        :portfolio-company (portfolio-company-report value)
+        :investor-company (investor-company-report value)
+        :constituency (constituency-report value)
         (all-portfolio-companies-summary-report data))))
 
 (defn mount

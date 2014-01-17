@@ -8,6 +8,8 @@
    [clustermap.api :as api]
    [clustermap.map :as map]
    [clustermap.map-report :as map-report]
+   [clustermap.full-report :as full-report]
+   [clustermap.page-title :as page-title]
    [clustermap.search :as search]))
 
 (def state (atom {:selection nil
@@ -80,7 +82,8 @@
   (let [comm (chan)]
 
     (search/mount state "search-component" comm)
-    (map-report/mount state "map-report-content")
+    (map-report/mount state "map-report-component")
+    (page-title/mount state "page-title-component")
 
     (go
      (while true

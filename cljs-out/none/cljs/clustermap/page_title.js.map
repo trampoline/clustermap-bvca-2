@@ -1,0 +1,19 @@
+{"version":3,
+ "file":
+ "/Users/mccraig/dev/clustermap.all/clustermap-bvca-2/cljs-out/none/cljs/clustermap/page_title.js",
+ "sources":["page_title.cljs"],
+ "lineCount":76,
+ "mappings":
+ ";AAAA;;;;;;;;;;;;;;;AAOA,mCAAA,2BAAA,9DAAMA,wDACHE,MACD,IAAMC,OAAK,iBAAAC,oBAAAA,eAAA,EAAA,CAAAA,YAAA,OAAA,8PAAAA,eAAA,EAAA,CAAAA,gBAAA,OAAA,KAAA,yBAAAA,eAAA,AAAAA,lYAAQF,mDAAK,2BAAAE,SAAA,mFAAA,+DAAA,tLAACC,uSAA2BC;SAC9CC,OAAK,iBAAAC,oBAAAA,eAAA,EAAA,CAAAA,YAAA,OAAA,gQAAAA,eAAA,EAAA,CAAAA,gBAAA,OAAA,6BAAA,AAAAA,pXAAQN,mDAAK,2BAAAM,SAAA,mFAAA,+DAAA,tLAACH,ySAA4B,CAAAG,aAAA;KADrD,AAEE,AAAA,GAAA,OAAAC;CAAA;CAAA,AAAA,AAAA;;;;;;;;;;;;;AAAA,AAAA,AAAAA,8CAAA;AAAA,AAAA,AAAAA,iDAAA;AAAA,AAAA,AAAAA,sDAAA,WAAAC,mBAAAC,qBAAAC,mBAAA,AAAA,OAAAC,2BAAAF,qBAAA;;AAAA,AAAA,AAAA,AAAA,AAAAF,0DAAA;AAAA,AAAA,AAAA,AAAAA,wEAAA,WAAAK;AAAA,AAAA,IAAAA,yBAAA,KAAA,AACC,OAAAI,cAAA,OAAA,cAAA,AAAAC,iBAAA,cAAA,eAAA,UAAA,eAAA,iBAAAC,aAEY,iBAAAO,+BAAA,AAAA,oBAAAA,hCAAIxB;CAAJwB;;CAAA;;KAFZ,AAAA,GAAA,AAAAN,+BAAAD;CAAA,OAAAE,aAAA,AAAAC,yCAAAH,YAAA;;CAAA,OAAAE,aAAA,KAAA,AAAAE,wCAAAJ;;KAAA,iBAAAK,aAGY,iBAAAE,+BAAA,AAAA,oBAAAA,hCAAIpB;CAAJoB;;CAAA;;KAHZ,AAAA,GAAA,AAAAN,+BAAAI;CAAA,OAAAC,aAAA,AAAAH,yCAAAE,YAAA;;CAAA,OAAAC,aAAA,KAAA,AAAAF,wCAAAC;;;;AADD,AAAA,AAAA,AAAAhB,uEAAA,WAAAM;AAAA,AAAA,IAAAA,aAAA,KAAA,AAAAC;;AAAA,AAAA,AAAA,AAAAP,gFAAA,WAAAM,OAAAC;mGAJEf,ZACHC,ZACKC,ZACAI,/DACJ,AAAA,IAAAQ,aAAA,KAAA,AAAA,YAAAN,mFAAAO;;qFAJEf,8FAAAA,vGACHC,8FAAAA,vGACKC,8FAAAA,vGACAI,8FAAAA,xJACJ,AAAAU,oCAAA,gEAAAD,WAAA,AAAA,YAAAP,uEAAAO;;AAAAP;wDAJER,LACHC,LACKC,LACAI,zCACJ,YAAAE,uDAAA;;AAMJ,8BAAA,mCAAA,jEAAMmB,8CACHC,UAAUC,SACX,OAACC,uBAAQF,UAAU7B,iCAAW,AAAiBgC,wBAAYF",
+ "names":
+ ["clustermap.page-title/page-title", "page-title", "data", "type",
+  "G__17191", "cljs.core/get-in", "cljs.core/name", "name", "G__17192",
+  "clustermap.page-title/t17193", "this__3968__auto__",
+  "writer__3969__auto__", "opt__3970__auto__", "cljs.core/-write",
+  "this__9046__auto__", "_17195", "meta17194",
+  "clustermap.page-title/->t17193", "js/React.DOM.div",
+  "js/React.DOM.button", "attrs17198", "cljs.core/map?",
+  "js/React.DOM.h2", "sablono.interpreter/attributes",
+  "sablono.interpreter/interpret", "attrs17199", "js/React.DOM.h3",
+  "or__3406__auto__", "clustermap.page-title/mount", "app-state",
+  "elem-id", "om.core/root", "js/document"]}

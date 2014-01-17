@@ -1897,6 +1897,12 @@ body.view-lists #page-map {
 body.view-lists #page-lists {
   display: block;
 }
+body.view-lists #search .search-results {
+  position: absolute;
+  z-index: 10;
+  width: auto;
+  min-width: 50%;
+}
 #wrap {
   position: relative;
   height: 100%;
@@ -2020,7 +2026,7 @@ body.view-lists #page-lists {
   position: absolute;
   right: 0px;
   width: 298px;
-  z-index: 100;
+  z-index: 10000;
 }
 #map-report > a {
   display: block;
@@ -2185,6 +2191,29 @@ body.view-lists #page-lists {
   position: relative;
   overflow: hidden;
 }
+#search .search-results {
+  background: #f1f0ee;
+  -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+  max-height: 200px;
+  overflow-y: auto;
+  width: 100%;
+}
+#search .search-results ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+#search .search-results li {
+  padding: 4px;
+}
+#search .search-results li.search-results-header {
+  font-weight: bold;
+  border-bottom: 1px solid #ccc;
+}
+#search .search-results a {
+  cursor: pointer;
+}
 #search input[type=text] {
   border: 0 none;
   height: 40px;
@@ -2327,6 +2356,9 @@ body.view-lists #page-lists {
     width: 100%;
     top: auto;
     position: static;
+  }
+  body.view-lists #search .search-results {
+    width: 100%;
   }
   #nav {
     display: table-row;

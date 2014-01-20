@@ -1,4 +1,4 @@
-(ns clustermap.search
+(ns clustermap.components.search
   (:require [om.core :as om :include-macros true]
             [om.dom :as dom :include-macros true]
             [jayq.core :as jayq :refer [$]]

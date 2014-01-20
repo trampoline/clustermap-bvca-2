@@ -26,7 +26,7 @@ clustermap.nav.body_view_classes = new cljs.core.PersistentArrayMap(null, 2, ["m
 clustermap.nav.switch_view = (function switch_view(){return domina.events.listen_BANG_.call(null,domina.css.sel.call(null,"#nav .map > a, #nav .lists > a"),new cljs.core.Keyword(null,"click","click",1108654330),(function (e){var target = domina.events.target.call(null,e);var li = domina.xpath.xpath.call(null,target,"..");var ul = domina.xpath.xpath.call(null,li,"..");var active_li = domina.css.sel.call(null,ul,"> .active");var body = domina.css.sel.call(null,"body");domina.events.prevent_default.call(null,e);
 domina.remove_class_BANG_.call(null,active_li,"active");
 domina.add_class_BANG_.call(null,li,"active");
-return cljs.core.dorun.call(null,cljs.core.map.call(null,(function (p__30021){var vec__30022 = p__30021;var li_class = cljs.core.nth.call(null,vec__30022,0,null);var body_class = cljs.core.nth.call(null,vec__30022,1,null);if(cljs.core.truth_(domina.has_class_QMARK_.call(null,li,li_class)))
+return cljs.core.dorun.call(null,cljs.core.map.call(null,(function (p__30385){var vec__30386 = p__30385;var li_class = cljs.core.nth.call(null,vec__30386,0,null);var body_class = cljs.core.nth.call(null,vec__30386,1,null);if(cljs.core.truth_(domina.has_class_QMARK_.call(null,li,li_class)))
 {return domina.add_class_BANG_.call(null,body,body_class);
 } else
 {return domina.remove_class_BANG_.call(null,body,body_class);

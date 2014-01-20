@@ -7,8 +7,10 @@
    [om.dom :as dom :include-macros true]
    [clustermap.api :as api]
    [clustermap.map :as map]
-   [clustermap.map-report :as map-report]
-   [clustermap.search :as search]))
+   [clustermap.components.map-report :as map-report]
+   [clustermap.components.full-report :as full-report]
+   [clustermap.components.page-title :as page-title]
+   [clustermap.components.search :as search]))
 
 (def state (atom {:selection nil
                   :all-portfolio-company-sites nil
@@ -80,7 +82,9 @@
   (let [comm (chan)]
 
     (search/mount state "search-component" comm)
-    (map-report/mount state "map-report-content")
+    (map-report/mount state "map-report-component")
+    (page-title/mount state "page-title-component")
+    (full-report/mount state "full-report-component")
 
     (go
      (while true

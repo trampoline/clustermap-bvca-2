@@ -1,4 +1,4 @@
-(ns clustermap.map-report
+(ns clustermap.components.map-report
   (:require [om.core :as om :include-macros true]
             [om.dom :as dom :include-macros true]
             [sablono.core :as html :refer [html] :include-macros true]

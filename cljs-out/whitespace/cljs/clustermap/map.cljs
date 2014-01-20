@@ -17,9 +17,10 @@
 
 (defn create-map
   []
-  (let [factory-fn (-> js/L .-mapbox .-map)
-        m (factory-fn "map" "mccraigmccraig.map-gqkcbi1g" #js {:zoomControl false})
+  (let [m ((-> js/L .-map) "map" #js {:zoomControl false})
+        tiles ((-> js/L .-mapbox .-tileLayer) "mccraigmccraig.map-gqkcbi1g" #js {:detectRetina true})
         zoom ((-> js/L .-control .-zoom) #js {:position "bottomright"})]
+    (.addLayer m tiles)
     (.addControl m zoom)
     (locate-map m)
     m))

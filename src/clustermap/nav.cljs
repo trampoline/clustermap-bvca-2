@@ -6,6 +6,12 @@
             [jayq.core :as jayq :refer [$]]
             [cljs.core.async :refer [put! chan <!]]))
 
+(defn init-bootstrap-tooltips
+  []
+  (-> "[data-toggle='tooltip']"
+      $
+      .tooltip))
+
 (defn toggle-nav-search
   []
   (events/listen! (css/sel "#nav .search > a")
@@ -80,4 +86,5 @@
   (toggle-nav-search)
   (switch-view)
   (clear-search)
+  (init-bootstrap-tooltips)
   (map-report))

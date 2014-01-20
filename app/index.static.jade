@@ -118,161 +118,164 @@ html(lang='en')
                   .div-fixed
 
                     #full-report-component
-                      h4 2013 Overview
+                      .full-report-overview
+                        h4 2013 Overview
 
-                      .table-responsive
-                        table.table-stats
-                          thead
-                            tr
-                              th &nbsp;
-                              th Companies
-                              th Investors
-                              th Revenue (&pound;)
-                              th Employees
-                          tbody
-                            tr
-                              th
-                                i.icon-info(data-toggle='tooltip', data-container='body', title='Total')
-                                | Total
-                              td
-                                span.totals 44
-                              td
-                                span.totals 10
-                              td
-                                span.totals 1.8bn
-                              td
-                                span.totals 7,511
-                            tr
-                              th
-                                i.icon-info(data-toggle='tooltip', data-container='body', title='Average')
-                                | Average
-                              td
-                                span.averages 37
-                              td
-                                span.averages 12
-                              td
-                                span.averages 80.0m
-                              td
-                                span.averages 3,566
-
-                      .table-responsive
-                        table.table
-                          thead
-                            tr
-                              th Company
-                              th Postcode
-                              th Investor
-                              th Revenue
-                              th Rev. change
-                              th Employess
-                              th Emp. change
-                          tbody
-                            - var i = 1;
-                            - while(i--)
+                        .table-responsive
+                          table.table-stats
+                            thead
                               tr
-                                td
-                                  a(href='#') Compny name
-                                td EC1 9XY
-                                td
-                                  a(href='#') Investor name
-                                td
-                                  | &pound;78.9m
-                                  small &nbsp;(2011)
-                                td
-                                  | &pound;7.1m
-                                  i.icon-negative
-                                td
-                                  | 1,234
-                                  small &nbsp;(2011)
-                                td
-                                  | 987
-                                  i.icon-positive
+                                th &nbsp;
+                                th Companies
+                                th Investors
+                                th Revenue (&pound;)
+                                th Employees
+                            tbody
                               tr
+                                th
+                                  i.icon-info(data-toggle='tooltip', data-container='body', title='Total')
+                                  | Total
                                 td
-                                  a(href='#') Compny name
-                                td N1 2AB
+                                  span.totals 44
                                 td
-                                  a(href='#') Investor name
+                                  span.totals 10
                                 td
-                                  | &pound;34.5m
-                                  small &nbsp;(2011)
+                                  span.totals 1.8bn
                                 td
-                                  | &pound;2.5m
-                                  i.icon-positive
+                                  span.totals 7,511
+                              tr
+                                th
+                                  i.icon-info(data-toggle='tooltip', data-container='body', title='Average')
+                                  | Average
                                 td
-                                  | 987
-                                  small &nbsp;(2011)
+                                  span.averages 37
                                 td
-                                  | 123
-                                  i.icon-negative
+                                  span.averages 12
+                                td
+                                  span.averages 80.0m
+                                td
+                                  span.averages 3,566
 
-                      .grid
-                        .tbl
-                          .tbl-cell.charts
-                            .tbl
-                              .tbl-row
-                                .tbl-cell
-                                  .box.box-first
-                                    header Box Title
-                                    div
-                                      p Duis elementum vulputate blandit. Suspendisse dignissim nisi orci, a venenatis dolor eleifend ac? Ut adipiscing tellus enim, eu pharetra eros consequat eget!
-                                      p Donec sit amet turpis quis magna dictum aliquet. Vestibulum dictum vestibulum risus dictum facilisis! Etiam semper nulla vitae nunc porttitor pretium sit amet vel tellus.
-                                      p Aenean ut diam sit amet est sagittis sagittis. Donec quis diam eleifend, tempus turpis fringilla, dictum eros.
-                                .tbl-cell
-                                  .box.box-last
-                                    header Box Title
-                                    div
-                                      p Duis elementum vulputate blandit. Suspendisse dignissim nisi orci, a venenatis dolor eleifend ac? Ut adipiscing tellus enim, eu pharetra eros consequat eget!
-                                      p Donec sit amet turpis quis magna dictum aliquet. Vestibulum dictum vestibulum risus dictum facilisis! Etiam semper nulla vitae nunc porttitor pretium sit amet vel tellus.
-                              .tbl-row
-                                .tbl-cell
-                                  .box.box-first
-                                    header Box Title
-                                    div
-                                      p Duis elementum vulputate blandit. Suspendisse dignissim nisi orci, a venenatis dolor eleifend ac?
-                                      p Aenean ut diam sit amet est sagittis sagittis. Donec quis diam eleifend, tempus turpis fringilla, dictum eros.
-                                .tbl-cell
-                                  .box.box-last
-                                    header Box Title
-                                    div
-                                      p Duis elementum vulputate blandit. Suspendisse dignissim nisi orci, a venenatis dolor eleifend ac? Ut adipiscing tellus enim, eu pharetra eros consequat eget!
-                                      p Donec sit amet turpis quis magna dictum aliquet. Vestibulum dictum vestibulum risus dictum facilisis! Etiam semper nulla vitae nunc porttitor pretium sit amet vel tellus.
-                                      p Aenean ut diam sit amet est sagittis sagittis. Donec quis diam eleifend, tempus turpis fringilla, dictum eros.
+                      .full-report-portfolio-company-sites
+                        .table-responsive
+                          table.table
+                            thead
+                              tr
+                                th Company
+                                th Postcode
+                                th Investor
+                                th Revenue
+                                th Rev. change
+                                th Employess
+                                th Emp. change
+                            tbody
+                              - var i = 1;
+                              - while(i--)
+                                tr
+                                  td
+                                    a(href='#') Compny name
+                                  td EC1 9XY
+                                  td
+                                    a(href='#') Investor name
+                                  td
+                                    | &pound;78.9m
+                                    small &nbsp;(2011)
+                                  td
+                                    | &pound;7.1m
+                                    i.icon-negative
+                                  td
+                                    | 1,234
+                                    small &nbsp;(2011)
+                                  td
+                                    | 987
+                                    i.icon-positive
+                                tr
+                                  td
+                                    a(href='#') Compny name
+                                  td N1 2AB
+                                  td
+                                    a(href='#') Investor name
+                                  td
+                                    | &pound;34.5m
+                                    small &nbsp;(2011)
+                                  td
+                                    | &pound;2.5m
+                                    i.icon-positive
+                                  td
+                                    | 987
+                                    small &nbsp;(2011)
+                                  td
+                                    | 123
+                                    i.icon-negative
 
-                          .tbl-cell.details
-                            .tbl
-                              .tbl-cell
-                                .box
-                                  header Box Title
-                                  div
-                                    ul
-                                      li Donec sit amet turpis quis magna dictum aliquet.
-                                      li Donec sit amet turpis quis magna dictum aliquet.
+                      .full-report-details
+                        .grid
+                          .tbl
+                            .tbl-cell.charts
+                              .tbl
+                                .tbl-row
+                                  .tbl-cell
+                                    .box.box-first
+                                      header Box Title
+                                      div
+                                        p Duis elementum vulputate blandit. Suspendisse dignissim nisi orci, a venenatis dolor eleifend ac? Ut adipiscing tellus enim, eu pharetra eros consequat eget!
+                                        p Donec sit amet turpis quis magna dictum aliquet. Vestibulum dictum vestibulum risus dictum facilisis! Etiam semper nulla vitae nunc porttitor pretium sit amet vel tellus.
+                                        p Aenean ut diam sit amet est sagittis sagittis. Donec quis diam eleifend, tempus turpis fringilla, dictum eros.
+                                  .tbl-cell
+                                    .box.box-last
+                                      header Box Title
+                                      div
+                                        p Duis elementum vulputate blandit. Suspendisse dignissim nisi orci, a venenatis dolor eleifend ac? Ut adipiscing tellus enim, eu pharetra eros consequat eget!
+                                        p Donec sit amet turpis quis magna dictum aliquet. Vestibulum dictum vestibulum risus dictum facilisis! Etiam semper nulla vitae nunc porttitor pretium sit amet vel tellus.
+                                .tbl-row
+                                  .tbl-cell
+                                    .box.box-first
+                                      header Box Title
+                                      div
+                                        p Duis elementum vulputate blandit. Suspendisse dignissim nisi orci, a venenatis dolor eleifend ac?
+                                        p Aenean ut diam sit amet est sagittis sagittis. Donec quis diam eleifend, tempus turpis fringilla, dictum eros.
+                                  .tbl-cell
+                                    .box.box-last
+                                      header Box Title
+                                      div
+                                        p Duis elementum vulputate blandit. Suspendisse dignissim nisi orci, a venenatis dolor eleifend ac? Ut adipiscing tellus enim, eu pharetra eros consequat eget!
+                                        p Donec sit amet turpis quis magna dictum aliquet. Vestibulum dictum vestibulum risus dictum facilisis! Etiam semper nulla vitae nunc porttitor pretium sit amet vel tellus.
+                                        p Aenean ut diam sit amet est sagittis sagittis. Donec quis diam eleifend, tempus turpis fringilla, dictum eros.
+
+                            .tbl-cell.details
+                              .tbl
+                                .tbl-cell
+                                  .box
+                                    header Box Title
+                                    div
+                                      ul
+                                        li Donec sit amet turpis quis magna dictum aliquet.
+                                        li Donec sit amet turpis quis magna dictum aliquet.
+                                        li Donec sit amet turpis quis magna dictum aliquet.
+                                        li Donec sit amet turpis quis magna dictum aliquet.
+                                      p: a(href='#') Show more...
+                              .tbl
+                                .tbl-cell
+                                  .box
+                                    header Box Title
+                                    div
+                                      ul
+                                        li Donec sit amet turpis quis magna dictum aliquet.
+                                        li Donec sit amet turpis quis magna dictum aliquet.
+                                        li Donec sit amet turpis quis magna dictum aliquet.
+                                        li Donec sit amet turpis quis magna dictum aliquet.
+                                      p: a(href='#') Show more...
+                              .tbl
+                                .tbl-cell
+                                  .box
+                                    header Box Title
+                                    div
+                                      ul
+                                        li Donec sit amet turpis quis magna dictum aliquet.
+                                        li Donec sit amet turpis quis magna dictum aliquet.
                                       li Donec sit amet turpis quis magna dictum aliquet.
                                       li Donec sit amet turpis quis magna dictum aliquet.
                                     p: a(href='#') Show more...
-                            .tbl
-                              .tbl-cell
-                                .box
-                                  header Box Title
-                                  div
-                                    ul
-                                      li Donec sit amet turpis quis magna dictum aliquet.
-                                      li Donec sit amet turpis quis magna dictum aliquet.
-                                      li Donec sit amet turpis quis magna dictum aliquet.
-                                      li Donec sit amet turpis quis magna dictum aliquet.
-                                    p: a(href='#') Show more...
-                            .tbl
-                              .tbl-cell
-                                .box
-                                  header Box Title
-                                  div
-                                    ul
-                                      li Donec sit amet turpis quis magna dictum aliquet.
-                                      li Donec sit amet turpis quis magna dictum aliquet.
-                                    li Donec sit amet turpis quis magna dictum aliquet.
-                                    li Donec sit amet turpis quis magna dictum aliquet.
-                                  p: a(href='#') Show more...
 
           footer#main-footer
             .inner

@@ -1,4 +1,4 @@
-(ns clustermap.page-title
+(ns clustermap.components.page-title
   (:require [om.core :as om :include-macros true]
             [om.dom :as dom :include-macros true]
             [sablono.core :as html :refer [html] :include-macros true]

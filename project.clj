@@ -9,8 +9,8 @@
                  [org.clojure/core.async "0.1.267.0-0d7780-alpha"]
                  [domina "1.0.2"]
                  [jayq "2.5.0"]
-                 [om "0.1.6"]
-                 [sablono "0.2.0"]
+                 [om "0.2.3"]
+                 [sablono "0.2.2"]
                  ]
 
 ;;  :exclusions [org.clojure/google-closure-library

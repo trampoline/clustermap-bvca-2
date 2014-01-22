@@ -8,10 +8,9 @@
 
 (defn all-portfolio-companies-summary-report
   [data]
-  (let [pc-summ (:all-portfolio-companies-summary data)
-        pc-count (some-> pc-summ (aget "count"))
-        ic-summ (:all-investor-companies-summary data)
-        ic-count (some-> ic-summ (aget "count"))]
+  (let [pc-stats (:all-portfolio-company-stats data)
+        pc-count (some-> pc-stats (aget "portfolio_company_count"))
+        ic-count (some-> pc-stats (aget "investor_company_count"))]
 
     (om/component
      (html [:div
@@ -21,8 +20,8 @@
             [:ul
              [:li (fnum pc-count :default "-") [:small (pluralize pc-count "Portfolio Company" "Portfolio Companies")]]
              [:li (fnum ic-count :default "-") [:small (pluralize ic-count "Investor")]]
-             [:li (fmoney (some-> pc-summ (aget "latest_turnover_stats" "total")) :sf 2 :default "-") [:small "Portfolio Company Turnover"]]
-             [:li (fnum (some-> pc-summ (aget "latest_employee_count_stats" "total")) :default "-") [:small "Portfolio Company Employees"]]
+             [:li (fmoney (some-> pc-stats (aget "turnover" "total")) :sf 2 :default "-") [:small "Portfolio Company Turnover"]]
+             [:li (fnum (some-> pc-stats (aget "employee_count" "total")) :default "-") [:small "Portfolio Company Employees"]]
              ]]))))
 
 (defn portfolio-company-report

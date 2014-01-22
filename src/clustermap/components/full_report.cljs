@@ -7,62 +7,44 @@
             [clustermap.formats.money :as mf :refer [fmoney]]))
 
 
-(defn all-portfolio-companies-overview-data
+(defn describe-selection
   [data]
-  (let [pc-summ (:all-portfolio-companies-summary data)
-        pc-count (some-> pc-summ (aget "count"))
-        ic-summ (:all-investor-companies-summary data)
-        ic-count (some-> ic-summ (aget "count"))]
+  (let [sel (:selection data)
+        val (:value sel)]
+    (condp = (:type sel)
+      :portfolio-company {:name (aget val "name")
+                          :description "Totals for the selected Portfolio Company"}
+      :investor-company {:name (aget val "name")
+                         :description "Totals for the Portfolio Companies of the selected Investor"}
+      :constituency {:name (aget val "name")
+                     :description "Totals for the selected Constituency"}
+      {:name "All Portfolio Companies"
+       :description "Totals over all Portfolio Companies"})))
 
-    {:selection {:name "All portfolio companies"
-                 :description "Totals over all portfolio companies"
-                 :portfolio-companies (fnum pc-count :default "-")
-                 :investor-companies (fnum ic-count :default "-")
-                 :turnover (fmoney (some-> pc-summ (aget "latest_turnover_stats" "total")) :sf 2 :default "-")
-                 :employee-count (fnum (some-> pc-summ (aget "latest_employee_count_stats" "total")) :sf 2 :default "-")}
+(defn overview-data
+  [data]
+  (let [apc-stats (:all-portfolio-company-stats data)
+        sel-stats (or (:selection-portfolio-company-stats data) apc-stats)
+        sel-descr (describe-selection data)]
+
+    {:selection (merge sel-descr
+                       {:portfolio-companies (fnum (some-> sel-stats (aget "portfolio_company_count")) :default "-")
+                        :investor-companies (fnum (some-> sel-stats (aget "investor_company_count")) :default "-")
+                        :constituencies (fnum (some-> sel-stats (aget "constituency_count")) :default "-")
+                        :turnover (fmoney (some-> sel-stats (aget "turnover" "total")) :sf 2 :default "-")
+                        :employee-count (fnum (some-> sel-stats (aget "employee_count" "total")) :sf 2 :default "-")})
      :averages {:name "Average"
                 :description "Averages over all portfolio companies"
-                :portfolio-companies ""
-                :investor-companies ""
-                :turnover (fmoney (some-> pc-summ (aget "latest_turnover_stats" "mean")) :sf 2 :default "-")
-                :employee-count (fnum (some-> pc-summ (aget "latest_employee_count_stats" "mean")) :dec 0 :default "-")}}))
-
-(defn portfolio-company-overview-data
-  [data]
-  (let [pc-summ (:all-portfolio-companies-summary data)
-        pc-count (some-> pc-summ (aget "count"))
-        sel (-> data :selection :value)
-        sel-ic-count (-> sel (aget "investor_companies") count)]
-
-    {:selection {:name (aget sel "name")
-                 :description "Headline statistics"
-                 :portfolio-companies (fnum 1)
-                 :investor-companies (fnum sel-ic-count :default "-")
-                 :turnover (fmoney (aget sel "latest_turnover") :sf 2 :default "-")
-                 :employee-count (fnum (aget sel "latest_employee_count") :sf 2 :default "-")}
-     :averages {:name "Average"
-                :description "Averages over all portfolio companies"
-                :portfolio-companies ""
-                :investor-companies ""
-                :turnover (fmoney (some-> pc-summ (aget "latest_turnover_stats" "mean")) :sf 2 :default "-")
-                :employee-count (fnum (some-> pc-summ (aget "latest_employee_count_stats" "mean")) :dec 0 :default "-")}}
-    )
-  )
-
-(defn investor-company-overview-data
-  [data]
-  )
-
-(defn constituency-overview-data
-  [data])
+                :portfolio-companies "\u00A0"
+                :investor-companies "\u00A0"
+                :constituencies "\u00A0"
+                :turnover (fmoney (some-> apc-stats (aget "turnover" "mean")) :sf 2 :default "-")
+                :employee-count (fnum (some-> apc-stats (aget "employee_count" "mean")) :dec 0 :default "-")}}))
 
 (defn overview
   [{:keys [selection] :as data}]
-  (let [{:keys [selection averages]} (condp = (:type selection)
-                                       :portfolio-company (portfolio-company-overview-data data)
-                                       :investor-company (investor-company-overview-data data)
-                                       :constituency-overview (constituency-overview-data data)
-                                       (all-portfolio-companies-overview-data data))]
+  (let [{:keys [selection averages]} (overview-data data)]
+
     (om/component
      (html [:div.full-report-overview
             [:h4 "2012 Overview"]
@@ -74,6 +56,7 @@
                 [:th "\u00A0"]
                 [:th "Portfolio Companies"]
                 [:th "Investors"]
+                [:th "Constituencies"]
                 [:th "Revenue (\u00A3)"]
                 [:th "Employees"]]]
               [:tbody
@@ -81,12 +64,14 @@
                 [:th [:i.icon-info {:data-toggle "tooltip" :data-container "body" :title (selection :description)}] (selection :name)]
                 [:td [:span.selection (selection :portfolio-companies)]]
                 [:td [:span.selection (selection :investor-companies)]]
+                [:td [:span.selection (selection :constituencies)]]
                 [:td [:span.selection (selection :turnover)]]
                 [:td [:span.selection (selection :employee-count)]]]
                [:tr
                 [:th [:i.icon-info {:data-toggle "tooltip" :data-container "body" :title (averages :description)}] (averages :name)]
                 [:td [:span.averages (averages :portfolio-companies)]]
                 [:td [:span.averages (averages :investor-companies)]]
+                [:td [:span.averages (averages :constituencies)]]
                 [:td [:span.averages (averages :turnover)]]
                 [:td [:span.averages (averages :employee-count)]]]
                ]]]]))))

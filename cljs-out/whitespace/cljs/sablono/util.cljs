@@ -1,7 +1,8 @@
 (ns sablono.util
          (:import goog.Uri)
+  (:refer-clojure :exclude [replace])
   (:require [clojure.set :refer [rename-keys]]
-            [clojure.string :refer [capitalize join split]]))
+            [clojure.string :refer [blank? capitalize join split replace]]))
 
 (def ^:dynamic *base-url* nil)
 
@@ -22,13 +23,13 @@
 (defn camelcase-key
   "Returns camelcased version of the key, e.g. :http-equiv becomes :httpEquiv."
   [k]
-  (let [[first-word & words] (split (name k) #"-")]
-    (if (empty? words)
-      k
-      (-> (map capitalize words)
-          (conj first-word)
-          join
-          keyword))))
+  (if k
+    (let [[first-word & words] (split (name k) #"-")]
+      (if (or (empty? words) (= "data" first-word))
+        k (-> (map capitalize words)
+              (conj first-word)
+              join
+              keyword)))))
 
 (defn html-to-dom-attrs
   "Converts all HTML attributes to their DOM equivalents."
@@ -80,6 +81,23 @@
   "Returns the React function to render `tag` as a symbol."
   [tag]
   (symbol "js" (str "React.DOM." (name tag))))
+
+(defn attr-pattern
+  "Returns a regular expression that matches the HTML attribute `attr`
+  and it's value."
+  [attr]
+  (re-pattern (str "\\s+" (name attr) "\\s*=\\s*['\"][^\"']+['\"]")))
+
+(defn strip-attr
+  "Strip the HTML attribute `attr` and it's value from the string `s`."
+  [s attr]
+  (if s (replace s (attr-pattern attr) "")))
+
+(defn strip-outer
+  "Strip the outer HTML tag from the string `s`."
+  [s]
+  (if s (-> (replace s #"^\s*<[^>]+>\s*" "")
+            (replace #"\s*</[^>]+>\s*$" ""))))
 
       
 (extend-protocol ToString

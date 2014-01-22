@@ -59,23 +59,19 @@
                                  
                                                            
 
-(defn include-js
-  "Include a list of external javascript files."
-  [& scripts]
-  (for [script scripts]
-    [:script {:type "text/javascript", :src (as-str script)}]))
+      
+(defn render
+  "Render the React `component` as an HTML string."
+  [component]
+  (let [html (atom nil)]
+    (.renderComponentToString js/React component #(reset! html %))
+    (deref html)))
 
 (defn include-css
   "Include a list of external stylesheet files."
   [& styles]
   (for [style styles]
     [:link {:type "text/css", :href (as-str style), :rel "stylesheet"}]))
-
-(defn javascript-tag
-  "Wrap the supplied javascript up in script tags and a CDATA section."
-  [script]
-  [:script {:type "text/javascript"}
-   (str "//<![CDATA[\n" script "\n//]]>")])
 
 (defelem link-to
   "Wraps some content in a HTML hyperlink with the supplied URL."

@@ -14,6 +14,8 @@ goog.require('cljs.core.async');
 goog.require('domina.css');
 goog.require('domina.xpath');
 goog.require('jayq.core');
+clustermap.nav.init_bootstrap_tooltips = (function init_bootstrap_tooltips(){return jayq.core.$.call(null,"[data-toggle='tooltip']").tooltip();
+});
 clustermap.nav.toggle_nav_search = (function toggle_nav_search(){return domina.events.listen_BANG_.call(null,domina.css.sel.call(null,"#nav .search > a"),new cljs.core.Keyword(null,"click","click",1108654330),(function (e){var target = domina.events.target.call(null,e);var parent = domina.xpath.xpath.call(null,target,"..");domina.events.prevent_default.call(null,e);
 domina.toggle_class_BANG_.call(null,parent,"open");
 return jayq.core.$.call(null,cljs.core.first.call(null,domina.nodes.call(null,domina.css.sel.call(null,"#search")))).toggle();
@@ -26,7 +28,7 @@ clustermap.nav.body_view_classes = new cljs.core.PersistentArrayMap(null, 2, ["m
 clustermap.nav.switch_view = (function switch_view(){return domina.events.listen_BANG_.call(null,domina.css.sel.call(null,"#nav .map > a, #nav .lists > a"),new cljs.core.Keyword(null,"click","click",1108654330),(function (e){var target = domina.events.target.call(null,e);var li = domina.xpath.xpath.call(null,target,"..");var ul = domina.xpath.xpath.call(null,li,"..");var active_li = domina.css.sel.call(null,ul,"> .active");var body = domina.css.sel.call(null,"body");domina.events.prevent_default.call(null,e);
 domina.remove_class_BANG_.call(null,active_li,"active");
 domina.add_class_BANG_.call(null,li,"active");
-return cljs.core.dorun.call(null,cljs.core.map.call(null,(function (p__30385){var vec__30386 = p__30385;var li_class = cljs.core.nth.call(null,vec__30386,0,null);var body_class = cljs.core.nth.call(null,vec__30386,1,null);if(cljs.core.truth_(domina.has_class_QMARK_.call(null,li,li_class)))
+return cljs.core.dorun.call(null,cljs.core.map.call(null,(function (p__30544){var vec__30545 = p__30544;var li_class = cljs.core.nth.call(null,vec__30545,0,null);var body_class = cljs.core.nth.call(null,vec__30545,1,null);if(cljs.core.truth_(domina.has_class_QMARK_.call(null,li,li_class)))
 {return domina.add_class_BANG_.call(null,body,body_class);
 } else
 {return domina.remove_class_BANG_.call(null,body,body_class);
@@ -51,5 +53,6 @@ return jayq.core.anim.call(null,jayq.core.$.call(null,cljs.core.first.call(null,
 clustermap.nav.init = (function init(){clustermap.nav.toggle_nav_search.call(null);
 clustermap.nav.switch_view.call(null);
 clustermap.nav.clear_search.call(null);
+clustermap.nav.init_bootstrap_tooltips.call(null);
 return clustermap.nav.map_report.call(null);
 });

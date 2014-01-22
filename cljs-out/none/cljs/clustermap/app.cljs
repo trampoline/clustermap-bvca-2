@@ -12,34 +12,25 @@
    [clustermap.components.page-title :as page-title]
    [clustermap.components.search :as search]))
 
-(def state (atom {:selection nil
-                  :all-portfolio-company-sites nil
-                  :all-portfolio-companies-summary nil
-                  :all-investor-companies-summary nil
+(def state (atom {:selector {}
+
+                  :selection nil
+                  :selection-portfolio-company-stats nil
+                  :selection-portfolio-company-sites {}
+
+                  :all-portfolio-company-stats nil
+
                   :search-results {}
                   }))
 (defn set-state
   [key value]
   (swap! state (fn [s] (assoc s key value))))
 
-(defn load-all-portfolio-companies-summary
+(defn load-all-portfolio-company-stats
   []
   (go
-   (let [pcs (<! (api/portfolio-companies-summary))]
-     (set-state :all-portfolio-companies-summary pcs))))
-
-(defn load-all-investor-companies-summary
-  []
-  (go
-   (let [pcs (<! (api/investor-companies-summary))]
-     (set-state :all-investor-companies-summary pcs))))
-
-(defn load-all-portfolio-company-sites
-  []
-  (go
-     (let [pcs (<! (api/portfolio-company-sites))]
-       (set-state :all-portfolio-company-sites pcs)
-       (map/display-sites (:map @state) (:all-portfolio-company-sites @state)))))
+   (let [pcs (<! (api/portfolio-company-stats))]
+     (set-state :all-portfolio-company-stats pcs))))
 
 (defn process-search-results
   "process a search"
@@ -47,19 +38,38 @@
   (set-state :search-results (js->clj results)))
 
 (defn process-selection
-  [result type]
+  [[selection selection-portfolio-company-stats] type]
   ;; (.log js/console (clj->js [result type]))
   (set-state :selection {:type type
-                         :value result}))
+                         :value selection})
+  (set-state :selection-portfolio-company-stats selection-portfolio-company-stats))
 
 (defn make-selection
+  "set the selection
+   - extractor selector id
+   - record selector
+   - kick-off selection retrievals"
   [[type val]]
   ;; (.log js/console (clj->js val))
-  (condp == type
-    :portfolio-company [(api/portfolio-company (get val "company_no")) type]
-    :investor-company [(api/investor-company (get val "name")) type]
-    :constituency [(api/constituency (get val "boundaryline_id")) type]
-    nil))
+  (let [id (condp = type
+             :portfolio-company (get val "company_no")
+             :investor-company (get val "name")
+             :constituency (get val "boundaryline_id"))
+        selector {type id}]
+
+    (set-state :selector selector)
+
+    (condp = type
+      :portfolio-company [[(api/portfolio-company id)
+                           (api/portfolio-company-stats selector)
+                           (api/portfolio-company-sites selector)] type]
+      :investor-company [[(api/investor-company id)
+                          (api/portfolio-company-stats selector)
+                          (api/portfolio-company-sites selector)] type]
+      :constituency [[(api/constituency id)
+                      (api/portfolio-company-stats selector)
+                      (api/portfolio-company-sites selector)] type]
+      nil)))
 
 (def event-handlers
   {:search (api/ordered-api api/search process-search-results)
@@ -76,8 +86,7 @@
   (set-state :map (map/create-map))
 
   ;; (load-all-portfolio-company-sites)
-  (load-all-portfolio-companies-summary)
-  (load-all-investor-companies-summary)
+  (load-all-portfolio-company-stats)
 
   (let [comm (chan)]
 

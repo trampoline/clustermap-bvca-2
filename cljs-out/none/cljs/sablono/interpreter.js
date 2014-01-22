@@ -5,7 +5,7 @@ goog.require('sablono.util');
 goog.require('clojure.string');
 goog.require('sablono.util');
 goog.require('clojure.string');
-sablono.interpreter.IInterpreter = (function (){var obj15486 = {};return obj15486;
+sablono.interpreter.IInterpreter = (function (){var obj15528 = {};return obj15528;
 })();
 sablono.interpreter.interpret = (function interpret(this$){if((function (){var and__3394__auto__ = this$;if(and__3394__auto__)
 {return this$.sablono$interpreter$IInterpreter$interpret$arity$1;
@@ -36,10 +36,10 @@ return attrs__$1;
 /**
 * Render an element vector as a HTML element.
 */
-sablono.interpreter.element = (function element(element__$1){var vec__15488 = sablono.util.normalize_element.call(null,element__$1);var tag = cljs.core.nth.call(null,vec__15488,0,null);var attrs = cljs.core.nth.call(null,vec__15488,1,null);var content = cljs.core.nth.call(null,vec__15488,2,null);var dom_fn = (React.DOM[cljs.core.name.call(null,tag)]);if(cljs.core.truth_(content))
-{return dom_fn.call(null,sablono.interpreter.attributes.call(null,attrs),sablono.interpreter.interpret.call(null,content));
+sablono.interpreter.element = (function element(element__$1){var vec__15530 = sablono.util.normalize_element.call(null,element__$1);var tag = cljs.core.nth.call(null,vec__15530,0,null);var attrs = cljs.core.nth.call(null,vec__15530,1,null);var content = cljs.core.nth.call(null,vec__15530,2,null);var temp__4090__auto__ = (React.DOM[cljs.core.name.call(null,tag)]);if(cljs.core.truth_(temp__4090__auto__))
+{var dom_fn = temp__4090__auto__;return dom_fn.call(null,sablono.interpreter.attributes.call(null,attrs),(((cljs.core.sequential_QMARK_.call(null,content)) && (typeof cljs.core.first.call(null,content) === 'string') && (cljs.core.empty_QMARK_.call(null,cljs.core.rest.call(null,content))))?sablono.interpreter.interpret.call(null,cljs.core.first.call(null,content)):(cljs.core.truth_(content)?sablono.interpreter.interpret.call(null,content):((new cljs.core.Keyword(null,"else","else",1017020587))?null:null))));
 } else
-{return dom_fn.call(null,sablono.interpreter.attributes.call(null,attrs));
+{throw cljs.core.ex_info.call(null,"Unsupported HTML tag",new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"tag","tag",1014018828),tag,new cljs.core.Keyword(null,"attrs","attrs",1107056660),attrs,new cljs.core.Keyword(null,"content","content",1965434859),content], null));
 }
 });
 sablono.interpreter.interpret_seq = (function interpret_seq(s){return cljs.core.into_array.call(null,cljs.core.map.call(null,sablono.interpreter.interpret,s));

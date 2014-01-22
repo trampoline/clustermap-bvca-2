@@ -3,7 +3,7 @@
    [cljs.core.async.macros :refer [go]])
   (:require
    [clojure.string :as str]
-   [cljs.core.async :refer [<! chan close! put! sliding-buffer to-chan]]
+   [cljs.core.async :as async :refer [<! chan close! put! sliding-buffer to-chan]]
    [goog.net.XhrIo :as xhr]))
 
 (defn GET [url]
@@ -16,11 +16,22 @@
     comm))
 
 (defn- ordered-api-results
+  "- ocomm : a channel containing [result-chans result-handler-args]
+             gather results from the one-or-more result-chans, and
+             pass them to the handler along with any result-handler-args
+   - handler : invoked with (apply handler result-or-results result-handler-args)"
   [ocomm handler]
   (go
    (while true
-     (let [[rcomm result-handler-args] (<! ocomm)
-           result (<! rcomm)]
+     (let [[rcomms result-handler-args] (<! ocomm)
+           result (if (sequential? rcomms)
+                    (loop [rem rcomms
+                           results []]
+                      (if (empty? rem)
+                        results
+                        (recur (rest rem) (conj results (<! (first rem))))))
+                    (<! rcomms))]
+       ;; (.log js/console (clj->js result))
        (apply handler result result-handler-args)))))
 
 (defn ordered-api
@@ -45,6 +56,12 @@
     (go
      (.log js/console (<! ch)))))
 
+(defn map-json-params
+  [m]
+  (->> m
+       (map (fn [[k v]] (str (name k) "=" (js/JSON.stringify (clj->js v)))))
+       (str/join "&")))
+
 (defn search
   [q]
   (if (> (-> q str/trim count) 0)
@@ -52,8 +69,8 @@
     (to-chan [#js {}])))
 
 (defn portfolio-company-sites
-  []
-  (GET "/api/bvca/portfolio-company-sites"))
+  [& [type-ids]]
+  (GET (str "/api/bvca/portfolio-company-sites?" (map-json-params type-ids))))
 
 (defn constituencies
   []
@@ -70,6 +87,18 @@
 (defn portfolio-company
   [id]
   (GET (str "/api/bvca/portfolio-companies/" id)))
+
+(defn portfolio-company-stats
+  [& [type-ids]]
+  (GET (str "/api/bvca/portfolio-company-stats?" (map-json-params type-ids))))
+
+(defn portfolio-company-site-stats
+  [& [type-ids]]
+  (GET (str "/api/bvca/portfolio-company-site-stats?" (map-json-params type-ids))))
+
+(defn portfolio-company-account-stats
+  [& [type-ids]]
+  (GET (str "/api/bvca/portfolio-company-account-stats?" (map-json-params type-ids))))
 
 (defn investor-companies-summary
   []

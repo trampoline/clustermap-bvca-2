@@ -12,7 +12,12 @@
    [clustermap.components.page-title :as page-title]
    [clustermap.components.search :as search]))
 
-(def state (atom {:selection nil
+(def state (atom {:selector {}
+
+                  :selection nil
+                  :selection-portfolio-company-stats {}
+                  :selection-portfolio-company-sites {}
+
                   :all-portfolio-company-sites nil
                   :all-portfolio-companies-summary nil
                   :all-investor-companies-summary nil
@@ -47,19 +52,38 @@
   (set-state :search-results (js->clj results)))
 
 (defn process-selection
-  [result type]
+  [[selection selection-portfolio-company-stats] type]
   ;; (.log js/console (clj->js [result type]))
   (set-state :selection {:type type
-                         :value result}))
+                         :value selection})
+  (set-state :selection-portfolio-company-stats selection-portfolio-company-stats))
 
 (defn make-selection
+  "set the selection
+   - extractor selector id
+   - record selector
+   - kick-off selection retrievals"
   [[type val]]
   ;; (.log js/console (clj->js val))
-  (condp == type
-    :portfolio-company [(api/portfolio-company (get val "company_no")) type]
-    :investor-company [(api/investor-company (get val "name")) type]
-    :constituency [(api/constituency (get val "boundaryline_id")) type]
-    nil))
+  (let [id (condp = type
+             :portfolio-company (get val "company_no")
+             :investor-company (get val "name")
+             :constituency (get val "boundaryline_id"))
+        selector {type id}]
+
+    (set-state :selector selector)
+
+    (condp = type
+      :portfolio-company [[(api/portfolio-company id)
+                           (api/portfolio-company-stats selector)
+                           (api/portfolio-company-sites selector)] type]
+      :investor-company [[(api/investor-company id)
+                          (api/portfolio-company-stats selector)
+                          (api/portfolio-company-sites selector)] type]
+      :constituency [[(api/constituency id)
+                      (api/portfolio-company-stats selector)
+                      (api/portfolio-company-sites selector)] type]
+      nil)))
 
 (def event-handlers
   {:search (api/ordered-api api/search process-search-results)

@@ -89,15 +89,15 @@
   (GET (str "/api/bvca/portfolio-companies/" id)))
 
 (defn portfolio-company-stats
-  [type-ids]
+  [& [type-ids]]
   (GET (str "/api/bvca/portfolio-company-stats?" (map-json-params type-ids))))
 
 (defn portfolio-company-site-stats
-  [type-ids]
+  [& [type-ids]]
   (GET (str "/api/bvca/portfolio-company-site-stats?" (map-json-params type-ids))))
 
 (defn portfolio-company-account-stats
-  [type-ids]
+  [& [type-ids]]
   (GET (str "/api/bvca/portfolio-company-account-stats?" (map-json-params type-ids))))
 
 (defn investor-companies-summary

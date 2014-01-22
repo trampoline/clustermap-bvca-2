@@ -15,36 +15,22 @@
 (def state (atom {:selector {}
 
                   :selection nil
-                  :selection-portfolio-company-stats {}
+                  :selection-portfolio-company-stats nil
                   :selection-portfolio-company-sites {}
 
-                  :all-portfolio-company-sites nil
-                  :all-portfolio-companies-summary nil
-                  :all-investor-companies-summary nil
+                  :all-portfolio-company-stats nil
+
                   :search-results {}
                   }))
 (defn set-state
   [key value]
   (swap! state (fn [s] (assoc s key value))))
 
-(defn load-all-portfolio-companies-summary
+(defn load-all-portfolio-company-stats
   []
   (go
-   (let [pcs (<! (api/portfolio-companies-summary))]
-     (set-state :all-portfolio-companies-summary pcs))))
-
-(defn load-all-investor-companies-summary
-  []
-  (go
-   (let [pcs (<! (api/investor-companies-summary))]
-     (set-state :all-investor-companies-summary pcs))))
-
-(defn load-all-portfolio-company-sites
-  []
-  (go
-     (let [pcs (<! (api/portfolio-company-sites))]
-       (set-state :all-portfolio-company-sites pcs)
-       (map/display-sites (:map @state) (:all-portfolio-company-sites @state)))))
+   (let [pcs (<! (api/portfolio-company-stats))]
+     (set-state :all-portfolio-company-stats pcs))))
 
 (defn process-search-results
   "process a search"
@@ -100,8 +86,7 @@
   (set-state :map (map/create-map))
 
   ;; (load-all-portfolio-company-sites)
-  (load-all-portfolio-companies-summary)
-  (load-all-investor-companies-summary)
+  (load-all-portfolio-company-stats)
 
   (let [comm (chan)]
 

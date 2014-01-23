@@ -9,8 +9,8 @@
 (defn all-portfolio-companies-summary-report
   [data]
   (let [pc-stats (:all-portfolio-company-stats data)
-        pc-count (some-> pc-stats (aget "portfolio_company_count"))
-        ic-count (some-> pc-stats (aget "investor_company_count"))]
+        pc-count (some-> pc-stats :portfolio_company_count)
+        ic-count (some-> pc-stats :investor_company_count)]
 
     (om/component
      (html [:div
@@ -20,53 +20,53 @@
             [:ul
              [:li (fnum pc-count :default "-") [:small (pluralize pc-count "Portfolio Company" "Portfolio Companies")]]
              [:li (fnum ic-count :default "-") [:small (pluralize ic-count "Investor")]]
-             [:li (fmoney (some-> pc-stats (aget "turnover" "total")) :sf 2 :default "-") [:small "Portfolio Company Turnover"]]
-             [:li (fnum (some-> pc-stats (aget "employee_count" "total")) :default "-") [:small "Portfolio Company Employees"]]
+             [:li (fmoney (some-> pc-stats :turnover :total) :sf 2 :default "-") [:small "Portfolio Company Turnover"]]
+             [:li (fnum (some-> pc-stats :employee_count :total) :default "-") [:small "Portfolio Company Employees"]]
              ]]))))
 
 (defn portfolio-company-report
   [data]
-  (let [ic-count (some-> data (aget "investor_companies") count)
-        const-count (some-> data (aget "boundarylinecolls" "uk_constituencies") count)]
+  (let [ic-count (some-> data :investor_companies count)
+        const-count (some-> data :boundarylinecolls :uk_constituencies count)]
     (om/component
      (html [:div
             [:header.secondary
-             [:h2 (aget data "name")]]
+             [:h2 (:name data)]]
             [:ul
              [:li (fnum ic-count) [:small (pluralize ic-count "Investor")]]
              [:li (fnum const-count) [:small (pluralize const-count "Constituency" "Constituencies")]]
-             [:li (fmoney (some-> data (aget "latest_turnover")) :sf 2 :default "-") [:small "Turnover"]]
-             [:li (fnum (some-> data (aget "latest_employee_count")) :default "-") [:small "Employees"]]]]))))
+             [:li (fmoney (some-> data :latest_turnover) :sf 2 :default "-") [:small "Turnover"]]
+             [:li (fnum (some-> data :latest_employee_count) :default "-") [:small "Employees"]]]]))))
 
 (defn investor-company-report
   [data]
-  (let [pc-count (some-> data (aget "portfolio_companies") count)
-        const-count (some-> data (aget "boundarylinecolls" "uk_constituencies") count)]
+  (let [pc-count (some-> data :portfolio_companies count)
+        const-count (some-> data :boundarylinecolls :uk_constituencies count)]
     (om/component
      (html [:div
             [:header.secondary
-             [:h2 (aget data "name")]]
+             [:h2 (:name data)]]
             [:ul
              [:li (fnum pc-count) [:small (pluralize pc-count "Portfolio Company" "Portfolio Companies")]]
              [:li (fnum const-count) [:small (pluralize const-count "Constituency" "Constituencies")]]
-             [:li (fmoney (some-> data (aget "total_turnover")) :sf 2 :default "-") [:small "Portfolio Company Turnover"]]
-             [:li (fnum (some-> data (aget "total_employee_count")) :default "-") [:small "Portfolio Company Employees"]]]]))))
+             [:li (fmoney (some-> data :total_turnover) :sf 2 :default "-") [:small "Portfolio Company Turnover"]]
+             [:li (fnum (some-> data :total_employee_count) :default "-") [:small "Portfolio Company Employees"]]]]))))
 
 (defn constituency-report
   [data]
-  (let [pc-count (some-> data (aget "portfolio_companies") count)
-        ic-count (some-> data (aget "investor_companies") count)]
+  (let [pc-count (some-> data :portfolio_companies count)
+        ic-count (some-> data :investor_companies count)]
     (om/component
      (html [:div
             [:header.secondary
-             [:h2 (aget data "name")]
-             [:h3 (aget data "mp")
-              [:small "(" (aget data "political_party") ")"]]]
+             [:h2 (:name data)]
+             [:h3 (:mp data)
+              [:small "(" (:political_party data) ")"]]]
             [:ul
              [:li (fnum pc-count) [:small (pluralize pc-count "Portfolio Company" "Portfolio Companies")]]
              [:li (fnum ic-count) [:small (pluralize ic-count "Investor")]]
-             [:li (fmoney (some-> data (aget "total_turnover")) :sf 2 :default "-") [:small "Portfolio Company Turnover"]]
-             [:li (fnum (some-> data (aget "total_employee_count")) :default "-") [:small "Portfolio Company Employees"]]]]))))
+             [:li (fmoney (some-> data :total_turnover) :sf 2 :default "-") [:small "Portfolio Company Turnover"]]
+             [:li (fnum (some-> data :total_employee_count) :default "-") [:small "Portfolio Company Employees"]]]]))))
 
 (defn widget [data]
   (let [type (get-in data [:selection :type])

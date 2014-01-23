@@ -12,7 +12,7 @@
   (om/component
    (dom/li #js {}
            (dom/a #js {:onClick (fn [e] (put! comm [:select [type (om/read search-result om/value)]]))}
-                  (search-result "name")))))
+                  (search-result :name)))))
 
 (defn key-down [e search-results owner comm]
   (condp == (.-keyCode e)
@@ -21,7 +21,7 @@
 
 (defn search-box
   [comm {:keys [search-results] :as data} owner]
-  (let [{:strs [constituencies portfolio_companies investor_companies]} search-results]
+  (let [{:keys [constituencies portfolio_companies investor_companies]} search-results]
     (om/component
      (dom/div #js {:ref "search-component"
                    :id "search"

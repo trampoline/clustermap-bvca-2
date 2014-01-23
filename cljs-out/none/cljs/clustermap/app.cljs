@@ -16,15 +16,15 @@
 
                   :selection nil
                   :selection-portfolio-company-stats nil
-                  :selection-portfolio-company-sites {}
+                  :selection-portfolio-company-sites nil
 
                   :all-portfolio-company-stats nil
 
                   :search-results {}
                   }))
 (defn set-state
-  [key value]
-  (swap! state (fn [s] (assoc s key value))))
+  [& {:as key-values}]
+  (swap! state (fn [s] (merge s key-values))))
 
 (defn load-all-portfolio-company-stats
   []
@@ -38,11 +38,11 @@
   (set-state :search-results (js->clj results)))
 
 (defn process-selection
-  [[selection selection-portfolio-company-stats] type]
+  [[selection selection-portfolio-company-stats selection-portfolio-company-sites] type]
   ;; (.log js/console (clj->js [result type]))
-  (set-state :selection {:type type
-                         :value selection})
-  (set-state :selection-portfolio-company-stats selection-portfolio-company-stats))
+  (set-state :selection {:type type :value selection}
+             :selection-portfolio-company-stats selection-portfolio-company-stats
+             :selection-portfolio-company-sites selection-portfolio-company-sites))
 
 (defn make-selection
   "set the selection
@@ -52,9 +52,9 @@
   [[type val]]
   ;; (.log js/console (clj->js val))
   (let [id (condp = type
-             :portfolio-company (get val "company_no")
-             :investor-company (get val "name")
-             :constituency (get val "boundaryline_id"))
+             :portfolio-company (:company_no val)
+             :investor-company (:name val)
+             :constituency (:boundaryline_id val))
         selector {type id}]
 
     (set-state :selector selector)

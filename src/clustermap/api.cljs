@@ -6,12 +6,20 @@
    [cljs.core.async :as async :refer [<! chan close! put! sliding-buffer to-chan]]
    [goog.net.XhrIo :as xhr]))
 
-(defn GET [url]
+(defn GET [url & {:keys [raw]}]
   "send a GET request, returning a channel with a single result value"
   (let [comm (chan 1)]
     (xhr/send url
               (fn [event]
-                (put! comm (-> event .-target .getResponseText JSON/parse (aget "data")))
+                (put! comm (-> event
+                               .-target
+                               .getResponseText
+                               JSON/parse
+                               (aget "data")
+                               ((fn [d]
+                                  (if raw
+                                    d
+                                    (js->clj d :keywordize-keys true))))))
                 (close! comm)))
     comm))
 

@@ -9,7 +9,6 @@
 
 (defn portfolio-company-site
   [site owner]
-  (.log js/console (clj->js site))
   (om/component
    (html
     [:tr

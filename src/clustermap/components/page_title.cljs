@@ -5,10 +5,17 @@
             [clustermap.formats.number :as nf :refer [fnum]]
             [clustermap.formats.money :as mf :refer [fmoney]]))
 
+(defn describe-type
+  [type]
+  (condp = type
+    :portfolio-company "Portfolio Company"
+    :investor-company "Investor"
+    :constituency "Constituency"))
+
 (defn page-title
   [data]
-  (let [type (some-> data (get-in [:selection :type]) name)
-        name (some-> data (get-in [:selection :value]) (aget "name"))]
+  (let [type (some-> data :selection :type describe-type)
+        name (some-> data :selection :value :name)]
     (om/component
      (html [:div#page-title
             [:button.btn {:type "button"} "View on map"]

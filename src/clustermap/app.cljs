@@ -20,6 +20,8 @@
 
                   :all-portfolio-company-stats nil
 
+                  :uk-constituencies nil
+
                   :search-results {}
                   }))
 (defn set-state
@@ -31,6 +33,12 @@
   (go
    (let [pcs (<! (api/portfolio-company-stats))]
      (set-state :all-portfolio-company-stats pcs))))
+
+(defn load-uk-constituencies
+  []
+  (go
+   (let [bls (<! (api/boundaryline-collections "uk_constituencies" :raw true))]
+     (set-state :uk-constituencies bls))))
 
 (defn process-search-results
   "process a search"
@@ -87,6 +95,7 @@
 
   ;; (load-all-portfolio-company-sites)
   (load-all-portfolio-company-stats)
+  (load-uk-constituencies)
 
   (let [comm (chan)]
 

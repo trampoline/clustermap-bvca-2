@@ -7,4 +7,10 @@
   (nav/init)
   (app/init))
 
-(init)
+(cond
+   ;; need this delay here when developing, otherwise Leaflet.js init seems to bork cljs REPL init
+   js/config.repl
+   (js/setTimeout init 2000)
+
+   true
+   (init))

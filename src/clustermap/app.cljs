@@ -90,7 +90,7 @@
     (if-not handler (throw (js/Error. (str "no handler for event-type: " type))))
     (handler val)))
 
-(defn do-init
+(defn init
   []
   (load-all-portfolio-company-stats)
   (load-uk-constituencies)
@@ -107,14 +107,3 @@
      (while true
        (let [[type val] (<! comm)]
          (handle-event type val))))))
-
-(defn init
-  []
-  (cond
-
-   ;; need this delay here when developing, otherwise Leaflet.js init seems to bork cljs REPL init
-   js/config.repl
-   (js/setTimeout do-init 2000)
-
-   true
-   (do-init)))

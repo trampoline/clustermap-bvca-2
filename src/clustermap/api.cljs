@@ -119,3 +119,7 @@
 (defn boundaryline-collections
   [id & opts]
   (apply GET (str "/api/boundaryline-collections/" id) opts))
+
+(defn boundarylines
+  [id tolerance & opts]
+  (apply GET (str "/api/boundarylines/" id "/" tolerance) opts))

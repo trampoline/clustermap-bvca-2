@@ -97,7 +97,7 @@
 
   (let [comm (chan)]
 
-    (map/mount state "map-component")
+    (map/mount state "map-component" comm)
     (search/mount state "search-component" comm)
     (map-report/mount state "map-report-component")
     (page-title/mount state "page-title-component")

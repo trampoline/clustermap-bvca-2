@@ -58,5 +58,5 @@
       (om/set-state! owner :map (create-map node)))))
 
 (defn mount
-  [app-state elem-id]
-  (om/root app-state map-component (.getElementById js/document elem-id)))
+  [app-state elem-id comm]
+  (om/root app-state {:comm comm} map-component (.getElementById js/document elem-id)))

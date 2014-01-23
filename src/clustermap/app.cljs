@@ -10,7 +10,8 @@
    [clustermap.components.map-report :as map-report]
    [clustermap.components.full-report :as full-report]
    [clustermap.components.page-title :as page-title]
-   [clustermap.components.search :as search]))
+   [clustermap.components.search :as search]
+   [clustermap.boundarylines :as bl]))
 
 (def state (atom {:selector {}
 

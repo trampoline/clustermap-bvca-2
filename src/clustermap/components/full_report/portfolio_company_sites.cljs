@@ -9,22 +9,21 @@
 
 (defn portfolio-company-site
   [site owner]
+  (.log js/console (clj->js site))
   (om/component
    (html
     [:tr
-     [:td "name"]
-     [:td "postcode"]
+     [:td (:name site)]
+     [:td (:postcode site)]
      [:td "investor"]
-     [:td "revenue"]
-     [:td "rev change"]
-     [:td "employees"]
-     [:td "emp change"]])))
+     [:td (fmoney (:latest_turnover site) :sf 2 :default "-")]
+     [:td (fmoney (:latest_turnover_delta site) :sf 2 :default "-")]
+     [:td (fnum (:latest_employee_count site) :default "-")]
+     [:td (fnum (:latest_employee_count_delta site) :default "-")]])))
 
 (defn portfolio-company-sites
   [data owner]
-;;  (.log js/console data)
-  (let [sites (-lookup data :selection-portfolio-company-sites)]
-;;    (.log js/console sites)
+  (let [sites (:selection-portfolio-company-sites data)]
     (om/component
        (html
         [:div.full-report-portfolio-company-sites
@@ -41,6 +40,4 @@
              [:th "Emp. change"]]]
            [:tbody
             (when sites
-              (om/build-all portfolio-company-site sites))]]
-
-          ]]))))
+              (om/build-all portfolio-company-site sites))]]]]))))

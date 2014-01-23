@@ -92,14 +92,12 @@
 
 (defn do-init
   []
-  (set-state :map (map/create-map))
-
-  ;; (load-all-portfolio-company-sites)
   (load-all-portfolio-company-stats)
   (load-uk-constituencies)
 
   (let [comm (chan)]
 
+    (map/mount state "map-component")
     (search/mount state "search-component" comm)
     (map-report/mount state "map-report-component")
     (page-title/mount state "page-title-component")

@@ -1,12 +1,9 @@
 (ns clustermap.map
   (:require
-   [domina :as dom]
-   [domina.css :as css]
-   [domina.xpath :as xpath]
-   [domina.events :as events]
-   [jayq.core :as jayq :refer [$]]
-   [cljs.core.async :refer [put! chan <!]]
-   [clustermap.async :as casync]))
+   [om.core :as om :include-macros true]
+   [om.dom :as dom :include-macros true]
+   [jayq.core :refer [$]]
+   [sablono.core :as html :refer [html] :include-macros true]))
 
 (defn locate-map
   [m]
@@ -16,8 +13,8 @@
                           "paddingBottomRight" [0 0]})))
 
 (defn create-map
-  []
-  (let [m ((-> js/L .-map) "map" #js {:zoomControl false})
+  [id-or-el]
+  (let [m ((-> js/L .-map) id-or-el #js {:zoomControl false})
         tiles ((-> js/L .-mapbox .-tileLayer) "mccraigmccraig.map-gqkcbi1g" #js {:detectRetina true})
         zoom ((-> js/L .-control .-zoom) #js {:position "bottomright"})]
     (.addLayer m tiles)
@@ -47,3 +44,19 @@
        (casync/map-async (partial display-site m))
        ((fn [c] (casync/dorun-async c :delay nil)))
        ))
+
+(defn map-component
+  "put the leaflet map as state in the om component"
+  [data owner]
+  (reify
+    om/IRender
+    (render [this]
+      (html [:div.map {:ref "map"}]))
+
+    om/IDidMount
+    (did-mount [this node]
+      (om/set-state! owner :map (create-map node)))))
+
+(defn mount
+  [app-state elem-id]
+  (om/root app-state map-component (.getElementById js/document elem-id)))

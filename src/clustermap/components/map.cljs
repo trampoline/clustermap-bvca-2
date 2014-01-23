@@ -1,4 +1,4 @@
-(ns clustermap.map
+(ns clustermap.components.map
   (:require
    [om.core :as om :include-macros true]
    [om.dom :as dom :include-macros true]

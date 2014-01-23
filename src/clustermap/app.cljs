@@ -6,7 +6,7 @@
    [om.core :as om :include-macros true]
    [om.dom :as dom :include-macros true]
    [clustermap.api :as api]
-   [clustermap.map :as map]
+   [clustermap.components.map :as map]
    [clustermap.components.map-report :as map-report]
    [clustermap.components.full-report :as full-report]
    [clustermap.components.page-title :as page-title]

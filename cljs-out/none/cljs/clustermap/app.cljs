@@ -10,7 +10,8 @@
    [clustermap.components.map-report :as map-report]
    [clustermap.components.full-report :as full-report]
    [clustermap.components.page-title :as page-title]
-   [clustermap.components.search :as search]))
+   [clustermap.components.search :as search]
+   [clustermap.boundarylines :as bl]))
 
 (def state (atom {:selector {}
 
@@ -19,6 +20,8 @@
                   :selection-portfolio-company-sites nil
 
                   :all-portfolio-company-stats nil
+
+                  :uk-constituencies nil
 
                   :search-results {}
                   }))
@@ -31,6 +34,12 @@
   (go
    (let [pcs (<! (api/portfolio-company-stats))]
      (set-state :all-portfolio-company-stats pcs))))
+
+(defn load-uk-constituencies
+  []
+  (go
+   (let [bls (<! (api/boundaryline-collections "uk_constituencies" :raw true))]
+     (set-state :uk-constituencies bls))))
 
 (defn process-search-results
   "process a search"
@@ -87,6 +96,7 @@
 
   ;; (load-all-portfolio-company-sites)
   (load-all-portfolio-company-stats)
+  (load-uk-constituencies)
 
   (let [comm (chan)]
 

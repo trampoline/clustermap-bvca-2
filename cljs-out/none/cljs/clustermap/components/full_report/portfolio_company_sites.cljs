@@ -9,13 +9,13 @@
 
 (defn portfolio-company-site
   [site owner]
-  (.log js/console (clj->js site))
   (om/component
    (html
     [:tr
      [:td (:name site)]
      [:td (:postcode site)]
      [:td "investor"]
+     [:td "constituency"]
      [:td (fmoney (:latest_turnover site) :sf 2 :default "-")]
      [:td (fmoney (:latest_turnover_delta site) :sf 2 :default "-")]
      [:td (fnum (:latest_employee_count site) :default "-")]
@@ -31,9 +31,10 @@
           [:table.table
            [:thead
             [:tr
-             [:th "Company"]
+             [:th "Portfolio Company"]
              [:th "Postcode"]
              [:th "Investor"]
+             [:th "Constituency"]
              [:th "Revenue"]
              [:th "Rev. change"]
              [:th "Employees"]

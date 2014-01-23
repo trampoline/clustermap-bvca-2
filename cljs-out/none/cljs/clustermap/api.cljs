@@ -115,3 +115,11 @@
 (defn investor-company
   [id]
   (GET (str "/api/bvca/investor-companies/" id)))
+
+(defn boundaryline-collections
+  [id & opts]
+  (apply GET (str "/api/boundaryline-collections/" id) opts))
+
+(defn boundarylines
+  [id tolerance & opts]
+  (apply GET (str "/api/boundarylines/" id "/" tolerance) opts))

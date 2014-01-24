@@ -22,9 +22,8 @@
      [:td (fnum (:latest_employee_count_delta site) :default "-")]])))
 
 (defn portfolio-company-sites
-  [data owner]
-  (let [sites (:selection-portfolio-company-sites data)]
-    (om/component
+  [selection-portfolio-company-sites owner]
+  (om/component
        (html
         [:div.full-report-portfolio-company-sites
          [:div.table-responsive
@@ -40,5 +39,4 @@
              [:th "Employees"]
              [:th "Emp. change"]]]
            [:tbody
-            (when sites
-              (om/build-all portfolio-company-site sites))]]]]))))
+            (om/build-all portfolio-company-site selection-portfolio-company-sites)]]]])))

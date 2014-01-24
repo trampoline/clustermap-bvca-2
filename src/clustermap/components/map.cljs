@@ -28,13 +28,24 @@
      :markers (atom [])
      :paths (atom [])}))
 
+(defn geojson-point-bounds
+  "return a single LatLngBounds object containing all
+   given latlongs"
+  [longlats]
+  (let [s (apply min (map last longlats))
+        w (apply min (map first longlats))
+        n (apply max (map last longlats))
+        e (apply max (map first longlats))]
+    (when (and s w n e)
+      (js/L.latLngBounds (clj->js [[s w] [n e]])))))
+
 (defn pan-to-show
   [m & all-bounds]
   (let [fb (first all-bounds)
         fb-copy (new js/L.LatLngBounds (.getSouthWest fb) (.getNorthEast fb))
         super-bounds (reduce (fn [sb bounds] (.extend sb bounds))
                              fb-copy
-                             (rest fb))]
+                             (rest all-bounds))]
     (.fitBounds m super-bounds)))
 
 (defn display-site
@@ -99,9 +110,18 @@
 
     (reset! markers-atom (merge updated-markers new-markers))))
 
+(defn pan-to-selection
+  [leaflet-map selection selection-portfolio-company-sites]
+  (let [points (map :location selection-portfolio-company-sites)
+        bounds (geojson-point-bounds points)]
+    (.log js/console (clj->js points))
+    (.log js/console bounds)
+    (when bounds
+      (pan-to-show leaflet-map bounds))))
+
 (defn map-component
   "put the leaflet map as state in the om component"
-  [{:keys [selection-portfolio-company-locations]} owner]
+  [{:keys [selection selection-portfolio-company-sites selection-portfolio-company-locations]} owner]
   (reify
     om/IRenderState
     (render-state [this {{:keys [leaflet-map markers paths]} :map locations :locations}]
@@ -110,7 +130,9 @@
         (when-not (identical? locations new-locations)
           ;; update markers, then store locations in the state for comparison next render
           (update-markers leaflet-map markers locations new-locations)
-          (om/set-state! owner :locations new-locations)))
+          (om/set-state! owner :locations new-locations)
+
+          (pan-to-selection leaflet-map selection selection-portfolio-company-sites)))
 
       (html [:div.map {:ref "map"}]))
 

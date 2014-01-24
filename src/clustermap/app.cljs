@@ -13,17 +13,16 @@
    [clustermap.components.search :as search]
    [clustermap.boundarylines :as bl]))
 
-(def state (atom {:selector {}
-
-                  :selection nil
-                  :selection-portfolio-company-stats nil
-                  :selection-portfolio-company-sites nil
-
-                  :all-portfolio-company-stats nil
-
+(def state (atom {:all-portfolio-company-stats nil
                   :uk-constituencies nil
 
                   :search-results {}
+
+                  :selector {}
+
+                  :selection nil
+                  :selection-portfolio-company-stats nil
+                  :selection-portfolio-company-sites []
                   }))
 
 (defn new-state

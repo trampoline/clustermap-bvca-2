@@ -25,9 +25,25 @@
 
                   :search-results {}
                   }))
+
+(defn new-state
+  "create a new app-state based on the old state
+   - state : the old state
+   - path-values : a seq of [key-or-path value-or-fn] pairs
+       - key-or-path : a single key or sequence of keys
+                       describing a path into the state
+       - value-or-fn : a new value or a function to mutate
+                       the previous value "
+  [state path-values]
+  (reduce (fn [s [key-or-path value-or-fn]]
+            (let [path (if (sequential? key-or-path) key-or-path [key-or-path])]
+              (update-in s path (if (fn? value-or-fn) value-or-fn (fn [ov] value-or-fn)))))
+          state
+          path-values))
+
 (defn set-state
-  [& {:as key-values}]
-  (swap! state (fn [s] (merge s key-values))))
+  [& {:as path-values}]
+  (swap! state (fn [s] (new-state s path-values))))
 
 (defn load-all-portfolio-company-stats
   []

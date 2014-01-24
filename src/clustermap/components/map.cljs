@@ -66,7 +66,7 @@
   (hiccups/html
    (->> location-sites
         (map (fn [site]
-               (.log js/console (clj->js site))
+               ;; (.log js/console (clj->js site))
                (hiccups/html [:p (:name site)]))))))
 
 (defn create-marker
@@ -75,7 +75,7 @@
   (if-let [latlong (some-> location-sites first :location reverse clj->js)]
     (let [marker (js/L.marker latlong)
           popup-content (marker-popup-content location-sites)]
-      (.log js/console popup-content)
+      ;; (.log js/console popup-content)
       (.bindPopup marker popup-content)
       (.addTo marker leaflet-map)
       marker)))
@@ -114,8 +114,8 @@
   [leaflet-map selection selection-portfolio-company-sites]
   (let [points (map :location selection-portfolio-company-sites)
         bounds (geojson-point-bounds points)]
-    (.log js/console (clj->js points))
-    (.log js/console bounds)
+    ;; (.log js/console (clj->js points))
+    ;; (.log js/console bounds)
     (when bounds
       (pan-to-show leaflet-map bounds))))
 

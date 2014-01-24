@@ -1,10 +1,8 @@
 (ns clustermap.components.full-report.overview
   (:require [om.core :as om :include-macros true]
-            [om.dom :as dom :include-macros true]
-            [jayq.core :refer [$]]
             [sablono.core :as html :refer [html] :include-macros true]
-            [clustermap.formats.number :as nf :refer [fnum]]
-            [clustermap.formats.money :as mf :refer [fmoney]]))
+            [clustermap.formats.number :refer [fnum]]
+            [clustermap.formats.money :refer [fmoney]]))
 
 (defn- describe-selection
   [{:keys [type value]}]

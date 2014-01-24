@@ -12,15 +12,19 @@
     :investor-company "Investor"
     :constituency "Constituency"))
 
-(defn page-title
-  [data]
-  (let [type (some-> data :selection :type describe-type)
-        name (some-> data :selection :value :name)]
+(defn page-title-component
+  [selection]
+  (let [type (some-> selection :type describe-type)
+        name (some-> selection :value :name)]
     (om/component
      (html [:div#page-title
             [:button.btn {:type "button"} "View on map"]
             [:h2 (or type "All portfolio companies")]
             [:h3 (or name "UK wide")]]))))
+
+(defn page-title
+  [data]
+  (page-title-component (:selection data)))
 
 (defn mount
   [app-state elem-id]

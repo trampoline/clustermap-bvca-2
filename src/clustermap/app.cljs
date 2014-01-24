@@ -18,7 +18,7 @@
 
                   :search-results {}
 
-                  :selector {}
+                  :selector nil
 
                   :selection nil
                   :selection-portfolio-company-stats nil

@@ -78,4 +78,6 @@
 
 (defn mount
   [app-state elem-id]
-  (om/root app-state widget (.getElementById js/document elem-id)))
+  (om/root app-state
+           widget
+           (.getElementById js/document elem-id)))

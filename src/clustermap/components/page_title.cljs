@@ -1,6 +1,7 @@
 (ns clustermap.components.page-title
   (:require [om.core :as om :include-macros true]
             [om.dom :as dom :include-macros true]
+            [clustermap.om :as omu]
             [sablono.core :as html :refer [html] :include-macros true]
             [clustermap.formats.number :as nf :refer [fnum]]
             [clustermap.formats.money :as mf :refer [fmoney]]))
@@ -22,10 +23,8 @@
             [:h2 (or type "All portfolio companies")]
             [:h3 (or name "UK wide")]]))))
 
-(defn page-title
-  [data]
-  (page-title-component (:selection data)))
-
 (defn mount
   [app-state elem-id]
-  (om/root app-state page-title (.getElementById js/document elem-id)))
+  (om/root app-state
+           (omu/burrow page-title-component :selection)
+           (.getElementById js/document elem-id)))

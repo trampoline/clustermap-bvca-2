@@ -1862,7 +1862,10 @@ body.view-map #page-map {
   display: block;
   *height: 100%;
 }
-body.view-map #page-map #map {
+body.view-map #page-map #map-component {
+  height: 100%;
+}
+body.view-map #page-map #map-component .map {
   height: 100%;
 }
 body.view-map #page-lists {

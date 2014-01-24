@@ -2,13 +2,13 @@
  "file":
  "/Users/mccraig/dev/clustermap.all/clustermap-bvca-2/cljs-out/none/cljs/clustermap/components/full_report/details.js",
  "sources":["details.cljs"],
- "lineCount":53,
+ "lineCount":49,
  "mappings":
- ";AAAA;;;;;;;;;;;;;;;;;AAQA,oDAAA,8BAAA,lFAAMA,sEACHE,KAAKC,OACN,AAAA,GAAA,OAAAC;CAAA;CAAA,AAAA,AAAA;;;;;;;;;;;;AAAA,AAAA,AAAAA,kEAAA;AAAA,AAAA,AAAAA,qEAAA;AAAA,AAAA,AAAAA,0EAAA,WAAAC,mBAAAC,qBAAAC,mBAAA,AAAA,OAAAC,2BAAAF,qBAAA;;AAAA,AAAA,AAAA,AAAA,AAAAF,8EAAA;AAAA,AAAA,AAAA,AAAAA,4FAAA,WAAAK;AAAA,AAAA,IAAAA,yBAAA,KAAA,AACC,OAAAI,cAAA,cAAA,uBAAA;;AADD,AAAA,AAAA,AAAAT,2FAAA,WAAAM;AAAA,AAAA,IAAAA,aAAA,KAAA,AAAAC;;AAAA,AAAA,AAAA,AAAAP,oGAAA,WAAAM,OAAAC;4GAFIV,ZACHC,bAAKC,nFACN,AAAA,IAAAO,aAAA,KAAA,AAAA,YAAAN,yFAAAO;;iGAFIV,uGAAAA,hHACHC,uGAAAA,jHAAKC,uGAAAA,rLACN,AAAAS,wDAAA,qDAAAD,WAAA,AAAA,YAAAP,gFAAAO;;AAAAP;wEAFIH,LACHC,NAAKC,7DACN,YAAAC,oEAAA",
+ ";AAAA;;;;;;;;;;;;;AAMA,oDAAA,8BAAA,lFAAMA,sEACHE,KAAKC,OACN,AAAA,GAAA,OAAAC;CAAA;CAAA,AAAA,AAAA;;;;;;;;;;;;AAAA,AAAA,AAAAA,kEAAA;AAAA,AAAA,AAAAA,qEAAA;AAAA,AAAA,AAAAA,0EAAA,WAAAC,mBAAAC,qBAAAC,mBAAA,AAAA,OAAAC,2BAAAF,qBAAA;;AAAA,AAAA,AAAA,AAAA,AAAAF,8EAAA;AAAA,AAAA,AAAA,AAAAA,4FAAA,WAAAK;AAAA,AAAA,IAAAA,yBAAA,KAAA,AACC,OAAAI,cAAA,cAAA,uBAAA;;AADD,AAAA,AAAA,AAAAT,2FAAA,WAAAM;AAAA,AAAA,IAAAA,aAAA,KAAA,AAAAC;;AAAA,AAAA,AAAA,AAAAP,oGAAA,WAAAM,OAAAC;4GAFIV,ZACHC,bAAKC,nFACN,AAAA,IAAAO,aAAA,KAAA,AAAA,YAAAN,yFAAAO;;iGAFIV,uGAAAA,hHACHC,uGAAAA,jHAAKC,uGAAAA,rLACN,AAAAS,wDAAA,qDAAAD,WAAA,AAAA,YAAAP,gFAAAO;;AAAAP;wEAFIH,LACHC,NAAKC,7DACN,YAAAC,oEAAA",
  "names":
  ["clustermap.components.full-report.details/details", "details",
-  "data", "owner", "clustermap.components.full-report.details/t11084",
+  "data", "owner", "clustermap.components.full-report.details/t11022",
   "this__3968__auto__", "writer__3969__auto__", "opt__3970__auto__",
-  "cljs.core/-write", "this__9148__auto__", "_11086", "meta11085",
-  "clustermap.components.full-report.details/->t11084",
+  "cljs.core/-write", "this__9154__auto__", "_11024", "meta11023",
+  "clustermap.components.full-report.details/->t11022",
   "js/React.DOM.div"]}

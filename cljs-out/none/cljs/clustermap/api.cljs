@@ -76,10 +76,6 @@
     (GET (str "/api/bvca/search?q=" q))
     (to-chan [#js {}])))
 
-(defn portfolio-company-sites
-  [& [type-ids]]
-  (GET (str "/api/bvca/portfolio-company-sites?" (map-json-params type-ids))))
-
 (defn constituencies
   []
   (GET "/api/bvca/constituencies"))
@@ -95,6 +91,14 @@
 (defn portfolio-company
   [id]
   (GET (str "/api/bvca/portfolio-companies/" id)))
+
+(defn portfolio-company-sites
+  [& [type-ids]]
+  (GET (str "/api/bvca/portfolio-company-sites?" (map-json-params type-ids))))
+
+(defn portfolio-company-locations
+  [& [type-ids]]
+  (GET (str "/api/bvca/portfolio-company-locations?" (map-json-params type-ids))))
 
 (defn portfolio-company-stats
   [& [type-ids]]

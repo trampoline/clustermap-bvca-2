@@ -11,6 +11,7 @@
                  [jayq "2.5.0"]
                  [om "0.2.3"]
                  [sablono "0.2.2"]
+                 [hiccups "0.3.0"]
                  ]
 
 ;;  :exclusions [org.clojure/google-closure-library

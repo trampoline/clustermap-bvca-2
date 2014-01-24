@@ -1,7 +1,5 @@
 (ns clustermap.components.full-report.portfolio-company-sites
   (:require [om.core :as om :include-macros true]
-            [om.dom :as dom :include-macros true]
-            [jayq.core :refer [$]]
             [sablono.core :as html :refer [html] :include-macros true]
             [clustermap.formats.number :as nf :refer [fnum]]
             [clustermap.formats.money :as mf :refer [fmoney]]))
@@ -22,9 +20,8 @@
      [:td (fnum (:latest_employee_count_delta site) :default "-")]])))
 
 (defn portfolio-company-sites
-  [data owner]
-  (let [sites (:selection-portfolio-company-sites data)]
-    (om/component
+  [selection-portfolio-company-sites owner]
+  (om/component
        (html
         [:div.full-report-portfolio-company-sites
          [:div.table-responsive
@@ -40,5 +37,4 @@
              [:th "Employees"]
              [:th "Emp. change"]]]
            [:tbody
-            (when sites
-              (om/build-all portfolio-company-site sites))]]]]))))
+            (om/build-all portfolio-company-site selection-portfolio-company-sites)]]]])))

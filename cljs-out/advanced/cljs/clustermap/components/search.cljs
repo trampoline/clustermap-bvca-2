@@ -1,6 +1,7 @@
 (ns clustermap.components.search
   (:require [om.core :as om :include-macros true]
             [om.dom :as dom :include-macros true]
+            [clustermap.om :as omu]
             [jayq.core :as jayq :refer [$]]
             [cljs.core.async :refer [put!]]))
 
@@ -19,9 +20,10 @@
     ESCAPE_KEY (some-> (om/get-node owner "search-component") $ .toggle)
     nil))
 
-(defn search-box
-  [comm {:keys [search-results] :as data} owner]
-  (let [{:keys [constituencies portfolio_companies investor_companies]} search-results]
+(defn search-component
+  [search-results owner]
+  (let [comm (om/get-shared owner :comm)
+        {:keys [constituencies portfolio_companies investor_companies]} search-results]
     (om/component
      (dom/div #js {:ref "search-component"
                    :id "search"
@@ -53,4 +55,7 @@
 
 (defn mount
   [app-state elem-id comm]
-  (om/root app-state (partial search-box comm) (.getElementById js/document elem-id)))
+  (om/root app-state
+           {:comm comm}
+           (omu/burrow search-component :search-results)
+           (.getElementById js/document elem-id)))

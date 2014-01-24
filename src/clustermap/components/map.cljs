@@ -1,16 +1,19 @@
 (ns clustermap.components.map
+  (:require-macros [hiccups.core :as hiccups])
   (:require
+   [clojure.set :as set]
    [om.core :as om :include-macros true]
    [om.dom :as dom :include-macros true]
    [jayq.core :refer [$]]
-   [sablono.core :as html :refer [html] :include-macros true]))
+   [sablono.core :as html :refer [html] :include-macros true]
+   [hiccups.runtime :as hiccupsrt]))
 
 (defn locate-map
   [m]
-    (.fitBounds m
-                (clj->js [[59.54 2.3] [49.29 -11.29]])
-                (clj->js {"paddingTopLeft" [0 0]
-                          "paddingBottomRight" [0 0]})))
+  (.fitBounds m
+              (clj->js [[59.54 2.3] [49.29 -11.29]])
+              (clj->js {"paddingTopLeft" [0 0]
+                        "paddingBottomRight" [0 0]})))
 
 (defn create-map
   [id-or-el]
@@ -20,7 +23,10 @@
     (.addLayer m tiles)
     (.addControl m zoom)
     (locate-map m)
-    m))
+
+    {:leaflet-map m
+     :markers (atom [])
+     :paths (atom [])}))
 
 (defn pan-to-show
   [m & all-bounds]
@@ -42,15 +48,70 @@
   [m sites]
   (->> sites
        (casync/map-async (partial display-site m))
-       ((fn [c] (casync/dorun-async c :delay nil)))
-       ))
+       ((fn [c] (casync/dorun-async c :delay nil)))))
+
+(defn marker-popup-content
+  [location-sites]
+  (hiccups/html
+   (->> location-sites
+        (map (fn [site]
+               (.log js/console (clj->js site))
+               (hiccups/html [:p (:name site)]))))))
+
+(defn create-marker
+  [leaflet-map location-sites]
+  ;; extract the location-sites from the first record... they are all the same
+  (if-let [latlong (some-> location-sites first :location reverse clj->js)]
+    (let [marker (js/L.marker latlong)
+          popup-content (marker-popup-content location-sites)]
+      (.log js/console popup-content)
+      (.bindPopup marker popup-content)
+      (.addTo marker leaflet-map)
+      marker)))
+
+(defn update-marker
+  [leaflet-map marker location]
+  (.setPopupContent marker (marker-popup-content location)))
+
+(defn remove-marker
+  [leaflet-map marker]
+  (.removeLayer leaflet-map marker))
+
+(defn update-markers
+  [leaflet-map markers-atom old-locations new-locations]
+  (let [markers @markers-atom
+        marker-keys (-> markers keys set)
+        location-keys (-> new-locations keys set)
+
+        update-marker-keys (set/intersection marker-keys location-keys)
+        new-marker-keys (set/difference location-keys marker-keys)
+        remove-marker-keys (set/difference marker-keys location-keys)
+
+        new-markers (->> new-marker-keys
+                         (map (fn [k] [k (create-marker leaflet-map (get new-locations k))]))
+                         (into {}))
+
+        updated-markers (->> update-marker-keys
+                             (map (fn [k] [k (update-marker leaflet-map (get markers k) (get new-locations k))]))
+                             (into {}))
+
+        _ (doseq [k remove-marker-keys] (remove-marker leaflet-map (get markers k)))]
+
+    (reset! markers-atom (merge updated-markers new-markers))))
 
 (defn map-component
   "put the leaflet map as state in the om component"
-  [data owner]
+  [{:keys [selection-portfolio-company-locations]} owner]
   (reify
-    om/IRender
-    (render [this]
+    om/IRenderState
+    (render-state [this {{:keys [leaflet-map markers paths]} :map locations :locations}]
+
+      (let [new-locations (if selection-portfolio-company-locations (om/value selection-portfolio-company-locations))]
+        (when-not (identical? locations new-locations)
+          ;; update markers, then store locations in the state for comparison next render
+          (update-markers leaflet-map markers locations new-locations)
+          (om/set-state! owner :locations new-locations)))
+
       (html [:div.map {:ref "map"}]))
 
     om/IDidMount

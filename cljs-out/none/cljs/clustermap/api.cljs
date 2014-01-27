@@ -70,55 +70,57 @@
        (map (fn [[k v]] (str (name k) "=" (js/JSON.stringify (clj->js v)))))
        (str/join "&")))
 
+(def api-prefix js/config.api.prefix)
+
 (defn search
   [q]
   (if (> (-> q str/trim count) 0)
-    (GET (str "/api/bvca/search?q=" q))
+    (GET (str "/api/" api-prefix "/search?q=" q))
     (to-chan [#js {}])))
 
 (defn constituencies
   []
-  (GET "/api/bvca/constituencies"))
+  (GET "/api/" api-prefix "/constituencies"))
 
 (defn constituency
   [id]
-  (GET (str "/api/bvca/constituencies/" id)))
+  (GET (str "/api/" api-prefix "/constituencies/" id)))
 
 (defn portfolio-companies-summary
   []
-  (GET "/api/bvca/portfolio-companies-summary"))
+  (GET "/api/" api-prefix "/portfolio-companies-summary"))
 
 (defn portfolio-company
   [id]
-  (GET (str "/api/bvca/portfolio-companies/" id)))
+  (GET (str "/api/" api-prefix "/portfolio-companies/" id)))
 
 (defn portfolio-company-sites
   [& [type-ids]]
-  (GET (str "/api/bvca/portfolio-company-sites?" (map-json-params type-ids))))
+  (GET (str "/api/" api-prefix "/portfolio-company-sites?" (map-json-params type-ids))))
 
 (defn portfolio-company-locations
   [& [type-ids]]
-  (GET (str "/api/bvca/portfolio-company-locations?" (map-json-params type-ids))))
+  (GET (str "/api/" api-prefix "/portfolio-company-locations?" (map-json-params type-ids))))
 
 (defn portfolio-company-stats
   [& [type-ids]]
-  (GET (str "/api/bvca/portfolio-company-stats?" (map-json-params type-ids))))
+  (GET (str "/api/" api-prefix "/portfolio-company-stats?" (map-json-params type-ids))))
 
 (defn portfolio-company-site-stats
   [& [type-ids]]
-  (GET (str "/api/bvca/portfolio-company-site-stats?" (map-json-params type-ids))))
+  (GET (str "/api/" api-prefix "/portfolio-company-site-stats?" (map-json-params type-ids))))
 
 (defn portfolio-company-account-stats
   [& [type-ids]]
-  (GET (str "/api/bvca/portfolio-company-account-stats?" (map-json-params type-ids))))
+  (GET (str "/api/" api-prefix "/portfolio-company-account-stats?" (map-json-params type-ids))))
 
 (defn investor-companies-summary
   []
-  (GET "/api/bvca/investor-companies-summary"))
+  (GET "/api/" api-prefix "/investor-companies-summary"))
 
 (defn investor-company
   [id]
-  (GET (str "/api/bvca/investor-companies/" id)))
+  (GET (str "/api/" api-prefix "/investor-companies/" id)))
 
 (defn boundaryline-collections
   [id & opts]

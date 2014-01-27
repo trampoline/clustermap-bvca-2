@@ -12,7 +12,7 @@
   [search-result owner {:keys [comm type] :as opts}]
   (om/component
    (dom/li #js {}
-           (dom/a #js {:onClick (fn [e] (put! comm [:select [type (om/read search-result om/value)]]))}
+           (dom/a #js {:onClick (fn [e] (put! comm [:select [type @search-result]]))}
                   (search-result :name)))))
 
 (defn key-down [e search-results owner comm]
@@ -27,7 +27,7 @@
     (om/component
      (dom/div #js {:ref "search-component"
                    :id "search"
-                   :onKeyDown (om/bind key-down search-results owner comm)}
+                   :onKeyDown (fn [e] (key-down e search-results owner comm))}
               (dom/h2 nil "Search")
               (dom/div nil
                        (dom/input #js {:ref "search-field"

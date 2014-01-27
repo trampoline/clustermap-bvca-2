@@ -122,9 +122,9 @@
   [id]
   (GET (str "/api/" api-prefix "/investor-companies/" id)))
 
-(defn boundaryline-collections
+(defn boundaryline-collection-index
   [id & opts]
-  (apply GET (str "/api/boundaryline-collections/" id) opts))
+  (apply GET (str "/api/boundaryline-collection-index/" id) opts))
 
 (defn boundarylines
   [id tolerance & opts]

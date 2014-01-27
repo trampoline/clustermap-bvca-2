@@ -54,7 +54,7 @@
 (defn load-uk-constituencies
   []
   (go
-   (let [bls (<! (api/boundaryline-collections "uk_constituencies" :raw true))]
+   (let [bls (<! (api/boundaryline-collection-index "uk_constituencies" :raw true))]
      (set-state :uk-constituencies bls))))
 
 (defn process-search-results

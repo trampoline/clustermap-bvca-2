@@ -110,6 +110,52 @@
 
     (reset! markers-atom (merge updated-markers new-markers))))
 
+(defn create-path
+  [leaflet-map uk-constituencies boundaryline-id]
+  (when-let [cons (aget uk-constituencies boundaryline-id)]
+    (.log js/console cons)
+    (.log js/console (aget cons "geojson"))
+    (let [path (js/L.geoJson (aget cons "geojson"))]
+      (.addTo path leaflet-map)
+      path)))
+
+(defn update-path
+  [leaflet-map uk-constituencies path boundaryline-id])
+
+(defn remove-path
+  [leaflet-map path]
+  (some->>
+   path
+   (.removeLayer leaflet-map)))
+
+(defn update-paths
+  [leaflet-map uk-constituencies paths-atom old-locations new-locations]
+  (let [paths @paths-atom
+        path-keys (-> paths keys set)
+        location-path-keys (->> new-locations vals (apply concat) (map (comp :uk_constituencies :boundarylinecolls)) (apply concat) set)
+
+        update-path-keys (set/intersection path-keys location-path-keys)
+        new-path-keys (set/difference location-path-keys path-keys)
+        remove-path-keys (set/difference path-keys location-path-keys)
+
+        new-paths (->> new-path-keys
+                       (map (fn [k] [k (create-path leaflet-map uk-constituencies k)]))
+                       (into {}))
+        updated-paths (->> update-path-keys
+                           (map (fn [k] [k (update-path leaflet-map uk-constituencies (get paths k) k)]))
+                           (into {}))
+        _ (doseq [k remove-path-keys] (remove-path leaflet-map (get paths k)))]
+
+
+    (.log js/console (clj->js location-path-keys))
+    (.log js/console (clj->js update-path-keys))
+    (.log js/console (clj->js new-path-keys))
+    (.log js/console (clj->js remove-path-keys))
+
+    (reset! paths-atom (merge updated-paths new-paths))
+    )
+  )
+
 (defn pan-to-selection
   [leaflet-map selection selection-portfolio-company-sites]
   (let [points (map :location selection-portfolio-company-sites)
@@ -121,15 +167,17 @@
 
 (defn map-component
   "put the leaflet map as state in the om component"
-  [{:keys [selection selection-portfolio-company-sites selection-portfolio-company-locations]} owner]
+  [{:keys [selection selection-portfolio-company-sites selection-portfolio-company-locations uk-constituencies]} owner]
   (reify
     om/IRenderState
     (render-state [this {{:keys [leaflet-map markers paths]} :map locations :locations}]
 
       (let [new-locations (if selection-portfolio-company-locations (om/value selection-portfolio-company-locations))]
         (when-not (identical? locations new-locations)
-          ;; update markers, then store locations in the state for comparison next render
+          ;; update markers and paths, then store locations in the state for comparison next render
           (update-markers leaflet-map markers locations new-locations)
+          (update-paths leaflet-map uk-constituencies paths locations new-locations)
+
           (om/set-state! owner :locations new-locations)
 
           (pan-to-selection leaflet-map selection selection-portfolio-company-sites)))

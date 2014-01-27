@@ -19,29 +19,33 @@
     om/IRenderState
     (render-state [this state]
       (html [:li {:class (when (:selected state) "selected")}
-             [:a {:onClick (fn [e] (put! comm [:select [type @search-result]]))}
+             [:a {:onClick (fn [e]
+                             (put! comm [:select [type @search-result]]))}
               (search-result :name)
               (if (:selected state) "*")]]))))
 
 (defn nth-search-result
   [{:keys [constituencies portfolio_companies investor_companies]} n]
-  (cond
-   (< (count (or constituencies [])))
-   [:constituency (get constituencies n)]
+  (let [cons (or constituencies [])
+        pcs (or portfolio_companies [])
+        invs (or investor_companies [])]
+    (cond
+     (< n (count cons))
+     [:constituency (get constituencies n)]
 
-   (< (+ (count (or constituencies []))
-         (count (or portfolio_companies []))))
-   [:portfolio-company (get portfolio_companies (- n (count (or constituencies []))))]
+     (< n (+ (count cons) (count pcs)))
+     [:portfolio-company (get pcs (- n (count cons)))]
 
-   true
-   [:investor-company
-    (get (or investor_companies []) (- n (count (or constituencies [])) (count (or portfolio_companies []))))]))
+     true
+     [:investor-company
+      (get invs (- n (count cons) (count pcs)))])))
 
 (defn key-down [e search-results owner comm]
   (.log js/console (om/get-state owner :selected-idx))
   (condp == (.-keyCode e)
     ESCAPE_KEY (some-> (om/get-node owner "search-component") $ .toggle)
     ENTER_KEY (let [[type res] (nth-search-result @search-results (or (om/get-state owner :selected-idx) 0))]
+                (some-> (om/get-node owner "search-component") $ .toggle)
                 (put! comm [:select [type res]]))
     UP_ARROW (om/set-state! owner :selected-idx (dec (or (om/get-state owner :selected-idx) 0)))
     DOWN_ARROW (om/set-state! owner :selected-idx (inc (or (om/get-state owner :selected-idx) 0)))

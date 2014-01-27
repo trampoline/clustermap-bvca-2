@@ -110,14 +110,20 @@
 
     (reset! markers-atom (merge updated-markers new-markers))))
 
+(defn postgis-envelope->latlngbounds
+  "turns a PostGIS envelope into a L.LatLngBounds"
+  [envelope]
+  (let [{[[[miny minx] [maxy minx] [maxy maxx] [miny maxx] [miny minx] :as inner] :as coords] "coordinates" :as clj-envelope} (js->clj envelope)]
+    (js/L.latLngBounds (clj->js [[minx miny] [maxx maxy]]))))
+
 (defn create-path
   [leaflet-map uk-constituencies boundaryline-id]
   (when-let [cons (aget uk-constituencies boundaryline-id)]
-    (.log js/console cons)
-    (.log js/console (aget cons "geojson"))
-    (let [path (js/L.geoJson (aget cons "geojson"))]
+    (let [path (js/L.geoJson (aget cons "geojson"))
+          bounds (postgis-envelope->latlngbounds (aget cons "envelope"))]
       (.addTo path leaflet-map)
-      path)))
+      {:path path
+       :bounds bounds})))
 
 (defn update-path
   [leaflet-map uk-constituencies path boundaryline-id])
@@ -126,6 +132,7 @@
   [leaflet-map path]
   (some->>
    path
+   :path
    (.removeLayer leaflet-map)))
 
 (defn update-paths
@@ -146,24 +153,13 @@
                            (into {}))
         _ (doseq [k remove-path-keys] (remove-path leaflet-map (get paths k)))]
 
-
-    (.log js/console (clj->js location-path-keys))
-    (.log js/console (clj->js update-path-keys))
-    (.log js/console (clj->js new-path-keys))
-    (.log js/console (clj->js remove-path-keys))
-
-    (reset! paths-atom (merge updated-paths new-paths))
-    )
-  )
+    (reset! paths-atom (merge updated-paths new-paths))))
 
 (defn pan-to-selection
-  [leaflet-map selection selection-portfolio-company-sites]
-  (let [points (map :location selection-portfolio-company-sites)
-        bounds (geojson-point-bounds points)]
-    ;; (.log js/console (clj->js points))
-    ;; (.log js/console bounds)
+  [leaflet-map paths]
+  (let [bounds (some->> paths vals (map :bounds))]
     (when bounds
-      (pan-to-show leaflet-map bounds))))
+      (apply pan-to-show leaflet-map bounds))))
 
 (defn map-component
   "put the leaflet map as state in the om component"
@@ -180,7 +176,7 @@
 
           (om/set-state! owner :locations new-locations)
 
-          (pan-to-selection leaflet-map selection selection-portfolio-company-sites)))
+          (pan-to-selection leaflet-map @paths)))
 
       (html [:div.map {:ref "map"}]))
 

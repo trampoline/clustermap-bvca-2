@@ -113,8 +113,8 @@
 (defn postgis-envelope->latlngbounds
   "turns a PostGIS envelope into a L.LatLngBounds"
   [envelope]
-  (let [{[[[miny minx] [maxy minx] [maxy maxx] [miny maxx] [miny minx] :as inner] :as coords] "coordinates" :as clj-envelope} (js->clj envelope)]
-    (js/L.latLngBounds (clj->js [[minx miny] [maxx maxy]]))))
+  (let [{[[[miny0 minx0] [maxy1 minx1] [maxy2 maxx2] [miny3 maxx3] [miny4 minx4] :as inner] :as coords] "coordinates" :as clj-envelope} (js->clj envelope)]
+    (js/L.latLngBounds (clj->js [[minx0 miny0] [maxx2 maxy2]]))))
 
 (defn create-path
   [leaflet-map uk-constituencies boundaryline-id]

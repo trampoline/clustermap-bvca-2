@@ -20,7 +20,6 @@
     (render-state [this state]
       (html [:li {:class (when (:selected state) "selected")}
              [:a {:onClick (fn [e]
-                             (some-> (om/get-node owner "search-component") $ .toggle)
                              (put! comm [:select [type @search-result]]))}
               (search-result :name)
               (if (:selected state) "*")]]))))

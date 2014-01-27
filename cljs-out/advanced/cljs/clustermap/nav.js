@@ -28,7 +28,7 @@ clustermap.nav.body_view_classes = new cljs.core.PersistentArrayMap(null, 2, ["m
 clustermap.nav.switch_view = (function switch_view(){return domina.events.listen_BANG_.cljs$core$IFn$_invoke$arity$3(domina.css.sel.cljs$core$IFn$_invoke$arity$1("#nav .map > a, #nav .lists > a"),cljs.core.constant$keyword$295,(function (e){var target = domina.events.target(e);var li = domina.xpath.xpath.cljs$core$IFn$_invoke$arity$2(target,"..");var ul = domina.xpath.xpath.cljs$core$IFn$_invoke$arity$2(li,"..");var active_li = domina.css.sel.cljs$core$IFn$_invoke$arity$2(ul,"> .active");var body = domina.css.sel.cljs$core$IFn$_invoke$arity$1("body");domina.events.prevent_default(e);
 domina.remove_class_BANG_(active_li,"active");
 domina.add_class_BANG_(li,"active");
-return cljs.core.dorun.cljs$core$IFn$_invoke$arity$1(cljs.core.map.cljs$core$IFn$_invoke$arity$2((function (p__21671){var vec__21672 = p__21671;var li_class = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__21672,0,null);var body_class = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__21672,1,null);if(cljs.core.truth_(domina.has_class_QMARK_(li,li_class)))
+return cljs.core.dorun.cljs$core$IFn$_invoke$arity$1(cljs.core.map.cljs$core$IFn$_invoke$arity$2((function (p__21657){var vec__21658 = p__21657;var li_class = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__21658,0,null);var body_class = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__21658,1,null);if(cljs.core.truth_(domina.has_class_QMARK_(li,li_class)))
 {return domina.add_class_BANG_(body,body_class);
 } else
 {return domina.remove_class_BANG_(body,body_class);

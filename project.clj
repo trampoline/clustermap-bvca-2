@@ -12,6 +12,7 @@
                  [om "0.3.0"]
                  [sablono "0.2.3"]
                  [hiccups "0.3.0"]
+                 [secretary "0.4.0"]
                  ]
 
 ;;  :exclusions [org.clojure/google-closure-library

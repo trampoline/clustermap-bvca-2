@@ -456,21 +456,21 @@ clustermap.api.investor_company = (function investor_company(id){return clusterm
 /**
 * @param {...*} var_args
 */
-clustermap.api.boundaryline_collections = (function() { 
-var boundaryline_collections__delegate = function (id,opts){return cljs.core.apply.call(null,clustermap.api.GET,[cljs.core.str("/api/boundaryline-collections/"),cljs.core.str(id)].join(''),opts);
+clustermap.api.boundaryline_collection_index = (function() { 
+var boundaryline_collection_index__delegate = function (id,opts){return cljs.core.apply.call(null,clustermap.api.GET,[cljs.core.str("/api/boundaryline-collection-index/"),cljs.core.str(id)].join(''),opts);
 };
-var boundaryline_collections = function (id,var_args){
+var boundaryline_collection_index = function (id,var_args){
 var opts = null;if (arguments.length > 1) {
   opts = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return boundaryline_collections__delegate.call(this,id,opts);};
-boundaryline_collections.cljs$lang$maxFixedArity = 1;
-boundaryline_collections.cljs$lang$applyTo = (function (arglist__8536){
+return boundaryline_collection_index__delegate.call(this,id,opts);};
+boundaryline_collection_index.cljs$lang$maxFixedArity = 1;
+boundaryline_collection_index.cljs$lang$applyTo = (function (arglist__8536){
 var id = cljs.core.first(arglist__8536);
 var opts = cljs.core.rest(arglist__8536);
-return boundaryline_collections__delegate(id,opts);
+return boundaryline_collection_index__delegate(id,opts);
 });
-boundaryline_collections.cljs$core$IFn$_invoke$arity$variadic = boundaryline_collections__delegate;
-return boundaryline_collections;
+boundaryline_collection_index.cljs$core$IFn$_invoke$arity$variadic = boundaryline_collection_index__delegate;
+return boundaryline_collection_index;
 })()
 ;
 /**

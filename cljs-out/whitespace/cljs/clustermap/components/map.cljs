@@ -110,29 +110,73 @@
 
     (reset! markers-atom (merge updated-markers new-markers))))
 
+(defn postgis-envelope->latlngbounds
+  "turns a PostGIS envelope into a L.LatLngBounds"
+  [envelope]
+  (let [{[[[miny minx] [maxy minx] [maxy maxx] [miny maxx] [miny minx] :as inner] :as coords] "coordinates" :as clj-envelope} (js->clj envelope)]
+    (js/L.latLngBounds (clj->js [[minx miny] [maxx maxy]]))))
+
+(defn create-path
+  [leaflet-map uk-constituencies boundaryline-id]
+  (when-let [cons (aget uk-constituencies boundaryline-id)]
+    (let [path (js/L.geoJson (aget cons "geojson"))
+          bounds (postgis-envelope->latlngbounds (aget cons "envelope"))]
+      (.addTo path leaflet-map)
+      {:path path
+       :bounds bounds})))
+
+(defn update-path
+  [leaflet-map uk-constituencies path boundaryline-id])
+
+(defn remove-path
+  [leaflet-map path]
+  (some->>
+   path
+   :path
+   (.removeLayer leaflet-map)))
+
+(defn update-paths
+  [leaflet-map uk-constituencies paths-atom old-locations new-locations]
+  (let [paths @paths-atom
+        path-keys (-> paths keys set)
+        location-path-keys (->> new-locations vals (apply concat) (map (comp :uk_constituencies :boundarylinecolls)) (apply concat) set)
+
+        update-path-keys (set/intersection path-keys location-path-keys)
+        new-path-keys (set/difference location-path-keys path-keys)
+        remove-path-keys (set/difference path-keys location-path-keys)
+
+        new-paths (->> new-path-keys
+                       (map (fn [k] [k (create-path leaflet-map uk-constituencies k)]))
+                       (into {}))
+        updated-paths (->> update-path-keys
+                           (map (fn [k] [k (update-path leaflet-map uk-constituencies (get paths k) k)]))
+                           (into {}))
+        _ (doseq [k remove-path-keys] (remove-path leaflet-map (get paths k)))]
+
+    (reset! paths-atom (merge updated-paths new-paths))))
+
 (defn pan-to-selection
-  [leaflet-map selection selection-portfolio-company-sites]
-  (let [points (map :location selection-portfolio-company-sites)
-        bounds (geojson-point-bounds points)]
-    ;; (.log js/console (clj->js points))
-    ;; (.log js/console bounds)
+  [leaflet-map paths]
+  (let [bounds (some->> paths vals (map :bounds))]
     (when bounds
-      (pan-to-show leaflet-map bounds))))
+      (apply pan-to-show leaflet-map bounds))))
 
 (defn map-component
   "put the leaflet map as state in the om component"
-  [{:keys [selection selection-portfolio-company-sites selection-portfolio-company-locations]} owner]
+  [{:keys [selection selection-portfolio-company-sites selection-portfolio-company-locations uk-constituencies]} owner]
   (reify
     om/IRenderState
     (render-state [this {{:keys [leaflet-map markers paths]} :map locations :locations}]
 
       (let [new-locations (if selection-portfolio-company-locations (om/value selection-portfolio-company-locations))]
         (when-not (identical? locations new-locations)
-          ;; update markers, then store locations in the state for comparison next render
+          ;; update markers and paths, then store locations in the state for comparison next render
           (update-markers leaflet-map markers locations new-locations)
+          (update-paths leaflet-map uk-constituencies paths locations new-locations)
+
           (om/set-state! owner :locations new-locations)
 
-          (pan-to-selection leaflet-map selection selection-portfolio-company-sites)))
+          (pan-to-selection leaflet-map @paths)))
 
       (html [:div.map {:ref "map"}]))
 

@@ -15,10 +15,13 @@
               (clj->js {"paddingTopLeft" [0 0]
                         "paddingBottomRight" [0 0]})))
 
+(def api-key (or (some-> js/config .-components .-map .-api_key)
+                 "mccraigmccraig.h4f921b9"))
+
 (defn create-map
   [id-or-el]
   (let [m ((-> js/L .-map) id-or-el #js {:zoomControl false})
-        tiles ((-> js/L .-mapbox .-tileLayer) "mccraigmccraig.h4f921b9" #js {:detectRetina true})
+        tiles ((-> js/L .-mapbox .-tileLayer) api-key #js {:detectRetina true})
         zoom ((-> js/L .-control .-zoom) #js {:position "bottomright"})]
     (.addLayer m tiles)
     (.addControl m zoom)

@@ -15,10 +15,13 @@
               (clj->js {"paddingTopLeft" [0 0]
                         "paddingBottomRight" [0 0]})))
 
+(def api-key (or (some-> js/config .-components .-map .-api_key)
+                 "mccraigmccraig.h4f921b9"))
+
 (defn create-map
   [id-or-el]
   (let [m ((-> js/L .-map) id-or-el #js {:zoomControl false})
-        tiles ((-> js/L .-mapbox .-tileLayer) "mccraigmccraig.h4f921b9" #js {:detectRetina true})
+        tiles ((-> js/L .-mapbox .-tileLayer) api-key #js {:detectRetina true})
         zoom ((-> js/L .-control .-zoom) #js {:position "bottomright"})]
     (.addLayer m tiles)
     (.addControl m zoom)
@@ -168,7 +171,7 @@
     om/IRenderState
     (render-state [this {{:keys [leaflet-map markers paths]} :map locations :locations}]
 
-      (let [new-locations (if selection-portfolio-company-locations (om/value selection-portfolio-company-locations))]
+      (let [new-locations (if selection-portfolio-company-locations @selection-portfolio-company-locations)]
         (when-not (identical? locations new-locations)
           ;; update markers and paths, then store locations in the state for comparison next render
           (update-markers leaflet-map markers locations new-locations)

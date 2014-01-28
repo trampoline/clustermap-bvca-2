@@ -14,8 +14,8 @@
     (render [this]
       (html [:div
              (om/build overview/overview data)
-             (when (:selection-portfolio-company-sites data) (om/build pcs/portfolio-company-sites (:selection-portfolio-company-sites data)))
-             (om/build details/details data)]))
+             (om/build details/details data)
+             (when (:selection-portfolio-company-sites data) (om/build pcs/portfolio-company-sites (:selection-portfolio-company-sites data)))]))
     om/IDidUpdate
     (did-update [this prev-props prev-state root-node]
       (-> "[data-toggle='tooltip']" ($ root-node) (.data "bs.tooltip" false)) ;; remove any existing tooltip

@@ -110,6 +110,10 @@
   [& [type-ids]]
   (GET (str "/api/" api-prefix "/portfolio-company-site-stats?" (map-json-params type-ids))))
 
+(defn portfolio-company-site-account-timelines
+  [& [type-ids]]
+  (GET (str "/api/" api-prefix "/portfolio-company-site-account-timelines?" (map-json-params type-ids))))
+
 (defn portfolio-company-account-stats
   [& [type-ids]]
   (GET (str "/api/" api-prefix "/portfolio-company-account-stats?" (map-json-params type-ids))))

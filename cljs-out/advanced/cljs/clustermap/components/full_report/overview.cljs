@@ -25,22 +25,26 @@
                 :description "Averages over all Portfolio Companies"}}))
 
 (defn- overview-data
-  [{:keys [all-portfolio-company-stats selection selection-portfolio-company-stats]}]
+  [{:keys [all-portfolio-company-stats
+           selection
+           selection-portfolio-company-stats
+           selection-portfolio-company-site-stats]}]
   (let [sel-descrs (describe-selection selection)
-        use-stats (or selection-portfolio-company-stats all-portfolio-company-stats)]
+        co-stats (or selection-portfolio-company-stats all-portfolio-company-stats)
+        site-stats (or selection-portfolio-company-site-stats all-portfolio-company-stats)]
 
     {:selection (merge (:selection sel-descrs)
-                       {:portfolio-companies (fnum (some-> use-stats :portfolio_company_count) :default "-")
-                        :investor-companies (fnum (some-> use-stats :investor_company_count) :default "-")
-                        :constituencies (fnum (some-> use-stats :constituency_count) :default "-")
-                        :turnover (fmoney (some-> use-stats :turnover :total) :sf 2 :default "-")
-                        :employee-count (fnum (some-> use-stats :employee_count :total) :sf 2 :default "-")})
+                       {:portfolio-companies (fnum (some-> co-stats :portfolio_company_count) :default "-")
+                        :investor-companies (fnum (some-> co-stats :investor_company_count) :default "-")
+                        :constituencies (fnum (some-> co-stats :constituency_count) :default "-")
+                        :turnover (fmoney (some-> site-stats :turnover :total) :sf 2 :default "-")
+                        :employee-count (fnum (some-> site-stats :employee_count :total) :sf 2 :default "-")})
      :averages (merge (:averages sel-descrs)
                       {:portfolio-companies "\u00A0"
                        :investor-companies "\u00A0"
                        :constituencies "\u00A0"
-                       :turnover (fmoney (some-> use-stats :turnover :mean) :sf 2 :default "-")
-                       :employee-count (fnum (some-> use-stats :employee_count :mean) :dec 0 :default "-")})}))
+                       :turnover (fmoney (some-> site-stats :turnover :mean) :sf 2 :default "-")
+                       :employee-count (fnum (some-> site-stats :employee_count :mean) :dec 0 :default "-")})}))
 
 (defn overview
   [data]

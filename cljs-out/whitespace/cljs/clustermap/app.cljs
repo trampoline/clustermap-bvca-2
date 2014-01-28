@@ -22,7 +22,9 @@
 
                   :selection nil
                   :selection-portfolio-company-stats nil
+                  :selection-portfolio-company-site-stats nil
                   :selection-portfolio-company-sites []
+                  :selection-portfolio-company-site-account-timelines nil
                   :selection-portfolio-company-locations nil
                   }))
 
@@ -63,11 +65,18 @@
   (set-state :search-results (js->clj results)))
 
 (defn process-selection
-  [[selection selection-portfolio-company-stats selection-portfolio-company-sites selection-portfolio-company-locations] type]
+  [[selection
+    selection-portfolio-company-stats
+    selection-portfolio-company-site-stats
+    selection-portfolio-company-sites
+    selection-portfolio-company-site-account-timelines
+    selection-portfolio-company-locations] type]
   ;; (.log js/console (clj->js [result type]))
   (set-state :selection {:type type :value selection}
              :selection-portfolio-company-stats selection-portfolio-company-stats
+             :selection-portfolio-company-site-stats selection-portfolio-company-site-stats
              :selection-portfolio-company-sites selection-portfolio-company-sites
+             :selection-portfolio-company-site-account-timelines selection-portfolio-company-site-account-timelines
              :selection-portfolio-company-locations selection-portfolio-company-locations))
 
 (defn make-selection
@@ -88,15 +97,21 @@
     (condp = type
       :portfolio-company [[(api/portfolio-company id)
                            (api/portfolio-company-stats selector)
+                           (api/portfolio-company-site-stats selector)
                            (api/portfolio-company-sites selector)
+                           (api/portfolio-company-site-account-timelines selector)
                            (api/portfolio-company-locations selector)] type]
       :investor-company [[(api/investor-company id)
                           (api/portfolio-company-stats selector)
+                          (api/portfolio-company-site-stats selector)
                           (api/portfolio-company-sites selector)
+                          (api/portfolio-company-site-account-timelines selector)
                           (api/portfolio-company-locations selector)] type]
       :constituency [[(api/constituency id)
                       (api/portfolio-company-stats selector)
+                      (api/portfolio-company-site-stats selector)
                       (api/portfolio-company-sites selector)
+                      (api/portfolio-company-site-account-timelines selector)
                       (api/portfolio-company-locations selector)] type]
       nil)))
 

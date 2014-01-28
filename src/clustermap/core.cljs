@@ -1,5 +1,5 @@
 (ns clustermap.core
-  (:require clustermap.repl
+  (:require clojure.browser.repl
             [clustermap.nav :as nav]
             [clustermap.app :as app]))
 

@@ -18,7 +18,7 @@
 (defn create-map
   [id-or-el]
   (let [m ((-> js/L .-map) id-or-el #js {:zoomControl false})
-        tiles ((-> js/L .-mapbox .-tileLayer) "mccraigmccraig.map-gqkcbi1g" #js {:detectRetina true})
+        tiles ((-> js/L .-mapbox .-tileLayer) "mccraigmccraig.h4f921b9" #js {:detectRetina true})
         zoom ((-> js/L .-control .-zoom) #js {:position "bottomright"})]
     (.addLayer m tiles)
     (.addControl m zoom)

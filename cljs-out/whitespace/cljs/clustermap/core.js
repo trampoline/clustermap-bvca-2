@@ -5,7 +5,7 @@ goog.require('clustermap.app');
 goog.require('clustermap.app');
 goog.require('clustermap.nav');
 goog.require('clustermap.nav');
-goog.require('clustermap.repl');
+goog.require('clojure.browser.repl');
 clustermap.core.init = (function init(){clustermap.nav.init.call(null);
 return clustermap.app.init.call(null);
 });

@@ -171,7 +171,7 @@
     om/IRenderState
     (render-state [this {{:keys [leaflet-map markers paths]} :map locations :locations}]
 
-      (let [new-locations (if selection-portfolio-company-locations (om/value selection-portfolio-company-locations))]
+      (let [new-locations (if selection-portfolio-company-locations @selection-portfolio-company-locations)]
         (when-not (identical? locations new-locations)
           ;; update markers and paths, then store locations in the state for comparison next render
           (update-markers leaflet-map markers locations new-locations)

@@ -3,11 +3,8 @@ goog.provide('clustermap.core');
 goog.require('cljs.core');
 goog.require('clustermap.app');
 goog.require('clustermap.app');
-goog.require('clustermap.nav');
-goog.require('clustermap.nav');
 goog.require('clojure.browser.repl');
-clustermap.core.init = (function init(){clustermap.nav.init.call(null);
-return clustermap.app.init.call(null);
+clustermap.core.init = (function init(){return clustermap.app.init.call(null);
 });
 if(cljs.core.truth_(config.repl))
 {setTimeout(clustermap.core.init,2000);

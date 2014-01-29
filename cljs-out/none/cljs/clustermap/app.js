@@ -1,11 +1,11 @@
 // Compiled by ClojureScript 0.0-2138
 goog.provide('clustermap.app');
 goog.require('cljs.core');
-goog.require('clustermap.nav');
 goog.require('cljs.core.async');
 goog.require('clustermap.boundarylines');
 goog.require('clustermap.boundarylines');
 goog.require('goog.History');
+goog.require('clustermap.nav');
 goog.require('clustermap.api');
 goog.require('clustermap.components.page_title');
 goog.require('clustermap.components.full_report');
@@ -250,21 +250,24 @@ var pred__11190 = cljs.core._EQ_;var expr__11191 = type;if(cljs.core.truth_(pred
 }
 }
 });
-clustermap.app.event_handlers = new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"search","search",4402534682),clustermap.api.ordered_api.call(null,clustermap.api.search,clustermap.app.process_search_results),new cljs.core.Keyword(null,"select","select",4402849902),clustermap.api.ordered_api.call(null,clustermap.app.make_selection,clustermap.app.process_selection)], null);
+clustermap.app.change_view = (function change_view(view){return clustermap.nav.change_view.call(null,view);
+});
+clustermap.app.event_handlers = new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"search","search",4402534682),clustermap.api.ordered_api.call(null,clustermap.api.search,clustermap.app.process_search_results),new cljs.core.Keyword(null,"select","select",4402849902),clustermap.api.ordered_api.call(null,clustermap.app.make_selection,clustermap.app.process_selection),new cljs.core.Keyword(null,"change-view","change-view",3608283668),clustermap.app.change_view], null);
 clustermap.app.handle_event = (function handle_event(type,val){var handler = cljs.core.get.call(null,clustermap.app.event_handlers,type);if(cljs.core.not.call(null,handler))
 {throw (new Error([cljs.core.str("no handler for event-type: "),cljs.core.str(type)].join('')));
 } else
 {}
 return handler.call(null,val);
 });
-clustermap.app.init = (function init(){clustermap.app.load_all_portfolio_company_stats.call(null);
+clustermap.app.init = (function init(){var comm = cljs.core.async.chan.call(null);clustermap.nav.init.call(null,comm);
+clustermap.app.load_all_portfolio_company_stats.call(null);
 clustermap.app.load_uk_constituencies.call(null);
 clustermap.app.handle_event.call(null,new cljs.core.Keyword(null,"select","select",4402849902),null);
-var comm = cljs.core.async.chan.call(null);clustermap.components.map.mount.call(null,clustermap.app.state,"map-component",comm);
+clustermap.components.map.mount.call(null,clustermap.app.state,"map-component",comm);
 clustermap.components.search.mount.call(null,clustermap.app.state,"search-component",comm);
-clustermap.components.map_report.mount.call(null,clustermap.app.state,"map-report-component");
-clustermap.components.page_title.mount.call(null,clustermap.app.state,"page-title-component");
-clustermap.components.full_report.mount.call(null,clustermap.app.state,"full-report-component");
+clustermap.components.map_report.mount.call(null,clustermap.app.state,"map-report-component",comm);
+clustermap.components.page_title.mount.call(null,clustermap.app.state,"page-title-component",comm);
+clustermap.components.full_report.mount.call(null,clustermap.app.state,"full-report-component",comm);
 var c__5521__auto__ = cljs.core.async.chan.call(null,1);cljs.core.async.impl.dispatch.run.call(null,(function (){var f__5522__auto__ = (function (){var switch__5506__auto__ = (function (state_11239){var state_val_11240 = (state_11239[1]);if((state_val_11240 === 7))
 {var inst_11228 = (state_11239[2]);var inst_11229 = cljs.core.nth.call(null,inst_11228,0,null);var inst_11230 = cljs.core.nth.call(null,inst_11228,1,null);var inst_11231 = clustermap.app.handle_event.call(null,inst_11229,inst_11230);var state_11239__$1 = (function (){var statearr_11241 = state_11239;(statearr_11241[7] = inst_11231);
 return statearr_11241;

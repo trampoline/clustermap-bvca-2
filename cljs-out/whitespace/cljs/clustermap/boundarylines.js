@@ -3,7 +3,7 @@ goog.provide('clustermap.boundarylines');
 goog.require('cljs.core');
 clustermap.boundarylines.boundarylines = cljs.core.atom.call(null,null);
 clustermap.boundarylines.zoom_tolerances = new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [7,0.01], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [9,0.002], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [12,3.0E-4], null)], null);
-clustermap.boundarylines.choose_tolerance = (function choose_tolerance(zoom){var or__3406__auto__ = cljs.core.some.call(null,(function (p__31355){var vec__31356 = p__31355;var z = cljs.core.nth.call(null,vec__31356,0,null);var t = cljs.core.nth.call(null,vec__31356,1,null);if((zoom <= z))
+clustermap.boundarylines.choose_tolerance = (function choose_tolerance(zoom){var or__3406__auto__ = cljs.core.some.call(null,(function (p__31329){var vec__31330 = p__31329;var z = cljs.core.nth.call(null,vec__31330,0,null);var t = cljs.core.nth.call(null,vec__31330,1,null);if((zoom <= z))
 {return t;
 } else
 {return null;

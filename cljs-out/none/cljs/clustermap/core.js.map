@@ -2,9 +2,9 @@
  "file":
  "/Users/mccraig/dev/clustermap.all/clustermap-bvca-2/cljs-out/none/cljs/clustermap/core.js",
  "sources":["core.cljs"],
- "lineCount":21,
+ "lineCount":18,
  "mappings":
- ";AAAA;;;;;;;AAKA,uBAAA,iBAAA,xCAAMA,wCACJ,AAACC;AACD,OAACC;;AAEH,oBAEGC;CACA,gCAAA,hCAACC,WAAcJ;;CAHlB,GAAA;CAMG,AAACA;;CANJ",
+ ";AAAA;;;;;AAIA,uBAAA,iBAAA,xCAAMA,wCACJ,OAACC;;AAEH,oBAEGC;CACA,gCAAA,hCAACC,WAAcH;;CAHlB,GAAA;CAMG,AAACA;;CANJ",
  "names":
- ["clustermap.core/init", "clustermap.nav/init", "clustermap.app/init",
-  "js/config.repl", "js/setTimeout"]}
+ ["clustermap.core/init", "clustermap.app/init", "js/config.repl",
+  "js/setTimeout"]}

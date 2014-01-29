@@ -8,8 +8,8 @@
    [secretary.core :as secretary]
    [om.core :as om :include-macros true]
    [om.dom :as dom :include-macros true]
-   [clustermap.nav :refer [select-view]]
    [clustermap.api :as api]
+   [clustermap.nav :as nav]
    [clustermap.components.map :as map]
    [clustermap.components.map-report :as map-report]
    [clustermap.components.full-report :as full-report]
@@ -149,9 +149,14 @@
         nil ;; (api/portfolio-company-locations selector)
         ] type])))
 
+(defn change-view
+  [view]
+  (nav/change-view view))
+
 (def event-handlers
   {:search (api/ordered-api api/search process-search-results)
-   :select (api/ordered-api make-selection process-selection)})
+   :select (api/ordered-api make-selection process-selection)
+   :change-view change-view})
 
 (defn handle-event
   [type val]
@@ -161,17 +166,18 @@
 
 (defn init
   []
-  (load-all-portfolio-company-stats)
-  (load-uk-constituencies)
-  (handle-event :select nil) ;; fetch results for empty selection
-
   (let [comm (chan)]
+    (nav/init comm)
+
+    (load-all-portfolio-company-stats)
+    (load-uk-constituencies)
+    (handle-event :select nil) ;; fetch results for empty selection
 
     (map/mount state "map-component" comm)
     (search/mount state "search-component" comm)
-    (map-report/mount state "map-report-component")
-    (page-title/mount state "page-title-component")
-    (full-report/mount state "full-report-component")
+    (map-report/mount state "map-report-component" comm)
+    (page-title/mount state "page-title-component" comm)
+    (full-report/mount state "full-report-component" comm)
 
     (go
      (while true

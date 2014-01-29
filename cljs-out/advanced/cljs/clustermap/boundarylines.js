@@ -3,7 +3,7 @@ goog.provide('clustermap.boundarylines');
 goog.require('cljs.core');
 clustermap.boundarylines.boundarylines = cljs.core.atom.cljs$core$IFn$_invoke$arity$1(null);
 clustermap.boundarylines.zoom_tolerances = new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [7,0.01], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [9,0.002], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [12,3.0E-4], null)], null);
-clustermap.boundarylines.choose_tolerance = (function choose_tolerance(zoom){var or__3406__auto__ = cljs.core.some((function (p__21383){var vec__21384 = p__21383;var z = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__21384,0,null);var t = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__21384,1,null);if((zoom <= z))
+clustermap.boundarylines.choose_tolerance = (function choose_tolerance(zoom){var or__3406__auto__ = cljs.core.some((function (p__21370){var vec__21371 = p__21370;var z = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__21371,0,null);var t = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__21371,1,null);if((zoom <= z))
 {return t;
 } else
 {return null;

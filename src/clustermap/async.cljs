@@ -14,7 +14,7 @@
     (async/map f coll-chs)))
 
 (defn dorun-async
-  "asynch consume all values from a channel"
+  "async consume all values from a channel"
   [ch & {:keys [log delay]}]
   (go
    (while (when-let [v (<! ch)]

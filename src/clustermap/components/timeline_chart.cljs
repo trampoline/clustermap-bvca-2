@@ -44,12 +44,6 @@
     (render [this]
       (html [:div.timeline-chart {:ref "chart"}]))
 
-    om/IShouldUpdate
-    (should-update [this next-props next-state]
-      (when-not (= (om/get-state owner :rendered-data) @data)
-        (om/set-state! owner :rendered-data @data)
-        true))
-
     om/IDidMount
     (did-mount [this node]
       (create-chart @data (om/get-node owner "chart") opts))

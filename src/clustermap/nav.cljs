@@ -67,7 +67,9 @@
         (dom/add-class! body body-class)
         (dom/remove-class! body body-class)))
 
-    (-> js/window $ (.trigger "resize"))))
+    ;; (-> js/window $ (.trigger "resize"))
+    ;; causes more problems than it solves
+    ))
 
 (defn- handle-view-switches
   "sends [:change-view <view>] messages to the command channel"

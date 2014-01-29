@@ -127,7 +127,6 @@
 
 (defn change-view
   [view]
-  (.log js/console (clj->js view))
   (nav/change-view view))
 
 (def event-handlers

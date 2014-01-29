@@ -174,24 +174,27 @@
   "put the leaflet map as state in the om component"
   [{:keys [selection selection-portfolio-company-sites selection-portfolio-company-locations uk-constituencies]} owner]
   (reify
-    om/IRenderState
-    (render-state [this {{:keys [leaflet-map markers paths]} :map locations :locations}]
+    om/IRender
+    (render [this]
+      (html [:div.map {:ref "map"}]))
 
-      (let [new-locations (if selection-portfolio-company-locations @selection-portfolio-company-locations)]
-        (when-not (identical? locations new-locations)
+    om/IDidMount
+    (did-mount [this node]
+      (om/set-state! owner :map (create-map node)))
+
+    om/IWillUpdate
+    (will-update [this next-props next-state]
+
+      (let [{{:keys [leaflet-map markers paths]} :map locations :locations} (om/get-state owner)
+            new-locations (some-> next-props :selection-portfolio-company-locations deref)]
+        (when-not (= locations new-locations)
           ;; update markers and paths, then store locations in the state for comparison next render
           (update-markers leaflet-map markers locations new-locations)
           (update-paths leaflet-map uk-constituencies paths locations new-locations)
 
           (om/set-state! owner :locations new-locations)
 
-          (pan-to-selection leaflet-map @paths)))
-
-      (html [:div.map {:ref "map"}]))
-
-    om/IDidMount
-    (did-mount [this node]
-      (om/set-state! owner :map (create-map node)))))
+          (pan-to-selection leaflet-map @paths))))))
 
 (defn mount
   [app-state elem-id comm]

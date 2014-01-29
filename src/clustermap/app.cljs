@@ -138,6 +138,7 @@
   []
   (load-all-portfolio-company-stats)
   (load-uk-constituencies)
+  (handle-event :select nil) ;; fetch results for empty selection
 
   (let [comm (chan)]
 

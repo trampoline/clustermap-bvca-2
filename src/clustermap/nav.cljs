@@ -49,7 +49,8 @@
   {"map" "view-map"
    "lists" "view-lists"})
 
-(defn select-view
+(defn change-view
+  "do the DOM manip to change the view"
   [view]
   (when-not (get body-view-classes view) (throw (js/Error. (str "unknown view: " view))))
   (let [body (css/sel "body")
@@ -69,17 +70,18 @@
     (-> js/window $ (.trigger "resize"))))
 
 (defn- handle-view-switches
-  []
+  "sends [:change-view <view>] messages to the command channel"
+  [comm]
   (doseq [[v _] body-view-classes]
     (events/listen! (css/sel (str "#nav ." v " > a"))
                     :click
                     (fn [e]
                       (events/prevent-default e)
-                      (select-view v)))))
+                      (put! comm [:change-view v])))))
 
 (defn init
-  []
+  [comm]
   (init-bootstrap-tooltips)
   (handle-toggle-nav-search)
   (handle-hide-show-map-report)
-  (handle-view-switches))
+  (handle-view-switches comm))

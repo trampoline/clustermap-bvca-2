@@ -89,8 +89,9 @@
   (let [id (condp = type
              :portfolio-company (:company_no val)
              :investor-company (:name val)
-             :constituency (:boundaryline_id val))
-        selector {type id}]
+             :constituency (:boundaryline_id val)
+             nil)
+        selector (if type {type id} {})]
 
     (set-state :selector selector)
 
@@ -113,7 +114,13 @@
                       (api/portfolio-company-sites selector)
                       (api/portfolio-company-site-account-timelines selector)
                       (api/portfolio-company-locations selector)] type]
-      nil)))
+      [[nil
+        (api/portfolio-company-stats selector)
+        (api/portfolio-company-site-stats selector)
+        nil ;; (api/portfolio-company-sites selector)
+        (api/portfolio-company-site-account-timelines selector)
+        nil ;; (api/portfolio-company-locations selector)
+        ] type])))
 
 (def event-handlers
   {:search (api/ordered-api api/search process-search-results)

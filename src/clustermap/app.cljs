@@ -47,7 +47,7 @@
 
 (defn set-state
   [& {:as path-values}]
-  (swap! state (fn [s] (new-state s path-values))))
+  (swap! state new-state path-values))
 
 (defn load-all-portfolio-company-stats
   []

@@ -64,7 +64,9 @@
     (doseq [[v body-class] body-view-classes]
       (if (= v view)
         (dom/add-class! body body-class)
-        (dom/remove-class! body body-class)))))
+        (dom/remove-class! body body-class)))
+
+    (-> js/window $ (.trigger "resize"))))
 
 (defn- handle-view-switches
   []

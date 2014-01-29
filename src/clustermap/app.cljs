@@ -152,9 +152,9 @@
 
     (map/mount state "map-component" comm)
     (search/mount state "search-component" comm)
-    (map-report/mount state "map-report-component")
-    (page-title/mount state "page-title-component")
-    (full-report/mount state "full-report-component")
+    (map-report/mount state "map-report-component" comm)
+    (page-title/mount state "page-title-component" comm)
+    (full-report/mount state "full-report-component" comm)
 
     (go
      (while true

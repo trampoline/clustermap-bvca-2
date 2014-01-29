@@ -1,8 +1,10 @@
 (ns clustermap.app
   (:require-macros
-   [cljs.core.async.macros :refer [go]])
+   [cljs.core.async.macros :refer [go]]
+   [secretary.macros :refer [defroute]])
   (:require
    [cljs.core.async :refer [chan <! put! sliding-buffer]]
+   [secretary.core :as secretary]
    [om.core :as om :include-macros true]
    [om.dom :as dom :include-macros true]
    [clustermap.api :as api]

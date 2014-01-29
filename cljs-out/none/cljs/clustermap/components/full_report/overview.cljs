@@ -52,7 +52,7 @@
 
     (om/component
      (html [:div.full-report-overview
-            [:h4 "2012 Overview"]
+            [:h4 "Overview of latest filings"]
 
             [:div.table-responsive
              [:table.table-stats

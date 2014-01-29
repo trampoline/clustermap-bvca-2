@@ -16,7 +16,8 @@ goog.addDependency("../hiccups/runtime.js", ['hiccups.runtime'], ['cljs.core', '
 goog.addDependency("../cljs/core/async/impl/protocols.js", ['cljs.core.async.impl.protocols'], ['cljs.core']);
 goog.addDependency("../cljs/core/async/impl/buffers.js", ['cljs.core.async.impl.buffers'], ['cljs.core', 'cljs.core.async.impl.protocols']);
 goog.addDependency("../cljs/core/async/impl/dispatch.js", ['cljs.core.async.impl.dispatch'], ['cljs.core.async.impl.buffers', 'cljs.core']);
-goog.addDependency("../clustermap/components/full_report/portfolio_company_sites.js", ['clustermap.components.full_report.portfolio_company_sites'], ['sablono.core', 'cljs.core', 'om.core', 'clustermap.formats.money', 'clustermap.formats.number']);
+goog.addDependency("../clustermap/formats/time.js", ['clustermap.formats.time'], ['cljs.core']);
+goog.addDependency("../clustermap/components/full_report/portfolio_company_sites.js", ['clustermap.components.full_report.portfolio_company_sites'], ['sablono.core', 'cljs.core', 'om.core', 'clustermap.formats.money', 'clustermap.formats.number', 'clustermap.formats.time']);
 goog.addDependency("../cljs/reader.js", ['cljs.reader'], ['cljs.core', 'goog.string']);
 goog.addDependency("../jayq/core.js", ['jayq.core'], ['cljs.core', 'clojure.string', 'cljs.reader']);
 goog.addDependency("../clustermap/components/timeline_chart.js", ['clustermap.components.timeline_chart'], ['sablono.core', 'cljs.core', 'om.core', 'hiccups.runtime', 'om.dom', 'clojure.set', 'jayq.core']);
@@ -38,11 +39,12 @@ goog.addDependency("../domina/events.js", ['domina.events'], ['cljs.core', 'goog
 goog.addDependency("../domina/css.js", ['domina.css'], ['cljs.core', 'goog.dom', 'domina', 'goog.dom.query']);
 goog.addDependency("../clustermap/nav.js", ['clustermap.nav'], ['cljs.core', 'domina.events', 'domina.xpath', 'domina', 'cljs.core.async', 'domina.css', 'jayq.core']);
 goog.addDependency("../clustermap/api.js", ['clustermap.api'], ['cljs.core', 'clojure.string', 'goog.net.XhrIo', 'cljs.core.async']);
+goog.addDependency("../secretary/core.js", ['secretary.core'], ['cljs.core', 'clojure.string']);
 goog.addDependency("../clustermap/components/search.js", ['clustermap.components.search'], ['sablono.core', 'cljs.core', 'clustermap.om', 'om.core', 'om.dom', 'cljs.core.async', 'jayq.core']);
 goog.addDependency("../clustermap/formats/string.js", ['clustermap.formats.string'], ['cljs.core']);
 goog.addDependency("../clustermap/components/map_report.js", ['clustermap.components.map_report'], ['sablono.core', 'cljs.core', 'om.core', 'clustermap.formats.string', 'clustermap.formats.money', 'clustermap.formats.number', 'om.dom']);
 goog.addDependency("../clustermap/components/map.js", ['clustermap.components.map'], ['sablono.core', 'cljs.core', 'om.core', 'hiccups.runtime', 'om.dom', 'clojure.set', 'jayq.core']);
-goog.addDependency("../clustermap/app.js", ['clustermap.app'], ['clustermap.boundarylines', 'clustermap.api', 'clustermap.components.page_title', 'clustermap.components.full_report', 'cljs.core', 'om.core', 'clustermap.components.search', 'om.dom', 'cljs.core.async', 'clustermap.components.map_report', 'clustermap.components.map']);
+goog.addDependency("../clustermap/app.js", ['clustermap.app'], ['clustermap.boundarylines', 'clustermap.api', 'clustermap.components.page_title', 'clustermap.components.full_report', 'cljs.core', 'secretary.core', 'om.core', 'clustermap.components.search', 'om.dom', 'cljs.core.async', 'clustermap.components.map_report', 'clustermap.components.map']);
 goog.addDependency("../clustermap/core.js", ['clustermap.core'], ['cljs.core', 'clojure.browser.repl', 'clustermap.nav', 'clustermap.app']);
 goog.addDependency("../clustermap/components/map/paths.js", ['clustermap.components.map.paths'], ['cljs.core']);
 goog.addDependency("../clustermap/async.js", ['clustermap.async'], ['cljs.core', 'cljs.core.async']);

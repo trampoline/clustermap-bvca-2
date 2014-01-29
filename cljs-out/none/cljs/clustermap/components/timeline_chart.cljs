@@ -10,7 +10,6 @@
 
 (defn create-chart
   [data node {:keys [y0-title y1-title] :as opts}]
-  (.log js/console (clj->js opts))
   (let [x-labels (map :time data)
         y-total (map :total data)
         y-mean (map :mean data)
@@ -40,18 +39,21 @@
 
 (defn timeline-chart
   [data owner opts]
-  (.log js/console (clj->js ["OPTS:" opts]))
   (reify
-    om/IRenderState
-    (render-state [this {rendered-data :rendered-data}]
-
-      (let [new-data @data]
-        (when-not (= rendered-data new-data)
-          (om/set-state! owner :rendered-data new-data)))
-
+    om/IRender
+    (render [this]
       (html [:div.timeline-chart {:ref "chart"}]))
+
+    om/IShouldUpdate
+    (should-update [this next-props next-state]
+      (when-not (= (om/get-state owner :rendered-data) @data)
+        (om/set-state! owner :rendered-data @data)
+        true))
+
+    om/IDidMount
+    (did-mount [this node]
+      (create-chart @data (om/get-node owner "chart") opts))
 
     om/IDidUpdate
     (did-update [this prev-props prev-state root-node]
-
       (create-chart @data (om/get-node owner "chart") opts))))

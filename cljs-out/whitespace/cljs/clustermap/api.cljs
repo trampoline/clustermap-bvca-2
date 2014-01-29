@@ -37,8 +37,8 @@
                            results []]
                       (if (empty? rem)
                         results
-                        (recur (rest rem) (conj results (<! (first rem))))))
-                    (<! rcomms))]
+                        (recur (rest rem) (conj results (when (first rem) (<! (first rem)))))))
+                    (when rcomms (<! rcomms)))]
        ;; (.log js/console (clj->js result))
        (apply handler result result-handler-args)))))
 

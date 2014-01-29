@@ -5,7 +5,7 @@ goog.require('sablono.util');
 goog.require('clojure.string');
 goog.require('sablono.util');
 goog.require('clojure.string');
-sablono.interpreter.IInterpreter = (function (){var obj25917 = {};return obj25917;
+sablono.interpreter.IInterpreter = (function (){var obj26073 = {};return obj26073;
 })();
 sablono.interpreter.interpret = (function interpret(this$){if((function (){var and__3394__auto__ = this$;if(and__3394__auto__)
 {return this$.sablono$interpreter$IInterpreter$interpret$arity$1;
@@ -36,10 +36,10 @@ return attrs__$1;
 /**
 * Render an element vector as a HTML element.
 */
-sablono.interpreter.element = (function element(element__$1){var vec__25919 = sablono.util.normalize_element(element__$1);var tag = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__25919,0,null);var attrs = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__25919,1,null);var content = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__25919,2,null);var temp__4090__auto__ = (React.DOM[cljs.core.name(tag)]);if(cljs.core.truth_(temp__4090__auto__))
-{var dom_fn = temp__4090__auto__;return (dom_fn.cljs$core$IFn$_invoke$arity$2 ? dom_fn.cljs$core$IFn$_invoke$arity$2(sablono.interpreter.attributes(attrs),(((cljs.core.sequential_QMARK_(content)) && (typeof cljs.core.first(content) === 'string') && (cljs.core.empty_QMARK_(cljs.core.rest(content))))?sablono.interpreter.interpret(cljs.core.first(content)):(cljs.core.truth_(content)?sablono.interpreter.interpret(content):((cljs.core.constant$keyword$183)?null:null)))) : dom_fn.call(null,sablono.interpreter.attributes(attrs),(((cljs.core.sequential_QMARK_(content)) && (typeof cljs.core.first(content) === 'string') && (cljs.core.empty_QMARK_(cljs.core.rest(content))))?sablono.interpreter.interpret(cljs.core.first(content)):(cljs.core.truth_(content)?sablono.interpreter.interpret(content):((cljs.core.constant$keyword$183)?null:null)))));
+sablono.interpreter.element = (function element(element__$1){var vec__26075 = sablono.util.normalize_element(element__$1);var tag = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__26075,0,null);var attrs = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__26075,1,null);var content = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__26075,2,null);var temp__4090__auto__ = (React.DOM[cljs.core.name(tag)]);if(cljs.core.truth_(temp__4090__auto__))
+{var dom_fn = temp__4090__auto__;return (dom_fn.cljs$core$IFn$_invoke$arity$2 ? dom_fn.cljs$core$IFn$_invoke$arity$2(sablono.interpreter.attributes(attrs),(((cljs.core.sequential_QMARK_(content)) && (typeof cljs.core.first(content) === 'string') && (cljs.core.empty_QMARK_(cljs.core.rest(content))))?sablono.interpreter.interpret(cljs.core.first(content)):(cljs.core.truth_(content)?sablono.interpreter.interpret(content):((cljs.core.constant$keyword$186)?null:null)))) : dom_fn.call(null,sablono.interpreter.attributes(attrs),(((cljs.core.sequential_QMARK_(content)) && (typeof cljs.core.first(content) === 'string') && (cljs.core.empty_QMARK_(cljs.core.rest(content))))?sablono.interpreter.interpret(cljs.core.first(content)):(cljs.core.truth_(content)?sablono.interpreter.interpret(content):((cljs.core.constant$keyword$186)?null:null)))));
 } else
-{throw cljs.core.ex_info.cljs$core$IFn$_invoke$arity$2("Unsupported HTML tag",new cljs.core.PersistentArrayMap(null, 3, [cljs.core.constant$keyword$213,tag,cljs.core.constant$keyword$216,attrs,cljs.core.constant$keyword$214,content], null));
+{throw cljs.core.ex_info.cljs$core$IFn$_invoke$arity$2("Unsupported HTML tag",new cljs.core.PersistentArrayMap(null, 3, [cljs.core.constant$keyword$216,tag,cljs.core.constant$keyword$219,attrs,cljs.core.constant$keyword$217,content], null));
 }
 });
 sablono.interpreter.interpret_seq = (function interpret_seq(s){return cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.map.cljs$core$IFn$_invoke$arity$2(sablono.interpreter.interpret,s));

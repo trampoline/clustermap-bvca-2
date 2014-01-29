@@ -6,13 +6,13 @@
             [jayq.core :as jayq :refer [$]]
             [cljs.core.async :refer [put! chan <!]]))
 
-(defn init-bootstrap-tooltips
+(defn- init-bootstrap-tooltips
   []
   (-> "[data-toggle='tooltip']"
       $
       .tooltip))
 
-(defn toggle-nav-search
+(defn- handle-toggle-nav-search
   []
   (events/listen! (css/sel "#nav .search > a")
                   :click
@@ -24,42 +24,7 @@
                       (dom/toggle-class! parent "open")
                       (-> (css/sel "#search") dom/nodes first $ .toggle)))))
 
-(defn clear-search
-  []
-  (events/listen! (css/sel "#search button")
-                  :click
-                  (fn [e]
-                    (let [search-input (css/sel "#search input")]
-                      (dom/set-value! search-input "")))))
-
-(def body-view-classes
-  {"map" "view-map"
-   "lists" "view-lists"})
-
-(defn switch-view
-  []
-  (events/listen! (css/sel "#nav .map > a, #nav .lists > a")
-                  :click
-                  (fn [e]
-                    (let [target (events/target e)
-                          li (xpath/xpath target "..")
-                          ul (xpath/xpath li "..")
-                          active-li (css/sel ul "> .active")
-                          body (css/sel "body")]
-
-                      (events/prevent-default e)
-                      (dom/remove-class! active-li "active")
-                      (dom/add-class! li "active")
-
-                      (->> body-view-classes
-                           (map (fn [[li-class body-class]]
-                                  (if (dom/has-class? li li-class)
-                                    (dom/add-class! body body-class)
-                                    (dom/remove-class! body body-class))
-                                  ))
-                           dorun)))))
-
-(defn map-report
+(defn- handle-hide-show-map-report
   []
   (events/listen! (css/sel "#map-report > a")
                   :click
@@ -80,11 +45,41 @@
                          (dom/add-class! mr "open")
                          (-> mr dom/nodes first $ (jayq/anim {"right" "0px"} 400))))))))
 
+(def body-view-classes
+  {"map" "view-map"
+   "lists" "view-lists"})
+
+(defn select-view
+  [view]
+  (when-not (get body-view-classes view) (throw (js/Error. (str "unknown view: " view))))
+  (let [body (css/sel "body")
+        target-selector (str "#nav ." view)
+        target-li (css/sel target-selector)
+        ul (xpath/xpath target-li "..")
+        active-li (css/sel ul "> .active")]
+
+    (dom/remove-class! active-li "active")
+    (dom/add-class! target-li "active")
+
+    (doseq [[v body-class] body-view-classes]
+      (if (= v view)
+        (dom/add-class! body body-class)
+        (dom/remove-class! body body-class)))
+
+    (-> js/window $ (.trigger "resize"))))
+
+(defn- handle-view-switches
+  []
+  (doseq [[v _] body-view-classes]
+    (events/listen! (css/sel (str "#nav ." v " > a"))
+                    :click
+                    (fn [e]
+                      (events/prevent-default e)
+                      (select-view v)))))
 
 (defn init
   []
-  (toggle-nav-search)
-  (switch-view)
-  (clear-search)
   (init-bootstrap-tooltips)
-  (map-report))
+  (handle-toggle-nav-search)
+  (handle-hide-show-map-report)
+  (handle-view-switches))

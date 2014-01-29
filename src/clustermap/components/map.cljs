@@ -44,12 +44,13 @@
 
 (defn pan-to-show
   [m & all-bounds]
-  (let [fb (first all-bounds)
-        fb-copy (new js/L.LatLngBounds (.getSouthWest fb) (.getNorthEast fb))
-        super-bounds (reduce (fn [sb bounds] (.extend sb bounds))
-                             fb-copy
-                             (rest all-bounds))]
-    (.fitBounds m super-bounds)))
+  (if (not-empty all-bounds)
+    (let [fb (first all-bounds)
+          fb-copy (new js/L.LatLngBounds (.getSouthWest fb) (.getNorthEast fb))
+          super-bounds (reduce (fn [sb bounds] (.extend sb bounds))
+                               fb-copy
+                               (rest all-bounds))]
+      (.fitBounds m super-bounds))))
 
 (defn display-site
   [m site]
@@ -81,11 +82,13 @@
       ;; (.log js/console popup-content)
       (.bindPopup marker popup-content)
       (.addTo marker leaflet-map)
-      marker)))
+      marker)
+    (.log js/console (str "missing location: " (with-out-str (pr location-sites))))))
 
 (defn update-marker
   [leaflet-map marker location]
-  (.setPopupContent marker (marker-popup-content location)))
+  (.setPopupContent marker (marker-popup-content location))
+  marker)
 
 (defn remove-marker
   [leaflet-map marker]
@@ -121,15 +124,17 @@
 
 (defn create-path
   [leaflet-map uk-constituencies boundaryline-id]
-  (when-let [cons (aget uk-constituencies boundaryline-id)]
+  (if-let [cons (aget uk-constituencies boundaryline-id)]
     (let [path (js/L.geoJson (aget cons "geojson"))
           bounds (postgis-envelope->latlngbounds (aget cons "envelope"))]
       (.addTo path leaflet-map)
       {:path path
-       :bounds bounds})))
+       :bounds bounds})
+    (.log js/console (str "missing boundaryline metadata: " boundaryline-id))))
 
 (defn update-path
-  [leaflet-map uk-constituencies path boundaryline-id])
+  [leaflet-map uk-constituencies path boundaryline-id]
+  path)
 
 (defn remove-path
   [leaflet-map path]
@@ -150,6 +155,7 @@
 
         new-paths (->> new-path-keys
                        (map (fn [k] [k (create-path leaflet-map uk-constituencies k)]))
+                       (filter (fn [[k v]] (identity v)))
                        (into {}))
         updated-paths (->> update-path-keys
                            (map (fn [k] [k (update-path leaflet-map uk-constituencies (get paths k) k)]))

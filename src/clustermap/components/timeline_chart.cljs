@@ -18,7 +18,8 @@
         $
         (.highcharts
          (clj->js
-          {:title {:text nil}
+          {:chart {:width nil}
+           :title {:text nil}
            :xAxis {:categories x-labels
                    :labels {:rotation 270}}
            :yAxis [{:title {:text y0-title}}

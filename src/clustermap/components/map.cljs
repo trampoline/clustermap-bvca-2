@@ -166,6 +166,7 @@
 
 (defn pan-to-selection
   [leaflet-map paths]
+;;  (.log js/console (clj->js paths))
   (let [bounds (some->> paths vals (map :bounds))]
     (when bounds
       (apply pan-to-show leaflet-map bounds))))

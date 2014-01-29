@@ -21,7 +21,7 @@ secretary.core.exact_match_QMARK_ = (function exact_match_QMARK_(r,u){return clj
 * A predicate to determine if a route matches a URI path.
 */
 secretary.core.route_matches_QMARK_ = (function route_matches_QMARK_(route,uri_path){var r = clojure.string.split.cljs$core$IFn$_invoke$arity$2(route,secretary.core.slash);var u = clojure.string.split.cljs$core$IFn$_invoke$arity$2(uri_path,secretary.core.slash);if(cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(cljs.core.count(r),cljs.core.count(u)))
-{return cljs.core.every_QMARK_(cljs.core.true_QMARK_,cljs.core.map.cljs$core$IFn$_invoke$arity$3((function (p1__25699_SHARP_,p2__25700_SHARP_){return secretary.core.component_matches_QMARK_(p1__25699_SHARP_,p2__25700_SHARP_);
+{return cljs.core.every_QMARK_(cljs.core.true_QMARK_,cljs.core.map.cljs$core$IFn$_invoke$arity$3((function (p1__25721_SHARP_,p2__25722_SHARP_){return secretary.core.component_matches_QMARK_(p1__25721_SHARP_,p2__25722_SHARP_);
 }),r,u));
 } else
 {return null;
@@ -30,29 +30,29 @@ secretary.core.route_matches_QMARK_ = (function route_matches_QMARK_(route,uri_p
 /**
 * Determines if there are any routes that match a given URI path.
 */
-secretary.core.any_matches_QMARK_ = (function any_matches_QMARK_(uri_path){return cljs.core.some((function (p1__25701_SHARP_){return secretary.core.route_matches_QMARK_(cljs.core.first(p1__25701_SHARP_),uri_path);
+secretary.core.any_matches_QMARK_ = (function any_matches_QMARK_(uri_path){return cljs.core.some((function (p1__25723_SHARP_){return secretary.core.route_matches_QMARK_(cljs.core.first(p1__25723_SHARP_),uri_path);
 }),cljs.core.deref(secretary.core._STAR_routes_STAR_));
 });
 /**
 * Extract the match data from the URI path into a hash map
 */
 secretary.core.extract_components = (function extract_components(route,uri_path){if(cljs.core.truth_(secretary.core.route_matches_QMARK_(route,uri_path)))
-{return cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.merge,(function (){var iter__4117__auto__ = (function iter__25706(s__25707){return (new cljs.core.LazySeq(null,(function (){var s__25707__$1 = s__25707;while(true){
-var temp__4092__auto__ = cljs.core.seq(s__25707__$1);if(temp__4092__auto__)
-{var s__25707__$2 = temp__4092__auto__;if(cljs.core.chunked_seq_QMARK_(s__25707__$2))
-{var c__4115__auto__ = cljs.core.chunk_first(s__25707__$2);var size__4116__auto__ = cljs.core.count(c__4115__auto__);var b__25709 = cljs.core.chunk_buffer(size__4116__auto__);if((function (){var i__25708 = 0;while(true){
-if((i__25708 < size__4116__auto__))
-{var z = cljs.core._nth.cljs$core$IFn$_invoke$arity$2(c__4115__auto__,i__25708);var c = cljs.core.apply.cljs$core$IFn$_invoke$arity$2(secretary.core.extract_component,z);if(!((c == null)))
-{cljs.core.chunk_append(b__25709,c);
+{return cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.merge,(function (){var iter__4117__auto__ = (function iter__25728(s__25729){return (new cljs.core.LazySeq(null,(function (){var s__25729__$1 = s__25729;while(true){
+var temp__4092__auto__ = cljs.core.seq(s__25729__$1);if(temp__4092__auto__)
+{var s__25729__$2 = temp__4092__auto__;if(cljs.core.chunked_seq_QMARK_(s__25729__$2))
+{var c__4115__auto__ = cljs.core.chunk_first(s__25729__$2);var size__4116__auto__ = cljs.core.count(c__4115__auto__);var b__25731 = cljs.core.chunk_buffer(size__4116__auto__);if((function (){var i__25730 = 0;while(true){
+if((i__25730 < size__4116__auto__))
+{var z = cljs.core._nth.cljs$core$IFn$_invoke$arity$2(c__4115__auto__,i__25730);var c = cljs.core.apply.cljs$core$IFn$_invoke$arity$2(secretary.core.extract_component,z);if(!((c == null)))
+{cljs.core.chunk_append(b__25731,c);
 {
-var G__25710 = (i__25708 + 1);
-i__25708 = G__25710;
+var G__25732 = (i__25730 + 1);
+i__25730 = G__25732;
 continue;
 }
 } else
 {{
-var G__25711 = (i__25708 + 1);
-i__25708 = G__25711;
+var G__25733 = (i__25730 + 1);
+i__25730 = G__25733;
 continue;
 }
 }
@@ -62,17 +62,17 @@ continue;
 break;
 }
 })())
-{return cljs.core.chunk_cons(cljs.core.chunk(b__25709),iter__25706(cljs.core.chunk_rest(s__25707__$2)));
+{return cljs.core.chunk_cons(cljs.core.chunk(b__25731),iter__25728(cljs.core.chunk_rest(s__25729__$2)));
 } else
-{return cljs.core.chunk_cons(cljs.core.chunk(b__25709),null);
+{return cljs.core.chunk_cons(cljs.core.chunk(b__25731),null);
 }
 } else
-{var z = cljs.core.first(s__25707__$2);var c = cljs.core.apply.cljs$core$IFn$_invoke$arity$2(secretary.core.extract_component,z);if(!((c == null)))
-{return cljs.core.cons(c,iter__25706(cljs.core.rest(s__25707__$2)));
+{var z = cljs.core.first(s__25729__$2);var c = cljs.core.apply.cljs$core$IFn$_invoke$arity$2(secretary.core.extract_component,z);if(!((c == null)))
+{return cljs.core.cons(c,iter__25728(cljs.core.rest(s__25729__$2)));
 } else
 {{
-var G__25712 = cljs.core.rest(s__25707__$2);
-s__25707__$1 = G__25712;
+var G__25734 = cljs.core.rest(s__25729__$2);
+s__25729__$1 = G__25734;
 continue;
 }
 }
@@ -89,17 +89,17 @@ break;
 {return null;
 }
 });
-secretary.core.filter_routes = (function filter_routes(f,uri_path){return cljs.core.filter((function (p1__25713_SHARP_){return (f.cljs$core$IFn$_invoke$arity$2 ? f.cljs$core$IFn$_invoke$arity$2(cljs.core.first(p1__25713_SHARP_),uri_path) : f.call(null,cljs.core.first(p1__25713_SHARP_),uri_path));
+secretary.core.filter_routes = (function filter_routes(f,uri_path){return cljs.core.filter((function (p1__25735_SHARP_){return (f.cljs$core$IFn$_invoke$arity$2 ? f.cljs$core$IFn$_invoke$arity$2(cljs.core.first(p1__25735_SHARP_),uri_path) : f.call(null,cljs.core.first(p1__25735_SHARP_),uri_path));
 }),cljs.core.deref(secretary.core._STAR_routes_STAR_));
 });
 /**
 * Dispatch an action for a given route if it matches the URI path
 */
 secretary.core.dispatch_BANG_ = (function dispatch_BANG_(uri_path){var temp__4090__auto__ = cljs.core.first(secretary.core.filter_routes(secretary.core.exact_match_QMARK_,uri_path));if(cljs.core.truth_(temp__4090__auto__))
-{var vec__25716 = temp__4090__auto__;var route = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__25716,0,null);var action = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__25716,1,null);return (action.cljs$core$IFn$_invoke$arity$1 ? action.cljs$core$IFn$_invoke$arity$1(cljs.core.PersistentArrayMap.EMPTY) : action.call(null,cljs.core.PersistentArrayMap.EMPTY));
+{var vec__25738 = temp__4090__auto__;var route = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__25738,0,null);var action = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__25738,1,null);return (action.cljs$core$IFn$_invoke$arity$1 ? action.cljs$core$IFn$_invoke$arity$1(cljs.core.PersistentArrayMap.EMPTY) : action.call(null,cljs.core.PersistentArrayMap.EMPTY));
 } else
 {var temp__4092__auto__ = cljs.core.seq(secretary.core.filter_routes(secretary.core.route_matches_QMARK_,uri_path));if(temp__4092__auto__)
-{var xs__4579__auto__ = temp__4092__auto__;var vec__25717 = cljs.core.first(xs__4579__auto__);var route = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__25717,0,null);var action = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__25717,1,null);return (action.cljs$core$IFn$_invoke$arity$1 ? action.cljs$core$IFn$_invoke$arity$1(secretary.core.extract_components(route,uri_path)) : action.call(null,secretary.core.extract_components(route,uri_path)));
+{var xs__4579__auto__ = temp__4092__auto__;var vec__25739 = cljs.core.first(xs__4579__auto__);var route = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__25739,0,null);var action = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__25739,1,null);return (action.cljs$core$IFn$_invoke$arity$1 ? action.cljs$core$IFn$_invoke$arity$1(secretary.core.extract_components(route,uri_path)) : action.call(null,secretary.core.extract_components(route,uri_path)));
 } else
 {return null;
 }

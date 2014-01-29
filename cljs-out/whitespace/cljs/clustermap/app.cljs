@@ -3,7 +3,6 @@
    [cljs.core.async.macros :refer [go]]
    [secretary.macros :refer [defroute]])
   (:require
-   [goog.events :as events]
    [cljs.core.async :refer [chan <! put! sliding-buffer]]
    [secretary.core :as secretary]
    [om.core :as om :include-macros true]
@@ -15,9 +14,7 @@
    [clustermap.components.full-report :as full-report]
    [clustermap.components.page-title :as page-title]
    [clustermap.components.search :as search]
-   [clustermap.boundarylines :as bl])
-  (:import [goog History]
-           [goog.history EventType]))
+   [clustermap.boundarylines :as bl]))
 
 (def state (atom {:all-portfolio-company-stats nil
                   :uk-constituencies nil
@@ -52,27 +49,6 @@
 (defn set-state
   [& {:as path-values}]
   (swap! state new-state path-values))
-
-;;; routing
-
-(defroute "/" [& args] (.log js/console (clj->js args))
-  ;;(swap! app-state assoc :showing :all)
-  )
-
-;; (defroute "/:filter" [filter] (swap! app-state assoc :showing (keyword filter)))
-
-(def history (History.))
-
-(events/listen history
-               EventType.NAVIGATE
-               (fn [e]
-                 (.log js/console e)
-                 (secretary/dispatch! (.-token e))
-                 ))
-
-(.setEnabled history true)
-
-;;
 
 (defn load-all-portfolio-company-stats
   []

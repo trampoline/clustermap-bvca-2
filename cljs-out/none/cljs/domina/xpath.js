@@ -38,10 +38,10 @@ domina.xpath.select_nodes = (function select_nodes(expr,node){return domina.xpat
 }),(function (resolver,doc,node__$1,expr__$1){var result = doc.evaluate(expr__$1,node__$1,null,XPathResult.ORDERED_NODE_SNAPSHOT_TYPE,null);var num_results = result.snapshotLength;var i = 0;var acc = null;while(true){
 if((i < num_results))
 {{
-var G__16488 = (i + 1);
-var G__16489 = cljs.core.cons.call(null,result.snapshotItem(i),acc);
-i = G__16488;
-acc = G__16489;
+var G__16499 = (i + 1);
+var G__16500 = cljs.core.cons.call(null,result.snapshotItem(i),acc);
+i = G__16499;
+acc = G__16500;
 continue;
 }
 } else
@@ -60,41 +60,41 @@ domina.xpath.xpath = (function() {
 var xpath = null;
 var xpath__1 = (function (expr){return xpath.call(null,domina.xpath.root_element.call(null),expr);
 });
-var xpath__2 = (function (base,expr){if(typeof domina.xpath.t16493 !== 'undefined')
+var xpath__2 = (function (base,expr){if(typeof domina.xpath.t16504 !== 'undefined')
 {} else
 {
 /**
 * @constructor
 */
-domina.xpath.t16493 = (function (expr,base,xpath,meta16494){
+domina.xpath.t16504 = (function (expr,base,xpath,meta16505){
 this.expr = expr;
 this.base = base;
 this.xpath = xpath;
-this.meta16494 = meta16494;
+this.meta16505 = meta16505;
 this.cljs$lang$protocol_mask$partition1$ = 0;
 this.cljs$lang$protocol_mask$partition0$ = 393216;
 })
-domina.xpath.t16493.cljs$lang$type = true;
-domina.xpath.t16493.cljs$lang$ctorStr = "domina.xpath/t16493";
-domina.xpath.t16493.cljs$lang$ctorPrWriter = (function (this__3968__auto__,writer__3969__auto__,opt__3970__auto__){return cljs.core._write.call(null,writer__3969__auto__,"domina.xpath/t16493");
+domina.xpath.t16504.cljs$lang$type = true;
+domina.xpath.t16504.cljs$lang$ctorStr = "domina.xpath/t16504";
+domina.xpath.t16504.cljs$lang$ctorPrWriter = (function (this__3968__auto__,writer__3969__auto__,opt__3970__auto__){return cljs.core._write.call(null,writer__3969__auto__,"domina.xpath/t16504");
 });
-domina.xpath.t16493.prototype.domina$DomContent$ = true;
-domina.xpath.t16493.prototype.domina$DomContent$nodes$arity$1 = (function (_){var self__ = this;
+domina.xpath.t16504.prototype.domina$DomContent$ = true;
+domina.xpath.t16504.prototype.domina$DomContent$nodes$arity$1 = (function (_){var self__ = this;
 var ___$1 = this;return cljs.core.mapcat.call(null,cljs.core.partial.call(null,domina.xpath.select_nodes,self__.expr),domina.nodes.call(null,self__.base));
 });
-domina.xpath.t16493.prototype.domina$DomContent$single_node$arity$1 = (function (_){var self__ = this;
+domina.xpath.t16504.prototype.domina$DomContent$single_node$arity$1 = (function (_){var self__ = this;
 var ___$1 = this;return cljs.core.first.call(null,cljs.core.filter.call(null,cljs.core.complement.call(null,cljs.core.nil_QMARK_),cljs.core.map.call(null,cljs.core.partial.call(null,domina.xpath.select_node,self__.expr),domina.nodes.call(null,self__.base))));
 });
-domina.xpath.t16493.prototype.cljs$core$IMeta$_meta$arity$1 = (function (_16495){var self__ = this;
-var _16495__$1 = this;return self__.meta16494;
+domina.xpath.t16504.prototype.cljs$core$IMeta$_meta$arity$1 = (function (_16506){var self__ = this;
+var _16506__$1 = this;return self__.meta16505;
 });
-domina.xpath.t16493.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = (function (_16495,meta16494__$1){var self__ = this;
-var _16495__$1 = this;return (new domina.xpath.t16493(self__.expr,self__.base,self__.xpath,meta16494__$1));
+domina.xpath.t16504.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = (function (_16506,meta16505__$1){var self__ = this;
+var _16506__$1 = this;return (new domina.xpath.t16504(self__.expr,self__.base,self__.xpath,meta16505__$1));
 });
-domina.xpath.__GT_t16493 = (function __GT_t16493(expr__$1,base__$1,xpath__$1,meta16494){return (new domina.xpath.t16493(expr__$1,base__$1,xpath__$1,meta16494));
+domina.xpath.__GT_t16504 = (function __GT_t16504(expr__$1,base__$1,xpath__$1,meta16505){return (new domina.xpath.t16504(expr__$1,base__$1,xpath__$1,meta16505));
 });
 }
-return (new domina.xpath.t16493(expr,base,xpath,null));
+return (new domina.xpath.t16504(expr,base,xpath,null));
 });
 xpath = function(base,expr){
 switch(arguments.length){

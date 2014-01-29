@@ -41,7 +41,6 @@
       (get invs (- n (count cons) (count pcs)))])))
 
 (defn key-down [e search-results owner comm]
-  (.log js/console (om/get-state owner :selected-idx))
   (condp == (.-keyCode e)
     ESCAPE_KEY (some-> (om/get-node owner "search-component") $ .toggle)
     ENTER_KEY (let [[type res] (nth-search-result @search-results (or (om/get-state owner :selected-idx) 0))]
@@ -49,7 +48,7 @@
                 (put! comm [:select [type res]]))
     UP_ARROW (om/set-state! owner :selected-idx (dec (or (om/get-state owner :selected-idx) 0)))
     DOWN_ARROW (om/set-state! owner :selected-idx (inc (or (om/get-state owner :selected-idx) 0)))
-    (.log js/console (.-keyCode e))))
+    nil))
 
 (defn search-component
   [search-results owner]

@@ -44,12 +44,13 @@
 
 (defn pan-to-show
   [m & all-bounds]
-  (let [fb (first all-bounds)
-        fb-copy (new js/L.LatLngBounds (.getSouthWest fb) (.getNorthEast fb))
-        super-bounds (reduce (fn [sb bounds] (.extend sb bounds))
-                             fb-copy
-                             (rest all-bounds))]
-    (.fitBounds m super-bounds)))
+  (if (not-empty all-bounds)
+    (let [fb (first all-bounds)
+          fb-copy (new js/L.LatLngBounds (.getSouthWest fb) (.getNorthEast fb))
+          super-bounds (reduce (fn [sb bounds] (.extend sb bounds))
+                               fb-copy
+                               (rest all-bounds))]
+      (.fitBounds m super-bounds))))
 
 (defn display-site
   [m site]
@@ -81,11 +82,13 @@
       ;; (.log js/console popup-content)
       (.bindPopup marker popup-content)
       (.addTo marker leaflet-map)
-      marker)))
+      marker)
+    (.log js/console (str "missing location: " (with-out-str (pr location-sites))))))
 
 (defn update-marker
   [leaflet-map marker location]
-  (.setPopupContent marker (marker-popup-content location)))
+  (.setPopupContent marker (marker-popup-content location))
+  marker)
 
 (defn remove-marker
   [leaflet-map marker]
@@ -121,15 +124,17 @@
 
 (defn create-path
   [leaflet-map uk-constituencies boundaryline-id]
-  (when-let [cons (aget uk-constituencies boundaryline-id)]
+  (if-let [cons (aget uk-constituencies boundaryline-id)]
     (let [path (js/L.geoJson (aget cons "geojson"))
           bounds (postgis-envelope->latlngbounds (aget cons "envelope"))]
       (.addTo path leaflet-map)
       {:path path
-       :bounds bounds})))
+       :bounds bounds})
+    (.log js/console (str "missing boundaryline metadata: " boundaryline-id))))
 
 (defn update-path
-  [leaflet-map uk-constituencies path boundaryline-id])
+  [leaflet-map uk-constituencies path boundaryline-id]
+  path)
 
 (defn remove-path
   [leaflet-map path]
@@ -150,6 +155,7 @@
 
         new-paths (->> new-path-keys
                        (map (fn [k] [k (create-path leaflet-map uk-constituencies k)]))
+                       (filter (fn [[k v]] (identity v)))
                        (into {}))
         updated-paths (->> update-path-keys
                            (map (fn [k] [k (update-path leaflet-map uk-constituencies (get paths k) k)]))
@@ -160,6 +166,7 @@
 
 (defn pan-to-selection
   [leaflet-map paths]
+;;  (.log js/console (clj->js paths))
   (let [bounds (some->> paths vals (map :bounds))]
     (when bounds
       (apply pan-to-show leaflet-map bounds))))
@@ -168,24 +175,27 @@
   "put the leaflet map as state in the om component"
   [{:keys [selection selection-portfolio-company-sites selection-portfolio-company-locations uk-constituencies]} owner]
   (reify
-    om/IRenderState
-    (render-state [this {{:keys [leaflet-map markers paths]} :map locations :locations}]
+    om/IRender
+    (render [this]
+      (html [:div.map {:ref "map"}]))
 
-      (let [new-locations (if selection-portfolio-company-locations @selection-portfolio-company-locations)]
-        (when-not (identical? locations new-locations)
+    om/IDidMount
+    (did-mount [this node]
+      (om/set-state! owner :map (create-map node)))
+
+    om/IWillUpdate
+    (will-update [this next-props next-state]
+
+      (let [{{:keys [leaflet-map markers paths]} :map locations :locations} (om/get-state owner)
+            new-locations (some-> next-props :selection-portfolio-company-locations deref)]
+        (when-not (= locations new-locations)
           ;; update markers and paths, then store locations in the state for comparison next render
           (update-markers leaflet-map markers locations new-locations)
           (update-paths leaflet-map uk-constituencies paths locations new-locations)
 
           (om/set-state! owner :locations new-locations)
 
-          (pan-to-selection leaflet-map @paths)))
-
-      (html [:div.map {:ref "map"}]))
-
-    om/IDidMount
-    (did-mount [this node]
-      (om/set-state! owner :map (create-map node)))))
+          (pan-to-selection leaflet-map @paths))))))
 
 (defn mount
   [app-state elem-id comm]

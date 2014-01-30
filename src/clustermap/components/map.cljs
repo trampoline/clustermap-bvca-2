@@ -95,7 +95,7 @@
   (.removeLayer leaflet-map marker))
 
 (defn update-markers
-  [leaflet-map markers-atom old-locations new-locations]
+  [leaflet-map markers-atom new-locations]
   (let [markers @markers-atom
         marker-keys (-> markers keys set)
         location-keys (-> new-locations keys set)
@@ -144,25 +144,26 @@
    (.removeLayer leaflet-map)))
 
 (defn update-paths
-  [leaflet-map uk-constituencies paths-atom old-locations new-locations]
-  (let [paths @paths-atom
-        path-keys (-> paths keys set)
-        location-path-keys (->> new-locations vals (apply concat) (map (comp :uk_constituencies :boundarylinecolls)) (apply concat) set)
+  [leaflet-map uk-constituencies paths-atom new-locations]
+  (when uk-constituencies ;; don't try and render paths until we have path metadata !
+    (let [paths @paths-atom
+          path-keys (-> paths keys set)
+          location-path-keys (->> new-locations vals (apply concat) (map (comp :uk_constituencies :boundarylinecolls)) (apply concat) set)
 
-        update-path-keys (set/intersection path-keys location-path-keys)
-        new-path-keys (set/difference location-path-keys path-keys)
-        remove-path-keys (set/difference path-keys location-path-keys)
+          update-path-keys (set/intersection path-keys location-path-keys)
+          new-path-keys (set/difference location-path-keys path-keys)
+          remove-path-keys (set/difference path-keys location-path-keys)
 
-        new-paths (->> new-path-keys
-                       (map (fn [k] [k (create-path leaflet-map uk-constituencies k)]))
-                       (filter (fn [[k v]] (identity v)))
-                       (into {}))
-        updated-paths (->> update-path-keys
-                           (map (fn [k] [k (update-path leaflet-map uk-constituencies (get paths k) k)]))
-                           (into {}))
-        _ (doseq [k remove-path-keys] (remove-path leaflet-map (get paths k)))]
+          new-paths (->> new-path-keys
+                         (map (fn [k] [k (create-path leaflet-map uk-constituencies k)]))
+                         (filter (fn [[k v]] (identity v)))
+                         (into {}))
+          updated-paths (->> update-path-keys
+                             (map (fn [k] [k (update-path leaflet-map uk-constituencies (get paths k) k)]))
+                             (into {}))
+          _ (doseq [k remove-path-keys] (remove-path leaflet-map (get paths k)))]
 
-    (reset! paths-atom (merge updated-paths new-paths))))
+      (reset! paths-atom (merge updated-paths new-paths)))))
 
 (defn pan-to-selection
   [leaflet-map paths]
@@ -173,7 +174,7 @@
 
 (defn map-component
   "put the leaflet map as state in the om component"
-  [{:keys [selection selection-portfolio-company-sites selection-portfolio-company-locations uk-constituencies]} owner]
+  [{:keys [selection uk-constituencies]} owner]
   (reify
     om/IRender
     (render [this]
@@ -186,14 +187,17 @@
     om/IWillUpdate
     (will-update [this next-props next-state]
 
-      (let [{{:keys [leaflet-map markers paths]} :map locations :locations} (om/get-state owner)
-            new-locations (some-> next-props :selection-portfolio-company-locations deref)]
-        (when-not (= locations new-locations)
+      (let [{{:keys [leaflet-map markers paths]} :map locations :locations uk-constituencies :uk-constituencies} (om/get-state owner)
+            new-locations (some-> next-props :selection-portfolio-company-locations deref)
+            new-uk-constituencies (some-> next-props :uk-constituencies)]
+        (when (or (not= locations new-locations)
+                  (not= uk-constituencies new-uk-constituencies))
           ;; update markers and paths, then store locations in the state for comparison next render
-          (update-markers leaflet-map markers locations new-locations)
-          (update-paths leaflet-map uk-constituencies paths locations new-locations)
+          (update-markers leaflet-map markers new-locations)
+          (update-paths leaflet-map new-uk-constituencies paths new-locations)
 
-          (om/set-state! owner :locations new-locations)
+          (when (not= locations new-locations) (om/set-state! owner :locations new-locations))
+          (when (not= uk-constituencies new-uk-constituencies) (om/set-state! owner :uk-constituencies new-uk-constituencies))
 
           (pan-to-selection leaflet-map @paths))))))
 

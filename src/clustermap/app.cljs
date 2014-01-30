@@ -216,7 +216,7 @@
 
     (load-all-portfolio-company-stats)
     (load-uk-constituencies)
-    (handle-event :select nil) ;; fetch results for empty selection
+    (put! comm [:route-select nil]) ;; fetch results for empty selection
 
     (map/mount state "map-component" comm)
     (search/mount state "search-component" comm)

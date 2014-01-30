@@ -3,6 +3,7 @@
    [cljs.core.async.macros :refer [go]]
    [secretary.macros :refer [defroute]])
   (:require
+   [goog.events :as events]
    [cljs.core.async :refer [chan <! put! sliding-buffer]]
    [secretary.core :as secretary]
    [om.core :as om :include-macros true]
@@ -14,7 +15,9 @@
    [clustermap.components.full-report :as full-report]
    [clustermap.components.page-title :as page-title]
    [clustermap.components.search :as search]
-   [clustermap.boundarylines :as bl]))
+   [clustermap.boundarylines :as bl])
+  (:import [goog History]
+           [goog.history EventType]))
 
 (def state (atom {:all-portfolio-company-stats nil
                   :uk-constituencies nil
@@ -82,19 +85,22 @@
              :selection-portfolio-company-site-account-timelines selection-portfolio-company-site-account-timelines
              :selection-portfolio-company-locations selection-portfolio-company-locations))
 
+(defn extract-id
+  [type obj]
+  (condp = type
+    :portfolio-company (:company_no obj)
+    :investor-company (:name obj)
+    :constituency (:boundaryline_id obj)
+    nil))
+
 (defn make-selection
   "set the selection
    - extractor selector id
    - record selector
    - kick-off selection retrievals"
-  [[type val]]
+  [[type id]]
   ;; (.log js/console (clj->js val))
-  (let [id (condp = type
-             :portfolio-company (:company_no val)
-             :investor-company (:name val)
-             :constituency (:boundaryline_id val)
-             nil)
-        selector (if type {type id} {})]
+  (let [selector (if type {type id} {})]
 
     (set-state :selector selector)
 
@@ -127,12 +133,46 @@
 
 (defn change-view
   [view]
-  (nav/change-view view))
+  (nav/change-view (name view)))
+
+(def history (History.))
+
+(defn set-route
+  [view type id]
+  (cond
+   (and view type id)
+   (.setToken history (str "/" (name view) "/" (name type) "/" (name id)))
+
+   view
+   (.setToken history (str "/" (name view)))
+
+   true
+   (.setToken history (str ""))))
+
+(defn parse-route
+  []
+  (let [fragment (.getToken history)
+        [_ view type id] (re-matches #"/([^/]+)(?:/([^/]+)/(.+))?$" fragment)]
+    {:view view
+     :type type
+     :id id}))
+
+(defn set-selection-route
+  [[type val]]
+  (let [{:keys [view]} (parse-route)]
+    (set-route view type (extract-id type val))))
+
+(defn set-view-route
+  [view]
+  (let [{:keys [type id]} (parse-route)]
+    (set-route view type id)))
 
 (def event-handlers
   {:search (api/ordered-api api/search process-search-results)
-   :select (api/ordered-api make-selection process-selection)
-   :change-view change-view})
+   :select set-selection-route
+   :route-select (api/ordered-api make-selection process-selection)
+   :change-view set-view-route
+   :route-change-view change-view})
 
 (defn handle-event
   [type val]
@@ -140,10 +180,39 @@
     (if-not handler (throw (js/Error. (str "no handler for event-type: " type))))
     (handler val)))
 
+;;; routing
+
+(defn put-route-commands
+  [comm new-view new-type new-id]
+  (when new-view
+    (put! comm [:route-change-view new-view]))
+  (when (and new-type new-id)
+    (put! comm [:route-select [(keyword new-type) new-id]])))
+
+(defn init-routes
+  [comm]
+
+  (defroute "/" []
+    (put-route-commands comm nil nil nil))
+
+  (defroute "/:view" [view]
+    (put-route-commands comm view nil nil))
+
+  (defroute "/:view/:type/:id" [view type id]
+    (put-route-commands comm view type id))
+
+  (events/listen history
+                 EventType.NAVIGATE
+                 (fn [e]
+                   (secretary/dispatch! (.-token e))))
+
+  (.setEnabled history true))
+
 (defn init
   []
   (let [comm (chan)]
     (nav/init comm)
+    (init-routes comm)
 
     (load-all-portfolio-company-stats)
     (load-uk-constituencies)

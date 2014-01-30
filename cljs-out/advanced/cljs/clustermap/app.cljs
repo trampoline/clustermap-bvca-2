@@ -182,24 +182,19 @@
 
 ;;; routing
 
-(defn put-route-commands
-  [comm new-view new-type new-id]
-  (when new-view
-    (put! comm [:route-change-view new-view]))
-  (when (and new-type new-id)
-    (put! comm [:route-select [(keyword new-type) new-id]])))
-
 (defn init-routes
   [comm]
 
   (defroute "/" []
-    (put-route-commands comm nil nil nil))
+    (put! comm [:route-select nil]))
 
   (defroute "/:view" [view]
-    (put-route-commands comm view nil nil))
+    (put! comm [:route-change-view view])
+    (put! comm [:route-select nil]))
 
   (defroute "/:view/:type/:id" [view type id]
-    (put-route-commands comm view type id))
+    (put! comm [:route-change-view view])
+    (put! comm [:route-select [(keyword type) id]]))
 
   (events/listen history
                  EventType.NAVIGATE
@@ -216,7 +211,7 @@
 
     (load-all-portfolio-company-stats)
     (load-uk-constituencies)
-    (put! comm [:route-select nil]) ;; fetch results for empty selection
+;;    (put! comm [:route-select nil]) ;; fetch results for empty selection
 
     (map/mount state "map-component" comm)
     (search/mount state "search-component" comm)

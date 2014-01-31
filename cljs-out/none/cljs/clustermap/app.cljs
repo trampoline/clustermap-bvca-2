@@ -19,8 +19,7 @@
   (:import [goog History]
            [goog.history EventType]))
 
-(def state (atom {:all-portfolio-company-stats nil
-                  :uk-constituencies nil
+(def state (atom {:uk-constituencies nil
 
                   :search-results {}
 
@@ -52,12 +51,6 @@
 (defn set-state
   [& {:as path-values}]
   (swap! state new-state path-values))
-
-(defn load-all-portfolio-company-stats
-  []
-  (go
-   (let [pcs (<! (api/portfolio-company-stats))]
-     (set-state :all-portfolio-company-stats pcs))))
 
 (defn load-uk-constituencies
   []
@@ -210,7 +203,6 @@
     (nav/init comm)
     (init-routes comm)
 
-    (load-all-portfolio-company-stats)
     (load-uk-constituencies)
 
     (map/mount state "map-component" comm)

@@ -88,7 +88,7 @@
         :portfolio-company (portfolio-company-report value comm)
         :investor-company (investor-company-report value comm)
         :constituency (constituency-report value comm)
-        (all-portfolio-companies-summary-report (:all-portfolio-company-stats data) comm))))
+        (all-portfolio-companies-summary-report (:selection-portfolio-company-stats data) comm))))
 
 (defn mount
   [app-state elem-id comm]

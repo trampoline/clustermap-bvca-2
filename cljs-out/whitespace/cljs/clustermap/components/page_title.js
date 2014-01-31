@@ -18,78 +18,78 @@ goog.require('om.dom');
 goog.require('clustermap.om');
 goog.require('cljs.core.async');
 goog.require('clustermap.formats.number');
-clustermap.components.page_title.describe_type = (function describe_type(type){var pred__31836 = cljs.core._EQ_;var expr__31837 = type;if(cljs.core.truth_(pred__31836.call(null,new cljs.core.Keyword(null,"portfolio-company","portfolio-company",3606204522),expr__31837)))
+clustermap.components.page_title.describe_type = (function describe_type(type){var pred__31800 = cljs.core._EQ_;var expr__31801 = type;if(cljs.core.truth_(pred__31800.call(null,new cljs.core.Keyword(null,"portfolio-company","portfolio-company",3606204522),expr__31801)))
 {return "Portfolio Company";
 } else
-{if(cljs.core.truth_(pred__31836.call(null,new cljs.core.Keyword(null,"investor-company","investor-company",3983736762),expr__31837)))
+{if(cljs.core.truth_(pred__31800.call(null,new cljs.core.Keyword(null,"investor-company","investor-company",3983736762),expr__31801)))
 {return "Investor";
 } else
-{if(cljs.core.truth_(pred__31836.call(null,new cljs.core.Keyword(null,"constituency","constituency",3902864696),expr__31837)))
+{if(cljs.core.truth_(pred__31800.call(null,new cljs.core.Keyword(null,"constituency","constituency",3902864696),expr__31801)))
 {return "Constituency";
 } else
-{throw (new Error([cljs.core.str("No matching clause: "),cljs.core.str(expr__31837)].join('')));
+{throw (new Error([cljs.core.str("No matching clause: "),cljs.core.str(expr__31801)].join('')));
 }
 }
 }
 });
-clustermap.components.page_title.page_title_component = (function page_title_component(selection,owner){var comm = om.core.get_shared.call(null,owner,new cljs.core.Keyword(null,"comm","comm",1016963710));var type = (function (){var G__31846 = selection;var G__31846__$1 = (((G__31846 == null))?null:new cljs.core.Keyword(null,"type","type",1017479852).cljs$core$IFn$_invoke$arity$1(G__31846));var G__31846__$2 = (((G__31846__$1 == null))?null:clustermap.components.page_title.describe_type.call(null,G__31846__$1));return G__31846__$2;
-})();var name = (function (){var G__31847 = selection;var G__31847__$1 = (((G__31847 == null))?null:new cljs.core.Keyword(null,"value","value",1125876963).cljs$core$IFn$_invoke$arity$1(G__31847));var G__31847__$2 = (((G__31847__$1 == null))?null:new cljs.core.Keyword(null,"name","name",1017277949).cljs$core$IFn$_invoke$arity$1(G__31847__$1));return G__31847__$2;
-})();if(typeof clustermap.components.page_title.t31848 !== 'undefined')
+clustermap.components.page_title.page_title_component = (function page_title_component(selection,owner){var comm = om.core.get_shared.call(null,owner,new cljs.core.Keyword(null,"comm","comm",1016963710));var type = (function (){var G__31810 = selection;var G__31810__$1 = (((G__31810 == null))?null:new cljs.core.Keyword(null,"type","type",1017479852).cljs$core$IFn$_invoke$arity$1(G__31810));var G__31810__$2 = (((G__31810__$1 == null))?null:clustermap.components.page_title.describe_type.call(null,G__31810__$1));return G__31810__$2;
+})();var name = (function (){var G__31811 = selection;var G__31811__$1 = (((G__31811 == null))?null:new cljs.core.Keyword(null,"value","value",1125876963).cljs$core$IFn$_invoke$arity$1(G__31811));var G__31811__$2 = (((G__31811__$1 == null))?null:new cljs.core.Keyword(null,"name","name",1017277949).cljs$core$IFn$_invoke$arity$1(G__31811__$1));return G__31811__$2;
+})();if(typeof clustermap.components.page_title.t31812 !== 'undefined')
 {} else
 {
 /**
 * @constructor
 */
-clustermap.components.page_title.t31848 = (function (name,type,comm,owner,selection,page_title_component,meta31849){
+clustermap.components.page_title.t31812 = (function (name,type,comm,owner,selection,page_title_component,meta31813){
 this.name = name;
 this.type = type;
 this.comm = comm;
 this.owner = owner;
 this.selection = selection;
 this.page_title_component = page_title_component;
-this.meta31849 = meta31849;
+this.meta31813 = meta31813;
 this.cljs$lang$protocol_mask$partition1$ = 0;
 this.cljs$lang$protocol_mask$partition0$ = 393216;
 })
-clustermap.components.page_title.t31848.cljs$lang$type = true;
-clustermap.components.page_title.t31848.cljs$lang$ctorStr = "clustermap.components.page-title/t31848";
-clustermap.components.page_title.t31848.cljs$lang$ctorPrWriter = (function (this__3968__auto__,writer__3969__auto__,opt__3970__auto__){return cljs.core._write.call(null,writer__3969__auto__,"clustermap.components.page-title/t31848");
+clustermap.components.page_title.t31812.cljs$lang$type = true;
+clustermap.components.page_title.t31812.cljs$lang$ctorStr = "clustermap.components.page-title/t31812";
+clustermap.components.page_title.t31812.cljs$lang$ctorPrWriter = (function (this__3968__auto__,writer__3969__auto__,opt__3970__auto__){return cljs.core._write.call(null,writer__3969__auto__,"clustermap.components.page-title/t31812");
 });
-clustermap.components.page_title.t31848.prototype.om$core$IRender$ = true;
-clustermap.components.page_title.t31848.prototype.om$core$IRender$render$arity$1 = (function (this__9200__auto__){var self__ = this;
-var this__9200__auto____$1 = this;return React.DOM.div({"id": "page-title"},React.DOM.button({"className": "btn", "type": "button", "onClick": (function (e){return cljs.core.async.put_BANG_.call(null,self__.comm,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"change-view","change-view",3608283668),"map"], null));
-})},"View on map"),(function (){var attrs31851 = (function (){var or__3406__auto__ = self__.type;if(cljs.core.truth_(or__3406__auto__))
+clustermap.components.page_title.t31812.prototype.om$core$IRender$ = true;
+clustermap.components.page_title.t31812.prototype.om$core$IRender$render$arity$1 = (function (this__9212__auto__){var self__ = this;
+var this__9212__auto____$1 = this;return React.DOM.div({"id": "page-title"},React.DOM.button({"className": "btn", "type": "button", "onClick": (function (e){return cljs.core.async.put_BANG_.call(null,self__.comm,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"change-view","change-view",3608283668),"map"], null));
+})},"View on map"),(function (){var attrs31815 = (function (){var or__3406__auto__ = self__.type;if(cljs.core.truth_(or__3406__auto__))
 {return or__3406__auto__;
 } else
 {return "All portfolio companies";
 }
-})();if(cljs.core.map_QMARK_.call(null,attrs31851))
-{return React.DOM.h2(sablono.interpreter.attributes.call(null,attrs31851),null);
+})();if(cljs.core.map_QMARK_.call(null,attrs31815))
+{return React.DOM.h2(sablono.interpreter.attributes.call(null,attrs31815),null);
 } else
-{return React.DOM.h2(null,sablono.interpreter.interpret.call(null,attrs31851));
+{return React.DOM.h2(null,sablono.interpreter.interpret.call(null,attrs31815));
 }
-})(),(function (){var attrs31852 = (function (){var or__3406__auto__ = self__.name;if(cljs.core.truth_(or__3406__auto__))
+})(),(function (){var attrs31816 = (function (){var or__3406__auto__ = self__.name;if(cljs.core.truth_(or__3406__auto__))
 {return or__3406__auto__;
 } else
 {return "UK wide";
 }
-})();if(cljs.core.map_QMARK_.call(null,attrs31852))
-{return React.DOM.h3(sablono.interpreter.attributes.call(null,attrs31852),null);
+})();if(cljs.core.map_QMARK_.call(null,attrs31816))
+{return React.DOM.h3(sablono.interpreter.attributes.call(null,attrs31816),null);
 } else
-{return React.DOM.h3(null,sablono.interpreter.interpret.call(null,attrs31852));
+{return React.DOM.h3(null,sablono.interpreter.interpret.call(null,attrs31816));
 }
 })());
 });
-clustermap.components.page_title.t31848.prototype.cljs$core$IMeta$_meta$arity$1 = (function (_31850){var self__ = this;
-var _31850__$1 = this;return self__.meta31849;
+clustermap.components.page_title.t31812.prototype.cljs$core$IMeta$_meta$arity$1 = (function (_31814){var self__ = this;
+var _31814__$1 = this;return self__.meta31813;
 });
-clustermap.components.page_title.t31848.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = (function (_31850,meta31849__$1){var self__ = this;
-var _31850__$1 = this;return (new clustermap.components.page_title.t31848(self__.name,self__.type,self__.comm,self__.owner,self__.selection,self__.page_title_component,meta31849__$1));
+clustermap.components.page_title.t31812.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = (function (_31814,meta31813__$1){var self__ = this;
+var _31814__$1 = this;return (new clustermap.components.page_title.t31812(self__.name,self__.type,self__.comm,self__.owner,self__.selection,self__.page_title_component,meta31813__$1));
 });
-clustermap.components.page_title.__GT_t31848 = (function __GT_t31848(name__$1,type__$1,comm__$1,owner__$1,selection__$1,page_title_component__$1,meta31849){return (new clustermap.components.page_title.t31848(name__$1,type__$1,comm__$1,owner__$1,selection__$1,page_title_component__$1,meta31849));
+clustermap.components.page_title.__GT_t31812 = (function __GT_t31812(name__$1,type__$1,comm__$1,owner__$1,selection__$1,page_title_component__$1,meta31813){return (new clustermap.components.page_title.t31812(name__$1,type__$1,comm__$1,owner__$1,selection__$1,page_title_component__$1,meta31813));
 });
 }
-return (new clustermap.components.page_title.t31848(name,type,comm,owner,selection,page_title_component,null));
+return (new clustermap.components.page_title.t31812(name,type,comm,owner,selection,page_title_component,null));
 });
 clustermap.components.page_title.mount = (function mount(app_state,elem_id,comm){return om.core.root.call(null,app_state,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"comm","comm",1016963710),comm], null),clustermap.om.burrow.call(null,clustermap.components.page_title.page_title_component,new cljs.core.Keyword(null,"selection","selection",3592905982)),document.getElementById(elem_id));
 });

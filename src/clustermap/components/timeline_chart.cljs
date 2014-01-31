@@ -11,9 +11,11 @@
 (defn create-chart
   [data node {:keys [y0-title y1-title] :as opts}]
   (let [x-labels (map :time data)
-        y-total (map :total data)
         y-mean (map :mean data)
-        y-count (map :count data)]
+        y-count (map :count data)
+        yt (->> data (map :total) (map (fn [t] {:y t})))
+        y-total (into [] (concat (butlast yt) [(merge (last yt) {:color "#FF9900" :name "Not all data received for year"})]))
+        _ (.log js/console (clj->js y-total))]
     (-> node
         $
         (.highcharts

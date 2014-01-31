@@ -140,8 +140,8 @@
 (defn set-route
   [view type id]
   (cond
-   (and view type id)
-   (.setToken history (str "/" (name view) "/" (name type) "/" (name id)))
+   (and type id)
+   (.setToken history (str "/" (-> view (or "map") name) "/" (name type) "/" (name id)))
 
    view
    (.setToken history (str "/" (name view)))
@@ -159,8 +159,9 @@
 
 (defn set-selection-route
   [[type val]]
-  (let [{:keys [view]} (parse-route)]
-    (set-route view type (extract-id type val))))
+  (let [{:keys [view]} (parse-route)
+        id (extract-id type val)]
+    (set-route view type id)))
 
 (defn set-view-route
   [view]
@@ -211,7 +212,6 @@
 
     (load-all-portfolio-company-stats)
     (load-uk-constituencies)
-;;    (put! comm [:route-select nil]) ;; fetch results for empty selection
 
     (map/mount state "map-component" comm)
     (search/mount state "search-component" comm)

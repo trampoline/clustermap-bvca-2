@@ -14,8 +14,7 @@
         y-mean (map :mean data)
         y-count (map :count data)
         yt (->> data (map :total) (map (fn [t] {:y t})))
-        y-total (into [] (concat (butlast yt) [(merge (last yt) {:color "#FF9900" :name "Not all data received for year"})]))
-        _ (.log js/console (clj->js y-total))]
+        y-total (into [] (concat (butlast yt) [(merge (last yt) {:color "#FF9900" :name "Not all data received for year"})]))]
     (-> node
         $
         (.highcharts

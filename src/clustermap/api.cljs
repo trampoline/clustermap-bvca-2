@@ -72,12 +72,6 @@
 
 (def api-prefix js/config.api.prefix)
 
-(defn search
-  [q]
-  (if (> (-> q str/trim count) 0)
-    (GET (str "/api/" api-prefix "/search?q=" q))
-    (to-chan [#js {}])))
-
 ;; boundarylines
 
 (defn boundarylines
@@ -88,6 +82,14 @@
   [id & opts]
   (apply GET (str "/api/boundaryline-collection-index/" id) opts))
 
+
+;; search
+
+(defn search
+  [q]
+  (if (> (-> q str/trim count) 0)
+    (GET (str "/api/" api-prefix "/search?q=" q))
+    (to-chan [#js {}])))
 
 
 ;; constituencies

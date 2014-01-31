@@ -19,8 +19,11 @@
     om/IRenderState
     (render-state [this state]
       (html [:li {:class (when (:selected state) "selected")}
-             [:a {:onClick (fn [e]
-                             (put! comm [:select [type @search-result]]))}
+             [:a {:ref "link"
+                  :onClick (fn [e]
+                             (let [l (om/get-node owner "link")]
+                               (some-> l $ (.parents ".search-component") .toggle)
+                               (put! comm [:select [type @search-result]])))}
               (search-result :name)
               (if (:selected state) "*")]]))))
 
@@ -58,6 +61,7 @@
       om/IRenderState
       (render-state [this state]
         (dom/div #js {:ref "search-component"
+                      :className "search-component"
                       :id "search"
                       :onKeyDown (fn [e] (key-down e search-results owner comm))}
                  (dom/h2 nil "Search")

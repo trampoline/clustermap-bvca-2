@@ -56376,19 +56376,21 @@ clustermap.app.change_view = function change_view(view) {
 clustermap.app.history = new goog.History;
 clustermap.app.set_route = function set_route(view, type, id) {
   if (cljs.core.truth_(function() {
-    var and__3394__auto__ = view;
+    var and__3394__auto__ = type;
     if (cljs.core.truth_(and__3394__auto__)) {
-      var and__3394__auto____$1 = type;
-      if (cljs.core.truth_(and__3394__auto____$1)) {
-        return id;
-      } else {
-        return and__3394__auto____$1;
-      }
+      return id;
     } else {
       return and__3394__auto__;
     }
   }())) {
-    return clustermap.app.history.setToken([cljs.core.str("/"), cljs.core.str(cljs.core.name.call(null, view)), cljs.core.str("/"), cljs.core.str(cljs.core.name.call(null, type)), cljs.core.str("/"), cljs.core.str(cljs.core.name.call(null, id))].join(""));
+    return clustermap.app.history.setToken([cljs.core.str("/"), cljs.core.str(cljs.core.name.call(null, function() {
+      var or__3406__auto__ = view;
+      if (cljs.core.truth_(or__3406__auto__)) {
+        return or__3406__auto__;
+      } else {
+        return "map";
+      }
+    }())), cljs.core.str("/"), cljs.core.str(cljs.core.name.call(null, type)), cljs.core.str("/"), cljs.core.str(cljs.core.name.call(null, id))].join(""));
   } else {
     if (cljs.core.truth_(view)) {
       return clustermap.app.history.setToken([cljs.core.str("/"), cljs.core.str(cljs.core.name.call(null, view))].join(""));
@@ -56417,7 +56419,8 @@ clustermap.app.set_selection_route = function set_selection_route(p__31180) {
   var map__31184 = clustermap.app.parse_route.call(null);
   var map__31184__$1 = cljs.core.seq_QMARK_.call(null, map__31184) ? cljs.core.apply.call(null, cljs.core.hash_map, map__31184) : map__31184;
   var view = cljs.core.get.call(null, map__31184__$1, new cljs.core.Keyword(null, "view", "view", 1017523735));
-  return clustermap.app.set_route.call(null, view, type, clustermap.app.extract_id.call(null, type, val));
+  var id = clustermap.app.extract_id.call(null, type, val);
+  return clustermap.app.set_route.call(null, view, type, id);
 };
 clustermap.app.set_view_route = function set_view_route(view) {
   var map__31186 = clustermap.app.parse_route.call(null);

@@ -78,21 +78,51 @@
     (GET (str "/api/" api-prefix "/search?q=" q))
     (to-chan [#js {}])))
 
-(defn constituencies
-  []
-  (GET "/api/" api-prefix "/constituencies"))
+;; boundarylines
+
+(defn boundarylines
+  [id tolerance & opts]
+  (apply GET (str "/api/boundarylines/" id "/" tolerance) opts))
+
+(defn boundaryline-collection-index
+  [id & opts]
+  (apply GET (str "/api/boundaryline-collection-index/" id) opts))
+
+
+
+;; constituencies
 
 (defn constituency
   [id]
   (GET (str "/api/" api-prefix "/constituencies/" id)))
 
-(defn portfolio-companies-summary
-  []
-  (GET "/api/" api-prefix "/portfolio-companies-summary"))
+(defn constituencies
+  [& [type-ids]]
+  (GET "/api/" api-prefix "/constituencies?" (map-json-params type-ids)))
+
+
+
+;; portfolio-companies
 
 (defn portfolio-company
   [id]
   (GET (str "/api/" api-prefix "/portfolio-companies/" id)))
+
+(defn portfolio-companies
+  [& [type-ids]]
+  (GET (str "/api/" api-prefix "/portfolio-companies?" (map-json-params type-ids))))
+
+(defn portfolio-company-stats
+  [& [type-ids]]
+  (GET (str "/api/" api-prefix "/portfolio-company-stats?" (map-json-params type-ids))))
+
+(defn portfolio-company-account-stats
+  [& [type-ids]]
+  (GET (str "/api/" api-prefix "/portfolio-company-account-stats?" (map-json-params type-ids))))
+
+
+
+;; portfolio-company-sites
 
 (defn portfolio-company-sites
   [& [type-ids]]
@@ -102,10 +132,6 @@
   [& [type-ids]]
   (GET (str "/api/" api-prefix "/portfolio-company-locations?" (map-json-params type-ids))))
 
-(defn portfolio-company-stats
-  [& [type-ids]]
-  (GET (str "/api/" api-prefix "/portfolio-company-stats?" (map-json-params type-ids))))
-
 (defn portfolio-company-site-stats
   [& [type-ids]]
   (GET (str "/api/" api-prefix "/portfolio-company-site-stats?" (map-json-params type-ids))))
@@ -114,22 +140,14 @@
   [& [type-ids]]
   (GET (str "/api/" api-prefix "/portfolio-company-site-account-timelines?" (map-json-params type-ids))))
 
-(defn portfolio-company-account-stats
-  [& [type-ids]]
-  (GET (str "/api/" api-prefix "/portfolio-company-account-stats?" (map-json-params type-ids))))
 
-(defn investor-companies-summary
-  []
-  (GET "/api/" api-prefix "/investor-companies-summary"))
+
+;; investor-companies
 
 (defn investor-company
   [id]
   (GET (str "/api/" api-prefix "/investor-companies/" id)))
 
-(defn boundaryline-collection-index
-  [id & opts]
-  (apply GET (str "/api/boundaryline-collection-index/" id) opts))
-
-(defn boundarylines
-  [id tolerance & opts]
-  (apply GET (str "/api/boundarylines/" id "/" tolerance) opts))
+(defn investor-comapnies
+  [& [type-ids]]
+  (GET (str "/api/" api-prefix "/investor-companies?" (map-json-params type-ids))))

@@ -112,7 +112,7 @@
 
 (defn portfolio-companies
   [& [type-ids]]
-  (GET (str "/api/" api-prefix "/portfolio-companies?" (map-json-params type-ids))))
+  (GET (str "/api/" api-prefix "/portfolio-companies?sort={\"!latest_turnover\":\"desc\"}&" (map-json-params type-ids))))
 
 (defn portfolio-company-stats
   [& [type-ids]]

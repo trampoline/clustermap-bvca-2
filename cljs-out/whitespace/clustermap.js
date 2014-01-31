@@ -40277,9 +40277,14 @@ clustermap.components.timeline_chart.create_chart = function create_chart(data, 
   var y1_title = cljs.core.get.call(null, map__31911__$1, new cljs.core.Keyword(null, "y1-title", "y1-title", 3377247893));
   var y0_title = cljs.core.get.call(null, map__31911__$1, new cljs.core.Keyword(null, "y0-title", "y0-title", 2489744212));
   var x_labels = cljs.core.map.call(null, new cljs.core.Keyword(null, "time", "time", 1017464383), data);
-  var y_total = cljs.core.map.call(null, new cljs.core.Keyword(null, "total", "total", 1124454070), data);
   var y_mean = cljs.core.map.call(null, new cljs.core.Keyword(null, "mean", "mean", 1017251639), data);
   var y_count = cljs.core.map.call(null, new cljs.core.Keyword(null, "count", "count", 1108755585), data);
+  var yt = cljs.core.map.call(null, function(x_labels, y_mean, y_count) {
+    return function(t) {
+      return new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "y", "y", 1013904363), t], null);
+    };
+  }(x_labels, y_mean, y_count), cljs.core.map.call(null, new cljs.core.Keyword(null, "total", "total", 1124454070), data));
+  var y_total = cljs.core.into.call(null, cljs.core.PersistentVector.EMPTY, cljs.core.concat.call(null, cljs.core.butlast.call(null, yt), new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.merge.call(null, cljs.core.last.call(null, yt), new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "color", "color", 1108746965), "#FF9900", new cljs.core.Keyword(null, "name", "name", 1017277949), "Not all data received for year"], null))], null)));
   return jayq.core.$.call(null, node).highcharts(cljs.core.clj__GT_js.call(null, new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null, "chart", "chart", 1108527952), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "width", "width", 1127031096), null], null), new cljs.core.Keyword(null, "title", "title", 1124275658), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "text", "text", 1017460895), null], null), new cljs.core.Keyword(null, "xAxis", 
   "xAxis", 1126781867), new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "categories", "categories", 2310420878), x_labels, new cljs.core.Keyword(null, "labels", "labels", 4198454129), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "rotation", "rotation", 973603568), 270], null)], null), new cljs.core.Keyword(null, "yAxis", "yAxis", 1127705388), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentArrayMap(null, 
   1, [new cljs.core.Keyword(null, "title", "title", 1124275658), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "text", "text", 1017460895), y0_title], null)], null), new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "title", "title", 1124275658), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "text", "text", 1017460895), y1_title], null), new cljs.core.Keyword(null, "opposite", "opposite", 826026585), true], null)], null), new cljs.core.Keyword(null, 
@@ -40465,12 +40470,12 @@ clustermap.components.full_report.full_report_component = function full_report_c
       var attrs31495 = om.core.build.call(null, clustermap.components.full_report.overview.overview, self__.data, new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "opts", "opts", 1017322386), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "comm", "comm", 1016963710), self__.comm], null)], null));
       if (cljs.core.map_QMARK_.call(null, attrs31495)) {
         return React.DOM.div(sablono.interpreter.attributes.call(null, attrs31495), sablono.interpreter.interpret.call(null, om.core.build.call(null, clustermap.components.full_report.details.details, self__.data, new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "opts", "opts", 1017322386), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "comm", "comm", 1016963710), self__.comm], null)], null))), sablono.interpreter.interpret.call(null, cljs.core.truth_((new cljs.core.Keyword(null, 
-        "selection-portfolio-company-sites", "selection-portfolio-company-sites", 3535568680)).cljs$core$IFn$_invoke$arity$1(self__.data)) ? om.core.build.call(null, clustermap.components.full_report.portfolio_company_sites.portfolio_company_sites, (new cljs.core.Keyword(null, "selection-portfolio-company-sites", "selection-portfolio-company-sites", 3535568680)).cljs$core$IFn$_invoke$arity$1(self__.data), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "opts", "opts", 1017322386), 
-        new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "comm", "comm", 1016963710), self__.comm], null)], null)) : null));
+        "selection-portfolio-companies", "selection-portfolio-companies", 4038960455)).cljs$core$IFn$_invoke$arity$1(self__.data)) ? om.core.build.call(null, clustermap.components.full_report.portfolio_company_sites.portfolio_company_sites, (new cljs.core.Keyword(null, "selection-portfolio-companies", "selection-portfolio-companies", 4038960455)).cljs$core$IFn$_invoke$arity$1(self__.data), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "opts", "opts", 1017322386), new cljs.core.PersistentArrayMap(null, 
+        1, [new cljs.core.Keyword(null, "comm", "comm", 1016963710), self__.comm], null)], null)) : null));
       } else {
         return React.DOM.div(null, sablono.interpreter.interpret.call(null, attrs31495), sablono.interpreter.interpret.call(null, om.core.build.call(null, clustermap.components.full_report.details.details, self__.data, new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "opts", "opts", 1017322386), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "comm", "comm", 1016963710), self__.comm], null)], null))), sablono.interpreter.interpret.call(null, cljs.core.truth_((new cljs.core.Keyword(null, 
-        "selection-portfolio-company-sites", "selection-portfolio-company-sites", 3535568680)).cljs$core$IFn$_invoke$arity$1(self__.data)) ? om.core.build.call(null, clustermap.components.full_report.portfolio_company_sites.portfolio_company_sites, (new cljs.core.Keyword(null, "selection-portfolio-company-sites", "selection-portfolio-company-sites", 3535568680)).cljs$core$IFn$_invoke$arity$1(self__.data), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "opts", "opts", 1017322386), 
-        new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "comm", "comm", 1016963710), self__.comm], null)], null)) : null));
+        "selection-portfolio-companies", "selection-portfolio-companies", 4038960455)).cljs$core$IFn$_invoke$arity$1(self__.data)) ? om.core.build.call(null, clustermap.components.full_report.portfolio_company_sites.portfolio_company_sites, (new cljs.core.Keyword(null, "selection-portfolio-companies", "selection-portfolio-companies", 4038960455)).cljs$core$IFn$_invoke$arity$1(self__.data), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "opts", "opts", 1017322386), new cljs.core.PersistentArrayMap(null, 
+        1, [new cljs.core.Keyword(null, "comm", "comm", 1016963710), self__.comm], null)], null)) : null));
       }
     };
     clustermap.components.full_report.t31492.prototype.cljs$core$IMeta$_meta$arity$1 = function(_31494) {
@@ -52438,7 +52443,7 @@ clustermap.api.portfolio_companies = function() {
   var portfolio_companies__delegate = function(p__29955) {
     var vec__29957 = p__29955;
     var type_ids = cljs.core.nth.call(null, vec__29957, 0, null);
-    return clustermap.api.GET.call(null, [cljs.core.str("/api/"), cljs.core.str(clustermap.api.api_prefix), cljs.core.str("/portfolio-companies?"), cljs.core.str(clustermap.api.map_json_params.call(null, type_ids))].join(""));
+    return clustermap.api.GET.call(null, [cljs.core.str("/api/"), cljs.core.str(clustermap.api.api_prefix), cljs.core.str('/portfolio-companies?sort\x3d{"!latest_turnover":"desc"}\x26'), cljs.core.str(clustermap.api.map_json_params.call(null, type_ids))].join(""));
   };
   var portfolio_companies = function(var_args) {
     var p__29955 = null;
@@ -56151,8 +56156,8 @@ goog.require("clustermap.components.map");
 goog.require("goog.events");
 goog.require("secretary.core");
 clustermap.app.state = cljs.core.atom.call(null, cljs.core.PersistentHashMap.fromArrays([new cljs.core.Keyword(null, "selection-portfolio-company-site-stats", "selection-portfolio-company-site-stats", 2240402081), new cljs.core.Keyword(null, "selection-portfolio-company-site-account-timelines", "selection-portfolio-company-site-account-timelines", 3586704052), new cljs.core.Keyword(null, "uk-constituencies", "uk-constituencies", 2507232365), new cljs.core.Keyword(null, "selector", "selector", 2205476689), 
-new cljs.core.Keyword(null, "selection", "selection", 3592905982), new cljs.core.Keyword(null, "selection-portfolio-company-sites", "selection-portfolio-company-sites", 3535568680), new cljs.core.Keyword(null, "selection-portfolio-company-locations", "selection-portfolio-company-locations", 1821239162), new cljs.core.Keyword(null, "search-results", "search-results", 1025331267), new cljs.core.Keyword(null, "selection-portfolio-company-stats", "selection-portfolio-company-stats", 3535878587)], [null, 
-null, null, null, null, cljs.core.PersistentVector.EMPTY, null, cljs.core.PersistentArrayMap.EMPTY, null]));
+new cljs.core.Keyword(null, "selection", "selection", 3592905982), new cljs.core.Keyword(null, "selection-portfolio-company-sites", "selection-portfolio-company-sites", 3535568680), new cljs.core.Keyword(null, "selection-portfolio-company-locations", "selection-portfolio-company-locations", 1821239162), new cljs.core.Keyword(null, "selection-portfolio-companies", "selection-portfolio-companies", 4038960455), new cljs.core.Keyword(null, "search-results", "search-results", 1025331267), new cljs.core.Keyword(null, 
+"selection-portfolio-company-stats", "selection-portfolio-company-stats", 3535878587)], [null, null, null, null, null, cljs.core.PersistentVector.EMPTY, null, cljs.core.PersistentVector.EMPTY, cljs.core.PersistentArrayMap.EMPTY, null]));
 clustermap.app.new_state = function new_state(state, path_values) {
   return cljs.core.reduce.call(null, function(s, p__31088) {
     var vec__31089 = p__31088;
@@ -56286,13 +56291,14 @@ clustermap.app.process_selection = function process_selection(p__31124, type) {
   var vec__31126 = p__31124;
   var selection = cljs.core.nth.call(null, vec__31126, 0, null);
   var selection_portfolio_company_stats = cljs.core.nth.call(null, vec__31126, 1, null);
-  var selection_portfolio_company_site_stats = cljs.core.nth.call(null, vec__31126, 2, null);
-  var selection_portfolio_company_sites = cljs.core.nth.call(null, vec__31126, 3, null);
-  var selection_portfolio_company_site_account_timelines = cljs.core.nth.call(null, vec__31126, 4, null);
-  var selection_portfolio_company_locations = cljs.core.nth.call(null, vec__31126, 5, null);
-  return clustermap.app.set_state.call(null, new cljs.core.Keyword(null, "selection", "selection", 3592905982), new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "type", "type", 1017479852), type, new cljs.core.Keyword(null, "value", "value", 1125876963), selection], null), new cljs.core.Keyword(null, "selection-portfolio-company-stats", "selection-portfolio-company-stats", 3535878587), selection_portfolio_company_stats, new cljs.core.Keyword(null, "selection-portfolio-company-site-stats", 
-  "selection-portfolio-company-site-stats", 2240402081), selection_portfolio_company_site_stats, new cljs.core.Keyword(null, "selection-portfolio-company-sites", "selection-portfolio-company-sites", 3535568680), selection_portfolio_company_sites, new cljs.core.Keyword(null, "selection-portfolio-company-site-account-timelines", "selection-portfolio-company-site-account-timelines", 3586704052), selection_portfolio_company_site_account_timelines, new cljs.core.Keyword(null, "selection-portfolio-company-locations", 
-  "selection-portfolio-company-locations", 1821239162), selection_portfolio_company_locations);
+  var selection_portfolio_companies = cljs.core.nth.call(null, vec__31126, 2, null);
+  var selection_portfolio_company_site_stats = cljs.core.nth.call(null, vec__31126, 3, null);
+  var selection_portfolio_company_sites = cljs.core.nth.call(null, vec__31126, 4, null);
+  var selection_portfolio_company_site_account_timelines = cljs.core.nth.call(null, vec__31126, 5, null);
+  var selection_portfolio_company_locations = cljs.core.nth.call(null, vec__31126, 6, null);
+  return clustermap.app.set_state.call(null, new cljs.core.Keyword(null, "selection", "selection", 3592905982), new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "type", "type", 1017479852), type, new cljs.core.Keyword(null, "value", "value", 1125876963), selection], null), new cljs.core.Keyword(null, "selection-portfolio-company-stats", "selection-portfolio-company-stats", 3535878587), selection_portfolio_company_stats, new cljs.core.Keyword(null, "selection-portfolio-companies", 
+  "selection-portfolio-companies", 4038960455), selection_portfolio_companies, new cljs.core.Keyword(null, "selection-portfolio-company-site-stats", "selection-portfolio-company-site-stats", 2240402081), selection_portfolio_company_site_stats, new cljs.core.Keyword(null, "selection-portfolio-company-sites", "selection-portfolio-company-sites", 3535568680), selection_portfolio_company_sites, new cljs.core.Keyword(null, "selection-portfolio-company-site-account-timelines", "selection-portfolio-company-site-account-timelines", 
+  3586704052), selection_portfolio_company_site_account_timelines, new cljs.core.Keyword(null, "selection-portfolio-company-locations", "selection-portfolio-company-locations", 1821239162), selection_portfolio_company_locations);
 };
 clustermap.app.extract_id = function extract_id(type, obj) {
   var pred__31130 = cljs.core._EQ_;
@@ -56320,18 +56326,18 @@ clustermap.app.make_selection = function make_selection(p__31133) {
   var pred__31139 = cljs.core._EQ_;
   var expr__31140 = type;
   if (cljs.core.truth_(pred__31139.call(null, new cljs.core.Keyword(null, "portfolio-company", "portfolio-company", 3606204522), expr__31140))) {
-    return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentVector(null, 6, 5, cljs.core.PersistentVector.EMPTY_NODE, [clustermap.api.portfolio_company.call(null, id), clustermap.api.portfolio_company_stats.call(null, selector), clustermap.api.portfolio_company_site_stats.call(null, selector), clustermap.api.portfolio_company_sites.call(null, selector), clustermap.api.portfolio_company_site_account_timelines.call(null, selector), clustermap.api.portfolio_company_locations.call(null, 
-    selector)], null), type], null);
+    return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentVector(null, 7, 5, cljs.core.PersistentVector.EMPTY_NODE, [clustermap.api.portfolio_company.call(null, id), clustermap.api.portfolio_company_stats.call(null, selector), clustermap.api.portfolio_companies.call(null, selector), clustermap.api.portfolio_company_site_stats.call(null, selector), clustermap.api.portfolio_company_sites.call(null, selector), clustermap.api.portfolio_company_site_account_timelines.call(null, 
+    selector), clustermap.api.portfolio_company_locations.call(null, selector)], null), type], null);
   } else {
     if (cljs.core.truth_(pred__31139.call(null, new cljs.core.Keyword(null, "investor-company", "investor-company", 3983736762), expr__31140))) {
-      return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentVector(null, 6, 5, cljs.core.PersistentVector.EMPTY_NODE, [clustermap.api.investor_company.call(null, id), clustermap.api.portfolio_company_stats.call(null, selector), clustermap.api.portfolio_company_site_stats.call(null, selector), clustermap.api.portfolio_company_sites.call(null, selector), clustermap.api.portfolio_company_site_account_timelines.call(null, selector), clustermap.api.portfolio_company_locations.call(null, 
-      selector)], null), type], null);
+      return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentVector(null, 7, 5, cljs.core.PersistentVector.EMPTY_NODE, [clustermap.api.investor_company.call(null, id), clustermap.api.portfolio_company_stats.call(null, selector), clustermap.api.portfolio_companies.call(null, selector), clustermap.api.portfolio_company_site_stats.call(null, selector), clustermap.api.portfolio_company_sites.call(null, selector), clustermap.api.portfolio_company_site_account_timelines.call(null, 
+      selector), clustermap.api.portfolio_company_locations.call(null, selector)], null), type], null);
     } else {
       if (cljs.core.truth_(pred__31139.call(null, new cljs.core.Keyword(null, "constituency", "constituency", 3902864696), expr__31140))) {
-        return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentVector(null, 6, 5, cljs.core.PersistentVector.EMPTY_NODE, [clustermap.api.constituency.call(null, id), clustermap.api.portfolio_company_stats.call(null, selector), clustermap.api.portfolio_company_site_stats.call(null, selector), clustermap.api.portfolio_company_sites.call(null, selector), clustermap.api.portfolio_company_site_account_timelines.call(null, selector), clustermap.api.portfolio_company_locations.call(null, 
-        selector)], null), type], null);
+        return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentVector(null, 7, 5, cljs.core.PersistentVector.EMPTY_NODE, [clustermap.api.constituency.call(null, id), clustermap.api.portfolio_company_stats.call(null, selector), clustermap.api.portfolio_companies.call(null, selector), clustermap.api.portfolio_company_site_stats.call(null, selector), clustermap.api.portfolio_company_sites.call(null, selector), clustermap.api.portfolio_company_site_account_timelines.call(null, 
+        selector), clustermap.api.portfolio_company_locations.call(null, selector)], null), type], null);
       } else {
-        return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentVector(null, 6, 5, cljs.core.PersistentVector.EMPTY_NODE, [null, clustermap.api.portfolio_company_stats.call(null, selector), clustermap.api.portfolio_company_site_stats.call(null, selector), null, clustermap.api.portfolio_company_site_account_timelines.call(null, selector), null], null), type], null);
+        return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentVector(null, 7, 5, cljs.core.PersistentVector.EMPTY_NODE, [null, clustermap.api.portfolio_company_stats.call(null, selector), clustermap.api.portfolio_companies.call(null, selector), clustermap.api.portfolio_company_site_stats.call(null, selector), null, clustermap.api.portfolio_company_site_account_timelines.call(null, selector), null], null), type], null);
       }
     }
   }

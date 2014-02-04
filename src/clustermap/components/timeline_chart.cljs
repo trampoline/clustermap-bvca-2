@@ -48,8 +48,8 @@
 
     om/IDidMount
     (did-mount [this node]
-      (create-chart @data (om/get-node owner "chart") opts))
+      (create-chart data (om/get-node owner "chart") opts))
 
     om/IDidUpdate
     (did-update [this prev-props prev-state root-node]
-      (create-chart @data (om/get-node owner "chart") opts))))
+      (create-chart data (om/get-node owner "chart") opts))))

@@ -6,7 +6,8 @@
    [om.dom :as dom :include-macros true]
    [jayq.core :refer [$]]
    [sablono.core :as html :refer [html] :include-macros true]
-   [hiccups.runtime :as hiccupsrt]))
+   [hiccups.runtime :as hiccupsrt]
+   [clustermap.boundarylines :as bl]))
 
 (defn locate-map
   [m]
@@ -122,29 +123,53 @@
   (let [{[[[miny0 minx0] [maxy1 minx1] [maxy2 maxx2] [miny3 maxx3] [miny4 minx4] :as inner] :as coords] "coordinates" :as clj-envelope} (js->clj envelope)]
     (js/L.latLngBounds (clj->js [[minx0 miny0] [maxx2 maxy2]]))))
 
+(defn tolerance-boundaryline
+  "get the best cached boundaryline, async fetch a better one if required"
+  [fetch-boundaryline-fn index boundaryline-id zoom]
+  (let [default-bl (when index (aget index boundaryline-id))
+        default-tolerance (when default-bl (aget default-bl "tolerance"))
+        default (when default-bl [default-tolerance default-bl])]
+    (or (fetch-boundaryline-fn boundaryline-id zoom :min-zoom 7)
+        default)))
+
 (defn create-path
-  [leaflet-map uk-constituencies boundaryline-id]
-  (if-let [cons (aget uk-constituencies boundaryline-id)]
+  "create a Leaflet path for a boundaryline"
+  [fetch-boundaryline-fn uk-constituencies leaflet-map boundaryline-id]
+  (if-let [[tolerance cons] (tolerance-boundaryline fetch-boundaryline-fn uk-constituencies boundaryline-id (.getZoom leaflet-map))]
     (let [path (js/L.geoJson (aget cons "geojson"))
           bounds (postgis-envelope->latlngbounds (aget cons "envelope"))]
       (.addTo path leaflet-map)
-      {:path path
+      {:tolerance tolerance
+       :path path
        :bounds bounds})
     (.log js/console (str "missing boundaryline metadata: " boundaryline-id))))
 
 (defn update-path
-  [leaflet-map uk-constituencies path boundaryline-id]
-  path)
+  "update a Leaflet path for a boundaryline"
+  [fetch-boundaryline-fn uk-constituencies leaflet-map path boundaryline-id]
+  (if-let [[tolerance cons] (tolerance-boundaryline fetch-boundaryline-fn uk-constituencies boundaryline-id (.getZoom leaflet-map))]
+    (if (not= tolerance (:tolerance path))
+      (let [new-path (js/L.geoJson (aget cons "geojson"))
+            bounds (postgis-envelope->latlngbounds (aget cons "envelope"))]
+        (.addTo new-path leaflet-map)
+        (.removeLayer leaflet-map (:path path))
+        {:tolerance tolerance
+         :path new-path
+         :bounds bounds})
+      path)
+    path))
 
 (defn remove-path
+  "remove a leaflet path"
   [leaflet-map path]
+  (.log js/console (clj->js ["remove-path" path]))
   (some->>
    path
    :path
    (.removeLayer leaflet-map)))
 
 (defn update-paths
-  [leaflet-map uk-constituencies paths-atom new-locations]
+  [fetch-boundaryline-fn uk-constituencies leaflet-map paths-atom new-locations]
   (when uk-constituencies ;; don't try and render paths until we have path metadata !
     (let [paths @paths-atom
           path-keys (-> paths keys set)
@@ -155,11 +180,11 @@
           remove-path-keys (set/difference path-keys location-path-keys)
 
           new-paths (->> new-path-keys
-                         (map (fn [k] [k (create-path leaflet-map uk-constituencies k)]))
+                         (map (fn [k] [k (create-path fetch-boundaryline-fn uk-constituencies leaflet-map k)]))
                          (filter (fn [[k v]] (identity v)))
                          (into {}))
           updated-paths (->> update-path-keys
-                             (map (fn [k] [k (update-path leaflet-map uk-constituencies (get paths k) k)]))
+                             (map (fn [k] [k (update-path fetch-boundaryline-fn uk-constituencies leaflet-map (get paths k) k)]))
                              (into {}))
           _ (doseq [k remove-path-keys] (remove-path leaflet-map (get paths k)))]
 
@@ -174,7 +199,7 @@
 
 (defn map-component
   "put the leaflet map as state in the om component"
-  [{:keys [selection uk-constituencies]} owner]
+  [{:keys [selection] :as app-state} owner]
   (reify
     om/IRender
     (render [this]
@@ -182,25 +207,36 @@
 
     om/IDidMount
     (did-mount [this node]
-      (om/set-state! owner :map (create-map node)))
+      (let [{:keys [leaflet-map markers path] :as map} (create-map node)]
+        (om/set-state! owner :map map)
+
+        ;; yeuch
+        (.on leaflet-map "zoomend" (fn [e] (swap! (om/get-shared owner :app-state) assoc :zoom (.getZoom leaflet-map))))
+        (om/update! app-state assoc :zoom (.getZoom leaflet-map))))
 
     om/IWillUpdate
-    (will-update [this next-props next-state]
+    (will-update [this
+                  {next-selection :selection
+                   next-locations :selection-portfolio-company-locations
+                   next-uk-constituencies :uk-constituencies
+                   next-boundarylines :boundarylines
+                   next-zoom :zoom}
+                  next-state]
 
-      (let [{{:keys [leaflet-map markers paths]} :map locations :locations uk-constituencies :uk-constituencies} (om/get-state owner)
-            new-locations (some-> next-props :selection-portfolio-company-locations deref)
-            new-uk-constituencies (some-> next-props :uk-constituencies)]
-        (when (or (not= locations new-locations)
-                  (not= uk-constituencies new-uk-constituencies))
-          ;; update markers and paths, then store locations in the state for comparison next render
-          (update-markers leaflet-map markers new-locations)
-          (update-paths leaflet-map new-uk-constituencies paths new-locations)
+      (let [fetch-boundaryline-fn (om/get-shared owner :fetch-boundaryline-fn)
+            {{:keys [leaflet-map markers paths]} :map} (om/get-state owner)]
 
-          (when (not= locations new-locations) (om/set-state! owner :locations new-locations))
-          (when (not= uk-constituencies new-uk-constituencies) (om/set-state! owner :uk-constituencies new-uk-constituencies))
+        (update-markers leaflet-map markers next-locations)
+        (update-paths fetch-boundaryline-fn next-uk-constituencies leaflet-map paths next-locations)
 
+        (when (not= next-selection selection)
           (pan-to-selection leaflet-map @paths))))))
 
 (defn mount
   [app-state elem-id comm]
-  (om/root app-state {:comm comm} map-component (.getElementById js/document elem-id)))
+  (om/root app-state
+           {:comm comm
+            :app-state app-state
+            :fetch-boundaryline-fn (partial bl/get-or-fetch-best-boundaryline app-state :boundarylines)}
+           map-component
+           (.getElementById js/document elem-id)))

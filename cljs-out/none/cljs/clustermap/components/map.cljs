@@ -212,6 +212,14 @@
 
         ;; yeuch
         (.on leaflet-map "zoomend" (fn [e] (swap! (om/get-shared owner :app-state) assoc :zoom (.getZoom leaflet-map))))
+        (-> js/document $ (.on "clustermap-change-view"(fn [e]
+                                                         (.log js/console "change-view")
+                                                         (let [{{:keys [paths]} :map} (om/get-state owner)]
+                                                           (.invalidateSize leaflet-map)
+                                                           (if (not-empty @paths)
+                                                               (pan-to-selection leaflet-map @paths)
+                                                               (locate-map leaflet-map))))))
+
         (om/update! app-state assoc :zoom (.getZoom leaflet-map))))
 
     om/IWillUpdate
@@ -232,8 +240,8 @@
 
         (when (not= next-selection selection)
           (if (not-empty @paths)
-            (pan-to-selection leaflet-map @paths))
-          (om/set-state! owner :pan-pending true))
+            (pan-to-selection leaflet-map @paths)
+            (om/set-state! owner :pan-pending true)))
 
         (when (and pan-pending (not-empty @paths))
           (pan-to-selection leaflet-map @paths)

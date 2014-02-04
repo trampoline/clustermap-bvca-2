@@ -21,41 +21,41 @@ secretary.core.exact_match_QMARK_ = (function exact_match_QMARK_(r,u){return clj
 * A predicate to determine if a route matches a URI path.
 */
 secretary.core.route_matches_QMARK_ = (function route_matches_QMARK_(route,uri_path){var r = clojure.string.split.call(null,route,secretary.core.slash);var u = clojure.string.split.call(null,uri_path,secretary.core.slash);if(cljs.core._EQ_.call(null,cljs.core.count.call(null,r),cljs.core.count.call(null,u)))
-{return cljs.core.every_QMARK_.call(null,cljs.core.true_QMARK_,cljs.core.map.call(null,(function (p1__15843_SHARP_,p2__15844_SHARP_){return secretary.core.component_matches_QMARK_.call(null,p1__15843_SHARP_,p2__15844_SHARP_);
+{return cljs.core.every_QMARK_.call(null,cljs.core.true_QMARK_,cljs.core.map.call(null,(function (p1__15864_SHARP_,p2__15865_SHARP_){return secretary.core.component_matches_QMARK_.call(null,p1__15864_SHARP_,p2__15865_SHARP_);
 }),r,u));
 } else
 {return null;
 }
 });
-secretary.core.filter_routes = (function filter_routes(pred,uri_path){return cljs.core.filter.call(null,(function (p1__15845_SHARP_){return pred.call(null,cljs.core.first.call(null,p1__15845_SHARP_),uri_path);
+secretary.core.filter_routes = (function filter_routes(pred,uri_path){return cljs.core.filter.call(null,(function (p1__15866_SHARP_){return pred.call(null,cljs.core.first.call(null,p1__15866_SHARP_),uri_path);
 }),cljs.core.deref.call(null,secretary.core._STAR_routes_STAR_));
 });
 /**
 * Extract a map of query parameters from a query string.
 */
-secretary.core.parse_query_params = (function parse_query_params(query_string){return cljs.core.reduce.call(null,(function (m,param){var vec__15847 = clojure.string.split.call(null,param,/=/,2);var k = cljs.core.nth.call(null,vec__15847,0,null);var v = cljs.core.nth.call(null,vec__15847,1,null);var v__$1 = decodeURIComponent(v);return cljs.core.assoc.call(null,m,k,v__$1);
+secretary.core.parse_query_params = (function parse_query_params(query_string){return cljs.core.reduce.call(null,(function (m,param){var vec__15868 = clojure.string.split.call(null,param,/=/,2);var k = cljs.core.nth.call(null,vec__15868,0,null);var v = cljs.core.nth.call(null,vec__15868,1,null);var v__$1 = decodeURIComponent(v);return cljs.core.assoc.call(null,m,k,v__$1);
 }),cljs.core.PersistentArrayMap.EMPTY,clojure.string.split.call(null,query_string,/&/));
 });
 /**
 * Extract the match data from the URI path into a hash map
 */
 secretary.core.extract_components = (function extract_components(route,uri_path){if(cljs.core.truth_(secretary.core.route_matches_QMARK_.call(null,route,uri_path)))
-{return cljs.core.apply.call(null,cljs.core.merge,(function (){var iter__4117__auto__ = (function iter__15852(s__15853){return (new cljs.core.LazySeq(null,(function (){var s__15853__$1 = s__15853;while(true){
-var temp__4092__auto__ = cljs.core.seq.call(null,s__15853__$1);if(temp__4092__auto__)
-{var s__15853__$2 = temp__4092__auto__;if(cljs.core.chunked_seq_QMARK_.call(null,s__15853__$2))
-{var c__4115__auto__ = cljs.core.chunk_first.call(null,s__15853__$2);var size__4116__auto__ = cljs.core.count.call(null,c__4115__auto__);var b__15855 = cljs.core.chunk_buffer.call(null,size__4116__auto__);if((function (){var i__15854 = 0;while(true){
-if((i__15854 < size__4116__auto__))
-{var z = cljs.core._nth.call(null,c__4115__auto__,i__15854);var c = cljs.core.apply.call(null,secretary.core.extract_component,z);if(!((c == null)))
-{cljs.core.chunk_append.call(null,b__15855,c);
+{return cljs.core.apply.call(null,cljs.core.merge,(function (){var iter__4117__auto__ = (function iter__15873(s__15874){return (new cljs.core.LazySeq(null,(function (){var s__15874__$1 = s__15874;while(true){
+var temp__4092__auto__ = cljs.core.seq.call(null,s__15874__$1);if(temp__4092__auto__)
+{var s__15874__$2 = temp__4092__auto__;if(cljs.core.chunked_seq_QMARK_.call(null,s__15874__$2))
+{var c__4115__auto__ = cljs.core.chunk_first.call(null,s__15874__$2);var size__4116__auto__ = cljs.core.count.call(null,c__4115__auto__);var b__15876 = cljs.core.chunk_buffer.call(null,size__4116__auto__);if((function (){var i__15875 = 0;while(true){
+if((i__15875 < size__4116__auto__))
+{var z = cljs.core._nth.call(null,c__4115__auto__,i__15875);var c = cljs.core.apply.call(null,secretary.core.extract_component,z);if(!((c == null)))
+{cljs.core.chunk_append.call(null,b__15876,c);
 {
-var G__15856 = (i__15854 + 1);
-i__15854 = G__15856;
+var G__15877 = (i__15875 + 1);
+i__15875 = G__15877;
 continue;
 }
 } else
 {{
-var G__15857 = (i__15854 + 1);
-i__15854 = G__15857;
+var G__15878 = (i__15875 + 1);
+i__15875 = G__15878;
 continue;
 }
 }
@@ -65,17 +65,17 @@ continue;
 break;
 }
 })())
-{return cljs.core.chunk_cons.call(null,cljs.core.chunk.call(null,b__15855),iter__15852.call(null,cljs.core.chunk_rest.call(null,s__15853__$2)));
+{return cljs.core.chunk_cons.call(null,cljs.core.chunk.call(null,b__15876),iter__15873.call(null,cljs.core.chunk_rest.call(null,s__15874__$2)));
 } else
-{return cljs.core.chunk_cons.call(null,cljs.core.chunk.call(null,b__15855),null);
+{return cljs.core.chunk_cons.call(null,cljs.core.chunk.call(null,b__15876),null);
 }
 } else
-{var z = cljs.core.first.call(null,s__15853__$2);var c = cljs.core.apply.call(null,secretary.core.extract_component,z);if(!((c == null)))
-{return cljs.core.cons.call(null,c,iter__15852.call(null,cljs.core.rest.call(null,s__15853__$2)));
+{var z = cljs.core.first.call(null,s__15874__$2);var c = cljs.core.apply.call(null,secretary.core.extract_component,z);if(!((c == null)))
+{return cljs.core.cons.call(null,c,iter__15873.call(null,cljs.core.rest.call(null,s__15874__$2)));
 } else
 {{
-var G__15858 = cljs.core.rest.call(null,s__15853__$2);
-s__15853__$1 = G__15858;
+var G__15879 = cljs.core.rest.call(null,s__15874__$2);
+s__15874__$1 = G__15879;
 continue;
 }
 }
@@ -93,10 +93,10 @@ break;
 }
 });
 secretary.core.parse_action = (function parse_action(uri_path){var temp__4090__auto__ = cljs.core.first.call(null,secretary.core.filter_routes.call(null,secretary.core.exact_match_QMARK_,uri_path));if(cljs.core.truth_(temp__4090__auto__))
-{var vec__15861 = temp__4090__auto__;var route = cljs.core.nth.call(null,vec__15861,0,null);var action = cljs.core.nth.call(null,vec__15861,1,null);return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [action,cljs.core.PersistentArrayMap.EMPTY], null);
+{var vec__15882 = temp__4090__auto__;var route = cljs.core.nth.call(null,vec__15882,0,null);var action = cljs.core.nth.call(null,vec__15882,1,null);return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [action,cljs.core.PersistentArrayMap.EMPTY], null);
 } else
 {var temp__4092__auto__ = cljs.core.seq.call(null,secretary.core.filter_routes.call(null,secretary.core.route_matches_QMARK_,uri_path));if(temp__4092__auto__)
-{var xs__4579__auto__ = temp__4092__auto__;var vec__15862 = cljs.core.first.call(null,xs__4579__auto__);var route = cljs.core.nth.call(null,vec__15862,0,null);var action = cljs.core.nth.call(null,vec__15862,1,null);return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [action,secretary.core.extract_components.call(null,route,uri_path)], null);
+{var xs__4579__auto__ = temp__4092__auto__;var vec__15883 = cljs.core.first.call(null,xs__4579__auto__);var route = cljs.core.nth.call(null,vec__15883,0,null);var action = cljs.core.nth.call(null,vec__15883,1,null);return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [action,secretary.core.extract_components.call(null,route,uri_path)], null);
 } else
 {return null;
 }
@@ -105,7 +105,7 @@ secretary.core.parse_action = (function parse_action(uri_path){var temp__4090__a
 /**
 * Dispatch an action for a given route if it matches the URI path
 */
-secretary.core.dispatch_BANG_ = (function dispatch_BANG_(uri){var vec__15865 = clojure.string.split.call(null,uri,/\?/);var uri_path = cljs.core.nth.call(null,vec__15865,0,null);var query_string = cljs.core.nth.call(null,vec__15865,1,null);var query_params = (cljs.core.truth_(query_string)?new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"query-params","query-params",1080249757),secretary.core.parse_query_params.call(null,query_string)], null):null);var vec__15866 = secretary.core.parse_action.call(null,uri_path);var action = cljs.core.nth.call(null,vec__15866,0,null);var params = cljs.core.nth.call(null,vec__15866,1,null);var params__$1 = cljs.core.merge.call(null,params,query_params);return action.call(null,params__$1);
+secretary.core.dispatch_BANG_ = (function dispatch_BANG_(uri){var vec__15886 = clojure.string.split.call(null,uri,/\?/);var uri_path = cljs.core.nth.call(null,vec__15886,0,null);var query_string = cljs.core.nth.call(null,vec__15886,1,null);var query_params = (cljs.core.truth_(query_string)?new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"query-params","query-params",1080249757),secretary.core.parse_query_params.call(null,query_string)], null):null);var vec__15887 = secretary.core.parse_action.call(null,uri_path);var action = cljs.core.nth.call(null,vec__15887,0,null);var params = cljs.core.nth.call(null,vec__15887,1,null);var params__$1 = cljs.core.merge.call(null,params,query_params);return action.call(null,params__$1);
 });
 
 //# sourceMappingURL=core.js.map

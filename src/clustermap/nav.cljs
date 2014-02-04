@@ -67,6 +67,8 @@
         (dom/add-class! body body-class)
         (dom/remove-class! body body-class)))
 
+    (-> js/document $ (.trigger "clustermap-change-view"))
+
     ;; (-> js/window $ (.trigger "resize"))
     ;; causes more problems than it solves
     ))

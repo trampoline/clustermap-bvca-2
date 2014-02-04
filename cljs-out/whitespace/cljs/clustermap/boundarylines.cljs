@@ -44,7 +44,7 @@
         path (concat use-korks [boundaryline-id tolerance])]
     (go
      (let [bl (<! comm)]
-       (.log js/console (clj->js ["rx" app-state boundaryline-id tolerance bl]))
+;;       (.log js/console (clj->js ["rx" app-state boundaryline-id tolerance bl]))
        (swap! app-state update-in path (fn [old] bl))))))
 
 
@@ -57,7 +57,7 @@
    returns [tolerance, boundaryline] or default if nothing is available or
            (<= zoom min-zoom)"
   [app-state korks boundaryline-id zoom & {:keys [min-zoom]}]
-  (.log js/console (clj->js ["get-or-fetch" app-state korks boundaryline-id zoom]))
+;;  (.log js/console (clj->js ["get-or-fetch" app-state korks boundaryline-id zoom]))
   (when-not (and min-zoom
                  (<= zoom min-zoom))
 

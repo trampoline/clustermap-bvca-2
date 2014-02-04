@@ -29,8 +29,8 @@
     (locate-map m)
 
     {:leaflet-map m
-     :markers (atom [])
-     :paths (atom [])}))
+     :markers (atom {})
+     :paths (atom {})}))
 
 (defn geojson-point-bounds
   "return a single LatLngBounds object containing all
@@ -162,7 +162,7 @@
 (defn remove-path
   "remove a leaflet path"
   [leaflet-map path]
-  (.log js/console (clj->js ["remove-path" path]))
+;;  (.log js/console (clj->js ["remove-path" path]))
   (some->>
    path
    :path
@@ -224,13 +224,20 @@
                   next-state]
 
       (let [fetch-boundaryline-fn (om/get-shared owner :fetch-boundaryline-fn)
-            {{:keys [leaflet-map markers paths]} :map} (om/get-state owner)]
+            {{:keys [leaflet-map markers paths]} :map
+             pan-pending :pan-pending} (om/get-state owner)]
 
         (update-markers leaflet-map markers next-locations)
         (update-paths fetch-boundaryline-fn next-uk-constituencies leaflet-map paths next-locations)
 
         (when (not= next-selection selection)
-          (pan-to-selection leaflet-map @paths))))))
+          (if (not-empty @paths)
+            (pan-to-selection leaflet-map @paths))
+          (om/set-state! owner :pan-pending true))
+
+        (when (and pan-pending (not-empty @paths))
+          (pan-to-selection leaflet-map @paths)
+          (om/set-state! owner :pan-pending false))))))
 
 (defn mount
   [app-state elem-id comm]

@@ -3,6 +3,8 @@ goog.provide('clustermap.components.map');
 goog.require('cljs.core');
 goog.require('sablono.core');
 goog.require('jayq.core');
+goog.require('clustermap.boundarylines');
+goog.require('clustermap.boundarylines');
 goog.require('sablono.core');
 goog.require('sablono.core');
 goog.require('om.dom');
@@ -16,7 +18,7 @@ goog.require('clojure.set');
 goog.require('jayq.core');
 clustermap.components.map.locate_map = (function locate_map(m){return m.fitBounds(cljs.core.clj__GT_js(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [59.54,2.3], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [49.29,-11.29], null)], null)),cljs.core.clj__GT_js(new cljs.core.PersistentArrayMap(null, 2, ["paddingTopLeft",new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [0,0], null),"paddingBottomRight",new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [0,0], null)], null)));
 });
-clustermap.components.map.api_key = (function (){var or__3406__auto__ = (function (){var G__21518 = config;var G__21518__$1 = (((G__21518 == null))?null:G__21518.components);var G__21518__$2 = (((G__21518__$1 == null))?null:G__21518__$1.map);var G__21518__$3 = (((G__21518__$2 == null))?null:G__21518__$2.api_key);return G__21518__$3;
+clustermap.components.map.api_key = (function (){var or__3406__auto__ = (function (){var G__21722 = config;var G__21722__$1 = (((G__21722 == null))?null:G__21722.components);var G__21722__$2 = (((G__21722__$1 == null))?null:G__21722__$1.map);var G__21722__$3 = (((G__21722__$2 == null))?null:G__21722__$2.api_key);return G__21722__$3;
 })();if(cljs.core.truth_(or__3406__auto__))
 {return or__3406__auto__;
 } else
@@ -26,7 +28,7 @@ clustermap.components.map.api_key = (function (){var or__3406__auto__ = (functio
 clustermap.components.map.create_map = (function create_map(id_or_el){var m = L.map.call(null,id_or_el,{"zoomControl": false});var tiles = L.mapbox.tileLayer.call(null,clustermap.components.map.api_key,{"detectRetina": true});var zoom = L.control.zoom.call(null,{"position": "bottomright"});m.addLayer(tiles);
 m.addControl(zoom);
 clustermap.components.map.locate_map(m);
-return new cljs.core.PersistentArrayMap(null, 3, [cljs.core.constant$keyword$344,m,cljs.core.constant$keyword$345,cljs.core.atom.cljs$core$IFn$_invoke$arity$1(cljs.core.PersistentVector.EMPTY),cljs.core.constant$keyword$346,cljs.core.atom.cljs$core$IFn$_invoke$arity$1(cljs.core.PersistentVector.EMPTY)], null);
+return new cljs.core.PersistentArrayMap(null, 3, [cljs.core.constant$keyword$350,m,cljs.core.constant$keyword$351,cljs.core.atom.cljs$core$IFn$_invoke$arity$1(cljs.core.PersistentVector.EMPTY),cljs.core.constant$keyword$352,cljs.core.atom.cljs$core$IFn$_invoke$arity$1(cljs.core.PersistentVector.EMPTY)], null);
 });
 /**
 * return a single LatLngBounds object containing all
@@ -69,38 +71,38 @@ var all_bounds = null;if (arguments.length > 1) {
   all_bounds = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
 return pan_to_show__delegate.call(this,m,all_bounds);};
 pan_to_show.cljs$lang$maxFixedArity = 1;
-pan_to_show.cljs$lang$applyTo = (function (arglist__21519){
-var m = cljs.core.first(arglist__21519);
-var all_bounds = cljs.core.rest(arglist__21519);
+pan_to_show.cljs$lang$applyTo = (function (arglist__21723){
+var m = cljs.core.first(arglist__21723);
+var all_bounds = cljs.core.rest(arglist__21723);
 return pan_to_show__delegate(m,all_bounds);
 });
 pan_to_show.cljs$core$IFn$_invoke$arity$variadic = pan_to_show__delegate;
 return pan_to_show;
 })()
 ;
-clustermap.components.map.display_site = (function display_site(m,site){var location = cljs.core.clj__GT_js(cljs.core.reverse((site["location"])));var options = cljs.core.clj__GT_js(new cljs.core.PersistentArrayMap(null, 1, [cljs.core.constant$keyword$311,[cljs.core.str((site["name"])),cljs.core.str(", "),cljs.core.str((site["postcode"])),cljs.core.str(", "),cljs.core.str((site["company_no"]))].join('')], null));var marker = L.marker(location,options);return marker.addTo(m);
+clustermap.components.map.display_site = (function display_site(m,site){var location = cljs.core.clj__GT_js(cljs.core.reverse((site["location"])));var options = cljs.core.clj__GT_js(new cljs.core.PersistentArrayMap(null, 1, [cljs.core.constant$keyword$316,[cljs.core.str((site["name"])),cljs.core.str(", "),cljs.core.str((site["postcode"])),cljs.core.str(", "),cljs.core.str((site["company_no"]))].join('')], null));var marker = L.marker(location,options);return marker.addTo(m);
 });
-clustermap.components.map.display_sites = (function display_sites(m,sites){return (function (c){return (casync.dorun_async.cljs$core$IFn$_invoke$arity$3 ? casync.dorun_async.cljs$core$IFn$_invoke$arity$3(c,cljs.core.constant$keyword$347,null) : casync.dorun_async.call(null,c,cljs.core.constant$keyword$347,null));
+clustermap.components.map.display_sites = (function display_sites(m,sites){return (function (c){return (casync.dorun_async.cljs$core$IFn$_invoke$arity$3 ? casync.dorun_async.cljs$core$IFn$_invoke$arity$3(c,cljs.core.constant$keyword$353,null) : casync.dorun_async.call(null,c,cljs.core.constant$keyword$353,null));
 }).call(null,(casync.map_async.cljs$core$IFn$_invoke$arity$2 ? casync.map_async.cljs$core$IFn$_invoke$arity$2(cljs.core.partial.cljs$core$IFn$_invoke$arity$2(clustermap.components.map.display_site,m),sites) : casync.map_async.call(null,cljs.core.partial.cljs$core$IFn$_invoke$arity$2(clustermap.components.map.display_site,m),sites)));
 });
-clustermap.components.map.marker_popup_content = (function marker_popup_content(location_sites){return [cljs.core.str(hiccups.runtime.render_html(cljs.core.map.cljs$core$IFn$_invoke$arity$2((function (site){return [cljs.core.str((function (){var attrs21521 = cljs.core.constant$keyword$239.cljs$core$IFn$_invoke$arity$1(site);if(cljs.core.map_QMARK_(attrs21521))
-{return [cljs.core.str("<p"),cljs.core.str(hiccups.runtime.render_attr_map(cljs.core.merge.cljs$core$IFn$_invoke$arity$variadic(cljs.core.array_seq([new cljs.core.PersistentArrayMap(null, 2, [cljs.core.constant$keyword$225,null,cljs.core.constant$keyword$219,null], null),attrs21521], 0)))),cljs.core.str(" />")].join('');
+clustermap.components.map.marker_popup_content = (function marker_popup_content(location_sites){return [cljs.core.str(hiccups.runtime.render_html(cljs.core.map.cljs$core$IFn$_invoke$arity$2((function (site){return [cljs.core.str((function (){var attrs21725 = cljs.core.constant$keyword$245.cljs$core$IFn$_invoke$arity$1(site);if(cljs.core.map_QMARK_(attrs21725))
+{return [cljs.core.str("<p"),cljs.core.str(hiccups.runtime.render_attr_map(cljs.core.merge.cljs$core$IFn$_invoke$arity$variadic(cljs.core.array_seq([new cljs.core.PersistentArrayMap(null, 2, [cljs.core.constant$keyword$231,null,cljs.core.constant$keyword$225,null], null),attrs21725], 0)))),cljs.core.str(" />")].join('');
 } else
-{return [cljs.core.str("<p>"),cljs.core.str(hiccups.runtime.render_html(attrs21521)),cljs.core.str("</p>")].join('');
+{return [cljs.core.str("<p>"),cljs.core.str(hiccups.runtime.render_html(attrs21725)),cljs.core.str("</p>")].join('');
 }
 })())].join('');
 }),location_sites)))].join('');
 });
-clustermap.components.map.create_marker = (function create_marker(leaflet_map,location_sites){var temp__4090__auto__ = (function (){var G__21524 = location_sites;var G__21524__$1 = (((G__21524 == null))?null:cljs.core.first(G__21524));var G__21524__$2 = (((G__21524__$1 == null))?null:cljs.core.constant$keyword$348.cljs$core$IFn$_invoke$arity$1(G__21524__$1));var G__21524__$3 = (((G__21524__$2 == null))?null:cljs.core.reverse(G__21524__$2));var G__21524__$4 = (((G__21524__$3 == null))?null:cljs.core.clj__GT_js(G__21524__$3));return G__21524__$4;
+clustermap.components.map.create_marker = (function create_marker(leaflet_map,location_sites){var temp__4090__auto__ = (function (){var G__21728 = location_sites;var G__21728__$1 = (((G__21728 == null))?null:cljs.core.first(G__21728));var G__21728__$2 = (((G__21728__$1 == null))?null:cljs.core.constant$keyword$354.cljs$core$IFn$_invoke$arity$1(G__21728__$1));var G__21728__$3 = (((G__21728__$2 == null))?null:cljs.core.reverse(G__21728__$2));var G__21728__$4 = (((G__21728__$3 == null))?null:cljs.core.clj__GT_js(G__21728__$3));return G__21728__$4;
 })();if(cljs.core.truth_(temp__4090__auto__))
 {var latlong = temp__4090__auto__;var marker = L.marker(latlong);var popup_content = clustermap.components.map.marker_popup_content(location_sites);marker.bindPopup(popup_content);
 marker.addTo(leaflet_map);
 return marker;
 } else
-{return console.log([cljs.core.str("missing location: "),cljs.core.str((function (){var sb__4298__auto__ = (new goog.string.StringBuffer());var _STAR_print_fn_STAR_21525_21526 = cljs.core._STAR_print_fn_STAR_;try{cljs.core._STAR_print_fn_STAR_ = (function (x__4299__auto__){return sb__4298__auto__.append(x__4299__auto__);
+{return console.log([cljs.core.str("missing location: "),cljs.core.str((function (){var sb__4298__auto__ = (new goog.string.StringBuffer());var _STAR_print_fn_STAR_21729_21730 = cljs.core._STAR_print_fn_STAR_;try{cljs.core._STAR_print_fn_STAR_ = (function (x__4299__auto__){return sb__4298__auto__.append(x__4299__auto__);
 });
 cljs.core.pr.cljs$core$IFn$_invoke$arity$variadic(cljs.core.array_seq([location_sites], 0));
-}finally {cljs.core._STAR_print_fn_STAR_ = _STAR_print_fn_STAR_21525_21526;
+}finally {cljs.core._STAR_print_fn_STAR_ = _STAR_print_fn_STAR_21729_21730;
 }return [cljs.core.str(sb__4298__auto__)].join('');
 })())].join(''));
 }
@@ -116,45 +118,45 @@ return (function (k){return new cljs.core.PersistentVector(null, 2, 5, cljs.core
 ,new_marker_keys));var updated_markers = cljs.core.into(cljs.core.PersistentArrayMap.EMPTY,cljs.core.map.cljs$core$IFn$_invoke$arity$2(((function (markers,marker_keys,location_keys,update_marker_keys,new_marker_keys,remove_marker_keys,new_markers){
 return (function (k){return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [k,clustermap.components.map.update_marker(leaflet_map,cljs.core.get.cljs$core$IFn$_invoke$arity$2(markers,k),cljs.core.get.cljs$core$IFn$_invoke$arity$2(new_locations,k))], null);
 });})(markers,marker_keys,location_keys,update_marker_keys,new_marker_keys,remove_marker_keys,new_markers))
-,update_marker_keys));var _ = (function (){var seq__21531 = cljs.core.seq(remove_marker_keys);var chunk__21532 = null;var count__21533 = 0;var i__21534 = 0;while(true){
-if((i__21534 < count__21533))
-{var k = chunk__21532.cljs$core$IIndexed$_nth$arity$2(null,i__21534);clustermap.components.map.remove_marker(leaflet_map,cljs.core.get.cljs$core$IFn$_invoke$arity$2(markers,k));
+,update_marker_keys));var _ = (function (){var seq__21735 = cljs.core.seq(remove_marker_keys);var chunk__21736 = null;var count__21737 = 0;var i__21738 = 0;while(true){
+if((i__21738 < count__21737))
+{var k = chunk__21736.cljs$core$IIndexed$_nth$arity$2(null,i__21738);clustermap.components.map.remove_marker(leaflet_map,cljs.core.get.cljs$core$IFn$_invoke$arity$2(markers,k));
 {
-var G__21535 = seq__21531;
-var G__21536 = chunk__21532;
-var G__21537 = count__21533;
-var G__21538 = (i__21534 + 1);
-seq__21531 = G__21535;
-chunk__21532 = G__21536;
-count__21533 = G__21537;
-i__21534 = G__21538;
+var G__21739 = seq__21735;
+var G__21740 = chunk__21736;
+var G__21741 = count__21737;
+var G__21742 = (i__21738 + 1);
+seq__21735 = G__21739;
+chunk__21736 = G__21740;
+count__21737 = G__21741;
+i__21738 = G__21742;
 continue;
 }
 } else
-{var temp__4092__auto__ = cljs.core.seq(seq__21531);if(temp__4092__auto__)
-{var seq__21531__$1 = temp__4092__auto__;if(cljs.core.chunked_seq_QMARK_(seq__21531__$1))
-{var c__4148__auto__ = cljs.core.chunk_first(seq__21531__$1);{
-var G__21539 = cljs.core.chunk_rest(seq__21531__$1);
-var G__21540 = c__4148__auto__;
-var G__21541 = cljs.core.count(c__4148__auto__);
-var G__21542 = 0;
-seq__21531 = G__21539;
-chunk__21532 = G__21540;
-count__21533 = G__21541;
-i__21534 = G__21542;
+{var temp__4092__auto__ = cljs.core.seq(seq__21735);if(temp__4092__auto__)
+{var seq__21735__$1 = temp__4092__auto__;if(cljs.core.chunked_seq_QMARK_(seq__21735__$1))
+{var c__4148__auto__ = cljs.core.chunk_first(seq__21735__$1);{
+var G__21743 = cljs.core.chunk_rest(seq__21735__$1);
+var G__21744 = c__4148__auto__;
+var G__21745 = cljs.core.count(c__4148__auto__);
+var G__21746 = 0;
+seq__21735 = G__21743;
+chunk__21736 = G__21744;
+count__21737 = G__21745;
+i__21738 = G__21746;
 continue;
 }
 } else
-{var k = cljs.core.first(seq__21531__$1);clustermap.components.map.remove_marker(leaflet_map,cljs.core.get.cljs$core$IFn$_invoke$arity$2(markers,k));
+{var k = cljs.core.first(seq__21735__$1);clustermap.components.map.remove_marker(leaflet_map,cljs.core.get.cljs$core$IFn$_invoke$arity$2(markers,k));
 {
-var G__21543 = cljs.core.next(seq__21531__$1);
-var G__21544 = null;
-var G__21545 = 0;
-var G__21546 = 0;
-seq__21531 = G__21543;
-chunk__21532 = G__21544;
-count__21533 = G__21545;
-i__21534 = G__21546;
+var G__21747 = cljs.core.next(seq__21735__$1);
+var G__21748 = null;
+var G__21749 = 0;
+var G__21750 = 0;
+seq__21735 = G__21747;
+chunk__21736 = G__21748;
+count__21737 = G__21749;
+i__21738 = G__21750;
 continue;
 }
 }
@@ -169,68 +171,97 @@ break;
 /**
 * turns a PostGIS envelope into a L.LatLngBounds
 */
-clustermap.components.map.postgis_envelope__GT_latlngbounds = (function postgis_envelope__GT_latlngbounds(envelope){var map__21555 = cljs.core.js__GT_clj.cljs$core$IFn$_invoke$arity$1(envelope);var map__21555__$1 = ((cljs.core.seq_QMARK_(map__21555))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__21555):map__21555);var clj_envelope = map__21555__$1;var vec__21556 = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__21555__$1,"coordinates");var vec__21557 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__21556,0,null);var vec__21558 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__21557,0,null);var miny0 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__21558,0,null);var minx0 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__21558,1,null);var vec__21559 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__21557,1,null);var maxy1 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__21559,0,null);var minx1 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__21559,1,null);var vec__21560 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__21557,2,null);var maxy2 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__21560,0,null);var maxx2 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__21560,1,null);var vec__21561 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__21557,3,null);var miny3 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__21561,0,null);var maxx3 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__21561,1,null);var vec__21562 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__21557,4,null);var miny4 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__21562,0,null);var minx4 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__21562,1,null);var inner = vec__21557;var coords = vec__21556;return L.latLngBounds(cljs.core.clj__GT_js(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [minx0,miny0], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [maxx2,maxy2], null)], null)));
+clustermap.components.map.postgis_envelope__GT_latlngbounds = (function postgis_envelope__GT_latlngbounds(envelope){var map__21759 = cljs.core.js__GT_clj.cljs$core$IFn$_invoke$arity$1(envelope);var map__21759__$1 = ((cljs.core.seq_QMARK_(map__21759))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__21759):map__21759);var clj_envelope = map__21759__$1;var vec__21760 = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__21759__$1,"coordinates");var vec__21761 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__21760,0,null);var vec__21762 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__21761,0,null);var miny0 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__21762,0,null);var minx0 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__21762,1,null);var vec__21763 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__21761,1,null);var maxy1 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__21763,0,null);var minx1 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__21763,1,null);var vec__21764 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__21761,2,null);var maxy2 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__21764,0,null);var maxx2 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__21764,1,null);var vec__21765 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__21761,3,null);var miny3 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__21765,0,null);var maxx3 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__21765,1,null);var vec__21766 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__21761,4,null);var miny4 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__21766,0,null);var minx4 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__21766,1,null);var inner = vec__21761;var coords = vec__21760;return L.latLngBounds(cljs.core.clj__GT_js(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [minx0,miny0], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [maxx2,maxy2], null)], null)));
 });
-clustermap.components.map.create_path = (function create_path(leaflet_map,uk_constituencies,boundaryline_id){var temp__4090__auto__ = (uk_constituencies[boundaryline_id]);if(cljs.core.truth_(temp__4090__auto__))
-{var cons = temp__4090__auto__;var path = L.geoJson((cons["geojson"]));var bounds = clustermap.components.map.postgis_envelope__GT_latlngbounds((cons["envelope"]));path.addTo(leaflet_map);
-return new cljs.core.PersistentArrayMap(null, 2, [cljs.core.constant$keyword$349,path,cljs.core.constant$keyword$350,bounds], null);
+/**
+* get the best cached boundaryline, async fetch a better one if required
+*/
+clustermap.components.map.tolerance_boundaryline = (function tolerance_boundaryline(fetch_boundaryline_fn,index,boundaryline_id,zoom){var default_bl = (cljs.core.truth_(index)?(index[boundaryline_id]):null);var default_tolerance = (cljs.core.truth_(default_bl)?(default_bl["tolerance"]):null);var default$ = (cljs.core.truth_(default_bl)?new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [default_tolerance,default_bl], null):null);var or__3406__auto__ = (fetch_boundaryline_fn.cljs$core$IFn$_invoke$arity$4 ? fetch_boundaryline_fn.cljs$core$IFn$_invoke$arity$4(boundaryline_id,zoom,cljs.core.constant$keyword$224,7) : fetch_boundaryline_fn.call(null,boundaryline_id,zoom,cljs.core.constant$keyword$224,7));if(cljs.core.truth_(or__3406__auto__))
+{return or__3406__auto__;
+} else
+{return default$;
+}
+});
+/**
+* create a Leaflet path for a boundaryline
+*/
+clustermap.components.map.create_path = (function create_path(fetch_boundaryline_fn,uk_constituencies,leaflet_map,boundaryline_id){var temp__4090__auto__ = clustermap.components.map.tolerance_boundaryline(fetch_boundaryline_fn,uk_constituencies,boundaryline_id,leaflet_map.getZoom());if(cljs.core.truth_(temp__4090__auto__))
+{var vec__21768 = temp__4090__auto__;var tolerance = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__21768,0,null);var cons = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__21768,1,null);var path = L.geoJson((cons["geojson"]));var bounds = clustermap.components.map.postgis_envelope__GT_latlngbounds((cons["envelope"]));path.addTo(leaflet_map);
+return new cljs.core.PersistentArrayMap(null, 3, [cljs.core.constant$keyword$355,tolerance,cljs.core.constant$keyword$356,path,cljs.core.constant$keyword$357,bounds], null);
 } else
 {return console.log([cljs.core.str("missing boundaryline metadata: "),cljs.core.str(boundaryline_id)].join(''));
 }
 });
-clustermap.components.map.update_path = (function update_path(leaflet_map,uk_constituencies,path,boundaryline_id){return path;
+/**
+* update a Leaflet path for a boundaryline
+*/
+clustermap.components.map.update_path = (function update_path(fetch_boundaryline_fn,uk_constituencies,leaflet_map,path,boundaryline_id){var temp__4090__auto__ = clustermap.components.map.tolerance_boundaryline(fetch_boundaryline_fn,uk_constituencies,boundaryline_id,leaflet_map.getZoom());if(cljs.core.truth_(temp__4090__auto__))
+{var vec__21770 = temp__4090__auto__;var tolerance = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__21770,0,null);var cons = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__21770,1,null);if(cljs.core.not_EQ_.cljs$core$IFn$_invoke$arity$2(tolerance,cljs.core.constant$keyword$355.cljs$core$IFn$_invoke$arity$1(path)))
+{var new_path = L.geoJson((cons["geojson"]));var bounds = clustermap.components.map.postgis_envelope__GT_latlngbounds((cons["envelope"]));new_path.addTo(leaflet_map);
+leaflet_map.removeLayer(cljs.core.constant$keyword$356.cljs$core$IFn$_invoke$arity$1(path));
+return new cljs.core.PersistentArrayMap(null, 3, [cljs.core.constant$keyword$355,tolerance,cljs.core.constant$keyword$356,new_path,cljs.core.constant$keyword$357,bounds], null);
+} else
+{return path;
+}
+} else
+{return path;
+}
 });
-clustermap.components.map.remove_path = (function remove_path(leaflet_map,path){var G__21564 = path;var G__21564__$1 = (((G__21564 == null))?null:cljs.core.constant$keyword$349.cljs$core$IFn$_invoke$arity$1(G__21564));var G__21564__$2 = (((G__21564__$1 == null))?null:leaflet_map.removeLayer(G__21564__$1));return G__21564__$2;
+/**
+* remove a leaflet path
+*/
+clustermap.components.map.remove_path = (function remove_path(leaflet_map,path){console.log(cljs.core.clj__GT_js(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, ["remove-path",path], null)));
+var G__21772 = path;var G__21772__$1 = (((G__21772 == null))?null:cljs.core.constant$keyword$356.cljs$core$IFn$_invoke$arity$1(G__21772));var G__21772__$2 = (((G__21772__$1 == null))?null:leaflet_map.removeLayer(G__21772__$1));return G__21772__$2;
 });
-clustermap.components.map.update_paths = (function update_paths(leaflet_map,uk_constituencies,paths_atom,new_locations){if(cljs.core.truth_(uk_constituencies))
-{var paths = cljs.core.deref(paths_atom);var path_keys = cljs.core.set(cljs.core.keys(paths));var location_path_keys = cljs.core.set(cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.concat,cljs.core.map.cljs$core$IFn$_invoke$arity$2(cljs.core.comp.cljs$core$IFn$_invoke$arity$2(cljs.core.constant$keyword$339,cljs.core.constant$keyword$338),cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.concat,cljs.core.vals(new_locations)))));var update_path_keys = clojure.set.intersection.cljs$core$IFn$_invoke$arity$2(path_keys,location_path_keys);var new_path_keys = clojure.set.difference.cljs$core$IFn$_invoke$arity$2(location_path_keys,path_keys);var remove_path_keys = clojure.set.difference.cljs$core$IFn$_invoke$arity$2(path_keys,location_path_keys);var new_paths = cljs.core.into(cljs.core.PersistentArrayMap.EMPTY,cljs.core.filter(((function (paths,path_keys,location_path_keys,update_path_keys,new_path_keys,remove_path_keys){
-return (function (p__21571){var vec__21572 = p__21571;var k = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__21572,0,null);var v = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__21572,1,null);return cljs.core.identity(v);
+clustermap.components.map.update_paths = (function update_paths(fetch_boundaryline_fn,uk_constituencies,leaflet_map,paths_atom,new_locations){if(cljs.core.truth_(uk_constituencies))
+{var paths = cljs.core.deref(paths_atom);var path_keys = cljs.core.set(cljs.core.keys(paths));var location_path_keys = cljs.core.set(cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.concat,cljs.core.map.cljs$core$IFn$_invoke$arity$2(cljs.core.comp.cljs$core$IFn$_invoke$arity$2(cljs.core.constant$keyword$345,cljs.core.constant$keyword$344),cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.concat,cljs.core.vals(new_locations)))));var update_path_keys = clojure.set.intersection.cljs$core$IFn$_invoke$arity$2(path_keys,location_path_keys);var new_path_keys = clojure.set.difference.cljs$core$IFn$_invoke$arity$2(location_path_keys,path_keys);var remove_path_keys = clojure.set.difference.cljs$core$IFn$_invoke$arity$2(path_keys,location_path_keys);var new_paths = cljs.core.into(cljs.core.PersistentArrayMap.EMPTY,cljs.core.filter(((function (paths,path_keys,location_path_keys,update_path_keys,new_path_keys,remove_path_keys){
+return (function (p__21779){var vec__21780 = p__21779;var k = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__21780,0,null);var v = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__21780,1,null);return cljs.core.identity(v);
 });})(paths,path_keys,location_path_keys,update_path_keys,new_path_keys,remove_path_keys))
 ,cljs.core.map.cljs$core$IFn$_invoke$arity$2(((function (paths,path_keys,location_path_keys,update_path_keys,new_path_keys,remove_path_keys){
-return (function (k){return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [k,clustermap.components.map.create_path(leaflet_map,uk_constituencies,k)], null);
+return (function (k){return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [k,clustermap.components.map.create_path(fetch_boundaryline_fn,uk_constituencies,leaflet_map,k)], null);
 });})(paths,path_keys,location_path_keys,update_path_keys,new_path_keys,remove_path_keys))
 ,new_path_keys)));var updated_paths = cljs.core.into(cljs.core.PersistentArrayMap.EMPTY,cljs.core.map.cljs$core$IFn$_invoke$arity$2(((function (paths,path_keys,location_path_keys,update_path_keys,new_path_keys,remove_path_keys,new_paths){
-return (function (k){return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [k,clustermap.components.map.update_path(leaflet_map,uk_constituencies,cljs.core.get.cljs$core$IFn$_invoke$arity$2(paths,k),k)], null);
+return (function (k){return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [k,clustermap.components.map.update_path(fetch_boundaryline_fn,uk_constituencies,leaflet_map,cljs.core.get.cljs$core$IFn$_invoke$arity$2(paths,k),k)], null);
 });})(paths,path_keys,location_path_keys,update_path_keys,new_path_keys,remove_path_keys,new_paths))
-,update_path_keys));var _ = (function (){var seq__21573 = cljs.core.seq(remove_path_keys);var chunk__21574 = null;var count__21575 = 0;var i__21576 = 0;while(true){
-if((i__21576 < count__21575))
-{var k = chunk__21574.cljs$core$IIndexed$_nth$arity$2(null,i__21576);clustermap.components.map.remove_path(leaflet_map,cljs.core.get.cljs$core$IFn$_invoke$arity$2(paths,k));
+,update_path_keys));var _ = (function (){var seq__21781 = cljs.core.seq(remove_path_keys);var chunk__21782 = null;var count__21783 = 0;var i__21784 = 0;while(true){
+if((i__21784 < count__21783))
+{var k = chunk__21782.cljs$core$IIndexed$_nth$arity$2(null,i__21784);clustermap.components.map.remove_path(leaflet_map,cljs.core.get.cljs$core$IFn$_invoke$arity$2(paths,k));
 {
-var G__21577 = seq__21573;
-var G__21578 = chunk__21574;
-var G__21579 = count__21575;
-var G__21580 = (i__21576 + 1);
-seq__21573 = G__21577;
-chunk__21574 = G__21578;
-count__21575 = G__21579;
-i__21576 = G__21580;
+var G__21785 = seq__21781;
+var G__21786 = chunk__21782;
+var G__21787 = count__21783;
+var G__21788 = (i__21784 + 1);
+seq__21781 = G__21785;
+chunk__21782 = G__21786;
+count__21783 = G__21787;
+i__21784 = G__21788;
 continue;
 }
 } else
-{var temp__4092__auto__ = cljs.core.seq(seq__21573);if(temp__4092__auto__)
-{var seq__21573__$1 = temp__4092__auto__;if(cljs.core.chunked_seq_QMARK_(seq__21573__$1))
-{var c__4148__auto__ = cljs.core.chunk_first(seq__21573__$1);{
-var G__21581 = cljs.core.chunk_rest(seq__21573__$1);
-var G__21582 = c__4148__auto__;
-var G__21583 = cljs.core.count(c__4148__auto__);
-var G__21584 = 0;
-seq__21573 = G__21581;
-chunk__21574 = G__21582;
-count__21575 = G__21583;
-i__21576 = G__21584;
+{var temp__4092__auto__ = cljs.core.seq(seq__21781);if(temp__4092__auto__)
+{var seq__21781__$1 = temp__4092__auto__;if(cljs.core.chunked_seq_QMARK_(seq__21781__$1))
+{var c__4148__auto__ = cljs.core.chunk_first(seq__21781__$1);{
+var G__21789 = cljs.core.chunk_rest(seq__21781__$1);
+var G__21790 = c__4148__auto__;
+var G__21791 = cljs.core.count(c__4148__auto__);
+var G__21792 = 0;
+seq__21781 = G__21789;
+chunk__21782 = G__21790;
+count__21783 = G__21791;
+i__21784 = G__21792;
 continue;
 }
 } else
-{var k = cljs.core.first(seq__21573__$1);clustermap.components.map.remove_path(leaflet_map,cljs.core.get.cljs$core$IFn$_invoke$arity$2(paths,k));
+{var k = cljs.core.first(seq__21781__$1);clustermap.components.map.remove_path(leaflet_map,cljs.core.get.cljs$core$IFn$_invoke$arity$2(paths,k));
 {
-var G__21585 = cljs.core.next(seq__21573__$1);
-var G__21586 = null;
-var G__21587 = 0;
-var G__21588 = 0;
-seq__21573 = G__21585;
-chunk__21574 = G__21586;
-count__21575 = G__21587;
-i__21576 = G__21588;
+var G__21793 = cljs.core.next(seq__21781__$1);
+var G__21794 = null;
+var G__21795 = 0;
+var G__21796 = 0;
+seq__21781 = G__21793;
+chunk__21782 = G__21794;
+count__21783 = G__21795;
+i__21784 = G__21796;
 continue;
 }
 }
@@ -245,7 +276,7 @@ break;
 {return null;
 }
 });
-clustermap.components.map.pan_to_selection = (function pan_to_selection(leaflet_map,paths){var bounds = (function (){var G__21590 = paths;var G__21590__$1 = (((G__21590 == null))?null:cljs.core.vals(G__21590));var G__21590__$2 = (((G__21590__$1 == null))?null:cljs.core.map.cljs$core$IFn$_invoke$arity$2(cljs.core.constant$keyword$350,G__21590__$1));return G__21590__$2;
+clustermap.components.map.pan_to_selection = (function pan_to_selection(leaflet_map,paths){var bounds = (function (){var G__21798 = paths;var G__21798__$1 = (((G__21798 == null))?null:cljs.core.vals(G__21798));var G__21798__$2 = (((G__21798__$1 == null))?null:cljs.core.map.cljs$core$IFn$_invoke$arity$2(cljs.core.constant$keyword$357,G__21798__$1));return G__21798__$2;
 })();if(cljs.core.truth_(bounds))
 {return cljs.core.apply.cljs$core$IFn$_invoke$arity$3(clustermap.components.map.pan_to_show,leaflet_map,bounds);
 } else
@@ -255,65 +286,58 @@ clustermap.components.map.pan_to_selection = (function pan_to_selection(leaflet_
 /**
 * put the leaflet map as state in the om component
 */
-clustermap.components.map.map_component = (function map_component(p__21591,owner){var map__21602 = p__21591;var map__21602__$1 = ((cljs.core.seq_QMARK_(map__21602))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__21602):map__21602);var uk_constituencies = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__21602__$1,cljs.core.constant$keyword$351);var selection = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__21602__$1,cljs.core.constant$keyword$268);if(typeof clustermap.components.map.t21603 !== 'undefined')
+clustermap.components.map.map_component = (function map_component(p__21799,owner){var map__21811 = p__21799;var map__21811__$1 = ((cljs.core.seq_QMARK_(map__21811))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__21811):map__21811);var app_state = map__21811__$1;var selection = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__21811__$1,cljs.core.constant$keyword$273);if(typeof clustermap.components.map.t21812 !== 'undefined')
 {} else
 {
 /**
 * @constructor
 */
-clustermap.components.map.t21603 = (function (selection,uk_constituencies,map__21602,owner,p__21591,map_component,meta21604){
+clustermap.components.map.t21812 = (function (selection,app_state,map__21811,owner,p__21799,map_component,meta21813){
 this.selection = selection;
-this.uk_constituencies = uk_constituencies;
-this.map__21602 = map__21602;
+this.app_state = app_state;
+this.map__21811 = map__21811;
 this.owner = owner;
-this.p__21591 = p__21591;
+this.p__21799 = p__21799;
 this.map_component = map_component;
-this.meta21604 = meta21604;
+this.meta21813 = meta21813;
 this.cljs$lang$protocol_mask$partition1$ = 0;
 this.cljs$lang$protocol_mask$partition0$ = 393216;
 })
-clustermap.components.map.t21603.cljs$lang$type = true;
-clustermap.components.map.t21603.cljs$lang$ctorStr = "clustermap.components.map/t21603";
-clustermap.components.map.t21603.cljs$lang$ctorPrWriter = (function (this__3968__auto__,writer__3969__auto__,opt__3970__auto__){return cljs.core._write(writer__3969__auto__,"clustermap.components.map/t21603");
+clustermap.components.map.t21812.cljs$lang$type = true;
+clustermap.components.map.t21812.cljs$lang$ctorStr = "clustermap.components.map/t21812";
+clustermap.components.map.t21812.cljs$lang$ctorPrWriter = (function (this__3968__auto__,writer__3969__auto__,opt__3970__auto__){return cljs.core._write(writer__3969__auto__,"clustermap.components.map/t21812");
 });
-clustermap.components.map.t21603.prototype.om$core$IWillUpdate$ = true;
-clustermap.components.map.t21603.prototype.om$core$IWillUpdate$will_update$arity$3 = (function (this$,next_props,next_state){var self__ = this;
-var this$__$1 = this;var map__21606 = om.core.get_state.cljs$core$IFn$_invoke$arity$1(self__.owner);var map__21606__$1 = ((cljs.core.seq_QMARK_(map__21606))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__21606):map__21606);var map__21607 = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__21606__$1,cljs.core.constant$keyword$352);var map__21607__$1 = ((cljs.core.seq_QMARK_(map__21607))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__21607):map__21607);var paths = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__21607__$1,cljs.core.constant$keyword$346);var markers = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__21607__$1,cljs.core.constant$keyword$345);var leaflet_map = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__21607__$1,cljs.core.constant$keyword$344);var locations = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__21606__$1,cljs.core.constant$keyword$353);var uk_constituencies__$2 = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__21606__$1,cljs.core.constant$keyword$351);var new_locations = (function (){var G__21608 = next_props;var G__21608__$1 = (((G__21608 == null))?null:cljs.core.constant$keyword$354.cljs$core$IFn$_invoke$arity$1(G__21608));var G__21608__$2 = (((G__21608__$1 == null))?null:cljs.core.deref(G__21608__$1));return G__21608__$2;
-})();var new_uk_constituencies = (function (){var G__21609 = next_props;var G__21609__$1 = (((G__21609 == null))?null:cljs.core.constant$keyword$351.cljs$core$IFn$_invoke$arity$1(G__21609));return G__21609__$1;
-})();if((cljs.core.not_EQ_.cljs$core$IFn$_invoke$arity$2(locations,new_locations)) || (cljs.core.not_EQ_.cljs$core$IFn$_invoke$arity$2(uk_constituencies__$2,new_uk_constituencies)))
-{clustermap.components.map.update_markers(leaflet_map,markers,new_locations);
-clustermap.components.map.update_paths(leaflet_map,new_uk_constituencies,paths,new_locations);
-if(cljs.core.not_EQ_.cljs$core$IFn$_invoke$arity$2(locations,new_locations))
-{om.core.set_state_BANG_(self__.owner,cljs.core.constant$keyword$353,new_locations);
-} else
-{}
-if(cljs.core.not_EQ_.cljs$core$IFn$_invoke$arity$2(uk_constituencies__$2,new_uk_constituencies))
-{om.core.set_state_BANG_(self__.owner,cljs.core.constant$keyword$351,new_uk_constituencies);
-} else
-{}
-return clustermap.components.map.pan_to_selection(leaflet_map,cljs.core.deref(paths));
+clustermap.components.map.t21812.prototype.om$core$IWillUpdate$ = true;
+clustermap.components.map.t21812.prototype.om$core$IWillUpdate$will_update$arity$3 = (function (this$,p__21815,next_state){var self__ = this;
+var map__21816 = p__21815;var map__21816__$1 = ((cljs.core.seq_QMARK_(map__21816))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__21816):map__21816);var next_selection = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__21816__$1,cljs.core.constant$keyword$273);var next_locations = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__21816__$1,cljs.core.constant$keyword$358);var next_uk_constituencies = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__21816__$1,cljs.core.constant$keyword$359);var next_boundarylines = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__21816__$1,cljs.core.constant$keyword$360);var next_zoom = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__21816__$1,cljs.core.constant$keyword$361);var this$__$1 = this;var fetch_boundaryline_fn = om.core.get_shared.cljs$core$IFn$_invoke$arity$2(self__.owner,cljs.core.constant$keyword$362);var map__21817 = om.core.get_state.cljs$core$IFn$_invoke$arity$1(self__.owner);var map__21817__$1 = ((cljs.core.seq_QMARK_(map__21817))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__21817):map__21817);var map__21818 = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__21817__$1,cljs.core.constant$keyword$363);var map__21818__$1 = ((cljs.core.seq_QMARK_(map__21818))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__21818):map__21818);var paths = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__21818__$1,cljs.core.constant$keyword$352);var markers = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__21818__$1,cljs.core.constant$keyword$351);var leaflet_map = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__21818__$1,cljs.core.constant$keyword$350);clustermap.components.map.update_markers(leaflet_map,markers,next_locations);
+clustermap.components.map.update_paths(fetch_boundaryline_fn,next_uk_constituencies,leaflet_map,paths,next_locations);
+if(cljs.core.not_EQ_.cljs$core$IFn$_invoke$arity$2(next_selection,self__.selection))
+{return clustermap.components.map.pan_to_selection(leaflet_map,cljs.core.deref(paths));
 } else
 {return null;
 }
 });
-clustermap.components.map.t21603.prototype.om$core$IDidMount$ = true;
-clustermap.components.map.t21603.prototype.om$core$IDidMount$did_mount$arity$2 = (function (this$,node){var self__ = this;
-var this$__$1 = this;return om.core.set_state_BANG_(self__.owner,cljs.core.constant$keyword$352,clustermap.components.map.create_map(node));
+clustermap.components.map.t21812.prototype.om$core$IDidMount$ = true;
+clustermap.components.map.t21812.prototype.om$core$IDidMount$did_mount$arity$2 = (function (this$,node){var self__ = this;
+var this$__$1 = this;var map__21819 = clustermap.components.map.create_map(node);var map__21819__$1 = ((cljs.core.seq_QMARK_(map__21819))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__21819):map__21819);var map = map__21819__$1;var path = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__21819__$1,cljs.core.constant$keyword$356);var markers = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__21819__$1,cljs.core.constant$keyword$351);var leaflet_map = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__21819__$1,cljs.core.constant$keyword$350);om.core.set_state_BANG_(self__.owner,cljs.core.constant$keyword$363,map);
+leaflet_map.on("zoomend",(function (e){return cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$4(om.core.get_shared.cljs$core$IFn$_invoke$arity$2(self__.owner,cljs.core.constant$keyword$364),cljs.core.assoc,cljs.core.constant$keyword$361,leaflet_map.getZoom());
+}));
+return om.core.update_BANG_.cljs$core$IFn$_invoke$arity$4(self__.app_state,cljs.core.assoc,cljs.core.constant$keyword$361,leaflet_map.getZoom());
 });
-clustermap.components.map.t21603.prototype.om$core$IRender$ = true;
-clustermap.components.map.t21603.prototype.om$core$IRender$render$arity$1 = (function (this$){var self__ = this;
+clustermap.components.map.t21812.prototype.om$core$IRender$ = true;
+clustermap.components.map.t21812.prototype.om$core$IRender$render$arity$1 = (function (this$){var self__ = this;
 var this$__$1 = this;return React.DOM.div({"className": "map", "ref": "map"});
 });
-clustermap.components.map.t21603.prototype.cljs$core$IMeta$_meta$arity$1 = (function (_21605){var self__ = this;
-var _21605__$1 = this;return self__.meta21604;
+clustermap.components.map.t21812.prototype.cljs$core$IMeta$_meta$arity$1 = (function (_21814){var self__ = this;
+var _21814__$1 = this;return self__.meta21813;
 });
-clustermap.components.map.t21603.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = (function (_21605,meta21604__$1){var self__ = this;
-var _21605__$1 = this;return (new clustermap.components.map.t21603(self__.selection,self__.uk_constituencies,self__.map__21602,self__.owner,self__.p__21591,self__.map_component,meta21604__$1));
+clustermap.components.map.t21812.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = (function (_21814,meta21813__$1){var self__ = this;
+var _21814__$1 = this;return (new clustermap.components.map.t21812(self__.selection,self__.app_state,self__.map__21811,self__.owner,self__.p__21799,self__.map_component,meta21813__$1));
 });
-clustermap.components.map.__GT_t21603 = (function __GT_t21603(selection__$1,uk_constituencies__$1,map__21602__$2,owner__$1,p__21591__$1,map_component__$1,meta21604){return (new clustermap.components.map.t21603(selection__$1,uk_constituencies__$1,map__21602__$2,owner__$1,p__21591__$1,map_component__$1,meta21604));
+clustermap.components.map.__GT_t21812 = (function __GT_t21812(selection__$1,app_state__$1,map__21811__$2,owner__$1,p__21799__$1,map_component__$1,meta21813){return (new clustermap.components.map.t21812(selection__$1,app_state__$1,map__21811__$2,owner__$1,p__21799__$1,map_component__$1,meta21813));
 });
 }
-return (new clustermap.components.map.t21603(selection,uk_constituencies,map__21602__$1,owner,p__21591,map_component,null));
+return (new clustermap.components.map.t21812(selection,app_state,map__21811__$1,owner,p__21799,map_component,null));
 });
-clustermap.components.map.mount = (function mount(app_state,elem_id,comm){return om.core.root.cljs$core$IFn$_invoke$arity$4(app_state,new cljs.core.PersistentArrayMap(null, 1, [cljs.core.constant$keyword$266,comm], null),clustermap.components.map.map_component,document.getElementById(elem_id));
+clustermap.components.map.mount = (function mount(app_state,elem_id,comm){return om.core.root.cljs$core$IFn$_invoke$arity$4(app_state,new cljs.core.PersistentArrayMap(null, 3, [cljs.core.constant$keyword$271,comm,cljs.core.constant$keyword$364,app_state,cljs.core.constant$keyword$362,cljs.core.partial.cljs$core$IFn$_invoke$arity$3(clustermap.boundarylines.get_or_fetch_best_boundaryline,app_state,cljs.core.constant$keyword$360)], null),clustermap.components.map.map_component,document.getElementById(elem_id));
 });

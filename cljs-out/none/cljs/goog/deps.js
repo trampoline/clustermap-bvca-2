@@ -38,11 +38,6 @@ goog.addDependency("net/wrapperxmlhttpfactory.js", ['goog.net.WrapperXmlHttpFact
 goog.addDependency("net/xmlhttp.js", ['goog.net.DefaultXmlHttpFactory', 'goog.net.XmlHttp', 'goog.net.XmlHttp.OptionType', 'goog.net.XmlHttp.ReadyState'], ['goog.net.WrapperXmlHttpFactory', 'goog.net.XmlHttpFactory']);
 goog.addDependency("uri/utils.js", ['goog.uri.utils', 'goog.uri.utils.ComponentIndex', 'goog.uri.utils.QueryArray', 'goog.uri.utils.QueryValue', 'goog.uri.utils.StandardQueryParam'], ['goog.asserts', 'goog.string', 'goog.userAgent']);
 goog.addDependency("net/xhrio.js", ['goog.net.XhrIo', 'goog.net.XhrIo.ResponseType'], ['goog.Timer', 'goog.array', 'goog.debug.Logger', 'goog.debug.entryPointRegistry', 'goog.events', 'goog.events.EventTarget', 'goog.json', 'goog.net.ErrorCode', 'goog.net.EventType', 'goog.net.HttpStatus', 'goog.net.XmlHttp', 'goog.object', 'goog.structs', 'goog.structs.Map', 'goog.uri.utils']);
-goog.addDependency("uri/uri.js", ['goog.Uri', 'goog.Uri.QueryData'], ['goog.array', 'goog.string', 'goog.structs', 'goog.structs.Map', 'goog.uri.utils', 'goog.uri.utils.ComponentIndex']);
-goog.addDependency("string/stringformat.js", ['goog.string.format'], ['goog.string']);
-goog.addDependency("net/xpc/xpc.js", ['goog.net.xpc', 'goog.net.xpc.CfgFields', 'goog.net.xpc.ChannelStates', 'goog.net.xpc.TransportNames', 'goog.net.xpc.TransportTypes', 'goog.net.xpc.UriCfgFields'], ['goog.debug.Logger']);
-goog.addDependency("mochikit/async/deferred.js", ['goog.async.Deferred', 'goog.async.Deferred.AlreadyCalledError', 'goog.async.Deferred.CancelledError'], ['goog.array', 'goog.asserts', 'goog.debug.Error']);
-goog.addDependency("dom/vendor.js", ['goog.dom.vendor'], ['goog.userAgent']);
 goog.addDependency("dom/browserfeature.js", ['goog.dom.BrowserFeature'], ['goog.userAgent']);
 goog.addDependency("dom/tagname.js", ['goog.dom.TagName'], []);
 goog.addDependency("dom/classes.js", ['goog.dom.classes'], ['goog.array']);
@@ -50,6 +45,11 @@ goog.addDependency("math/math.js", ['goog.math'], ['goog.array', 'goog.asserts']
 goog.addDependency("math/coordinate.js", ['goog.math.Coordinate'], ['goog.math']);
 goog.addDependency("math/size.js", ['goog.math.Size'], []);
 goog.addDependency("dom/dom.js", ['goog.dom', 'goog.dom.DomHelper', 'goog.dom.NodeType'], ['goog.array', 'goog.dom.BrowserFeature', 'goog.dom.TagName', 'goog.dom.classes', 'goog.math.Coordinate', 'goog.math.Size', 'goog.object', 'goog.string', 'goog.userAgent']);
+goog.addDependency("uri/uri.js", ['goog.Uri', 'goog.Uri.QueryData'], ['goog.array', 'goog.string', 'goog.structs', 'goog.structs.Map', 'goog.uri.utils', 'goog.uri.utils.ComponentIndex']);
+goog.addDependency("string/stringformat.js", ['goog.string.format'], ['goog.string']);
+goog.addDependency("net/xpc/xpc.js", ['goog.net.xpc', 'goog.net.xpc.CfgFields', 'goog.net.xpc.ChannelStates', 'goog.net.xpc.TransportNames', 'goog.net.xpc.TransportTypes', 'goog.net.xpc.UriCfgFields'], ['goog.debug.Logger']);
+goog.addDependency("mochikit/async/deferred.js", ['goog.async.Deferred', 'goog.async.Deferred.AlreadyCalledError', 'goog.async.Deferred.CancelledError'], ['goog.array', 'goog.asserts', 'goog.debug.Error']);
+goog.addDependency("dom/vendor.js", ['goog.dom.vendor'], ['goog.userAgent']);
 goog.addDependency("math/box.js", ['goog.math.Box'], ['goog.math.Coordinate']);
 goog.addDependency("math/rect.js", ['goog.math.Rect'], ['goog.math.Box', 'goog.math.Coordinate', 'goog.math.Size']);
 goog.addDependency("style/style.js", ['goog.style'], ['goog.array', 'goog.dom', 'goog.dom.vendor', 'goog.math.Box', 'goog.math.Coordinate', 'goog.math.Rect', 'goog.math.Size', 'goog.object', 'goog.string', 'goog.userAgent']);

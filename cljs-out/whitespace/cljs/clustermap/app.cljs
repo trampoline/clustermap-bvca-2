@@ -1,11 +1,10 @@
 (ns clustermap.app
   (:require-macros
-   [cljs.core.async.macros :refer [go]]
-   [secretary.macros :refer [defroute]])
+   [cljs.core.async.macros :refer [go]])
   (:require
    [goog.events :as events]
    [cljs.core.async :refer [chan <! put! sliding-buffer]]
-   [secretary.core :as secretary]
+   [secretary.core :as secretary :include-macros true :refer [defroute]]
    [om.core :as om :include-macros true]
    [om.dom :as dom :include-macros true]
    [clustermap.api :as api]
@@ -20,6 +19,8 @@
            [goog.history EventType]))
 
 (def state (atom {:uk-constituencies nil
+                  :boundarylines nil
+                  :zoom nil
 
                   :search-results {}
 

@@ -68,11 +68,11 @@
   (when (not (or (keyword? tag) (symbol? tag) (string? tag)))
     (throw (ex-info (str tag " is not a valid element name.") {:tag tag :content content})))
   (let [[_ tag id class] (re-matches re-tag (name tag))
-        tag-attrs {:id id :class (if class (split class #"\."))}
+        tag-attrs (compact-map {:id id :class (if class (split class #"\."))})
         map-attrs (first content)]
     (if (map? map-attrs)
-      [tag (compact-map (merge-with-class tag-attrs map-attrs)) (next content)]
-      [tag (compact-map tag-attrs) content])))
+      [tag (merge-with-class tag-attrs map-attrs) (next content)]
+      [tag tag-attrs content])))
 
 (defn join-classes
   "Join the `classes` with a whitespace."
@@ -81,8 +81,15 @@
 
 (defn react-symbol
   "Returns the React function to render `tag` as a symbol."
+  [tag] (symbol "js" (str "React.DOM." (name tag))))
+
+(defn react-fn
+  "Same as `react-symbol` but wrap input and text elements."
   [tag]
-  (symbol "js" (str "React.DOM." (name tag))))
+  (let [dom-fn (react-symbol tag)]
+    (if (contains? #{:input :textarea} (keyword tag))
+      (symbol "sablono.interpreter" (name tag))
+      dom-fn)))
 
 (defn attr-pattern
   "Returns a regular expression that matches the HTML attribute `attr`

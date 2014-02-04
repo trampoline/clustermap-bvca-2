@@ -16,11 +16,11 @@
   "domina/add-class!", "clustermap.nav/body-view-classes",
   "clustermap.nav/change-view", "view", "cljs.core/get", "js/Error",
   "body", "target-selector", "target-li", "ul", "active-li",
-  "seq__12027", "cljs.core/seq", "chunk__12028", "count__12029",
-  "i__12030", "vec__12031", "cljs.core/-nth", "cljs.core/nth",
+  "seq__12130", "cljs.core/seq", "chunk__12131", "count__12132",
+  "i__12133", "vec__12134", "cljs.core/-nth", "cljs.core/nth",
   "temp__4092__auto__", "cljs.core/chunked-seq?", "c__4148__auto__",
   "cljs.core/chunk-first", "cljs.core/chunk-rest", "cljs.core/count",
-  "vec__12032", "cljs.core/next", "v", "body-class", "cljs.core/=",
-  "clustermap.nav/handle-view-switches", "comm", "seq__12051",
-  "chunk__12052", "count__12053", "i__12054", "vec__12055",
-  "vec__12056", "_", "cljs.core.async/put!", "clustermap.nav/init"]}
+  "vec__12135", "cljs.core/next", "v", "body-class", "cljs.core/=",
+  "clustermap.nav/handle-view-switches", "comm", "seq__12154",
+  "chunk__12155", "count__12156", "i__12157", "vec__12158",
+  "vec__12159", "_", "cljs.core.async/put!", "clustermap.nav/init"]}

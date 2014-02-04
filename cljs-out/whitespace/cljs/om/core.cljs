@@ -42,8 +42,14 @@
 ;; =============================================================================
 ;; Om Protocols
 
+(defprotocol IValue
+  (-value [x]))
+
+(extend-type default
+  IValue
+  (-value [x] x))
+
 (defprotocol ICursor
-  (-value [cursor])
   (-path [cursor])
   (-state [cursor])
   (-shared [cursor]))
@@ -137,12 +143,13 @@
            (this-as this
              (let [c      (children this)
                    props  (.-props this)
-                   istate (aget props "__om_init_state")]
+                   istate (or (aget props "__om_init_state") {})
+                   ret    #js {:__om_state
+                               (merge istate
+                                 (when (satisfies? IInitState c)
+                                   (allow-reads (init-state c))))}]
                (aset props "__om_init_state" nil)
-               #js {:__om_state
-                    (merge istate
-                      (when (satisfies? IInitState c)
-                        (allow-reads (init-state c))))})))
+               ret)))
          :shouldComponentUpdate
          (fn [next-props next-state]
            (this-as this
@@ -223,7 +230,6 @@
                  (cond
                    (satisfies? IRender c) (render c)
                    (satisfies? IRenderState c) (render-state c (get-state this))
-                   (.-render c) (.render c)
                    :else c)))))}))
 
 ;; =============================================================================
@@ -235,7 +241,7 @@
   (-path cursor))
 
 (defn value [cursor]
-  (check (-value cursor)))
+  (-value cursor))
 
 (defn cursor? [x]
   (satisfies? ICursor x))
@@ -248,9 +254,13 @@
   IMeta
   (-meta [_] (check (meta value)))
   IDeref
-  (-deref [_] (get-in @state path))
-  ICursor
+  (-deref [this]
+    (if-not *read-enabled*
+      (get-in @state path)
+      (throw (js/Error. (str "Cannot deref cursor during render phase: " this)))))
+  IValue
   (-value [_] (check value))
+  ICursor
   (-path [_] (check path))
   (-state [_] (check state))
   (-shared [_] shared)
@@ -282,7 +292,9 @@
     (-lookup this k not-found))
   ISeqable
   (-seq [this]
-    (check (map (fn [[k v]] [k (to-cursor v state (conj path k) shared)]) value)))
+    (check
+      (when (pos? (count value))
+        (map (fn [[k v]] [k (to-cursor v state (conj path k) shared)]) value))))
   IAssociative
   (-contains-key? [_ k]
     (check (-contains-key? value k)))
@@ -304,15 +316,19 @@
 (deftype IndexedCursor [value state path shared]
   ISequential
   IDeref
-  (-deref [_] (get-in @state path))
+  (-deref [this]
+    (if-not *read-enabled*
+      (get-in @state path)
+      (throw (js/Error. (str "Cannot deref cursor during render phase: " this)))))
   IWithMeta
   (-with-meta [_ new-meta]
     (check
       (IndexedCursor. (with-meta value new-meta) state path shared)))
   IMeta
   (-meta [_] (check (meta value)))
-  ICursor
+  IValue
   (-value [_] (check value))
+  ICursor
   (-path [_] (check path))
   (-state [_] (check state))
   (-shared [_] shared)
@@ -374,9 +390,11 @@
 (defn ^:private to-cursor* [val state path shared]
   (specify val
     IDeref
-    (-deref [_] (get-in @state path))
+    (-deref [this]
+      (if-not *read-enabled*
+        (get-in @state path)
+        (throw (js/Error. (str "Cannot deref cursor during render phase: " this)))))
     ICursor
-    (-value [_] (check val))
     (-state [_] (check state))
     (-path [_] (check path))
     (-shared [_] shared)
@@ -416,16 +434,16 @@
 (def ^:private roots (atom {}))
 
 (defn root
-  "Takes an immutable value or value wrapped in an atom, an initial
-   function f, and a DOM target. Installs an Om/React render loop. f
-   must return an instance that at a minimum implements IRender or
-   IRenderState (it may implement other React life cycle protocols). f
-   must take two arguments, the root cursor and the owning pure
-   node. A cursor is just the original data wrapped in an ICursor
-   instance which maintains path information. Only one root render
-   loop allowed per target element. om.core/root is idempotent, if
-   called again on the same target element the previous render loop
-   will be replaced.
+  "Takes an immutable tree of associative data structures optionally
+   wrapped in an atom, an initial function f, and a DOM
+   target. Installs an Om/React render loop. f must return an instance
+   that at a minimum implements IRender or IRenderState (it may
+   implement other React life cycle protocols). f must take two
+   arguments, the root cursor and the owning pure node. A cursor is
+   just the original data wrapped in an ICursor instance which
+   maintains path information. Only one root render loop allowed per
+   target element. om.core/root is idempotent, if called again on the
+   same target element the previous render loop will be replaced.
 
    Example:
 
@@ -507,8 +525,6 @@
       (apply str "build options contains invalid keys, only :key, :react-key, "
                  ":fn, :init-state, :state, and :opts allowed, given "
                  (interpose ", " (keys m))))
-    (assert (cursor? cursor)
-      (str "Cannot build Om component from non-cursor " cursor))
     (cond
       (nil? m)
       (tag
@@ -540,10 +556,9 @@
    same as provided to om.core/build."
   ([f xs] (build-all f xs nil))
   ([f xs m]
-    (into-array
-      (map (fn [x i]
-             (build f x (assoc m ::index i)))
-        xs (range)))))
+    (map (fn [x i]
+           (build f x (assoc m ::index i)))
+      xs (range))))
 
 (defn transact!
   "Given a cursor, an optional list of keys ks, mutate the tree at the
@@ -591,20 +606,6 @@
         (if (empty? path)
           (apply f state a b c d args)
           (apply update-in state path f a b c d args))))))
-
-(defn join
-  "EXPERIMENTAL: Given a cursor, get value from the root at the path
-   specified by a sequential list of keys ks."
-  [cursor korks]
-  (allow-reads
-    (let [state  (-state cursor)
-          shared (-shared cursor)
-          value  @state]
-      (if-not (sequential? korks)
-        (to-cursor (get value korks) state [korks] shared)
-        (to-cursor (get-in value korks) state
-          (if (vector? korks) korks (into [] korks))
-          shared)))))
 
 (defn get-node
   "A helper function to get at React refs. Given a owning pure node
@@ -656,13 +657,18 @@
    supports building components which don't need to set app state but
    need to be added to the render tree."
   [value cursor]
-  (specify value
-    ICursor
-    (-value [_] value)
-    (-state [_] (-state cursor))
-    (-path [_] (-path cursor))
-    IEquiv
-    (-equiv [_ other]
-      (if (cursor? other)
-        (= value (-value other))
-        (= value other)))))
+  (let [state  (-state cursor)
+        path   (-path cursor)
+        shared (-shared cursor)]
+    (if (cursor? value)
+      (throw (js/Error. (str value " is already a cursor.")))
+      (specify value
+        ITransact
+        (-transact! [_ _]
+          (throw (js/Error. "Cannot transact on graft")))
+        IValue
+        (-value [_] value)
+        ICursor
+        (-state [_] state)
+        (-path [_] path)
+        (-shared [_] shared)))))

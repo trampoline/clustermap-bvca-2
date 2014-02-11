@@ -67,19 +67,22 @@
        ((fn [c] (casync/dorun-async c :delay nil)))))
 
 (defn marker-popup-content
-  [location-sites]
+  [path-fn location-sites]
   (hiccups/html
-   (->> location-sites
-        (map (fn [site]
-               ;; (.log js/console (clj->js site))
-               (hiccups/html [:p (:name site)]))))))
+   [:ul
+    (->> location-sites
+         (map (fn [site]
+                ;; (.log js/console (clj->js site))
+                (hiccups/html
+                 [:li
+                  [:a {:href (path-fn :portfolio-company site)} (:name site)]]))))]))
 
 (defn create-marker
-  [leaflet-map location-sites]
+  [path-fn leaflet-map location-sites]
   ;; extract the location-sites from the first record... they are all the same
   (if-let [latlong (some-> location-sites first :location reverse clj->js)]
     (let [marker (js/L.marker latlong)
-          popup-content (marker-popup-content location-sites)]
+          popup-content (marker-popup-content path-fn location-sites)]
       ;; (.log js/console popup-content)
       (.bindPopup marker popup-content)
       (.addTo marker leaflet-map)
@@ -87,8 +90,8 @@
     (.log js/console (str "missing location: " (with-out-str (pr location-sites))))))
 
 (defn update-marker
-  [leaflet-map marker location]
-  (.setPopupContent marker (marker-popup-content location))
+  [path-fn leaflet-map marker location]
+  (.setPopupContent marker (marker-popup-content path-fn location))
   marker)
 
 (defn remove-marker
@@ -96,7 +99,7 @@
   (.removeLayer leaflet-map marker))
 
 (defn update-markers
-  [leaflet-map markers-atom new-locations]
+  [path-fn leaflet-map markers-atom new-locations]
   (let [markers @markers-atom
         marker-keys (-> markers keys set)
         location-keys (-> new-locations keys set)
@@ -106,11 +109,11 @@
         remove-marker-keys (set/difference marker-keys location-keys)
 
         new-markers (->> new-marker-keys
-                         (map (fn [k] [k (create-marker leaflet-map (get new-locations k))]))
+                         (map (fn [k] [k (create-marker path-fn leaflet-map (get new-locations k))]))
                          (into {}))
 
         updated-markers (->> update-marker-keys
-                             (map (fn [k] [k (update-marker leaflet-map (get markers k) (get new-locations k))]))
+                             (map (fn [k] [k (update-marker path-fn leaflet-map (get markers k) (get new-locations k))]))
                              (into {}))
 
         _ (doseq [k remove-marker-keys] (remove-marker leaflet-map (get markers k)))]
@@ -231,11 +234,11 @@
                    next-zoom :zoom}
                   next-state]
 
-      (let [fetch-boundaryline-fn (om/get-shared owner :fetch-boundaryline-fn)
+      (let [{:keys [fetch-boundaryline-fn link-fn path-fn]} (om/get-shared owner)
             {{:keys [leaflet-map markers paths]} :map
              pan-pending :pan-pending} (om/get-state owner)]
 
-        (update-markers leaflet-map markers next-locations)
+        (update-markers path-fn leaflet-map markers next-locations)
         (update-paths fetch-boundaryline-fn next-uk-constituencies leaflet-map paths next-locations)
 
         (when (not= next-selection selection)

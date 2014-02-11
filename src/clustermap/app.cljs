@@ -8,6 +8,7 @@
    [om.core :as om :include-macros true]
    [om.dom :as dom :include-macros true]
    [clustermap.api :as api]
+   [clustermap.routes :as routes]
    [clustermap.nav :as nav]
    [clustermap.components.map :as map]
    [clustermap.components.map-report :as map-report]
@@ -207,17 +208,20 @@
 
 (defn init
   []
-  (let [comm (chan)]
+  (let [comm (chan)
+        path-fn (partial routes/path-for state)
+        link-fn (partial routes/link-for state)
+        shared {:comm comm :path-fn path-fn :link-fn link-fn}]
     (nav/init comm)
     (init-routes comm)
 
     (load-uk-constituencies)
 
-    (map/mount state "map-component" comm)
-    (search/mount state "search-component" comm)
-    (map-report/mount state "map-report-component" comm)
-    (page-title/mount state "page-title-component" comm)
-    (full-report/mount state "full-report-component" comm)
+    (map/mount state "map-component" shared)
+    (search/mount state "search-component" shared)
+    (map-report/mount state "map-report-component" shared)
+    (page-title/mount state "page-title-component" shared)
+    (full-report/mount state "full-report-component" shared)
 
     (go
      (while true

@@ -88,17 +88,26 @@
                                         (into
                                          [(dom/li #js {:className "search-results-header"} "Constituencies")]
                                          (for [[idx con] idx-cons]
-                                           (om/build search-result-link con {:opts {:comm comm :type :constituency} :state {:selected (= idx selected-idx)}}))))
+                                           (om/build search-result-link con {:opts {:comm comm :type :constituency}
+                                                                             :state {:selected (= idx selected-idx)}
+                                                                             :fn (fn [data] (assoc data :uid (str "constituency:" (get data :boundaryline_id))))
+                                                                             :key :uid}))))
                                       (when (not-empty idx-pcs)
                                         (into
                                          [(dom/li #js {:className "search-results-header"} "Companies")]
                                          (for [[idx pc] idx-pcs]
-                                           (om/build search-result-link pc {:opts {:comm comm :type :portfolio-company} :state {:selected (= idx selected-idx)}}))))
+                                           (om/build search-result-link pc {:opts {:comm comm :type :portfolio-company}
+                                                                            :state {:selected (= idx selected-idx)}
+                                                                            :fn (fn [data] (assoc data :uid (str "portfolio-company:" (get data :company_no))))
+                                                                            :key :uid}))))
                                       (when (not-empty idx-invs)
                                         (into
                                          [(dom/li #js {:className "search-results-header"} "Investors")]
                                          (for [[idx inv] idx-invs]
-                                           (om/build search-result-link inv {:opts {:comm comm :type :investor-company} :state {:selected (= idx selected-idx)}}))))))))))
+                                           (om/build search-result-link inv {:opts {:comm comm :type :investor-company}
+                                                                             :state {:selected (= idx selected-idx)}
+                                                                             :fn (fn [data] (assoc data :uid (str "investor-company:" (get data :investor_company_uid))))
+                                                                             :key :uid}))))))))))
         ))))
 
 (defn mount

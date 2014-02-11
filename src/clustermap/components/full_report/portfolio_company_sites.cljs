@@ -40,4 +40,4 @@
              [:th "Employees"]
              [:th "Emp. change"]]]
            [:tbody
-            (om/build-all portfolio-company-site (:records selection-portfolio-company-sites))]]]])))
+            (om/build-all portfolio-company-site (:records selection-portfolio-company-sites) {:key :portfolio_company_id})]]]])))

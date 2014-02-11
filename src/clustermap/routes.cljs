@@ -12,16 +12,15 @@
 
 (defn portfolio-company-path
   [app-state obj]
-  "l'portfolio company"
-  )
+  (str "#/" (some-> app-state deref :view name) "/portfolio-company/" (:company_no obj)))
 
 (defn investor-company-path
   [app-state obj]
-  "l'investor")
+  (str "#/" (some-> app-state deref :view name) "/investor-company/" (:investor_company_uid obj)))
 
 (defn constituency-path
   [app-state obj]
-  "l'constituency")
+  (str "#/" (some-> app-state deref :view name) "/constituency/" (:boundaryline_id obj)))
 
 (def type-paths
   {:portfolio-company portfolio-company-path
@@ -32,7 +31,7 @@
   [app-state type obj]
   (-> type-paths
       (get type)
-      (apply [obj])))
+      (apply [app-state obj])))
 
 (defn link-for
   [app-state type obj]

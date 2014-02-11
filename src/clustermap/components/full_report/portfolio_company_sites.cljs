@@ -12,7 +12,7 @@
     (if next-objs
       (html
        [:div (link-fn type first-obj)
-        [:a {:href owner-path} "\u00A0(more...)"]])
+        [:a {:href owner-path} "\u00A0(" (count next-objs) " more...)"]])
       (link-fn type first-obj))))
 
 (defn portfolio-company-site
@@ -21,7 +21,7 @@
     (om/component
      (html
       [:tr
-       [:td (:name site)]
+       [:td (link-fn :portfolio-company site)]
        [:td (render-many-links link-fn company-path :investor-company (:investor_companies site))]
        [:td (render-many-links link-fn company-path :constituency (:boundarylines site))]
        [:td (fmoney (:latest_turnover site) :sf 2 :default "-")

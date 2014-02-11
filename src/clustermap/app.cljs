@@ -22,6 +22,7 @@
 (def state (atom {:uk-constituencies nil
                   :boundarylines nil
                   :zoom nil
+                  :view :map
 
                   :search-results {}
 
@@ -135,7 +136,8 @@
 
 (defn change-view
   [view]
-  (nav/change-view (name view)))
+  (nav/change-view (name view))
+  (set-state :view (keyword view)))
 
 (def history (History.))
 

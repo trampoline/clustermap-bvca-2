@@ -19,8 +19,12 @@
             [:div.tbl-cell
              [:div.box.box-first
               [:header "Turnover"]
-              (om/build tl/timeline-chart (:turnover timelines) {:opts {:y0-title "Turnover" :y1-title "# Filings"}})]]
+              (om/build tl/timeline-chart (:turnover timelines) {:opts {:y0-title "Turnover" :y1-title "# Filings"}
+                                                                 :react-key "turnover-chart"})
+              ]]
             [:div.tbl-cell
              [:div.box.box-last
               [:header "Employment"]
-              (om/build tl/timeline-chart (:employee_count timelines) {:opts {:y0-title "Employment" :y1-title "# Filings"}})]]]]]]])])))
+              (om/build tl/timeline-chart (:employee_count timelines) {:opts {:y0-title "Employment" :y1-title "# Filings"}
+                                                                       :react-key "employment-chart"})
+              ]]]]]]])])))

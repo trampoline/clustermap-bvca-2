@@ -14,9 +14,9 @@
   "XPathResult/ORDERED_NODE_SNAPSHOT_TYPE", "num-results", "i", "acc",
   "cljs.core/cons", "domina.xpath/root-element",
   "goog.dom/getElementsByTagNameAndClass", "domina.xpath/xpath",
-  "xpath", "base", "domina.xpath/t16622", "this__3968__auto__",
+  "xpath", "base", "domina.xpath/t16661", "this__3968__auto__",
   "writer__3969__auto__", "opt__3970__auto__", "cljs.core/-write",
-  "_16624", "meta16623", "domina.xpath/->t16622", "_",
+  "_16663", "meta16662", "domina.xpath/->t16661", "_",
   "cljs.core/mapcat", "cljs.core/partial", "domina/nodes",
   "cljs.core/first", "cljs.core/filter", "cljs.core/complement",
   "cljs.core/nil?", "cljs.core/map"]}

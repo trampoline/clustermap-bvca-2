@@ -9,7 +9,7 @@
 (defn full-report-component
   [{:keys [selection all-portfolio-companies-summary] :as data} owner]
 
-  (let [comm (om/get-shared owner :comm)]
+  (let [{:keys [comm path-fn link-fn]} (om/get-shared owner)]
     (reify
       om/IRender
       (render [this]
@@ -17,7 +17,8 @@
                (om/build overview/overview data {:opts {:comm comm} :react-key "overview"})
                (om/build details/details data {:opts {:comm comm} :react-key "details"})
                (when (:selection-portfolio-companies data)
-                 (om/build pcs/portfolio-company-sites (:selection-portfolio-companies data) {:opts {:comm comm} :react-key "selection-portfolio-companies"})
+                 (om/build pcs/portfolio-company-sites (:selection-portfolio-companies data) {:opts {:comm comm :link-fn link-fn :path-fn path-fn}
+                                                                                              :react-key "selection-portfolio-companies"})
                  )]))
       om/IDidUpdate
       (did-update [this prev-props prev-state root-node]
@@ -26,8 +27,8 @@
         ))))
 
 (defn mount
-  [app-state elem-id comm]
+  [app-state elem-id shared]
   (om/root app-state
-           {:comm comm}
+           shared
            full-report-component
            (.getElementById js/document elem-id)))

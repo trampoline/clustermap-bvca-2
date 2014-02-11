@@ -111,8 +111,8 @@
         ))))
 
 (defn mount
-  [app-state elem-id comm]
+  [app-state elem-id shared]
   (om/root app-state
-           {:comm comm}
+           shared
            (omu/burrow search-component :search-results)
            (.getElementById js/document elem-id)))

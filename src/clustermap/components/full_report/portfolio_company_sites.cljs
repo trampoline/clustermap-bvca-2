@@ -5,25 +5,34 @@
             [clustermap.formats.money :as mf :refer [fmoney]]
             [clustermap.formats.time :refer [get-year]]))
 
+(defn render-many-links
+  [link-fn owner-path type objs]
+  (let [first-obj (first objs)
+        next-objs (next objs)]
+    (if next-objs
+      (html
+       [:div (link-fn type first-obj)
+        [:a {:href owner-path} "\u00A0(more...)"]])
+      (link-fn type first-obj))))
 
 (defn portfolio-company-site
-  [site owner]
-  (om/component
-   (html
-    [:tr
-     [:td (:name site)]
-     [:td (:postcode site)]
-     [:td "investor"]
-     [:td "constituency"]
-     [:td (fmoney (:latest_turnover site) :sf 2 :default "-")
-      [:small "\u00A0(" (get-year (:latest_accounts_date site)) ")" ]]
-     [:td (fmoney (:latest_turnover_delta site) :sf 2 :default "-")]
-     [:td (fnum (:latest_employee_count site) :default "-")
-      [:small "\u00A0(" (get-year (:latest_accounts_date site)) ")" ]]
-     [:td (fnum (:latest_employee_count_delta site) :default "-")]])))
+  [site owner {:keys [link-fn path-fn] :as opts}]
+  (let [company-path (path-fn :portfolio-company site)]
+    (om/component
+     (html
+      [:tr
+       [:td (:name site)]
+       [:td (render-many-links link-fn company-path :investor-company (:investor_companies site))]
+       [:td (render-many-links link-fn company-path :constituency (:boundarylines site))]
+       [:td (fmoney (:latest_turnover site) :sf 2 :default "-")
+        [:small "\u00A0(" (get-year (:latest_accounts_date site)) ")" ]]
+       [:td (fmoney (:latest_turnover_delta site) :sf 2 :default "-")]
+       [:td (fnum (:latest_employee_count site) :default "-")
+        [:small "\u00A0(" (get-year (:latest_accounts_date site)) ")" ]]
+       [:td (fnum (:latest_employee_count_delta site) :default "-")]]))))
 
 (defn portfolio-company-sites
-  [selection-portfolio-company-sites owner]
+  [selection-portfolio-company-sites owner opts]
   (om/component
        (html
         [:div.full-report-portfolio-company-sites
@@ -32,7 +41,6 @@
            [:thead
             [:tr
              [:th "Portfolio Company"]
-             [:th "Postcode"]
              [:th "Investor"]
              [:th "Constituency"]
              [:th "Revenue"]
@@ -40,4 +48,4 @@
              [:th "Employees"]
              [:th "Emp. change"]]]
            [:tbody
-            (om/build-all portfolio-company-site (:records selection-portfolio-company-sites) {:key :portfolio_company_id})]]]])))
+            (om/build-all portfolio-company-site (:records selection-portfolio-company-sites) {:key :portfolio_company_id :opts opts})]]]])))

@@ -248,10 +248,10 @@
           (om/set-state! owner :pan-pending false))))))
 
 (defn mount
-  [app-state elem-id comm]
+  [app-state elem-id shared]
   (om/root app-state
-           {:comm comm
-            :app-state app-state
-            :fetch-boundaryline-fn (partial bl/get-or-fetch-best-boundaryline app-state :boundarylines)}
+           (merge shared
+                  {:app-state app-state
+                   :fetch-boundaryline-fn (partial bl/get-or-fetch-best-boundaryline app-state :boundarylines)})
            map-component
            (.getElementById js/document elem-id)))

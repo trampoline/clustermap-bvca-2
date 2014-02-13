@@ -5,8 +5,6 @@
    [cljs.core.async :as async :refer [<! chan close! put! sliding-buffer to-chan]]
    [clustermap.api :as api]))
 
-(def ^:private boundarylines (atom nil))
-
 (def ^:private zoom-tolerances
   [[7 0.01]
    [9 0.002]
@@ -39,6 +37,7 @@
 (defn fetch-boundaryline
   "fetch a boundaryline for a given tolerance and add it to the cache"
   [app-state korks boundaryline-id tolerance]
+;;  (.log js/console (clj->js ["rq" app-state boundaryline-id tolerance]))
   (let [comm (api/boundarylines boundaryline-id tolerance :raw true)
         use-korks (if (sequential? korks) korks [korks])
         path (concat use-korks [boundaryline-id tolerance])]

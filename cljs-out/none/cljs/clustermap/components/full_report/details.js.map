@@ -7,10 +7,10 @@
  ";AAAA;;;;;;;;;;;;;;;AAOA,oDAAA,8BAAA,lFAAMA,sEACHE,KAAKC,OACN,AAAA,GAAA,OAAAC;CAAA;CAAA,AAAA,AAAA;;;;;;;;;;;;AAAA,AAAA,AAAAA,kEAAA;AAAA,AAAA,AAAAA,qEAAA;AAAA,AAAA,AAAAA,0EAAA,WAAAC,mBAAAC,qBAAAC,mBAAA,AAAA,OAAAC,2BAAAF,qBAAA;;AAAA,AAAA,AAAA,AAAA,AAAAF,8EAAA;AAAA,AAAA,AAAA,AAAAA,4FAAA,WAAAK;AAAA,AAAA,IAAAA,yBAAA,KAAA,AACC,IAAAI,aAEE,iBAAAM,iNAAA,AAAA,oBAAAA,hNAAmB,AAAA,+KAAqDjB;CAAxE,gBAAAiB,mBAAA,AAAA,0FAAA,6DAAA,mFAAA,2DAAA,mFAAA,mFAAA,mFAAA,2DAAA,mFAAA,mEAAA,mFAAA,qEAAA,mFAAA,+EAAA,mFAAA,yDAAA,klBAAA,mFAAA,qEAAA,mFAAA,6EAAA,mFAAA,yDAAA,1uEAASC,uuCASA,kLAAA,2CAAA,qDAAA,2CAAA,6DAAA,WAAA,6DAAA,oBAAA,+DAAA,rhBAACC,wBAASC,oDAAkB,AAAA,2FAAWF,i3BAMvC,8LAAA,2CAAA,qDAAA,2CAAA,6DAAA,aAAA,6DAAA,oBAAA,+DAAA,niBAACC,wBAASC,oDAAkB,AAAA,uGAAiBF;;CAftD;;KAFF,AAAA,GAAA,AAAAN,+BAAAD;CAAA,OAAAE,cAAA,AAAAC,yCAAA,AAAAC,wCAAA,2CAAA,uDAAA,mFAAA,sCAAAJ,aAAA;;CAAA,OAAAE,cAAA,cAAA,uBAAA,AAAAG,wCAAAL;;;AADD,AAAA,AAAA,AAAAT,2FAAA,WAAAM;AAAA,AAAA,IAAAA,aAAA,KAAA,AAAAC;;AAAA,AAAA,AAAA,AAAAP,oGAAA,WAAAM,OAAAC;4GAFIV,ZACHC,bAAKC,nFACN,AAAA,IAAAO,aAAA,KAAA,AAAA,YAAAN,yFAAAO;;iGAFIV,uGAAAA,hHACHC,uGAAAA,jHAAKC,uGAAAA,rLACN,AAAAS,wDAAA,qDAAAD,WAAA,AAAA,YAAAP,gFAAAO;;AAAAP;wEAFIH,LACHC,NAAKC,7DACN,YAAAC,oEAAA",
  "names":
  ["clustermap.components.full-report.details/details", "details",
-  "data", "owner", "clustermap.components.full-report.details/t11537",
+  "data", "owner", "clustermap.components.full-report.details/t11535",
   "this__3968__auto__", "writer__3969__auto__", "opt__3970__auto__",
-  "cljs.core/-write", "this__9212__auto__", "_11539", "meta11538",
-  "clustermap.components.full-report.details/->t11537", "attrs11540",
+  "cljs.core/-write", "this__9212__auto__", "_11537", "meta11536",
+  "clustermap.components.full-report.details/->t11535", "attrs11538",
   "cljs.core/map?", "js/React.DOM.div",
   "sablono.interpreter/attributes", "sablono.util/merge-with-class",
   "sablono.interpreter/interpret", "temp__4090__auto__", "timelines",

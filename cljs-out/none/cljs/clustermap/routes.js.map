@@ -8,10 +8,10 @@
  "names":
  ["clustermap.routes/type-name-keys", "clustermap.routes/name-for",
   "type", "obj", "cljs.core/get",
-  "clustermap.routes/portfolio-company-path", "app-state", "G__12226",
+  "clustermap.routes/portfolio-company-path", "app-state", "G__12216",
   "cljs.core/deref", "cljs.core/name",
-  "clustermap.routes/investor-company-path", "G__12228",
-  "clustermap.routes/constituency-path", "G__12230",
+  "clustermap.routes/investor-company-path", "G__12218",
+  "clustermap.routes/constituency-path", "G__12220",
   "clustermap.routes/type-paths", "clustermap.routes/path-for",
   "cljs.core/apply", "clustermap.routes/link-for", "js/React.DOM.a",
   "sablono.interpreter/interpret"]}

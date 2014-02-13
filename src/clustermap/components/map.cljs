@@ -141,7 +141,7 @@
 (defn style-leaflet-path
   [path {:keys [selected]}]
   (if selected
-    (.setStyle path (clj->js {:color "#0000ff" :weight 2 :opacity 1 :fillOpacity 0.3}))
+    (.setStyle path (clj->js {:color "#0000ff" :weight 3 :opacity 1 :fillOpacity 0.3}))
     (.setStyle path (clj->js {:opacity 0 :fillOpacity 0}))))
 
 (defn create-boundaryline-path
@@ -175,6 +175,7 @@
 (defn update-path
   "update a Leaflet path for a boundaryline"
   [fetch-boundaryline-fn js-boundaryline-index leaflet-map path boundaryline-id path-attrs]
+;;  (.log js/console (str "UPDATE: " boundaryline-id))
   (if-let [[tolerance js-boundaryline] (tolerance-boundaryline fetch-boundaryline-fn js-boundaryline-index boundaryline-id (.getZoom leaflet-map))]
     (if (not= tolerance (:tolerance path))
       (replace-boundaryline-path leaflet-map path js-boundaryline path-attrs)
@@ -191,7 +192,8 @@
           old-selection-path-keys @path-selections-atom
           new-selection-path-keys (->> new-selection-locations vals (apply concat) (map (comp :uk_constituencies :boundarylinecolls)) (apply concat) set)
 
-          select-path-keys (set/difference new-selection-path-keys old-selection-path-keys)
+          select-path-keys (into (set/intersection old-selection-path-keys new-selection-path-keys)
+                                 (set/difference new-selection-path-keys old-selection-path-keys))
           deselect-path-keys (set/difference old-selection-path-keys new-selection-path-keys)
 
           selected-paths (->> select-path-keys

@@ -30,7 +30,8 @@
 
     {:leaflet-map m
      :markers (atom {})
-     :paths (atom {})}))
+     :paths (atom {})
+     :path-selections (atom #{})}))
 
 (defn geojson-point-bounds
   "return a single LatLngBounds object containing all
@@ -135,63 +136,75 @@
     (or (fetch-boundaryline-fn boundaryline-id zoom :min-zoom 7)
         default)))
 
-(defn create-path
-  "create a Leaflet path for a boundaryline"
-  [fetch-boundaryline-fn uk-constituencies leaflet-map boundaryline-id]
-  (if-let [[tolerance cons] (tolerance-boundaryline fetch-boundaryline-fn uk-constituencies boundaryline-id (.getZoom leaflet-map))]
-    (let [path (js/L.geoJson (aget cons "geojson"))
-          bounds (postgis-envelope->latlngbounds (aget cons "envelope"))]
-      (.addTo path leaflet-map)
-      {:tolerance tolerance
-       :path path
-       :bounds bounds})
-    (.log js/console (str "missing boundaryline metadata: " boundaryline-id))))
+;; create paths
+
+(defn style-leaflet-path
+  [path {:keys [selected]}]
+  (if selected
+    (.setStyle path (clj->js {:color "#ff0000"}))
+    (.setStyle path (clj->js {:color "#0000ff"}))))
+
+(defn create-boundaryline-path
+  [leaflet-map js-boundaryline {:keys [selected] :as path-attrs}]
+  (let [tolerance (aget js-boundaryline "tolerance")
+        bounds (postgis-envelope->latlngbounds (aget js-boundaryline "envelope"))
+        leaflet-path (js/L.geoJson (aget js-boundaryline "geojson"))]
+    (style-leaflet-path leaflet-path path-attrs)
+    (.addTo leaflet-path leaflet-map)
+    {:tolerance tolerance
+     :selected selected
+     :leaflet-path leaflet-path
+     :bounds bounds}))
+
+(defn create-paths
+  "create leaflet paths for every boundaryline in boundaryline-index"
+  [js-boundaryline-index leaflet-map paths-atom]
+  (when (empty? @paths-atom)
+    (when-let [keys (not-empty (js/Object.keys js-boundaryline-index))]
+      (reset! paths-atom (->> keys
+                              (map (fn [k] [k (create-boundaryline-path leaflet-map (aget js-boundaryline-index k) {:selected false})]))
+                              (into {}))))))
+
+;; style paths on selection / deselection
+
+(defn replace-boundaryline-path
+  [leaflet-map old-path js-boundaryline path-attrs]
+  (.removeLayer leaflet-map (:leaflet-path old-path))
+  (create-boundaryline-path leaflet-map js-boundaryline path-attrs))
 
 (defn update-path
   "update a Leaflet path for a boundaryline"
-  [fetch-boundaryline-fn uk-constituencies leaflet-map path boundaryline-id]
-  (if-let [[tolerance cons] (tolerance-boundaryline fetch-boundaryline-fn uk-constituencies boundaryline-id (.getZoom leaflet-map))]
+  [fetch-boundaryline-fn js-boundaryline-index leaflet-map path boundaryline-id path-attrs]
+  (if-let [[tolerance js-boundaryline] (tolerance-boundaryline fetch-boundaryline-fn js-boundaryline-index boundaryline-id (.getZoom leaflet-map))]
     (if (not= tolerance (:tolerance path))
-      (let [new-path (js/L.geoJson (aget cons "geojson"))
-            bounds (postgis-envelope->latlngbounds (aget cons "envelope"))]
-        (.addTo new-path leaflet-map)
-        (.removeLayer leaflet-map (:path path))
-        {:tolerance tolerance
-         :path new-path
-         :bounds bounds})
-      path)
+      (replace-boundaryline-path leaflet-map path js-boundaryline path-attrs)
+      (do (style-leaflet-path (:leaflet-path path) path-attrs)
+          path))
     path))
 
-(defn remove-path
-  "remove a leaflet path"
-  [leaflet-map path]
-;;  (.log js/console (clj->js ["remove-path" path]))
-  (some->>
-   path
-   :path
-   (.removeLayer leaflet-map)))
-
 (defn update-paths
-  [fetch-boundaryline-fn uk-constituencies leaflet-map paths-atom new-locations]
-  (when uk-constituencies ;; don't try and render paths until we have path metadata !
+  [fetch-boundaryline-fn js-boundaryline-index leaflet-map paths-atom path-selections-atom new-selection-locations]
+  (when js-boundaryline-index ;; don't try and render paths until we have path metadata !
     (let [paths @paths-atom
           path-keys (-> paths keys set)
-          location-path-keys (->> new-locations vals (apply concat) (map (comp :uk_constituencies :boundarylinecolls)) (apply concat) set)
 
-          update-path-keys (set/intersection path-keys location-path-keys)
-          new-path-keys (set/difference location-path-keys path-keys)
-          remove-path-keys (set/difference path-keys location-path-keys)
+          old-selection-path-keys @path-selections-atom
+          new-selection-path-keys (->> new-selection-locations vals (apply concat) (map (comp :uk_constituencies :boundarylinecolls)) (apply concat) set)
 
-          new-paths (->> new-path-keys
-                         (map (fn [k] [k (create-path fetch-boundaryline-fn uk-constituencies leaflet-map k)]))
-                         (filter (fn [[k v]] (identity v)))
-                         (into {}))
-          updated-paths (->> update-path-keys
-                             (map (fn [k] [k (update-path fetch-boundaryline-fn uk-constituencies leaflet-map (get paths k) k)]))
-                             (into {}))
-          _ (doseq [k remove-path-keys] (remove-path leaflet-map (get paths k)))]
+          select-path-keys (set/difference new-selection-path-keys old-selection-path-keys)
+          deselect-path-keys (set/difference old-selection-path-keys new-selection-path-keys)
 
-      (reset! paths-atom (merge updated-paths new-paths)))))
+          selected-paths (->> select-path-keys
+                              (map (fn [k] [k (update-path fetch-boundaryline-fn js-boundaryline-index leaflet-map (get paths k) k {:selected true})]))
+                              (filter (fn [[k v]] (identity v)))
+                              (into {}))
+          deselected-paths (->> deselect-path-keys
+                                (map (fn [k] [k (update-path fetch-boundaryline-fn js-boundaryline-index leaflet-map (get paths k) k {:selected false})]))
+                                (filter (fn [[k v]] (identity v)))
+                                (into {}))]
+
+      (reset! path-selections-atom new-selection-path-keys)
+      (reset! paths-atom (merge paths selected-paths deselected-paths)))))
 
 (defn pan-to-selection
   [leaflet-map paths]
@@ -235,16 +248,19 @@
                   next-state]
 
       (let [{:keys [fetch-boundaryline-fn link-fn path-fn]} (om/get-shared owner)
-            {{:keys [leaflet-map markers paths]} :map
-             pan-pending :pan-pending} (om/get-state owner)]
+            {{:keys [leaflet-map markers paths path-selections]} :map pan-pending :pan-pending} (om/get-state owner)]
 
         (update-markers path-fn leaflet-map markers next-locations)
-        (update-paths fetch-boundaryline-fn next-uk-constituencies leaflet-map paths next-locations)
 
-        (when (not= next-selection selection)
-          (if (not-empty @paths)
-            (pan-to-selection leaflet-map @paths)
-            (om/set-state! owner :pan-pending true)))
+        (when next-uk-constituencies
+          (create-paths next-uk-constituencies leaflet-map paths)
+          (update-paths fetch-boundaryline-fn next-uk-constituencies leaflet-map paths path-selections next-locations)
+          )
+
+        ;; (when (not= next-selection selection)
+        ;;   (if (not-empty @paths)
+        ;;     (pan-to-selection leaflet-map @paths)
+        ;;     (om/set-state! owner :pan-pending true)))
 
         (when (and pan-pending (not-empty @paths))
           (pan-to-selection leaflet-map @paths)

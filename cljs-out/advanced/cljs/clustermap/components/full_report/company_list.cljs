@@ -1,4 +1,4 @@
-(ns clustermap.components.full-report.portfolio-company-sites
+(ns clustermap.components.full-report.company-list
   (:require [om.core :as om :include-macros true]
             [sablono.core :as html :refer [html] :include-macros true]
             [clustermap.formats.number :as nf :refer [fnum]]
@@ -39,11 +39,11 @@
        [:td (pos-neg (:latest_employee_count_delta site))]
        [:td (fnum (:latest_employee_count_delta site) :default "-") ]]))))
 
-(defn portfolio-company-sites
+(defn company-list
   [selection-portfolio-company-sites owner opts]
   (om/component
        (html
-        [:div.full-report-portfolio-company-sites
+        [:div.full-report-list
          [:div.table-responsive
           [:table.table
            [:thead

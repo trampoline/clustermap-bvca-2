@@ -1,15 +1,15 @@
-(ns clustermap.components.full-report.details
+(ns clustermap.components.full-report.charts
   (:require [om.core :as om :include-macros true]
             [sablono.core :as html :refer [html] :include-macros true]
             [clustermap.formats.number :as nf :refer [fnum]]
             [clustermap.formats.money :as mf :refer [fmoney]]
             [clustermap.components.timeline-chart :as tl]))
 
-(defn details
+(defn charts
   [data owner]
   (om/component
    (html
-    [:div.full-report-details
+    [:div.full-report-charts
      (if-let [timelines (:selection-portfolio-company-site-account-timelines data)]
        [:div.grid
         [:div.tbl

@@ -128,7 +128,8 @@
 
 (defn portfolio-company-sites
   [& [type-ids]]
-  (GET (str "/api/" api-prefix "/portfolio-company-sites?" (map-json-params type-ids))))
+  (let [type-ids (merge {:sort ["?boundarylinecolls.uk_constituencies"]} type-ids)]
+    (GET (str "/api/" api-prefix "/portfolio-company-sites?" (map-json-params type-ids)))))
 
 (defn portfolio-company-locations
   [& [type-ids]]

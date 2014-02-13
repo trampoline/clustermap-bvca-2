@@ -10,19 +10,27 @@
     :portfolio-company {:selection {:name "Total"
                                     :description "Totals for the selected Portfolio Company"}
                         :averages {:name "Average"
-                                   :description "Averages for the selected Portfolio Company"}}
+                                   :description "Averages for the selected Portfolio Company"}
+                        :benchmark {:name "Benchmark"
+                                    :description "Averages over all UK Companies"}}
     :investor-company {:selection {:name "Total"
                                    :description "Totals for the Portfolio Companies of the selected Investor"}
                        :averages {:name "Average"
-                                  :description "Averages over the Portfolio Companies of the selected Investor"}}
+                                  :description "Averages over the Portfolio Companies of the selected Investor"}
+                       :benchmark {:name "Benchmark"
+                                   :description "Averages over all UK Companies"}}
     :constituency {:selection {:name "Total"
                                :description "Totals for the selected Constituency"}
                    :averages {:name "Average"
-                              :description "Averages over the Portfolio Companies with sites in the selected Constituency"}}
+                              :description "Averages over the Portfolio Companies with sites in the selected Constituency"}
+                   :benchmark {:name "Benchmark"
+                               :description "Averages over all UK Companies"}}
     {:selection {:name "Total"
                  :description "Totals over all Portfolio Companies"}
      :averages {:name "Average"
-                :description "Averages over all Portfolio Companies"}}))
+                :description "Averages over all Portfolio Companies"}
+     :benchmark {:name "Benchmark"
+                 :description "Averages over all UK Companies"}}))
 
 (defn- overview-data
   [{:keys [all-portfolio-company-stats
@@ -44,11 +52,17 @@
                        :investor-companies "\u00A0"
                        :constituencies "\u00A0"
                        :turnover (fmoney (some-> site-stats :turnover :mean) :sf 2 :default "-")
-                       :employee-count (fnum (some-> site-stats :employee_count :mean) :dec 0 :default "-")})}))
+                       :employee-count (fnum (some-> site-stats :employee_count :mean) :dec 0 :default "-")})
+     :benchmark (merge (:benchmark sel-descrs)
+                       {:portfolio-companies (fnum (some-> all-portfolio-company-stats :portfolio_company_count) :default "-")
+                        :investor-companies (fnum (some-> all-portfolio-company-stats :investor_company_count) :default "-")
+                        :constituencies (fnum (some-> all-portfolio-company-stats :constituency_count) :default "-")
+                        :turnover (fmoney (some-> all-portfolio-company-stats :turnover :mean) :sf 2 :default "-")
+                        :employee-count (fnum (some-> all-portfolio-company-stats :employee_count :mean) :dec 0 :default "-")})}))
 
 (defn overview
   [data]
-  (let [{:keys [selection averages]} (overview-data data)]
+  (let [{:keys [selection averages benchmark]} (overview-data data)]
 
     (om/component
      (html [:div.full-report-overview
@@ -79,4 +93,11 @@
                 [:td [:span.averages (:constituencies averages)]]
                 [:td [:span.averages (:turnover averages)]]
                 [:td [:span.averages (:employee-count averages)]]]
+               [:tr
+                [:th [:i.icon-info {:data-toggle "tooltip" :data-container "body" :title (benchmark :description)}] (benchmark :name)]
+                [:td [:span.benchmark (:portfolio-companies benchmark)]]
+                [:td [:span.benchmark (:investor-companies benchmark)]]
+                [:td [:span.benchmark (:constituencies benchmark)]]
+                [:td [:span.benchmark (:turnover benchmark)]]
+                [:td [:span.benchmark (:employee-count benchmark)]]]
                ]]]]))))

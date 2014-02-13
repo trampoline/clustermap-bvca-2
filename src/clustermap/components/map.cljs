@@ -209,11 +209,17 @@
       (reset! paths-atom (merge paths selected-paths deselected-paths)))))
 
 (defn pan-to-selection
-  [leaflet-map paths]
-;;  (.log js/console (clj->js paths))
-  (let [bounds (some->> paths vals (map :bounds))]
-    (when bounds
-      (apply pan-to-show leaflet-map bounds))))
+  [owner leaflet-map paths-atom path-selections-atom]
+  ;;  (.log js/console (clj->js paths))
+  (let [paths @paths-atom
+        path-selections @path-selections-atom]
+    (if (empty? paths)
+      (om/set-state! owner :pan-pending true)
+      (do
+        (let [bounds (some->> (select-keys paths path-selections) vals (map :bounds))]
+          (when bounds
+            (apply pan-to-show leaflet-map bounds)))
+        (om/set-state! owner :pan-pending false)))))
 
 (defn map-component
   "put the leaflet map as state in the om component"
@@ -230,13 +236,12 @@
 
         ;; yeuch
         (.on leaflet-map "zoomend" (fn [e] (swap! (om/get-shared owner :app-state) assoc :zoom (.getZoom leaflet-map))))
+
         (-> js/document $ (.on "clustermap-change-view"(fn [e]
                                                          (.log js/console "change-view")
-                                                         (let [{{:keys [paths]} :map} (om/get-state owner)]
+                                                         (let [{{:keys [paths path-selections]} :map} (om/get-state owner)]
                                                            (.invalidateSize leaflet-map)
-                                                           (if (not-empty @paths)
-                                                               (pan-to-selection leaflet-map @paths)
-                                                               (locate-map leaflet-map))))))
+                                                           (pan-to-selection owner leaflet-map paths path-selections)))))
 
         (om/update! app-state assoc :zoom (.getZoom leaflet-map))))
 
@@ -258,14 +263,8 @@
           (create-paths next-uk-constituencies leaflet-map paths)
           (update-paths fetch-boundaryline-fn next-uk-constituencies leaflet-map paths path-selections next-locations))
 
-        (when (not= next-selection selection)
-          (if (not-empty @paths)
-            (pan-to-selection leaflet-map (select-keys @paths @path-selections))
-            (om/set-state! owner :pan-pending true)))
-
-        (when (and pan-pending (not-empty @paths))
-          (pan-to-selection leaflet-map (select-keys @paths @path-selections))
-          (om/set-state! owner :pan-pending false))))))
+        (when (or pan-pending (not= next-selection selection))
+          (pan-to-selection owner leaflet-map paths path-selections))))))
 
 (defn mount
   [app-state elem-id shared]

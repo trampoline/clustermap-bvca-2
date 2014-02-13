@@ -254,16 +254,15 @@
 
         (when next-uk-constituencies
           (create-paths next-uk-constituencies leaflet-map paths)
-          (update-paths fetch-boundaryline-fn next-uk-constituencies leaflet-map paths path-selections next-locations)
-          )
+          (update-paths fetch-boundaryline-fn next-uk-constituencies leaflet-map paths path-selections next-locations))
 
-        ;; (when (not= next-selection selection)
-        ;;   (if (not-empty @paths)
-        ;;     (pan-to-selection leaflet-map @paths)
-        ;;     (om/set-state! owner :pan-pending true)))
+        (when (not= next-selection selection)
+          (if (not-empty @paths)
+            (pan-to-selection leaflet-map (select-keys @paths @path-selections))
+            (om/set-state! owner :pan-pending true)))
 
         (when (and pan-pending (not-empty @paths))
-          (pan-to-selection leaflet-map @paths)
+          (pan-to-selection leaflet-map (select-keys @paths @path-selections))
           (om/set-state! owner :pan-pending false))))))
 
 (defn mount

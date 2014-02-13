@@ -9,7 +9,7 @@
   [data owner]
   (om/component
    (html
-    [:div.full-report-details
+    [:div.full-report-charts
      (if-let [timelines (:selection-portfolio-company-site-account-timelines data)]
        [:div.grid
         [:div.tbl

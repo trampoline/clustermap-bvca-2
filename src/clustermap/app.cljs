@@ -136,8 +136,10 @@
 
 (defn change-view
   [view]
-  (nav/change-view (name view))
-  (set-state :view (keyword view)))
+  (let [view (keyword view)]
+    (when (not= view (:view @state))
+      (nav/change-view (name view))
+      (set-state :view view))))
 
 (def history (History.))
 

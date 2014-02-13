@@ -84,14 +84,6 @@
              :selection-portfolio-company-site-account-timelines selection-portfolio-company-site-account-timelines
              :selection-portfolio-company-locations selection-portfolio-company-locations))
 
-(defn extract-id
-  [type obj]
-  (condp = type
-    :portfolio-company (:company_no obj)
-    :investor-company (:investor_company_uid obj)
-    :constituency (:boundaryline_id obj)
-    nil))
-
 (defn make-selection
   "set the selection
    - extractor selector id
@@ -164,9 +156,8 @@
      :id id}))
 
 (defn set-selection-route
-  [[type val]]
-  (let [{:keys [view]} (parse-route)
-        id (extract-id type val)]
+  [[type id]]
+  (let [{:keys [view]} (parse-route)]
     (set-route view type id)))
 
 (defn set-view-route

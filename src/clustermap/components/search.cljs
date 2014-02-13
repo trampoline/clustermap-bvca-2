@@ -13,6 +13,14 @@
 (def RIGHT_ARROW 39)
 (def DOWN_ARROW 40)
 
+(defn extract-id
+  [type obj]
+  (condp = type
+    :portfolio-company (:company_no obj)
+    :investor-company (:investor_company_uid obj)
+    :constituency (:boundaryline_id obj)
+    nil))
+
 (defn search-result-link
   [search-result owner {:keys [comm type] :as opts}]
   (reify
@@ -23,7 +31,7 @@
                   :onClick (fn [e]
                              (let [l (om/get-node owner "link")]
                                (some-> l $ (.parents ".search-component") .toggle)
-                               (put! comm [:select [type @search-result]])))}
+                               (put! comm [:select [type (extract-id type @search-result)]])))}
               (search-result :name)
               (if (:selected state) "*")]]))))
 

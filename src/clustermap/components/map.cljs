@@ -216,10 +216,9 @@
     (if (empty? paths)
       (om/set-state! owner :pan-pending true)
       (do
-        (let [bounds (some->> (select-keys paths path-selections) vals (map :bounds))]
-          (when bounds
-            (apply pan-to-show leaflet-map bounds)))
-        (om/set-state! owner :pan-pending false)))))
+        (om/set-state! owner :pan-pending false)
+        (when-let [bounds (some->> (select-keys paths path-selections) vals (map :bounds))]
+          (apply pan-to-show leaflet-map bounds))))))
 
 (defn map-component
   "put the leaflet map as state in the om component"

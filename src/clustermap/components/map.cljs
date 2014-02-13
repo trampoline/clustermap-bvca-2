@@ -141,8 +141,8 @@
 (defn style-leaflet-path
   [path {:keys [selected]}]
   (if selected
-    (.setStyle path (clj->js {:color "#ff0000"}))
-    (.setStyle path (clj->js {:color "#0000ff"}))))
+    (.setStyle path (clj->js {:color "#0000ff" :weight 2 :opacity 1 :fillOpacity 0.3}))
+    (.setStyle path (clj->js {:opacity 0 :fillOpacity 0}))))
 
 (defn create-boundaryline-path
   [leaflet-map js-boundaryline {:keys [selected] :as path-attrs}]

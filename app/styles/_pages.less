@@ -517,20 +517,6 @@ body {
 }
 #main-header {
   background: #fff;
-  h2, h3 {
-    margin: 0 0 4px;
-    padding: 0 20px;
-  }
-  h2 {
-    font-size: 12px;
-    font-weight: normal;
-    font-style: italic;
-    line-height: 20px;
-  }
-  h3 {
-    margin: 0 0 6px;
-    line-height: 30px;
-  }
 }
 #search, #page-title {
   border-bottom: 1px solid #d9d9d9;
@@ -625,13 +611,22 @@ body {
 
 #page-title {
   background: #f1f0ee;
-  padding: 4px 20px 0 0;
-  h2 {
+  border-bottom: 1px solid #d9d9d9;
+  padding: 6px 20px;
+  min-height: @asideSizeLg;
+  h2, h3 {
     font-size: 14px;
+    font-weight: normal;
+    line-height: 20px;
+    margin: 0;
+    padding: 2px 0;
+  }
+  h2 {
+    font-style: italic;
   }
   button {
     float: right;
-    margin-top: 11px;
+    margin-top: 10px;
   }
 }
 

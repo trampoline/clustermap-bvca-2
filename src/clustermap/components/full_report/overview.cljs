@@ -33,18 +33,16 @@
                  :description "Averages over all UK Companies"}}))
 
 (defn- overview-data
-  [{:keys [all-portfolio-company-stats
+  [{:keys [all-portfolio-company-site-stats
            selection
-           selection-portfolio-company-stats
            selection-portfolio-company-site-stats]}]
   (let [sel-descrs (describe-selection selection)
-        co-stats (or selection-portfolio-company-stats all-portfolio-company-stats)
-        site-stats (or selection-portfolio-company-site-stats all-portfolio-company-stats)]
+        site-stats (or selection-portfolio-company-site-stats all-portfolio-company-site-stats)]
 
     {:selection (merge (:selection sel-descrs)
-                       {:portfolio-companies (fnum (some-> co-stats :portfolio_company_count) :default "-")
-                        :investor-companies (fnum (some-> co-stats :investor_company_count) :default "-")
-                        :constituencies (fnum (some-> co-stats :constituency_count) :default "-")
+                       {:portfolio-companies (fnum (some-> site-stats :portfolio_company_count) :default "-")
+                        :investor-companies (fnum (some-> site-stats :investor_company_count) :default "-")
+                        :constituencies (fnum (some-> site-stats :constituency_count) :default "-")
                         :turnover (fmoney (some-> site-stats :turnover :total) :sf 2 :default "-")
                         :turnover-delta-val (some-> site-stats :turnover_delta :total)
                         :turnover-delta (fmoney (some-> site-stats :turnover_delta :total) :sf 2 :default "-")
@@ -62,15 +60,15 @@
                        :employee-count-delta-val (some-> site-stats :employee_count_delta :mean)
                        :employee-count-delta (fnum (some-> site-stats :employee_count_delta :mean) :dec 0 :default "-")})
      :benchmark (merge (:benchmark sel-descrs)
-                       {:portfolio-companies (fnum (some-> all-portfolio-company-stats :portfolio_company_count) :default "-")
-                        :investor-companies (fnum (some-> all-portfolio-company-stats :investor_company_count) :default "-")
-                        :constituencies (fnum (some-> all-portfolio-company-stats :constituency_count) :default "-")
-                        :turnover (fmoney (some-> all-portfolio-company-stats :turnover :mean) :sf 2 :default "-")
-                        :turnover-delta-val (some-> all-portfolio-company-stats :turnover_delta :total)
-                        :turnover-delta (fmoney (some-> all-portfolio-company-stats :turnover_delta :mean) :sf 2 :default "-")
-                        :employee-count (fnum (some-> all-portfolio-company-stats :employee_count :mean) :dec 0 :default "-")
-                        :employee-count-delta-val (some-> all-portfolio-company-stats :employee_count_delta :mean)
-                        :employee-count-delta (fnum (some-> all-portfolio-company-stats :employee_count_delta :mean) :dec 0 :default "-")})}))
+                       {:portfolio-companies (fnum (some-> all-portfolio-company-site-stats :portfolio_company_count) :default "-")
+                        :investor-companies (fnum (some-> all-portfolio-company-site-stats :investor_company_count) :default "-")
+                        :constituencies (fnum (some-> all-portfolio-company-site-stats :constituency_count) :default "-")
+                        :turnover (fmoney (some-> all-portfolio-company-site-stats :turnover :mean) :sf 2 :default "-")
+                        :turnover-delta-val (some-> all-portfolio-company-site-stats :turnover_delta :total)
+                        :turnover-delta (fmoney (some-> all-portfolio-company-site-stats :turnover_delta :mean) :sf 2 :default "-")
+                        :employee-count (fnum (some-> all-portfolio-company-site-stats :employee_count :mean) :dec 0 :default "-")
+                        :employee-count-delta-val (some-> all-portfolio-company-site-stats :employee_count_delta :mean)
+                        :employee-count-delta (fnum (some-> all-portfolio-company-site-stats :employee_count_delta :mean) :dec 0 :default "-")})}))
 
 (defn pos-neg
   [value]

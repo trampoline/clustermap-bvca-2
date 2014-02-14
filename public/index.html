@@ -9,15 +9,16 @@
     <meta name="author" content="">
     <link type="text/css" rel="stylesheet" href="css/app.css">
     <link type="text/css" rel="stylesheet" href="http://api.tiles.mapbox.com/mapbox.js/v1.6.0/mapbox.css">
-    <!--[if lte IE 8]>
-    <link type="text/css" rel="stylesheet" href="api.tiles.mapbox.com/mapbox.js/v1.6.0/mapbox.ie.css">
-    <![endif]-->
-    <!--[if lte IE 7]>
-    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/json2/20110223/json2.js"></script>
-    <![endif]-->
-    <!--[if lte IE 8]>
-    <script type="text/javascript" src="/js/html5.js"></script>
-    <![endif]-->
+    <!--if lte IE 8
+    link(type='text/css', rel='stylesheet', href="api.tiles.mapbox.com/mapbox.js/v1.6.0/mapbox.ie.css" )
+    
+    -->
+    <!--if lte IE 7script(type='text/javascript',src='http://cdnjs.cloudflare.com/ajax/libs/json2/20110223/json2.js')
+    -->
+    <!--if lte IE 8
+    script(type='text/javascript', src='/js/html5.js')
+    
+    -->
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0-beta3.min.js"></script>
     <script type="text/javascript" src="/js/vendor.js"></script>
     <script type="text/javascript" src="http://api.tiles.mapbox.com/mapbox.js/v1.6.0/mapbox.js"></script>
@@ -27,10 +28,8 @@
     <script type="text/javascript">window.config={}</script>
     <!--end-static-app-config-->
     <!--app-config
-    <script type="text/javascript">
-      window.config={{{app-config}}}
-      
-    </script>
+    <script type="text/javascript">window.config={{{app-config}}}</script>
+    
     -->
   </head>
   <body class="view-map">
@@ -273,12 +272,13 @@
           <footer id="main-footer">
             <div class="inner">
               <div class="trampoline">
-                <p>Produced by the&nbsp;<a href="#">BVCA</a>&nbsp;and&nbsp;<a href="#">Trampoline Systems</a></p>
-                <p><a href="#">Terms</a></p>
+                <p>Produced by the&nbsp;<a href="http://www.bvca.co.uk">BVCA</a>&nbsp;and&nbsp;<a href="http://www.trampolinesystems.com/">Trampoline Systems</a></p>
               </div>
-              <div class="issues">
-                <p><a href="#">Report issue</a></p>
-              </div>
+              <!--   p-->
+              <!--     a(href='#') Terms-->
+              <!-- .issues-->
+              <!--   p-->
+              <!--     a(href='#') Report issue-->
             </div>
           </footer>
         </div>
@@ -287,14 +287,19 @@
     <!--begin-static-base-js-->
     <script type="text/javascript" src="cljs/goog/base.js"></script>
     <!--end-static-base-js-->
-    <!--base-js{{{base-js}}}
+    <!--base-js
+    {{{base-js}}}
+    
     -->
-    <script type="text/javascript" src="clustermap.js"></script>
-    <script type="text/javascript">goog.require("clustermap.core");</script>
+    <!--begin-dynamic-js-->
+    <!--end-dynamic-js-->
+    <!--dynamic-js
+    <script type="text/javascript" src="clustermap.js"></script><script type="text/javascript">goog.require("clustermap.core");</script>
+    
+    -->
     <!--begin-static-repl-js-->
     <!--end-static-repl-js-->
-    <!--repl-js
-    <script type="text/javascript">{{{repl-js}}}</script>
+    <!--repl-js<script type="text/javascript">{{{repl-js}}}</script>
     -->
   </body>
 </html>

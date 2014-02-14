@@ -24,6 +24,8 @@
                   :zoom nil
                   :view :map
 
+                  :all-portfolio-company-site-stats nil
+
                   :search-results {}
 
                   :selector nil
@@ -61,6 +63,12 @@
   (go
    (let [bls (<! (api/boundaryline-collection-index "uk_constituencies" :raw true))]
      (set-state :uk-constituencies bls))))
+
+(defn load-all-portfolio-company-site-stats
+  []
+  (go
+    (let [all-portfolio-company-site-stats (<! (api/portfolio-company-site-stats))]
+      (set-state :all-portfolio-company-site-stats all-portfolio-company-site-stats))))
 
 (defn process-search-results
   "process a search"
@@ -211,6 +219,7 @@
     (init-routes comm)
 
     (load-uk-constituencies)
+    (load-all-portfolio-company-site-stats)
 
     (map/mount state "map-component" shared)
     (search/mount state "search-component" shared)

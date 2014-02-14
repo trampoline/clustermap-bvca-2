@@ -1,5 +1,6 @@
 (ns clustermap.components.map-report
   (:require [cljs.core.async :refer [put!]]
+            [domina.events :as events]
             [om.core :as om :include-macros true]
             [om.dom :as dom :include-macros true]
             [sablono.core :as html :refer [html] :include-macros true]
@@ -9,16 +10,20 @@
 
 (defn full-report-button
   [comm]
-  (html [:a {:href "#"
-             :onClick (fn [e] (put! comm [:change-view "lists"]))}
-         [:button.btn {:type "button"}
-          [:i.icon-lists-sm]
-          "Full report"]]))
+  (html [:button.btn {:type "button"
+                      :onClick (fn [e] (put! comm [:change-view "lists"]))}
+         [:i.icon-lists-sm]
+         "Full report"]))
+
+(defn type-counts
+  [site-stats]
+  {:pc-count (some-> site-stats :portfolio_company_count)
+   :ic-count (some-> site-stats :investor_company_count)
+   :const-count (some-> site-stats :constituency_count)})
 
 (defn all-portfolio-companies-summary-report
-  [apc-stats comm]
-  (let [pc-count (some-> apc-stats :portfolio_company_count)
-        ic-count (some-> apc-stats :investor_company_count)]
+  [site-stats comm]
+  (let [{:keys [pc-count ic-count const-count]} (type-counts site-stats)]
 
     (om/component
      (html [:div
@@ -26,17 +31,17 @@
              [:h2 "All portfolio companies"]
              [:h3 "UK wide"]]
             [:ul
-             [:li (fnum pc-count :default "-") [:small (pluralize pc-count "Portfolio Company" "Portfolio Companies")]]
-             [:li (fnum ic-count :default "-") [:small (pluralize ic-count "Investor")]]
-             [:li (fmoney (some-> apc-stats :turnover :total) :sf 2 :default "-") [:small "Portfolio Company Turnover"]]
-             [:li (fnum (some-> apc-stats :employee_count :total) :default "-") [:small "Portfolio Company Employees"]]
+             [:li (fnum pc-count :default "-") [:small "Portfolio Companies listed"]]
+             [:li (fnum ic-count :default "-") [:small "Investors listed"]]
+             [:li (fnum const-count :default "-") [:small (pluralize const-count "Constituency" "Constituencies")]]
+             [:li (fmoney (some-> site-stats :turnover :total) :sf 2 :default "-") [:small "Portfolio Company Turnover"]]
+             [:li (fnum (some-> site-stats :employee_count :total) :dec 0 :default "-") [:small "Portfolio Company Employees"]]
              ]
             (full-report-button comm)]))))
 
 (defn portfolio-company-report
-  [portfolio-company comm]
-  (let [ic-count (some-> portfolio-company :investor_companies count)
-        const-count (some-> portfolio-company :boundarylinecolls :uk_constituencies count)]
+  [portfolio-company site-stats comm]
+  (let [{:keys [pc-count ic-count const-count]} (type-counts site-stats)]
     (om/component
      (html [:div
             [:header.secondary
@@ -44,14 +49,13 @@
             [:ul
              [:li (fnum ic-count) [:small (pluralize ic-count "Investor")]]
              [:li (fnum const-count) [:small (pluralize const-count "Constituency" "Constituencies")]]
-             [:li (fmoney (some-> portfolio-company :latest_turnover) :sf 2 :default "-") [:small "Turnover"]]
-             [:li (fnum (some-> portfolio-company :latest_employee_count) :default "-") [:small "Employees"]]]
+             [:li (fmoney (some-> site-stats :turnover :total) :sf 2 :default "-") [:small "Portfolio Company Turnover"]]
+             [:li (fnum (some-> site-stats :employee_count :total) :dec 0 :default "-") [:small "Portfolio Company Employees"]]]
             (full-report-button comm)]))))
 
 (defn investor-company-report
-  [investor-company comm]
-  (let [pc-count (some-> investor-company :portfolio_companies count)
-        const-count (some-> investor-company :boundarylinecolls :uk_constituencies count)]
+  [investor-company site-stats comm]
+  (let [{:keys [pc-count ic-count const-count]} (type-counts site-stats)]
     (om/component
      (html [:div
             [:header.secondary
@@ -59,14 +63,13 @@
             [:ul
              [:li (fnum pc-count) [:small (pluralize pc-count "Portfolio Company" "Portfolio Companies")]]
              [:li (fnum const-count) [:small (pluralize const-count "Constituency" "Constituencies")]]
-             [:li (fmoney (some-> investor-company :total_turnover) :sf 2 :default "-") [:small "Portfolio Company Turnover"]]
-             [:li (fnum (some-> investor-company :total_employee_count) :default "-") [:small "Portfolio Company Employees"]]]
+             [:li (fmoney (some-> site-stats :turnover :total) :sf 2 :default "-") [:small "Portfolio Company Turnover"]]
+             [:li (fnum (some-> site-stats :employee_count :total) :dec 0 :default "-") [:small "Portfolio Company Employees"]]]
             (full-report-button comm)]))))
 
 (defn constituency-report
-  [constituency comm]
-  (let [pc-count (some-> constituency :portfolio_companies count)
-        ic-count (some-> constituency :investor_companies count)]
+  [constituency site-stats comm]
+  (let [{:keys [pc-count ic-count const-count]} (type-counts site-stats)]
     (om/component
      (html [:div
             [:header.secondary
@@ -76,19 +79,20 @@
             [:ul
              [:li (fnum pc-count) [:small (pluralize pc-count "Portfolio Company" "Portfolio Companies")]]
              [:li (fnum ic-count) [:small (pluralize ic-count "Investor")]]
-             [:li (fmoney (some-> constituency :total_turnover) :sf 2 :default "-") [:small "Portfolio Company Turnover"]]
-             [:li (fnum (some-> constituency :total_employee_count) :default "-") [:small "Portfolio Company Employees"]]]
+             [:li (fmoney (some-> site-stats :turnover :total) :sf 2 :default "-") [:small "Portfolio Company Turnover"]]
+             [:li (fnum (some-> site-stats :employee_count :total) :dec 0 :default "-") [:small "Portfolio Company Employees"]]]
             (full-report-button comm)]))))
 
 (defn map-report-component [data owner]
   (let [comm (om/get-shared owner :comm)
         type (get-in data [:selection :type])
-        value (get-in data [:selection :value])]
+        value (get-in data [:selection :value])
+        site-stats (:selection-portfolio-company-site-stats data)]
     (condp == type
-        :portfolio-company (portfolio-company-report value comm)
-        :investor-company (investor-company-report value comm)
-        :constituency (constituency-report value comm)
-        (all-portfolio-companies-summary-report (:selection-portfolio-company-stats data) comm))))
+        :portfolio-company (portfolio-company-report value site-stats comm)
+        :investor-company (investor-company-report value site-stats comm)
+        :constituency (constituency-report value site-stats comm)
+        (all-portfolio-companies-summary-report site-stats comm))))
 
 (defn mount
   [app-state elem-id shared]

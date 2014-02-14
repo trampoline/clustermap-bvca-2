@@ -93,7 +93,7 @@
 // Console-polyfill. MIT license.
 // https://github.com/paulmillr/console-polyfill
 // Make it safe to do console.log() always.
-(function (con) {
+(function(con) {
   'use strict';
   var prop, method;
   var empty = {};
@@ -104,7 +104,7 @@
      'time,timeEnd,trace,warn').split(',');
   while (prop = properties.pop()) con[prop] = con[prop] || empty;
   while (method = methods.pop()) con[method] = con[method] || dummy;
-})(window.console = window.console || {});
+})(this.console = this.console || {});
 
 ;/* Android 2.x claims XPath support, but has none.  Force non-native
    XPath implementation in this case */

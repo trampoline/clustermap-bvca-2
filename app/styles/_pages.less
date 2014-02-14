@@ -513,7 +513,7 @@ body {
   }
 }
 #main-header {
-  background: #f1f0ee;
+  background: #fff;
   h2, h3 {
     margin: 0 0 4px;
     padding: 0 20px;
@@ -534,39 +534,21 @@ body {
   min-height: @asideSize + 1;
 }
 #search {
-  display: none;
-  > div {
+  // display: none;
     position: relative;
-    overflow: hidden;
+
+  .tbl-cell {
+    vertical-align: middle;
+    text-align: center;
   }
-  .search-results {
-    background: #f1f0ee;
-    .box-shadow(2px 2px 2px rgba(0,0,0,0.2));
-    max-height: 200px;
-    overflow-y: auto;
-    width: 100%;
-    ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    li {
-      padding: 4px;
-        &.search-results-header {
-        font-weight: bold;
-        border-bottom: 1px solid #ccc;
-      }
-    }
-    a {
-      cursor: pointer;
-    }
-  }
+
   input[type=text] {
     border: 0 none;
-    height: 40px;
-    line-height: 40px;
+    height: @asideSizeLg;
+    line-height: @asideSizeLg;
     width: 100%;
-    padding: 0 36px 0 20px;
+    padding: 0 20px;
+    font-size: 20px;
   }
   button {
     display: inline-block;
@@ -578,9 +560,9 @@ body {
     background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
     border: 1px solid transparent;
     white-space: nowrap;
-    position: absolute;
-    right: 2px;
-    top: 2px;
+    // position: absolute;
+    // right: 2px;
+    // top: 2px;
     background: #fff;
     color: @gray-light;
     .button-size(6px; 10px; 20px; 20px; 0);
@@ -601,9 +583,45 @@ body {
       background-image: none;
       top: 3px;
     }
+
+    &.btn-reset {
+      color: @link-color;
+      font-size: 14px;
+      &:hover,
+      &:focus {
+        color: @link-hover-color;
+        text-decoration: none;
+      }
+    }
+
   }
 }
+
+#search-results {
+  background: #f1f0ee;
+  .box-shadow(2px 2px 2px rgba(0,0,0,0.2));
+  max-height: 200px;
+  overflow-y: auto;
+  width: 100%;
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  li {
+    padding: 4px;
+      &.search-results-header {
+      font-weight: bold;
+      border-bottom: 1px solid #ccc;
+    }
+  }
+  a {
+    cursor: pointer;
+  }
+}
+
 #page-title {
+  background: #f1f0ee;
   padding: 4px 20px 0 0;
   h2 {
     font-size: 14px;

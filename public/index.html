@@ -26,11 +26,7 @@
     <!--begin-static-app-config-->
     <script type="text/javascript">window.config={}</script>
     <!--end-static-app-config-->
-    <!--app-config
-    <script type="text/javascript">
-      window.config={{{app-config}}}
-      
-    </script>
+    <!--app-config<script type="text/javascript">window.config={{{app-config}}}</script>
     -->
   </head>
   <body class="view-map">
@@ -49,10 +45,16 @@
           <header id="main-header">
             <div id="search-component">
               <div id="search">
-                <h2>Search</h2>
-                <div>
-                  <input type="text" placeholder="Enter your search">
-                  <button type="reset">&times;</button>
+                <div class="tbl">
+                  <div style="width: 100%" class="tbl-cell">
+                    <input type="text" placeholder="Enter your search">
+                  </div>
+                  <div class="tbl-cell">
+                    <button type="reset" class="btn-clear">&times;</button>
+                  </div>
+                  <div class="tbl-cell">
+                    <button type="reset" class="btn-reset">Reset to UK wide</button>
+                  </div>
                 </div>
                 <div id="search-results">
                   <ul>
@@ -273,12 +275,13 @@
           <footer id="main-footer">
             <div class="inner">
               <div class="trampoline">
-                <p>Produced by the&nbsp;<a href="#">BVCA</a>&nbsp;and&nbsp;<a href="#">Trampoline Systems</a></p>
-                <p><a href="#">Terms</a></p>
+                <p>Produced by the&nbsp;<a href="http://www.bvca.co.uk">BVCA</a>&nbsp;and&nbsp;<a href="http://www.trampolinesystems.com/">Trampoline Systems</a></p>
               </div>
-              <div class="issues">
-                <p><a href="#">Report issue</a></p>
-              </div>
+              <!--   p-->
+              <!--     a(href='#') Terms-->
+              <!-- .issues-->
+              <!--   p-->
+              <!--     a(href='#') Report issue-->
             </div>
           </footer>
         </div>
@@ -293,8 +296,7 @@
     <script type="text/javascript">goog.require("clustermap.core");</script>
     <!--begin-static-repl-js-->
     <!--end-static-repl-js-->
-    <!--repl-js
-    <script type="text/javascript">{{{repl-js}}}</script>
+    <!--repl-js<script type="text/javascript">{{{repl-js}}}</script>
     -->
   </body>
 </html>

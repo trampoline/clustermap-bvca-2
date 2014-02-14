@@ -11,6 +11,9 @@
   "overrides": {
     "es5-shim": {
       "main": "es5-shim.js"
+    },
+    "jquery": {
+      "main": "jquery.js"
     }
   }
 }

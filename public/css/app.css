@@ -1900,11 +1900,8 @@ body.view-lists #page-map {
 body.view-lists #page-lists {
   display: block;
 }
-body.view-lists #search .search-results {
+body.view-lists #search-results {
   position: absolute;
-  z-index: 10;
-  width: auto;
-  min-width: 50%;
 }
 #wrap {
   position: relative;
@@ -2165,7 +2162,7 @@ body.view-lists #search .search-results {
   width: 25%;
 }
 #main-header {
-  background: #f1f0ee;
+  background: #fff;
 }
 #main-header h2,
 #main-header h3 {
@@ -2188,41 +2185,19 @@ body.view-lists #search .search-results {
   min-height: 49px;
 }
 #search {
-  display: none;
-}
-#search > div {
   position: relative;
-  overflow: hidden;
 }
-#search .search-results {
-  background: #f1f0ee;
-  -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
-  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
-  max-height: 200px;
-  overflow-y: auto;
-  width: 100%;
-}
-#search .search-results ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-#search .search-results li {
-  padding: 4px;
-}
-#search .search-results li.search-results-header {
-  font-weight: bold;
-  border-bottom: 1px solid #ccc;
-}
-#search .search-results a {
-  cursor: pointer;
+#search .tbl-cell {
+  vertical-align: middle;
+  text-align: center;
 }
 #search input[type=text] {
   border: 0 none;
-  height: 40px;
-  line-height: 40px;
+  height: 64px;
+  line-height: 64px;
   width: 100%;
-  padding: 0 36px 0 20px;
+  padding: 0 20px;
+  font-size: 20px;
 }
 #search button {
   display: inline-block;
@@ -2236,9 +2211,6 @@ body.view-lists #search .search-results {
   background-image: none;
   border: 1px solid transparent;
   white-space: nowrap;
-  position: absolute;
-  right: 2px;
-  top: 2px;
   background: #fff;
   color: #999999;
   padding: 6px 10px;
@@ -2266,7 +2238,40 @@ body.view-lists #search .search-results {
   background-image: none;
   top: 3px;
 }
+#search button.btn-reset {
+  color: #cb1530;
+  font-size: 14px;
+}
+#search button.btn-reset:hover,
+#search button.btn-reset:focus {
+  color: #b4122a;
+  text-decoration: none;
+}
+#search-results {
+  background: #f1f0ee;
+  -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+  max-height: 200px;
+  overflow-y: auto;
+  width: 100%;
+}
+#search-results ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+#search-results li {
+  padding: 4px;
+}
+#search-results li.search-results-header {
+  font-weight: bold;
+  border-bottom: 1px solid #ccc;
+}
+#search-results a {
+  cursor: pointer;
+}
 #page-title {
+  background: #f1f0ee;
   padding: 4px 20px 0 0;
 }
 #page-title h2 {

@@ -3,17 +3,17 @@
   "version": "0.1.0",
   "main": ["_public/css/app.css", "_public/js/vendor.js", "_public/js/templates.js", "_public/js/app.js"],
   "dependencies": {
-    "console-polyfill": "~0.1.0",
+    "console-polyfill": "~0.1.1",
     "html5shiv": "~3.7.0",
-    "es5-shim": "https://github.com/es-shims/es5-shim.git#~2.3.0",
-    "bootstrap": "~3.0.3"
+    "es5-shim": "~2.3.0",
+    "bootstrap": "~3.1.1"
   },
   "overrides": {
     "es5-shim": {
       "main": "es5-shim.js"
     },
-    "jquery": {
-      "main": "jquery.js"
+    "bootstrap": {
+      "dependencies": {}
     }
   }
 }

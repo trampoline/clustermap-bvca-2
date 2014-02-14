@@ -6928,7 +6928,7 @@ var uh = new Q(null, "labels", "labels"), vh = new Q(null, "const-count", "const
 "mean", "mean"), qi = new Q(null, "prefix", "prefix"), ri = new Q(null, "selector", "selector"), si = new Q(null, "portfolio-company", "portfolio-company"), ti = new Q(null, "weight", "weight"), ui = new Q(null, "opacity", "opacity"), vi = new Q(null, "comm", "comm"), wi = new Q(null, "selection", "selection"), xi = new Q(null, "leaflet-map", "leaflet-map"), Gg = new Q(null, "keywordize-keys", "keywordize-keys"), yi = new Q(null, "selection-portfolio-company-sites", "selection-portfolio-company-sites"), 
 zi = new Q(null, "name", "name"), Ai = new Q(null, "div.tbl", "div.tbl"), Bi = new Q(null, "selected-idx", "selected-idx"), Ci = new Q(null, "header", "header"), Di = new Q(null, "postcode", "postcode"), Ei = new Q(null, "tolerance", "tolerance"), Fi = new Q(null, "latest_turnover", "latest_turnover"), Gi = new Q(null, "color", "color"), Hi = new Q(null, "fillOpacity", "fillOpacity"), Ii = new Q(null, "pc-count", "pc-count"), Ji = new Q(null, "y0-title", "y0-title"), $a = new Q(null, "flush-on-newline", 
 "flush-on-newline"), Ki = new Q(null, "click", "click"), Li = new Q(null, "count", "count"), Mi = new Q(null, "selection-portfolio-company-locations", "selection-portfolio-company-locations"), Ni = new Q(null, "location", "location"), Oi = new Q(null, "bounds", "bounds"), Pi = new Q(null, "path-selections", "path-selections"), Qi = new Q(null, "investor-companies", "investor-companies"), Ri = new Q(null, "employee-count-delta", "employee-count-delta"), Si = new Q(null, "turnover-delta", "turnover-delta"), 
-Ti = new Q(null, "investor_company_count", "investor_company_count"), Ui = new Q(null, "catch-exception", "catch-exception"), Vi = new Q(null, "employee-count", "employee-count"), Wi = new Q(null, "opposite", "opposite"), Yi = new Q(null, "pan-pending", "pan-pending"), Zi = new Q(null, "continue-block", "continue-block"), $i = new Q(null, "investor_company_uid", "investor_company_uid"), aj = new Q(null, "prev", "prev"), bj = new Q(null, "employee_count", "employee_count"), cj = new Q(null, "clojure", 
+Ti = new Q(null, "investor_company_count", "investor_company_count"), Ui = new Q(null, "catch-exception", "catch-exception"), Vi = new Q(null, "employee-count", "employee-count"), Xi = new Q(null, "opposite", "opposite"), Yi = new Q(null, "pan-pending", "pan-pending"), Zi = new Q(null, "continue-block", "continue-block"), $i = new Q(null, "investor_company_uid", "investor_company_uid"), aj = new Q(null, "prev", "prev"), bj = new Q(null, "employee_count", "employee_count"), cj = new Q(null, "clojure", 
 "clojure"), dj = new Q(null, "constituencies", "constituencies"), ej = new Q(null, "div.box.box-last", "div.box.box-last"), fj = new Q(null, "plus?", "plus?"), gj = new Q(null, "app-state", "app-state"), hj = new Q(null, "curr", "curr"), ij = new Q(null, "title", "title"), jj = new Q(null, "constituency_count", "constituency_count"), kj = new Q(null, "accepts", "accepts"), lj = new Q(null, "route-select", "route-select"), mj = new Q(null, "div.tbl-row", "div.tbl-row"), nj = new Q(null, "min-zoom", 
 "min-zoom"), oj = new Q(null, "paths", "paths"), pj = new Q(null, "div.grid", "div.grid"), qj = new Q(null, "selection-portfolio-companies", "selection-portfolio-companies"), rj = new Q(null, "dec", "dec"), sj = new Q(null, "latest_turnover_delta", "latest_turnover_delta"), db = new Q(null, "print-length", "print-length"), tj = new Q(null, "categories", "categories"), uj = new Q(null, "ic-count", "ic-count"), vj = new Q(null, "turnover", "turnover"), wj = new Q(null, "search-results", "search-results"), 
 xj = new Q(null, "uid", "uid"), yj = new Q(null, "type", "type"), zj = new Q(null, "all-portfolio-company-site-stats", "all-portfolio-company-site-stats"), Aj = new Q(null, "textarea", "textarea"), Bj = new Q(null, "yAxis", "yAxis"), s = new Q(null, "else", "else"), Cj = new Q(null, "htmlFor", "htmlFor"), Dj = new Q(null, "sort", "sort"), Ej = new Q("cljs.core", "not-found", "cljs.core/not-found"), Fj = new Q(null, "route-change-view", "route-change-view"), ab = new Q(null, "readably", "readably"), 
@@ -7987,7 +7987,7 @@ function Gl(a, b) {
 Gl.prototype.toString = function() {
   return this.name;
 };
-var Hl = new Gl("SEVERE", 1E3), Il = new Gl("WARNING", 900), Ml = new Gl("INFO", 800), Nl = new Gl("CONFIG", 700), Ol = new Gl("FINE", 500), Pl = new Gl("FINEST", 300);
+var Hl = new Gl("SEVERE", 1E3), Ll = new Gl("WARNING", 900), Ml = new Gl("INFO", 800), Nl = new Gl("CONFIG", 700), Ol = new Gl("FINE", 500), Pl = new Gl("FINEST", 300);
 h = Fl.prototype;
 h.getParent = function() {
   return this.Pc;
@@ -8288,7 +8288,7 @@ function lm(a) {
   try {
     return 2 < km(a) ? a.T.status : -1;
   } catch (b) {
-    return a.Ka.log(Il, "Can not get status: " + b.message, void 0), -1;
+    return a.Ka.log(Ll, "Can not get status: " + b.message, void 0), -1;
   }
 }
 function mm(a) {
@@ -9876,7 +9876,7 @@ function Zn(a) {
 }
 sa($n, Xk);
 var ao = [];
-function bo(a, b, c, d) {
+function co(a, b, c, d) {
   "array" != m(c) && (ao[0] = c, c = ao);
   for (var e = 0;e < c.length;e++) {
     var f = ll(b, c[e], d || a, !1, a.Ff || a);
@@ -9917,7 +9917,7 @@ function fo(a, b, c, d) {
   if (a || jo) {
     d ? a = d : (a = "history_iframe" + go, d = this.Ec ? 'src\x3d"' + va(this.Ec) + '"' : "", document.write(ta(ko, a, d)), a = ha(a) ? document.getElementById(a) : a), this.Ob = a, this.Ye = !0;
   }
-  jo && (bo(this.rb, this.Ua, "load", this.Bg), this.We = this.yd = !1);
+  jo && (co(this.rb, this.Ua, "load", this.Bg), this.We = this.yd = !1);
   this.Cb ? lo(this, mo(this), !0) : no(this, this.bc.value);
   go++;
 }
@@ -9939,11 +9939,11 @@ function po(a, b) {
       a.We = b;
     } else {
       if (b) {
-        if (Sg ? bo(a.rb, a.Ua.document, qo, a.Fg) : Ug && bo(a.rb, a.Ua, "pageshow", a.Eg), oo && a.Cb) {
-          bo(a.rb, a.Ua, "hashchange", a.Cg), a.ac = !0, a.dispatchEvent(new eo(mo(a)));
+        if (Sg ? co(a.rb, a.Ua.document, qo, a.Fg) : Ug && co(a.rb, a.Ua, "pageshow", a.Eg), oo && a.Cb) {
+          co(a.rb, a.Ua, "hashchange", a.Cg), a.ac = !0, a.dispatchEvent(new eo(mo(a)));
         } else {
           if (!Tg || a.yd) {
-            bo(a.rb, a.ma, yl, pa(a.be, a, !0)), a.ac = !0, jo || (a.Pb = mo(a), a.dispatchEvent(new eo(mo(a)))), a.ma.start();
+            co(a.rb, a.ma, yl, pa(a.be, a, !0)), a.ac = !0, jo || (a.Pb = mo(a), a.dispatchEvent(new eo(mo(a)))), a.ma.start();
           }
         }
       } else {
@@ -10341,7 +10341,7 @@ function ip(a, b) {
   if (q(d)) {
     return d.a ? d.a(a, b) : d.call(null, a, b);
   }
-  d = kp.a ? kp.a(a, c) : kp.call(null, a, c);
+  d = mp.a ? mp.a(a, c) : mp.call(null, a, c);
   return q(d) ? d : Ro.e(a, G(["No dispatch macro for ", c], 0));
 }
 function np(a, b) {
@@ -10618,7 +10618,7 @@ var Gp = ug.b(new n(null, 4, ["inst", function(a) {
   }
   return s ? Ro.e(null, G([[w("JS literal expects a vector or map containing "), w("only string or unqualified keyword keys")].join("")], 0)) : null;
 }], null)), Hp = ug.b(null);
-function kp(a, b) {
+function mp(a, b) {
   var c = sp(a, b), d = K.a(Qb(Gp), "" + w(c)), e = Qb(Hp);
   return q(d) ? d.b ? d.b(gp(a, !0, null)) : d.call(null, gp(a, !0, null)) : q(e) ? e.a ? e.a(c, gp(a, !0, null)) : e.call(null, c, gp(a, !0, null)) : s ? Ro.e(a, G(["Could not find tag parser for ", "" + w(c), " in ", qg.e(G([Pf(Qb(Gp))], 0))], 0)) : null;
 }
@@ -10728,7 +10728,7 @@ function Mp(a, b, c) {
     };
   }(e, f, g), he.a(gi, a));
   a = xe(Ue, Xd.a(Xf(a), new R(null, 1, 5, S, [Sf.e(G([Qc(a), new n(null, 2, [Gi, "#FF9900", zi, "Not all data received for year"], null)], 0))], null)));
-  return Jp.b(b).ai(Cg(new n(null, 5, [li, new n(null, 1, [Yh, null], null), ij, new n(null, 1, [Ch, null], null), Hj, new n(null, 2, [tj, e, uh, new n(null, 1, [qk, 270], null)], null), Bj, new R(null, 2, 5, S, [new n(null, 1, [ij, new n(null, 1, [Ch, d], null)], null), new n(null, 2, [ij, new n(null, 1, [Ch, c], null), Wi, !0], null)], null), Oj, new R(null, 3, 5, S, [new n(null, 4, [zi, d, yj, "column", Bj, 0, Eh, a], null), new n(null, 4, [zi, [w("Mean "), w(d)].join(""), yj, "line", Bj, 0, Eh, 
+  return Jp.b(b).ai(Cg(new n(null, 5, [li, new n(null, 1, [Yh, null], null), ij, new n(null, 1, [Ch, null], null), Hj, new n(null, 2, [tj, e, uh, new n(null, 1, [qk, 270], null)], null), Bj, new R(null, 2, 5, S, [new n(null, 1, [ij, new n(null, 1, [Ch, d], null)], null), new n(null, 2, [ij, new n(null, 1, [Ch, c], null), Xi, !0], null)], null), Oj, new R(null, 3, 5, S, [new n(null, 4, [zi, d, yj, "column", Bj, 0, Eh, a], null), new n(null, 4, [zi, [w("Mean "), w(d)].join(""), yj, "line", Bj, 0, Eh, 
   f], null), new n(null, 4, [zi, c, yj, "line", Bj, 1, Eh, g], null)], null)], null)));
 }
 var Op = function Np(b, c, d) {
@@ -12309,14 +12309,14 @@ var Ir = function Hr(b, c) {
     var d = this;
     return React.d.O({onKeyDown:function(b) {
       return Gr(b, d.Ue, d.w, d.u);
-    }, id:"search", className:"search-component", ref:"search-component"}, React.d.O({className:"tbl"}, React.d.O({style:new n(null, 1, [Yh, "100%"], null), className:"tbl-cell"}, pm.b ? pm.b({onChange:function(b) {
+    }, id:"search", className:"search-component", ref:"search-component"}, React.d.O({className:"tbl"}, React.d.O({style:{width:"100%"}, className:"tbl-cell"}, pm.b ? pm.b({onChange:function(b) {
       return oq.a(d.u, new R(null, 2, 5, S, [Qh, b.target.value], null));
     }, placeholder:"Search", type:"text", ref:"search-field"}) : pm.call(null, {onChange:function(b) {
       return oq.a(d.u, new R(null, 2, 5, S, [Qh, b.target.value], null));
-    }, placeholder:"Search", type:"text", ref:"search-field"})), React.d.O({style:new n(null, 1, [Yh, "34px"], null), className:"tbl-cell"}, React.d.button({onClick:function() {
+    }, placeholder:"Search", type:"text", ref:"search-field"})), React.d.O({style:{width:"34"}, className:"tbl-cell"}, React.d.button({onClick:function() {
       oq.a(d.u, new R(null, 2, 5, S, [Qh, ""], null));
       return kn(d.w, "search-field").value = "";
-    }, type:"reset"}, "\u00d7")), React.d.O({style:new n(null, 1, [Yh, "136px"], null), className:"tbl-cell"}, React.d.button({type:"reset", className:"btn-reset"}, "Reset to UK wide"))), q(function() {
+    }, type:"reset"}, "\u00d7")), React.d.O({style:{width:"136"}, className:"tbl-cell"}, React.d.button({type:"reset", className:"btn-reset"}, "Reset to UK wide"))), q(function() {
       var b = ae(d.wd);
       if (q(b)) {
         return b;
@@ -12678,20 +12678,20 @@ var Sr = function() {
     return b[c] ? 0 : b[c] = 1;
   }
   function d(a, b) {
-    if (co) {
-      var c = Ll[a];
+    if (bo) {
+      var c = Kl[a];
       if (c && !b) {
         return c;
       }
     }
-    if (c = Kl[a]) {
+    if (c = Jl[a]) {
       return c;
     }
     var c = a.charAt(0), f = -1 == a.indexOf(" ");
     0 <= a.indexOf("#") && f && (b = !0);
-    if (!co || b || -1 != "\x3e~+".indexOf(c) || Tg && -1 != a.indexOf(":") || ld && 0 <= a.indexOf(".") || -1 != a.indexOf(":contains") || -1 != a.indexOf("|\x3d")) {
+    if (!bo || b || -1 != "\x3e~+".indexOf(c) || Tg && -1 != a.indexOf(":") || ld && 0 <= a.indexOf(".") || -1 != a.indexOf(":contains") || -1 != a.indexOf("|\x3d")) {
       var g = a.split(/\s*,\s*/);
-      return Kl[a] = 2 > g.length ? e(a) : function(a) {
+      return Jl[a] = 2 > g.length ? e(a) : function(a) {
         for (var b = 0, c = [], d;d = g[b++];) {
           c = c.concat(e(d)(a));
         }
@@ -12699,7 +12699,7 @@ var Sr = function() {
       };
     }
     var k = 0 <= "\x3e~+".indexOf(a.charAt(a.length - 1)) ? a + " *" : a;
-    return Ll[a] = function(b) {
+    return Kl[a] = function(b) {
       try {
         if (9 != b.nodeType && !f) {
           throw "";
@@ -12743,7 +12743,7 @@ var Sr = function() {
     };
   }
   function f(a) {
-    var b = Jl[a.Tb];
+    var b = Il[a.Tb];
     if (b) {
       return b;
     }
@@ -12789,7 +12789,7 @@ var Sr = function() {
         }
       }
     }
-    return Jl[a.Tb] = b;
+    return Il[a.Tb] = b;
   }
   function g(a) {
     a = a || Rr;
@@ -12844,11 +12844,11 @@ var Sr = function() {
     });
     b.wb || Ha(a.wb, function(a) {
       var b = a.name;
-      Xi[b] && (c = ca(c, Xi[b](b, a.value)));
+      Wi[b] && (c = ca(c, Wi[b](b, a.value)));
     });
     b.pc || Ha(a.pc, function(a) {
       var b, d = a.Yc;
-      a.type && Zg[a.type] ? b = Zg[a.type](d, a.Md) : d.length && (b = mp(d));
+      a.type && Zg[a.type] ? b = Zg[a.type](d, a.Md) : d.length && (b = lp(d));
       b && (c = ca(c, b));
     });
     b.id || a.id && (c = ca(c, function(b) {
@@ -12888,7 +12888,7 @@ var Sr = function() {
     return!0;
   }
   function M(a) {
-    for (;a = a[lp];) {
+    for (;a = a[kp];) {
       if (If(a)) {
         return!1;
       }
@@ -12961,7 +12961,7 @@ var Sr = function() {
     return function(c) {
       return V(c, a) == b;
     };
-  }}, $g = "undefined" == typeof document.firstChild.nextElementSibling, Hf = $g ? "nextSibling" : "nextElementSibling", lp = $g ? "previousSibling" : "previousElementSibling", If = $g ? O : Rr, Xi = {checked:function() {
+  }}, $g = "undefined" == typeof document.firstChild.nextElementSibling, Hf = $g ? "nextSibling" : "nextElementSibling", kp = $g ? "previousSibling" : "previousElementSibling", If = $g ? O : Rr, Wi = {checked:function() {
     return function(a) {
       return a.checked || a.attributes.checked;
     };
@@ -13022,7 +13022,7 @@ var Sr = function() {
     return function(a) {
       return C(a) == k;
     };
-  }}, mp = Tg ? function(a) {
+  }}, lp = Tg ? function(a) {
     var b = a.toLowerCase();
     "class" == b && (a = "className");
     return function(c) {
@@ -13032,12 +13032,12 @@ var Sr = function() {
     return function(b) {
       return b && b.getAttribute && b.hasAttribute(a);
     };
-  }, Jl = {}, Kl = {}, Ll = {}, co = !!document.querySelectorAll && (!Vg || fh("526")), Id = 0, ts = Tg ? function(a) {
+  }, Il = {}, Jl = {}, Kl = {}, bo = !!document.querySelectorAll && (!Vg || fh("526")), Id = 0, ts = Tg ? function(a) {
     return sd ? a.getAttribute("_uid") || a.setAttribute("_uid", ++Id) || Id : a.uniqueID;
   } : function(a) {
     return a._uid || (a._uid = ++Id);
   };
-  a.wb = Xi;
+  a.wb = Wi;
   return a;
 }();
 da("goog.dom.query", Sr);

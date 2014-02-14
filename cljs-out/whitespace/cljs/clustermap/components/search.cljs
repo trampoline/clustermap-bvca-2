@@ -73,18 +73,18 @@
                       :id "search"
                       :onKeyDown (fn [e] (key-down e search-results owner comm))}
                  (dom/div #js {:className "tbl"}
-                          (dom/div #js {:className "tbl-cell" :style {:width "100%"}}
+                          (dom/div #js {:className "tbl-cell" :style #js {:width "100%"}}
                                    (dom/input #js {:ref "search-field"
                                                    :type "text"
                                                    :placeholder "Search"
                                                    :onChange (fn [e]  (put! comm [:search (.. e -target -value)]))}))
-                          (dom/div #js {:className "tbl-cell" :style {:width "34px"}}
+                          (dom/div #js {:className "tbl-cell" :style #js {:width "34"}}
                                    (dom/button #js {:type "reset"
                                                     :onClick (fn [e]
                                                                (put! comm [:search ""])
                                                                (set! (.-value (om/get-node owner "search-field")) ""))}
                                                "\u00D7"))
-                          (dom/div #js {:className "tbl-cell" :style {:width "136px"}}
+                          (dom/div #js {:className "tbl-cell" :style #js {:width "136"}}
                                    (dom/button #js {:className "btn-reset" :type "reset"}
                                                "Reset to UK wide")))
                  (when (or (not-empty constituencies) (not-empty portfolio_companies) (not-empty investor_companies))

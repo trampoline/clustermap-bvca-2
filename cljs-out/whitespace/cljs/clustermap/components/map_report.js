@@ -24,352 +24,352 @@ goog.require('clustermap.formats.number');
 clustermap.components.map_report.full_report_button = (function full_report_button(comm){return React.DOM.button({"className": "btn", "type": "button", "onClick": (function (e){return cljs.core.async.put_BANG_.call(null,comm,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"change-view","change-view",3608283668),"lists"], null));
 })},React.DOM.i({"className": "icon-lists-sm"}),"Full report");
 });
-clustermap.components.map_report.type_counts = (function type_counts(site_stats){return new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"pc-count","pc-count",1986847783),(function (){var G__22450 = site_stats;var G__22450__$1 = (((G__22450 == null))?null:new cljs.core.Keyword(null,"portfolio_company_count","portfolio_company_count",1780206472).cljs$core$IFn$_invoke$arity$1(G__22450));return G__22450__$1;
-})(),new cljs.core.Keyword(null,"ic-count","ic-count",2672077326),(function (){var G__22451 = site_stats;var G__22451__$1 = (((G__22451 == null))?null:new cljs.core.Keyword(null,"investor_company_count","investor_company_count",2333064920).cljs$core$IFn$_invoke$arity$1(G__22451));return G__22451__$1;
-})(),new cljs.core.Keyword(null,"const-count","const-count",1728788887),(function (){var G__22452 = site_stats;var G__22452__$1 = (((G__22452 == null))?null:new cljs.core.Keyword(null,"constituency_count","constituency_count",621528264).cljs$core$IFn$_invoke$arity$1(G__22452));return G__22452__$1;
+clustermap.components.map_report.type_counts = (function type_counts(site_stats){return new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"pc-count","pc-count",1986847783),(function (){var G__32867 = site_stats;var G__32867__$1 = (((G__32867 == null))?null:new cljs.core.Keyword(null,"portfolio_company_count","portfolio_company_count",1780206472).cljs$core$IFn$_invoke$arity$1(G__32867));return G__32867__$1;
+})(),new cljs.core.Keyword(null,"ic-count","ic-count",2672077326),(function (){var G__32868 = site_stats;var G__32868__$1 = (((G__32868 == null))?null:new cljs.core.Keyword(null,"investor_company_count","investor_company_count",2333064920).cljs$core$IFn$_invoke$arity$1(G__32868));return G__32868__$1;
+})(),new cljs.core.Keyword(null,"const-count","const-count",1728788887),(function (){var G__32869 = site_stats;var G__32869__$1 = (((G__32869 == null))?null:new cljs.core.Keyword(null,"constituency_count","constituency_count",621528264).cljs$core$IFn$_invoke$arity$1(G__32869));return G__32869__$1;
 })()], null);
 });
-clustermap.components.map_report.all_portfolio_companies_summary_report = (function all_portfolio_companies_summary_report(site_stats,comm){var map__22484 = clustermap.components.map_report.type_counts.call(null,site_stats);var map__22484__$1 = ((cljs.core.seq_QMARK_.call(null,map__22484))?cljs.core.apply.call(null,cljs.core.hash_map,map__22484):map__22484);var const_count = cljs.core.get.call(null,map__22484__$1,new cljs.core.Keyword(null,"const-count","const-count",1728788887));var ic_count = cljs.core.get.call(null,map__22484__$1,new cljs.core.Keyword(null,"ic-count","ic-count",2672077326));var pc_count = cljs.core.get.call(null,map__22484__$1,new cljs.core.Keyword(null,"pc-count","pc-count",1986847783));if(typeof clustermap.components.map_report.t22485 !== 'undefined')
+clustermap.components.map_report.all_portfolio_companies_summary_report = (function all_portfolio_companies_summary_report(site_stats,comm){var map__32901 = clustermap.components.map_report.type_counts.call(null,site_stats);var map__32901__$1 = ((cljs.core.seq_QMARK_.call(null,map__32901))?cljs.core.apply.call(null,cljs.core.hash_map,map__32901):map__32901);var const_count = cljs.core.get.call(null,map__32901__$1,new cljs.core.Keyword(null,"const-count","const-count",1728788887));var ic_count = cljs.core.get.call(null,map__32901__$1,new cljs.core.Keyword(null,"ic-count","ic-count",2672077326));var pc_count = cljs.core.get.call(null,map__32901__$1,new cljs.core.Keyword(null,"pc-count","pc-count",1986847783));if(typeof clustermap.components.map_report.t32902 !== 'undefined')
 {} else
 {
 /**
 * @constructor
 */
-clustermap.components.map_report.t22485 = (function (pc_count,ic_count,const_count,map__22484,comm,site_stats,all_portfolio_companies_summary_report,meta22486){
+clustermap.components.map_report.t32902 = (function (pc_count,ic_count,const_count,map__32901,comm,site_stats,all_portfolio_companies_summary_report,meta32903){
 this.pc_count = pc_count;
 this.ic_count = ic_count;
 this.const_count = const_count;
-this.map__22484 = map__22484;
+this.map__32901 = map__32901;
 this.comm = comm;
 this.site_stats = site_stats;
 this.all_portfolio_companies_summary_report = all_portfolio_companies_summary_report;
-this.meta22486 = meta22486;
+this.meta32903 = meta32903;
 this.cljs$lang$protocol_mask$partition1$ = 0;
 this.cljs$lang$protocol_mask$partition0$ = 393216;
 })
-clustermap.components.map_report.t22485.cljs$lang$type = true;
-clustermap.components.map_report.t22485.cljs$lang$ctorStr = "clustermap.components.map-report/t22485";
-clustermap.components.map_report.t22485.cljs$lang$ctorPrWriter = (function (this__3968__auto__,writer__3969__auto__,opt__3970__auto__){return cljs.core._write.call(null,writer__3969__auto__,"clustermap.components.map-report/t22485");
+clustermap.components.map_report.t32902.cljs$lang$type = true;
+clustermap.components.map_report.t32902.cljs$lang$ctorStr = "clustermap.components.map-report/t32902";
+clustermap.components.map_report.t32902.cljs$lang$ctorPrWriter = (function (this__3968__auto__,writer__3969__auto__,opt__3970__auto__){return cljs.core._write.call(null,writer__3969__auto__,"clustermap.components.map-report/t32902");
 });
-clustermap.components.map_report.t22485.prototype.om$core$IRender$ = true;
-clustermap.components.map_report.t22485.prototype.om$core$IRender$render$arity$1 = (function (this__9212__auto__){var self__ = this;
-var this__9212__auto____$1 = this;return React.DOM.div(null,React.DOM.header({"className": "secondary"},React.DOM.h2(null,"All portfolio companies"),React.DOM.h3(null,"UK wide")),React.DOM.ul(null,(function (){var attrs22490 = clustermap.formats.number.fnum.call(null,self__.pc_count,new cljs.core.Keyword(null,"default","default",2558708147),"-");if(cljs.core.map_QMARK_.call(null,attrs22490))
-{return React.DOM.li(sablono.interpreter.attributes.call(null,attrs22490),React.DOM.small(null,"Portfolio Companies listed"));
+clustermap.components.map_report.t32902.prototype.om$core$IRender$ = true;
+clustermap.components.map_report.t32902.prototype.om$core$IRender$render$arity$1 = (function (this__9212__auto__){var self__ = this;
+var this__9212__auto____$1 = this;return React.DOM.div(null,React.DOM.header({"className": "secondary"},React.DOM.h2(null,"All portfolio companies"),React.DOM.h3(null,"UK wide")),React.DOM.ul(null,(function (){var attrs32907 = clustermap.formats.number.fnum.call(null,self__.pc_count,new cljs.core.Keyword(null,"default","default",2558708147),"-");if(cljs.core.map_QMARK_.call(null,attrs32907))
+{return React.DOM.li(sablono.interpreter.attributes.call(null,attrs32907),React.DOM.small(null,"Portfolio Companies listed"));
 } else
-{return React.DOM.li(null,sablono.interpreter.interpret.call(null,attrs22490),React.DOM.small(null,"Portfolio Companies listed"));
+{return React.DOM.li(null,sablono.interpreter.interpret.call(null,attrs32907),React.DOM.small(null,"Portfolio Companies listed"));
 }
-})(),(function (){var attrs22495 = clustermap.formats.number.fnum.call(null,self__.ic_count,new cljs.core.Keyword(null,"default","default",2558708147),"-");if(cljs.core.map_QMARK_.call(null,attrs22495))
-{return React.DOM.li(sablono.interpreter.attributes.call(null,attrs22495),React.DOM.small(null,"Investors listed"));
+})(),(function (){var attrs32912 = clustermap.formats.number.fnum.call(null,self__.ic_count,new cljs.core.Keyword(null,"default","default",2558708147),"-");if(cljs.core.map_QMARK_.call(null,attrs32912))
+{return React.DOM.li(sablono.interpreter.attributes.call(null,attrs32912),React.DOM.small(null,"Investors listed"));
 } else
-{return React.DOM.li(null,sablono.interpreter.interpret.call(null,attrs22495),React.DOM.small(null,"Investors listed"));
+{return React.DOM.li(null,sablono.interpreter.interpret.call(null,attrs32912),React.DOM.small(null,"Investors listed"));
 }
-})(),(function (){var attrs22500 = clustermap.formats.number.fnum.call(null,self__.const_count,new cljs.core.Keyword(null,"default","default",2558708147),"-");if(cljs.core.map_QMARK_.call(null,attrs22500))
-{return React.DOM.li(sablono.interpreter.attributes.call(null,attrs22500),(function (){var attrs22501 = clustermap.formats.string.pluralize.call(null,self__.const_count,"Constituency","Constituencies");if(cljs.core.map_QMARK_.call(null,attrs22501))
-{return React.DOM.small(sablono.interpreter.attributes.call(null,attrs22501),null);
+})(),(function (){var attrs32917 = clustermap.formats.number.fnum.call(null,self__.const_count,new cljs.core.Keyword(null,"default","default",2558708147),"-");if(cljs.core.map_QMARK_.call(null,attrs32917))
+{return React.DOM.li(sablono.interpreter.attributes.call(null,attrs32917),(function (){var attrs32918 = clustermap.formats.string.pluralize.call(null,self__.const_count,"Constituency","Constituencies");if(cljs.core.map_QMARK_.call(null,attrs32918))
+{return React.DOM.small(sablono.interpreter.attributes.call(null,attrs32918),null);
 } else
-{return React.DOM.small(null,sablono.interpreter.interpret.call(null,attrs22501));
-}
-})());
-} else
-{return React.DOM.li(null,sablono.interpreter.interpret.call(null,attrs22500),(function (){var attrs22502 = clustermap.formats.string.pluralize.call(null,self__.const_count,"Constituency","Constituencies");if(cljs.core.map_QMARK_.call(null,attrs22502))
-{return React.DOM.small(sablono.interpreter.attributes.call(null,attrs22502),null);
-} else
-{return React.DOM.small(null,sablono.interpreter.interpret.call(null,attrs22502));
+{return React.DOM.small(null,sablono.interpreter.interpret.call(null,attrs32918));
 }
 })());
-}
-})(),(function (){var attrs22503 = clustermap.formats.money.fmoney.call(null,(function (){var G__22513 = self__.site_stats;var G__22513__$1 = (((G__22513 == null))?null:new cljs.core.Keyword(null,"turnover","turnover",1148922435).cljs$core$IFn$_invoke$arity$1(G__22513));var G__22513__$2 = (((G__22513__$1 == null))?null:new cljs.core.Keyword(null,"total","total",1124454070).cljs$core$IFn$_invoke$arity$1(G__22513__$1));return G__22513__$2;
-})(),new cljs.core.Keyword(null,"sf","sf",1013907909),2,new cljs.core.Keyword(null,"default","default",2558708147),"-");if(cljs.core.map_QMARK_.call(null,attrs22503))
-{return React.DOM.li(sablono.interpreter.attributes.call(null,attrs22503),React.DOM.small(null,"Portfolio Company Turnover"));
 } else
-{return React.DOM.li(null,sablono.interpreter.interpret.call(null,attrs22503),React.DOM.small(null,"Portfolio Company Turnover"));
-}
-})(),(function (){var attrs22508 = clustermap.formats.number.fnum.call(null,(function (){var G__22514 = self__.site_stats;var G__22514__$1 = (((G__22514 == null))?null:new cljs.core.Keyword(null,"employee_count","employee_count",2542621616).cljs$core$IFn$_invoke$arity$1(G__22514));var G__22514__$2 = (((G__22514__$1 == null))?null:new cljs.core.Keyword(null,"total","total",1124454070).cljs$core$IFn$_invoke$arity$1(G__22514__$1));return G__22514__$2;
-})(),new cljs.core.Keyword(null,"dec","dec",1014003572),0,new cljs.core.Keyword(null,"default","default",2558708147),"-");if(cljs.core.map_QMARK_.call(null,attrs22508))
-{return React.DOM.li(sablono.interpreter.attributes.call(null,attrs22508),React.DOM.small(null,"Portfolio Company Employees"));
+{return React.DOM.li(null,sablono.interpreter.interpret.call(null,attrs32917),(function (){var attrs32919 = clustermap.formats.string.pluralize.call(null,self__.const_count,"Constituency","Constituencies");if(cljs.core.map_QMARK_.call(null,attrs32919))
+{return React.DOM.small(sablono.interpreter.attributes.call(null,attrs32919),null);
 } else
-{return React.DOM.li(null,sablono.interpreter.interpret.call(null,attrs22508),React.DOM.small(null,"Portfolio Company Employees"));
+{return React.DOM.small(null,sablono.interpreter.interpret.call(null,attrs32919));
+}
+})());
+}
+})(),(function (){var attrs32920 = clustermap.formats.money.fmoney.call(null,(function (){var G__32930 = self__.site_stats;var G__32930__$1 = (((G__32930 == null))?null:new cljs.core.Keyword(null,"turnover","turnover",1148922435).cljs$core$IFn$_invoke$arity$1(G__32930));var G__32930__$2 = (((G__32930__$1 == null))?null:new cljs.core.Keyword(null,"total","total",1124454070).cljs$core$IFn$_invoke$arity$1(G__32930__$1));return G__32930__$2;
+})(),new cljs.core.Keyword(null,"sf","sf",1013907909),2,new cljs.core.Keyword(null,"default","default",2558708147),"-");if(cljs.core.map_QMARK_.call(null,attrs32920))
+{return React.DOM.li(sablono.interpreter.attributes.call(null,attrs32920),React.DOM.small(null,"Portfolio Company Turnover"));
+} else
+{return React.DOM.li(null,sablono.interpreter.interpret.call(null,attrs32920),React.DOM.small(null,"Portfolio Company Turnover"));
+}
+})(),(function (){var attrs32925 = clustermap.formats.number.fnum.call(null,(function (){var G__32931 = self__.site_stats;var G__32931__$1 = (((G__32931 == null))?null:new cljs.core.Keyword(null,"employee_count","employee_count",2542621616).cljs$core$IFn$_invoke$arity$1(G__32931));var G__32931__$2 = (((G__32931__$1 == null))?null:new cljs.core.Keyword(null,"total","total",1124454070).cljs$core$IFn$_invoke$arity$1(G__32931__$1));return G__32931__$2;
+})(),new cljs.core.Keyword(null,"dec","dec",1014003572),0,new cljs.core.Keyword(null,"default","default",2558708147),"-");if(cljs.core.map_QMARK_.call(null,attrs32925))
+{return React.DOM.li(sablono.interpreter.attributes.call(null,attrs32925),React.DOM.small(null,"Portfolio Company Employees"));
+} else
+{return React.DOM.li(null,sablono.interpreter.interpret.call(null,attrs32925),React.DOM.small(null,"Portfolio Company Employees"));
 }
 })()),sablono.interpreter.interpret.call(null,clustermap.components.map_report.full_report_button.call(null,self__.comm)));
 });
-clustermap.components.map_report.t22485.prototype.cljs$core$IMeta$_meta$arity$1 = (function (_22487){var self__ = this;
-var _22487__$1 = this;return self__.meta22486;
+clustermap.components.map_report.t32902.prototype.cljs$core$IMeta$_meta$arity$1 = (function (_32904){var self__ = this;
+var _32904__$1 = this;return self__.meta32903;
 });
-clustermap.components.map_report.t22485.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = (function (_22487,meta22486__$1){var self__ = this;
-var _22487__$1 = this;return (new clustermap.components.map_report.t22485(self__.pc_count,self__.ic_count,self__.const_count,self__.map__22484,self__.comm,self__.site_stats,self__.all_portfolio_companies_summary_report,meta22486__$1));
+clustermap.components.map_report.t32902.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = (function (_32904,meta32903__$1){var self__ = this;
+var _32904__$1 = this;return (new clustermap.components.map_report.t32902(self__.pc_count,self__.ic_count,self__.const_count,self__.map__32901,self__.comm,self__.site_stats,self__.all_portfolio_companies_summary_report,meta32903__$1));
 });
-clustermap.components.map_report.__GT_t22485 = (function __GT_t22485(pc_count__$1,ic_count__$1,const_count__$1,map__22484__$2,comm__$1,site_stats__$1,all_portfolio_companies_summary_report__$1,meta22486){return (new clustermap.components.map_report.t22485(pc_count__$1,ic_count__$1,const_count__$1,map__22484__$2,comm__$1,site_stats__$1,all_portfolio_companies_summary_report__$1,meta22486));
+clustermap.components.map_report.__GT_t32902 = (function __GT_t32902(pc_count__$1,ic_count__$1,const_count__$1,map__32901__$2,comm__$1,site_stats__$1,all_portfolio_companies_summary_report__$1,meta32903){return (new clustermap.components.map_report.t32902(pc_count__$1,ic_count__$1,const_count__$1,map__32901__$2,comm__$1,site_stats__$1,all_portfolio_companies_summary_report__$1,meta32903));
 });
 }
-return (new clustermap.components.map_report.t22485(pc_count,ic_count,const_count,map__22484__$1,comm,site_stats,all_portfolio_companies_summary_report,null));
+return (new clustermap.components.map_report.t32902(pc_count,ic_count,const_count,map__32901__$1,comm,site_stats,all_portfolio_companies_summary_report,null));
 });
-clustermap.components.map_report.portfolio_company_report = (function portfolio_company_report(portfolio_company,site_stats,comm){var map__22538 = clustermap.components.map_report.type_counts.call(null,site_stats);var map__22538__$1 = ((cljs.core.seq_QMARK_.call(null,map__22538))?cljs.core.apply.call(null,cljs.core.hash_map,map__22538):map__22538);var const_count = cljs.core.get.call(null,map__22538__$1,new cljs.core.Keyword(null,"const-count","const-count",1728788887));var ic_count = cljs.core.get.call(null,map__22538__$1,new cljs.core.Keyword(null,"ic-count","ic-count",2672077326));var pc_count = cljs.core.get.call(null,map__22538__$1,new cljs.core.Keyword(null,"pc-count","pc-count",1986847783));if(typeof clustermap.components.map_report.t22539 !== 'undefined')
+clustermap.components.map_report.portfolio_company_report = (function portfolio_company_report(portfolio_company,site_stats,comm){var map__32955 = clustermap.components.map_report.type_counts.call(null,site_stats);var map__32955__$1 = ((cljs.core.seq_QMARK_.call(null,map__32955))?cljs.core.apply.call(null,cljs.core.hash_map,map__32955):map__32955);var const_count = cljs.core.get.call(null,map__32955__$1,new cljs.core.Keyword(null,"const-count","const-count",1728788887));var ic_count = cljs.core.get.call(null,map__32955__$1,new cljs.core.Keyword(null,"ic-count","ic-count",2672077326));var pc_count = cljs.core.get.call(null,map__32955__$1,new cljs.core.Keyword(null,"pc-count","pc-count",1986847783));if(typeof clustermap.components.map_report.t32956 !== 'undefined')
 {} else
 {
 /**
 * @constructor
 */
-clustermap.components.map_report.t22539 = (function (pc_count,ic_count,const_count,map__22538,comm,site_stats,portfolio_company,portfolio_company_report,meta22540){
+clustermap.components.map_report.t32956 = (function (pc_count,ic_count,const_count,map__32955,comm,site_stats,portfolio_company,portfolio_company_report,meta32957){
 this.pc_count = pc_count;
 this.ic_count = ic_count;
 this.const_count = const_count;
-this.map__22538 = map__22538;
+this.map__32955 = map__32955;
 this.comm = comm;
 this.site_stats = site_stats;
 this.portfolio_company = portfolio_company;
 this.portfolio_company_report = portfolio_company_report;
-this.meta22540 = meta22540;
+this.meta32957 = meta32957;
 this.cljs$lang$protocol_mask$partition1$ = 0;
 this.cljs$lang$protocol_mask$partition0$ = 393216;
 })
-clustermap.components.map_report.t22539.cljs$lang$type = true;
-clustermap.components.map_report.t22539.cljs$lang$ctorStr = "clustermap.components.map-report/t22539";
-clustermap.components.map_report.t22539.cljs$lang$ctorPrWriter = (function (this__3968__auto__,writer__3969__auto__,opt__3970__auto__){return cljs.core._write.call(null,writer__3969__auto__,"clustermap.components.map-report/t22539");
+clustermap.components.map_report.t32956.cljs$lang$type = true;
+clustermap.components.map_report.t32956.cljs$lang$ctorStr = "clustermap.components.map-report/t32956";
+clustermap.components.map_report.t32956.cljs$lang$ctorPrWriter = (function (this__3968__auto__,writer__3969__auto__,opt__3970__auto__){return cljs.core._write.call(null,writer__3969__auto__,"clustermap.components.map-report/t32956");
 });
-clustermap.components.map_report.t22539.prototype.om$core$IRender$ = true;
-clustermap.components.map_report.t22539.prototype.om$core$IRender$render$arity$1 = (function (this__9212__auto__){var self__ = this;
-var this__9212__auto____$1 = this;return React.DOM.div(null,React.DOM.header({"className": "secondary"},(function (){var attrs22542 = new cljs.core.Keyword(null,"name","name",1017277949).cljs$core$IFn$_invoke$arity$1(self__.portfolio_company);if(cljs.core.map_QMARK_.call(null,attrs22542))
-{return React.DOM.h2(sablono.interpreter.attributes.call(null,attrs22542),null);
+clustermap.components.map_report.t32956.prototype.om$core$IRender$ = true;
+clustermap.components.map_report.t32956.prototype.om$core$IRender$render$arity$1 = (function (this__9212__auto__){var self__ = this;
+var this__9212__auto____$1 = this;return React.DOM.div(null,React.DOM.header({"className": "secondary"},(function (){var attrs32959 = new cljs.core.Keyword(null,"name","name",1017277949).cljs$core$IFn$_invoke$arity$1(self__.portfolio_company);if(cljs.core.map_QMARK_.call(null,attrs32959))
+{return React.DOM.h2(sablono.interpreter.attributes.call(null,attrs32959),null);
 } else
-{return React.DOM.h2(null,sablono.interpreter.interpret.call(null,attrs22542));
+{return React.DOM.h2(null,sablono.interpreter.interpret.call(null,attrs32959));
 }
-})()),React.DOM.ul(null,(function (){var attrs22543 = clustermap.formats.number.fnum.call(null,self__.ic_count);if(cljs.core.map_QMARK_.call(null,attrs22543))
-{return React.DOM.li(sablono.interpreter.attributes.call(null,attrs22543),(function (){var attrs22544 = clustermap.formats.string.pluralize.call(null,self__.ic_count,"Investor");if(cljs.core.map_QMARK_.call(null,attrs22544))
-{return React.DOM.small(sablono.interpreter.attributes.call(null,attrs22544),null);
+})()),React.DOM.ul(null,(function (){var attrs32960 = clustermap.formats.number.fnum.call(null,self__.ic_count);if(cljs.core.map_QMARK_.call(null,attrs32960))
+{return React.DOM.li(sablono.interpreter.attributes.call(null,attrs32960),(function (){var attrs32961 = clustermap.formats.string.pluralize.call(null,self__.ic_count,"Investor");if(cljs.core.map_QMARK_.call(null,attrs32961))
+{return React.DOM.small(sablono.interpreter.attributes.call(null,attrs32961),null);
 } else
-{return React.DOM.small(null,sablono.interpreter.interpret.call(null,attrs22544));
-}
-})());
-} else
-{return React.DOM.li(null,sablono.interpreter.interpret.call(null,attrs22543),(function (){var attrs22545 = clustermap.formats.string.pluralize.call(null,self__.ic_count,"Investor");if(cljs.core.map_QMARK_.call(null,attrs22545))
-{return React.DOM.small(sablono.interpreter.attributes.call(null,attrs22545),null);
-} else
-{return React.DOM.small(null,sablono.interpreter.interpret.call(null,attrs22545));
-}
-})());
-}
-})(),(function (){var attrs22546 = clustermap.formats.number.fnum.call(null,self__.const_count);if(cljs.core.map_QMARK_.call(null,attrs22546))
-{return React.DOM.li(sablono.interpreter.attributes.call(null,attrs22546),(function (){var attrs22547 = clustermap.formats.string.pluralize.call(null,self__.const_count,"Constituency","Constituencies");if(cljs.core.map_QMARK_.call(null,attrs22547))
-{return React.DOM.small(sablono.interpreter.attributes.call(null,attrs22547),null);
-} else
-{return React.DOM.small(null,sablono.interpreter.interpret.call(null,attrs22547));
+{return React.DOM.small(null,sablono.interpreter.interpret.call(null,attrs32961));
 }
 })());
 } else
-{return React.DOM.li(null,sablono.interpreter.interpret.call(null,attrs22546),(function (){var attrs22548 = clustermap.formats.string.pluralize.call(null,self__.const_count,"Constituency","Constituencies");if(cljs.core.map_QMARK_.call(null,attrs22548))
-{return React.DOM.small(sablono.interpreter.attributes.call(null,attrs22548),null);
+{return React.DOM.li(null,sablono.interpreter.interpret.call(null,attrs32960),(function (){var attrs32962 = clustermap.formats.string.pluralize.call(null,self__.ic_count,"Investor");if(cljs.core.map_QMARK_.call(null,attrs32962))
+{return React.DOM.small(sablono.interpreter.attributes.call(null,attrs32962),null);
 } else
-{return React.DOM.small(null,sablono.interpreter.interpret.call(null,attrs22548));
+{return React.DOM.small(null,sablono.interpreter.interpret.call(null,attrs32962));
 }
 })());
 }
-})(),(function (){var attrs22549 = clustermap.formats.money.fmoney.call(null,(function (){var G__22559 = self__.site_stats;var G__22559__$1 = (((G__22559 == null))?null:new cljs.core.Keyword(null,"turnover","turnover",1148922435).cljs$core$IFn$_invoke$arity$1(G__22559));var G__22559__$2 = (((G__22559__$1 == null))?null:new cljs.core.Keyword(null,"total","total",1124454070).cljs$core$IFn$_invoke$arity$1(G__22559__$1));return G__22559__$2;
-})(),new cljs.core.Keyword(null,"sf","sf",1013907909),2,new cljs.core.Keyword(null,"default","default",2558708147),"-");if(cljs.core.map_QMARK_.call(null,attrs22549))
-{return React.DOM.li(sablono.interpreter.attributes.call(null,attrs22549),React.DOM.small(null,"Portfolio Company Turnover"));
+})(),(function (){var attrs32963 = clustermap.formats.number.fnum.call(null,self__.const_count);if(cljs.core.map_QMARK_.call(null,attrs32963))
+{return React.DOM.li(sablono.interpreter.attributes.call(null,attrs32963),(function (){var attrs32964 = clustermap.formats.string.pluralize.call(null,self__.const_count,"Constituency","Constituencies");if(cljs.core.map_QMARK_.call(null,attrs32964))
+{return React.DOM.small(sablono.interpreter.attributes.call(null,attrs32964),null);
 } else
-{return React.DOM.li(null,sablono.interpreter.interpret.call(null,attrs22549),React.DOM.small(null,"Portfolio Company Turnover"));
+{return React.DOM.small(null,sablono.interpreter.interpret.call(null,attrs32964));
 }
-})(),(function (){var attrs22554 = clustermap.formats.number.fnum.call(null,(function (){var G__22560 = self__.site_stats;var G__22560__$1 = (((G__22560 == null))?null:new cljs.core.Keyword(null,"employee_count","employee_count",2542621616).cljs$core$IFn$_invoke$arity$1(G__22560));var G__22560__$2 = (((G__22560__$1 == null))?null:new cljs.core.Keyword(null,"total","total",1124454070).cljs$core$IFn$_invoke$arity$1(G__22560__$1));return G__22560__$2;
-})(),new cljs.core.Keyword(null,"dec","dec",1014003572),0,new cljs.core.Keyword(null,"default","default",2558708147),"-");if(cljs.core.map_QMARK_.call(null,attrs22554))
-{return React.DOM.li(sablono.interpreter.attributes.call(null,attrs22554),React.DOM.small(null,"Portfolio Company Employees"));
+})());
 } else
-{return React.DOM.li(null,sablono.interpreter.interpret.call(null,attrs22554),React.DOM.small(null,"Portfolio Company Employees"));
+{return React.DOM.li(null,sablono.interpreter.interpret.call(null,attrs32963),(function (){var attrs32965 = clustermap.formats.string.pluralize.call(null,self__.const_count,"Constituency","Constituencies");if(cljs.core.map_QMARK_.call(null,attrs32965))
+{return React.DOM.small(sablono.interpreter.attributes.call(null,attrs32965),null);
+} else
+{return React.DOM.small(null,sablono.interpreter.interpret.call(null,attrs32965));
+}
+})());
+}
+})(),(function (){var attrs32966 = clustermap.formats.money.fmoney.call(null,(function (){var G__32976 = self__.site_stats;var G__32976__$1 = (((G__32976 == null))?null:new cljs.core.Keyword(null,"turnover","turnover",1148922435).cljs$core$IFn$_invoke$arity$1(G__32976));var G__32976__$2 = (((G__32976__$1 == null))?null:new cljs.core.Keyword(null,"total","total",1124454070).cljs$core$IFn$_invoke$arity$1(G__32976__$1));return G__32976__$2;
+})(),new cljs.core.Keyword(null,"sf","sf",1013907909),2,new cljs.core.Keyword(null,"default","default",2558708147),"-");if(cljs.core.map_QMARK_.call(null,attrs32966))
+{return React.DOM.li(sablono.interpreter.attributes.call(null,attrs32966),React.DOM.small(null,"Portfolio Company Turnover"));
+} else
+{return React.DOM.li(null,sablono.interpreter.interpret.call(null,attrs32966),React.DOM.small(null,"Portfolio Company Turnover"));
+}
+})(),(function (){var attrs32971 = clustermap.formats.number.fnum.call(null,(function (){var G__32977 = self__.site_stats;var G__32977__$1 = (((G__32977 == null))?null:new cljs.core.Keyword(null,"employee_count","employee_count",2542621616).cljs$core$IFn$_invoke$arity$1(G__32977));var G__32977__$2 = (((G__32977__$1 == null))?null:new cljs.core.Keyword(null,"total","total",1124454070).cljs$core$IFn$_invoke$arity$1(G__32977__$1));return G__32977__$2;
+})(),new cljs.core.Keyword(null,"dec","dec",1014003572),0,new cljs.core.Keyword(null,"default","default",2558708147),"-");if(cljs.core.map_QMARK_.call(null,attrs32971))
+{return React.DOM.li(sablono.interpreter.attributes.call(null,attrs32971),React.DOM.small(null,"Portfolio Company Employees"));
+} else
+{return React.DOM.li(null,sablono.interpreter.interpret.call(null,attrs32971),React.DOM.small(null,"Portfolio Company Employees"));
 }
 })()),sablono.interpreter.interpret.call(null,clustermap.components.map_report.full_report_button.call(null,self__.comm)));
 });
-clustermap.components.map_report.t22539.prototype.cljs$core$IMeta$_meta$arity$1 = (function (_22541){var self__ = this;
-var _22541__$1 = this;return self__.meta22540;
+clustermap.components.map_report.t32956.prototype.cljs$core$IMeta$_meta$arity$1 = (function (_32958){var self__ = this;
+var _32958__$1 = this;return self__.meta32957;
 });
-clustermap.components.map_report.t22539.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = (function (_22541,meta22540__$1){var self__ = this;
-var _22541__$1 = this;return (new clustermap.components.map_report.t22539(self__.pc_count,self__.ic_count,self__.const_count,self__.map__22538,self__.comm,self__.site_stats,self__.portfolio_company,self__.portfolio_company_report,meta22540__$1));
+clustermap.components.map_report.t32956.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = (function (_32958,meta32957__$1){var self__ = this;
+var _32958__$1 = this;return (new clustermap.components.map_report.t32956(self__.pc_count,self__.ic_count,self__.const_count,self__.map__32955,self__.comm,self__.site_stats,self__.portfolio_company,self__.portfolio_company_report,meta32957__$1));
 });
-clustermap.components.map_report.__GT_t22539 = (function __GT_t22539(pc_count__$1,ic_count__$1,const_count__$1,map__22538__$2,comm__$1,site_stats__$1,portfolio_company__$1,portfolio_company_report__$1,meta22540){return (new clustermap.components.map_report.t22539(pc_count__$1,ic_count__$1,const_count__$1,map__22538__$2,comm__$1,site_stats__$1,portfolio_company__$1,portfolio_company_report__$1,meta22540));
+clustermap.components.map_report.__GT_t32956 = (function __GT_t32956(pc_count__$1,ic_count__$1,const_count__$1,map__32955__$2,comm__$1,site_stats__$1,portfolio_company__$1,portfolio_company_report__$1,meta32957){return (new clustermap.components.map_report.t32956(pc_count__$1,ic_count__$1,const_count__$1,map__32955__$2,comm__$1,site_stats__$1,portfolio_company__$1,portfolio_company_report__$1,meta32957));
 });
 }
-return (new clustermap.components.map_report.t22539(pc_count,ic_count,const_count,map__22538__$1,comm,site_stats,portfolio_company,portfolio_company_report,null));
+return (new clustermap.components.map_report.t32956(pc_count,ic_count,const_count,map__32955__$1,comm,site_stats,portfolio_company,portfolio_company_report,null));
 });
-clustermap.components.map_report.investor_company_report = (function investor_company_report(investor_company,site_stats,comm){var map__22584 = clustermap.components.map_report.type_counts.call(null,site_stats);var map__22584__$1 = ((cljs.core.seq_QMARK_.call(null,map__22584))?cljs.core.apply.call(null,cljs.core.hash_map,map__22584):map__22584);var const_count = cljs.core.get.call(null,map__22584__$1,new cljs.core.Keyword(null,"const-count","const-count",1728788887));var ic_count = cljs.core.get.call(null,map__22584__$1,new cljs.core.Keyword(null,"ic-count","ic-count",2672077326));var pc_count = cljs.core.get.call(null,map__22584__$1,new cljs.core.Keyword(null,"pc-count","pc-count",1986847783));if(typeof clustermap.components.map_report.t22585 !== 'undefined')
+clustermap.components.map_report.investor_company_report = (function investor_company_report(investor_company,site_stats,comm){var map__33001 = clustermap.components.map_report.type_counts.call(null,site_stats);var map__33001__$1 = ((cljs.core.seq_QMARK_.call(null,map__33001))?cljs.core.apply.call(null,cljs.core.hash_map,map__33001):map__33001);var const_count = cljs.core.get.call(null,map__33001__$1,new cljs.core.Keyword(null,"const-count","const-count",1728788887));var ic_count = cljs.core.get.call(null,map__33001__$1,new cljs.core.Keyword(null,"ic-count","ic-count",2672077326));var pc_count = cljs.core.get.call(null,map__33001__$1,new cljs.core.Keyword(null,"pc-count","pc-count",1986847783));if(typeof clustermap.components.map_report.t33002 !== 'undefined')
 {} else
 {
 /**
 * @constructor
 */
-clustermap.components.map_report.t22585 = (function (pc_count,ic_count,const_count,map__22584,comm,site_stats,investor_company,investor_company_report,meta22586){
+clustermap.components.map_report.t33002 = (function (pc_count,ic_count,const_count,map__33001,comm,site_stats,investor_company,investor_company_report,meta33003){
 this.pc_count = pc_count;
 this.ic_count = ic_count;
 this.const_count = const_count;
-this.map__22584 = map__22584;
+this.map__33001 = map__33001;
 this.comm = comm;
 this.site_stats = site_stats;
 this.investor_company = investor_company;
 this.investor_company_report = investor_company_report;
-this.meta22586 = meta22586;
+this.meta33003 = meta33003;
 this.cljs$lang$protocol_mask$partition1$ = 0;
 this.cljs$lang$protocol_mask$partition0$ = 393216;
 })
-clustermap.components.map_report.t22585.cljs$lang$type = true;
-clustermap.components.map_report.t22585.cljs$lang$ctorStr = "clustermap.components.map-report/t22585";
-clustermap.components.map_report.t22585.cljs$lang$ctorPrWriter = (function (this__3968__auto__,writer__3969__auto__,opt__3970__auto__){return cljs.core._write.call(null,writer__3969__auto__,"clustermap.components.map-report/t22585");
+clustermap.components.map_report.t33002.cljs$lang$type = true;
+clustermap.components.map_report.t33002.cljs$lang$ctorStr = "clustermap.components.map-report/t33002";
+clustermap.components.map_report.t33002.cljs$lang$ctorPrWriter = (function (this__3968__auto__,writer__3969__auto__,opt__3970__auto__){return cljs.core._write.call(null,writer__3969__auto__,"clustermap.components.map-report/t33002");
 });
-clustermap.components.map_report.t22585.prototype.om$core$IRender$ = true;
-clustermap.components.map_report.t22585.prototype.om$core$IRender$render$arity$1 = (function (this__9212__auto__){var self__ = this;
-var this__9212__auto____$1 = this;return React.DOM.div(null,React.DOM.header({"className": "secondary"},(function (){var attrs22588 = new cljs.core.Keyword(null,"name","name",1017277949).cljs$core$IFn$_invoke$arity$1(self__.investor_company);if(cljs.core.map_QMARK_.call(null,attrs22588))
-{return React.DOM.h2(sablono.interpreter.attributes.call(null,attrs22588),null);
+clustermap.components.map_report.t33002.prototype.om$core$IRender$ = true;
+clustermap.components.map_report.t33002.prototype.om$core$IRender$render$arity$1 = (function (this__9212__auto__){var self__ = this;
+var this__9212__auto____$1 = this;return React.DOM.div(null,React.DOM.header({"className": "secondary"},(function (){var attrs33005 = new cljs.core.Keyword(null,"name","name",1017277949).cljs$core$IFn$_invoke$arity$1(self__.investor_company);if(cljs.core.map_QMARK_.call(null,attrs33005))
+{return React.DOM.h2(sablono.interpreter.attributes.call(null,attrs33005),null);
 } else
-{return React.DOM.h2(null,sablono.interpreter.interpret.call(null,attrs22588));
+{return React.DOM.h2(null,sablono.interpreter.interpret.call(null,attrs33005));
 }
-})()),React.DOM.ul(null,(function (){var attrs22589 = clustermap.formats.number.fnum.call(null,self__.pc_count);if(cljs.core.map_QMARK_.call(null,attrs22589))
-{return React.DOM.li(sablono.interpreter.attributes.call(null,attrs22589),(function (){var attrs22590 = clustermap.formats.string.pluralize.call(null,self__.pc_count,"Portfolio Company","Portfolio Companies");if(cljs.core.map_QMARK_.call(null,attrs22590))
-{return React.DOM.small(sablono.interpreter.attributes.call(null,attrs22590),null);
+})()),React.DOM.ul(null,(function (){var attrs33006 = clustermap.formats.number.fnum.call(null,self__.pc_count);if(cljs.core.map_QMARK_.call(null,attrs33006))
+{return React.DOM.li(sablono.interpreter.attributes.call(null,attrs33006),(function (){var attrs33007 = clustermap.formats.string.pluralize.call(null,self__.pc_count,"Portfolio Company","Portfolio Companies");if(cljs.core.map_QMARK_.call(null,attrs33007))
+{return React.DOM.small(sablono.interpreter.attributes.call(null,attrs33007),null);
 } else
-{return React.DOM.small(null,sablono.interpreter.interpret.call(null,attrs22590));
-}
-})());
-} else
-{return React.DOM.li(null,sablono.interpreter.interpret.call(null,attrs22589),(function (){var attrs22591 = clustermap.formats.string.pluralize.call(null,self__.pc_count,"Portfolio Company","Portfolio Companies");if(cljs.core.map_QMARK_.call(null,attrs22591))
-{return React.DOM.small(sablono.interpreter.attributes.call(null,attrs22591),null);
-} else
-{return React.DOM.small(null,sablono.interpreter.interpret.call(null,attrs22591));
-}
-})());
-}
-})(),(function (){var attrs22592 = clustermap.formats.number.fnum.call(null,self__.const_count);if(cljs.core.map_QMARK_.call(null,attrs22592))
-{return React.DOM.li(sablono.interpreter.attributes.call(null,attrs22592),(function (){var attrs22593 = clustermap.formats.string.pluralize.call(null,self__.const_count,"Constituency","Constituencies");if(cljs.core.map_QMARK_.call(null,attrs22593))
-{return React.DOM.small(sablono.interpreter.attributes.call(null,attrs22593),null);
-} else
-{return React.DOM.small(null,sablono.interpreter.interpret.call(null,attrs22593));
+{return React.DOM.small(null,sablono.interpreter.interpret.call(null,attrs33007));
 }
 })());
 } else
-{return React.DOM.li(null,sablono.interpreter.interpret.call(null,attrs22592),(function (){var attrs22594 = clustermap.formats.string.pluralize.call(null,self__.const_count,"Constituency","Constituencies");if(cljs.core.map_QMARK_.call(null,attrs22594))
-{return React.DOM.small(sablono.interpreter.attributes.call(null,attrs22594),null);
+{return React.DOM.li(null,sablono.interpreter.interpret.call(null,attrs33006),(function (){var attrs33008 = clustermap.formats.string.pluralize.call(null,self__.pc_count,"Portfolio Company","Portfolio Companies");if(cljs.core.map_QMARK_.call(null,attrs33008))
+{return React.DOM.small(sablono.interpreter.attributes.call(null,attrs33008),null);
 } else
-{return React.DOM.small(null,sablono.interpreter.interpret.call(null,attrs22594));
+{return React.DOM.small(null,sablono.interpreter.interpret.call(null,attrs33008));
 }
 })());
 }
-})(),(function (){var attrs22595 = clustermap.formats.money.fmoney.call(null,(function (){var G__22605 = self__.site_stats;var G__22605__$1 = (((G__22605 == null))?null:new cljs.core.Keyword(null,"turnover","turnover",1148922435).cljs$core$IFn$_invoke$arity$1(G__22605));var G__22605__$2 = (((G__22605__$1 == null))?null:new cljs.core.Keyword(null,"total","total",1124454070).cljs$core$IFn$_invoke$arity$1(G__22605__$1));return G__22605__$2;
-})(),new cljs.core.Keyword(null,"sf","sf",1013907909),2,new cljs.core.Keyword(null,"default","default",2558708147),"-");if(cljs.core.map_QMARK_.call(null,attrs22595))
-{return React.DOM.li(sablono.interpreter.attributes.call(null,attrs22595),React.DOM.small(null,"Portfolio Company Turnover"));
+})(),(function (){var attrs33009 = clustermap.formats.number.fnum.call(null,self__.const_count);if(cljs.core.map_QMARK_.call(null,attrs33009))
+{return React.DOM.li(sablono.interpreter.attributes.call(null,attrs33009),(function (){var attrs33010 = clustermap.formats.string.pluralize.call(null,self__.const_count,"Constituency","Constituencies");if(cljs.core.map_QMARK_.call(null,attrs33010))
+{return React.DOM.small(sablono.interpreter.attributes.call(null,attrs33010),null);
 } else
-{return React.DOM.li(null,sablono.interpreter.interpret.call(null,attrs22595),React.DOM.small(null,"Portfolio Company Turnover"));
+{return React.DOM.small(null,sablono.interpreter.interpret.call(null,attrs33010));
 }
-})(),(function (){var attrs22600 = clustermap.formats.number.fnum.call(null,(function (){var G__22606 = self__.site_stats;var G__22606__$1 = (((G__22606 == null))?null:new cljs.core.Keyword(null,"employee_count","employee_count",2542621616).cljs$core$IFn$_invoke$arity$1(G__22606));var G__22606__$2 = (((G__22606__$1 == null))?null:new cljs.core.Keyword(null,"total","total",1124454070).cljs$core$IFn$_invoke$arity$1(G__22606__$1));return G__22606__$2;
-})(),new cljs.core.Keyword(null,"dec","dec",1014003572),0,new cljs.core.Keyword(null,"default","default",2558708147),"-");if(cljs.core.map_QMARK_.call(null,attrs22600))
-{return React.DOM.li(sablono.interpreter.attributes.call(null,attrs22600),React.DOM.small(null,"Portfolio Company Employees"));
+})());
 } else
-{return React.DOM.li(null,sablono.interpreter.interpret.call(null,attrs22600),React.DOM.small(null,"Portfolio Company Employees"));
+{return React.DOM.li(null,sablono.interpreter.interpret.call(null,attrs33009),(function (){var attrs33011 = clustermap.formats.string.pluralize.call(null,self__.const_count,"Constituency","Constituencies");if(cljs.core.map_QMARK_.call(null,attrs33011))
+{return React.DOM.small(sablono.interpreter.attributes.call(null,attrs33011),null);
+} else
+{return React.DOM.small(null,sablono.interpreter.interpret.call(null,attrs33011));
+}
+})());
+}
+})(),(function (){var attrs33012 = clustermap.formats.money.fmoney.call(null,(function (){var G__33022 = self__.site_stats;var G__33022__$1 = (((G__33022 == null))?null:new cljs.core.Keyword(null,"turnover","turnover",1148922435).cljs$core$IFn$_invoke$arity$1(G__33022));var G__33022__$2 = (((G__33022__$1 == null))?null:new cljs.core.Keyword(null,"total","total",1124454070).cljs$core$IFn$_invoke$arity$1(G__33022__$1));return G__33022__$2;
+})(),new cljs.core.Keyword(null,"sf","sf",1013907909),2,new cljs.core.Keyword(null,"default","default",2558708147),"-");if(cljs.core.map_QMARK_.call(null,attrs33012))
+{return React.DOM.li(sablono.interpreter.attributes.call(null,attrs33012),React.DOM.small(null,"Portfolio Company Turnover"));
+} else
+{return React.DOM.li(null,sablono.interpreter.interpret.call(null,attrs33012),React.DOM.small(null,"Portfolio Company Turnover"));
+}
+})(),(function (){var attrs33017 = clustermap.formats.number.fnum.call(null,(function (){var G__33023 = self__.site_stats;var G__33023__$1 = (((G__33023 == null))?null:new cljs.core.Keyword(null,"employee_count","employee_count",2542621616).cljs$core$IFn$_invoke$arity$1(G__33023));var G__33023__$2 = (((G__33023__$1 == null))?null:new cljs.core.Keyword(null,"total","total",1124454070).cljs$core$IFn$_invoke$arity$1(G__33023__$1));return G__33023__$2;
+})(),new cljs.core.Keyword(null,"dec","dec",1014003572),0,new cljs.core.Keyword(null,"default","default",2558708147),"-");if(cljs.core.map_QMARK_.call(null,attrs33017))
+{return React.DOM.li(sablono.interpreter.attributes.call(null,attrs33017),React.DOM.small(null,"Portfolio Company Employees"));
+} else
+{return React.DOM.li(null,sablono.interpreter.interpret.call(null,attrs33017),React.DOM.small(null,"Portfolio Company Employees"));
 }
 })()),sablono.interpreter.interpret.call(null,clustermap.components.map_report.full_report_button.call(null,self__.comm)));
 });
-clustermap.components.map_report.t22585.prototype.cljs$core$IMeta$_meta$arity$1 = (function (_22587){var self__ = this;
-var _22587__$1 = this;return self__.meta22586;
+clustermap.components.map_report.t33002.prototype.cljs$core$IMeta$_meta$arity$1 = (function (_33004){var self__ = this;
+var _33004__$1 = this;return self__.meta33003;
 });
-clustermap.components.map_report.t22585.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = (function (_22587,meta22586__$1){var self__ = this;
-var _22587__$1 = this;return (new clustermap.components.map_report.t22585(self__.pc_count,self__.ic_count,self__.const_count,self__.map__22584,self__.comm,self__.site_stats,self__.investor_company,self__.investor_company_report,meta22586__$1));
+clustermap.components.map_report.t33002.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = (function (_33004,meta33003__$1){var self__ = this;
+var _33004__$1 = this;return (new clustermap.components.map_report.t33002(self__.pc_count,self__.ic_count,self__.const_count,self__.map__33001,self__.comm,self__.site_stats,self__.investor_company,self__.investor_company_report,meta33003__$1));
 });
-clustermap.components.map_report.__GT_t22585 = (function __GT_t22585(pc_count__$1,ic_count__$1,const_count__$1,map__22584__$2,comm__$1,site_stats__$1,investor_company__$1,investor_company_report__$1,meta22586){return (new clustermap.components.map_report.t22585(pc_count__$1,ic_count__$1,const_count__$1,map__22584__$2,comm__$1,site_stats__$1,investor_company__$1,investor_company_report__$1,meta22586));
+clustermap.components.map_report.__GT_t33002 = (function __GT_t33002(pc_count__$1,ic_count__$1,const_count__$1,map__33001__$2,comm__$1,site_stats__$1,investor_company__$1,investor_company_report__$1,meta33003){return (new clustermap.components.map_report.t33002(pc_count__$1,ic_count__$1,const_count__$1,map__33001__$2,comm__$1,site_stats__$1,investor_company__$1,investor_company_report__$1,meta33003));
 });
 }
-return (new clustermap.components.map_report.t22585(pc_count,ic_count,const_count,map__22584__$1,comm,site_stats,investor_company,investor_company_report,null));
+return (new clustermap.components.map_report.t33002(pc_count,ic_count,const_count,map__33001__$1,comm,site_stats,investor_company,investor_company_report,null));
 });
-clustermap.components.map_report.constituency_report = (function constituency_report(constituency,site_stats,comm){var map__22631 = clustermap.components.map_report.type_counts.call(null,site_stats);var map__22631__$1 = ((cljs.core.seq_QMARK_.call(null,map__22631))?cljs.core.apply.call(null,cljs.core.hash_map,map__22631):map__22631);var const_count = cljs.core.get.call(null,map__22631__$1,new cljs.core.Keyword(null,"const-count","const-count",1728788887));var ic_count = cljs.core.get.call(null,map__22631__$1,new cljs.core.Keyword(null,"ic-count","ic-count",2672077326));var pc_count = cljs.core.get.call(null,map__22631__$1,new cljs.core.Keyword(null,"pc-count","pc-count",1986847783));if(typeof clustermap.components.map_report.t22632 !== 'undefined')
+clustermap.components.map_report.constituency_report = (function constituency_report(constituency,site_stats,comm){var map__33048 = clustermap.components.map_report.type_counts.call(null,site_stats);var map__33048__$1 = ((cljs.core.seq_QMARK_.call(null,map__33048))?cljs.core.apply.call(null,cljs.core.hash_map,map__33048):map__33048);var const_count = cljs.core.get.call(null,map__33048__$1,new cljs.core.Keyword(null,"const-count","const-count",1728788887));var ic_count = cljs.core.get.call(null,map__33048__$1,new cljs.core.Keyword(null,"ic-count","ic-count",2672077326));var pc_count = cljs.core.get.call(null,map__33048__$1,new cljs.core.Keyword(null,"pc-count","pc-count",1986847783));if(typeof clustermap.components.map_report.t33049 !== 'undefined')
 {} else
 {
 /**
 * @constructor
 */
-clustermap.components.map_report.t22632 = (function (pc_count,ic_count,const_count,map__22631,comm,site_stats,constituency,constituency_report,meta22633){
+clustermap.components.map_report.t33049 = (function (pc_count,ic_count,const_count,map__33048,comm,site_stats,constituency,constituency_report,meta33050){
 this.pc_count = pc_count;
 this.ic_count = ic_count;
 this.const_count = const_count;
-this.map__22631 = map__22631;
+this.map__33048 = map__33048;
 this.comm = comm;
 this.site_stats = site_stats;
 this.constituency = constituency;
 this.constituency_report = constituency_report;
-this.meta22633 = meta22633;
+this.meta33050 = meta33050;
 this.cljs$lang$protocol_mask$partition1$ = 0;
 this.cljs$lang$protocol_mask$partition0$ = 393216;
 })
-clustermap.components.map_report.t22632.cljs$lang$type = true;
-clustermap.components.map_report.t22632.cljs$lang$ctorStr = "clustermap.components.map-report/t22632";
-clustermap.components.map_report.t22632.cljs$lang$ctorPrWriter = (function (this__3968__auto__,writer__3969__auto__,opt__3970__auto__){return cljs.core._write.call(null,writer__3969__auto__,"clustermap.components.map-report/t22632");
+clustermap.components.map_report.t33049.cljs$lang$type = true;
+clustermap.components.map_report.t33049.cljs$lang$ctorStr = "clustermap.components.map-report/t33049";
+clustermap.components.map_report.t33049.cljs$lang$ctorPrWriter = (function (this__3968__auto__,writer__3969__auto__,opt__3970__auto__){return cljs.core._write.call(null,writer__3969__auto__,"clustermap.components.map-report/t33049");
 });
-clustermap.components.map_report.t22632.prototype.om$core$IRender$ = true;
-clustermap.components.map_report.t22632.prototype.om$core$IRender$render$arity$1 = (function (this__9212__auto__){var self__ = this;
-var this__9212__auto____$1 = this;return React.DOM.div(null,React.DOM.header({"className": "secondary"},(function (){var attrs22635 = new cljs.core.Keyword(null,"name","name",1017277949).cljs$core$IFn$_invoke$arity$1(self__.constituency);if(cljs.core.map_QMARK_.call(null,attrs22635))
-{return React.DOM.h2(sablono.interpreter.attributes.call(null,attrs22635),null);
+clustermap.components.map_report.t33049.prototype.om$core$IRender$ = true;
+clustermap.components.map_report.t33049.prototype.om$core$IRender$render$arity$1 = (function (this__9212__auto__){var self__ = this;
+var this__9212__auto____$1 = this;return React.DOM.div(null,React.DOM.header({"className": "secondary"},(function (){var attrs33052 = new cljs.core.Keyword(null,"name","name",1017277949).cljs$core$IFn$_invoke$arity$1(self__.constituency);if(cljs.core.map_QMARK_.call(null,attrs33052))
+{return React.DOM.h2(sablono.interpreter.attributes.call(null,attrs33052),null);
 } else
-{return React.DOM.h2(null,sablono.interpreter.interpret.call(null,attrs22635));
+{return React.DOM.h2(null,sablono.interpreter.interpret.call(null,attrs33052));
 }
-})(),(function (){var attrs22636 = new cljs.core.Keyword(null,"mp","mp",1013907733).cljs$core$IFn$_invoke$arity$1(self__.constituency);if(cljs.core.map_QMARK_.call(null,attrs22636))
-{return React.DOM.h3(sablono.interpreter.attributes.call(null,attrs22636),React.DOM.small(null,"(",sablono.interpreter.interpret.call(null,new cljs.core.Keyword(null,"political_party","political_party",2564439702).cljs$core$IFn$_invoke$arity$1(self__.constituency)),")"));
+})(),(function (){var attrs33053 = new cljs.core.Keyword(null,"mp","mp",1013907733).cljs$core$IFn$_invoke$arity$1(self__.constituency);if(cljs.core.map_QMARK_.call(null,attrs33053))
+{return React.DOM.h3(sablono.interpreter.attributes.call(null,attrs33053),React.DOM.small(null,"(",sablono.interpreter.interpret.call(null,new cljs.core.Keyword(null,"political_party","political_party",2564439702).cljs$core$IFn$_invoke$arity$1(self__.constituency)),")"));
 } else
-{return React.DOM.h3(null,sablono.interpreter.interpret.call(null,attrs22636),React.DOM.small(null,"(",sablono.interpreter.interpret.call(null,new cljs.core.Keyword(null,"political_party","political_party",2564439702).cljs$core$IFn$_invoke$arity$1(self__.constituency)),")"));
+{return React.DOM.h3(null,sablono.interpreter.interpret.call(null,attrs33053),React.DOM.small(null,"(",sablono.interpreter.interpret.call(null,new cljs.core.Keyword(null,"political_party","political_party",2564439702).cljs$core$IFn$_invoke$arity$1(self__.constituency)),")"));
 }
-})()),React.DOM.ul(null,(function (){var attrs22637 = clustermap.formats.number.fnum.call(null,self__.pc_count);if(cljs.core.map_QMARK_.call(null,attrs22637))
-{return React.DOM.li(sablono.interpreter.attributes.call(null,attrs22637),(function (){var attrs22638 = clustermap.formats.string.pluralize.call(null,self__.pc_count,"Portfolio Company","Portfolio Companies");if(cljs.core.map_QMARK_.call(null,attrs22638))
-{return React.DOM.small(sablono.interpreter.attributes.call(null,attrs22638),null);
+})()),React.DOM.ul(null,(function (){var attrs33054 = clustermap.formats.number.fnum.call(null,self__.pc_count);if(cljs.core.map_QMARK_.call(null,attrs33054))
+{return React.DOM.li(sablono.interpreter.attributes.call(null,attrs33054),(function (){var attrs33055 = clustermap.formats.string.pluralize.call(null,self__.pc_count,"Portfolio Company","Portfolio Companies");if(cljs.core.map_QMARK_.call(null,attrs33055))
+{return React.DOM.small(sablono.interpreter.attributes.call(null,attrs33055),null);
 } else
-{return React.DOM.small(null,sablono.interpreter.interpret.call(null,attrs22638));
-}
-})());
-} else
-{return React.DOM.li(null,sablono.interpreter.interpret.call(null,attrs22637),(function (){var attrs22639 = clustermap.formats.string.pluralize.call(null,self__.pc_count,"Portfolio Company","Portfolio Companies");if(cljs.core.map_QMARK_.call(null,attrs22639))
-{return React.DOM.small(sablono.interpreter.attributes.call(null,attrs22639),null);
-} else
-{return React.DOM.small(null,sablono.interpreter.interpret.call(null,attrs22639));
-}
-})());
-}
-})(),(function (){var attrs22640 = clustermap.formats.number.fnum.call(null,self__.ic_count);if(cljs.core.map_QMARK_.call(null,attrs22640))
-{return React.DOM.li(sablono.interpreter.attributes.call(null,attrs22640),(function (){var attrs22641 = clustermap.formats.string.pluralize.call(null,self__.ic_count,"Investor");if(cljs.core.map_QMARK_.call(null,attrs22641))
-{return React.DOM.small(sablono.interpreter.attributes.call(null,attrs22641),null);
-} else
-{return React.DOM.small(null,sablono.interpreter.interpret.call(null,attrs22641));
+{return React.DOM.small(null,sablono.interpreter.interpret.call(null,attrs33055));
 }
 })());
 } else
-{return React.DOM.li(null,sablono.interpreter.interpret.call(null,attrs22640),(function (){var attrs22642 = clustermap.formats.string.pluralize.call(null,self__.ic_count,"Investor");if(cljs.core.map_QMARK_.call(null,attrs22642))
-{return React.DOM.small(sablono.interpreter.attributes.call(null,attrs22642),null);
+{return React.DOM.li(null,sablono.interpreter.interpret.call(null,attrs33054),(function (){var attrs33056 = clustermap.formats.string.pluralize.call(null,self__.pc_count,"Portfolio Company","Portfolio Companies");if(cljs.core.map_QMARK_.call(null,attrs33056))
+{return React.DOM.small(sablono.interpreter.attributes.call(null,attrs33056),null);
 } else
-{return React.DOM.small(null,sablono.interpreter.interpret.call(null,attrs22642));
+{return React.DOM.small(null,sablono.interpreter.interpret.call(null,attrs33056));
 }
 })());
 }
-})(),(function (){var attrs22643 = clustermap.formats.money.fmoney.call(null,(function (){var G__22653 = self__.site_stats;var G__22653__$1 = (((G__22653 == null))?null:new cljs.core.Keyword(null,"turnover","turnover",1148922435).cljs$core$IFn$_invoke$arity$1(G__22653));var G__22653__$2 = (((G__22653__$1 == null))?null:new cljs.core.Keyword(null,"total","total",1124454070).cljs$core$IFn$_invoke$arity$1(G__22653__$1));return G__22653__$2;
-})(),new cljs.core.Keyword(null,"sf","sf",1013907909),2,new cljs.core.Keyword(null,"default","default",2558708147),"-");if(cljs.core.map_QMARK_.call(null,attrs22643))
-{return React.DOM.li(sablono.interpreter.attributes.call(null,attrs22643),React.DOM.small(null,"Portfolio Company Turnover"));
+})(),(function (){var attrs33057 = clustermap.formats.number.fnum.call(null,self__.ic_count);if(cljs.core.map_QMARK_.call(null,attrs33057))
+{return React.DOM.li(sablono.interpreter.attributes.call(null,attrs33057),(function (){var attrs33058 = clustermap.formats.string.pluralize.call(null,self__.ic_count,"Investor");if(cljs.core.map_QMARK_.call(null,attrs33058))
+{return React.DOM.small(sablono.interpreter.attributes.call(null,attrs33058),null);
 } else
-{return React.DOM.li(null,sablono.interpreter.interpret.call(null,attrs22643),React.DOM.small(null,"Portfolio Company Turnover"));
+{return React.DOM.small(null,sablono.interpreter.interpret.call(null,attrs33058));
 }
-})(),(function (){var attrs22648 = clustermap.formats.number.fnum.call(null,(function (){var G__22654 = self__.site_stats;var G__22654__$1 = (((G__22654 == null))?null:new cljs.core.Keyword(null,"employee_count","employee_count",2542621616).cljs$core$IFn$_invoke$arity$1(G__22654));var G__22654__$2 = (((G__22654__$1 == null))?null:new cljs.core.Keyword(null,"total","total",1124454070).cljs$core$IFn$_invoke$arity$1(G__22654__$1));return G__22654__$2;
-})(),new cljs.core.Keyword(null,"dec","dec",1014003572),0,new cljs.core.Keyword(null,"default","default",2558708147),"-");if(cljs.core.map_QMARK_.call(null,attrs22648))
-{return React.DOM.li(sablono.interpreter.attributes.call(null,attrs22648),React.DOM.small(null,"Portfolio Company Employees"));
+})());
 } else
-{return React.DOM.li(null,sablono.interpreter.interpret.call(null,attrs22648),React.DOM.small(null,"Portfolio Company Employees"));
+{return React.DOM.li(null,sablono.interpreter.interpret.call(null,attrs33057),(function (){var attrs33059 = clustermap.formats.string.pluralize.call(null,self__.ic_count,"Investor");if(cljs.core.map_QMARK_.call(null,attrs33059))
+{return React.DOM.small(sablono.interpreter.attributes.call(null,attrs33059),null);
+} else
+{return React.DOM.small(null,sablono.interpreter.interpret.call(null,attrs33059));
+}
+})());
+}
+})(),(function (){var attrs33060 = clustermap.formats.money.fmoney.call(null,(function (){var G__33070 = self__.site_stats;var G__33070__$1 = (((G__33070 == null))?null:new cljs.core.Keyword(null,"turnover","turnover",1148922435).cljs$core$IFn$_invoke$arity$1(G__33070));var G__33070__$2 = (((G__33070__$1 == null))?null:new cljs.core.Keyword(null,"total","total",1124454070).cljs$core$IFn$_invoke$arity$1(G__33070__$1));return G__33070__$2;
+})(),new cljs.core.Keyword(null,"sf","sf",1013907909),2,new cljs.core.Keyword(null,"default","default",2558708147),"-");if(cljs.core.map_QMARK_.call(null,attrs33060))
+{return React.DOM.li(sablono.interpreter.attributes.call(null,attrs33060),React.DOM.small(null,"Portfolio Company Turnover"));
+} else
+{return React.DOM.li(null,sablono.interpreter.interpret.call(null,attrs33060),React.DOM.small(null,"Portfolio Company Turnover"));
+}
+})(),(function (){var attrs33065 = clustermap.formats.number.fnum.call(null,(function (){var G__33071 = self__.site_stats;var G__33071__$1 = (((G__33071 == null))?null:new cljs.core.Keyword(null,"employee_count","employee_count",2542621616).cljs$core$IFn$_invoke$arity$1(G__33071));var G__33071__$2 = (((G__33071__$1 == null))?null:new cljs.core.Keyword(null,"total","total",1124454070).cljs$core$IFn$_invoke$arity$1(G__33071__$1));return G__33071__$2;
+})(),new cljs.core.Keyword(null,"dec","dec",1014003572),0,new cljs.core.Keyword(null,"default","default",2558708147),"-");if(cljs.core.map_QMARK_.call(null,attrs33065))
+{return React.DOM.li(sablono.interpreter.attributes.call(null,attrs33065),React.DOM.small(null,"Portfolio Company Employees"));
+} else
+{return React.DOM.li(null,sablono.interpreter.interpret.call(null,attrs33065),React.DOM.small(null,"Portfolio Company Employees"));
 }
 })()),sablono.interpreter.interpret.call(null,clustermap.components.map_report.full_report_button.call(null,self__.comm)));
 });
-clustermap.components.map_report.t22632.prototype.cljs$core$IMeta$_meta$arity$1 = (function (_22634){var self__ = this;
-var _22634__$1 = this;return self__.meta22633;
+clustermap.components.map_report.t33049.prototype.cljs$core$IMeta$_meta$arity$1 = (function (_33051){var self__ = this;
+var _33051__$1 = this;return self__.meta33050;
 });
-clustermap.components.map_report.t22632.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = (function (_22634,meta22633__$1){var self__ = this;
-var _22634__$1 = this;return (new clustermap.components.map_report.t22632(self__.pc_count,self__.ic_count,self__.const_count,self__.map__22631,self__.comm,self__.site_stats,self__.constituency,self__.constituency_report,meta22633__$1));
+clustermap.components.map_report.t33049.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = (function (_33051,meta33050__$1){var self__ = this;
+var _33051__$1 = this;return (new clustermap.components.map_report.t33049(self__.pc_count,self__.ic_count,self__.const_count,self__.map__33048,self__.comm,self__.site_stats,self__.constituency,self__.constituency_report,meta33050__$1));
 });
-clustermap.components.map_report.__GT_t22632 = (function __GT_t22632(pc_count__$1,ic_count__$1,const_count__$1,map__22631__$2,comm__$1,site_stats__$1,constituency__$1,constituency_report__$1,meta22633){return (new clustermap.components.map_report.t22632(pc_count__$1,ic_count__$1,const_count__$1,map__22631__$2,comm__$1,site_stats__$1,constituency__$1,constituency_report__$1,meta22633));
+clustermap.components.map_report.__GT_t33049 = (function __GT_t33049(pc_count__$1,ic_count__$1,const_count__$1,map__33048__$2,comm__$1,site_stats__$1,constituency__$1,constituency_report__$1,meta33050){return (new clustermap.components.map_report.t33049(pc_count__$1,ic_count__$1,const_count__$1,map__33048__$2,comm__$1,site_stats__$1,constituency__$1,constituency_report__$1,meta33050));
 });
 }
-return (new clustermap.components.map_report.t22632(pc_count,ic_count,const_count,map__22631__$1,comm,site_stats,constituency,constituency_report,null));
+return (new clustermap.components.map_report.t33049(pc_count,ic_count,const_count,map__33048__$1,comm,site_stats,constituency,constituency_report,null));
 });
-clustermap.components.map_report.map_report_component = (function map_report_component(data,owner){var comm = om.core.get_shared.call(null,owner,new cljs.core.Keyword(null,"comm","comm",1016963710));var type = cljs.core.get_in.call(null,data,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"selection","selection",3592905982),new cljs.core.Keyword(null,"type","type",1017479852)], null));var value = cljs.core.get_in.call(null,data,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"selection","selection",3592905982),new cljs.core.Keyword(null,"value","value",1125876963)], null));var site_stats = new cljs.core.Keyword(null,"selection-portfolio-company-site-stats","selection-portfolio-company-site-stats",2240402081).cljs$core$IFn$_invoke$arity$1(data);var pred__22658 = cljs.core._EQ__EQ_;var expr__22659 = type;if(cljs.core.truth_(pred__22658.call(null,new cljs.core.Keyword(null,"portfolio-company","portfolio-company",3606204522),expr__22659)))
+clustermap.components.map_report.map_report_component = (function map_report_component(data,owner){var comm = om.core.get_shared.call(null,owner,new cljs.core.Keyword(null,"comm","comm",1016963710));var type = cljs.core.get_in.call(null,data,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"selection","selection",3592905982),new cljs.core.Keyword(null,"type","type",1017479852)], null));var value = cljs.core.get_in.call(null,data,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"selection","selection",3592905982),new cljs.core.Keyword(null,"value","value",1125876963)], null));var site_stats = new cljs.core.Keyword(null,"selection-portfolio-company-site-stats","selection-portfolio-company-site-stats",2240402081).cljs$core$IFn$_invoke$arity$1(data);var pred__33075 = cljs.core._EQ__EQ_;var expr__33076 = type;if(cljs.core.truth_(pred__33075.call(null,new cljs.core.Keyword(null,"portfolio-company","portfolio-company",3606204522),expr__33076)))
 {return clustermap.components.map_report.portfolio_company_report.call(null,value,site_stats,comm);
 } else
-{if(cljs.core.truth_(pred__22658.call(null,new cljs.core.Keyword(null,"investor-company","investor-company",3983736762),expr__22659)))
+{if(cljs.core.truth_(pred__33075.call(null,new cljs.core.Keyword(null,"investor-company","investor-company",3983736762),expr__33076)))
 {return clustermap.components.map_report.investor_company_report.call(null,value,site_stats,comm);
 } else
-{if(cljs.core.truth_(pred__22658.call(null,new cljs.core.Keyword(null,"constituency","constituency",3902864696),expr__22659)))
+{if(cljs.core.truth_(pred__33075.call(null,new cljs.core.Keyword(null,"constituency","constituency",3902864696),expr__33076)))
 {return clustermap.components.map_report.constituency_report.call(null,value,site_stats,comm);
 } else
 {return clustermap.components.map_report.all_portfolio_companies_summary_report.call(null,site_stats,comm);

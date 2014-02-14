@@ -2163,21 +2163,7 @@ body.view-lists #search-results {
 }
 #main-header {
   background: #fff;
-}
-#main-header h2,
-#main-header h3 {
-  margin: 0 0 4px;
-  padding: 0 20px;
-}
-#main-header h2 {
-  font-size: 12px;
-  font-weight: normal;
-  font-style: italic;
-  line-height: 20px;
-}
-#main-header h3 {
-  margin: 0 0 6px;
-  line-height: 30px;
+  border-bottom: 1px solid #d9d9d9;
 }
 #search,
 #page-title {
@@ -2272,14 +2258,23 @@ body.view-lists #search-results {
 }
 #page-title {
   background: #f1f0ee;
-  padding: 4px 20px 0 0;
+  padding: 6px 20px;
+  min-height: 64px;
+}
+#page-title h2,
+#page-title h3 {
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 20px;
+  margin: 0;
+  padding: 2px 0;
 }
 #page-title h2 {
-  font-size: 14px;
+  font-style: italic;
 }
 #page-title button {
   float: right;
-  margin-top: 11px;
+  margin-top: 10px;
 }
 .div-scroll {
   position: relative;

@@ -3,6 +3,7 @@
             [om.dom :as dom :include-macros true]
             [sablono.core :refer [html] :include-macros true]
             [clustermap.om :as omu]
+            [clustermap.routes :as routes]
             [jayq.core :as jayq :refer [$]]
             [cljs.core.async :refer [put!]]))
 
@@ -13,27 +14,22 @@
 (def RIGHT_ARROW 39)
 (def DOWN_ARROW 40)
 
-(defn extract-id
-  [type obj]
-  (condp = type
-    :portfolio-company (:company_no obj)
-    :investor-company (:investor_company_uid obj)
-    :constituency (:boundaryline_id obj)
-    nil))
-
 (defn search-result-link
-  [search-result owner {:keys [comm type] :as opts}]
+  [search-result owner {:keys [comm type path-fn] :as opts}]
   (reify
     om/IRenderState
     (render-state [this state]
-      (html [:li {:class (when (:selected state) "selected")}
-             [:a {:ref "link"
-                  :onClick (fn [e]
-                             (let [l (om/get-node owner "link")]
-                               (some-> l $ (.parents ".search-component") .toggle)
-                               (put! comm [:select [type (extract-id type @search-result)]])))}
-              (search-result :name)
-              (if (:selected state) "*")]]))))
+      (let [path (path-fn type search-result)]
+        (html [:li {:class (when (:selected state) "selected")}
+               [:a {:href path
+                    :ref "link"
+                    :onClick (fn [e]
+                               (let [l (om/get-node owner "link")]
+                                 (some-> l $ (.parents ".search-component") .toggle)
+                                 ;; (put! comm [:select [type id]])
+                                 ))}
+                (search-result :name)
+                (if (:selected state) "*")]])))))
 
 (defn nth-search-result
   [{:keys [constituencies portfolio_companies investor_companies]} n]
@@ -63,7 +59,7 @@
 
 (defn search-component
   [search-results owner]
-  (let [comm (om/get-shared owner :comm)
+  (let [{:keys [comm path-fn]} (om/get-shared owner)
         {:keys [constituencies portfolio_companies investor_companies]} search-results]
     (reify
       om/IRenderState
@@ -100,7 +96,7 @@
                                         (into
                                          [(dom/li #js {:className "search-results-header"} "Constituencies")]
                                          (for [[idx con] idx-cons]
-                                           (om/build search-result-link con {:opts {:comm comm :type :constituency}
+                                           (om/build search-result-link con {:opts {:comm comm :path-fn path-fn :type :constituency}
                                                                              :state {:selected (= idx selected-idx)}
                                                                              :fn (fn [data] (assoc data :uid (str "constituency:" (get data :boundaryline_id))))
                                                                              :key :uid}))))
@@ -108,7 +104,7 @@
                                         (into
                                          [(dom/li #js {:className "search-results-header"} "Companies")]
                                          (for [[idx pc] idx-pcs]
-                                           (om/build search-result-link pc {:opts {:comm comm :type :portfolio-company}
+                                           (om/build search-result-link pc {:opts {:comm comm :path-fn path-fn :type :portfolio-company}
                                                                             :state {:selected (= idx selected-idx)}
                                                                             :fn (fn [data] (assoc data :uid (str "portfolio-company:" (get data :company_no))))
                                                                             :key :uid}))))
@@ -116,7 +112,7 @@
                                         (into
                                          [(dom/li #js {:className "search-results-header"} "Investors")]
                                          (for [[idx inv] idx-invs]
-                                           (om/build search-result-link inv {:opts {:comm comm :type :investor-company}
+                                           (om/build search-result-link inv {:opts {:comm comm :path-fn path-fn :type :investor-company}
                                                                              :state {:selected (= idx selected-idx)}
                                                                              :fn (fn [data] (assoc data :uid (str "investor-company:" (get data :investor_company_uid))))
                                                                              :key :uid}))))))))))

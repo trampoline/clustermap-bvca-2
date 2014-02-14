@@ -5,7 +5,7 @@ goog.require('sablono.util');
 goog.require('clojure.string');
 goog.require('sablono.util');
 goog.require('clojure.string');
-sablono.interpreter.IInterpreter = (function (){var obj26967 = {};return obj26967;
+sablono.interpreter.IInterpreter = (function (){var obj26943 = {};return obj26943;
 })();
 sablono.interpreter.interpret = (function interpret(this$){if((function (){var and__3394__auto__ = this$;if(and__3394__auto__)
 {return this$.sablono$interpreter$IInterpreter$interpret$arity$1;
@@ -55,7 +55,7 @@ return attrs__$1;
 /**
 * Render an element vector as a HTML element.
 */
-sablono.interpreter.element = (function element(element__$1){var vec__26969 = sablono.util.normalize_element(element__$1);var tag = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__26969,0,null);var attrs = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__26969,1,null);var content = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__26969,2,null);return sablono.interpreter.dom_fn(tag).call(null,sablono.interpreter.attributes(attrs),(((cljs.core.sequential_QMARK_(content)) && (typeof cljs.core.first(content) === 'string') && (cljs.core.empty_QMARK_(cljs.core.rest(content))))?sablono.interpreter.interpret(cljs.core.first(content)):(cljs.core.truth_(content)?sablono.interpreter.interpret(content):((cljs.core.constant$keyword$221)?null:null))));
+sablono.interpreter.element = (function element(element__$1){var vec__26945 = sablono.util.normalize_element(element__$1);var tag = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__26945,0,null);var attrs = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__26945,1,null);var content = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__26945,2,null);return sablono.interpreter.dom_fn(tag).call(null,sablono.interpreter.attributes(attrs),(((cljs.core.sequential_QMARK_(content)) && (typeof cljs.core.first(content) === 'string') && (cljs.core.empty_QMARK_(cljs.core.rest(content))))?sablono.interpreter.interpret(cljs.core.first(content)):(cljs.core.truth_(content)?sablono.interpreter.interpret(content):((cljs.core.constant$keyword$221)?null:null))));
 });
 sablono.interpreter.interpret_seq = (function interpret_seq(s){return cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.map.cljs$core$IFn$_invoke$arity$2(sablono.interpreter.interpret,s));
 });

@@ -1900,11 +1900,8 @@ body.view-lists #page-map {
 body.view-lists #page-lists {
   display: block;
 }
-body.view-lists #search .search-results {
+body.view-lists #search-results {
   position: absolute;
-  z-index: 10;
-  width: auto;
-  min-width: 50%;
 }
 #wrap {
   position: relative;

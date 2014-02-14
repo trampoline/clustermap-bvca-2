@@ -1,5 +1,6 @@
 (ns clustermap.components.map-report
   (:require [cljs.core.async :refer [put!]]
+            [domina.events :as events]
             [om.core :as om :include-macros true]
             [om.dom :as dom :include-macros true]
             [sablono.core :as html :refer [html] :include-macros true]
@@ -9,11 +10,10 @@
 
 (defn full-report-button
   [comm]
-  (html [:a {:href "#"
-             :onClick (fn [e] (put! comm [:change-view "lists"]))}
-         [:button.btn {:type "button"}
-          [:i.icon-lists-sm]
-          "Full report"]]))
+  (html [:button.btn {:type "button"
+                      :onClick (fn [e] (put! comm [:change-view "lists"]))}
+         [:i.icon-lists-sm]
+         "Full report"]))
 
 (defn type-counts
   [site-stats]

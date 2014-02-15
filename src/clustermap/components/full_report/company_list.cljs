@@ -30,6 +30,7 @@
      (html
       [:tr
        [:td (link-fn :portfolio-company site)]
+       [:td (:postcode site)]
        [:td (render-many-links link-fn company-path :investor-company (:investor_companies site))]
        [:td (render-many-links link-fn company-path :constituency (some->> site :boundarylines (filter (fn [bl] (= "uk_constituencies" (:collection_id bl))))))]
        [:td (fmoney (:latest_turnover site) :sf 2 :default "-") [:small "\u00A0(" (get-year (:latest_accounts_date site)) ")" ]]
@@ -49,6 +50,7 @@
            [:thead
             [:tr
              [:th "Portfolio Company"]
+             [:th "Postcode"]
              [:th "Investor"]
              [:th "Constituency"]
              [:th "Revenue"]

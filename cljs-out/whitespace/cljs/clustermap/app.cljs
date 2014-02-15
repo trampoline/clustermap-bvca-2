@@ -129,7 +129,7 @@
         (api/portfolio-company-stats selector)
         (api/portfolio-companies selector)
         (api/portfolio-company-site-stats selector)
-        nil ;; (api/portfolio-company-sites selector)
+        (api/portfolio-company-sites selector)
         (api/portfolio-company-site-account-timelines selector)
         nil ;; (api/portfolio-company-locations selector)
         ] type])))

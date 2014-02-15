@@ -112,7 +112,8 @@
 
 (defn portfolio-companies
   [& [type-ids]]
-  (GET (str "/api/" api-prefix "/portfolio-companies?sort={\"!latest_turnover\":\"desc\"}&" (map-json-params type-ids))))
+  (let [type-ids (merge {:sort {:!latest_turnover "desc"}})]
+    (GET (str "/api/" api-prefix "/portfolio-companies?" (map-json-params type-ids)))))
 
 (defn portfolio-company-stats
   [& [type-ids]]
@@ -128,7 +129,7 @@
 
 (defn portfolio-company-sites
   [& [type-ids]]
-  (let [type-ids (merge {:sort ["?boundarylinecolls.uk_constituencies"]} type-ids)]
+  (let [type-ids (merge {:size 100 :sort [{:!latest_turnover "desc"}]} type-ids)]
     (GET (str "/api/" api-prefix "/portfolio-company-sites?" (map-json-params type-ids)))))
 
 (defn portfolio-company-locations

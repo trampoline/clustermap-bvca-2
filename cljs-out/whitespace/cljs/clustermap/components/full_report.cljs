@@ -23,11 +23,11 @@
                (om/build overview/overview data {:opts {:comm comm} :react-key "overview"})
                (om/build charts/charts data {:opts {:comm comm} :react-key "details"})
                (if (single-company-selection? selector)
-                 (when (:selection-portfolio-companies data)
+                 (when (:selection-portfolio-company-sites data)
                    (om/build company-site-list/company-site-list (:selection-portfolio-company-sites data) {:opts {:comm comm :link-fn link-fn :path-fn path-fn}
                                                                                                             :react-key "selection-portfolio-companies"}))
-                 (when (:selection-portfolio-companies data)
-                   (om/build company-list/company-list (:selection-portfolio-companies data) {:opts {:comm comm :link-fn link-fn :path-fn path-fn}
+                 (when (:selection-portfolio-company-sites data)
+                   (om/build company-list/company-list (:selection-portfolio-company-sites data) {:opts {:comm comm :link-fn link-fn :path-fn path-fn}
                                                                                               :react-key "selection-portfolio-companies"})))]))
       om/IDidUpdate
       (did-update [this prev-props prev-state root-node]

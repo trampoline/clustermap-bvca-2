@@ -56,4 +56,4 @@
              [:th "Employees"]
              [:th {:colSpan "2"} "Emp. change"]]]
            [:tbody
-            (om/build-all portfolio-company-site (:records selection-portfolio-company-sites) {:key :portfolio_company_id :opts opts})]]]])))
+            (om/build-all portfolio-company-site (:records selection-portfolio-company-sites) {:key :portfolio_company_site_uid :opts opts})]]]])))

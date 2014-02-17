@@ -80,7 +80,7 @@ var this__9212__auto____$1 = this;return React.DOM.div({"id": "page-title"},Reac
 } else
 {return React.DOM.h3(null,sablono.interpreter.interpret.call(null,attrs12306));
 }
-})(),(cljs.core.truth_(self__.url)?React.DOM.a({"href": self__.url},sablono.interpreter.interpret.call(null,self__.url)):null));
+})(),(cljs.core.truth_(self__.url)?React.DOM.a({"href": self__.url, "target": "_blank"},sablono.interpreter.interpret.call(null,self__.url)):null));
 });
 clustermap.components.page_title.t12302.prototype.cljs$core$IMeta$_meta$arity$1 = (function (_12304){var self__ = this;
 var _12304__$1 = this;return self__.meta12303;

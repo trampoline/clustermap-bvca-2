@@ -27,7 +27,7 @@
              "View on map"]
             [:h2 (or type "All portfolio companies")]
             [:h3 (or name "UK wide")]
-            (if url [:a {:href url} url])]))))
+            (if url [:a {:href url :target "_blank"} url])]))))
 
 (defn mount
   [app-state elem-id shared]

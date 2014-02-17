@@ -11290,7 +11290,7 @@ var tq, vq = function uq(b, c) {
       c = b.name;
       c = q(c) ? c : "UK wide";
       return O(c) ? React.d.eb(X(c), null) : React.d.eb(null, V(c));
-    }(), q(b.url) ? React.d.ib({href:b.url}, V(b.url)) : null);
+    }(), q(b.url) ? React.d.ib({href:b.url, target:"_blank"}, V(b.url)) : null);
   }, tq.prototype.s = function() {
     return this.hg;
   }, tq.prototype.t = function(b, c) {

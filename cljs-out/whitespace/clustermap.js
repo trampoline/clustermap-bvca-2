@@ -48174,7 +48174,7 @@ clustermap.components.page_title.page_title_component = function page_title_comp
         } else {
           return React.DOM.h3(null, sablono.interpreter.interpret.call(null, attrs33248));
         }
-      }(), cljs.core.truth_(self__.url) ? React.DOM.a({"href":self__.url}, sablono.interpreter.interpret.call(null, self__.url)) : null);
+      }(), cljs.core.truth_(self__.url) ? React.DOM.a({"href":self__.url, "target":"_blank"}, sablono.interpreter.interpret.call(null, self__.url)) : null);
     };
     clustermap.components.page_title.t33244.prototype.cljs$core$IMeta$_meta$arity$1 = function(_33246) {
       var self__ = this;

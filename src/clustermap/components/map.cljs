@@ -76,8 +76,9 @@
          (map (fn [site]
                 ;; (.log js/console (clj->js site))
                 (hiccups/html
-                 [:li
-                  [:a {:href (path-fn :portfolio-company site)} (:name site)]]))))]))
+                 [:div.map-marker-popup-location-list
+                  [:li
+                   [:a {:href (path-fn :portfolio-company site)} (:name site)]]]))))]))
 
 (defn create-marker
   [path-fn leaflet-map location-sites]

@@ -45,7 +45,8 @@
     (om/component
      (html [:div
             [:header.secondary
-             [:h2 (:name portfolio-company)]]
+             [:h2 "Portfolio Company"]
+             [:h3 (:name portfolio-company)]]
             [:ul
              [:li (fnum ic-count) [:small (pluralize ic-count "Investor")]]
              [:li (fnum const-count) [:small (pluralize const-count "Constituency" "Constituencies")]]
@@ -59,7 +60,8 @@
     (om/component
      (html [:div
             [:header.secondary
-             [:h2 (:name investor-company)]]
+             [:h2 "Investor"]
+             [:h3 (:name investor-company)]]
             [:ul
              [:li (fnum pc-count) [:small (pluralize pc-count "Portfolio Company" "Portfolio Companies")]]
              [:li (fnum const-count) [:small (pluralize const-count "Constituency" "Constituencies")]]
@@ -73,9 +75,9 @@
     (om/component
      (html [:div
             [:header.secondary
-             [:h2 (:name constituency)]
-             [:h3 (:mp constituency)
-              [:small "(" (:political_party constituency) ")"]]]
+             [:h2 "Constituency"]
+             [:h3 (:name constituency)
+              [:small "(" (:mp constituency) ", " (:political_party constituency) ")"]]]
             [:ul
              [:li (fnum pc-count) [:small (pluralize pc-count "Portfolio Company" "Portfolio Companies")]]
              [:li (fnum ic-count) [:small (pluralize ic-count "Investor")]]

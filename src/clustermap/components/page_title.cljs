@@ -18,14 +18,16 @@
   [selection owner]
   (let [comm (om/get-shared owner :comm)
         type (some-> selection :type describe-type)
-        name (some-> selection :value :name)]
+        name (some-> selection :value :name)
+        url (some-> selection :value :web_url)]
     (om/component
      (html [:div#page-title
             [:button.btn {:type "button"
                           :onClick (fn [e] (put! comm [:change-view "map"]))}
              "View on map"]
             [:h2 (or type "All portfolio companies")]
-            [:h3 (or name "UK wide")]]))))
+            [:h3 (or name "UK wide")]
+            (if url [:a {:href url} url])]))))
 
 (defn mount
   [app-state elem-id shared]

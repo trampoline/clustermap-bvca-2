@@ -25,10 +25,7 @@
                     :ref "link"
                     :onClick (fn [e]
                                (let [l (om/get-node owner "link")]
-                                 (some-> l $ (.parents ".search-component") .toggle)
-                                 ;; (put! comm [:select [type id]])
-                                 ))
-                    }
+                                 (some-> l $ (.parents ".search-component") .toggle)))}
                 (search-result :name)
                 (if (:selected state) "*")]])))))
 
@@ -120,9 +117,7 @@
                      (om/build search-result-link inv {:opts {:comm comm :path-fn path-fn :type :investor-company}
                                                        :state {:selected (= idx selected-idx)}
                                                        :fn (fn [data] (assoc data :uid (str "investor-company:" (get data :investor_company_uid))))
-                                                       :key :uid}))))]]))
-          ])
-        ))))
+                                                       :key :uid}))))]]))])))))
 
 (defn mount
   [app-state elem-id shared]

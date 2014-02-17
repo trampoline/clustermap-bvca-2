@@ -57,7 +57,7 @@
     nil))
 
 (defn search-component
-  [search-results owner]
+  [{{selection-type :type selection-value :value} :selection search-results :search-results} owner]
   (let [{:keys [comm path-fn]} (om/get-shared owner)
         {:keys [constituencies portfolio_companies investor_companies]} search-results]
     (reify
@@ -80,10 +80,13 @@
                       :onClick (fn [e] (put! comm [:search ""])
                                  (set! (.-value (om/get-node owner "search-field")) ""))}
              "\u00D7"]]
-           [:div {:class "tbl-cell" :style {:width "136"}}
-            [:a {:href (path-fn nil nil)}
-             [:button {:class "btn-reset" :type "reset"}
-              "Reset to UK wide"]]]]
+           (if selection-value
+             [:div {:class "tbl-cell" :style {:width "136"}}
+              [:a {:href (path-fn nil nil)}
+               [:button {:class "btn-reset" :type "reset"
+                         :onClick (fn [e] (put! comm [:search ""])
+                                 (set! (.-value (om/get-node owner "search-field")) ""))}
+                "Reset to UK wide"]]])]
 
           (when (or (not-empty constituencies) (not-empty portfolio_companies) (not-empty investor_companies))
             (let [idx-cons (map vector (iterate inc 0) constituencies)
@@ -133,5 +136,5 @@
   [app-state elem-id shared]
   (om/root app-state
            shared
-           (omu/burrow search-component :search-results)
+           search-component
            (.getElementById js/document elem-id)))

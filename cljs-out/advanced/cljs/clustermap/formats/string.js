@@ -5,7 +5,7 @@ goog.require('cljs.core');
 * @param {...*} var_args
 */
 clustermap.formats.string.pluralize = (function() { 
-var pluralize__delegate = function (n,word,p__22943){var vec__22945 = p__22943;var irreg = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__22945,0,null);if((n === 1))
+var pluralize__delegate = function (n,word,p__22947){var vec__22949 = p__22947;var irreg = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__22949,0,null);if((n === 1))
 {return word;
 } else
 {var or__3406__auto__ = irreg;if(cljs.core.truth_(or__3406__auto__))
@@ -16,16 +16,16 @@ var pluralize__delegate = function (n,word,p__22943){var vec__22945 = p__22943;v
 }
 };
 var pluralize = function (n,word,var_args){
-var p__22943 = null;if (arguments.length > 2) {
-  p__22943 = cljs.core.array_seq(Array.prototype.slice.call(arguments, 2),0);} 
-return pluralize__delegate.call(this,n,word,p__22943);};
+var p__22947 = null;if (arguments.length > 2) {
+  p__22947 = cljs.core.array_seq(Array.prototype.slice.call(arguments, 2),0);} 
+return pluralize__delegate.call(this,n,word,p__22947);};
 pluralize.cljs$lang$maxFixedArity = 2;
-pluralize.cljs$lang$applyTo = (function (arglist__22946){
-var n = cljs.core.first(arglist__22946);
-arglist__22946 = cljs.core.next(arglist__22946);
-var word = cljs.core.first(arglist__22946);
-var p__22943 = cljs.core.rest(arglist__22946);
-return pluralize__delegate(n,word,p__22943);
+pluralize.cljs$lang$applyTo = (function (arglist__22950){
+var n = cljs.core.first(arglist__22950);
+arglist__22950 = cljs.core.next(arglist__22950);
+var word = cljs.core.first(arglist__22950);
+var p__22947 = cljs.core.rest(arglist__22950);
+return pluralize__delegate(n,word,p__22947);
 });
 pluralize.cljs$core$IFn$_invoke$arity$variadic = pluralize__delegate;
 return pluralize;

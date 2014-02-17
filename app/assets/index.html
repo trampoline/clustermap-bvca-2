@@ -31,13 +31,42 @@
     -->
   </head>
   <body class="view-map">
+    <div id="page-info" class="modal fade">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" data-dismiss="modal" aria-hidden="true" class="close">&times;</button>
+            <h4>
+              <BVCA>Private Equity Map</BVCA>
+            </h4>
+          </div>
+          <div class="modal-body">
+            <p>
+              Private equity and venture capital play a key role in the British economy.
+              Over the last five years £33bn has been invested in over 4,500 UK companies.
+              In 2012 alone £5.7bn was invested in over 800 businesses, employing the equivalent
+              of around 130,000 full time jobs. Around 90% of these were small and medium-sized
+              enterprises, a crucial component of economic health.
+            </p>
+            <p>
+              Many are unfamiliar with the work of private equity and venture capital and its
+              impact in their local community. To help address this the BVCA has produced the
+              Impact Map to demonstrate the industry’s role in supporting businesses across the country.
+            </p>
+            <p>This map is constantly updated. Please contact&ensp;<a href="mailto:communications@bvca.co.uk">communications@bvca.co.uk</a>&ensp;if you have any comments or questions. If you require further information about private
+              equity and venture capital in the UK please head to the&ensp;<a href="http://www.bvca.co.uk" class="no-rmargin">BVCA website here</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
     <div id="wrap">
       <aside id="nav">
         <ul>
           <li data-toggle="tooltip" data-placement="right" title="Search for a Constituency or Company" class="search"><a href="#">Search</a></li>
           <li data-toggle="tooltip" data-placement="right" title="View on map" class="map active"><a href="#">Map</a></li>
           <li data-toggle="tooltip" data-placement="right" title="View full report" class="lists"><a href="#">Full Report</a></li>
-          <li data-toggle="tooltip" data-placement="right" title="Information" class="info"><a href="#">Info</a></li>
+          <li data-toggle="tooltip" data-placement="right" title="More Information" class="info"><a data-toggle="modal" data-target="#page-info">Info</a></li>
           <li class="logo"><a href="http://www.bvca.co.uk">BVCA</a></li>
         </ul>
       </aside>

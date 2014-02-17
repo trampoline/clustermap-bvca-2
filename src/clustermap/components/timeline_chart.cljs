@@ -14,7 +14,9 @@
         y-mean (map :mean data)
         y-count (map :count data)
         yt (->> data (map :total) (map (fn [t] {:y t})))
-        y-total (into [] (concat (butlast yt) [(merge (last yt) {:color "#FF9900" :name "Not all data received for year"})]))]
+        ;; y-total (into [] (concat (butlast yt) [(merge (last yt) {:color "#FF9900" :name "Not all data received for year"})]))
+        y-total yt
+        ]
     (-> node
         $
         (.highcharts
@@ -24,8 +26,8 @@
            :xAxis {:categories x-labels
                    :labels {:rotation 270}}
            :yAxis [{:title {:text y0-title}}
-                   {:title {:text y1-title}
-                    :opposite true}]
+                   ;; {:title {:text y1-title} :opposite true}
+                   ]
            :series [{:name y0-title
                      :type "column"
                      :yAxis 0
@@ -34,10 +36,11 @@
                      :type "line"
                      :yAxis 0
                      :data y-mean}
-                    {:name y1-title
-                     :type "line"
-                     :yAxis 1
-                     :data y-count}]})))))
+                    ;; {:name y1-title
+                    ;;  :type "line"
+                    ;;  :yAxis 1
+                    ;;  :data y-count}
+                    ]})))))
 
 (defn timeline-chart
   [data owner opts]

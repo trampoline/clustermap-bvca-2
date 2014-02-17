@@ -34,13 +34,42 @@ html(lang='en')
       <script type="text/javascript">window.config={{{app-config}}}</script>
 
   body.view-map
+
+    #page-info.modal.fade
+      .modal-dialog
+        .modal-content
+          .modal-header
+            button.close(type='button' data-dismiss='modal' aria-hidden='true') &times;
+            h4
+              BVCA Private Equity Map
+          .modal-body
+            p.
+              Private equity and venture capital play a key role in the British economy.
+              Over the last five years £33bn has been invested in over 4,500 UK companies.
+              In 2012 alone £5.7bn was invested in over 800 businesses, employing the equivalent
+              of around 130,000 full time jobs. Around 90% of these were small and medium-sized
+              enterprises, a crucial component of economic health.
+            p.
+              Many are unfamiliar with the work of private equity and venture capital and its
+              impact in their local community. To help address this the BVCA has produced the
+              Impact Map to demonstrate the industry’s role in supporting businesses across the country.
+            p
+              | This map is constantly updated. Please contact&ensp;
+              a(href="mailto:communications@bvca.co.uk") communications@bvca.co.uk
+              | &ensp;if you have any comments or questions. If you require further information about private
+              | equity and venture capital in the UK please head to the&ensp;
+              a.no-rmargin(href="http://www.bvca.co.uk") BVCA website here
+              |.
+
+
     #wrap
       aside#nav
         ul
           li.search(data-toggle='tooltip' data-placement='right' title='Search for a Constituency or Company'): a(href='#') Search
           li.map.active(data-toggle='tooltip' data-placement='right' title='View on map'): a(href='#') Map
           li.lists(data-toggle='tooltip' data-placement='right' title='View full report'): a(href='#') Full Report
-          li.info(data-toggle='tooltip' data-placement='right' title='Information'): a(href='#') Info
+          li.info(data-blah='tooltip' data-placement='right' title='More Information')
+            a(data-toggle='modal' data-target='#page-info') Info
           li.logo: a(href='http://www.bvca.co.uk') BVCA
 
       section#main

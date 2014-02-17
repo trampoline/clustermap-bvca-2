@@ -1,0 +1,10 @@
+{"version":3,
+ "file":
+ "/Users/mccraig/dev/clustermap.all/clustermap-bvca-2/cljs-out/none/cljs/clustermap/model.js",
+ "sources":["model.cljs"],
+ "lineCount":19,
+ "mappings":
+ ";AAAA;;AAEA,8BAAA,+BAAA,7DAAMA,mDACHC,KAAKC,KACN,IAAAC,iCAAAC,mBAAA,AAAA,oBAAA,AAAAD,sBAAA,+EAAAC,/JAAOE,iCAAEL;CACY,OAAA,+FAAaC;;CADlC,oBAAA,AAAAC,sBAAA,6EAAAC;CAEoB,OAAA,mHAAuBF;;CAF3C,oBAAA,AAAAC,sBAAA,qEAAAC;CAGgB,OAAA,yGAAkBF;;CAHlC,MAAA,KAAAG,MAAA,eAAA,sCAAAD",
+ "names":
+ ["clustermap.model/extract-id", "type", "obj", "pred__12457",
+  "expr__12458", "js/Error", "cljs.core/="]}

@@ -5,7 +5,7 @@ goog.require('sablono.util');
 goog.require('clojure.string');
 goog.require('sablono.util');
 goog.require('clojure.string');
-sablono.interpreter.IInterpreter = (function (){var obj16542 = {};return obj16542;
+sablono.interpreter.IInterpreter = (function (){var obj16580 = {};return obj16580;
 })();
 sablono.interpreter.interpret = (function interpret(this$){if((function (){var and__3394__auto__ = this$;if(and__3394__auto__)
 {return this$.sablono$interpreter$IInterpreter$interpret$arity$1;
@@ -55,7 +55,7 @@ return attrs__$1;
 /**
 * Render an element vector as a HTML element.
 */
-sablono.interpreter.element = (function element(element__$1){var vec__16544 = sablono.util.normalize_element.call(null,element__$1);var tag = cljs.core.nth.call(null,vec__16544,0,null);var attrs = cljs.core.nth.call(null,vec__16544,1,null);var content = cljs.core.nth.call(null,vec__16544,2,null);return sablono.interpreter.dom_fn.call(null,tag).call(null,sablono.interpreter.attributes.call(null,attrs),(((cljs.core.sequential_QMARK_.call(null,content)) && (typeof cljs.core.first.call(null,content) === 'string') && (cljs.core.empty_QMARK_.call(null,cljs.core.rest.call(null,content))))?sablono.interpreter.interpret.call(null,cljs.core.first.call(null,content)):(cljs.core.truth_(content)?sablono.interpreter.interpret.call(null,content):((new cljs.core.Keyword(null,"else","else",1017020587))?null:null))));
+sablono.interpreter.element = (function element(element__$1){var vec__16582 = sablono.util.normalize_element.call(null,element__$1);var tag = cljs.core.nth.call(null,vec__16582,0,null);var attrs = cljs.core.nth.call(null,vec__16582,1,null);var content = cljs.core.nth.call(null,vec__16582,2,null);return sablono.interpreter.dom_fn.call(null,tag).call(null,sablono.interpreter.attributes.call(null,attrs),(((cljs.core.sequential_QMARK_.call(null,content)) && (typeof cljs.core.first.call(null,content) === 'string') && (cljs.core.empty_QMARK_.call(null,cljs.core.rest.call(null,content))))?sablono.interpreter.interpret.call(null,cljs.core.first.call(null,content)):(cljs.core.truth_(content)?sablono.interpreter.interpret.call(null,content):((new cljs.core.Keyword(null,"else","else",1017020587))?null:null))));
 });
 sablono.interpreter.interpret_seq = (function interpret_seq(s){return cljs.core.into_array.call(null,cljs.core.map.call(null,sablono.interpreter.interpret,s));
 });

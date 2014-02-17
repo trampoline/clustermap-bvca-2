@@ -39,7 +39,8 @@ goog.addDependency("../clojure/browser/event.js", ['clojure.browser.event'], ['c
 goog.addDependency("../clojure/browser/net.js", ['clojure.browser.net'], ['goog.net.xpc.CrossPageChannel', 'clojure.browser.event', 'goog.net.xpc.CfgFields', 'cljs.core', 'goog.net.EventType', 'goog.json', 'goog.net.XhrIo']);
 goog.addDependency("../clojure/browser/repl.js", ['clojure.browser.repl'], ['clojure.browser.event', 'clojure.browser.net', 'cljs.core']);
 goog.addDependency("../secretary/core.js", ['secretary.core'], ['cljs.core', 'clojure.string']);
-goog.addDependency("../clustermap/components/search.js", ['clustermap.components.search'], ['sablono.core', 'cljs.core', 'clustermap.routes', 'clustermap.om', 'om.core', 'om.dom', 'cljs.core.async', 'jayq.core']);
+goog.addDependency("../clustermap/model.js", ['clustermap.model'], ['cljs.core']);
+goog.addDependency("../clustermap/components/search.js", ['clustermap.components.search'], ['sablono.core', 'cljs.core', 'clustermap.routes', 'clustermap.om', 'om.core', 'clustermap.model', 'om.dom', 'cljs.core.async', 'jayq.core']);
 goog.addDependency("../domina/events.js", ['domina.events'], ['cljs.core', 'goog.object', 'domina', 'goog.events']);
 goog.addDependency("../domina/css.js", ['domina.css'], ['cljs.core', 'goog.dom', 'domina', 'goog.dom.query']);
 goog.addDependency("../clustermap/nav.js", ['clustermap.nav'], ['cljs.core', 'domina.events', 'domina.xpath', 'domina', 'cljs.core.async', 'domina.css', 'jayq.core']);

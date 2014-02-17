@@ -27,7 +27,8 @@
                                (let [l (om/get-node owner "link")]
                                  (some-> l $ (.parents ".search-component") .toggle)
                                  ;; (put! comm [:select [type id]])
-                                 ))}
+                                 ))
+                    }
                 (search-result :name)
                 (if (:selected state) "*")]])))))
 
@@ -64,59 +65,63 @@
     (reify
       om/IRenderState
       (render-state [this state]
-        (dom/div #js {:ref "search-component"
-                      :className "search-component"
-                      :id "search"
-                      :onKeyDown (fn [e] (key-down e search-results owner comm))}
-                 (dom/div #js {:className "tbl"}
-                          (dom/div #js {:className "tbl-cell" :style #js {:width "100%"}}
-                                   (dom/input #js {:ref "search-field"
-                                                   :type "text"
-                                                   :placeholder "Search"
-                                                   :onChange (fn [e]  (put! comm [:search (.. e -target -value)]))}))
-                          (dom/div #js {:className "tbl-cell" :style #js {:width "34"}}
-                                   (dom/button #js {:type "reset"
-                                                    :onClick (fn [e]
-                                                               (put! comm [:search ""])
-                                                               (set! (.-value (om/get-node owner "search-field")) ""))}
-                                               "\u00D7"))
-                          (dom/div #js {:className "tbl-cell" :style #js {:width "136"}}
-                                   (dom/a #js {:href (path-fn nil nil)}
-                                          (dom/button #js {:className "btn-reset" :type "reset"}
-                                                      "Reset to UK wide"))))
-                 (when (or (not-empty constituencies) (not-empty portfolio_companies) (not-empty investor_companies))
-                   (let [idx-cons (map vector (iterate inc 0) constituencies)
-                         idx-pcs (map vector (iterate inc (count idx-cons)) portfolio_companies)
-                         idx-invs (map vector (iterate inc (+ (count idx-cons) (count idx-pcs))) investor_companies)
-                         selected-idx (mod (or (:selected-idx state) 0) (+ (count idx-cons) (count idx-pcs) (count idx-invs)))
-                         _ (if (not= selected-idx (:selected-idx state)) (om/set-state! owner :selected-idx selected-idx))]
-                     (dom/div #js {:className "search-results"}
-                              (apply dom/ul #js {}
-                                     (concat
-                                      (when (not-empty idx-cons)
-                                        (into
-                                         [(dom/li #js {:className "search-results-header"} "Constituencies")]
-                                         (for [[idx con] idx-cons]
-                                           (om/build search-result-link con {:opts {:comm comm :path-fn path-fn :type :constituency}
-                                                                             :state {:selected (= idx selected-idx)}
-                                                                             :fn (fn [data] (assoc data :uid (str "constituency:" (get data :boundaryline_id))))
-                                                                             :key :uid}))))
-                                      (when (not-empty idx-pcs)
-                                        (into
-                                         [(dom/li #js {:className "search-results-header"} "Companies")]
-                                         (for [[idx pc] idx-pcs]
-                                           (om/build search-result-link pc {:opts {:comm comm :path-fn path-fn :type :portfolio-company}
-                                                                            :state {:selected (= idx selected-idx)}
-                                                                            :fn (fn [data] (assoc data :uid (str "portfolio-company:" (get data :company_no))))
-                                                                            :key :uid}))))
-                                      (when (not-empty idx-invs)
-                                        (into
-                                         [(dom/li #js {:className "search-results-header"} "Investors")]
-                                         (for [[idx inv] idx-invs]
-                                           (om/build search-result-link inv {:opts {:comm comm :path-fn path-fn :type :investor-company}
-                                                                             :state {:selected (= idx selected-idx)}
-                                                                             :fn (fn [data] (assoc data :uid (str "investor-company:" (get data :investor_company_uid))))
-                                                                             :key :uid}))))))))))
+        (html
+         [:div {:ref "search-component"
+                :class "search-component"
+                :id "search"
+                :onKeyDown (fn [e] (key-down e search-results owner comm))}
+
+          [:div {:class "tbl"}
+           [:div {:class "tbl-cell" :style {:width "100%"}}
+            [:input {:ref "search-field"
+                     :type "text"
+                     :placeholder "Search"
+                     :onChange (fn [e]  (put! comm [:search (.. e -target -value)]))}]]
+           [:div {:class "tbl-cell" :style {:width "34"}}
+            [:button {:type "reset"
+                      :onClick (fn [e] (put! comm [:search ""])
+                                 (set! (.-value (om/get-node owner "search-field")) ""))}
+             "\u00D7"]]
+           [:div {:class "tbl-cell" :style {:width "136"}}
+            [:a {:href (path-fn nil nil)}
+             [:button {:class "btn-reset" :type "reset"}
+              "Reset to UK wide"]]]]
+
+          (when (or (not-empty constituencies) (not-empty portfolio_companies) (not-empty investor_companies))
+            (let [idx-cons (map vector (iterate inc 0) constituencies)
+                  idx-pcs (map vector (iterate inc (count idx-cons)) portfolio_companies)
+                  idx-invs (map vector (iterate inc (+ (count idx-cons) (count idx-pcs))) investor_companies)
+                  selected-idx (mod (or (:selected-idx state) 0) (+ (count idx-cons) (count idx-pcs) (count idx-invs)))
+                  _ (if (not= selected-idx (:selected-idx state)) (om/set-state! owner :selected-idx selected-idx))]
+              [:div {:class "search-results"}
+               [:ul
+                (when (not-empty idx-cons)
+                  (into
+                   [:div [:li {:class "search-results-header"} "Constituencies"]]
+                   (for [[idx con] idx-cons]
+                     (om/build search-result-link con {:opts {:comm comm :path-fn path-fn :type :constituency}
+                                                       :state {:selected (= idx selected-idx)}
+                                                       :fn (fn [data] (assoc data :uid (str "constituency:" (get data :boundaryline_id))))
+                                                       :key :uid})))
+                  )
+                (when (not-empty idx-pcs)
+                  (into
+                   [:div [:li {:class "search-results-header"} "Companies"]]
+                   (for [[idx pc] idx-pcs]
+                     (om/build search-result-link pc {:opts {:comm comm :path-fn path-fn :type :portfolio-company}
+                                                      :state {:selected (= idx selected-idx)}
+                                                      :fn (fn [data] (assoc data :uid (str "portfolio-company:" (get data :company_no))))
+                                                      :key :uid}))))
+
+                (when (not-empty idx-invs)
+                  (into
+                   [:div [:li {:class "search-results-header"} "Investors"]]
+                   (for [[idx inv] idx-invs]
+                     (om/build search-result-link inv {:opts {:comm comm :path-fn path-fn :type :investor-company}
+                                                       :state {:selected (= idx selected-idx)}
+                                                       :fn (fn [data] (assoc data :uid (str "investor-company:" (get data :investor_company_uid))))
+                                                       :key :uid}))))]]))
+          ])
         ))))
 
 (defn mount

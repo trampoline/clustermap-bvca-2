@@ -1,5 +1,5 @@
 // Compiled by ClojureScript 0.0-2138
 goog.provide('clustermap.formats.time');
 goog.require('cljs.core');
-clustermap.formats.time.get_year = (function get_year(t){var G__22900 = t;var G__22900__$1 = (((G__22900 == null))?null:(new Date(G__22900)));var G__22900__$2 = (((G__22900__$1 == null))?null:G__22900__$1.getYear());var G__22900__$3 = (((G__22900__$2 == null))?null:(G__22900__$2 + 1900));return G__22900__$3;
+clustermap.formats.time.get_year = (function get_year(t){var G__22948 = t;var G__22948__$1 = (((G__22948 == null))?null:(new Date(G__22948)));var G__22948__$2 = (((G__22948__$1 == null))?null:G__22948__$1.getYear());var G__22948__$3 = (((G__22948__$2 == null))?null:(G__22948__$2 + 1900));return G__22948__$3;
 });

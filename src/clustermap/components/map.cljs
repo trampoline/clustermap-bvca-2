@@ -8,7 +8,8 @@
    [jayq.core :refer [$]]
    [sablono.core :as html :refer [html] :include-macros true]
    [hiccups.runtime :as hiccupsrt]
-   [clustermap.boundarylines :as bl]))
+   [clustermap.boundarylines :as bl]
+   [clustermap.rtree :as rtree]))
 
 (defn locate-map
   [m]

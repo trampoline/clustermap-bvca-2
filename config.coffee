@@ -19,7 +19,8 @@ exports.config =
           'vendor/scripts/console-polyfill.js',
           'vendor/scripts/android-xpath.js',
           'vendor/scripts/javascript-xpath.js',
-          'vendor/scripts/bootstrap.js'
+          'vendor/scripts/bootstrap.js',
+          'vendor/scripts/rtree.js'
         ]
 
     stylesheets:

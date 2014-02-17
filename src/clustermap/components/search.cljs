@@ -81,8 +81,9 @@
                                                                (set! (.-value (om/get-node owner "search-field")) ""))}
                                                "\u00D7"))
                           (dom/div #js {:className "tbl-cell" :style #js {:width "136"}}
-                                   (dom/button #js {:className "btn-reset" :type "reset"}
-                                               "Reset to UK wide")))
+                                   (dom/a #js {:href (path-fn nil nil)}
+                                          (dom/button #js {:className "btn-reset" :type "reset"}
+                                                      "Reset to UK wide"))))
                  (when (or (not-empty constituencies) (not-empty portfolio_companies) (not-empty investor_companies))
                    (let [idx-cons (map vector (iterate inc 0) constituencies)
                          idx-pcs (map vector (iterate inc (count idx-cons)) portfolio_companies)

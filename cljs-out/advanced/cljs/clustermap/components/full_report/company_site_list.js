@@ -24,7 +24,7 @@ clustermap.components.full_report.company_site_list.render_many_links = (functio
 {return (link_fn.cljs$core$IFn$_invoke$arity$2 ? link_fn.cljs$core$IFn$_invoke$arity$2(type,first_obj) : link_fn.call(null,type,first_obj));
 }
 });
-clustermap.components.full_report.company_site_list.portfolio_company_site = (function portfolio_company_site(site,owner,p__22252){var map__22262 = p__22252;var map__22262__$1 = ((cljs.core.seq_QMARK_(map__22262))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__22262):map__22262);var opts = map__22262__$1;var path_fn = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__22262__$1,cljs.core.constant$keyword$304);var link_fn = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__22262__$1,cljs.core.constant$keyword$305);var company_path = (path_fn.cljs$core$IFn$_invoke$arity$2 ? path_fn.cljs$core$IFn$_invoke$arity$2(cljs.core.constant$keyword$297,site) : path_fn.call(null,cljs.core.constant$keyword$297,site));if(typeof clustermap.components.full_report.company_site_list.t22263 !== 'undefined')
+clustermap.components.full_report.company_site_list.portfolio_company_site = (function portfolio_company_site(site,owner,p__22252){var map__22262 = p__22252;var map__22262__$1 = ((cljs.core.seq_QMARK_(map__22262))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__22262):map__22262);var opts = map__22262__$1;var path_fn = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__22262__$1,cljs.core.constant$keyword$303);var link_fn = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__22262__$1,cljs.core.constant$keyword$304);var company_path = (path_fn.cljs$core$IFn$_invoke$arity$2 ? path_fn.cljs$core$IFn$_invoke$arity$2(cljs.core.constant$keyword$296,site) : path_fn.call(null,cljs.core.constant$keyword$296,site));if(typeof clustermap.components.full_report.company_site_list.t22263 !== 'undefined')
 {} else
 {
 /**
@@ -50,23 +50,23 @@ clustermap.components.full_report.company_site_list.t22263.cljs$lang$ctorPrWrite
 });
 clustermap.components.full_report.company_site_list.t22263.prototype.om$core$IRender$ = true;
 clustermap.components.full_report.company_site_list.t22263.prototype.om$core$IRender$render$arity$1 = (function (this__9212__auto__){var self__ = this;
-var this__9212__auto____$1 = this;return React.DOM.tr(null,(function (){var attrs22266 = (self__.link_fn.cljs$core$IFn$_invoke$arity$2 ? self__.link_fn.cljs$core$IFn$_invoke$arity$2(cljs.core.constant$keyword$297,self__.site) : self__.link_fn.call(null,cljs.core.constant$keyword$297,self__.site));if(cljs.core.map_QMARK_(attrs22266))
+var this__9212__auto____$1 = this;return React.DOM.tr(null,(function (){var attrs22266 = (self__.link_fn.cljs$core$IFn$_invoke$arity$2 ? self__.link_fn.cljs$core$IFn$_invoke$arity$2(cljs.core.constant$keyword$296,self__.site) : self__.link_fn.call(null,cljs.core.constant$keyword$296,self__.site));if(cljs.core.map_QMARK_(attrs22266))
 {return React.DOM.td(sablono.interpreter.attributes(attrs22266),null);
 } else
 {return React.DOM.td(null,sablono.interpreter.interpret(attrs22266));
 }
-})(),(function (){var attrs22267 = cljs.core.constant$keyword$306.cljs$core$IFn$_invoke$arity$1(self__.site);if(cljs.core.map_QMARK_(attrs22267))
+})(),(function (){var attrs22267 = cljs.core.constant$keyword$305.cljs$core$IFn$_invoke$arity$1(self__.site);if(cljs.core.map_QMARK_(attrs22267))
 {return React.DOM.td(sablono.interpreter.attributes(attrs22267),null);
 } else
 {return React.DOM.td(null,sablono.interpreter.interpret(attrs22267));
 }
-})(),(function (){var attrs22268 = clustermap.components.full_report.company_site_list.render_many_links(self__.link_fn,self__.company_path,cljs.core.constant$keyword$298,cljs.core.constant$keyword$307.cljs$core$IFn$_invoke$arity$1(self__.site));if(cljs.core.map_QMARK_(attrs22268))
+})(),(function (){var attrs22268 = clustermap.components.full_report.company_site_list.render_many_links(self__.link_fn,self__.company_path,cljs.core.constant$keyword$297,cljs.core.constant$keyword$306.cljs$core$IFn$_invoke$arity$1(self__.site));if(cljs.core.map_QMARK_(attrs22268))
 {return React.DOM.td(sablono.interpreter.attributes(attrs22268),null);
 } else
 {return React.DOM.td(null,sablono.interpreter.interpret(attrs22268));
 }
-})(),(function (){var attrs22269 = clustermap.components.full_report.company_site_list.render_many_links(self__.link_fn,self__.company_path,cljs.core.constant$keyword$299,(function (){var G__22270 = self__.site;var G__22270__$1 = (((G__22270 == null))?null:cljs.core.constant$keyword$308.cljs$core$IFn$_invoke$arity$1(G__22270));var G__22270__$2 = (((G__22270__$1 == null))?null:cljs.core.filter(((function (G__22270,G__22270__$1){
-return (function (bl){return cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2("uk_constituencies",cljs.core.constant$keyword$309.cljs$core$IFn$_invoke$arity$1(bl));
+})(),(function (){var attrs22269 = clustermap.components.full_report.company_site_list.render_many_links(self__.link_fn,self__.company_path,cljs.core.constant$keyword$298,(function (){var G__22270 = self__.site;var G__22270__$1 = (((G__22270 == null))?null:cljs.core.constant$keyword$307.cljs$core$IFn$_invoke$arity$1(G__22270));var G__22270__$2 = (((G__22270__$1 == null))?null:cljs.core.filter(((function (G__22270,G__22270__$1){
+return (function (bl){return cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2("uk_constituencies",cljs.core.constant$keyword$308.cljs$core$IFn$_invoke$arity$1(bl));
 });})(G__22270,G__22270__$1))
 ,G__22270__$1));return G__22270__$2;
 })());if(cljs.core.map_QMARK_(attrs22269))
@@ -108,7 +108,7 @@ clustermap.components.full_report.company_site_list.t22277.cljs$lang$ctorPrWrite
 });
 clustermap.components.full_report.company_site_list.t22277.prototype.om$core$IRender$ = true;
 clustermap.components.full_report.company_site_list.t22277.prototype.om$core$IRender$render$arity$1 = (function (this__9212__auto__){var self__ = this;
-var this__9212__auto____$1 = this;return React.DOM.div({"className": "full-report-list"},React.DOM.div({"className": "table-responsive"},React.DOM.table({"className": "table"},React.DOM.thead(null,React.DOM.tr(null,React.DOM.th(null,"Portfolio Company"),React.DOM.th(null,"Postcode"),React.DOM.th(null,"Investor"),React.DOM.th(null,"Constituency"))),(function (){var attrs22282 = om.core.build_all.cljs$core$IFn$_invoke$arity$3(clustermap.components.full_report.company_site_list.portfolio_company_site,cljs.core.constant$keyword$310.cljs$core$IFn$_invoke$arity$1(self__.selection_portfolio_company_sites),new cljs.core.PersistentArrayMap(null, 2, [cljs.core.constant$keyword$290,cljs.core.constant$keyword$311,cljs.core.constant$keyword$291,self__.opts], null));if(cljs.core.map_QMARK_(attrs22282))
+var this__9212__auto____$1 = this;return React.DOM.div({"className": "full-report-list"},React.DOM.div({"className": "table-responsive"},React.DOM.table({"className": "table"},React.DOM.thead(null,React.DOM.tr(null,React.DOM.th(null,"Portfolio Company"),React.DOM.th(null,"Postcode"),React.DOM.th(null,"Investor"),React.DOM.th(null,"Constituency"))),(function (){var attrs22282 = om.core.build_all.cljs$core$IFn$_invoke$arity$3(clustermap.components.full_report.company_site_list.portfolio_company_site,cljs.core.constant$keyword$309.cljs$core$IFn$_invoke$arity$1(self__.selection_portfolio_company_sites),new cljs.core.PersistentArrayMap(null, 2, [cljs.core.constant$keyword$289,cljs.core.constant$keyword$310,cljs.core.constant$keyword$290,self__.opts], null));if(cljs.core.map_QMARK_(attrs22282))
 {return React.DOM.tbody(sablono.interpreter.attributes(attrs22282),null);
 } else
 {return React.DOM.tbody(null,sablono.interpreter.interpret(attrs22282));

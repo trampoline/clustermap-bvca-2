@@ -16,7 +16,7 @@ return (technique_1.cljs$core$IFn$_invoke$arity$2 ? technique_1.cljs$core$IFn$_i
 {if(cljs.core.truth_(doc.evaluate))
 {return (technique_2.cljs$core$IFn$_invoke$arity$4 ? technique_2.cljs$core$IFn$_invoke$arity$4(null,doc,node,path) : technique_2.call(null,null,doc,node,path));
 } else
-{if(cljs.core.constant$keyword$224)
+{if(cljs.core.constant$keyword$223)
 {throw (new Error("Could not find XPath support in this browser."));
 } else
 {return null;

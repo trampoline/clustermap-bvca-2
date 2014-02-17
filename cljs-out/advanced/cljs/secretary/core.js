@@ -3,7 +3,7 @@ goog.provide('secretary.core');
 goog.require('cljs.core');
 goog.require('clojure.string');
 goog.require('clojure.string');
-secretary.core._STAR_config_STAR_ = cljs.core.atom.cljs$core$IFn$_invoke$arity$1(new cljs.core.PersistentArrayMap(null, 1, [cljs.core.constant$keyword$385,""], null));
+secretary.core._STAR_config_STAR_ = cljs.core.atom.cljs$core$IFn$_invoke$arity$1(new cljs.core.PersistentArrayMap(null, 1, [cljs.core.constant$keyword$382,""], null));
 secretary.core._STAR_routes_STAR_ = cljs.core.atom.cljs$core$IFn$_invoke$arity$1(cljs.core.PersistentArrayMap.EMPTY);
 secretary.core.slash = /\//;
 /**
@@ -123,7 +123,7 @@ secretary.core.parse_action = (function parse_action(uri_path){var temp__4090__a
 /**
 * Dispatch an action for a given route if it matches the URI path
 */
-secretary.core.dispatch_BANG_ = (function dispatch_BANG_(uri){var vec__26745 = clojure.string.split.cljs$core$IFn$_invoke$arity$2(uri,/\?/);var uri_path = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__26745,0,null);var query_string = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__26745,1,null);var query_params = (cljs.core.truth_(query_string)?new cljs.core.PersistentArrayMap(null, 1, [cljs.core.constant$keyword$386,secretary.core.decode_query_params(query_string)], null):null);var vec__26746 = secretary.core.parse_action(uri_path);var action = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__26746,0,null);var params = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__26746,1,null);var action__$1 = (function (){var or__3406__auto__ = action;if(cljs.core.truth_(or__3406__auto__))
+secretary.core.dispatch_BANG_ = (function dispatch_BANG_(uri){var vec__26745 = clojure.string.split.cljs$core$IFn$_invoke$arity$2(uri,/\?/);var uri_path = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__26745,0,null);var query_string = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__26745,1,null);var query_params = (cljs.core.truth_(query_string)?new cljs.core.PersistentArrayMap(null, 1, [cljs.core.constant$keyword$383,secretary.core.decode_query_params(query_string)], null):null);var vec__26746 = secretary.core.parse_action(uri_path);var action = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__26746,0,null);var params = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__26746,1,null);var action__$1 = (function (){var or__3406__auto__ = action;if(cljs.core.truth_(or__3406__auto__))
 {return or__3406__auto__;
 } else
 {return cljs.core.identity;
@@ -134,8 +134,8 @@ secretary.core.render_route = (function() {
 var render_route = null;
 var render_route__1 = (function (route){return render_route.cljs$core$IFn$_invoke$arity$2(route,cljs.core.PersistentArrayMap.EMPTY);
 });
-var render_route__2 = (function (route,p__26747){var map__26749 = p__26747;var map__26749__$1 = ((cljs.core.seq_QMARK_(map__26749))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__26749):map__26749);var m = map__26749__$1;var query_params = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__26749__$1,cljs.core.constant$keyword$386);var path = route.replace((new RegExp(":[^/]+","g")),(function ($1){var lookup = cljs.core.keyword.cljs$core$IFn$_invoke$arity$1(cljs.core.subs.cljs$core$IFn$_invoke$arity$2($1,1));return (m.cljs$core$IFn$_invoke$arity$2 ? m.cljs$core$IFn$_invoke$arity$2(lookup,$1) : m.call(null,lookup,$1));
-}));var path__$1 = [cljs.core.str(secretary.core.get_config(new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.constant$keyword$385], null))),cljs.core.str(path)].join('');var temp__4090__auto__ = (function (){var and__3394__auto__ = query_params;if(cljs.core.truth_(and__3394__auto__))
+var render_route__2 = (function (route,p__26747){var map__26749 = p__26747;var map__26749__$1 = ((cljs.core.seq_QMARK_(map__26749))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__26749):map__26749);var m = map__26749__$1;var query_params = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__26749__$1,cljs.core.constant$keyword$383);var path = route.replace((new RegExp(":[^/]+","g")),(function ($1){var lookup = cljs.core.keyword.cljs$core$IFn$_invoke$arity$1(cljs.core.subs.cljs$core$IFn$_invoke$arity$2($1,1));return (m.cljs$core$IFn$_invoke$arity$2 ? m.cljs$core$IFn$_invoke$arity$2(lookup,$1) : m.call(null,lookup,$1));
+}));var path__$1 = [cljs.core.str(secretary.core.get_config(new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.constant$keyword$382], null))),cljs.core.str(path)].join('');var temp__4090__auto__ = (function (){var and__3394__auto__ = query_params;if(cljs.core.truth_(and__3394__auto__))
 {return secretary.core.encode_query_params(query_params);
 } else
 {return and__3394__auto__;

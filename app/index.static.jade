@@ -37,11 +37,11 @@ html(lang='en')
     #wrap
       aside#nav
         ul
-          li.search: a(href='#') Search
-          li.map.active: a(href='#') Map
-          li.lists: a(href='#') Lists
-          li.info: a(href='#') Info
-          li.logo: a(href='#') BVCA
+          li.search(data-toggle='tooltip' data-placement='right' title='Search for a Constituency or Company'): a(href='#') Search
+          li.map.active(data-toggle='tooltip' data-placement='right' title='View on map'): a(href='#') Map
+          li.lists(data-toggle='tooltip' data-placement='right' title='View full report'): a(href='#') Full Report
+          li.info(data-toggle='tooltip' data-placement='right' title='Information'): a(href='#') Info
+          li.logo: a(href='http://www.bvca.co.uk') BVCA
 
       section#main
         .container

@@ -15,11 +15,13 @@
    [clustermap.components.full-report :as full-report]
    [clustermap.components.page-title :as page-title]
    [clustermap.components.search :as search]
-   [clustermap.boundarylines :as bl])
+   [clustermap.boundarylines :as bl]
+   [clustermap.rtree :as rtree])
   (:import [goog History]
            [goog.history EventType]))
 
 (def state (atom {:uk-constituencies nil
+                  :uk-constituencies-rtree nil
                   :boundarylines nil
                   :zoom nil
                   :view :map
@@ -61,8 +63,10 @@
 (defn load-uk-constituencies
   []
   (go
-   (let [bls (<! (api/boundaryline-collection-index "uk_constituencies" :raw true))]
-     (set-state :uk-constituencies bls))))
+    (let [bls (<! (api/boundaryline-collection-index "uk_constituencies" :raw true))
+          rt (rtree/rtree-index bls)]
+      (set-state :uk-constituencies bls
+                 :uk-constituencies-rtree rt))))
 
 (defn load-all-portfolio-company-site-stats
   []

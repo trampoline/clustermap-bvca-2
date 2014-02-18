@@ -168,7 +168,7 @@
 (defn fetch-create-path
   "create leaflet paths for every boundaryline in boundaryline-index"
   [comm fetch-boundaryline-fn js-boundaryline-index leaflet-map boundaryline-id path-attrs]
-  (.log js/console (clj->js ["fetch-create" boundaryline-id]))
+;;  (.log js/console (clj->js ["fetch-create" boundaryline-id]))
   (if-let [[tolerance js-boundaryline] (tolerance-boundaryline fetch-boundaryline-fn js-boundaryline-index boundaryline-id (.getZoom leaflet-map))]
     (create-path comm leaflet-map boundaryline-id js-boundaryline path-attrs)))
 
@@ -180,7 +180,7 @@
 (defn update-path
   "update a Leaflet path for a boundaryline"
   [comm fetch-boundaryline-fn js-boundaryline-index leaflet-map {boundaryline-id :id :as path} path-attrs]
-  (.log js/console (clj->js ["update" boundaryline-id]))
+;;  (.log js/console (clj->js ["update" boundaryline-id]))
   (if-let [[tolerance js-boundaryline] (tolerance-boundaryline fetch-boundaryline-fn js-boundaryline-index boundaryline-id (.getZoom leaflet-map))]
     (if (not= tolerance (:tolerance path))
       (replace-path comm leaflet-map boundaryline-id path js-boundaryline path-attrs)
@@ -190,7 +190,7 @@
 
 (defn delete-path
   [leaflet-map path]
-  (.log js/console (clj->js ["update" (:id boundaryline-id)]))
+;;  (.log js/console (clj->js ["update" (:id path)]))
   (.removeLayer leaflet-map (:leaflet-path path)))
 
 (defn update-paths

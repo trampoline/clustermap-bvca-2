@@ -20,6 +20,7 @@ exports.config =
           'vendor/scripts/android-xpath.js',
           'vendor/scripts/javascript-xpath.js',
           'vendor/scripts/bootstrap.js',
+          'vendor/scripts/geojson-utils.js',
           'vendor/scripts/rtree.js'
         ]
 

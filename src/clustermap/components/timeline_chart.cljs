@@ -45,15 +45,23 @@
                     ]})))))
 
 (defn timeline-chart
-  [data owner opts]
+  [data owner {:keys [id] :as opts}]
   (reify
     om/IRender
     (render [this]
-      (html [:div.timeline-chart {:ref "chart"}]))
+      (html [:div.timeline-chart {:id id :ref "chart"}]))
 
     om/IDidMount
     (did-mount [this node]
-      (create-chart data (om/get-node owner "chart") opts))
+      (create-chart data (om/get-node owner "chart") opts)
+
+      (-> js/document
+          $
+          (.on "clustermap-change-view" (fn [e]
+                                          (-> (str "#" id)
+                                              $
+                                              .highcharts
+                                              .reflow)))))
 
     om/IDidUpdate
     (did-update [this prev-props prev-state root-node]

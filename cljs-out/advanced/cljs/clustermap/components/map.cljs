@@ -33,8 +33,7 @@
     {:leaflet-map m
      :markers (atom {})
      :paths (atom {})
-     :path-selections (atom #{})
-     :path-highlights (atom #{})}))
+     :path-selections (atom #{})}))
 
 (defn geojson-point-bounds
   "return a single LatLngBounds object containing all
@@ -145,10 +144,11 @@
 ;; manage paths
 
 (defn style-leaflet-path
-  [leaflet-path {:keys [selected]}]
-  (if selected
-      (.setStyle leaflet-path (clj->js {:color "#0000ff" :weight 3 :opacity 1 :fillOpacity 0.3}))
-      (.setStyle leaflet-path (clj->js {:color "#ff0000" :weight 3 :opacity 0 :fillOpacity 0}))))
+  [leaflet-path {:keys [selected highlighted]}]
+  (cond (and selected highlighted) (.setStyle leaflet-path (clj->js {:color "#0000ff" :weight 3 :opacity 1 :fill true :fillOpacity 0.3}))
+        selected                   (.setStyle leaflet-path (clj->js {:color "#0000ff" :weight 3 :opacity 1 :fill true :fillOpacity 0.3}))
+        highlighted                (.setStyle leaflet-path (clj->js {:color "#000000" :weight 3 :opacity 1 :fill false}))
+        true                       (.setStyle leaflet-path (clj->js {:color "#ff0000" :weight 3 :opacity 0 :fill false :fillOpacity 0}))))
 
 (defn create-path
   [comm leaflet-map boundaryline-id js-boundaryline {:keys [selected] :as path-attrs}]
@@ -194,7 +194,7 @@
   (.removeLayer leaflet-map (:leaflet-path path)))
 
 (defn update-paths
-  [comm fetch-boundaryline-fn js-boundaryline-index leaflet-map paths-atom path-selections-atom new-selection-locations]
+  [comm fetch-boundaryline-fn js-boundaryline-index leaflet-map paths-atom path-selections-atom new-path-highlights new-selection-locations]
   (when js-boundaryline-index ;; don't try and render paths until we have path metadata !
     (let [paths @paths-atom
           path-keys (-> paths keys set)
@@ -202,15 +202,19 @@
           old-selection-path-keys @path-selections-atom
           new-selection-path-keys (->> new-selection-locations vals (apply concat) (map (comp :uk_constituencies :boundarylinecolls)) (apply concat) set)
 
-          create-path-keys (set/difference new-selection-path-keys path-keys)
-          delete-path-keys (set/difference path-keys new-selection-path-keys)
-          update-path-keys (set/intersection path-keys new-selection-path-keys)
+          live-path-keys (set/union new-selection-path-keys new-path-highlights)
+
+          create-path-keys (set/difference live-path-keys path-keys)
+          delete-path-keys (set/difference path-keys live-path-keys)
+          update-path-keys (set/intersection path-keys live-path-keys)
 
           created-paths (->> create-path-keys
-                             (map (fn [k] (fetch-create-path comm fetch-boundaryline-fn js-boundaryline-index leaflet-map k {:selected true}))))
+                             (map (fn [k] (fetch-create-path comm fetch-boundaryline-fn js-boundaryline-index leaflet-map k {:selected (contains? new-selection-path-keys k)
+                                                                                                                             :highlighted (contains? new-path-highlights k)}))))
 
           updated-paths (->> update-path-keys
-                             (map (fn [k] (update-path comm fetch-boundaryline-fn js-boundaryline-index leaflet-map (get paths k) {:selected true}))))
+                             (map (fn [k] (update-path comm fetch-boundaryline-fn js-boundaryline-index leaflet-map (get paths k) {:selected (contains? new-selection-path-keys k)
+                                                                                                                                   :highlighted (contains? new-path-highlights k)}))))
 
           _ (doseq [k delete-path-keys] (if-let [path (get paths k)] (delete-path leaflet-map path)))
 
@@ -246,6 +250,7 @@
     (did-mount [this node]
       (let [{:keys [leaflet-map markers path] :as map} (create-map node)]
         (om/set-state! owner :map map)
+        (om/set-state! owner :path-highlights #{})
 
         ;; yeuch
         (.on leaflet-map "zoomend" (fn [e] (swap! (om/get-shared owner :app-state) assoc :zoom (.getZoom leaflet-map))))
@@ -267,19 +272,36 @@
                    next-uk-constituencies-rtree :uk-constituencies-rtree
                    next-boundarylines :boundarylines
                    next-zoom :zoom}
-                  next-state]
+                  {next-path-highlights :path-highlights}]
 
       (let [{:keys [uk-constituencies-rtree]} (om/get-props owner)
             {:keys [comm fetch-boundaryline-fn link-fn path-fn]} (om/get-shared owner)
-            {{:keys [leaflet-map markers paths path-selections path-highlights]} :map pan-pending :pan-pending} (om/get-state owner)]
+            {{:keys [leaflet-map markers paths path-selections]} :map pan-pending :pan-pending path-highlights :path-highlights} (om/get-state owner)]
 
         (update-markers path-fn leaflet-map markers next-locations)
 
         (when (not= next-uk-constituencies-rtree uk-constituencies-rtree)
           (.on leaflet-map "mousemove" (fn [e]
-                                         (let [hits (rtree/point-in-polygons next-uk-constituencies-rtree (-> e .-latlng .-lng) (-> e .-latlng .-lat))
-                                               hit-path-ids (map (fn [hit] (-> hit .-properties .-id)) hits)]
-                                           (.log js/console (clj->js hit-path-ids)))))
+                                         (let [lat (-> e .-latlng .-lat)
+                                               lng (-> e .-latlng .-lng)
+
+                                               hits (rtree/point-in-polygons next-uk-constituencies-rtree lng lat)
+                                               hit-path-ids (map (fn [hit] (-> hit .-properties .-id)) hits)
+
+                                               highlight-hit (first hits)
+                                               highlight-path-ids (set (take 1 hit-path-ids))
+
+                                               old-path-highlights (om/get-state owner :path-highlights)]
+
+                                           (when (and highlight-hit
+                                                      (not= old-path-highlights highlight-path-ids))
+                                             (doto (js/L.popup)
+                                               (.setLatLng (clj->js [lat lng]))
+                                               (.setContent (str "<p>" (some-> highlight-hit .-properties .-compact_name ) "</p>"))
+                                               (.openOn leaflet-map)))
+
+                                           (om/set-state! owner :path-highlights highlight-path-ids))))
+
           (.on leaflet-map "click" (fn [e]
                                      (let [hits (rtree/point-in-polygons next-uk-constituencies-rtree (-> e .-latlng .-lng) (-> e .-latlng .-lat))
                                            hit-path-ids (map (fn [hit] (-> hit .-properties .-id)) hits)]
@@ -287,7 +309,7 @@
 
         (when (and next-uk-constituencies)
           ;;(create-paths comm next-uk-constituencies leaflet-map paths)
-          (update-paths comm fetch-boundaryline-fn next-uk-constituencies leaflet-map paths path-selections next-locations))
+          (update-paths comm fetch-boundaryline-fn next-uk-constituencies leaflet-map paths path-selections next-path-highlights next-locations))
 
         (when (or pan-pending (not= next-selection selection))
           (pan-to-selection owner leaflet-map paths path-selections))))))

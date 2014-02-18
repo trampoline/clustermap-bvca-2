@@ -7,45 +7,45 @@ goog.require('cljs.core');
 * first put each geojson geometry into a geojson featurecollection, along
 * with properties
 */
-clustermap.rtree.rtree_index = (function rtree_index(js_index){var rtree = (new RTree(10));var keys = Object.keys(js_index);var features = [];var js_feature_coll = cljs.core.clj__GT_js.call(null,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"type","type",1017479852),"FeatureCollection"], null));var _ = (js_feature_coll["features"] = features);var seq__12609_12613 = cljs.core.seq.call(null,keys);var chunk__12610_12614 = null;var count__12611_12615 = 0;var i__12612_12616 = 0;while(true){
-if((i__12612_12616 < count__12611_12615))
-{var k_12617 = cljs.core._nth.call(null,chunk__12610_12614,i__12612_12616);var obj_12618 = (js_index[k_12617]);var geom_12619 = (obj_12618["geojson"]);var feature_12620 = cljs.core.clj__GT_js.call(null,new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"type","type",1017479852),"Feature",new cljs.core.Keyword(null,"properties","properties",4382818469),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"id","id",1013907597),(obj_12618["id"])], null)], null));var __12621__$1 = (feature_12620["geometry"] = geom_12619);features.push(feature_12620);
+clustermap.rtree.rtree_index = (function rtree_index(js_index){var rtree = (new RTree(10));var keys = Object.keys(js_index);var features = [];var js_feature_coll = cljs.core.clj__GT_js.call(null,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"type","type",1017479852),"FeatureCollection"], null));var _ = (js_feature_coll["features"] = features);var seq__12626_12630 = cljs.core.seq.call(null,keys);var chunk__12627_12631 = null;var count__12628_12632 = 0;var i__12629_12633 = 0;while(true){
+if((i__12629_12633 < count__12628_12632))
+{var k_12634 = cljs.core._nth.call(null,chunk__12627_12631,i__12629_12633);var obj_12635 = (js_index[k_12634]);var geom_12636 = (obj_12635["geojson"]);var feature_12637 = cljs.core.clj__GT_js.call(null,new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"type","type",1017479852),"Feature",new cljs.core.Keyword(null,"properties","properties",4382818469),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"id","id",1013907597),(obj_12635["id"]),new cljs.core.Keyword(null,"compact_name","compact_name",1128032665),(obj_12635["compact_name"])], null)], null));var __12638__$1 = (feature_12637["geometry"] = geom_12636);features.push(feature_12637);
 {
-var G__12622 = seq__12609_12613;
-var G__12623 = chunk__12610_12614;
-var G__12624 = count__12611_12615;
-var G__12625 = (i__12612_12616 + 1);
-seq__12609_12613 = G__12622;
-chunk__12610_12614 = G__12623;
-count__12611_12615 = G__12624;
-i__12612_12616 = G__12625;
+var G__12639 = seq__12626_12630;
+var G__12640 = chunk__12627_12631;
+var G__12641 = count__12628_12632;
+var G__12642 = (i__12629_12633 + 1);
+seq__12626_12630 = G__12639;
+chunk__12627_12631 = G__12640;
+count__12628_12632 = G__12641;
+i__12629_12633 = G__12642;
 continue;
 }
 } else
-{var temp__4092__auto___12626 = cljs.core.seq.call(null,seq__12609_12613);if(temp__4092__auto___12626)
-{var seq__12609_12627__$1 = temp__4092__auto___12626;if(cljs.core.chunked_seq_QMARK_.call(null,seq__12609_12627__$1))
-{var c__4148__auto___12628 = cljs.core.chunk_first.call(null,seq__12609_12627__$1);{
-var G__12629 = cljs.core.chunk_rest.call(null,seq__12609_12627__$1);
-var G__12630 = c__4148__auto___12628;
-var G__12631 = cljs.core.count.call(null,c__4148__auto___12628);
-var G__12632 = 0;
-seq__12609_12613 = G__12629;
-chunk__12610_12614 = G__12630;
-count__12611_12615 = G__12631;
-i__12612_12616 = G__12632;
+{var temp__4092__auto___12643 = cljs.core.seq.call(null,seq__12626_12630);if(temp__4092__auto___12643)
+{var seq__12626_12644__$1 = temp__4092__auto___12643;if(cljs.core.chunked_seq_QMARK_.call(null,seq__12626_12644__$1))
+{var c__4148__auto___12645 = cljs.core.chunk_first.call(null,seq__12626_12644__$1);{
+var G__12646 = cljs.core.chunk_rest.call(null,seq__12626_12644__$1);
+var G__12647 = c__4148__auto___12645;
+var G__12648 = cljs.core.count.call(null,c__4148__auto___12645);
+var G__12649 = 0;
+seq__12626_12630 = G__12646;
+chunk__12627_12631 = G__12647;
+count__12628_12632 = G__12648;
+i__12629_12633 = G__12649;
 continue;
 }
 } else
-{var k_12633 = cljs.core.first.call(null,seq__12609_12627__$1);var obj_12634 = (js_index[k_12633]);var geom_12635 = (obj_12634["geojson"]);var feature_12636 = cljs.core.clj__GT_js.call(null,new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"type","type",1017479852),"Feature",new cljs.core.Keyword(null,"properties","properties",4382818469),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"id","id",1013907597),(obj_12634["id"])], null)], null));var __12637__$1 = (feature_12636["geometry"] = geom_12635);features.push(feature_12636);
+{var k_12650 = cljs.core.first.call(null,seq__12626_12644__$1);var obj_12651 = (js_index[k_12650]);var geom_12652 = (obj_12651["geojson"]);var feature_12653 = cljs.core.clj__GT_js.call(null,new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"type","type",1017479852),"Feature",new cljs.core.Keyword(null,"properties","properties",4382818469),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"id","id",1013907597),(obj_12651["id"]),new cljs.core.Keyword(null,"compact_name","compact_name",1128032665),(obj_12651["compact_name"])], null)], null));var __12654__$1 = (feature_12653["geometry"] = geom_12652);features.push(feature_12653);
 {
-var G__12638 = cljs.core.next.call(null,seq__12609_12627__$1);
-var G__12639 = null;
-var G__12640 = 0;
-var G__12641 = 0;
-seq__12609_12613 = G__12638;
-chunk__12610_12614 = G__12639;
-count__12611_12615 = G__12640;
-i__12612_12616 = G__12641;
+var G__12655 = cljs.core.next.call(null,seq__12626_12644__$1);
+var G__12656 = null;
+var G__12657 = 0;
+var G__12658 = 0;
+seq__12626_12630 = G__12655;
+chunk__12627_12631 = G__12656;
+count__12628_12632 = G__12657;
+i__12629_12633 = G__12658;
 continue;
 }
 }

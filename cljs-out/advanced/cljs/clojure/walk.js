@@ -13,7 +13,7 @@ clojure.walk.walk = (function walk(inner,outer,form){if(cljs.core.seq_QMARK_(for
 {if(cljs.core.coll_QMARK_(form))
 {return (outer.cljs$core$IFn$_invoke$arity$1 ? outer.cljs$core$IFn$_invoke$arity$1(cljs.core.into(cljs.core.empty(form),cljs.core.map.cljs$core$IFn$_invoke$arity$2(inner,form))) : outer.call(null,cljs.core.into(cljs.core.empty(form),cljs.core.map.cljs$core$IFn$_invoke$arity$2(inner,form))));
 } else
-{if(cljs.core.constant$keyword$232)
+{if(cljs.core.constant$keyword$230)
 {return (outer.cljs$core$IFn$_invoke$arity$1 ? outer.cljs$core$IFn$_invoke$arity$1(form) : outer.call(null,form));
 } else
 {return null;

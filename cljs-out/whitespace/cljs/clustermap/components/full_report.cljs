@@ -25,10 +25,10 @@
                (if (single-company-selection? selector)
                  (when (:selection-portfolio-company-sites data)
                    (om/build company-site-list/company-site-list (:selection-portfolio-company-sites data) {:opts {:comm comm :link-fn link-fn :path-fn path-fn}
-                                                                                                            :react-key "selection-portfolio-companies"}))
+                                                                                                            :react-key "selection-portfolio-company-sites"}))
                  (when (:selection-portfolio-company-sites data)
                    (om/build company-list/company-list (:selection-portfolio-company-sites data) {:opts {:comm comm :link-fn link-fn :path-fn path-fn}
-                                                                                              :react-key "selection-portfolio-companies"})))]))
+                                                                                              :react-key "selection-portfolio-company-sites"})))]))
       om/IDidUpdate
       (did-update [this prev-props prev-state root-node]
         (-> "[data-toggle='tooltip']" ($ root-node) (.data "bs.tooltip" false)) ;; remove any existing tooltip

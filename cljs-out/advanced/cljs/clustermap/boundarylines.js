@@ -42,7 +42,7 @@ return (function (t){return (t < i_tol);
 /**
 * fetch a boundaryline for a given tolerance and add it to the cache
 */
-clustermap.boundarylines.fetch_boundaryline = (function fetch_boundaryline(app_state,korks,boundaryline_id,tolerance){var comm = clustermap.api.boundarylines.cljs$core$IFn$_invoke$arity$variadic(boundaryline_id,tolerance,cljs.core.array_seq([cljs.core.constant$keyword$257,true], 0));var use_korks = ((cljs.core.sequential_QMARK_(korks))?korks:new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [korks], null));var path = cljs.core.concat.cljs$core$IFn$_invoke$arity$2(use_korks,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [boundaryline_id,tolerance], null));var c__5521__auto__ = cljs.core.async.chan.cljs$core$IFn$_invoke$arity$1(1);cljs.core.async.impl.dispatch.run((function (){var f__5522__auto__ = (function (){var switch__5506__auto__ = (function (state_22305){var state_val_22306 = (state_22305[1]);if((state_val_22306 === 2))
+clustermap.boundarylines.fetch_boundaryline = (function fetch_boundaryline(app_state,korks,boundaryline_id,tolerance){var comm = clustermap.api.boundarylines.cljs$core$IFn$_invoke$arity$variadic(boundaryline_id,tolerance,cljs.core.array_seq([cljs.core.constant$keyword$255,true], 0));var use_korks = ((cljs.core.sequential_QMARK_(korks))?korks:new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [korks], null));var path = cljs.core.concat.cljs$core$IFn$_invoke$arity$2(use_korks,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [boundaryline_id,tolerance], null));var c__5521__auto__ = cljs.core.async.chan.cljs$core$IFn$_invoke$arity$1(1);cljs.core.async.impl.dispatch.run((function (){var f__5522__auto__ = (function (){var switch__5506__auto__ = (function (state_22305){var state_val_22306 = (state_22305[1]);if((state_val_22306 === 2))
 {var inst_22301 = (state_22305[2]);var inst_22302 = (function (){var bl = inst_22301;return ((function (bl,inst_22301,state_val_22306){
 return (function (old){return bl;
 });
@@ -64,7 +64,7 @@ return statearr_22310;
 });
 var state_machine__5507__auto____1 = (function (state_22305){while(true){
 var ret_value__5508__auto__ = (function (){try{while(true){
-var result__5509__auto__ = switch__5506__auto__(state_22305);if(cljs.core.keyword_identical_QMARK_(result__5509__auto__,cljs.core.constant$keyword$243))
+var result__5509__auto__ = switch__5506__auto__(state_22305);if(cljs.core.keyword_identical_QMARK_(result__5509__auto__,cljs.core.constant$keyword$241))
 {{
 continue;
 }
@@ -76,15 +76,15 @@ break;
 }catch (e22311){if((e22311 instanceof Object))
 {var ex__5510__auto__ = e22311;var statearr_22312_22314 = state_22305;(statearr_22312_22314[5] = ex__5510__auto__);
 cljs.core.async.impl.ioc_helpers.process_exception(state_22305);
-return cljs.core.constant$keyword$243;
+return cljs.core.constant$keyword$241;
 } else
-{if(cljs.core.constant$keyword$232)
+{if(cljs.core.constant$keyword$230)
 {throw e22311;
 } else
 {return null;
 }
 }
-}})();if(cljs.core.keyword_identical_QMARK_(ret_value__5508__auto__,cljs.core.constant$keyword$243))
+}})();if(cljs.core.keyword_identical_QMARK_(ret_value__5508__auto__,cljs.core.constant$keyword$241))
 {{
 var G__22315 = state_22305;
 state_22305 = G__22315;
@@ -127,7 +127,7 @@ return c__5521__auto__;
 * @param {...*} var_args
 */
 clustermap.boundarylines.get_or_fetch_best_boundaryline = (function() { 
-var get_or_fetch_best_boundaryline__delegate = function (app_state,korks,boundaryline_id,zoom,p__22316){var map__22318 = p__22316;var map__22318__$1 = ((cljs.core.seq_QMARK_(map__22318))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__22318):map__22318);var min_zoom = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__22318__$1,cljs.core.constant$keyword$261);if(cljs.core.truth_((function (){var and__3394__auto__ = min_zoom;if(cljs.core.truth_(and__3394__auto__))
+var get_or_fetch_best_boundaryline__delegate = function (app_state,korks,boundaryline_id,zoom,p__22316){var map__22318 = p__22316;var map__22318__$1 = ((cljs.core.seq_QMARK_(map__22318))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__22318):map__22318);var min_zoom = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__22318__$1,cljs.core.constant$keyword$259);if(cljs.core.truth_((function (){var and__3394__auto__ = min_zoom;if(cljs.core.truth_(and__3394__auto__))
 {return (zoom <= min_zoom);
 } else
 {return and__3394__auto__;

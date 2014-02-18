@@ -18,30 +18,30 @@ goog.require('om.dom');
 goog.require('clustermap.om');
 goog.require('cljs.core.async');
 goog.require('clustermap.formats.number');
-clustermap.components.page_title.describe_type = (function describe_type(type){var pred__12354 = cljs.core._EQ_;var expr__12355 = type;if(cljs.core.truth_(pred__12354.call(null,new cljs.core.Keyword(null,"portfolio-company","portfolio-company",3606204522),expr__12355)))
+clustermap.components.page_title.describe_type = (function describe_type(type){var pred__12353 = cljs.core._EQ_;var expr__12354 = type;if(cljs.core.truth_(pred__12353.call(null,new cljs.core.Keyword(null,"portfolio-company","portfolio-company",3606204522),expr__12354)))
 {return "Portfolio Company";
 } else
-{if(cljs.core.truth_(pred__12354.call(null,new cljs.core.Keyword(null,"investor-company","investor-company",3983736762),expr__12355)))
+{if(cljs.core.truth_(pred__12353.call(null,new cljs.core.Keyword(null,"investor-company","investor-company",3983736762),expr__12354)))
 {return "Investor";
 } else
-{if(cljs.core.truth_(pred__12354.call(null,new cljs.core.Keyword(null,"constituency","constituency",3902864696),expr__12355)))
+{if(cljs.core.truth_(pred__12353.call(null,new cljs.core.Keyword(null,"constituency","constituency",3902864696),expr__12354)))
 {return "Constituency";
 } else
-{throw (new Error([cljs.core.str("No matching clause: "),cljs.core.str(expr__12355)].join('')));
+{throw (new Error([cljs.core.str("No matching clause: "),cljs.core.str(expr__12354)].join('')));
 }
 }
 }
 });
-clustermap.components.page_title.page_title_component = (function page_title_component(selection,owner){var comm = om.core.get_shared.call(null,owner,new cljs.core.Keyword(null,"comm","comm",1016963710));var type = (function (){var G__12365 = selection;var G__12365__$1 = (((G__12365 == null))?null:new cljs.core.Keyword(null,"type","type",1017479852).cljs$core$IFn$_invoke$arity$1(G__12365));var G__12365__$2 = (((G__12365__$1 == null))?null:clustermap.components.page_title.describe_type.call(null,G__12365__$1));return G__12365__$2;
-})();var name = (function (){var G__12366 = selection;var G__12366__$1 = (((G__12366 == null))?null:new cljs.core.Keyword(null,"value","value",1125876963).cljs$core$IFn$_invoke$arity$1(G__12366));var G__12366__$2 = (((G__12366__$1 == null))?null:new cljs.core.Keyword(null,"name","name",1017277949).cljs$core$IFn$_invoke$arity$1(G__12366__$1));return G__12366__$2;
-})();var url = (function (){var G__12367 = selection;var G__12367__$1 = (((G__12367 == null))?null:new cljs.core.Keyword(null,"value","value",1125876963).cljs$core$IFn$_invoke$arity$1(G__12367));var G__12367__$2 = (((G__12367__$1 == null))?null:new cljs.core.Keyword(null,"web_url","web_url",2237655414).cljs$core$IFn$_invoke$arity$1(G__12367__$1));return G__12367__$2;
-})();if(typeof clustermap.components.page_title.t12368 !== 'undefined')
+clustermap.components.page_title.page_title_component = (function page_title_component(selection,owner){var comm = om.core.get_shared.call(null,owner,new cljs.core.Keyword(null,"comm","comm",1016963710));var type = (function (){var G__12364 = selection;var G__12364__$1 = (((G__12364 == null))?null:new cljs.core.Keyword(null,"type","type",1017479852).cljs$core$IFn$_invoke$arity$1(G__12364));var G__12364__$2 = (((G__12364__$1 == null))?null:clustermap.components.page_title.describe_type.call(null,G__12364__$1));return G__12364__$2;
+})();var name = (function (){var G__12365 = selection;var G__12365__$1 = (((G__12365 == null))?null:new cljs.core.Keyword(null,"value","value",1125876963).cljs$core$IFn$_invoke$arity$1(G__12365));var G__12365__$2 = (((G__12365__$1 == null))?null:new cljs.core.Keyword(null,"name","name",1017277949).cljs$core$IFn$_invoke$arity$1(G__12365__$1));return G__12365__$2;
+})();var url = (function (){var G__12366 = selection;var G__12366__$1 = (((G__12366 == null))?null:new cljs.core.Keyword(null,"value","value",1125876963).cljs$core$IFn$_invoke$arity$1(G__12366));var G__12366__$2 = (((G__12366__$1 == null))?null:new cljs.core.Keyword(null,"web_url","web_url",2237655414).cljs$core$IFn$_invoke$arity$1(G__12366__$1));return G__12366__$2;
+})();if(typeof clustermap.components.page_title.t12367 !== 'undefined')
 {} else
 {
 /**
 * @constructor
 */
-clustermap.components.page_title.t12368 = (function (url,name,type,comm,owner,selection,page_title_component,meta12369){
+clustermap.components.page_title.t12367 = (function (url,name,type,comm,owner,selection,page_title_component,meta12368){
 this.url = url;
 this.name = name;
 this.type = type;
@@ -49,49 +49,49 @@ this.comm = comm;
 this.owner = owner;
 this.selection = selection;
 this.page_title_component = page_title_component;
-this.meta12369 = meta12369;
+this.meta12368 = meta12368;
 this.cljs$lang$protocol_mask$partition1$ = 0;
 this.cljs$lang$protocol_mask$partition0$ = 393216;
 })
-clustermap.components.page_title.t12368.cljs$lang$type = true;
-clustermap.components.page_title.t12368.cljs$lang$ctorStr = "clustermap.components.page-title/t12368";
-clustermap.components.page_title.t12368.cljs$lang$ctorPrWriter = (function (this__3968__auto__,writer__3969__auto__,opt__3970__auto__){return cljs.core._write.call(null,writer__3969__auto__,"clustermap.components.page-title/t12368");
+clustermap.components.page_title.t12367.cljs$lang$type = true;
+clustermap.components.page_title.t12367.cljs$lang$ctorStr = "clustermap.components.page-title/t12367";
+clustermap.components.page_title.t12367.cljs$lang$ctorPrWriter = (function (this__3968__auto__,writer__3969__auto__,opt__3970__auto__){return cljs.core._write.call(null,writer__3969__auto__,"clustermap.components.page-title/t12367");
 });
-clustermap.components.page_title.t12368.prototype.om$core$IRender$ = true;
-clustermap.components.page_title.t12368.prototype.om$core$IRender$render$arity$1 = (function (this__9212__auto__){var self__ = this;
+clustermap.components.page_title.t12367.prototype.om$core$IRender$ = true;
+clustermap.components.page_title.t12367.prototype.om$core$IRender$render$arity$1 = (function (this__9212__auto__){var self__ = this;
 var this__9212__auto____$1 = this;return React.DOM.div({"id": "page-title"},React.DOM.button({"className": "btn", "type": "button", "onClick": (function (e){return cljs.core.async.put_BANG_.call(null,self__.comm,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"change-view","change-view",3608283668),"map"], null));
-})},"View on map"),(function (){var attrs12371 = (function (){var or__3406__auto__ = self__.type;if(cljs.core.truth_(or__3406__auto__))
+})},"View on map"),(function (){var attrs12370 = (function (){var or__3406__auto__ = self__.type;if(cljs.core.truth_(or__3406__auto__))
 {return or__3406__auto__;
 } else
 {return "All portfolio companies";
 }
-})();if(cljs.core.map_QMARK_.call(null,attrs12371))
-{return React.DOM.h2(sablono.interpreter.attributes.call(null,attrs12371),null);
+})();if(cljs.core.map_QMARK_.call(null,attrs12370))
+{return React.DOM.h2(sablono.interpreter.attributes.call(null,attrs12370),null);
 } else
-{return React.DOM.h2(null,sablono.interpreter.interpret.call(null,attrs12371));
+{return React.DOM.h2(null,sablono.interpreter.interpret.call(null,attrs12370));
 }
-})(),(function (){var attrs12372 = (function (){var or__3406__auto__ = self__.name;if(cljs.core.truth_(or__3406__auto__))
+})(),(function (){var attrs12371 = (function (){var or__3406__auto__ = self__.name;if(cljs.core.truth_(or__3406__auto__))
 {return or__3406__auto__;
 } else
 {return "UK wide";
 }
-})();if(cljs.core.map_QMARK_.call(null,attrs12372))
-{return React.DOM.h3(sablono.interpreter.attributes.call(null,attrs12372),null);
+})();if(cljs.core.map_QMARK_.call(null,attrs12371))
+{return React.DOM.h3(sablono.interpreter.attributes.call(null,attrs12371),null);
 } else
-{return React.DOM.h3(null,sablono.interpreter.interpret.call(null,attrs12372));
+{return React.DOM.h3(null,sablono.interpreter.interpret.call(null,attrs12371));
 }
 })(),(cljs.core.truth_(self__.url)?React.DOM.a({"href": self__.url, "target": "_blank"},sablono.interpreter.interpret.call(null,self__.url)):null));
 });
-clustermap.components.page_title.t12368.prototype.cljs$core$IMeta$_meta$arity$1 = (function (_12370){var self__ = this;
-var _12370__$1 = this;return self__.meta12369;
+clustermap.components.page_title.t12367.prototype.cljs$core$IMeta$_meta$arity$1 = (function (_12369){var self__ = this;
+var _12369__$1 = this;return self__.meta12368;
 });
-clustermap.components.page_title.t12368.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = (function (_12370,meta12369__$1){var self__ = this;
-var _12370__$1 = this;return (new clustermap.components.page_title.t12368(self__.url,self__.name,self__.type,self__.comm,self__.owner,self__.selection,self__.page_title_component,meta12369__$1));
+clustermap.components.page_title.t12367.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = (function (_12369,meta12368__$1){var self__ = this;
+var _12369__$1 = this;return (new clustermap.components.page_title.t12367(self__.url,self__.name,self__.type,self__.comm,self__.owner,self__.selection,self__.page_title_component,meta12368__$1));
 });
-clustermap.components.page_title.__GT_t12368 = (function __GT_t12368(url__$1,name__$1,type__$1,comm__$1,owner__$1,selection__$1,page_title_component__$1,meta12369){return (new clustermap.components.page_title.t12368(url__$1,name__$1,type__$1,comm__$1,owner__$1,selection__$1,page_title_component__$1,meta12369));
+clustermap.components.page_title.__GT_t12367 = (function __GT_t12367(url__$1,name__$1,type__$1,comm__$1,owner__$1,selection__$1,page_title_component__$1,meta12368){return (new clustermap.components.page_title.t12367(url__$1,name__$1,type__$1,comm__$1,owner__$1,selection__$1,page_title_component__$1,meta12368));
 });
 }
-return (new clustermap.components.page_title.t12368(url,name,type,comm,owner,selection,page_title_component,null));
+return (new clustermap.components.page_title.t12367(url,name,type,comm,owner,selection,page_title_component,null));
 });
 clustermap.components.page_title.mount = (function mount(app_state,elem_id,shared){return om.core.root.call(null,app_state,shared,clustermap.om.burrow.call(null,clustermap.components.page_title.page_title_component,new cljs.core.Keyword(null,"selection","selection",3592905982)),document.getElementById(elem_id));
 });

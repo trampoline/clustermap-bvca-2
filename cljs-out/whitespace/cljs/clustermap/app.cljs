@@ -97,32 +97,34 @@
    - kick-off selection retrievals"
   [[type id]]
   ;; (.log js/console (clj->js val))
-  (let [selector (if type {type id} {})]
+  (let [selector (if type {type id} {})
+        old-selector (:selector @state)]
 
-    (set-state :selector selector)
+    (when (not= selector old-selector)
+      (set-state :selector selector)
 
-    (condp = type
-      :portfolio-company [[(api/portfolio-company id)
-                           (api/portfolio-company-site-stats selector)
-                           (api/portfolio-company-sites selector)
-                           (api/portfolio-company-site-account-timelines selector)
-                           (api/portfolio-company-locations selector)] type]
-      :investor-company [[(api/investor-company id)
-                          (api/portfolio-company-site-stats selector)
-                          (api/portfolio-company-sites selector)
-                          (api/portfolio-company-site-account-timelines selector)
-                          (api/portfolio-company-locations selector)] type]
-      :constituency [[(api/constituency id)
-                      (api/portfolio-company-site-stats selector)
-                      (api/portfolio-company-sites selector)
-                      (api/portfolio-company-site-account-timelines selector)
-                      (api/portfolio-company-locations selector)] type]
-      [[nil
-        (api/portfolio-company-site-stats selector)
-        (api/portfolio-company-sites selector)
-        (api/portfolio-company-site-account-timelines selector)
-        nil ;; (api/portfolio-company-locations selector)
-        ] type])))
+      (condp = type
+        :portfolio-company [[(api/portfolio-company id)
+                             (api/portfolio-company-site-stats selector)
+                             (api/portfolio-company-sites selector)
+                             (api/portfolio-company-site-account-timelines selector)
+                             (api/portfolio-company-locations selector)] type]
+        :investor-company [[(api/investor-company id)
+                            (api/portfolio-company-site-stats selector)
+                            (api/portfolio-company-sites selector)
+                            (api/portfolio-company-site-account-timelines selector)
+                            (api/portfolio-company-locations selector)] type]
+        :constituency [[(api/constituency id)
+                        (api/portfolio-company-site-stats selector)
+                        (api/portfolio-company-sites selector)
+                        (api/portfolio-company-site-account-timelines selector)
+                        (api/portfolio-company-locations selector)] type]
+        [[nil
+          (api/portfolio-company-site-stats selector)
+          (api/portfolio-company-sites selector)
+          (api/portfolio-company-site-account-timelines selector)
+          nil ;; (api/portfolio-company-locations selector)
+          ] type]))))
 
 (defn change-view
   [view]

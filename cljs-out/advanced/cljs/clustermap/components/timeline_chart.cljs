@@ -10,7 +10,7 @@
 
 (defn create-chart
   [data node {:keys [y0-title y1-title] :as opts}]
-  (let [x-labels (map :time data)
+  (let [x-labels (map first data)
         y-mean (map :mean data)
         y-count (map :count data)
         yt (->> data (map :total) (map (fn [t] {:y t})))
@@ -25,17 +25,19 @@
            :title {:text nil}
            :xAxis {:categories x-labels
                    :labels {:rotation 270}}
-           :yAxis [{:title {:text y0-title}}
+           :yAxis [{:title {:text y0-title}
+                    ;; :type "logarithmic"
+                    }
                    ;; {:title {:text y1-title} :opposite true}
                    ]
            :series [{:name y0-title
-                     :type "column"
+                     :type "boxplot"
                      :yAxis 0
-                     :data y-total}
-                    {:name (str "Mean " y0-title)
-                     :type "line"
-                     :yAxis 0
-                     :data y-mean}
+                     :data data}
+                    ;; {:name (str "Mean " y0-title)
+                    ;;  :type "line"
+                    ;;  :yAxis 0
+                    ;;  :data y-mean}
                     ;; {:name y1-title
                     ;;  :type "line"
                     ;;  :yAxis 1
@@ -43,15 +45,23 @@
                     ]})))))
 
 (defn timeline-chart
-  [data owner opts]
+  [data owner {:keys [id] :as opts}]
   (reify
     om/IRender
     (render [this]
-      (html [:div.timeline-chart {:ref "chart"}]))
+      (html [:div.timeline-chart {:id id :ref "chart"}]))
 
     om/IDidMount
     (did-mount [this node]
-      (create-chart data (om/get-node owner "chart") opts))
+      (create-chart data (om/get-node owner "chart") opts)
+
+      (-> js/document
+          $
+          (.on "clustermap-change-view" (fn [e]
+                                          (-> (str "#" id)
+                                              $
+                                              .highcharts
+                                              .reflow)))))
 
     om/IDidUpdate
     (did-update [this prev-props prev-state root-node]

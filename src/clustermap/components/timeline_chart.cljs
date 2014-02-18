@@ -10,7 +10,7 @@
 
 (defn create-chart
   [data node {:keys [y0-title y1-title] :as opts}]
-  (let [x-labels (map :time data)
+  (let [x-labels (map first data)
         y-mean (map :mean data)
         y-count (map :count data)
         yt (->> data (map :total) (map (fn [t] {:y t})))
@@ -25,17 +25,19 @@
            :title {:text nil}
            :xAxis {:categories x-labels
                    :labels {:rotation 270}}
-           :yAxis [{:title {:text y0-title}}
+           :yAxis [{:title {:text y0-title}
+                    ;; :type "logarithmic"
+                    }
                    ;; {:title {:text y1-title} :opposite true}
                    ]
            :series [{:name y0-title
-                     :type "column"
+                     :type "boxplot"
                      :yAxis 0
-                     :data y-total}
-                    {:name (str "Mean " y0-title)
-                     :type "line"
-                     :yAxis 0
-                     :data y-mean}
+                     :data data}
+                    ;; {:name (str "Mean " y0-title)
+                    ;;  :type "line"
+                    ;;  :yAxis 0
+                    ;;  :data y-mean}
                     ;; {:name y1-title
                     ;;  :type "line"
                     ;;  :yAxis 1

@@ -19,6 +19,14 @@
                               :properties {:id (aget obj "id")}})
             _ (aset feature "geometry" geom)]
         (.push features feature)))
-    (.log js/console js-feature-coll)
     (.geoJSON rtree js-feature-coll)
     rtree))
+
+(defn point-in-polygons
+  [js-index x y]
+  (let [hits (.search js-index (clj->js {:x x :y y :w 0 :h 0}))]
+    (->> hits
+         (filter (fn [hit]
+                   (js/gju.pointInPolygon (clj->js {:type "Point"
+                                                    :coordinates [x y]})
+                                          (.-geometry hit)))))))

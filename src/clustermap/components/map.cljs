@@ -151,7 +151,7 @@
       (.setStyle leaflet-path (clj->js {:color "#ff0000" :weight 3 :opacity 0 :fillOpacity 0}))))
 
 (defn create-path
-  [comm boundaryline-id leaflet-map js-boundaryline {:keys [selected] :as path-attrs}]
+  [comm leaflet-map boundaryline-id js-boundaryline {:keys [selected] :as path-attrs}]
   (let [tolerance (aget js-boundaryline "tolerance")
         bounds (postgis-envelope->latlngbounds (aget js-boundaryline "envelope"))
         leaflet-path (js/L.geoJson (aget js-boundaryline "geojson"))]
@@ -165,21 +165,17 @@
      :leaflet-path leaflet-path
      :bounds bounds}))
 
-;; higher level path management
-
 (defn fetch-create-path
   "create leaflet paths for every boundaryline in boundaryline-index"
   [comm fetch-boundaryline-fn js-boundaryline-index leaflet-map boundaryline-id path-attrs]
   (.log js/console (clj->js ["fetch-create" boundaryline-id]))
   (if-let [[tolerance js-boundaryline] (tolerance-boundaryline fetch-boundaryline-fn js-boundaryline-index boundaryline-id (.getZoom leaflet-map))]
-    (create-path comm boundaryline-id leaflet-map js-boundaryline path-attrs)))
-
-;; style paths on selection / deselection
+    (create-path comm leaflet-map boundaryline-id js-boundaryline path-attrs)))
 
 (defn replace-path
-  [comm boundaryline-id leaflet-map old-path js-boundaryline path-attrs]
+  [comm leaflet-map boundaryline-id old-path js-boundaryline path-attrs]
   (.removeLayer leaflet-map (:leaflet-path old-path))
-  (create-path comm boundaryline-id leaflet-map js-boundaryline path-attrs))
+  (create-path comm leaflet-map (:id old-path) js-boundaryline path-attrs))
 
 (defn update-path
   "update a Leaflet path for a boundaryline"
@@ -187,13 +183,14 @@
   (.log js/console (clj->js ["update" boundaryline-id]))
   (if-let [[tolerance js-boundaryline] (tolerance-boundaryline fetch-boundaryline-fn js-boundaryline-index boundaryline-id (.getZoom leaflet-map))]
     (if (not= tolerance (:tolerance path))
-      (replace-path comm boundaryline-id leaflet-map path js-boundaryline path-attrs)
+      (replace-path comm leaflet-map boundaryline-id path js-boundaryline path-attrs)
       (do (style-leaflet-path (:leaflet-path path) path-attrs)
           path))
     path))
 
 (defn delete-path
   [leaflet-map path]
+  (.log js/console (clj->js ["update" (:id boundaryline-id)]))
   (.removeLayer leaflet-map (:leaflet-path path)))
 
 (defn update-paths
@@ -206,11 +203,8 @@
           new-selection-path-keys (->> new-selection-locations vals (apply concat) (map (comp :uk_constituencies :boundarylinecolls)) (apply concat) set)
 
           create-path-keys (set/difference new-selection-path-keys path-keys)
-          _ (.log js/console (clj->js ["create" create-path-keys]))
           delete-path-keys (set/difference path-keys new-selection-path-keys)
-          _ (.log js/console (clj->js ["delete" delete-path-keys]))
           update-path-keys (set/intersection path-keys new-selection-path-keys)
-          _ (.log js/console (clj->js ["update" update-path-keys]))
 
           created-paths (->> create-path-keys
                              (map (fn [k] (fetch-create-path comm fetch-boundaryline-fn js-boundaryline-index leaflet-map k {:selected true}))))

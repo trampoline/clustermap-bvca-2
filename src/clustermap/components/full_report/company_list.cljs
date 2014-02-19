@@ -36,9 +36,9 @@
        [:td (fmoney (:latest_turnover site) :sf 2 :default "-") [:small "\u00A0(" (get-year (:latest_accounts_date site)) ")" ]]
        [:td (pos-neg (:latest_turnover_delta site))]
        [:td (fmoney (:latest_turnover_delta site) :sf 2 :default "-")]
-       [:td (fnum (:latest_employee_count site) :default "-") [:small "\u00A0(" (get-year (:latest_accounts_date site)) ")" ]]
+       [:td (fnum (:latest_employee_count site) :dec 0 :default "-") [:small "\u00A0(" (get-year (:latest_accounts_date site)) ")" ]]
        [:td (pos-neg (:latest_employee_count_delta site))]
-       [:td (fnum (:latest_employee_count_delta site) :default "-") ]]))))
+       [:td (fnum (:latest_employee_count_delta site) :dec 0 :default "-") ]]))))
 
 (defn company-list
   [selection-portfolio-company-sites owner opts]

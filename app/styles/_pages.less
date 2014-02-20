@@ -10,6 +10,9 @@
 @spritePNGPath: '../img/sprite.png';
 @grid-spacing: 10px;
 
+@mapSpriteSVGPath: '../img/map-sprite.svg';
+@mapSpritePNGPath: '../img/map-sprite.png';
+
 // BVCA Mixins
 // -------------------------
 .image-text() {
@@ -520,7 +523,6 @@ body {
   border-bottom: 1px solid #d9d9d9;
 }
 #search, #page-title {
-  border-bottom: 1px solid #d9d9d9;
   min-height: @asideSize + 1;
 }
 #search {
@@ -534,8 +536,8 @@ body {
 
   input[type=text] {
     border: 0 none;
-    height: @asideSizeLg;
-    line-height: @asideSizeLg;
+    height: @asideSizeLg + 1;
+    line-height: @asideSizeLg + 1;
     width: 100%;
     padding: 0 20px;
     font-size: 20px;
@@ -587,7 +589,7 @@ body {
   }
 }
 
-#search-results {
+#search-results, #search .search-results {
   background: #f1f0ee;
   .box-shadow(2px 2px 2px rgba(0,0,0,0.2));
   max-height: 200px;
@@ -595,18 +597,29 @@ body {
   width: 100%;
   ul {
     list-style: none;
-    padding: 0;
+    padding: 4px;
     margin: 0;
   }
   li {
-    padding: 4px;
-      &.search-results-header {
+    &.search-results-header {
       font-weight: bold;
       border-bottom: 1px solid #ccc;
+    }
+    &.selected {
+      a {
+        background: #D0202F;
+        color: #fff;
+      }
     }
   }
   a {
     cursor: pointer;
+    display: block;
+    padding: 0 5px;
+    &:hover {
+      background: #D0202F;
+      color: #fff;
+    }
   }
 }
 
@@ -656,6 +669,48 @@ body {
   font-size: 150%;
 }
 
+// Leaflet & Map Styles
+.leaflet-popup-content-wrapper {
+  background: #D0202F;
+  padding: 10px 25px;
+  color: #fff;
+}
+
+.leaflet-popup-tip {
+  border-top-color: #D0202F;
+}
+
+.leaflet-container {
+  p, ul {
+    margin: 0;
+  }
+  ul {
+    padding-left: 16px;
+  }
+  a {
+    color: #fff;
+    text-decoration: underline;
+  }
+}
+
+.map-marker {
+  width: 24px;
+  height: 28px;
+  background: url(@mapSpritePNGPath) no-repeat 0 0;
+  background-image: url(@mapSpriteSVGPath), none;
+}
+
+.map-marker-1 {
+  background-position: 0 0;
+}
+.map-marker-2 {
+  background-position: 24px 0;
+}
+.map-marker-3 {
+  background-position: 48px 0;
+}
+
+// Responsive styles
 @media (max-width: 768px) {
   body {
     font-size: 12px;

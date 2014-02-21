@@ -150,15 +150,22 @@
 }
 
 .icon-info {
-  background-position: -66px -258px;
+  background-position: -66px -322px;
   a:hover & {
-    background-position: -80px -258px;
+    background-position: -80px -322px;
   }
 }
 .icon-cross {
-  background-position: -96px -258px;
+  background-position: -96px -322px;
   a:hover & {
-    background-position: -110px -258px;
+    background-position: -110px -322px;
+  }
+}
+.icon-download {
+  background-position: -124px -322px;
+  .square(16px);
+  a:hover & {
+    background-position: -141px -322px;
   }
 }
 .icon-arrow-left,
@@ -166,15 +173,15 @@
   width: 7px;
 }
 .icon-arrow-left {
-  background-position: --66px -272px;
+  background-position: --66px -336px;
   a:hover & {
-    background-position: -88px -272px;
+    background-position: -88px -336px;
   }
 }
 .icon-arrow-right {
-  background-position: -96px -272px;
+  background-position: -96px -336px;
   a:hover & {
-    background-position: -110px -272px;
+    background-position: -110px -336px;
   }
 }
 .icon-positive,
@@ -183,18 +190,16 @@
   line-height: 10px;
 }
 .icon-positive {
-  background-position: -66px -286px;
+  background-position: -66px -350px;
 }
 .icon-negative {
-  background-position: -66px -300px;
+  background-position: -66px -364px;
 }
 .icon-lists-sm {
-  background-position: -80px -286px;
+  background-position: -80px -350px;
   height: 10px;
   margin: 1px 10px 1px 0;
 }
-
-
 
 // BVCA Page Styles
 // -------------------------
@@ -325,9 +330,9 @@ body {
     margin: 0;
   }
   ul {
-    min-height: (@asideSizeLg * 5) + 4;
+    min-height: (@asideSizeLg * 5) + 5;
     height: 100%;
-    position: fixed e("\9");
+    // position: fixed e("\9");
   }
   li {
     height: @asideSizeLg + 1;
@@ -359,14 +364,24 @@ body {
         background-position: -64px -128px;
       }
     }
-    &.info {
+    &.method {
       position: absolute;
-      bottom: @asideSizeLg;
+      bottom: (@asideSizeLg * 2) + 1;
       a {
         background-position: 0 -192px;
       }
       &.active a, a:hover {
         background-position: -64px -192px;
+      }
+    }
+    &.info {
+      position: absolute;
+      bottom: @asideSizeLg;
+      a {
+        background-position: 0 -256px;
+      }
+      &.active a, a:hover {
+        background-position: -64px -256px;
       }
     }
     &.logo {
@@ -375,13 +390,14 @@ body {
       bottom: 0;
       border-bottom: 0 none;
       a {
-        background-position: 0 -256px;
+        background-position: 0 -320px;
       }
     }
     a {
       .square(@asideSizeLg);
       line-height: @asideSizeLg;
       color: #444;
+      cursor: pointer;
       display: block;
       .image-sprite;
     }
@@ -411,12 +427,12 @@ body {
       width: 7px;
       height: 12px;
       .image-sprite;
-      background-position: -66px -272px;
+      background-position: -66px -336px;
       margin: 8px 11px 7px 10px;
     }
     &:hover {
       i {
-        background-position: -80px -272px;
+        background-position: -80px -336px;
       }
     }
   }
@@ -431,11 +447,11 @@ body {
   &.open {
     > a {
       i {
-        background-position: -96px -272px;
+        background-position: -96px -336px;
       }
       &:hover {
         i {
-          background-position: -110px -272px;
+          background-position: -110px -336px;
         }
       }
     }
@@ -522,12 +538,14 @@ body {
   background: #fff;
   border-bottom: 1px solid #d9d9d9;
 }
-#search, #page-title {
-  min-height: @asideSize + 1;
-}
+
+// #search, #page-title {
+//   min-height: @asideSize + 1;
+// }
+
 #search {
   // display: none;
-    position: relative;
+  position: relative;
 
   .tbl-cell {
     vertical-align: middle;
@@ -536,8 +554,8 @@ body {
 
   input[type=text] {
     border: 0 none;
-    height: @asideSizeLg + 1;
-    line-height: @asideSizeLg + 1;
+    height: @asideSizeLg;
+    line-height: @asideSizeLg;
     width: 100%;
     padding: 0 20px;
     font-size: 20px;
@@ -552,6 +570,7 @@ body {
     background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
     border: 1px solid transparent;
     white-space: nowrap;
+    position: relative;
     // position: absolute;
     // right: 2px;
     // top: 2px;
@@ -573,12 +592,17 @@ body {
     &:active {
       outline: 0;
       background-image: none;
-      top: 3px;
+      top: 1px;
+    }
+
+    &.btn-clear {
+      margin-top: -3px;
     }
 
     &.btn-reset {
       color: @link-color;
       font-size: 14px;
+      border-left: 1px solid @gray-lighter;
       &:hover,
       &:focus {
         color: @link-hover-color;
@@ -768,6 +792,7 @@ body {
       overflow: hidden;
       position: relative;
       width: 100%;
+      min-width: (@asideSize * 5) + 5;
     }
     li {
       float: left;
@@ -807,8 +832,8 @@ body {
           background-position: -176px -96px;
         }
       }
-      &.info {
-        right: @asideSize;
+      &.method {
+        right: (@asideSize * 2) + 1;
         bottom: auto;
         top: 0;
         a {
@@ -816,6 +841,17 @@ body {
         }
         &.active a, a:hover {
           background-position: -176px -144px;
+        }
+      }
+      &.info {
+        right: @asideSize;
+        bottom: auto;
+        top: 0;
+        a {
+          background-position: -128px -192px;
+        }
+        &.active a, a:hover {
+          background-position: -176px -192px;
         }
       }
       &.logo {
@@ -826,11 +862,23 @@ body {
         bottom: auto;
         top: 0;
         a {
-          background-position: -128px -192px;
+          background-position: -128px -240px;
         }
       }
     }
   }
+
+  #search {
+    input[type=text] {
+      height: @asideSize;
+      line-height: @asideSize;
+      font-size: 18px;
+    }
+    button.btn-reset {
+      font-size: 12px;
+    }
+  }
+
   #map-report {
     height: 100%;
     aside {

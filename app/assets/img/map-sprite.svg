@@ -2,10 +2,12 @@
 <!-- Generator: Adobe Illustrator 16.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="72px" height="28px" viewBox="0 0 72 28" enable-background="new 0 0 72 28" xml:space="preserve">
-<polygon fill="#FFFFFF" points="11.6,24 0,13.9 11.4,4 23,14.1 "/>
-<polygon fill="#AA1F28" points="60,0 48,8.4 48,19.7 60,28 72,19.7 72,8.4 "/>
-<polygon fill="#E21D36" points="36,2 24,11 24,17.1 36,26 48,17.1 48,11 "/>
-<path fill="#E21D36" d="M12,2L0,11v6.1L12,26l12-8.9V11L12,2z M3,12.6l7.7,5.7v3L3,15.7V12.6z M21,15.7l-7.3,5.4v-3l7.3-5.5V15.7z"
-	/>
+	 width="72px" height="28px" viewBox="0.5 28.5 72 28" enable-background="new 0.5 28.5 72 28" xml:space="preserve">
+<polygon fill="#AA1F28" points="72.5,36.9 72.5,48.2 60.5,56.5 48.5,48.2 48.5,36.9 60.5,28.5 "/>
+<polygon fill="#E21D36" points="48.5,39.5 48.5,45.6 36.5,54.5 24.5,45.6 24.5,39.5 36.5,30.5 "/>
+<g>
+	<polygon fill="#E21D36" points="12.5,30.5 0.5,39.5 0.5,45.6 12.5,54.5 24.5,45.6 24.5,39.5 	"/>
+	<polygon fill="#FFFFFF" points="3.5,41.1 11.2,46.8 11.2,49.8 3.5,44.2 	"/>
+	<polygon fill="#FFFFFF" points="21.5,44.2 14.2,49.6 14.2,46.6 21.5,41.1 	"/>
+</g>
 </svg>

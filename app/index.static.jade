@@ -41,7 +41,7 @@ html(lang='en')
         .modal-content
           .modal-header
             button.close(type='button' data-dismiss='modal' aria-hidden='true') &times;
-            h4
+            h4.
               BVCA Private Equity Map
           .modal-body
             p.
@@ -63,16 +63,32 @@ html(lang='en')
               |.
 
 
+    #page-methodology.modal.fade
+      .modal-dialog
+        .modal-content
+          .modal-header
+            button.close(type='button' data-dismiss='modal' aria-hidden='true') &times;
+            h4.
+              Methodology
+          .modal-body
+            p.
+              We track and regularly update investment information as supplied by our members covering Portfolio Company sites across the UK.
+            p.
+              Portfolio Companies were matched up with the Companies House database and site addresses were matched to Parliamentary Constituencies using the ONS Postcode database and the Ordnance Survey Boundary-Line product.
+            p.
+              Historical turnover and employment information was then taken from Companies House accounts filings. In cases where investments were made in Portfolio Companies with multiple sites, the declared revenue and employees of those companies were shared equally amongst the company's sites
+
+
     #wrap
       aside#nav
         ul
           li.search(data-toggle='tooltip' data-placement='right' title='Search for a Constituency or Company'): a(href='#') Search
           li.map.active(data-toggle='tooltip' data-placement='right' title='View on map'): a(href='#') Map
           li.lists(data-toggle='tooltip' data-placement='right' title='View full report'): a(href='#') Full Report
-          li.method(data-toggle='tooltip' data-placement='right' title='Methodology')
-            a(data-toggle='modal' data-target='#page-info') Methodology
           li.info(data-toggle='tooltip' data-placement='right' title='More Information')
             a(data-toggle='modal' data-target='#page-info') Info
+          li.method(data-toggle='tooltip' data-placement='right' title='Methodology')
+            a(data-toggle='modal' data-target='#page-methodology') Methodology
           li.logo: a(href='http://www.bvca.co.uk') BVCA
 
       section#main

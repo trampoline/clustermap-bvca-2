@@ -11,10 +11,12 @@
    [clustermap.boundarylines :as bl]
    [clustermap.rtree :as rtree]))
 
+(def initial-bounds [[59.54 2.3] [49.29 -11.29]])
+
 (defn locate-map
   [m]
   (.fitBounds m
-              (clj->js [[59.54 2.3] [49.29 -11.29]])
+              (clj->js initial-bounds)
               (clj->js {"paddingTopLeft" [0 0]
                         "paddingBottomRight" [0 0]})))
 
@@ -232,11 +234,13 @@
   (let [paths @paths-atom
         path-selections @path-selections-atom]
     (if (empty? paths)
-      (om/set-state! owner :pan-pending true)
+      (do (locate-map leaflet-map)
+          (om/set-state! owner :pan-pending true))
       (do
         (om/set-state! owner :pan-pending false)
-        (when-let [bounds (some->> (select-keys paths path-selections) vals (map :bounds))]
-          (apply pan-to-show leaflet-map bounds))))))
+        (if-let [bounds (some->> (select-keys paths path-selections) vals (map :bounds))]
+          (apply pan-to-show leaflet-map bounds)
+          (pan-to-show initial-bounds))))))
 
 (defn map-component
   "put the leaflet map as state in the om component"

@@ -3,8 +3,8 @@ html(lang='en')
   head
     title BVCA v2
     meta(charset='utf-8')
-    meta(http-equiv="X-UA-Compatible", content="IE=edge")
-    //- meta(http-equiv="X-UA-Compatible", content="IE=edge,chrome=1")
+    //if IE
+      meta(http-equiv="X-UA-Compatible", content="IE=edge,chrome=1")
     meta(name='viewport', content='width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0')
     meta(name='description', content='')
     meta(name='author', content='')
@@ -69,6 +69,8 @@ html(lang='en')
           li.search(data-toggle='tooltip' data-placement='right' title='Search for a Constituency or Company'): a(href='#') Search
           li.map.active(data-toggle='tooltip' data-placement='right' title='View on map'): a(href='#') Map
           li.lists(data-toggle='tooltip' data-placement='right' title='View full report'): a(href='#') Full Report
+          li.method(data-toggle='tooltip' data-placement='right' title='Methodology')
+            a(data-toggle='modal' data-target='#page-info') Methodology
           li.info(data-toggle='tooltip' data-placement='right' title='More Information')
             a(data-toggle='modal' data-target='#page-info') Info
           li.logo: a(href='http://www.bvca.co.uk') BVCA

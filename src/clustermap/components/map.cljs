@@ -84,8 +84,8 @@
   [path-fn leaflet-map location-sites]
   ;; extract the location-sites from the first record... they are all the same
   (if-let [latlong (some-> location-sites first :location reverse clj->js)]
-    (let [icon (js/L.divIcon #js {:className "map-marker" :iconSize [24,28]})
-          marker (js/L.marker latlong (clj->js {:icon icon}))
+    (let [icon (js/L.divIcon (clj->js {:className "map-marker" :iconSize [24,28] :iconAnchor [12 28] :popupAnchor [0, -22] })) ;;
+          marker (js/L.marker latlong (clj->js {:icon icon}) ) ;;
           popup-content (marker-popup-content path-fn location-sites)]
       ;; (.log js/console popup-content)
       (.bindPopup marker popup-content)
@@ -145,10 +145,10 @@
 
 (defn style-leaflet-path
   [leaflet-path {:keys [selected highlighted]}]
-  (cond (and selected highlighted) (.setStyle leaflet-path (clj->js {:color "#0000ff" :weight 3 :opacity 1 :fill true :fillOpacity 0.2}))
-        selected                   (.setStyle leaflet-path (clj->js {:color "#0000ff" :weight 3 :opacity 1 :fill true :fillOpacity 0.2}))
-        highlighted                (.setStyle leaflet-path (clj->js {:color "#000000" :weight 3 :opacity 1 :fill false}))
-        true                       (.setStyle leaflet-path (clj->js {:color "#ff0000" :weight 3 :opacity 0 :fill false :fillOpacity 0}))))
+  (cond (and selected highlighted) (.setStyle leaflet-path (clj->js {:color "#0000aa" :weight 2 :opacity 1 :fill true :fillOpacity 0.2}))
+        selected                   (.setStyle leaflet-path (clj->js {:color "#0000aa" :weight 2 :opacity 1 :fill true :fillOpacity 0.2}))
+        highlighted                (.setStyle leaflet-path (clj->js {:color "#000000" :weight 2 :opacity 1 :fill false}))
+        true                       (.setStyle leaflet-path (clj->js {:color "#ff0000" :weight 2 :opacity 0 :fill false :fillOpacity 0}))))
 
 (defn create-path
   [comm leaflet-map boundaryline-id js-boundaryline {:keys [selected] :as path-attrs}]

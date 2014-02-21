@@ -23,7 +23,7 @@
    (< value 0) (html [:i.icon-negative])
    true nil))
 
-(defn portfolio-company-site
+(defn portfolio-company
   [site owner {:keys [link-fn path-fn] :as opts}]
   (let [company-path (path-fn :portfolio-company site)]
     (om/component
@@ -41,7 +41,7 @@
        [:td (fnum (:latest_employee_count_delta site) :dec 0 :default "-") ]]))))
 
 (defn company-list
-  [selection-portfolio-company-sites owner opts]
+  [selection-portfolio-company-sites-by-company owner opts]
   (om/component
        (html
         [:div.full-report-list
@@ -58,4 +58,4 @@
              [:th "Employees"]
              [:th {:colSpan "2"} "Emp. change"]]]
            [:tbody
-            (om/build-all portfolio-company-site (:records selection-portfolio-company-sites) {:key :portfolio_company_site_uid :opts opts})]]]])))
+            (om/build-all portfolio-company (:records selection-portfolio-company-sites-by-company) {:key :portfolio_company_site_uid :opts opts})]]]])))

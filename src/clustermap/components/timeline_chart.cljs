@@ -10,13 +10,13 @@
 
 (defn create-chart
   [data node {:keys [y0-title y1-title] :as opts}]
-  (let [x-labels (map first data)
-        y-mean (map :mean data)
-        y-count (map :count data)
-        yt (->> data (map :total) (map (fn [t] {:y t})))
+  (let [x-labels (map :date data)
+        stats (map :stats data)
+        y-median (map #(get-in % [:stats :median]) data)
+        y-mean (map #(get-in % [:stats :mean]) data)
         ;; y-total (into [] (concat (butlast yt) [(merge (last yt) {:color "#FF9900" :name "Not all data received for year"})]))
-        y-total yt
         ]
+
     (-> node
         $
         (.highcharts
@@ -30,14 +30,14 @@
                     }
                    ;; {:title {:text y1-title} :opposite true}
                    ]
-           :series [{:name y0-title
-                     :type "boxplot"
+           :series [{:name (str "Median " y0-title)
+                     :type "line"
                      :yAxis 0
-                     :data data}
-                    ;; {:name (str "Mean " y0-title)
-                    ;;  :type "line"
-                    ;;  :yAxis 0
-                    ;;  :data y-mean}
+                     :data y-median}
+                    {:name (str "Mean " y0-title)
+                     :type "line"
+                     :yAxis 0
+                     :data y-mean}
                     ;; {:name y1-title
                     ;;  :type "line"
                     ;;  :yAxis 1

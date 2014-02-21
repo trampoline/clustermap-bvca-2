@@ -58,10 +58,13 @@
       (-> js/document
           $
           (.on "clustermap-change-view" (fn [e]
-                                          (-> (str "#" id)
-                                              $
-                                              .highcharts
-                                              .reflow)))))
+                                          ;; only reflow charts when they are visible
+                                          ;; they disappear otherwise
+                                          (let [chart (-> (om/get-node owner "chart") $)]
+                                            (when (.is chart ":visible")
+                                              (-> chart
+                                                  .highcharts
+                                                  .reflow)))))))
 
     om/IDidUpdate
     (did-update [this prev-props prev-state root-node]

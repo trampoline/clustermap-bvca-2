@@ -132,6 +132,11 @@
   (let [type-ids (merge {:size 100 :sort [{:!latest_turnover "desc"}]} type-ids)]
     (GET (str "/api/" api-prefix "/portfolio-company-sites?" (map-json-params type-ids)))))
 
+(defn portfolio-company-sites-by-company
+  [& [type-ids]]
+  (let [type-ids (merge {:size 100 :sort [{:!latest_turnover "desc"}]} type-ids)]
+    (GET (str "/api/" api-prefix "/portfolio-company-sites-by-company?" (map-json-params type-ids)))))
+
 (defn portfolio-company-locations
   [& [type-ids]]
   (GET (str "/api/" api-prefix "/portfolio-company-locations?" (map-json-params type-ids))))

@@ -1980,7 +1980,9 @@ a:hover .icon-arrow-right {
   background-position: -110px -336px;
 }
 .icon-positive,
-.icon-negative {
+.icon-negative,
+.icon-asc,
+.icon-desc {
   height: 10px;
   line-height: 10px;
 }
@@ -1989,6 +1991,12 @@ a:hover .icon-arrow-right {
 }
 .icon-negative {
   background-position: -66px -364px;
+}
+.icon-asc {
+  background-position: -96px -350px;
+}
+.icon-desc {
+  background-position: -96px -364px;
 }
 .icon-lists-sm {
   background-position: -80px -350px;

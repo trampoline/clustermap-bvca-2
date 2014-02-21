@@ -548,6 +548,13 @@ th {
   vertical-align: bottom;
   border-bottom: 1px solid #dddddd;
 }
+.table > thead > tr > th a {
+  color: #555555;
+}
+.table > thead > tr > th a:hover {
+  color: #555555;
+  text-decoration: underline;
+}
 .table > caption + thead > tr:first-child > th,
 .table > colgroup + thead > tr:first-child > th,
 .table > thead:first-child > tr:first-child > th,
@@ -1980,7 +1987,9 @@ a:hover .icon-arrow-right {
   background-position: -110px -336px;
 }
 .icon-positive,
-.icon-negative {
+.icon-negative,
+.icon-asc,
+.icon-desc {
   height: 10px;
   line-height: 10px;
 }
@@ -1989,6 +1998,12 @@ a:hover .icon-arrow-right {
 }
 .icon-negative {
   background-position: -66px -364px;
+}
+.icon-asc {
+  background-position: -96px -350px;
+}
+.icon-desc {
+  background-position: -96px -364px;
 }
 .icon-lists-sm {
   background-position: -80px -350px;

@@ -37,6 +37,13 @@ th {
     background: #F1F0EE;
     vertical-align: bottom;
     border-bottom: 1px solid @table-border-color;
+    a {
+      color: @text-color;
+      &:hover {
+        color: @text-color;
+        text-decoration: underline;
+      }
+    }
   }
   // Remove top border from thead by default
   > caption + thead,

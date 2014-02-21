@@ -137,8 +137,8 @@
   [view]
   (let [view (keyword view)]
     (when (not= view (:view @state))
-      (nav/change-view (name view))
-      (set-state :view view))))
+      (set-state :view view)
+      (nav/change-view (name view)))))
 
 (def history (History.))
 

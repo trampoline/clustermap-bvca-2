@@ -364,24 +364,24 @@ body {
         background-position: -64px -128px;
       }
     }
-    &.method {
-      position: absolute;
-      bottom: (@asideSizeLg * 2) + 1;
-      a {
-        background-position: 0 -192px;
-      }
-      &.active a, a:hover {
-        background-position: -64px -192px;
-      }
-    }
     &.info {
       position: absolute;
-      bottom: @asideSizeLg;
+      bottom: (@asideSizeLg * 2) + 1;
       a {
         background-position: 0 -256px;
       }
       &.active a, a:hover {
         background-position: -64px -256px;
+      }
+    }
+    &.method {
+      position: absolute;
+      bottom: @asideSizeLg;
+      a {
+        background-position: 0 -192px;
+      }
+      &.active a, a:hover {
+        background-position: -64px -192px;
       }
     }
     &.logo {
@@ -832,19 +832,8 @@ body {
           background-position: -176px -96px;
         }
       }
-      &.method {
-        right: (@asideSize * 2) + 1;
-        bottom: auto;
-        top: 0;
-        a {
-          background-position: -128px -144px;
-        }
-        &.active a, a:hover {
-          background-position: -176px -144px;
-        }
-      }
       &.info {
-        right: @asideSize;
+        right: (@asideSize * 2) + 1;
         bottom: auto;
         top: 0;
         a {
@@ -852,6 +841,17 @@ body {
         }
         &.active a, a:hover {
           background-position: -176px -192px;
+        }
+      }
+      &.method {
+        right: @asideSize;
+        bottom: auto;
+        top: 0;
+        a {
+          background-position: -128px -144px;
+        }
+        &.active a, a:hover {
+          background-position: -176px -144px;
         }
       }
       &.logo {

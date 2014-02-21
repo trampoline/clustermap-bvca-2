@@ -77,6 +77,7 @@
             [:header.secondary
              [:h2 "Constituency"]
              [:h3 (:name constituency)
+              [:br]
               [:small "(" (:mp constituency) ", " (:political_party constituency) ")"]]]
             [:ul
              [:li (fnum pc-count) [:small (pluralize pc-count "Portfolio Company" "Portfolio Companies")]]

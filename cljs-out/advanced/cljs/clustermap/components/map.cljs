@@ -11,10 +11,12 @@
    [clustermap.boundarylines :as bl]
    [clustermap.rtree :as rtree]))
 
+(def initial-bounds [[59.54 2.3] [49.29 -11.29]])
+
 (defn locate-map
   [m]
   (.fitBounds m
-              (clj->js [[59.54 2.3] [49.29 -11.29]])
+              (clj->js initial-bounds)
               (clj->js {"paddingTopLeft" [0 0]
                         "paddingBottomRight" [0 0]})))
 
@@ -72,20 +74,20 @@
 (defn marker-popup-content
   [path-fn location-sites]
   (hiccups/html
-   [:ul
+   [:ul.map-marker-popup-location-list
     (->> location-sites
          (map (fn [site]
                 ;; (.log js/console (clj->js site))
                 (hiccups/html
-                 [:div.map-marker-popup-location-list
-                  [:li
-                   [:a {:href (path-fn :portfolio-company site)} (:name site)]]]))))]))
+                 [:li
+                   [:a {:href (path-fn :portfolio-company site)} (:name site)]]))))]))
 
 (defn create-marker
   [path-fn leaflet-map location-sites]
   ;; extract the location-sites from the first record... they are all the same
   (if-let [latlong (some-> location-sites first :location reverse clj->js)]
-    (let [marker (js/L.marker latlong)
+    (let [icon (js/L.divIcon (clj->js {:className "map-marker" :iconSize [24,28] :iconAnchor [12 28] :popupAnchor [0, -22] })) ;;
+          marker (js/L.marker latlong (clj->js {:icon icon}) ) ;;
           popup-content (marker-popup-content path-fn location-sites)]
       ;; (.log js/console popup-content)
       (.bindPopup marker popup-content)
@@ -145,10 +147,10 @@
 
 (defn style-leaflet-path
   [leaflet-path {:keys [selected highlighted]}]
-  (cond (and selected highlighted) (.setStyle leaflet-path (clj->js {:color "#0000ff" :weight 3 :opacity 1 :fill true :fillOpacity 0.3}))
-        selected                   (.setStyle leaflet-path (clj->js {:color "#0000ff" :weight 3 :opacity 1 :fill true :fillOpacity 0.3}))
-        highlighted                (.setStyle leaflet-path (clj->js {:color "#000000" :weight 3 :opacity 1 :fill false}))
-        true                       (.setStyle leaflet-path (clj->js {:color "#ff0000" :weight 3 :opacity 0 :fill false :fillOpacity 0}))))
+  (cond (and selected highlighted) (.setStyle leaflet-path (clj->js {:color "#0000aa" :weight 2 :opacity 1 :fill true :fillOpacity 0.2}))
+        selected                   (.setStyle leaflet-path (clj->js {:color "#0000aa" :weight 2 :opacity 1 :fill true :fillOpacity 0.2}))
+        highlighted                (.setStyle leaflet-path (clj->js {:color "#000000" :weight 2 :opacity 1 :fill false}))
+        true                       (.setStyle leaflet-path (clj->js {:color "#ff0000" :weight 2 :opacity 0 :fill false :fillOpacity 0}))))
 
 (defn create-path
   [comm leaflet-map boundaryline-id js-boundaryline {:keys [selected] :as path-attrs}]
@@ -232,11 +234,13 @@
   (let [paths @paths-atom
         path-selections @path-selections-atom]
     (if (empty? paths)
-      (om/set-state! owner :pan-pending true)
+      (do (locate-map leaflet-map)
+          (om/set-state! owner :pan-pending true))
       (do
         (om/set-state! owner :pan-pending false)
-        (when-let [bounds (some->> (select-keys paths path-selections) vals (map :bounds))]
-          (apply pan-to-show leaflet-map bounds))))))
+        (if-let [bounds (some->> (select-keys paths path-selections) vals (map :bounds))]
+          (apply pan-to-show leaflet-map bounds)
+          (pan-to-show initial-bounds))))))
 
 (defn map-component
   "put the leaflet map as state in the om component"

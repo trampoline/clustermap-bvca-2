@@ -2145,20 +2145,9 @@ body.view-lists #search-results {
 #nav li.lists a:hover {
   background-position: -64px -128px;
 }
-#nav li.method {
-  position: absolute;
-  bottom: 129px;
-}
-#nav li.method a {
-  background-position: 0 -192px;
-}
-#nav li.method.active a,
-#nav li.method a:hover {
-  background-position: -64px -192px;
-}
 #nav li.info {
   position: absolute;
-  bottom: 64px;
+  bottom: 129px;
 }
 #nav li.info a {
   background-position: 0 -256px;
@@ -2166,6 +2155,17 @@ body.view-lists #search-results {
 #nav li.info.active a,
 #nav li.info a:hover {
   background-position: -64px -256px;
+}
+#nav li.method {
+  position: absolute;
+  bottom: 64px;
+}
+#nav li.method a {
+  background-position: 0 -192px;
+}
+#nav li.method.active a,
+#nav li.method a:hover {
+  background-position: -64px -192px;
 }
 #nav li.logo {
   width: 64px;
@@ -2642,20 +2642,8 @@ body.view-lists #search-results {
   #nav li.lists a:hover {
     background-position: -176px -96px;
   }
-  #nav li.method {
-    right: 97px;
-    bottom: auto;
-    top: 0;
-  }
-  #nav li.method a {
-    background-position: -128px -144px;
-  }
-  #nav li.method.active a,
-  #nav li.method a:hover {
-    background-position: -176px -144px;
-  }
   #nav li.info {
-    right: 48px;
+    right: 97px;
     bottom: auto;
     top: 0;
   }
@@ -2665,6 +2653,18 @@ body.view-lists #search-results {
   #nav li.info.active a,
   #nav li.info a:hover {
     background-position: -176px -192px;
+  }
+  #nav li.method {
+    right: 48px;
+    bottom: auto;
+    top: 0;
+  }
+  #nav li.method a {
+    background-position: -128px -144px;
+  }
+  #nav li.method.active a,
+  #nav li.method a:hover {
+    background-position: -176px -144px;
   }
   #nav li.logo {
     border: 0 none;

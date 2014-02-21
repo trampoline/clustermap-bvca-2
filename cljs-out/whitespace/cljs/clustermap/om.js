@@ -7,19 +7,19 @@ goog.require('cljs.core');
 * the app-state
 */
 clustermap.om.burrow = (function burrow(component_fn,korks){var use_korks = ((cljs.core.sequential_QMARK_.call(null,korks))?korks:new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [korks], null));return (function() { 
-var G__33768__delegate = function (args){return cljs.core.apply.call(null,component_fn,cljs.core.get_in.call(null,cljs.core.first.call(null,args),use_korks),cljs.core.rest.call(null,args));
+var G__33846__delegate = function (args){return cljs.core.apply.call(null,component_fn,cljs.core.get_in.call(null,cljs.core.first.call(null,args),use_korks),cljs.core.rest.call(null,args));
 };
-var G__33768 = function (var_args){
+var G__33846 = function (var_args){
 var args = null;if (arguments.length > 0) {
   args = cljs.core.array_seq(Array.prototype.slice.call(arguments, 0),0);} 
-return G__33768__delegate.call(this,args);};
-G__33768.cljs$lang$maxFixedArity = 0;
-G__33768.cljs$lang$applyTo = (function (arglist__33769){
-var args = cljs.core.seq(arglist__33769);
-return G__33768__delegate(args);
+return G__33846__delegate.call(this,args);};
+G__33846.cljs$lang$maxFixedArity = 0;
+G__33846.cljs$lang$applyTo = (function (arglist__33847){
+var args = cljs.core.seq(arglist__33847);
+return G__33846__delegate(args);
 });
-G__33768.cljs$core$IFn$_invoke$arity$variadic = G__33768__delegate;
-return G__33768;
+G__33846.cljs$core$IFn$_invoke$arity$variadic = G__33846__delegate;
+return G__33846;
 })()
 ;
 });

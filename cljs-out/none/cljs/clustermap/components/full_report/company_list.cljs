@@ -24,24 +24,23 @@
    true nil))
 
 (defn portfolio-company
-  [site owner {:keys [link-fn path-fn] :as opts}]
-  (let [company-path (path-fn :portfolio-company site)]
+  [company owner {:keys [link-fn path-fn] :as opts}]
+  (let [company-path (path-fn :portfolio-company company)]
     (om/component
      (html
       [:tr
-       [:td (link-fn :portfolio-company site)]
-       [:td (:postcode site)]
-       [:td (render-many-links link-fn company-path :investor-company (:investor_companies site))]
-       [:td (render-many-links link-fn company-path :constituency (some->> site :boundarylines (filter (fn [bl] (= "uk_constituencies" (:collection_id bl))))))]
-       [:td (fmoney (:latest_turnover site) :sf 2 :default "-") [:small "\u00A0(" (get-year (:latest_accounts_date site)) ")" ]]
-       [:td (pos-neg (:latest_turnover_delta site))]
-       [:td (fmoney (:latest_turnover_delta site) :sf 2 :default "-")]
-       [:td (fnum (:latest_employee_count site) :dec 0 :default "-") [:small "\u00A0(" (get-year (:latest_accounts_date site)) ")" ]]
-       [:td (pos-neg (:latest_employee_count_delta site))]
-       [:td (fnum (:latest_employee_count_delta site) :dec 0 :default "-") ]]))))
+       [:td (link-fn :portfolio-company company)]
+       [:td (render-many-links link-fn company-path :investor-company (:investor_companies company))]
+       [:td (render-many-links link-fn company-path :constituency (some->> company :boundarylines (filter (fn [bl] (= "uk_constituencies" (:collection_id bl))))))]
+       [:td (fmoney (:latest_turnover company) :sf 2 :default "-") [:small "\u00A0(" (get-year (:latest_accounts_date company)) ")" ]]
+       [:td (pos-neg (:latest_turnover_delta company))]
+       [:td (fmoney (:latest_turnover_delta company) :sf 2 :default "-")]
+       [:td (fnum (:latest_employee_count company) :dec 0 :default "-") [:small "\u00A0(" (get-year (:latest_accounts_date company)) ")" ]]
+       [:td (pos-neg (:latest_employee_count_delta company))]
+       [:td (fnum (:latest_employee_count_delta company) :dec 0 :default "-") ]]))))
 
 (defn company-list
-  [selection-portfolio-company-sites-by-company owner opts]
+  [companies owner opts]
   (om/component
        (html
         [:div.full-report-list
@@ -50,7 +49,6 @@
            [:thead
             [:tr
              [:th "Portfolio Company"]
-             [:th "Postcode"]
              [:th "Investor"]
              [:th "Constituency"]
              [:th "Revenue"]
@@ -58,4 +56,4 @@
              [:th "Employees"]
              [:th {:colSpan "2"} "Emp. change"]]]
            [:tbody
-            (om/build-all portfolio-company (:records selection-portfolio-company-sites-by-company) {:key :portfolio_company_site_uid :opts opts})]]]])))
+            (om/build-all portfolio-company (:records companies) {:key :portfolio_company_site_uid :opts opts})]]]])))

@@ -9,28 +9,28 @@
   (condp = type
     :portfolio-company {:selection {:name "Total"
                                     :description "Totals for the selected Portfolio Company"}
-                        :averages {:name "Average"
-                                   :description "Averages for the selected Portfolio Company"}
+                        :averages {:name "Mean"
+                                   :description "Mean for the selected Portfolio Company"}
                         :benchmark {:name "Benchmark"
-                                    :description "Averages over all UK Companies"}}
+                                    :description "Mean over all UK Companies"}}
     :investor-company {:selection {:name "Total"
                                    :description "Totals for the Portfolio Companies of the selected Investor"}
-                       :averages {:name "Average"
-                                  :description "Averages over the Portfolio Companies of the selected Investor"}
+                       :averages {:name "Mean"
+                                  :description "Mean over the Portfolio Companies of the selected Investor"}
                        :benchmark {:name "Benchmark"
-                                   :description "Averages over all UK Companies"}}
+                                   :description "Mean over all UK Companies"}}
     :constituency {:selection {:name "Total"
                                :description "Totals for the selected Constituency"}
-                   :averages {:name "Average"
-                              :description "Averages over the Portfolio Companies with sites in the selected Constituency"}
+                   :averages {:name "Mean"
+                              :description "Mean over the Portfolio Companies with sites in the selected Constituency"}
                    :benchmark {:name "Benchmark"
-                               :description "Averages over all UK Companies"}}
+                               :description "Mean over all UK Companies"}}
     {:selection {:name "Total"
                  :description "Totals over all Portfolio Companies"}
-     :averages {:name "Average"
-                :description "Averages over all Portfolio Companies"}
+     :averages {:name "Mean"
+                :description "Mean over all Portfolio Companies"}
      :benchmark {:name "Benchmark"
-                 :description "Averages over all UK Companies"}}))
+                 :description "Mean over all UK Companies"}}))
 
 (defn- overview-data
   [{:keys [all-portfolio-company-site-stats

@@ -32,10 +32,10 @@
        [:td (link-fn :portfolio-company company)]
        [:td (render-many-links link-fn company-path :investor-company (:investor_companies company))]
        [:td (render-many-links link-fn company-path :constituency (some->> company :boundarylines (filter (fn [bl] (= "uk_constituencies" (:collection_id bl))))))]
-       [:td (fmoney (:latest_turnover company) :sf 2 :default "-") [:small "\u00A0(" (get-year (:latest_accounts_date company)) ")" ]]
+       [:td (fmoney (:latest_turnover company) :sf 2 :default "-") [:small "\u00A0(" (or (get-year (:latest_accounts_date company)) "no info") ")" ]]
        [:td (pos-neg (:latest_turnover_delta company))]
        [:td (fmoney (:latest_turnover_delta company) :sf 2 :default "-")]
-       [:td (fnum (:latest_employee_count company) :dec 0 :default "-") [:small "\u00A0(" (get-year (:latest_accounts_date company)) ")" ]]
+       [:td (fnum (:latest_employee_count company) :dec 0 :default "-") [:small "\u00A0(" (or (get-year (:latest_accounts_date company)) "no info") ")" ]]
        [:td (pos-neg (:latest_employee_count_delta company))]
        [:td (fnum (:latest_employee_count_delta company) :dec 0 :default "-") ]]))))
 

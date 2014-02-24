@@ -38262,9 +38262,23 @@ clustermap.components.full_report.company_list.portfolio_company = function port
       }(), function() {
         var attrs32997 = clustermap.formats.money.fmoney.call(null, (new cljs.core.Keyword(null, "latest_turnover", "latest_turnover", 2012435451)).cljs$core$IFn$_invoke$arity$1(self__.company), new cljs.core.Keyword(null, "sf", "sf", 1013907909), 2, new cljs.core.Keyword(null, "default", "default", 2558708147), "-");
         if (cljs.core.map_QMARK_.call(null, attrs32997)) {
-          return React.DOM.td(sablono.interpreter.attributes.call(null, attrs32997), React.DOM.small(null, "\u00a0(", sablono.interpreter.interpret.call(null, clustermap.formats.time.get_year.call(null, (new cljs.core.Keyword(null, "latest_accounts_date", "latest_accounts_date", 2789706017)).cljs$core$IFn$_invoke$arity$1(self__.company))), ")"));
+          return React.DOM.td(sablono.interpreter.attributes.call(null, attrs32997), React.DOM.small(null, "\u00a0(", sablono.interpreter.interpret.call(null, function() {
+            var or__3406__auto__ = clustermap.formats.time.get_year.call(null, (new cljs.core.Keyword(null, "latest_accounts_date", "latest_accounts_date", 2789706017)).cljs$core$IFn$_invoke$arity$1(self__.company));
+            if (cljs.core.truth_(or__3406__auto__)) {
+              return or__3406__auto__;
+            } else {
+              return "no info";
+            }
+          }()), ")"));
         } else {
-          return React.DOM.td(null, sablono.interpreter.interpret.call(null, attrs32997), React.DOM.small(null, "\u00a0(", sablono.interpreter.interpret.call(null, clustermap.formats.time.get_year.call(null, (new cljs.core.Keyword(null, "latest_accounts_date", "latest_accounts_date", 2789706017)).cljs$core$IFn$_invoke$arity$1(self__.company))), ")"));
+          return React.DOM.td(null, sablono.interpreter.interpret.call(null, attrs32997), React.DOM.small(null, "\u00a0(", sablono.interpreter.interpret.call(null, function() {
+            var or__3406__auto__ = clustermap.formats.time.get_year.call(null, (new cljs.core.Keyword(null, "latest_accounts_date", "latest_accounts_date", 2789706017)).cljs$core$IFn$_invoke$arity$1(self__.company));
+            if (cljs.core.truth_(or__3406__auto__)) {
+              return or__3406__auto__;
+            } else {
+              return "no info";
+            }
+          }()), ")"));
         }
       }(), function() {
         var attrs32998 = clustermap.components.full_report.company_list.pos_neg.call(null, (new cljs.core.Keyword(null, "latest_turnover_delta", "latest_turnover_delta", 4599982068)).cljs$core$IFn$_invoke$arity$1(self__.company));
@@ -38283,9 +38297,23 @@ clustermap.components.full_report.company_list.portfolio_company = function port
       }(), function() {
         var attrs33000 = clustermap.formats.number.fnum.call(null, (new cljs.core.Keyword(null, "latest_employee_count", "latest_employee_count", 905794408)).cljs$core$IFn$_invoke$arity$1(self__.company), new cljs.core.Keyword(null, "dec", "dec", 1014003572), 0, new cljs.core.Keyword(null, "default", "default", 2558708147), "-");
         if (cljs.core.map_QMARK_.call(null, attrs33000)) {
-          return React.DOM.td(sablono.interpreter.attributes.call(null, attrs33000), React.DOM.small(null, "\u00a0(", sablono.interpreter.interpret.call(null, clustermap.formats.time.get_year.call(null, (new cljs.core.Keyword(null, "latest_accounts_date", "latest_accounts_date", 2789706017)).cljs$core$IFn$_invoke$arity$1(self__.company))), ")"));
+          return React.DOM.td(sablono.interpreter.attributes.call(null, attrs33000), React.DOM.small(null, "\u00a0(", sablono.interpreter.interpret.call(null, function() {
+            var or__3406__auto__ = clustermap.formats.time.get_year.call(null, (new cljs.core.Keyword(null, "latest_accounts_date", "latest_accounts_date", 2789706017)).cljs$core$IFn$_invoke$arity$1(self__.company));
+            if (cljs.core.truth_(or__3406__auto__)) {
+              return or__3406__auto__;
+            } else {
+              return "no info";
+            }
+          }()), ")"));
         } else {
-          return React.DOM.td(null, sablono.interpreter.interpret.call(null, attrs33000), React.DOM.small(null, "\u00a0(", sablono.interpreter.interpret.call(null, clustermap.formats.time.get_year.call(null, (new cljs.core.Keyword(null, "latest_accounts_date", "latest_accounts_date", 2789706017)).cljs$core$IFn$_invoke$arity$1(self__.company))), ")"));
+          return React.DOM.td(null, sablono.interpreter.interpret.call(null, attrs33000), React.DOM.small(null, "\u00a0(", sablono.interpreter.interpret.call(null, function() {
+            var or__3406__auto__ = clustermap.formats.time.get_year.call(null, (new cljs.core.Keyword(null, "latest_accounts_date", "latest_accounts_date", 2789706017)).cljs$core$IFn$_invoke$arity$1(self__.company));
+            if (cljs.core.truth_(or__3406__auto__)) {
+              return or__3406__auto__;
+            } else {
+              return "no info";
+            }
+          }()), ")"));
         }
       }(), function() {
         var attrs33001 = clustermap.components.full_report.company_list.pos_neg.call(null, (new cljs.core.Keyword(null, "latest_employee_count_delta", "latest_employee_count_delta", 1082401185)).cljs$core$IFn$_invoke$arity$1(self__.company));
@@ -56615,9 +56643,23 @@ clustermap.components.map_report.constituency_report = function constituency_rep
       return React.DOM.div(null, React.DOM.header({"className":"secondary"}, React.DOM.h2(null, "Constituency"), function() {
         var attrs33540 = (new cljs.core.Keyword(null, "name", "name", 1017277949)).cljs$core$IFn$_invoke$arity$1(self__.constituency);
         if (cljs.core.map_QMARK_.call(null, attrs33540)) {
-          return React.DOM.h3(sablono.interpreter.attributes.call(null, attrs33540), React.DOM.br(null), React.DOM.small(null, "(", sablono.interpreter.interpret.call(null, (new cljs.core.Keyword(null, "mp", "mp", 1013907733)).cljs$core$IFn$_invoke$arity$1(self__.constituency)), ", ", sablono.interpreter.interpret.call(null, (new cljs.core.Keyword(null, "political_party", "political_party", 2564439702)).cljs$core$IFn$_invoke$arity$1(self__.constituency)), ")"));
+          return React.DOM.h3(sablono.interpreter.attributes.call(null, attrs33540), React.DOM.br(null), cljs.core.truth_(function() {
+            var or__3406__auto__ = (new cljs.core.Keyword(null, "mp", "mp", 1013907733)).cljs$core$IFn$_invoke$arity$1(self__.constituency);
+            if (cljs.core.truth_(or__3406__auto__)) {
+              return or__3406__auto__;
+            } else {
+              return(new cljs.core.Keyword(null, "political_party", "political_party", 2564439702)).cljs$core$IFn$_invoke$arity$1(self__.constituency);
+            }
+          }()) ? React.DOM.small(null, "(", sablono.interpreter.interpret.call(null, (new cljs.core.Keyword(null, "mp", "mp", 1013907733)).cljs$core$IFn$_invoke$arity$1(self__.constituency)), ", ", sablono.interpreter.interpret.call(null, (new cljs.core.Keyword(null, "political_party", "political_party", 2564439702)).cljs$core$IFn$_invoke$arity$1(self__.constituency)), ")") : null);
         } else {
-          return React.DOM.h3(null, sablono.interpreter.interpret.call(null, attrs33540), React.DOM.br(null), React.DOM.small(null, "(", sablono.interpreter.interpret.call(null, (new cljs.core.Keyword(null, "mp", "mp", 1013907733)).cljs$core$IFn$_invoke$arity$1(self__.constituency)), ", ", sablono.interpreter.interpret.call(null, (new cljs.core.Keyword(null, "political_party", "political_party", 2564439702)).cljs$core$IFn$_invoke$arity$1(self__.constituency)), ")"));
+          return React.DOM.h3(null, sablono.interpreter.interpret.call(null, attrs33540), React.DOM.br(null), cljs.core.truth_(function() {
+            var or__3406__auto__ = (new cljs.core.Keyword(null, "mp", "mp", 1013907733)).cljs$core$IFn$_invoke$arity$1(self__.constituency);
+            if (cljs.core.truth_(or__3406__auto__)) {
+              return or__3406__auto__;
+            } else {
+              return(new cljs.core.Keyword(null, "political_party", "political_party", 2564439702)).cljs$core$IFn$_invoke$arity$1(self__.constituency);
+            }
+          }()) ? React.DOM.small(null, "(", sablono.interpreter.interpret.call(null, (new cljs.core.Keyword(null, "mp", "mp", 1013907733)).cljs$core$IFn$_invoke$arity$1(self__.constituency)), ", ", sablono.interpreter.interpret.call(null, (new cljs.core.Keyword(null, "political_party", "political_party", 2564439702)).cljs$core$IFn$_invoke$arity$1(self__.constituency)), ")") : null);
         }
       }()), React.DOM.ul(null, function() {
         var attrs33545 = clustermap.formats.number.fnum.call(null, self__.pc_count);

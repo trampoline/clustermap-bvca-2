@@ -91,39 +91,17 @@
     (GET (str "/api/" api-prefix "/search?q=" q))
     (to-chan [#js {}])))
 
-
 ;; constituencies
 
 (defn constituency
   [id]
   (GET (str "/api/" api-prefix "/constituencies/" id)))
 
-(defn constituencies
-  [& [type-ids]]
-  (GET "/api/" api-prefix "/constituencies?" (map-json-params type-ids)))
-
-
-
 ;; portfolio-companies
 
 (defn portfolio-company
   [id]
   (GET (str "/api/" api-prefix "/portfolio-companies/" id)))
-
-(defn portfolio-companies
-  [& [type-ids]]
-  (let [type-ids (merge {:sort {:!latest_turnover "desc"}})]
-    (GET (str "/api/" api-prefix "/portfolio-companies?" (map-json-params type-ids)))))
-
-(defn portfolio-company-stats
-  [& [type-ids]]
-  (GET (str "/api/" api-prefix "/portfolio-company-stats?" (map-json-params type-ids))))
-
-(defn portfolio-company-account-stats
-  [& [type-ids]]
-  (GET (str "/api/" api-prefix "/portfolio-company-account-stats?" (map-json-params type-ids))))
-
-
 
 ;; portfolio-company-sites
 
@@ -149,14 +127,8 @@
   [& [type-ids]]
   (GET (str "/api/" api-prefix "/portfolio-company-site-account-timelines?" (map-json-params type-ids))))
 
-
-
 ;; investor-companies
 
 (defn investor-company
   [id]
   (GET (str "/api/" api-prefix "/investor-companies/" id)))
-
-(defn investor-comapnies
-  [& [type-ids]]
-  (GET (str "/api/" api-prefix "/investor-companies?" (map-json-params type-ids))))

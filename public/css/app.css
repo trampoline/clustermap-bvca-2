@@ -2366,6 +2366,9 @@ body.view-lists #search-results {
   padding: 0 20px;
   font-size: 20px;
 }
+#search input[type=text]:focus {
+  outline: none;
+}
 #search button {
   display: inline-block;
   *display: inline;
@@ -2392,9 +2395,7 @@ body.view-lists #search-results {
   user-select: none;
 }
 #search button:focus {
-  outline: thin dotted #333;
-  outline: 5px auto -webkit-focus-ring-color;
-  outline-offset: -2px;
+  outline: none;
 }
 #search button:hover,
 #search button:focus {
@@ -2721,6 +2722,7 @@ body.view-lists #search-results {
   }
   .grid .charts .box {
     margin-bottom: 10px;
+    width: 100%;
   }
   .grid .charts .box-first {
     margin-right: 0;

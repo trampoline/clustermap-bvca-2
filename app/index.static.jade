@@ -99,10 +99,14 @@ html(lang='en')
                 div.tbl
                   div.tbl-cell(style='width: 100%')
                     input(type='text', placeholder='Search')
-                  div.tbl-cell(style='width: 34px')
+                  //- NEW: width increased
+                  div.tbl-cell(style='width: 38px')
                     button(type='reset').btn-clear &times;
-                  div.tbl-cell(style='width: 136px')
-                    button(type='reset').btn-reset Reset to UK wide
+
+                  //- NEW: Button moved below to "header.secondary"
+                  //- div.tbl-cell(style='width: 136px')
+                  //-   button(type='reset').btn-reset Reset to UK wide
+
                 #search-results.hide
                   ul
                     li
@@ -120,6 +124,7 @@ html(lang='en')
             #page-title-component
               #page-title
                 button(type='button').btn View on map
+                button(type='reset').btn.btn-link.btn-reset Reset to UK wide
                 h2 Company
                 h3 ABC XYZ Company Name Limited
 
@@ -139,6 +144,7 @@ html(lang='en')
                     header.secondary
                       h2 -
                       h3 -
+                      button(type='reset').btn-reset Reset to UK wide
 
                     ul
                       li

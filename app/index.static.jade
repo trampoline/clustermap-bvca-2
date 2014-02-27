@@ -29,7 +29,7 @@ html(lang='en')
 
     //begin-static-app-config
     script(type='text/javascript').
-      window.config={}
+      window.config={"api":{"prefix": ""}}
     //end-static-app-config
     //app-config
       <script type="text/javascript">window.config={{{app-config}}}</script>
@@ -336,6 +336,7 @@ html(lang='en')
       {{{base-js}}}
 
     //begin-dynamic-js
+    <script type="text/javascript" src="clustermap.js"></script><script type="text/javascript">goog.require("clustermap.core");</script>
     //end-dynamic-js
     //dynamic-js
       <script type="text/javascript" src="clustermap.js"></script><script type="text/javascript">goog.require("clustermap.core");</script>

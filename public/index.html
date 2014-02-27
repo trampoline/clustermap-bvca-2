@@ -3,21 +3,18 @@
   <head>
     <title>BVCA v2</title>
     <meta charset="utf-8">
-    <!--if IEmeta(http-equiv="X-UA-Compatible", content="IE=edge,chrome=1")
-    -->
+    <!--[if IE]>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <![endif]-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
     <link type="text/css" rel="stylesheet" href="http://api.tiles.mapbox.com/mapbox.js/v1.6.1/mapbox.css">
     <link type="text/css" rel="stylesheet" href="css/app.css">
-    <!--if lte IE 7
-    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/json2/20110223/json2.js"></script>
-    
-    -->
-    <!--if lte IE 8
-    <script type="text/javascript" src="/js/html5.js"></script>
-    
-    -->
+    <!--[if lte IE 7]><script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/json2/20110223/json2.js"></script>
+    <![endif]-->
+    <!--[if lte IE 8]><script type="text/javascript" src="/js/html5.js"></script>
+    <![endif]-->
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="http://api.tiles.mapbox.com/mapbox.js/v1.6.1/mapbox.js"></script>
     <script type="text/javascript" src="/js/vendor.js"></script>
@@ -27,9 +24,7 @@
     <!--begin-static-app-config-->
     <script type="text/javascript">window.config={}</script>
     <!--end-static-app-config-->
-    <!--app-config
-    <script type="text/javascript">window.config={{{app-config}}}</script>
-    
+    <!--app-config<script type="text/javascript">window.config={{{app-config}}}</script>
     -->
   </head>
   <body class="view-map">
@@ -99,11 +94,8 @@
                   <div style="width: 100%" class="tbl-cell">
                     <input type="text" placeholder="Search">
                   </div>
-                  <div style="width: 34px" class="tbl-cell">
+                  <div style="width: 38px" class="tbl-cell">
                     <button type="reset" class="btn-clear">&times;</button>
-                  </div>
-                  <div style="width: 136px" class="tbl-cell">
-                    <button type="reset" class="btn-reset">Reset to UK wide</button>
                   </div>
                 </div>
                 <div id="search-results" class="hide">
@@ -118,6 +110,7 @@
             <div id="page-title-component">
               <div id="page-title">
                 <button type="button" class="btn">View on map</button>
+                <button type="reset" class="btn btn-link btn-reset">Reset to UK wide</button>
                 <h2>Company</h2>
                 <h3>ABC XYZ Company Name Limited</h3>
               </div>
@@ -135,6 +128,7 @@
                     <header class="secondary">
                       <h2>-</h2>
                       <h3>-</h3>
+                      <button type="reset" class="btn-reset">Reset to UK wide</button>
                     </header>
                     <ul>
                       <li>-<small>Companies</small></li>
@@ -339,15 +333,11 @@
     <!--begin-static-base-js-->
     <script type="text/javascript" src="cljs/goog/base.js"></script>
     <!--end-static-base-js-->
-    <!--base-js
-    {{{base-js}}}
-    
+    <!--base-js{{{base-js}}}
     -->
     <!--begin-dynamic-js-->
     <!--end-dynamic-js-->
-    <!--dynamic-js
-    <script type="text/javascript" src="clustermap.js"></script><script type="text/javascript">goog.require("clustermap.core");</script>
-    
+    <!--dynamic-js<script type="text/javascript" src="clustermap.js"></script><script type="text/javascript">goog.require("clustermap.core");</script>
     -->
     <!--begin-static-repl-js-->
     <!--end-static-repl-js-->

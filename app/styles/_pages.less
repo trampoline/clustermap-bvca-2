@@ -569,6 +569,9 @@ body {
     width: 100%;
     padding: 0 20px;
     font-size: 20px;
+    &:focus {
+      outline: none;
+    }
   }
   button {
     display: inline-block;
@@ -581,16 +584,13 @@ body {
     border: 1px solid transparent;
     white-space: nowrap;
     position: relative;
-    // position: absolute;
-    // right: 2px;
-    // top: 2px;
     background: #fff;
     color: @gray-light;
     .button-size(6px; 10px; 20px; 20px; 0);
     .user-select(none);
 
     &:focus {
-      .tab-focus();
+      outline: none;
     }
 
     &:hover,
@@ -912,6 +912,7 @@ body {
       }
       .box {
         margin-bottom: @grid-spacing;
+        width: 100%;
       }
       .box-first {
         margin-right: 0;

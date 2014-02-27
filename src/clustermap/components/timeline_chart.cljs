@@ -21,19 +21,22 @@
         $
         (.highcharts
          (clj->js
-          {:chart {:width nil}
+          {:chart {:width nil
+                   :height 300}
            :title {:text nil}
            :xAxis {:categories x-labels
                    :labels {:rotation 270}}
            :yAxis [{:title {:text y0-title}
+                    :min 0
                     ;; :type "logarithmic"
                     }
                    ;; {:title {:text y1-title} :opposite true}
                    ]
-           :series [{:name (str "Median " y0-title)
-                     :type "line"
-                     :yAxis 0
-                     :data y-median}
+           :series [
+                    ;; {:name (str "Median " y0-title)
+                    ;;  :type "line"
+                    ;;  :yAxis 0
+                    ;;  :data y-median}
                     {:name (str "Mean " y0-title)
                      :type "line"
                      :yAxis 0

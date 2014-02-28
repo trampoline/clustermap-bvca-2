@@ -531,5 +531,81 @@ return portfolio_company_site_account_timelines;
 ;
 clustermap.api.investor_company = (function investor_company(id){return clustermap.api.GET.call(null,[cljs.core.str("/api/"),cljs.core.str(clustermap.api.api_prefix),cljs.core.str("/investor-companies/"),cljs.core.str(id)].join(''));
 });
+/**
+* @param {...*} var_args
+*/
+clustermap.api.investment_account_timelines = (function() { 
+var investment_account_timelines__delegate = function (p__8580){var vec__8582 = p__8580;var type_ids = cljs.core.nth.call(null,vec__8582,0,null);return clustermap.api.GET.call(null,[cljs.core.str("/api/"),cljs.core.str(clustermap.api.api_prefix),cljs.core.str("/investment-account-timelines?"),cljs.core.str(clustermap.api.map_json_params.call(null,type_ids))].join(''));
+};
+var investment_account_timelines = function (var_args){
+var p__8580 = null;if (arguments.length > 0) {
+  p__8580 = cljs.core.array_seq(Array.prototype.slice.call(arguments, 0),0);} 
+return investment_account_timelines__delegate.call(this,p__8580);};
+investment_account_timelines.cljs$lang$maxFixedArity = 0;
+investment_account_timelines.cljs$lang$applyTo = (function (arglist__8583){
+var p__8580 = cljs.core.seq(arglist__8583);
+return investment_account_timelines__delegate(p__8580);
+});
+investment_account_timelines.cljs$core$IFn$_invoke$arity$variadic = investment_account_timelines__delegate;
+return investment_account_timelines;
+})()
+;
+/**
+* @param {...*} var_args
+*/
+clustermap.api.investment_stats = (function() { 
+var investment_stats__delegate = function (p__8584){var vec__8586 = p__8584;var type_ids = cljs.core.nth.call(null,vec__8586,0,null);return clustermap.api.GET.call(null,[cljs.core.str("/api/"),cljs.core.str(clustermap.api.api_prefix),cljs.core.str("/investment-stats?"),cljs.core.str(clustermap.api.map_json_params.call(null,type_ids))].join(''));
+};
+var investment_stats = function (var_args){
+var p__8584 = null;if (arguments.length > 0) {
+  p__8584 = cljs.core.array_seq(Array.prototype.slice.call(arguments, 0),0);} 
+return investment_stats__delegate.call(this,p__8584);};
+investment_stats.cljs$lang$maxFixedArity = 0;
+investment_stats.cljs$lang$applyTo = (function (arglist__8587){
+var p__8584 = cljs.core.seq(arglist__8587);
+return investment_stats__delegate(p__8584);
+});
+investment_stats.cljs$core$IFn$_invoke$arity$variadic = investment_stats__delegate;
+return investment_stats;
+})()
+;
+/**
+* @param {...*} var_args
+*/
+clustermap.api.investment_aggs = (function() { 
+var investment_aggs__delegate = function (p__8588){var vec__8590 = p__8588;var type_ids = cljs.core.nth.call(null,vec__8590,0,null);var type_ids__$1 = cljs.core.merge.call(null,new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"size","size",1017434995),50,new cljs.core.Keyword(null,"order","order",1119910592),new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"latest_turnover","latest_turnover",2012435451),"desc"], null)], null)], null),type_ids);return clustermap.api.GET.call(null,[cljs.core.str("/api/"),cljs.core.str(clustermap.api.api_prefix),cljs.core.str("/investment-aggs?"),cljs.core.str(clustermap.api.map_json_params.call(null,type_ids__$1))].join(''));
+};
+var investment_aggs = function (var_args){
+var p__8588 = null;if (arguments.length > 0) {
+  p__8588 = cljs.core.array_seq(Array.prototype.slice.call(arguments, 0),0);} 
+return investment_aggs__delegate.call(this,p__8588);};
+investment_aggs.cljs$lang$maxFixedArity = 0;
+investment_aggs.cljs$lang$applyTo = (function (arglist__8591){
+var p__8588 = cljs.core.seq(arglist__8591);
+return investment_aggs__delegate(p__8588);
+});
+investment_aggs.cljs$core$IFn$_invoke$arity$variadic = investment_aggs__delegate;
+return investment_aggs;
+})()
+;
+/**
+* @param {...*} var_args
+*/
+clustermap.api.investments = (function() { 
+var investments__delegate = function (p__8592){var vec__8594 = p__8592;var type_ids = cljs.core.nth.call(null,vec__8594,0,null);var type_ids__$1 = cljs.core.merge.call(null,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"size","size",1017434995),50], null),type_ids);return clustermap.api.GET.call(null,[cljs.core.str("/api/"),cljs.core.str(clustermap.api.api_prefix),cljs.core.str("/investments?"),cljs.core.str(clustermap.api.map_json_params.call(null,type_ids__$1))].join(''));
+};
+var investments = function (var_args){
+var p__8592 = null;if (arguments.length > 0) {
+  p__8592 = cljs.core.array_seq(Array.prototype.slice.call(arguments, 0),0);} 
+return investments__delegate.call(this,p__8592);};
+investments.cljs$lang$maxFixedArity = 0;
+investments.cljs$lang$applyTo = (function (arglist__8595){
+var p__8592 = cljs.core.seq(arglist__8595);
+return investments__delegate(p__8592);
+});
+investments.cljs$core$IFn$_invoke$arity$variadic = investments__delegate;
+return investments;
+})()
+;
 
 //# sourceMappingURL=api.js.map

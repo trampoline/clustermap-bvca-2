@@ -26,6 +26,7 @@
                   :zoom nil
                   :view :map
 
+                  :all-investment-stats nil
                   :all-portfolio-company-site-stats nil
 
                   :search-results {}
@@ -33,10 +34,10 @@
                   :selector nil
 
                   :selection nil
-                  :selection-portfolio-company-site-stats nil
-                  :selection-portfolio-company-sites []
-                  :selection-portfolio-company-sites-by-company nil
-                  :selection-portfolio-company-site-account-timelines nil
+                  :selection-investment-stats nil
+                  :selection-investment-account-timelines nil
+                  :selection-investment-aggs nil
+                  :selection-investments nil
                   :selection-portfolio-company-locations nil
                   }))
 
@@ -67,11 +68,11 @@
       (set-state :uk-constituencies bls
                  :uk-constituencies-rtree rt))))
 
-(defn load-all-portfolio-company-site-stats
+(defn load-all-investment-stats
   []
   (go
-    (let [all-portfolio-company-site-stats (<! (api/portfolio-company-site-stats))]
-      (set-state :all-portfolio-company-site-stats all-portfolio-company-site-stats))))
+    (let [all-investment-stats (<! (api/investment-stats))]
+      (set-state :all-investment-stats all-investment-stats))))
 
 (defn process-search-results
   "process a search"
@@ -80,17 +81,17 @@
 
 (defn process-selection
   [[selection
-    selection-portfolio-company-site-stats
-    selection-portfolio-company-sites
-    selection-portfolio-company-sites-by-company
-    selection-portfolio-company-site-account-timelines
+    selection-investment-stats
+    selection-investment-account-timelines
+    selection-investment-aggs
+    selection-investments
     selection-portfolio-company-locations] type]
   ;; (.log js/console (clj->js [result type]))
   (set-state :selection {:type type :value selection}
-             :selection-portfolio-company-site-stats selection-portfolio-company-site-stats
-             :selection-portfolio-company-sites selection-portfolio-company-sites
-             :selection-portfolio-company-sites-by-company selection-portfolio-company-sites-by-company
-             :selection-portfolio-company-site-account-timelines selection-portfolio-company-site-account-timelines
+             :selection-investment-stats selection-investment-stats
+             :selection-investment-account-timelines selection-investment-account-timelines
+             :selection-investment-aggs selection-investment-aggs
+             :selection-investments selection-investments
              :selection-portfolio-company-locations selection-portfolio-company-locations))
 
 (defn make-selection
@@ -108,28 +109,28 @@
 
       (condp = type
         :portfolio-company [[(api/portfolio-company id)
-                             (api/portfolio-company-site-stats selector)
-                             (api/portfolio-company-sites selector)
-                             (api/portfolio-company-sites-by-company selector)
-                             (api/portfolio-company-site-account-timelines selector)
+                             (api/investment-stats selector)
+                             (api/investment-account-timelines selector)
+                             (api/investment-aggs selector)
+                             (api/investments selector)
                              (api/portfolio-company-locations selector)] type]
         :investor-company [[(api/investor-company id)
-                            (api/portfolio-company-site-stats selector)
-                            (api/portfolio-company-sites selector)
-                            (api/portfolio-company-sites-by-company selector)
-                            (api/portfolio-company-site-account-timelines selector)
+                            (api/investment-stats selector)
+                            (api/investment-account-timelines selector)
+                            (api/investment-aggs selector)
+                            (api/investments selector)
                             (api/portfolio-company-locations selector)] type]
         :constituency [[(api/constituency id)
-                        (api/portfolio-company-site-stats selector)
-                        (api/portfolio-company-sites selector)
-                        (api/portfolio-company-sites-by-company selector)
-                        (api/portfolio-company-site-account-timelines selector)
+                        (api/investment-stats selector)
+                        (api/investment-account-timelines selector)
+                        (api/investment-aggs selector)
+                        (api/investments selector)
                         (api/portfolio-company-locations selector)] type]
         [[nil
-          (api/portfolio-company-site-stats selector)
-          (api/portfolio-company-sites selector)
-          (api/portfolio-company-sites-by-company selector)
-          (api/portfolio-company-site-account-timelines selector)
+          (api/investment-stats selector)
+          (api/investment-account-timelines selector)
+          (api/investment-aggs selector)
+          (api/investments selector)
           nil ;; (api/portfolio-company-locations selector)
           ] type]))))
 
@@ -218,7 +219,7 @@
     (init-routes comm)
 
     (load-uk-constituencies)
-    (load-all-portfolio-company-site-stats)
+    (load-all-investment-stats)
 
     (map/mount state "map-component" shared)
     (search/mount state "search-component" shared)

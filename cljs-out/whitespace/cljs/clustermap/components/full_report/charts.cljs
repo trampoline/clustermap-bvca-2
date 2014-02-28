@@ -10,7 +10,7 @@
   (om/component
    (html
     [:div.full-report-charts
-     (if-let [timelines (:selection-portfolio-company-site-account-timelines data)]
+     (if-let [timelines (:selection-investment-account-timelines data)]
        [:div.grid
         [:div.tbl
          [:div.tbl-cell.charts

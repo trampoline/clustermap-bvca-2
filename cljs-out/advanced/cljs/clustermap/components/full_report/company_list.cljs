@@ -12,7 +12,7 @@
     (if next-objs
       (html
        [:div (link-fn type first-obj)
-        [:a {:href owner-path} "\u00A0(" (count next-objs) " more...)"]])
+        [:a {:href owner-path} "\u00A0(more...)"]])
       (link-fn type first-obj))))
 
 (defn pos-neg
@@ -56,4 +56,4 @@
              [:th "Employees"]
              [:th {:colSpan "2"} "Emp. change"]]]
            [:tbody
-            (om/build-all portfolio-company (:records companies) {:key :portfolio_company_site_uid :opts opts})]]]])))
+            (om/build-all portfolio-company (:records companies) {:key :company_no :opts opts})]]]])))

@@ -91,7 +91,7 @@
   (let [comm (om/get-shared owner :comm)
         type (get-in data [:selection :type])
         value (get-in data [:selection :value])
-        site-stats (:selection-portfolio-company-site-stats data)]
+        site-stats (:selection-investment-stats data)]
     (condp == type
         :portfolio-company (portfolio-company-report value site-stats comm)
         :investor-company (investor-company-report value site-stats comm)

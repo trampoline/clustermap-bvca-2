@@ -36,10 +36,8 @@
                   :selection nil
                   :selection-investment-stats nil
                   :selection-investment-account-timelines nil
-                  :selection-portfolio-company-site-stats nil
-                  :selection-portfolio-company-sites []
-                  :selection-portfolio-company-sites-by-company nil
-                  :selection-portfolio-company-site-account-timelines nil
+                  :selection-investment-aggs nil
+                  :selection-investments nil
                   :selection-portfolio-company-locations nil
                   }))
 
@@ -85,19 +83,15 @@
   [[selection
     selection-investment-stats
     selection-investment-account-timelines
-    selection-portfolio-company-site-stats
-    selection-portfolio-company-sites
-    selection-portfolio-company-sites-by-company
-    selection-portfolio-company-site-account-timelines
+    selection-investment-aggs
+    selection-investments
     selection-portfolio-company-locations] type]
   ;; (.log js/console (clj->js [result type]))
   (set-state :selection {:type type :value selection}
              :selection-investment-stats selection-investment-stats
              :selection-investment-account-timelines selection-investment-account-timelines
-             :selection-portfolio-company-site-stats selection-portfolio-company-site-stats
-             :selection-portfolio-company-sites selection-portfolio-company-sites
-             :selection-portfolio-company-sites-by-company selection-portfolio-company-sites-by-company
-             :selection-portfolio-company-site-account-timelines selection-portfolio-company-site-account-timelines
+             :selection-investment-aggs selection-investment-aggs
+             :selection-investments selection-investments
              :selection-portfolio-company-locations selection-portfolio-company-locations))
 
 (defn make-selection
@@ -117,34 +111,26 @@
         :portfolio-company [[(api/portfolio-company id)
                              (api/investment-stats selector)
                              (api/investment-account-timelines selector)
-                             (api/portfolio-company-site-stats selector)
-                             (api/portfolio-company-sites selector)
-                             (api/portfolio-company-sites-by-company selector)
-                             (api/portfolio-company-site-account-timelines selector)
+                             (api/investment-aggs selector)
+                             (api/investments selector)
                              (api/portfolio-company-locations selector)] type]
         :investor-company [[(api/investor-company id)
                             (api/investment-stats selector)
                             (api/investment-account-timelines selector)
-                            (api/portfolio-company-site-stats selector)
-                            (api/portfolio-company-sites selector)
-                            (api/portfolio-company-sites-by-company selector)
-                            (api/portfolio-company-site-account-timelines selector)
+                            (api/investment-aggs selector)
+                            (api/investments selector)
                             (api/portfolio-company-locations selector)] type]
         :constituency [[(api/constituency id)
                         (api/investment-stats selector)
                         (api/investment-account-timelines selector)
-                        (api/portfolio-company-site-stats selector)
-                        (api/portfolio-company-sites selector)
-                        (api/portfolio-company-sites-by-company selector)
-                        (api/portfolio-company-site-account-timelines selector)
+                        (api/investment-aggs selector)
+                        (api/investments selector)
                         (api/portfolio-company-locations selector)] type]
         [[nil
           (api/investment-stats selector)
           (api/investment-account-timelines selector)
-          (api/portfolio-company-site-stats selector)
-          (api/portfolio-company-sites selector)
-          (api/portfolio-company-sites-by-company selector)
-          (api/portfolio-company-site-account-timelines selector)
+          (api/investment-aggs selector)
+          (api/investments selector)
           nil ;; (api/portfolio-company-locations selector)
           ] type]))))
 

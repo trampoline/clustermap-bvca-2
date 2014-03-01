@@ -1,6 +1,5 @@
 (ns clustermap.components.full-report.company-site-list
-  (:require [cljs.core.async :refer [put!]]
-            [om.core :as om :include-macros true]
+  (:require [om.core :as om :include-macros true]
             [sablono.core :as html :refer [html] :include-macros true]
             [clustermap.formats.number :as nf :refer [fnum]]
             [clustermap.formats.money :as mf :refer [fmoney]]

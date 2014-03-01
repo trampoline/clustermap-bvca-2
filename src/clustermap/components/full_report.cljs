@@ -1,7 +1,7 @@
 (ns clustermap.components.full-report
   (:require [om.core :as om :include-macros true]
             [jayq.core :refer [$]]
-            [sablono.core :as html :refer [html] :include-macros true]
+            [sablono.core :as html :refer-macros [html]]
             [clustermap.components.full-report.overview :as overview]
             [clustermap.components.full-report.company-list :as company-list]
             [clustermap.components.full-report.company-site-list :as company-site-list]
@@ -30,14 +30,15 @@
                    (om/build company-list/company-list (:selection-investment-aggs data) {:opts {:comm comm :link-fn link-fn :path-fn path-fn}
                                                                                       :react-key "selection-investments-by-company"})))]))
       om/IDidUpdate
-      (did-update [this prev-props prev-state root-node]
-        (-> "[data-toggle='tooltip']" ($ root-node) (.data "bs.tooltip" false)) ;; remove any existing tooltip
-        (-> "[data-toggle='tooltip']" ($ root-node) .tooltip) ;; and add again
+      (did-update [this prev-props prev-state]
+        (let [root-node (om/get-node owner)]
+          (-> "[data-toggle='tooltip']" ($ root-node) (.data "bs.tooltip" false)) ;; remove any existing tooltip
+          (-> "[data-toggle='tooltip']" ($ root-node) .tooltip)) ;; and add again
         ))))
 
 (defn mount
   [app-state elem-id shared]
-  (om/root app-state
-           shared
-           full-report-component
-           (.getElementById js/document elem-id)))
+  (om/root full-report-component
+           app-state
+           {:target (.getElementById js/document elem-id)
+            :shared shared}))

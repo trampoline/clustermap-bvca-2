@@ -1,5 +1,5 @@
 (ns clustermap.routes
-  (:require [sablono.core :as html :refer [html] :include-macros true]))
+  (:require [sablono.core :as html :refer-macros [html]]))
 
 (def type-name-keys
   {:portfolio-company :name

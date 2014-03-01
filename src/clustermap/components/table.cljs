@@ -46,6 +46,6 @@
        [:a {:href "#"
             :onClick (fn [e]
                        (.preventDefault e)
-                       (put! comm [view-update-key {:from (min (+ from size) (- count size))}]))}
+                       (put! comm [view-update-key {:from (+ from size)}]))}
         [:i.icon-arrow-right]]]
       [:span.next [:i.icon-arrow-right]])]))

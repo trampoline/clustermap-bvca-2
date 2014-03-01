@@ -6,14 +6,15 @@
    [om.dom :as dom :include-macros true]
    [jayq.core :refer [$]]
    [sablono.core :as html :refer [html] :include-macros true]
-   [hiccups.runtime :as hiccupsrt]))
+   [hiccups.runtime :as hiccupsrt]
+   [clustermap.formats.number :as num]))
 
 (defn create-chart
   [data node {:keys [y0-title y1-title] :as opts}]
   (let [x-labels (map :date data)
         stats (map :stats data)
-        y-median (map #(get-in % [:stats :median]) data)
-        y-mean (map #(get-in % [:stats :mean]) data)
+        y-median (map (comp #(num/round-decimal % 0) #(get-in % [:stats :median])) data)
+        y-mean (map (comp #(num/round-decimal % 0) #(get-in % [:stats :mean])) data)
         ;; y-total (into [] (concat (butlast yt) [(merge (last yt) {:color "#FF9900" :name "Not all data received for year"})]))
         ]
 

@@ -32,8 +32,8 @@
                   :search-results {}
 
                   :selector nil
-                  :selection-investments-table {:order [{:?boundaryline_compact_name "desc"}] :from 0 :size 10}
-                  :selection-investments-aggs-table {:order {:turnover "desc"} :from 0 :size 10}
+                  :selection-investments-table-view {:order [{:?boundaryline_compact_name_na "asc"} {:?investor_company_name_na "asc"}] :from 0 :size 50}
+                  :selection-investment-aggs-table-view {:order {:latest_turnover "desc"} :from 0 :size 10}
 
                   :selection nil
                   :selection-investment-stats nil
@@ -113,26 +113,26 @@
         :portfolio-company [[(api/portfolio-company id)
                              (api/investment-stats selector)
                              (api/investment-account-timelines selector)
-                             (api/investment-aggs (merge selector (:selection-investments-aggs-table @state)))
-                             (api/investments (merge selector (:selection-investments-table @state)))
+                             (api/investment-aggs (merge selector (:selection-investment-aggs-table-view @state)))
+                             (api/investments (merge selector (:selection-investments-table-view @state)))
                              (api/portfolio-company-locations selector)] type]
         :investor-company [[(api/investor-company id)
                             (api/investment-stats selector)
                             (api/investment-account-timelines selector)
-                            (api/investment-aggs (merge selector (:selection-investments-aggs-table @state)))
-                            (api/investments (merge selector (:selection-investments-table @state)))
+                            (api/investment-aggs (merge selector (:selection-investment-aggs-table-view @state)))
+                            (api/investments (merge selector (:selection-investments-table-view @state)))
                             (api/portfolio-company-locations selector)] type]
         :constituency [[(api/constituency id)
                         (api/investment-stats selector)
                         (api/investment-account-timelines selector)
-                        (api/investment-aggs (merge selector (:selection-investments-aggs-table @state)))
-                        (api/investments (merge selector (:selection-investments-table @state)))
+                        (api/investment-aggs (merge selector (:selection-investment-aggs-table-view @state)))
+                        (api/investments (merge selector (:selection-investments-table-view @state)))
                         (api/portfolio-company-locations selector)] type]
         [[nil
           (api/investment-stats selector)
           (api/investment-account-timelines selector)
-          (api/investment-aggs (merge selector (:selection-investments-aggs-table @state)))
-          (api/investments (merge selector (:selection-investments-table @state)))
+          (api/investment-aggs (merge selector (:selection-investment-aggs-table-view @state)))
+          (api/investments (merge selector (:selection-investments-table-view @state)))
           nil ;; (api/portfolio-company-locations selector)
           ] type]))))
 
@@ -175,13 +175,21 @@
   (let [{:keys [type id]} (parse-route)]
     (set-route view type id)))
 
-(defn update-selection-investments-aggs-table
+(defn update-selection-investment-aggs-table-view
   [table-view]
   (go
-    (let [new-view (merge (:selection-investments-aggs-table @state) table-view)
+    (let [new-view (merge (:selection-investment-aggs-table-view @state) table-view)
           r (<! (api/investment-aggs (merge (:selector @state) new-view)))]
-      (set-state :selection-investments-aggs-table new-view
+      (set-state :selection-investment-aggs-table-view new-view
                  :selection-investment-aggs r))))
+
+(defn update-selection-investments-table-view
+  [table-view]
+  (go
+    (let [new-view (merge (:selection-investments-table-view @state) table-view)
+          r (<! (api/investments (merge (:selector @state) new-view)))]
+      (set-state :selection-investments-table-view new-view
+                 :selection-investments r))))
 
 (def event-handlers
   {:search (api/ordered-api api/search process-search-results)
@@ -189,7 +197,8 @@
    :route-select (api/ordered-api make-selection process-selection)
    :change-view set-view-route
    :route-change-view change-view
-   :update-selection-investments-aggs-table update-selection-investments-aggs-table})
+   :update-selection-investment-aggs-table-view update-selection-investment-aggs-table-view
+   :update-selection-investments-table-view update-selection-investments-table-view})
 
 (defn handle-event
   [type val]

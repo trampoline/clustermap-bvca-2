@@ -32,8 +32,8 @@
                   :search-results {}
 
                   :selector nil
-                  :selection-investments-table-view {:order [{:?boundaryline_compact_name_na "asc"} {:?investor_company_name_na "asc"}] :from 0 :size 50}
-                  :selection-investment-aggs-table-view {:order {:latest_turnover "desc"} :from 0 :size 10}
+                  :selection-investments-table-view nil
+                  :selection-investment-aggs-table-view nil
 
                   :selection nil
                   :selection-investment-stats nil
@@ -113,26 +113,26 @@
         :portfolio-company [[(api/portfolio-company id)
                              (api/investment-stats selector)
                              (api/investment-account-timelines selector)
-                             (api/investment-aggs (merge selector (:selection-investment-aggs-table-view @state)))
-                             (api/investments (merge selector (:selection-investments-table-view @state)))
+                             (api/investment-aggs selector)
+                             (api/investments selector)
                              (api/portfolio-company-locations selector)] type]
         :investor-company [[(api/investor-company id)
                             (api/investment-stats selector)
                             (api/investment-account-timelines selector)
-                            (api/investment-aggs (merge selector (:selection-investment-aggs-table-view @state)))
-                            (api/investments (merge selector (:selection-investments-table-view @state)))
+                            (api/investment-aggs selector)
+                            (api/investments selector)
                             (api/portfolio-company-locations selector)] type]
         :constituency [[(api/constituency id)
                         (api/investment-stats selector)
                         (api/investment-account-timelines selector)
-                        (api/investment-aggs (merge selector (:selection-investment-aggs-table-view @state)))
-                        (api/investments (merge selector (:selection-investments-table-view @state)))
+                        (api/investment-aggs selector)
+                        (api/investments selector)
                         (api/portfolio-company-locations selector)] type]
         [[nil
           (api/investment-stats selector)
           (api/investment-account-timelines selector)
-          (api/investment-aggs (merge selector (:selection-investment-aggs-table-view @state)))
-          (api/investments (merge selector (:selection-investments-table-view @state)))
+          (api/investment-aggs selector)
+          (api/investments seletor)
           nil ;; (api/portfolio-company-locations selector)
           ] type]))))
 

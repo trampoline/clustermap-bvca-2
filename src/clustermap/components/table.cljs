@@ -11,7 +11,8 @@
         current-order-dir (-> current-order vals first)]
     (html
      [:a
-      {:onClick (fn [e]
+      {:href "#"
+       :onClick (fn [e]
                   (.preventDefault e)
                   (condp = current-order-dir
                     "asc" (put! comm [view-update-key {:order {col :desc}}])

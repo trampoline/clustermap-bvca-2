@@ -6,7 +6,8 @@
             [sablono.core :as html :refer [html] :include-macros true]
             [clustermap.formats.number :as nf :refer [fnum]]
             [clustermap.formats.money :as mf :refer [fmoney]]
-            [clustermap.formats.string :as sf :refer [pluralize]]))
+            [clustermap.formats.string :as sf :refer [pluralize]]
+            [clustermap.components.reset-selection-button :as rsb]))
 
 (defn full-report-button
   [comm]
@@ -40,13 +41,14 @@
             (full-report-button comm)]))))
 
 (defn portfolio-company-report
-  [portfolio-company site-stats comm]
+  [portfolio-company site-stats comm path-fn]
   (let [{:keys [pc-count ic-count const-count]} (type-counts site-stats)]
     (om/component
      (html [:div
             [:header.secondary
              [:h2 "Portfolio Company"]
-             [:h3 (:name portfolio-company)]]
+             [:h3 (:name portfolio-company)]
+             (rsb/reset-selection-button path-fn)]
             [:ul
              [:li (fnum ic-count) [:small (pluralize ic-count "Investor")]]
              [:li (fnum const-count) [:small (pluralize const-count "Constituency" "Constituencies")]]
@@ -55,13 +57,14 @@
             (full-report-button comm)]))))
 
 (defn investor-company-report
-  [investor-company site-stats comm]
+  [investor-company site-stats comm path-fn]
   (let [{:keys [pc-count ic-count const-count]} (type-counts site-stats)]
     (om/component
      (html [:div
             [:header.secondary
              [:h2 "Investor"]
-             [:h3 (:name investor-company)]]
+             [:h3 (:name investor-company)]
+             (rsb/reset-selection-button path-fn)]
             [:ul
              [:li (fnum pc-count) [:small (pluralize pc-count "Portfolio Company" "Portfolio Companies")]]
              [:li (fnum const-count) [:small (pluralize const-count "Constituency" "Constituencies")]]
@@ -70,7 +73,7 @@
             (full-report-button comm)]))))
 
 (defn constituency-report
-  [constituency site-stats comm]
+  [constituency site-stats comm path-fn]
   (let [{:keys [pc-count ic-count const-count]} (type-counts site-stats)]
     (om/component
      (html [:div
@@ -79,7 +82,8 @@
              [:h3 (:name constituency)
               [:br]
               (if (or (:mp constituency) (:political_party constituency))
-                [:small "(" (:mp constituency) ", " (:political_party constituency) ")"])]]
+                [:small "(" (:mp constituency) ", " (:political_party constituency) ")"])]
+             (rsb/reset-selection-button path-fn)]
             [:ul
              [:li (fnum pc-count) [:small (pluralize pc-count "Portfolio Company" "Portfolio Companies")]]
              [:li (fnum ic-count) [:small (pluralize ic-count "Investor")]]
@@ -88,14 +92,14 @@
             (full-report-button comm)]))))
 
 (defn map-report-component [data owner]
-  (let [comm (om/get-shared owner :comm)
+  (let [{:keys [comm path-fn]} (om/get-shared owner)
         type (get-in data [:selection :type])
         value (get-in data [:selection :value])
         site-stats (:selection-investment-stats data)]
     (condp == type
-        :portfolio-company (portfolio-company-report value site-stats comm)
-        :investor-company (investor-company-report value site-stats comm)
-        :constituency (constituency-report value site-stats comm)
+        :portfolio-company (portfolio-company-report value site-stats comm path-fn)
+        :investor-company (investor-company-report value site-stats comm path-fn)
+        :constituency (constituency-report value site-stats comm path-fn)
         (all-portfolio-companies-summary-report site-stats comm))))
 
 (defn mount

@@ -32,6 +32,8 @@
                   :search-results {}
 
                   :selector nil
+                  :selection-investments-table-view nil
+                  :selection-investment-aggs-table-view nil
 
                   :selection nil
                   :selection-investment-stats nil
@@ -173,12 +175,30 @@
   (let [{:keys [type id]} (parse-route)]
     (set-route view type id)))
 
+(defn update-selection-investment-aggs-table-view
+  [table-view]
+  (go
+    (let [new-view (merge (:selection-investment-aggs-table-view @state) table-view)
+          r (<! (api/investment-aggs (merge (:selector @state) new-view)))]
+      (set-state :selection-investment-aggs-table-view new-view
+                 :selection-investment-aggs r))))
+
+(defn update-selection-investments-table-view
+  [table-view]
+  (go
+    (let [new-view (merge (:selection-investments-table-view @state) table-view)
+          r (<! (api/investments (merge (:selector @state) new-view)))]
+      (set-state :selection-investments-table-view new-view
+                 :selection-investments r))))
+
 (def event-handlers
   {:search (api/ordered-api api/search process-search-results)
    :select set-selection-route
    :route-select (api/ordered-api make-selection process-selection)
    :change-view set-view-route
-   :route-change-view change-view})
+   :route-change-view change-view
+   :update-selection-investment-aggs-table-view update-selection-investment-aggs-table-view
+   :update-selection-investments-table-view update-selection-investments-table-view})
 
 (defn handle-event
   [type val]

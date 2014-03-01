@@ -145,10 +145,10 @@
 
 (defn investment-aggs
   [& [type-ids]]
-  (let [type-ids (merge {:size 50 :order [{:latest_turnover "desc"}]} type-ids)]
+  (let [type-ids (merge {:size 50 :order {:latest_turnover "desc"}} type-ids)]
     (GET (str "/api/" api-prefix "/investment-aggs?" (map-json-params type-ids)))))
 
 (defn investments
   [& [type-ids]]
-  (let [type-ids (merge {:size 50} type-ids)]
+  (let [type-ids (merge {:size 50 :order [{:?boundaryline_compact_name_na "asc"} {:?investor_company_name_na "asc"}]} type-ids)]
     (GET (str "/api/" api-prefix "/investments?" (map-json-params type-ids)))))

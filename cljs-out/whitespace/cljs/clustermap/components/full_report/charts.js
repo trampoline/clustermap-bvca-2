@@ -14,45 +14,45 @@ goog.require('clustermap.components.timeline_chart');
 goog.require('clustermap.formats.money');
 goog.require('clustermap.formats.number');
 goog.require('clustermap.formats.number');
-clustermap.components.full_report.charts.charts = (function charts(data,owner){if(typeof clustermap.components.full_report.charts.t32929 !== 'undefined')
+clustermap.components.full_report.charts.charts = (function charts(data,owner){if(typeof clustermap.components.full_report.charts.t33638 !== 'undefined')
 {} else
 {
 /**
 * @constructor
 */
-clustermap.components.full_report.charts.t32929 = (function (owner,data,charts,meta32930){
+clustermap.components.full_report.charts.t33638 = (function (owner,data,charts,meta33639){
 this.owner = owner;
 this.data = data;
 this.charts = charts;
-this.meta32930 = meta32930;
+this.meta33639 = meta33639;
 this.cljs$lang$protocol_mask$partition1$ = 0;
 this.cljs$lang$protocol_mask$partition0$ = 393216;
 })
-clustermap.components.full_report.charts.t32929.cljs$lang$type = true;
-clustermap.components.full_report.charts.t32929.cljs$lang$ctorStr = "clustermap.components.full-report.charts/t32929";
-clustermap.components.full_report.charts.t32929.cljs$lang$ctorPrWriter = (function (this__3968__auto__,writer__3969__auto__,opt__3970__auto__){return cljs.core._write.call(null,writer__3969__auto__,"clustermap.components.full-report.charts/t32929");
+clustermap.components.full_report.charts.t33638.cljs$lang$type = true;
+clustermap.components.full_report.charts.t33638.cljs$lang$ctorStr = "clustermap.components.full-report.charts/t33638";
+clustermap.components.full_report.charts.t33638.cljs$lang$ctorPrWriter = (function (this__3968__auto__,writer__3969__auto__,opt__3970__auto__){return cljs.core._write.call(null,writer__3969__auto__,"clustermap.components.full-report.charts/t33638");
 });
-clustermap.components.full_report.charts.t32929.prototype.om$core$IRender$ = true;
-clustermap.components.full_report.charts.t32929.prototype.om$core$IRender$render$arity$1 = (function (this__9212__auto__){var self__ = this;
-var this__9212__auto____$1 = this;var attrs32932 = (function (){var temp__4090__auto__ = new cljs.core.Keyword(null,"selection-investment-account-timelines","selection-investment-account-timelines",1845704779).cljs$core$IFn$_invoke$arity$1(self__.data);if(cljs.core.truth_(temp__4090__auto__))
+clustermap.components.full_report.charts.t33638.prototype.om$core$IRender$ = true;
+clustermap.components.full_report.charts.t33638.prototype.om$core$IRender$render$arity$1 = (function (this__9212__auto__){var self__ = this;
+var this__9212__auto____$1 = this;var attrs33641 = (function (){var temp__4090__auto__ = new cljs.core.Keyword(null,"selection-investment-account-timelines","selection-investment-account-timelines",1845704779).cljs$core$IFn$_invoke$arity$1(self__.data);if(cljs.core.truth_(temp__4090__auto__))
 {var timelines = temp__4090__auto__;return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"div.grid","div.grid",1323787765),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"div.tbl","div.tbl",2686480467),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"div.tbl-cell.charts","div.tbl-cell.charts",2527561447),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"div.tbl","div.tbl",2686480467),new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"div.tbl-row","div.tbl-row",1065043552),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"div.tbl-cell","div.tbl-cell",2598766144),new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"div.box.box-first","div.box.box-first",2223624352),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"header","header",4087600639),"Turnover"], null),om.core.build.call(null,clustermap.components.timeline_chart.timeline_chart,new cljs.core.Keyword(null,"turnover","turnover",1148922435).cljs$core$IFn$_invoke$arity$1(timelines),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"opts","opts",1017322386),new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"id","id",1013907597),"turnover-timeline-chart",new cljs.core.Keyword(null,"y0-title","y0-title",2489744212),"Turnover",new cljs.core.Keyword(null,"y1-title","y1-title",3377247893),"# Filings"], null),new cljs.core.Keyword(null,"react-key","react-key",4184082563),"turnover-timeline-chart"], null))], null)], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"div.tbl-cell","div.tbl-cell",2598766144),new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"div.box.box-last","div.box.box-last",1468740554),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"header","header",4087600639),"Employment"], null),om.core.build.call(null,clustermap.components.timeline_chart.timeline_chart,new cljs.core.Keyword(null,"employee_count","employee_count",2542621616).cljs$core$IFn$_invoke$arity$1(timelines),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"opts","opts",1017322386),new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"id","id",1013907597),"employment-timeline-chart",new cljs.core.Keyword(null,"y0-title","y0-title",2489744212),"Employment",new cljs.core.Keyword(null,"y1-title","y1-title",3377247893),"# Filings"], null),new cljs.core.Keyword(null,"react-key","react-key",4184082563),"employment-timeline-chart"], null))], null)], null)], null)], null)], null)], null)], null);
 } else
 {return null;
 }
-})();if(cljs.core.map_QMARK_.call(null,attrs32932))
-{return React.DOM.div(sablono.interpreter.attributes.call(null,sablono.util.merge_with_class.call(null,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"class","class",1108647146),new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, ["full-report-charts"], null)], null),attrs32932)),null);
+})();if(cljs.core.map_QMARK_.call(null,attrs33641))
+{return React.DOM.div(sablono.interpreter.attributes.call(null,sablono.util.merge_with_class.call(null,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"class","class",1108647146),new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, ["full-report-charts"], null)], null),attrs33641)),null);
 } else
-{return React.DOM.div({"className": "full-report-charts"},sablono.interpreter.interpret.call(null,attrs32932));
+{return React.DOM.div({"className": "full-report-charts"},sablono.interpreter.interpret.call(null,attrs33641));
 }
 });
-clustermap.components.full_report.charts.t32929.prototype.cljs$core$IMeta$_meta$arity$1 = (function (_32931){var self__ = this;
-var _32931__$1 = this;return self__.meta32930;
+clustermap.components.full_report.charts.t33638.prototype.cljs$core$IMeta$_meta$arity$1 = (function (_33640){var self__ = this;
+var _33640__$1 = this;return self__.meta33639;
 });
-clustermap.components.full_report.charts.t32929.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = (function (_32931,meta32930__$1){var self__ = this;
-var _32931__$1 = this;return (new clustermap.components.full_report.charts.t32929(self__.owner,self__.data,self__.charts,meta32930__$1));
+clustermap.components.full_report.charts.t33638.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = (function (_33640,meta33639__$1){var self__ = this;
+var _33640__$1 = this;return (new clustermap.components.full_report.charts.t33638(self__.owner,self__.data,self__.charts,meta33639__$1));
 });
-clustermap.components.full_report.charts.__GT_t32929 = (function __GT_t32929(owner__$1,data__$1,charts__$1,meta32930){return (new clustermap.components.full_report.charts.t32929(owner__$1,data__$1,charts__$1,meta32930));
+clustermap.components.full_report.charts.__GT_t33638 = (function __GT_t33638(owner__$1,data__$1,charts__$1,meta33639){return (new clustermap.components.full_report.charts.t33638(owner__$1,data__$1,charts__$1,meta33639));
 });
 }
-return (new clustermap.components.full_report.charts.t32929(owner,data,charts,null));
+return (new clustermap.components.full_report.charts.t33638(owner,data,charts,null));
 });

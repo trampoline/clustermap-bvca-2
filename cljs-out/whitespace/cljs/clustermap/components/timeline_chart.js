@@ -14,42 +14,42 @@ goog.require('clojure.set');
 goog.require('om.dom');
 goog.require('clojure.set');
 goog.require('jayq.core');
-clustermap.components.timeline_chart.create_chart = (function create_chart(data,node,p__33662){var map__33664 = p__33662;var map__33664__$1 = ((cljs.core.seq_QMARK_.call(null,map__33664))?cljs.core.apply.call(null,cljs.core.hash_map,map__33664):map__33664);var opts = map__33664__$1;var y1_title = cljs.core.get.call(null,map__33664__$1,new cljs.core.Keyword(null,"y1-title","y1-title",3377247893));var y0_title = cljs.core.get.call(null,map__33664__$1,new cljs.core.Keyword(null,"y0-title","y0-title",2489744212));var x_labels = cljs.core.map.call(null,new cljs.core.Keyword(null,"date","date",1016980256),data);var stats = cljs.core.map.call(null,new cljs.core.Keyword(null,"stats","stats",1123661841),data);var y_median = cljs.core.map.call(null,((function (x_labels,stats){
-return (function (p1__33660_SHARP_){return cljs.core.get_in.call(null,p1__33660_SHARP_,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"stats","stats",1123661841),new cljs.core.Keyword(null,"median","median",4230840444)], null));
+clustermap.components.timeline_chart.create_chart = (function create_chart(data,node,p__34460){var map__34462 = p__34460;var map__34462__$1 = ((cljs.core.seq_QMARK_.call(null,map__34462))?cljs.core.apply.call(null,cljs.core.hash_map,map__34462):map__34462);var opts = map__34462__$1;var y1_title = cljs.core.get.call(null,map__34462__$1,new cljs.core.Keyword(null,"y1-title","y1-title",3377247893));var y0_title = cljs.core.get.call(null,map__34462__$1,new cljs.core.Keyword(null,"y0-title","y0-title",2489744212));var x_labels = cljs.core.map.call(null,new cljs.core.Keyword(null,"date","date",1016980256),data);var stats = cljs.core.map.call(null,new cljs.core.Keyword(null,"stats","stats",1123661841),data);var y_median = cljs.core.map.call(null,((function (x_labels,stats){
+return (function (p1__34458_SHARP_){return cljs.core.get_in.call(null,p1__34458_SHARP_,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"stats","stats",1123661841),new cljs.core.Keyword(null,"median","median",4230840444)], null));
 });})(x_labels,stats))
 ,data);var y_mean = cljs.core.map.call(null,((function (x_labels,stats,y_median){
-return (function (p1__33661_SHARP_){return cljs.core.get_in.call(null,p1__33661_SHARP_,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"stats","stats",1123661841),new cljs.core.Keyword(null,"mean","mean",1017251639)], null));
+return (function (p1__34459_SHARP_){return cljs.core.get_in.call(null,p1__34459_SHARP_,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"stats","stats",1123661841),new cljs.core.Keyword(null,"mean","mean",1017251639)], null));
 });})(x_labels,stats,y_median))
 ,data);return jayq.core.$.call(null,node).highcharts(cljs.core.clj__GT_js.call(null,new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null,"chart","chart",1108527952),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"width","width",1127031096),null,new cljs.core.Keyword(null,"height","height",4087841945),300], null),new cljs.core.Keyword(null,"title","title",1124275658),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"text","text",1017460895),null], null),new cljs.core.Keyword(null,"xAxis","xAxis",1126781867),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"categories","categories",2310420878),x_labels,new cljs.core.Keyword(null,"labels","labels",4198454129),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"rotation","rotation",973603568),270], null)], null),new cljs.core.Keyword(null,"yAxis","yAxis",1127705388),new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"title","title",1124275658),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"text","text",1017460895),y0_title], null),new cljs.core.Keyword(null,"min","min",1014012356),0], null)], null),new cljs.core.Keyword(null,"series","series",4403032553),new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null,"name","name",1017277949),[cljs.core.str("Mean "),cljs.core.str(y0_title)].join(''),new cljs.core.Keyword(null,"type","type",1017479852),"line",new cljs.core.Keyword(null,"yAxis","yAxis",1127705388),0,new cljs.core.Keyword(null,"data","data",1016980252),y_mean], null)], null)], null)));
 });
-clustermap.components.timeline_chart.timeline_chart = (function timeline_chart(data,owner,p__33665){var map__33670 = p__33665;var map__33670__$1 = ((cljs.core.seq_QMARK_.call(null,map__33670))?cljs.core.apply.call(null,cljs.core.hash_map,map__33670):map__33670);var opts = map__33670__$1;var id = cljs.core.get.call(null,map__33670__$1,new cljs.core.Keyword(null,"id","id",1013907597));if(typeof clustermap.components.timeline_chart.t33671 !== 'undefined')
+clustermap.components.timeline_chart.timeline_chart = (function timeline_chart(data,owner,p__34463){var map__34468 = p__34463;var map__34468__$1 = ((cljs.core.seq_QMARK_.call(null,map__34468))?cljs.core.apply.call(null,cljs.core.hash_map,map__34468):map__34468);var opts = map__34468__$1;var id = cljs.core.get.call(null,map__34468__$1,new cljs.core.Keyword(null,"id","id",1013907597));if(typeof clustermap.components.timeline_chart.t34469 !== 'undefined')
 {} else
 {
 /**
 * @constructor
 */
-clustermap.components.timeline_chart.t33671 = (function (id,opts,map__33670,p__33665,owner,data,timeline_chart,meta33672){
+clustermap.components.timeline_chart.t34469 = (function (id,opts,map__34468,p__34463,owner,data,timeline_chart,meta34470){
 this.id = id;
 this.opts = opts;
-this.map__33670 = map__33670;
-this.p__33665 = p__33665;
+this.map__34468 = map__34468;
+this.p__34463 = p__34463;
 this.owner = owner;
 this.data = data;
 this.timeline_chart = timeline_chart;
-this.meta33672 = meta33672;
+this.meta34470 = meta34470;
 this.cljs$lang$protocol_mask$partition1$ = 0;
 this.cljs$lang$protocol_mask$partition0$ = 393216;
 })
-clustermap.components.timeline_chart.t33671.cljs$lang$type = true;
-clustermap.components.timeline_chart.t33671.cljs$lang$ctorStr = "clustermap.components.timeline-chart/t33671";
-clustermap.components.timeline_chart.t33671.cljs$lang$ctorPrWriter = (function (this__3968__auto__,writer__3969__auto__,opt__3970__auto__){return cljs.core._write.call(null,writer__3969__auto__,"clustermap.components.timeline-chart/t33671");
+clustermap.components.timeline_chart.t34469.cljs$lang$type = true;
+clustermap.components.timeline_chart.t34469.cljs$lang$ctorStr = "clustermap.components.timeline-chart/t34469";
+clustermap.components.timeline_chart.t34469.cljs$lang$ctorPrWriter = (function (this__3968__auto__,writer__3969__auto__,opt__3970__auto__){return cljs.core._write.call(null,writer__3969__auto__,"clustermap.components.timeline-chart/t34469");
 });
-clustermap.components.timeline_chart.t33671.prototype.om$core$IDidUpdate$ = true;
-clustermap.components.timeline_chart.t33671.prototype.om$core$IDidUpdate$did_update$arity$4 = (function (this$,prev_props,prev_state,root_node){var self__ = this;
+clustermap.components.timeline_chart.t34469.prototype.om$core$IDidUpdate$ = true;
+clustermap.components.timeline_chart.t34469.prototype.om$core$IDidUpdate$did_update$arity$4 = (function (this$,prev_props,prev_state,root_node){var self__ = this;
 var this$__$1 = this;return clustermap.components.timeline_chart.create_chart.call(null,self__.data,om.core.get_node.call(null,self__.owner,"chart"),self__.opts);
 });
-clustermap.components.timeline_chart.t33671.prototype.om$core$IDidMount$ = true;
-clustermap.components.timeline_chart.t33671.prototype.om$core$IDidMount$did_mount$arity$2 = (function (this$,node){var self__ = this;
+clustermap.components.timeline_chart.t34469.prototype.om$core$IDidMount$ = true;
+clustermap.components.timeline_chart.t34469.prototype.om$core$IDidMount$did_mount$arity$2 = (function (this$,node){var self__ = this;
 var this$__$1 = this;clustermap.components.timeline_chart.create_chart.call(null,self__.data,om.core.get_node.call(null,self__.owner,"chart"),self__.opts);
 return jayq.core.$.call(null,document).on("clustermap-change-view",(function (e){var chart = jayq.core.$.call(null,om.core.get_node.call(null,self__.owner,"chart"));if(cljs.core.truth_(chart.is(":visible")))
 {return chart.highcharts().reflow();
@@ -58,18 +58,18 @@ return jayq.core.$.call(null,document).on("clustermap-change-view",(function (e)
 }
 }));
 });
-clustermap.components.timeline_chart.t33671.prototype.om$core$IRender$ = true;
-clustermap.components.timeline_chart.t33671.prototype.om$core$IRender$render$arity$1 = (function (this$){var self__ = this;
+clustermap.components.timeline_chart.t34469.prototype.om$core$IRender$ = true;
+clustermap.components.timeline_chart.t34469.prototype.om$core$IRender$render$arity$1 = (function (this$){var self__ = this;
 var this$__$1 = this;return React.DOM.div({"className": "timeline-chart", "id": self__.id, "ref": "chart"});
 });
-clustermap.components.timeline_chart.t33671.prototype.cljs$core$IMeta$_meta$arity$1 = (function (_33673){var self__ = this;
-var _33673__$1 = this;return self__.meta33672;
+clustermap.components.timeline_chart.t34469.prototype.cljs$core$IMeta$_meta$arity$1 = (function (_34471){var self__ = this;
+var _34471__$1 = this;return self__.meta34470;
 });
-clustermap.components.timeline_chart.t33671.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = (function (_33673,meta33672__$1){var self__ = this;
-var _33673__$1 = this;return (new clustermap.components.timeline_chart.t33671(self__.id,self__.opts,self__.map__33670,self__.p__33665,self__.owner,self__.data,self__.timeline_chart,meta33672__$1));
+clustermap.components.timeline_chart.t34469.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = (function (_34471,meta34470__$1){var self__ = this;
+var _34471__$1 = this;return (new clustermap.components.timeline_chart.t34469(self__.id,self__.opts,self__.map__34468,self__.p__34463,self__.owner,self__.data,self__.timeline_chart,meta34470__$1));
 });
-clustermap.components.timeline_chart.__GT_t33671 = (function __GT_t33671(id__$1,opts__$1,map__33670__$2,p__33665__$1,owner__$1,data__$1,timeline_chart__$1,meta33672){return (new clustermap.components.timeline_chart.t33671(id__$1,opts__$1,map__33670__$2,p__33665__$1,owner__$1,data__$1,timeline_chart__$1,meta33672));
+clustermap.components.timeline_chart.__GT_t34469 = (function __GT_t34469(id__$1,opts__$1,map__34468__$2,p__34463__$1,owner__$1,data__$1,timeline_chart__$1,meta34470){return (new clustermap.components.timeline_chart.t34469(id__$1,opts__$1,map__34468__$2,p__34463__$1,owner__$1,data__$1,timeline_chart__$1,meta34470));
 });
 }
-return (new clustermap.components.timeline_chart.t33671(id,opts,map__33670__$1,p__33665,owner,data,timeline_chart,null));
+return (new clustermap.components.timeline_chart.t34469(id,opts,map__34468__$1,p__34463,owner,data,timeline_chart,null));
 });

@@ -1975,10 +1975,10 @@ a:hover .icon-download {
   width: 7px;
 }
 .icon-arrow-left {
-  background-position: --66px -336px;
+  background-position: -66px -336px;
 }
 a:hover .icon-arrow-left {
-  background-position: -88px -336px;
+  background-position: -80px -336px;
 }
 .icon-arrow-right {
   background-position: -96px -336px;

@@ -3,7 +3,8 @@
             [sablono.core :as html :refer [html] :include-macros true]
             [clustermap.formats.number :as nf :refer [fnum]]
             [clustermap.formats.money :as mf :refer [fmoney]]
-            [clustermap.formats.time :refer [get-year]]))
+            [clustermap.formats.time :refer [get-year]]
+            [clustermap.components.table :as table]))
 
 (defn investment
   [investment owner {:keys [link-fn path-fn] :as opts}]
@@ -21,16 +22,19 @@
 
 (defn company-site-list
   [investments owner opts]
-  (om/component
-       (html
-        [:div.full-report-list
-         [:div.table-responsive
-          [:table.table
-           [:thead
-            [:tr
-             [:th "Portfolio Company"]
-             [:th "Postcode"]
-             [:th "Investor"]
-             [:th "Constituency"]]]
-           [:tbody
-            (om/build-all investment (:records investments) {:key :investment_uid :opts opts})]]]])))
+  (let [comm (om/get-shared owner :comm)]
+    (om/component
+     (html
+      [:div.full-report-list
+       (table/paginate comm investments :update-selection-investments-table-view)
+       [:div.table-responsive
+        [:table.table
+         [:thead
+          [:tr
+           [:th (table/order-col comm investments :update-selection-investments-table-view "Portfolio Company" :!portfolio_company_name_na)]
+           [:th (table/order-col comm investments :update-selection-investments-table-view "Postcode" :?portfolio_company_site_postcode)]
+           [:th (table/order-col comm investments :update-selection-investments-table-view "Investor" :?investor_company_name_na)]
+           [:th (table/order-col comm investments :update-selection-investments-table-view "Constituency" :?boundaryline_compact_name_na)]]]
+         [:tbody
+          (om/build-all investment (:records investments) {:key :investment_uid :opts opts})]]]
+       (table/paginate comm investments :update-selection-investments-table-view)]))))

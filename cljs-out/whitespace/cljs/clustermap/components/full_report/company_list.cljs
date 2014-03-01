@@ -3,7 +3,8 @@
             [sablono.core :as html :refer [html] :include-macros true]
             [clustermap.formats.number :as nf :refer [fnum]]
             [clustermap.formats.money :as mf :refer [fmoney]]
-            [clustermap.formats.time :refer [get-year]]))
+            [clustermap.formats.time :refer [get-year]]
+            [clustermap.components.table :as table]))
 
 (defn render-many-links
   [link-fn owner-path type objs]
@@ -41,19 +42,22 @@
 
 (defn company-list
   [companies owner opts]
-  (om/component
-       (html
-        [:div.full-report-list
-         [:div.table-responsive
-          [:table.table
-           [:thead
-            [:tr
-             [:th "Portfolio Company"]
-             [:th "Investor"]
-             [:th "Constituency"]
-             [:th "Revenue"]
-             [:th {:colSpan "2"} "Rev. change"]
-             [:th "Employees"]
-             [:th {:colSpan "2"} "Emp. change"]]]
-           [:tbody
-            (om/build-all portfolio-company (:records companies) {:key :company_no :opts opts})]]]])))
+  (let [comm (om/get-shared owner :comm)]
+    (om/component
+     (html
+      [:div.full-report-list
+       (table/paginate comm companies :update-selection-investment-aggs-table-view)
+       [:div.table-responsive
+        [:table.table
+         [:thead
+          [:tr
+           [:th (table/order-col comm companies :update-selection-investment-aggs-table-view "Portfolio Company" :name)]
+           [:th "Investor"]
+           [:th "Constituency"]
+           [:th (table/order-col comm companies :update-selection-investment-aggs-table-view "Revenue" :latest_turnover)]
+           [:th {:colSpan "2"} (table/order-col comm companies :update-selection-investment-aggs-table-view "Rev. change" :latest_turnover_delta)]
+           [:th (table/order-col comm companies :update-selection-investment-aggs-table-view "Employees" :latest_employee_count)]
+           [:th {:colSpan "2"} (table/order-col comm companies :update-selection-investment-aggs-table-view "Emp. change" :latest_employee_count_delta)]]]
+         [:tbody
+          (om/build-all portfolio-company (:records companies) {:key :company_no :opts opts})]]]
+       (table/paginate comm companies :update-selection-investment-aggs-table-view)]))))

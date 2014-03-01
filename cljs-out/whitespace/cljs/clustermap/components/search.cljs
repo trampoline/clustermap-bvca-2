@@ -80,13 +80,14 @@
                       :onClick (fn [e] (put! comm [:search ""])
                                  (set! (.-value (om/get-node owner "search-field")) ""))}
              "\u00D7"]]
-           (if selection-value
-             [:div {:class "tbl-cell" :style {:width "136"}}
-              [:a {:href (path-fn nil nil)}
-               [:button {:class "btn-reset" :type "reset"
-                         :onClick (fn [e] (put! comm [:search ""])
-                                 (set! (.-value (om/get-node owner "search-field")) ""))}
-                "Reset to UK wide"]]])]
+           ;; (if selection-value
+           ;;   [:div {:class "tbl-cell" :style {:width "136"}}
+           ;;    [:a {:href (path-fn nil nil)}
+           ;;     [:button {:class "btn-reset" :type "reset"
+           ;;               :onClick (fn [e] (put! comm [:search ""])
+           ;;                       (set! (.-value (om/get-node owner "search-field")) ""))}
+           ;;      "Reset to UK wide"]]])
+           ]
 
           (when (or (not-empty constituencies) (not-empty portfolio_companies) (not-empty investor_companies))
             (let [idx-cons (map vector (iterate inc 0) constituencies)

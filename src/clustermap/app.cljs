@@ -132,7 +132,7 @@
           (api/investment-stats selector)
           (api/investment-account-timelines selector)
           (api/investment-aggs selector)
-          (api/investments seletor)
+          (api/investments selector)
           nil ;; (api/portfolio-company-locations selector)
           ] type]))))
 

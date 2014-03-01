@@ -46,6 +46,7 @@
     (om/component
      (html
       [:div.full-report-list
+       (table/paginate comm companies :update-selection-investment-aggs-table-view)
        [:div.table-responsive
         [:table.table
          [:thead
@@ -58,4 +59,5 @@
            [:th (table/order-col comm companies :update-selection-investment-aggs-table-view "Employees" :latest_employee_count)]
            [:th {:colSpan "2"} (table/order-col comm companies :update-selection-investment-aggs-table-view "Emp. change" :latest_employee_count_delta)]]]
          [:tbody
-          (om/build-all portfolio-company (:records companies) {:key :company_no :opts opts})]]]]))))
+          (om/build-all portfolio-company (:records companies) {:key :company_no :opts opts})]]]
+       (table/paginate comm companies :update-selection-investment-aggs-table-view)]))))

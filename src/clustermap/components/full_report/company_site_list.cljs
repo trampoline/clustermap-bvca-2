@@ -26,6 +26,7 @@
     (om/component
      (html
       [:div.full-report-list
+       (table/paginate comm investments :update-selection-investments-table-view)
        [:div.table-responsive
         [:table.table
          [:thead
@@ -35,4 +36,5 @@
            [:th (table/order-col comm investments :update-selection-investments-table-view "Investor" :?investor_company_name_na)]
            [:th (table/order-col comm investments :update-selection-investments-table-view "Constituency" :?boundaryline_compact_name_na)]]]
          [:tbody
-          (om/build-all investment (:records investments) {:key :investment_uid :opts opts})]]]]))))
+          (om/build-all investment (:records investments) {:key :investment_uid :opts opts})]]]
+       (table/paginate comm investments :update-selection-investments-table-view)]))))

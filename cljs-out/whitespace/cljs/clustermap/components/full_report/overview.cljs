@@ -84,7 +84,8 @@
 
     (om/component
      (html [:div.full-report-overview
-            [:h4 "Overview of latest filings"]
+            [:h4 "Overview of latest filings"
+             [:small "\u00a0(may span years : see table below for details)"]]
 
             [:div.table-responsive
              [:table.table-stats

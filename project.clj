@@ -9,10 +9,10 @@
                  [org.clojure/google-closure-library-third-party "0.0-20130212-95c19e7f0f5f"]
                  [domina "1.0.2"]
                  [jayq "2.5.0"]
-                 [om "0.5.0"]
+                 [om "0.5.1"]
                  [sablono "0.2.6"]
                  [hiccups "0.3.0"]
-                 [secretary "1.0.1"]
+                 [secretary "1.0.2"]
                  ]
 
 ;;  :exclusions [org.clojure/google-closure-library

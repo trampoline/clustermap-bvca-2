@@ -1,6 +1,6 @@
 (ns clustermap.components.full-report.charts
   (:require [om.core :as om :include-macros true]
-            [sablono.core :as html :refer [html] :include-macros true]
+            [sablono.core :as html :refer-macros [html]]
             [clustermap.formats.number :as nf :refer [fnum]]
             [clustermap.formats.money :as mf :refer [fmoney]]
             [clustermap.components.timeline-chart :as tl]))

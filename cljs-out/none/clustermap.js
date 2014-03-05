@@ -8,7 +8,7 @@ goog.addDependency("../sablono/util.js", ['sablono.util'], ['cljs.core', 'clojur
 goog.addDependency("../sablono/interpreter.js", ['sablono.interpreter'], ['cljs.core', 'clojure.string', 'sablono.util']);
 goog.addDependency("../sablono/core.js", ['sablono.core'], ['cljs.core', 'goog.dom', 'clojure.walk', 'clojure.string', 'sablono.interpreter', 'sablono.util']);
 goog.addDependency("../om/dom.js", ['om.dom'], ['cljs.core']);
-goog.addDependency("../om/core.js", ['om.core'], ['cljs.core', 'om.dom']);
+goog.addDependency("../om/core.js", ['om.core'], ['cljs.core', 'om.dom', 'goog.ui.IdGenerator']);
 goog.addDependency("../clustermap/formats/number.js", ['clustermap.formats.number'], ['cljs.core', 'goog.string', 'goog.string.format', 'clojure.string']);
 goog.addDependency("../clustermap/formats/money.js", ['clustermap.formats.money'], ['cljs.core', 'clustermap.formats.number']);
 goog.addDependency("../clustermap/components/full_report/overview.js", ['clustermap.components.full_report.overview'], ['sablono.core', 'cljs.core', 'om.core', 'clustermap.formats.money', 'clustermap.formats.number']);
@@ -26,7 +26,7 @@ goog.addDependency("../clustermap/components/full_report/company_site_list.js", 
 goog.addDependency("../clustermap/components/full_report/company_list.js", ['clustermap.components.full_report.company_list'], ['sablono.core', 'cljs.core', 'clustermap.components.table', 'om.core', 'clustermap.formats.money', 'clustermap.formats.number', 'clustermap.formats.time']);
 goog.addDependency("../cljs/reader.js", ['cljs.reader'], ['cljs.core', 'goog.string']);
 goog.addDependency("../jayq/core.js", ['jayq.core'], ['cljs.core', 'clojure.string', 'cljs.reader']);
-goog.addDependency("../clustermap/components/timeline_chart.js", ['clustermap.components.timeline_chart'], ['sablono.core', 'cljs.core', 'om.core', 'hiccups.runtime', 'om.dom', 'clojure.set', 'jayq.core']);
+goog.addDependency("../clustermap/components/timeline_chart.js", ['clustermap.components.timeline_chart'], ['sablono.core', 'cljs.core', 'om.core', 'hiccups.runtime', 'clustermap.formats.number', 'om.dom', 'clojure.set', 'jayq.core']);
 goog.addDependency("../clustermap/components/full_report/charts.js", ['clustermap.components.full_report.charts'], ['sablono.core', 'cljs.core', 'om.core', 'clustermap.components.timeline_chart', 'clustermap.formats.money', 'clustermap.formats.number']);
 goog.addDependency("../clustermap/components/full_report.js", ['clustermap.components.full_report'], ['clustermap.components.full_report.company_site_list', 'sablono.core', 'cljs.core', 'clustermap.components.full_report.overview', 'om.core', 'clustermap.components.full_report.company_list', 'clustermap.components.full_report.charts', 'jayq.core']);
 goog.addDependency("../clustermap/om.js", ['clustermap.om'], ['cljs.core']);

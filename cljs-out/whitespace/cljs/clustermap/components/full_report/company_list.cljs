@@ -1,6 +1,6 @@
 (ns clustermap.components.full-report.company-list
   (:require [om.core :as om :include-macros true]
-            [sablono.core :as html :refer [html] :include-macros true]
+            [sablono.core :as html :refer-macros [html]]
             [clustermap.formats.number :as nf :refer [fnum]]
             [clustermap.formats.money :as mf :refer [fmoney]]
             [clustermap.formats.time :refer [get-year]]

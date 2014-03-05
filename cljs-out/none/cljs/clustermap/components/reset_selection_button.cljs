@@ -3,7 +3,7 @@
    [cljs.core.async :refer [put!]]
    [om.core :as om :include-macros true]
    [om.dom :as dom :include-macros true]
-   [sablono.core :as html :refer [html] :include-macros true]))
+   [sablono.core :as html :refer-macros [html]]))
 
 
 (defn reset-selection-button

@@ -3,7 +3,7 @@
             [om.core :as om :include-macros true]
             [om.dom :as dom :include-macros true]
             [clustermap.om :as omu]
-            [sablono.core :as html :refer [html] :include-macros true]
+            [sablono.core :as html :refer-macros [html]]
             [clustermap.formats.number :as nf :refer [fnum]]
             [clustermap.formats.money :as mf :refer [fmoney]]
             [clustermap.components.reset-selection-button :as rsb]))
@@ -36,7 +36,7 @@
 
 (defn mount
   [app-state elem-id shared]
-  (om/root app-state
-           shared
-           (omu/burrow page-title-component :selection)
-           (.getElementById js/document elem-id)))
+  (om/root (omu/burrow page-title-component :selection)
+           app-state
+           {:shared shared
+            :target (.getElementById js/document elem-id)}))

@@ -1,7 +1,7 @@
 (ns clustermap.components.search
   (:require [om.core :as om :include-macros true]
             [om.dom :as dom :include-macros true]
-            [sablono.core :refer [html] :include-macros true]
+            [sablono.core :as html :refer-macros [html]]
             [clustermap.om :as omu]
             [clustermap.routes :as routes]
             [clustermap.model :as model]
@@ -135,7 +135,7 @@
 
 (defn mount
   [app-state elem-id shared]
-  (om/root app-state
-           shared
-           search-component
-           (.getElementById js/document elem-id)))
+  (om/root search-component
+           app-state
+           {:shared shared
+            :target (.getElementById js/document elem-id)}))

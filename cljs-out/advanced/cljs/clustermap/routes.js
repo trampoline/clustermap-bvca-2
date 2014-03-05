@@ -1,25 +1,24 @@
-// Compiled by ClojureScript 0.0-2138
+// Compiled by ClojureScript 0.0-2173
 goog.provide('clustermap.routes');
 goog.require('cljs.core');
 goog.require('sablono.core');
 goog.require('sablono.core');
-goog.require('sablono.core');
-clustermap.routes.type_name_keys = new cljs.core.PersistentArrayMap(null, 3, [cljs.core.constant$keyword$338,cljs.core.constant$keyword$315,cljs.core.constant$keyword$339,cljs.core.constant$keyword$315,cljs.core.constant$keyword$340,cljs.core.constant$keyword$366], null);
+clustermap.routes.type_name_keys = new cljs.core.PersistentArrayMap(null, 3, [cljs.core.constant$keyword$629,cljs.core.constant$keyword$594,cljs.core.constant$keyword$630,cljs.core.constant$keyword$594,cljs.core.constant$keyword$631,cljs.core.constant$keyword$657], null);
 clustermap.routes.name_for = (function name_for(type,obj){return cljs.core.get.cljs$core$IFn$_invoke$arity$2(obj,cljs.core.get.cljs$core$IFn$_invoke$arity$2(clustermap.routes.type_name_keys,type));
 });
-clustermap.routes.portfolio_company_path = (function portfolio_company_path(app_state,obj){return [cljs.core.str("#/"),cljs.core.str((function (){var G__23746 = app_state;var G__23746__$1 = (((G__23746 == null))?null:cljs.core.deref(G__23746));var G__23746__$2 = (((G__23746__$1 == null))?null:cljs.core.constant$keyword$445.cljs$core$IFn$_invoke$arity$1(G__23746__$1));var G__23746__$3 = (((G__23746__$2 == null))?null:cljs.core.name(G__23746__$2));return G__23746__$3;
-})()),cljs.core.str("/portfolio-company/"),cljs.core.str(cljs.core.constant$keyword$359.cljs$core$IFn$_invoke$arity$1(obj))].join('');
+clustermap.routes.portfolio_company_path = (function portfolio_company_path(app_state,obj){return [cljs.core.str("#/"),cljs.core.str((function (){var G__34969 = app_state;var G__34969__$1 = (((G__34969 == null))?null:cljs.core.deref(G__34969));var G__34969__$2 = (((G__34969__$1 == null))?null:cljs.core.constant$keyword$736.cljs$core$IFn$_invoke$arity$1(G__34969__$1));var G__34969__$3 = (((G__34969__$2 == null))?null:cljs.core.name(G__34969__$2));return G__34969__$3;
+})()),cljs.core.str("/portfolio-company/"),cljs.core.str(cljs.core.constant$keyword$650.cljs$core$IFn$_invoke$arity$1(obj))].join('');
 });
-clustermap.routes.investor_company_path = (function investor_company_path(app_state,obj){return [cljs.core.str("#/"),cljs.core.str((function (){var G__23748 = app_state;var G__23748__$1 = (((G__23748 == null))?null:cljs.core.deref(G__23748));var G__23748__$2 = (((G__23748__$1 == null))?null:cljs.core.constant$keyword$445.cljs$core$IFn$_invoke$arity$1(G__23748__$1));var G__23748__$3 = (((G__23748__$2 == null))?null:cljs.core.name(G__23748__$2));return G__23748__$3;
-})()),cljs.core.str("/investor-company/"),cljs.core.str(cljs.core.constant$keyword$363.cljs$core$IFn$_invoke$arity$1(obj))].join('');
+clustermap.routes.investor_company_path = (function investor_company_path(app_state,obj){return [cljs.core.str("#/"),cljs.core.str((function (){var G__34971 = app_state;var G__34971__$1 = (((G__34971 == null))?null:cljs.core.deref(G__34971));var G__34971__$2 = (((G__34971__$1 == null))?null:cljs.core.constant$keyword$736.cljs$core$IFn$_invoke$arity$1(G__34971__$1));var G__34971__$3 = (((G__34971__$2 == null))?null:cljs.core.name(G__34971__$2));return G__34971__$3;
+})()),cljs.core.str("/investor-company/"),cljs.core.str(cljs.core.constant$keyword$654.cljs$core$IFn$_invoke$arity$1(obj))].join('');
 });
-clustermap.routes.constituency_path = (function constituency_path(app_state,obj){return [cljs.core.str("#/"),cljs.core.str((function (){var G__23750 = app_state;var G__23750__$1 = (((G__23750 == null))?null:cljs.core.deref(G__23750));var G__23750__$2 = (((G__23750__$1 == null))?null:cljs.core.constant$keyword$445.cljs$core$IFn$_invoke$arity$1(G__23750__$1));var G__23750__$3 = (((G__23750__$2 == null))?null:cljs.core.name(G__23750__$2));return G__23750__$3;
-})()),cljs.core.str("/constituency/"),cljs.core.str(cljs.core.constant$keyword$365.cljs$core$IFn$_invoke$arity$1(obj))].join('');
+clustermap.routes.constituency_path = (function constituency_path(app_state,obj){return [cljs.core.str("#/"),cljs.core.str((function (){var G__34973 = app_state;var G__34973__$1 = (((G__34973 == null))?null:cljs.core.deref(G__34973));var G__34973__$2 = (((G__34973__$1 == null))?null:cljs.core.constant$keyword$736.cljs$core$IFn$_invoke$arity$1(G__34973__$1));var G__34973__$3 = (((G__34973__$2 == null))?null:cljs.core.name(G__34973__$2));return G__34973__$3;
+})()),cljs.core.str("/constituency/"),cljs.core.str(cljs.core.constant$keyword$656.cljs$core$IFn$_invoke$arity$1(obj))].join('');
 });
-clustermap.routes.no_selection_path = (function no_selection_path(app_state,_){return [cljs.core.str("#/"),cljs.core.str((function (){var G__23752 = app_state;var G__23752__$1 = (((G__23752 == null))?null:cljs.core.deref(G__23752));var G__23752__$2 = (((G__23752__$1 == null))?null:cljs.core.constant$keyword$445.cljs$core$IFn$_invoke$arity$1(G__23752__$1));var G__23752__$3 = (((G__23752__$2 == null))?null:cljs.core.name(G__23752__$2));return G__23752__$3;
+clustermap.routes.no_selection_path = (function no_selection_path(app_state,_){return [cljs.core.str("#/"),cljs.core.str((function (){var G__34975 = app_state;var G__34975__$1 = (((G__34975 == null))?null:cljs.core.deref(G__34975));var G__34975__$2 = (((G__34975__$1 == null))?null:cljs.core.constant$keyword$736.cljs$core$IFn$_invoke$arity$1(G__34975__$1));var G__34975__$3 = (((G__34975__$2 == null))?null:cljs.core.name(G__34975__$2));return G__34975__$3;
 })())].join('');
 });
-clustermap.routes.type_paths = new cljs.core.PersistentArrayMap(null, 4, [cljs.core.constant$keyword$338,clustermap.routes.portfolio_company_path,cljs.core.constant$keyword$339,clustermap.routes.investor_company_path,cljs.core.constant$keyword$340,clustermap.routes.constituency_path,null,clustermap.routes.no_selection_path], null);
+clustermap.routes.type_paths = new cljs.core.PersistentArrayMap(null, 4, [cljs.core.constant$keyword$629,clustermap.routes.portfolio_company_path,cljs.core.constant$keyword$630,clustermap.routes.investor_company_path,cljs.core.constant$keyword$631,clustermap.routes.constituency_path,null,clustermap.routes.no_selection_path], null);
 clustermap.routes.path_for = (function path_for(app_state,type,obj){return cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.get.cljs$core$IFn$_invoke$arity$2(clustermap.routes.type_paths,type),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [app_state,obj], null));
 });
 clustermap.routes.link_for = (function link_for(app_state,type,obj){return React.DOM.a({"href": clustermap.routes.path_for(app_state,type,obj)},sablono.interpreter.interpret(clustermap.routes.name_for(type,obj)));

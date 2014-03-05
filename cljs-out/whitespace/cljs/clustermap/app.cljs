@@ -211,6 +211,9 @@
 (defn init-routes
   [comm]
 
+  (defroute "" []
+    (put! comm [:route-select nil]))
+
   (defroute "/" []
     (put! comm [:route-select nil]))
 

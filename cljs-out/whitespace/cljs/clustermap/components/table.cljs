@@ -1,7 +1,7 @@
 (ns clustermap.components.table
   (:require
    [cljs.core.async :refer [put!]]
-   [sablono.core :as html :refer [html] :include-macros true]))
+   [sablono.core :as html :refer-macros [html]]))
 
 (defn order-col
   "generate a table-ordering link for table-headers"

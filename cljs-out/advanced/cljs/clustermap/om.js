@@ -1,4 +1,4 @@
-// Compiled by ClojureScript 0.0-2138
+// Compiled by ClojureScript 0.0-2173
 goog.provide('clustermap.om');
 goog.require('cljs.core');
 /**
@@ -7,19 +7,19 @@ goog.require('cljs.core');
 * the app-state
 */
 clustermap.om.burrow = (function burrow(component_fn,korks){var use_korks = ((cljs.core.sequential_QMARK_(korks))?korks:new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [korks], null));return (function() { 
-var G__23743__delegate = function (args){return cljs.core.apply.cljs$core$IFn$_invoke$arity$3(component_fn,cljs.core.get_in.cljs$core$IFn$_invoke$arity$2(cljs.core.first(args),use_korks),cljs.core.rest(args));
+var G__34966__delegate = function (args){return cljs.core.apply.cljs$core$IFn$_invoke$arity$3(component_fn,cljs.core.get_in.cljs$core$IFn$_invoke$arity$2(cljs.core.first(args),use_korks),cljs.core.rest(args));
 };
-var G__23743 = function (var_args){
+var G__34966 = function (var_args){
 var args = null;if (arguments.length > 0) {
   args = cljs.core.array_seq(Array.prototype.slice.call(arguments, 0),0);} 
-return G__23743__delegate.call(this,args);};
-G__23743.cljs$lang$maxFixedArity = 0;
-G__23743.cljs$lang$applyTo = (function (arglist__23744){
-var args = cljs.core.seq(arglist__23744);
-return G__23743__delegate(args);
+return G__34966__delegate.call(this,args);};
+G__34966.cljs$lang$maxFixedArity = 0;
+G__34966.cljs$lang$applyTo = (function (arglist__34967){
+var args = cljs.core.seq(arglist__34967);
+return G__34966__delegate(args);
 });
-G__23743.cljs$core$IFn$_invoke$arity$variadic = G__23743__delegate;
-return G__23743;
+G__34966.cljs$core$IFn$_invoke$arity$variadic = G__34966__delegate;
+return G__34966;
 })()
 ;
 });

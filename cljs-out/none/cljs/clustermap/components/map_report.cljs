@@ -3,7 +3,7 @@
             [domina.events :as events]
             [om.core :as om :include-macros true]
             [om.dom :as dom :include-macros true]
-            [sablono.core :as html :refer [html] :include-macros true]
+            [sablono.core :as html :refer-macros [html]]
             [clustermap.formats.number :as nf :refer [fnum]]
             [clustermap.formats.money :as mf :refer [fmoney]]
             [clustermap.formats.string :as sf :refer [pluralize]]
@@ -104,7 +104,7 @@
 
 (defn mount
   [app-state elem-id shared]
-  (om/root app-state
-           shared
-           map-report-component
-           (.getElementById js/document elem-id)))
+  (om/root map-report-component
+           app-state
+           {:shared shared
+            :target (.getElementById js/document elem-id)}))

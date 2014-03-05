@@ -6,7 +6,7 @@
    [om.core :as om :include-macros true]
    [om.dom :as dom :include-macros true]
    [jayq.core :refer [$]]
-   [sablono.core :as html :refer [html] :include-macros true]
+   [sablono.core :as html :refer-macros [html]]
    [hiccups.runtime :as hiccupsrt]
    [clustermap.boundarylines :as bl]
    [clustermap.rtree :as rtree]))
@@ -57,19 +57,6 @@
                                fb-copy
                                (rest all-bounds))]
       (.fitBounds m super-bounds))))
-
-(defn display-site
-  [m site]
-  (let [location (-> site (aget "location") reverse clj->js)
-        options (-> {:title (str (aget site "name") ", " (aget site "postcode") ", " (aget site "company_no"))} clj->js)
-        marker (js/L.marker location options)]
-    (.addTo marker m)))
-
-(defn display-sites
-  [m sites]
-  (->> sites
-       (casync/map-async (partial display-site m))
-       ((fn [c] (casync/dorun-async c :delay nil)))))
 
 (defn marker-popup-content
   [path-fn location-sites]
@@ -251,8 +238,9 @@
       (html [:div.map {:ref "map"}]))
 
     om/IDidMount
-    (did-mount [this node]
-      (let [{:keys [leaflet-map markers path] :as map} (create-map node)]
+    (did-mount [this]
+      (let [node (om/get-node owner)
+            {:keys [leaflet-map markers path] :as map} (create-map node)]
         (om/set-state! owner :map map)
         (om/set-state! owner :path-highlights #{})
 
@@ -320,9 +308,10 @@
 
 (defn mount
   [app-state elem-id shared]
-  (om/root app-state
-           (merge shared
-                  {:app-state app-state
-                   :fetch-boundaryline-fn (partial bl/get-or-fetch-best-boundaryline app-state :boundarylines)})
-           map-component
-           (.getElementById js/document elem-id)))
+  (om/root map-component
+           app-state
+           {:shared (merge shared
+                           {:app-state app-state
+                            :fetch-boundaryline-fn (partial bl/get-or-fetch-best-boundaryline app-state :boundarylines)})
+            :target (.getElementById js/document elem-id)
+            }))

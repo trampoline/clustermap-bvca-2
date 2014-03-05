@@ -2,9 +2,9 @@
  "file":
  "/Users/mccraig/dev/clustermap.all/clustermap-bvca-2/cljs-out/none/cljs/clustermap/components/reset_selection_button.js",
  "sources":["reset_selection_button.cljs"],
- "lineCount":16,
+ "lineCount":15,
  "mappings":
- ";AAAA;;;;;;;;;;;AAQA,sEAAA,0CAAA,hHAAMA,uGACHC,SACD,OAAAC,YAAA,uCAAA,AAAAC,iBAAA,cAAA,kCAAA,SAAA,xGACW,kBAAA,KAAA,vBAACF",
+ ";AAAA;;;;;;;;;;AAQA,sEAAA,0CAAA,hHAAMA,uGACHC,SACD,OAAAC,YAAA,uCAAA,AAAAC,iBAAA,cAAA,kCAAA,SAAA,xGACW,kBAAA,KAAA,vBAACF",
  "names":
  ["clustermap.components.reset-selection-button/reset-selection-button",
   "path-fn", "js/React.DOM.a", "js/React.DOM.button"]}

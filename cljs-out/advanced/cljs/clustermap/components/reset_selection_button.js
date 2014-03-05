@@ -1,7 +1,6 @@
-// Compiled by ClojureScript 0.0-2138
+// Compiled by ClojureScript 0.0-2173
 goog.provide('clustermap.components.reset_selection_button');
 goog.require('cljs.core');
-goog.require('sablono.core');
 goog.require('cljs.core.async');
 goog.require('sablono.core');
 goog.require('sablono.core');

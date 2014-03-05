@@ -5,15 +5,16 @@
    [om.core :as om :include-macros true]
    [om.dom :as dom :include-macros true]
    [jayq.core :refer [$]]
-   [sablono.core :as html :refer [html] :include-macros true]
-   [hiccups.runtime :as hiccupsrt]))
+   [sablono.core :as html :refer-macros [html]]
+   [hiccups.runtime :as hiccupsrt]
+   [clustermap.formats.number :as num]))
 
 (defn create-chart
   [data node {:keys [y0-title y1-title] :as opts}]
   (let [x-labels (map :date data)
         stats (map :stats data)
-        y-median (map #(get-in % [:stats :median]) data)
-        y-mean (map #(get-in % [:stats :mean]) data)
+        y-median (map (comp #(num/round-decimal % 0) #(get-in % [:stats :median])) data)
+        y-mean (map (comp #(num/round-decimal % 0) #(get-in % [:stats :mean])) data)
         ;; y-total (into [] (concat (butlast yt) [(merge (last yt) {:color "#FF9900" :name "Not all data received for year"})]))
         ]
 
@@ -55,20 +56,22 @@
       (html [:div.timeline-chart {:id id :ref "chart"}]))
 
     om/IDidMount
-    (did-mount [this node]
-      (create-chart data (om/get-node owner "chart") opts)
+    (did-mount [this]
+      (let [node (om/get-node owner)]
+        (create-chart data (om/get-node owner "chart") opts)
 
-      (-> js/document
-          $
-          (.on "clustermap-change-view" (fn [e]
-                                          ;; only reflow charts when they are visible
-                                          ;; they disappear otherwise
-                                          (let [chart (-> (om/get-node owner "chart") $)]
-                                            (when (.is chart ":visible")
-                                              (-> chart
-                                                  .highcharts
-                                                  .reflow)))))))
+        (-> js/document
+            $
+            (.on "clustermap-change-view" (fn [e]
+                                            ;; only reflow charts when they are visible
+                                            ;; they disappear otherwise
+                                            (let [chart (-> (om/get-node owner "chart") $)]
+                                              (when (.is chart ":visible")
+                                                (-> chart
+                                                    .highcharts
+                                                    .reflow))))))))
 
     om/IDidUpdate
-    (did-update [this prev-props prev-state root-node]
-      (create-chart data (om/get-node owner "chart") opts))))
+    (did-update [this prev-props prev-state]
+      (let [root-node (om/get-node owner)]
+        (create-chart data (om/get-node owner "chart") opts)))))

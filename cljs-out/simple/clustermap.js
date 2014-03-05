@@ -34751,13 +34751,17 @@ clustermap.components.map.update_paths = function(a, b, c, d, e, f, g, h) {
 clustermap.components.map.pan_to_selection = function(a, b, c, d) {
   c = cljs.core.deref.call(null, c);
   d = cljs.core.deref.call(null, d);
-  if (cljs.core.empty_QMARK_.call(null, c)) {
-    return clustermap.components.map.locate_map.call(null, b), om.core.set_state_BANG_.call(null, a, new cljs.core.Keyword(null, "pan-pending", "pan-pending", 3214812121), !0);
+  if (cljs.core.empty_QMARK_.call(null, d)) {
+    return clustermap.components.map.locate_map.call(null, b);
   }
-  om.core.set_state_BANG_.call(null, a, new cljs.core.Keyword(null, "pan-pending", "pan-pending", 3214812121), !1);
+  if (cljs.core.empty_QMARK_.call(null, c)) {
+    return om.core.set_state.call(null, a, new cljs.core.Keyword(null, "pan-pending", "pan-pending", 3214812121), !0);
+  }
+  cljs.core.truth_(om.core.get_state.call(null, a, new cljs.core.Keyword(null, "pan-pending", "pan-pending", 3214812121))) && om.core.set_state_BANG_.call(null, a, new cljs.core.Keyword(null, "pan-pending", "pan-pending", 3214812121), !1);
   a = cljs.core.select_keys.call(null, c, d);
   a = null == a ? null : cljs.core.vals.call(null, a);
   a = null == a ? null : cljs.core.map.call(null, new cljs.core.Keyword(null, "bounds", "bounds", 3925666343), a);
+  a = null == a ? null : cljs.core.not_empty.call(null, a);
   return cljs.core.truth_(a) ? cljs.core.apply.call(null, clustermap.components.map.pan_to_show, b, a) : clustermap.components.map.pan_to_show.call(null, clustermap.components.map.initial_bounds);
 };
 clustermap.components.map.map_component = function map_component(b, c) {
@@ -34789,8 +34793,9 @@ clustermap.components.map.map_component = function map_component(b, c) {
     cljs.core.hash_map, s) : s, s = cljs.core.get.call(null, u, new cljs.core.Keyword(null, "path-selections", "path-selections", 512369281)), v = cljs.core.get.call(null, u, new cljs.core.Keyword(null, "paths", "paths", 1120343136)), z = cljs.core.get.call(null, u, new cljs.core.Keyword(null, "markers", "markers", 1853155051)), x = cljs.core.get.call(null, u, new cljs.core.Keyword(null, "leaflet-map", "leaflet-map", 4353500414)), u = cljs.core.get.call(null, r, new cljs.core.Keyword(null, "pan-pending", 
     "pan-pending", 3214812121));
     cljs.core.get.call(null, r, new cljs.core.Keyword(null, "path-highlights", "path-highlights", 2524998745));
+    var F = cljs.core.get.call(null, r, new cljs.core.Keyword(null, "mousemove-listener", "mousemove-listener", 3228037661)), r = cljs.core.get.call(null, r, new cljs.core.Keyword(null, "click-listener", "click-listener", 1807691467));
     clustermap.components.map.update_markers.call(null, p, x, z, c);
-    cljs.core.not_EQ_.call(null, n, l) && (x.on("mousemove", function(b) {
+    cljs.core.not_EQ_.call(null, n, l) && (om.core.set_state_BANG_.call(null, e.owner, new cljs.core.Keyword(null, "mousemove-listener", "mousemove-listener", 3228037661), function(b) {
       var c = b.latlng.lat;
       b = b.latlng.lng;
       var d = clustermap.rtree.point_in_polygons.call(null, n, b, c), f = cljs.core.map.call(null, function(b, c, d) {
@@ -34803,7 +34808,7 @@ clustermap.components.map.map_component = function map_component(b, c) {
         return null == b ? null : b.compact_name;
       }()), cljs.core.str("\x3c/p\x3e")].join("")), f.openOn(x));
       return om.core.set_state_BANG_.call(null, e.owner, new cljs.core.Keyword(null, "path-highlights", "path-highlights", 2524998745), d);
-    }), x.on("click", function(b) {
+    }), cljs.core.truth_(F) && x.off("mousemove", F), x.on("mousemove", om.core.get_state.call(null, e.owner, new cljs.core.Keyword(null, "mousemove-listener", "mousemove-listener", 3228037661))), om.core.set_state_BANG_.call(null, e.owner, new cljs.core.Keyword(null, "click-listener", "click-listener", 1807691467), function(b) {
       b = clustermap.rtree.point_in_polygons.call(null, n, b.latlng.lng, b.latlng.lat);
       b = cljs.core.map.call(null, function(b) {
         return function(b) {
@@ -34811,7 +34816,7 @@ clustermap.components.map.map_component = function map_component(b, c) {
         };
       }(b), b);
       return cljs.core.async.put_BANG_.call(null, q, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "select", "select", 4402849902), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "constituency", "constituency", 3902864696), cljs.core.first.call(null, b)], null)], null));
-    }));
+    }), cljs.core.truth_(r) && x.off("click", r), x.on("click", om.core.get_state.call(null, e.owner, new cljs.core.Keyword(null, "click-listener", "click-listener", 1807691467))));
     cljs.core.truth_(m) && clustermap.components.map.update_paths.call(null, q, t, m, x, v, s, d, c);
     return cljs.core.truth_(cljs.core.truth_(u) ? u : cljs.core.not_EQ_.call(null, b, e.selection)) ? clustermap.components.map.pan_to_selection.call(null, e.owner, x, v, s) : null;
   }, clustermap.components.map.t12413.prototype.om$core$IDidMount$ = !0, clustermap.components.map.t12413.prototype.om$core$IDidMount$did_mount$arity$1 = function(b) {
@@ -34828,7 +34833,6 @@ clustermap.components.map.map_component = function map_component(b, c) {
       return cljs.core.swap_BANG_.call(null, om.core.get_shared.call(null, c.owner, new cljs.core.Keyword(null, "app-state", "app-state", 1424976215)), cljs.core.assoc, new cljs.core.Keyword(null, "zoom", "zoom", 1017648965), d.getZoom());
     });
     jayq.core.$.call(null, document).on("clustermap-change-view", function(b) {
-      console.log("change-view");
       b = om.core.get_state.call(null, c.owner);
       b = cljs.core.seq_QMARK_.call(null, b) ? cljs.core.apply.call(null, cljs.core.hash_map, b) : b;
       b = cljs.core.get.call(null, b, new cljs.core.Keyword(null, "map", "map", 1014012110));

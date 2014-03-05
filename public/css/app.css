@@ -3030,6 +3030,9 @@ body.view-lists #search-results {
   font-size: 22px;
   line-height: 1;
 }
+#map-report header.secondary button {
+  margin-top: 8px;
+}
 #map-report ul,
 #map-report li {
   list-style: none;
@@ -3233,6 +3236,7 @@ body.view-lists #search-results {
 #page-title button {
   float: right;
   margin-top: 10px;
+  margin-right: 3px;
 }
 .div-scroll {
   position: relative;

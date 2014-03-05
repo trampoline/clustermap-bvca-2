@@ -41,7 +41,7 @@ clustermap.formats.number.split_thousands = (function split_thousands(n_str){ret
 * @param {...*} var_args
 */
 clustermap.formats.number.eng_notation = (function() { 
-var eng_notation__delegate = function (n,p__34877){var map__34882 = p__34877;var map__34882__$1 = ((cljs.core.seq_QMARK_(map__34882))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__34882):map__34882);var sf = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__34882__$1,cljs.core.constant$keyword$625);if(cljs.core.truth_(n))
+var eng_notation__delegate = function (n,p__34877){var map__34882 = p__34877;var map__34882__$1 = ((cljs.core.seq_QMARK_(map__34882))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__34882):map__34882);var sf = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__34882__$1,cljs.core.constant$keyword$629);if(cljs.core.truth_(n))
 {var sign = (((n > 0))?1:((cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(n,0))?0:(((n < 0))?-1:null)));var abs_n = Math.abs(n);var vec__34883 = [cljs.core.str(abs_n)].join('').split(".");var i = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__34883,0,null);var d = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__34883,1,null);var exp = (((abs_n >= 1))?(3 * (((cljs.core.count(i) - 1) / 3) | 0)):(((abs_n > 0))?(-3 * (((3 + cljs.core.count(cljs.core.take_while(((function (sign,abs_n,vec__34883,i,d){
 return (function (c){return cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(c,"0");
 });})(sign,abs_n,vec__34883,i,d))
@@ -82,7 +82,7 @@ return eng_notation;
 * @param {...*} var_args
 */
 clustermap.formats.number.readable = (function() { 
-var readable__delegate = function (n,p__34887){var map__34890 = p__34887;var map__34890__$1 = ((cljs.core.seq_QMARK_(map__34890))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__34890):map__34890);var default$ = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__34890__$1,cljs.core.constant$keyword$541);var plus_QMARK_ = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__34890__$1,cljs.core.constant$keyword$626);var dec = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__34890__$1,cljs.core.constant$keyword$627);if(cljs.core.truth_(n))
+var readable__delegate = function (n,p__34887){var map__34890 = p__34887;var map__34890__$1 = ((cljs.core.seq_QMARK_(map__34890))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__34890):map__34890);var default$ = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__34890__$1,cljs.core.constant$keyword$545);var plus_QMARK_ = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__34890__$1,cljs.core.constant$keyword$630);var dec = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__34890__$1,cljs.core.constant$keyword$631);if(cljs.core.truth_(n))
 {var abs_n = Math.abs(n);var round_n = clustermap.formats.number.round_decimal(abs_n,dec);var round_n_str = [cljs.core.str(round_n)].join('');var vec__34891 = clojure.string.split.cljs$core$IFn$_invoke$arity$2(round_n_str,/\./);var i_str = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__34891,0,null);var d_str = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__34891,1,null);var t_str = clustermap.formats.number.split_thousands(i_str);var t_dec_str = clojure.string.join.cljs$core$IFn$_invoke$arity$2(".",cljs.core.filter(cljs.core.identity,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [t_str,d_str], null)));return clustermap.formats.number.prefix_sign(t_dec_str,n,plus_QMARK_);
 } else
 {return default$;

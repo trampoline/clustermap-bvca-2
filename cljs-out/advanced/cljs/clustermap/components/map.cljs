@@ -217,17 +217,26 @@
 
 (defn pan-to-selection
   [owner leaflet-map paths-atom path-selections-atom]
-  ;;  (.log js/console (clj->js paths))
   (let [paths @paths-atom
         path-selections @path-selections-atom]
-    (if (empty? paths)
-      (do (locate-map leaflet-map)
-          (om/set-state! owner :pan-pending true))
+    ;; (.log js/console (clj->js ["pan-to-selection"]))
+    (if (empty? path-selections)
       (do
-        (om/set-state! owner :pan-pending false)
-        (if-let [bounds (some->> (select-keys paths path-selections) vals (map :bounds))]
-          (apply pan-to-show leaflet-map bounds)
-          (pan-to-show initial-bounds))))))
+        ;; (.log js/console (clj->js ["empty selection" path-selections]))
+        (locate-map leaflet-map)
+          ;; (om/set-state! owner :pan-pending true)
+          )
+      (if (empty? paths)
+        (do
+          ;; (.log js/console (clj->js ["non-empty selection : empty paths" path-selections]))
+          (om/set-state owner :pan-pending true))
+        (do
+          ;; (.log js/console (clj->js ["non-empty selection" path-selections]))
+          (if (om/get-state owner :pan-pending) (om/set-state! owner :pan-pending false))
+          (if-let [bounds (some->> (select-keys paths path-selections) vals (map :bounds) not-empty)]
+            (apply pan-to-show leaflet-map bounds)
+            (pan-to-show initial-bounds)))
+        ))))
 
 (defn map-component
   "put the leaflet map as state in the om component"
@@ -248,7 +257,7 @@
         (.on leaflet-map "zoomend" (fn [e] (swap! (om/get-shared owner :app-state) assoc :zoom (.getZoom leaflet-map))))
 
         (-> js/document $ (.on "clustermap-change-view"(fn [e]
-                                                         (.log js/console "change-view")
+                                                         ;; (.log js/console "change-view")
                                                          (let [{{:keys [paths path-selections]} :map} (om/get-state owner)]
                                                            (.invalidateSize leaflet-map)
                                                            (pan-to-selection owner leaflet-map paths path-selections)))))
@@ -268,38 +277,52 @@
 
       (let [{:keys [uk-constituencies-rtree]} (om/get-props owner)
             {:keys [comm fetch-boundaryline-fn link-fn path-fn]} (om/get-shared owner)
-            {{:keys [leaflet-map markers paths path-selections]} :map pan-pending :pan-pending path-highlights :path-highlights} (om/get-state owner)]
+            {{:keys [leaflet-map markers paths path-selections]} :map
+             pan-pending :pan-pending
+             path-highlights :path-highlights
+             mousemove-listener :mousemove-listener
+             click-listener :click-listener} (om/get-state owner)]
 
         (update-markers path-fn leaflet-map markers next-locations)
 
         (when (not= next-uk-constituencies-rtree uk-constituencies-rtree)
-          (.on leaflet-map "mousemove" (fn [e]
-                                         (let [lat (-> e .-latlng .-lat)
-                                               lng (-> e .-latlng .-lng)
+          (om/set-state! owner
+                         :mousemove-listener
+                         (fn [e]
+                           (let [lat (-> e .-latlng .-lat)
+                                 lng (-> e .-latlng .-lng)
 
-                                               hits (rtree/point-in-polygons next-uk-constituencies-rtree lng lat)
-                                               hit-path-ids (map (fn [hit] (-> hit .-properties .-id)) hits)
+                                 hits (rtree/point-in-polygons next-uk-constituencies-rtree lng lat)
+                                 hit-path-ids (map (fn [hit] (-> hit .-properties .-id)) hits)
 
-                                               highlight-hit (first hits)
-                                               highlight-path-ids (set (take 1 hit-path-ids))
+                                 highlight-hit (first hits)
+                                 highlight-path-ids (set (take 1 hit-path-ids))
 
-                                               old-path-highlights (om/get-state owner :path-highlights)]
+                                 old-path-highlights (om/get-state owner :path-highlights)]
 
-                                           (when (and highlight-hit
-                                                      (not= old-path-highlights highlight-path-ids))
-                                             (doto (js/L.popup)
-                                               (.setLatLng (clj->js [lat lng]))
-                                               (.setContent (str "<p>" (some-> highlight-hit .-properties .-compact_name ) "</p>"))
-                                               (.openOn leaflet-map)))
+                             (when (and highlight-hit
+                                        (not= old-path-highlights highlight-path-ids))
+                               (doto (js/L.popup)
+                                 (.setLatLng (clj->js [lat lng]))
+                                 (.setContent (str "<p>" (some-> highlight-hit .-properties .-compact_name ) "</p>"))
+                                 (.openOn leaflet-map)))
 
-                                           (om/set-state! owner :path-highlights highlight-path-ids))))
+                             (om/set-state! owner :path-highlights highlight-path-ids))))
 
-          (.on leaflet-map "click" (fn [e]
-                                     (let [hits (rtree/point-in-polygons next-uk-constituencies-rtree (-> e .-latlng .-lng) (-> e .-latlng .-lat))
-                                           hit-path-ids (map (fn [hit] (-> hit .-properties .-id)) hits)]
-                                       (put! comm [:select [:constituency (first hit-path-ids)]])))))
+          (if mousemove-listener (.off leaflet-map "mousemove" mousemove-listener))
+          (.on leaflet-map "mousemove" (om/get-state owner :mousemove-listener))
 
-        (when (and next-uk-constituencies)
+          (om/set-state! owner
+                         :click-listener
+                         (fn [e]
+                           (let [hits (rtree/point-in-polygons next-uk-constituencies-rtree (-> e .-latlng .-lng) (-> e .-latlng .-lat))
+                                 hit-path-ids (map (fn [hit] (-> hit .-properties .-id)) hits)]
+                             (put! comm [:select [:constituency (first hit-path-ids)]]))))
+
+          (if click-listener (.off leaflet-map "click" click-listener))
+          (.on leaflet-map "click" (om/get-state owner :click-listener)))
+
+        (when next-uk-constituencies
           ;;(create-paths comm next-uk-constituencies leaflet-map paths)
           (update-paths comm fetch-boundaryline-fn next-uk-constituencies leaflet-map paths path-selections next-path-highlights next-locations))
 

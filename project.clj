@@ -46,7 +46,18 @@
                                    :source-map "cljs-out/whitespace/clustermap.js.map"
                                    :output-dir "cljs-out/whitespace/cljs"
                                    :optimizations :whitespace
-                                   :pretty-print true}}
+                                   :pretty-print true
+                                   :output-wrapper false}}
+
+                       :simple
+                       {:source-paths ["src"]
+                        :compiler {
+                                   :output-to  "cljs-out/simple/clustermap.js"
+                                   :source-map "cljs-out/simple/clustermap.js.map"
+                                   :output-dir "cljs-out/simple/cljs"
+                                   :optimizations :simple
+                                   :pretty-print true
+                                   :output-wrapper false}}
 
                        :advanced
                        {:source-paths ["src"]
@@ -54,4 +65,6 @@
                                    :output-to  "cljs-out/advanced/clustermap.js"
                                    :source-map "cljs-out/advanced/clustermap.js.map"
                                    :output-dir "cljs-out/advanced/cljs"
-                                   :optimizations :advanced}}}})
+                                   :optimizations :advanced
+                                   :output-wrapper false
+                                   :externs ["react/externs/react.js"]}}}})

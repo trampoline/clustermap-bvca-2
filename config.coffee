@@ -13,15 +13,20 @@ exports.config =
         'test/scenarios.js': /^test(\/|\\)e2e/
       order:
         before: [
+          'vendor/html5_scripts/json2.js',
           'vendor/html5_scripts/es5-shim.js',
           'vendor/html5_scripts/es5-sham.js',
           'vendor/html5_scripts/html5shiv.js',
           'vendor/scripts/console-polyfill.js',
           'vendor/scripts/android-xpath.js',
           'vendor/scripts/javascript-xpath.js',
+          'vendor/scripts/jquery.js',
+          'vendor/scripts/mapbox.js',
           'vendor/scripts/bootstrap.js',
           'vendor/scripts/geojson-utils.js',
-          'vendor/scripts/rtree.js'
+          'vendor/scripts/rtree.js',
+          'vendor/scripts/highcharts.js',
+          'vendor/scripts/react.js'
         ]
 
     stylesheets:
@@ -30,6 +35,7 @@ exports.config =
       order:
         before: [
           'vendor/styles/bootstrap.less',
+          'vendor/styles/mapbox.css'
         ]
     templates:
       joinTo:

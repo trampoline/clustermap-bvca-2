@@ -98,7 +98,8 @@
                 [:th "Revenue"]
                 [:th {:colSpan "2"} "Rev. change"]
                 [:th "Employees"]
-                [:th {:colSpan "2"} "Emp. change"]]]
+                ;;[:th {:colSpan "2"} "Emp. change"]
+                ]]
               [:tbody
                [:tr
                 [:th [:i.icon-info {:data-toggle "tooltip" :data-container "body" :title (selection :description)}] (selection :name)]
@@ -109,8 +110,9 @@
                 [:td [:span.selection (pos-neg (:turnover-delta-val selection))]]
                 [:td [:span.selection (:turnover-delta selection)]]
                 [:td [:span.selection (:employee-count selection)]]
-                [:td [:span.selection (pos-neg (:employee-count-delta-val selection))]]
-                [:td [:span.selection (:employee-count-delta selection)]]]
+                ;; [:td [:span.selection (pos-neg (:employee-count-delta-val selection))]]
+                ;;[:td [:span.selection (:employee-count-delta selection)]]
+                ]
                [:tr
                 [:th [:i.icon-info {:data-toggle "tooltip" :data-container "body" :title (averages :description)}] (averages :name)]
                 [:td [:span.averages (:portfolio-companies averages)]]
@@ -120,8 +122,8 @@
                 [:td [:span.averages (pos-neg (:turnover-delta-val averages))]]
                 [:td [:span.averages (:turnover-delta averages)]]
                 [:td [:span.averages (:employee-count averages)]]
-                [:td [:span.averages (pos-neg (:employee-count-delta-val averages))]]
-                [:td [:span.averages (:employee-count-delta averages)]]
+                ;; [:td [:span.averages (pos-neg (:employee-count-delta-val averages))]]
+                ;; [:td [:span.averages (:employee-count-delta averages)]]
 ]
                [:tr
                 [:th [:i.icon-info {:data-toggle "tooltip" :data-container "body" :title (benchmark :description)}] (benchmark :name)]
@@ -132,7 +134,7 @@
                 [:td [:span.benchmark (pos-neg (:turnover-delta-val benchmark))]]
                 [:td [:span.benchmark (:turnover-delta benchmark)]]
                 [:td [:span.benchmark (:employee-count benchmark)]]
-                [:td [:span.benchmark (pos-neg (:employee-count-delta-val benchmark))]]
-                [:td [:span.benchmark (:employee-count-delta benchmark)]]
+                ;; [:td [:span.benchmark (pos-neg (:employee-count-delta-val benchmark))]]
+                ;; [:td [:span.benchmark (:employee-count-delta benchmark)]]
 ]
                ]]]]))))

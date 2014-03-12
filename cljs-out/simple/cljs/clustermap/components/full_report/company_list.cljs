@@ -37,8 +37,9 @@
        [:td (pos-neg (:latest_turnover_delta company))]
        [:td (fmoney (:latest_turnover_delta company) :sf 2 :default "-")]
        [:td (fnum (:latest_employee_count company) :dec 0 :default "-") [:small "\u00A0(" (or (get-year (:latest_accounts_date company)) "no info") ")" ]]
-       [:td (pos-neg (:latest_employee_count_delta company))]
-       [:td (fnum (:latest_employee_count_delta company) :dec 0 :default "-") ]]))))
+       ;; [:td (pos-neg (:latest_employee_count_delta company))]
+       ;;[:td (fnum (:latest_employee_count_delta company) :dec 0 :default "-") ]
+       ]))))
 
 (defn company-list
   [companies owner opts]
@@ -57,7 +58,8 @@
            [:th (table/order-col comm companies :update-selection-investment-aggs-table-view "Revenue" :latest_turnover)]
            [:th {:colSpan "2"} (table/order-col comm companies :update-selection-investment-aggs-table-view "Rev. change" :latest_turnover_delta)]
            [:th (table/order-col comm companies :update-selection-investment-aggs-table-view "Employees" :latest_employee_count)]
-           [:th {:colSpan "2"} (table/order-col comm companies :update-selection-investment-aggs-table-view "Emp. change" :latest_employee_count_delta)]]]
+;;           [:th {:colSpan "2"} (table/order-col comm companies :update-selection-investment-aggs-table-view "Emp. change" :latest_employee_count_delta)]
+           ]]
          [:tbody
           (om/build-all portfolio-company (:records companies) {:key :company_no :opts opts})]]]
        (table/paginate comm companies :update-selection-investment-aggs-table-view)]))))

@@ -24,11 +24,12 @@
                                                                         :y1-title "# Filings"}
                                                                  :react-key "turnover-timeline-chart"})
               ]]
-            [:div.tbl-cell
-             [:div.box.box-last
-              [:header "Employment"]
-              (om/build tl/timeline-chart (:employee_count timelines) {:opts {:id "employment-timeline-chart"
-                                                                              :y0-title "Employment"
-                                                                              :y1-title "# Filings"}
-                                                                       :react-key "employment-timeline-chart"})
-              ]]]]]]])])))
+            ;; [:div.tbl-cell
+            ;;  [:div.box.box-last
+            ;;   [:header "Employment"]
+            ;;   (om/build tl/timeline-chart (:employee_count timelines) {:opts {:id "employment-timeline-chart"
+            ;;                                                                   :y0-title "Employment"
+            ;;                                                                   :y1-title "# Filings"}
+            ;;                                                            :react-key "employment-timeline-chart"})
+            ;;   ]]
+            ]]]]])])))

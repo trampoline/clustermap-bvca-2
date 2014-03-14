@@ -54,15 +54,15 @@ clustermap.components.map_report.t23411.cljs$lang$ctorPrWriter = (function (this
 });
 clustermap.components.map_report.t23411.prototype.om$core$IRender$ = true;
 clustermap.components.map_report.t23411.prototype.om$core$IRender$render$arity$1 = (function (this__9251__auto__){var self__ = this;
-var this__9251__auto____$1 = this;return React.DOM.div(null,React.DOM.header({"className": "secondary"},React.DOM.h2(null,"All portfolio companies"),React.DOM.h3(null,"UK wide")),React.DOM.ul(null,(function (){var attrs23416 = clustermap.formats.number.fnum.call(null,self__.pc_count,new cljs.core.Keyword(null,"default","default",2558708147),"-");if(cljs.core.map_QMARK_.call(null,attrs23416))
-{return React.DOM.li(sablono.interpreter.attributes.call(null,attrs23416),React.DOM.small(null,"Portfolio Companies listed"));
+var this__9251__auto____$1 = this;return React.DOM.div(null,React.DOM.header({"className": "secondary"},React.DOM.h2(null,"All investor-backed companies"),React.DOM.h3(null,"UK wide")),React.DOM.ul(null,(function (){var attrs23416 = clustermap.formats.number.fnum.call(null,self__.pc_count,new cljs.core.Keyword(null,"default","default",2558708147),"-");if(cljs.core.map_QMARK_.call(null,attrs23416))
+{return React.DOM.li(sablono.interpreter.attributes.call(null,attrs23416),React.DOM.small(null,"Investor-backed companies"));
 } else
-{return React.DOM.li(null,sablono.interpreter.interpret.call(null,attrs23416),React.DOM.small(null,"Portfolio Companies listed"));
+{return React.DOM.li(null,sablono.interpreter.interpret.call(null,attrs23416),React.DOM.small(null,"Investor-backed companies"));
 }
 })(),(function (){var attrs23421 = clustermap.formats.number.fnum.call(null,self__.ic_count,new cljs.core.Keyword(null,"default","default",2558708147),"-");if(cljs.core.map_QMARK_.call(null,attrs23421))
-{return React.DOM.li(sablono.interpreter.attributes.call(null,attrs23421),React.DOM.small(null,"Investors listed"));
+{return React.DOM.li(sablono.interpreter.attributes.call(null,attrs23421),React.DOM.small(null,"Investors"));
 } else
-{return React.DOM.li(null,sablono.interpreter.interpret.call(null,attrs23421),React.DOM.small(null,"Investors listed"));
+{return React.DOM.li(null,sablono.interpreter.interpret.call(null,attrs23421),React.DOM.small(null,"Investors"));
 }
 })(),(function (){var attrs23426 = clustermap.formats.number.fnum.call(null,self__.const_count,new cljs.core.Keyword(null,"default","default",2558708147),"-");if(cljs.core.map_QMARK_.call(null,attrs23426))
 {return React.DOM.li(sablono.interpreter.attributes.call(null,attrs23426),(function (){var attrs23427 = clustermap.formats.string.pluralize.call(null,self__.const_count,"Constituency","Constituencies");if(cljs.core.map_QMARK_.call(null,attrs23427))
@@ -81,15 +81,15 @@ var this__9251__auto____$1 = this;return React.DOM.div(null,React.DOM.header({"c
 }
 })(),(function (){var attrs23429 = clustermap.formats.money.fmoney.call(null,(function (){var G__23439 = self__.site_stats;var G__23439__$1 = (((G__23439 == null))?null:new cljs.core.Keyword(null,"turnover","turnover",1148922435).cljs$core$IFn$_invoke$arity$1(G__23439));var G__23439__$2 = (((G__23439__$1 == null))?null:new cljs.core.Keyword(null,"total","total",1124454070).cljs$core$IFn$_invoke$arity$1(G__23439__$1));return G__23439__$2;
 })(),new cljs.core.Keyword(null,"sf","sf",1013907909),2,new cljs.core.Keyword(null,"default","default",2558708147),"-");if(cljs.core.map_QMARK_.call(null,attrs23429))
-{return React.DOM.li(sablono.interpreter.attributes.call(null,attrs23429),React.DOM.small(null,"Portfolio Company Turnover"));
+{return React.DOM.li(sablono.interpreter.attributes.call(null,attrs23429),React.DOM.small(null,"Total revenue"));
 } else
-{return React.DOM.li(null,sablono.interpreter.interpret.call(null,attrs23429),React.DOM.small(null,"Portfolio Company Turnover"));
+{return React.DOM.li(null,sablono.interpreter.interpret.call(null,attrs23429),React.DOM.small(null,"Total revenue"));
 }
 })(),(function (){var attrs23434 = clustermap.formats.number.fnum.call(null,(function (){var G__23440 = self__.site_stats;var G__23440__$1 = (((G__23440 == null))?null:new cljs.core.Keyword(null,"employee_count","employee_count",2542621616).cljs$core$IFn$_invoke$arity$1(G__23440));var G__23440__$2 = (((G__23440__$1 == null))?null:new cljs.core.Keyword(null,"total","total",1124454070).cljs$core$IFn$_invoke$arity$1(G__23440__$1));return G__23440__$2;
 })(),new cljs.core.Keyword(null,"dec","dec",1014003572),0,new cljs.core.Keyword(null,"default","default",2558708147),"-");if(cljs.core.map_QMARK_.call(null,attrs23434))
-{return React.DOM.li(sablono.interpreter.attributes.call(null,attrs23434),React.DOM.small(null,"Portfolio Company Employees"));
+{return React.DOM.li(sablono.interpreter.attributes.call(null,attrs23434),React.DOM.small(null,"Total employees"));
 } else
-{return React.DOM.li(null,sablono.interpreter.interpret.call(null,attrs23434),React.DOM.small(null,"Portfolio Company Employees"));
+{return React.DOM.li(null,sablono.interpreter.interpret.call(null,attrs23434),React.DOM.small(null,"Total employees"));
 }
 })()),sablono.interpreter.interpret.call(null,clustermap.components.map_report.full_report_button.call(null,self__.comm)));
 });
@@ -130,7 +130,7 @@ clustermap.components.map_report.t23467.cljs$lang$ctorPrWriter = (function (this
 });
 clustermap.components.map_report.t23467.prototype.om$core$IRender$ = true;
 clustermap.components.map_report.t23467.prototype.om$core$IRender$render$arity$1 = (function (this__9251__auto__){var self__ = this;
-var this__9251__auto____$1 = this;return React.DOM.div(null,React.DOM.header({"className": "secondary"},React.DOM.h2(null,"Portfolio Company"),(function (){var attrs23472 = new cljs.core.Keyword(null,"name","name",1017277949).cljs$core$IFn$_invoke$arity$1(self__.portfolio_company);if(cljs.core.map_QMARK_.call(null,attrs23472))
+var this__9251__auto____$1 = this;return React.DOM.div(null,React.DOM.header({"className": "secondary"},React.DOM.h2(null,"Investor-backed company"),(function (){var attrs23472 = new cljs.core.Keyword(null,"name","name",1017277949).cljs$core$IFn$_invoke$arity$1(self__.portfolio_company);if(cljs.core.map_QMARK_.call(null,attrs23472))
 {return React.DOM.h3(sablono.interpreter.attributes.call(null,attrs23472),null);
 } else
 {return React.DOM.h3(null,sablono.interpreter.interpret.call(null,attrs23472));
@@ -167,15 +167,15 @@ var this__9251__auto____$1 = this;return React.DOM.div(null,React.DOM.header({"c
 }
 })(),(function (){var attrs23479 = clustermap.formats.money.fmoney.call(null,(function (){var G__23489 = self__.site_stats;var G__23489__$1 = (((G__23489 == null))?null:new cljs.core.Keyword(null,"turnover","turnover",1148922435).cljs$core$IFn$_invoke$arity$1(G__23489));var G__23489__$2 = (((G__23489__$1 == null))?null:new cljs.core.Keyword(null,"total","total",1124454070).cljs$core$IFn$_invoke$arity$1(G__23489__$1));return G__23489__$2;
 })(),new cljs.core.Keyword(null,"sf","sf",1013907909),2,new cljs.core.Keyword(null,"default","default",2558708147),"-");if(cljs.core.map_QMARK_.call(null,attrs23479))
-{return React.DOM.li(sablono.interpreter.attributes.call(null,attrs23479),React.DOM.small(null,"Portfolio Company Turnover"));
+{return React.DOM.li(sablono.interpreter.attributes.call(null,attrs23479),React.DOM.small(null,"Total revenue"));
 } else
-{return React.DOM.li(null,sablono.interpreter.interpret.call(null,attrs23479),React.DOM.small(null,"Portfolio Company Turnover"));
+{return React.DOM.li(null,sablono.interpreter.interpret.call(null,attrs23479),React.DOM.small(null,"Total revenue"));
 }
 })(),(function (){var attrs23484 = clustermap.formats.number.fnum.call(null,(function (){var G__23490 = self__.site_stats;var G__23490__$1 = (((G__23490 == null))?null:new cljs.core.Keyword(null,"employee_count","employee_count",2542621616).cljs$core$IFn$_invoke$arity$1(G__23490));var G__23490__$2 = (((G__23490__$1 == null))?null:new cljs.core.Keyword(null,"total","total",1124454070).cljs$core$IFn$_invoke$arity$1(G__23490__$1));return G__23490__$2;
 })(),new cljs.core.Keyword(null,"dec","dec",1014003572),0,new cljs.core.Keyword(null,"default","default",2558708147),"-");if(cljs.core.map_QMARK_.call(null,attrs23484))
-{return React.DOM.li(sablono.interpreter.attributes.call(null,attrs23484),React.DOM.small(null,"Portfolio Company Employees"));
+{return React.DOM.li(sablono.interpreter.attributes.call(null,attrs23484),React.DOM.small(null,"Total employees"));
 } else
-{return React.DOM.li(null,sablono.interpreter.interpret.call(null,attrs23484),React.DOM.small(null,"Portfolio Company Employees"));
+{return React.DOM.li(null,sablono.interpreter.interpret.call(null,attrs23484),React.DOM.small(null,"Total employees"));
 }
 })()),sablono.interpreter.interpret.call(null,clustermap.components.map_report.full_report_button.call(null,self__.comm)));
 });
@@ -222,14 +222,14 @@ var this__9251__auto____$1 = this;return React.DOM.div(null,React.DOM.header({"c
 {return React.DOM.h3(null,sablono.interpreter.interpret.call(null,attrs23522));
 }
 })(),sablono.interpreter.interpret.call(null,clustermap.components.reset_selection_button.reset_selection_button.call(null,self__.path_fn))),React.DOM.ul(null,(function (){var attrs23523 = clustermap.formats.number.fnum.call(null,self__.pc_count);if(cljs.core.map_QMARK_.call(null,attrs23523))
-{return React.DOM.li(sablono.interpreter.attributes.call(null,attrs23523),(function (){var attrs23524 = clustermap.formats.string.pluralize.call(null,self__.pc_count,"Portfolio Company","Portfolio Companies");if(cljs.core.map_QMARK_.call(null,attrs23524))
+{return React.DOM.li(sablono.interpreter.attributes.call(null,attrs23523),(function (){var attrs23524 = clustermap.formats.string.pluralize.call(null,self__.pc_count,"Investor-backed company","Investor-backed companies");if(cljs.core.map_QMARK_.call(null,attrs23524))
 {return React.DOM.small(sablono.interpreter.attributes.call(null,attrs23524),null);
 } else
 {return React.DOM.small(null,sablono.interpreter.interpret.call(null,attrs23524));
 }
 })());
 } else
-{return React.DOM.li(null,sablono.interpreter.interpret.call(null,attrs23523),(function (){var attrs23525 = clustermap.formats.string.pluralize.call(null,self__.pc_count,"Portfolio Company","Portfolio Companies");if(cljs.core.map_QMARK_.call(null,attrs23525))
+{return React.DOM.li(null,sablono.interpreter.interpret.call(null,attrs23523),(function (){var attrs23525 = clustermap.formats.string.pluralize.call(null,self__.pc_count,"Investor-backed company","Investor-backed companies");if(cljs.core.map_QMARK_.call(null,attrs23525))
 {return React.DOM.small(sablono.interpreter.attributes.call(null,attrs23525),null);
 } else
 {return React.DOM.small(null,sablono.interpreter.interpret.call(null,attrs23525));
@@ -253,15 +253,15 @@ var this__9251__auto____$1 = this;return React.DOM.div(null,React.DOM.header({"c
 }
 })(),(function (){var attrs23529 = clustermap.formats.money.fmoney.call(null,(function (){var G__23539 = self__.site_stats;var G__23539__$1 = (((G__23539 == null))?null:new cljs.core.Keyword(null,"turnover","turnover",1148922435).cljs$core$IFn$_invoke$arity$1(G__23539));var G__23539__$2 = (((G__23539__$1 == null))?null:new cljs.core.Keyword(null,"total","total",1124454070).cljs$core$IFn$_invoke$arity$1(G__23539__$1));return G__23539__$2;
 })(),new cljs.core.Keyword(null,"sf","sf",1013907909),2,new cljs.core.Keyword(null,"default","default",2558708147),"-");if(cljs.core.map_QMARK_.call(null,attrs23529))
-{return React.DOM.li(sablono.interpreter.attributes.call(null,attrs23529),React.DOM.small(null,"Portfolio Company Turnover"));
+{return React.DOM.li(sablono.interpreter.attributes.call(null,attrs23529),React.DOM.small(null,"Total revenue"));
 } else
-{return React.DOM.li(null,sablono.interpreter.interpret.call(null,attrs23529),React.DOM.small(null,"Portfolio Company Turnover"));
+{return React.DOM.li(null,sablono.interpreter.interpret.call(null,attrs23529),React.DOM.small(null,"Total revenue"));
 }
 })(),(function (){var attrs23534 = clustermap.formats.number.fnum.call(null,(function (){var G__23540 = self__.site_stats;var G__23540__$1 = (((G__23540 == null))?null:new cljs.core.Keyword(null,"employee_count","employee_count",2542621616).cljs$core$IFn$_invoke$arity$1(G__23540));var G__23540__$2 = (((G__23540__$1 == null))?null:new cljs.core.Keyword(null,"total","total",1124454070).cljs$core$IFn$_invoke$arity$1(G__23540__$1));return G__23540__$2;
 })(),new cljs.core.Keyword(null,"dec","dec",1014003572),0,new cljs.core.Keyword(null,"default","default",2558708147),"-");if(cljs.core.map_QMARK_.call(null,attrs23534))
-{return React.DOM.li(sablono.interpreter.attributes.call(null,attrs23534),React.DOM.small(null,"Portfolio Company Employees"));
+{return React.DOM.li(sablono.interpreter.attributes.call(null,attrs23534),React.DOM.small(null,"Total employees"));
 } else
-{return React.DOM.li(null,sablono.interpreter.interpret.call(null,attrs23534),React.DOM.small(null,"Portfolio Company Employees"));
+{return React.DOM.li(null,sablono.interpreter.interpret.call(null,attrs23534),React.DOM.small(null,"Total employees"));
 }
 })()),sablono.interpreter.interpret.call(null,clustermap.components.map_report.full_report_button.call(null,self__.comm)));
 });
@@ -318,14 +318,14 @@ var this__9251__auto____$1 = this;return React.DOM.div(null,React.DOM.header({"c
 })())?React.DOM.small(null,"(",sablono.interpreter.interpret.call(null,new cljs.core.Keyword(null,"mp","mp",1013907733).cljs$core$IFn$_invoke$arity$1(self__.constituency)),", ",sablono.interpreter.interpret.call(null,new cljs.core.Keyword(null,"political_party","political_party",2564439702).cljs$core$IFn$_invoke$arity$1(self__.constituency)),")"):null));
 }
 })(),sablono.interpreter.interpret.call(null,clustermap.components.reset_selection_button.reset_selection_button.call(null,self__.path_fn))),React.DOM.ul(null,(function (){var attrs23581 = clustermap.formats.number.fnum.call(null,self__.pc_count);if(cljs.core.map_QMARK_.call(null,attrs23581))
-{return React.DOM.li(sablono.interpreter.attributes.call(null,attrs23581),(function (){var attrs23582 = clustermap.formats.string.pluralize.call(null,self__.pc_count,"Portfolio Company","Portfolio Companies");if(cljs.core.map_QMARK_.call(null,attrs23582))
+{return React.DOM.li(sablono.interpreter.attributes.call(null,attrs23581),(function (){var attrs23582 = clustermap.formats.string.pluralize.call(null,self__.pc_count,"Investor-backed company","Investor-backed companies");if(cljs.core.map_QMARK_.call(null,attrs23582))
 {return React.DOM.small(sablono.interpreter.attributes.call(null,attrs23582),null);
 } else
 {return React.DOM.small(null,sablono.interpreter.interpret.call(null,attrs23582));
 }
 })());
 } else
-{return React.DOM.li(null,sablono.interpreter.interpret.call(null,attrs23581),(function (){var attrs23583 = clustermap.formats.string.pluralize.call(null,self__.pc_count,"Portfolio Company","Portfolio Companies");if(cljs.core.map_QMARK_.call(null,attrs23583))
+{return React.DOM.li(null,sablono.interpreter.interpret.call(null,attrs23581),(function (){var attrs23583 = clustermap.formats.string.pluralize.call(null,self__.pc_count,"Investor-backed company","Investor-backed companies");if(cljs.core.map_QMARK_.call(null,attrs23583))
 {return React.DOM.small(sablono.interpreter.attributes.call(null,attrs23583),null);
 } else
 {return React.DOM.small(null,sablono.interpreter.interpret.call(null,attrs23583));
@@ -349,15 +349,15 @@ var this__9251__auto____$1 = this;return React.DOM.div(null,React.DOM.header({"c
 }
 })(),(function (){var attrs23587 = clustermap.formats.money.fmoney.call(null,(function (){var G__23597 = self__.site_stats;var G__23597__$1 = (((G__23597 == null))?null:new cljs.core.Keyword(null,"turnover","turnover",1148922435).cljs$core$IFn$_invoke$arity$1(G__23597));var G__23597__$2 = (((G__23597__$1 == null))?null:new cljs.core.Keyword(null,"total","total",1124454070).cljs$core$IFn$_invoke$arity$1(G__23597__$1));return G__23597__$2;
 })(),new cljs.core.Keyword(null,"sf","sf",1013907909),2,new cljs.core.Keyword(null,"default","default",2558708147),"-");if(cljs.core.map_QMARK_.call(null,attrs23587))
-{return React.DOM.li(sablono.interpreter.attributes.call(null,attrs23587),React.DOM.small(null,"Portfolio Company Turnover"));
+{return React.DOM.li(sablono.interpreter.attributes.call(null,attrs23587),React.DOM.small(null,"Total revenue"));
 } else
-{return React.DOM.li(null,sablono.interpreter.interpret.call(null,attrs23587),React.DOM.small(null,"Portfolio Company Turnover"));
+{return React.DOM.li(null,sablono.interpreter.interpret.call(null,attrs23587),React.DOM.small(null,"Total revenue"));
 }
 })(),(function (){var attrs23592 = clustermap.formats.number.fnum.call(null,(function (){var G__23598 = self__.site_stats;var G__23598__$1 = (((G__23598 == null))?null:new cljs.core.Keyword(null,"employee_count","employee_count",2542621616).cljs$core$IFn$_invoke$arity$1(G__23598));var G__23598__$2 = (((G__23598__$1 == null))?null:new cljs.core.Keyword(null,"total","total",1124454070).cljs$core$IFn$_invoke$arity$1(G__23598__$1));return G__23598__$2;
 })(),new cljs.core.Keyword(null,"dec","dec",1014003572),0,new cljs.core.Keyword(null,"default","default",2558708147),"-");if(cljs.core.map_QMARK_.call(null,attrs23592))
-{return React.DOM.li(sablono.interpreter.attributes.call(null,attrs23592),React.DOM.small(null,"Portfolio Company Employees"));
+{return React.DOM.li(sablono.interpreter.attributes.call(null,attrs23592),React.DOM.small(null,"Total employees"));
 } else
-{return React.DOM.li(null,sablono.interpreter.interpret.call(null,attrs23592),React.DOM.small(null,"Portfolio Company Employees"));
+{return React.DOM.li(null,sablono.interpreter.interpret.call(null,attrs23592),React.DOM.small(null,"Total employees"));
 }
 })()),sablono.interpreter.interpret.call(null,clustermap.components.map_report.full_report_button.call(null,self__.comm)));
 });

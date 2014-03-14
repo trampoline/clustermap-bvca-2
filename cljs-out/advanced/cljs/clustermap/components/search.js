@@ -217,7 +217,7 @@ break;
 }
 }),null,null));
 });return iter__4158__auto__(idx_cons);
-})()):null),(cljs.core.truth_(cljs.core.not_empty(idx_pcs))?cljs.core.into(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.constant$keyword$748,new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.constant$keyword$589,new cljs.core.PersistentArrayMap(null, 1, [cljs.core.constant$keyword$574,"search-results-header"], null),"Companies"], null)], null),(function (){var iter__4158__auto__ = (function iter__34686(s__34687){return (new cljs.core.LazySeq(null,(function (){var s__34687__$1 = s__34687;while(true){
+})()):null),(cljs.core.truth_(cljs.core.not_empty(idx_pcs))?cljs.core.into(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.constant$keyword$748,new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.constant$keyword$589,new cljs.core.PersistentArrayMap(null, 1, [cljs.core.constant$keyword$574,"search-results-header"], null),"Investor-backed companies"], null)], null),(function (){var iter__4158__auto__ = (function iter__34686(s__34687){return (new cljs.core.LazySeq(null,(function (){var s__34687__$1 = s__34687;while(true){
 var temp__4092__auto__ = cljs.core.seq(s__34687__$1);if(temp__4092__auto__)
 {var s__34687__$2 = temp__4092__auto__;if(cljs.core.chunked_seq_QMARK_(s__34687__$2))
 {var c__4156__auto__ = cljs.core.chunk_first(s__34687__$2);var size__4157__auto__ = cljs.core.count(c__4156__auto__);var b__34689 = cljs.core.chunk_buffer(size__4157__auto__);if((function (){var i__34688 = 0;while(true){

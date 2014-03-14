@@ -29,14 +29,14 @@
     (om/component
      (html [:div
             [:header.secondary
-             [:h2 "All portfolio companies"]
+             [:h2 "All investor-backed companies"]
              [:h3 "UK wide"]]
             [:ul
-             [:li (fnum pc-count :default "-") [:small "Portfolio Companies listed"]]
-             [:li (fnum ic-count :default "-") [:small "Investors listed"]]
+             [:li (fnum pc-count :default "-") [:small "Investor-backed companies"]]
+             [:li (fnum ic-count :default "-") [:small "Investors"]]
              [:li (fnum const-count :default "-") [:small (pluralize const-count "Constituency" "Constituencies")]]
-             [:li (fmoney (some-> site-stats :turnover :total) :sf 2 :default "-") [:small "Portfolio Company Turnover"]]
-             [:li (fnum (some-> site-stats :employee_count :total) :dec 0 :default "-") [:small "Portfolio Company Employees"]]
+             [:li (fmoney (some-> site-stats :turnover :total) :sf 2 :default "-") [:small "Total revenue"]]
+             [:li (fnum (some-> site-stats :employee_count :total) :dec 0 :default "-") [:small "Total employees"]]
              ]
             (full-report-button comm)]))))
 
@@ -46,14 +46,14 @@
     (om/component
      (html [:div
             [:header.secondary
-             [:h2 "Portfolio Company"]
+             [:h2 "Investor-backed company"]
              [:h3 (:name portfolio-company)]
              (rsb/reset-selection-button path-fn)]
             [:ul
              [:li (fnum ic-count) [:small (pluralize ic-count "Investor")]]
              [:li (fnum const-count) [:small (pluralize const-count "Constituency" "Constituencies")]]
-             [:li (fmoney (some-> site-stats :turnover :total) :sf 2 :default "-") [:small "Portfolio Company Turnover"]]
-             [:li (fnum (some-> site-stats :employee_count :total) :dec 0 :default "-") [:small "Portfolio Company Employees"]]]
+             [:li (fmoney (some-> site-stats :turnover :total) :sf 2 :default "-") [:small "Total revenue"]]
+             [:li (fnum (some-> site-stats :employee_count :total) :dec 0 :default "-") [:small "Total employees"]]]
             (full-report-button comm)]))))
 
 (defn investor-company-report
@@ -66,10 +66,10 @@
              [:h3 (:name investor-company)]
              (rsb/reset-selection-button path-fn)]
             [:ul
-             [:li (fnum pc-count) [:small (pluralize pc-count "Portfolio Company" "Portfolio Companies")]]
+             [:li (fnum pc-count) [:small (pluralize pc-count "Investor-backed company" "Investor-backed companies")]]
              [:li (fnum const-count) [:small (pluralize const-count "Constituency" "Constituencies")]]
-             [:li (fmoney (some-> site-stats :turnover :total) :sf 2 :default "-") [:small "Portfolio Company Turnover"]]
-             [:li (fnum (some-> site-stats :employee_count :total) :dec 0 :default "-") [:small "Portfolio Company Employees"]]]
+             [:li (fmoney (some-> site-stats :turnover :total) :sf 2 :default "-") [:small "Total revenue"]]
+             [:li (fnum (some-> site-stats :employee_count :total) :dec 0 :default "-") [:small "Total employees"]]]
             (full-report-button comm)]))))
 
 (defn constituency-report
@@ -85,10 +85,10 @@
                 [:small "(" (:mp constituency) ", " (:political_party constituency) ")"])]
              (rsb/reset-selection-button path-fn)]
             [:ul
-             [:li (fnum pc-count) [:small (pluralize pc-count "Portfolio Company" "Portfolio Companies")]]
+             [:li (fnum pc-count) [:small (pluralize pc-count "Investor-backed company" "Investor-backed companies")]]
              [:li (fnum ic-count) [:small (pluralize ic-count "Investor")]]
-             [:li (fmoney (some-> site-stats :turnover :total) :sf 2 :default "-") [:small "Portfolio Company Turnover"]]
-             [:li (fnum (some-> site-stats :employee_count :total) :dec 0 :default "-") [:small "Portfolio Company Employees"]]]
+             [:li (fmoney (some-> site-stats :turnover :total) :sf 2 :default "-") [:small "Total revenue"]]
+             [:li (fnum (some-> site-stats :employee_count :total) :dec 0 :default "-") [:small "Total employees"]]]
             (full-report-button comm)]))))
 
 (defn map-report-component [data owner]

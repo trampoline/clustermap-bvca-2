@@ -9843,8 +9843,8 @@ var Qo = function Po(b) {
     return ic(c, "clustermap.components.full-report.overview/t34158");
   }, Lo.prototype.Ha = !0, Lo.prototype.Aa = function() {
     var b = this;
-    return React.DOM.div({className:"full-report-overview"}, React.DOM.h4(null, "Overview of latest filings", React.DOM.small(null, "\u00a0(may span years : see table below for details)")), React.DOM.div({className:"table-responsive"}, React.DOM.table({className:"table-stats"}, React.DOM.thead(null, React.DOM.tr(null, React.DOM.th(null, "\u00a0"), React.DOM.th(null, "Portfolio Companies"), React.DOM.th(null, "Investors"), React.DOM.th(null, "Constituencies"), React.DOM.th(null, "Revenue"), React.DOM.th({colSpan:"2"}, 
-    "Rev. change"), React.DOM.th(null, "Employees"))), React.DOM.tbody(null, React.DOM.tr(null, React.DOM.th(null, React.DOM.i({className:"icon-info", "data-toggle":"tooltip", "data-container":"body", title:b.selection.d ? b.selection.d(Dk) : b.selection.call(null, Dk)}), V(b.selection.d ? b.selection.d(ni) : b.selection.call(null, ni))), React.DOM.td(null, function() {
+    return React.DOM.div({className:"full-report-overview"}, React.DOM.h4(null, "Overview of latest filings", React.DOM.small(null, "\u00a0(may span years : see table below for details)")), React.DOM.div({className:"table-responsive"}, React.DOM.table({className:"table-stats"}, React.DOM.thead(null, React.DOM.tr(null, React.DOM.th(null, "\u00a0"), React.DOM.th(null, "Investor-backed companies"), React.DOM.th(null, "Investors"), React.DOM.th(null, "Constituencies"), React.DOM.th(null, "Revenue"), 
+    React.DOM.th({colSpan:"2"}, "Rev. change"), React.DOM.th(null, "Employees"))), React.DOM.tbody(null, React.DOM.tr(null, React.DOM.th(null, React.DOM.i({className:"icon-info", "data-toggle":"tooltip", "data-container":"body", title:b.selection.d ? b.selection.d(Dk) : b.selection.call(null, Dk)}), V(b.selection.d ? b.selection.d(ni) : b.selection.call(null, ni))), React.DOM.td(null, function() {
       var c = Yg.d(b.selection);
       return K(c) ? React.DOM.span(W(nn.f(E([new n(null, 1, [Zh, new Q(null, 1, 5, R, ["selection"], null)], null), c], 0))), null) : React.DOM.span({className:"selection"}, V(c));
     }()), React.DOM.td(null, function() {
@@ -10816,7 +10816,7 @@ var rq = function qq(b, c, d) {
   }, oq.prototype.Ha = !0, oq.prototype.Aa = function() {
     var b = this, c = Qp(b.v, b.Fa, Xg);
     return K(c) ? React.DOM.div(W(nn.f(E([new n(null, 1, [Zh, new Q(null, 1, 5, R, ["full-report-list"], null)], null), c], 0))), React.DOM.div({className:"table-responsive"}, React.DOM.table({className:"table"}, React.DOM.thead(null, React.DOM.tr(null, function() {
-      var c = Pp(b.v, b.Fa, Xg, "Portfolio Company", fh);
+      var c = Pp(b.v, b.Fa, Xg, "Investor-backed Company", fh);
       return K(c) ? React.DOM.th(W(c), null) : React.DOM.th(null, V(c));
     }(), function() {
       var c = Pp(b.v, b.Fa, Xg, "Postcode", oj);
@@ -10831,7 +10831,7 @@ var rq = function qq(b, c, d) {
       var c = zo.e(pq, sh.d(b.Fa), new n(null, 2, [Yh, Si, fk, b.pa], null));
       return K(c) ? React.DOM.tbody(W(c), null) : React.DOM.tbody(null, V(c));
     }())), V(Qp(b.v, b.Fa, Xg))) : React.DOM.div({className:"full-report-list"}, V(c), React.DOM.div({className:"table-responsive"}, React.DOM.table({className:"table"}, React.DOM.thead(null, React.DOM.tr(null, function() {
-      var c = Pp(b.v, b.Fa, Xg, "Portfolio Company", fh);
+      var c = Pp(b.v, b.Fa, Xg, "Investor-backed Company", fh);
       return K(c) ? React.DOM.th(W(c), null) : React.DOM.th(null, V(c));
     }(), function() {
       var c = Pp(b.v, b.Fa, Xg, "Postcode", oj);
@@ -10942,7 +10942,7 @@ var wq = function vq(b, c, d) {
   }, tq.prototype.Ha = !0, tq.prototype.Aa = function() {
     var b = this, c = Qp(b.v, b.Da, gk);
     return K(c) ? React.DOM.div(W(nn.f(E([new n(null, 1, [Zh, new Q(null, 1, 5, R, ["full-report-list"], null)], null), c], 0))), React.DOM.div({className:"table-responsive"}, React.DOM.table({className:"table"}, React.DOM.thead(null, React.DOM.tr(null, function() {
-      var c = Pp(b.v, b.Da, gk, "Portfolio Company", ni);
+      var c = Pp(b.v, b.Da, gk, "Investor-backed company", ni);
       return K(c) ? React.DOM.th(W(c), null) : React.DOM.th(null, V(c));
     }(), React.DOM.th(null, "Investor"), React.DOM.th(null, "Constituency"), function() {
       var c = Pp(b.v, b.Da, gk, "Revenue", ti);
@@ -10954,7 +10954,7 @@ var wq = function vq(b, c, d) {
       var c = zo.e(wq, sh.d(b.Da), new n(null, 2, [Yh, lh, fk, b.pa], null));
       return K(c) ? React.DOM.tbody(W(c), null) : React.DOM.tbody(null, V(c));
     }())), V(Qp(b.v, b.Da, gk))) : React.DOM.div({className:"full-report-list"}, V(c), React.DOM.div({className:"table-responsive"}, React.DOM.table({className:"table"}, React.DOM.thead(null, React.DOM.tr(null, function() {
-      var c = Pp(b.v, b.Da, gk, "Portfolio Company", ni);
+      var c = Pp(b.v, b.Da, gk, "Investor-backed company", ni);
       return K(c) ? React.DOM.th(W(c), null) : React.DOM.th(null, V(c));
     }(), React.DOM.th(null, "Investor"), React.DOM.th(null, "Constituency"), function() {
       var c = Pp(b.v, b.Da, gk, "Revenue", ti);
@@ -11552,7 +11552,7 @@ var Ar, Cr = function Br(b, c) {
   }, Ar.prototype.Ha = !0, Ar.prototype.Aa = function() {
     var b;
     b = $i.d(this.data);
-    b = q(b) ? new Q(null, 2, 5, R, [wj, new Q(null, 2, 5, R, [oi, new Q(null, 2, 5, R, [vk, new Q(null, 2, 5, R, [oi, new Q(null, 2, 5, R, [qj, new Q(null, 2, 5, R, [mk, new Q(null, 3, 5, R, [ph, new Q(null, 2, 5, R, [ri, "Turnover"], null), yo.e(zr, Ej.d(b), new n(null, 2, [fk, new n(null, 3, [yk, "turnover-timeline-chart", yi, "Turnover", qk, "# Filings"], null), Oh, "turnover-timeline-chart"], null))], null)], null)], null)], null)], null)], null)], null) : null;
+    b = q(b) ? new Q(null, 2, 5, R, [wj, new Q(null, 2, 5, R, [oi, new Q(null, 2, 5, R, [vk, new Q(null, 2, 5, R, [oi, new Q(null, 2, 5, R, [qj, new Q(null, 2, 5, R, [mk, new Q(null, 3, 5, R, [ph, new Q(null, 2, 5, R, [ri, "Revenue"], null), yo.e(zr, Ej.d(b), new n(null, 2, [fk, new n(null, 3, [yk, "turnover-timeline-chart", yi, "Revenue", qk, "# Filings"], null), Oh, "turnover-timeline-chart"], null))], null)], null)], null)], null)], null)], null)], null) : null;
     return K(b) ? React.DOM.div(W(nn.f(E([new n(null, 1, [Zh, new Q(null, 1, 5, R, ["full-report-charts"], null)], null), b], 0))), null) : React.DOM.div({className:"full-report-charts"}, V(b));
   }, Ar.prototype.w = function() {
     return this.kg;
@@ -11633,7 +11633,7 @@ function Gr() {
       b = null;
     } else {
       if (q(w.c ? w.c(ei, b) : w.call(null, ei, b))) {
-        b = "Portfolio Company";
+        b = "Investor-backed company";
       } else {
         if (q(w.c ? w.c(tk, b) : w.call(null, tk, b))) {
           b = "Investor";
@@ -11680,7 +11680,7 @@ function Gr() {
     }}, "View on map"), V(q(b.Wd) ? Ir(b.D) : null), function() {
       var c;
       c = b.Wd;
-      c = q(c) ? c : "All portfolio companies";
+      c = q(c) ? c : "All investor-backed companies";
       return K(c) ? React.DOM.h2(W(c), null) : React.DOM.h2(null, V(c));
     }(), function() {
       var c;
@@ -12885,7 +12885,7 @@ var ot = function nt(b, c) {
             }
           }, null, null);
         }(b);
-      }()) : null, q(ce(e)) ? Ae(new Q(null, 2, 5, R, [Eh, new Q(null, 3, 5, R, [Kk, new n(null, 1, [Zh, "search-results-header"], null), "Companies"], null)], null), function() {
+      }()) : null, q(ce(e)) ? Ae(new Q(null, 2, 5, R, [Eh, new Q(null, 3, 5, R, [Kk, new n(null, 1, [Zh, "search-results-header"], null), "Investor-backed companies"], null)], null), function() {
         return function Cb(b) {
           return new Ld(null, function() {
             for (;;) {
@@ -13731,12 +13731,12 @@ var Ot = function Nt(b, c) {
     return ic(c, "clustermap.components.map-report/t34376");
   }, Ht.prototype.Ha = !0, Ht.prototype.Aa = function() {
     var b = this;
-    return React.DOM.div(null, React.DOM.header({className:"secondary"}, React.DOM.h2(null, "All portfolio companies"), React.DOM.h3(null, "UK wide")), React.DOM.ul(null, function() {
+    return React.DOM.div(null, React.DOM.header({className:"secondary"}, React.DOM.h2(null, "All investor-backed companies"), React.DOM.h3(null, "UK wide")), React.DOM.ul(null, function() {
       var c = Y.e ? Y.e(b.qa, y, "-") : Y.call(null, b.qa, y, "-");
-      return K(c) ? React.DOM.li(W(c), React.DOM.small(null, "Portfolio Companies listed")) : React.DOM.li(null, V(c), React.DOM.small(null, "Portfolio Companies listed"));
+      return K(c) ? React.DOM.li(W(c), React.DOM.small(null, "Investor-backed companies")) : React.DOM.li(null, V(c), React.DOM.small(null, "Investor-backed companies"));
     }(), function() {
       var c = Y.e ? Y.e(b.na, y, "-") : Y.call(null, b.na, y, "-");
-      return K(c) ? React.DOM.li(W(c), React.DOM.small(null, "Investors listed")) : React.DOM.li(null, V(c), React.DOM.small(null, "Investors listed"));
+      return K(c) ? React.DOM.li(W(c), React.DOM.small(null, "Investors")) : React.DOM.li(null, V(c), React.DOM.small(null, "Investors"));
     }(), function() {
       var c = Y.e ? Y.e(b.ha, y, "-") : Y.call(null, b.ha, y, "-");
       return K(c) ? React.DOM.li(W(c), function() {
@@ -13754,7 +13754,7 @@ var Ot = function Nt(b, c) {
         var c = b.Y, c = null == c ? null : Ej.d(c);
         return null == c ? null : Qh.d(c);
       }(), Vj, 2, y, "-");
-      return K(c) ? React.DOM.li(W(c), React.DOM.small(null, "Portfolio Company Turnover")) : React.DOM.li(null, V(c), React.DOM.small(null, "Portfolio Company Turnover"));
+      return K(c) ? React.DOM.li(W(c), React.DOM.small(null, "Total revenue")) : React.DOM.li(null, V(c), React.DOM.small(null, "Total revenue"));
     }(), function() {
       var c = Y.q ? Y.q(function() {
         var c = b.Y, c = null == c ? null : Xi.d(c);
@@ -13763,7 +13763,7 @@ var Ot = function Nt(b, c) {
         var c = b.Y, c = null == c ? null : Xi.d(c);
         return null == c ? null : Qh.d(c);
       }(), yj, 0, y, "-");
-      return K(c) ? React.DOM.li(W(c), React.DOM.small(null, "Portfolio Company Employees")) : React.DOM.li(null, V(c), React.DOM.small(null, "Portfolio Company Employees"));
+      return K(c) ? React.DOM.li(W(c), React.DOM.small(null, "Total employees")) : React.DOM.li(null, V(c), React.DOM.small(null, "Total employees"));
     }()), V(Lt(b.v)));
   }, Ht.prototype.w = function() {
     return this.sg;
@@ -13790,7 +13790,7 @@ var Ot = function Nt(b, c) {
     return ic(c, "clustermap.components.map-report/t34432");
   }, It.prototype.Ha = !0, It.prototype.Aa = function() {
     var b = this;
-    return React.DOM.div(null, React.DOM.header({className:"secondary"}, React.DOM.h2(null, "Portfolio Company"), function() {
+    return React.DOM.div(null, React.DOM.header({className:"secondary"}, React.DOM.h2(null, "Investor-backed company"), function() {
       var c = ni.d(b.Lc);
       return K(c) ? React.DOM.h3(W(c), null) : React.DOM.h3(null, V(c));
     }(), V(Ir(b.D))), React.DOM.ul(null, function() {
@@ -13819,7 +13819,7 @@ var Ot = function Nt(b, c) {
         var c = b.Y, c = null == c ? null : Ej.d(c);
         return null == c ? null : Qh.d(c);
       }(), Vj, 2, y, "-");
-      return K(c) ? React.DOM.li(W(c), React.DOM.small(null, "Portfolio Company Turnover")) : React.DOM.li(null, V(c), React.DOM.small(null, "Portfolio Company Turnover"));
+      return K(c) ? React.DOM.li(W(c), React.DOM.small(null, "Total revenue")) : React.DOM.li(null, V(c), React.DOM.small(null, "Total revenue"));
     }(), function() {
       var c = Y.q ? Y.q(function() {
         var c = b.Y, c = null == c ? null : Xi.d(c);
@@ -13828,7 +13828,7 @@ var Ot = function Nt(b, c) {
         var c = b.Y, c = null == c ? null : Xi.d(c);
         return null == c ? null : Qh.d(c);
       }(), yj, 0, y, "-");
-      return K(c) ? React.DOM.li(W(c), React.DOM.small(null, "Portfolio Company Employees")) : React.DOM.li(null, V(c), React.DOM.small(null, "Portfolio Company Employees"));
+      return K(c) ? React.DOM.li(W(c), React.DOM.small(null, "Total employees")) : React.DOM.li(null, V(c), React.DOM.small(null, "Total employees"));
     }()), V(Lt(b.v)));
   }, It.prototype.w = function() {
     return this.tg;
@@ -13861,10 +13861,10 @@ var Ot = function Nt(b, c) {
     }(), V(Ir(b.D))), React.DOM.ul(null, function() {
       var c = Y.d ? Y.d(b.qa) : Y.call(null, b.qa);
       return K(c) ? React.DOM.li(W(c), function() {
-        var c = Gt.f(b.qa, "Portfolio Company", E(["Portfolio Companies"], 0));
+        var c = Gt.f(b.qa, "Investor-backed company", E(["Investor-backed companies"], 0));
         return K(c) ? React.DOM.small(W(c), null) : React.DOM.small(null, V(c));
       }()) : React.DOM.li(null, V(c), function() {
-        var c = Gt.f(b.qa, "Portfolio Company", E(["Portfolio Companies"], 0));
+        var c = Gt.f(b.qa, "Investor-backed company", E(["Investor-backed companies"], 0));
         return K(c) ? React.DOM.small(W(c), null) : React.DOM.small(null, V(c));
       }());
     }(), function() {
@@ -13884,7 +13884,7 @@ var Ot = function Nt(b, c) {
         var c = b.Y, c = null == c ? null : Ej.d(c);
         return null == c ? null : Qh.d(c);
       }(), Vj, 2, y, "-");
-      return K(c) ? React.DOM.li(W(c), React.DOM.small(null, "Portfolio Company Turnover")) : React.DOM.li(null, V(c), React.DOM.small(null, "Portfolio Company Turnover"));
+      return K(c) ? React.DOM.li(W(c), React.DOM.small(null, "Total revenue")) : React.DOM.li(null, V(c), React.DOM.small(null, "Total revenue"));
     }(), function() {
       var c = Y.q ? Y.q(function() {
         var c = b.Y, c = null == c ? null : Xi.d(c);
@@ -13893,7 +13893,7 @@ var Ot = function Nt(b, c) {
         var c = b.Y, c = null == c ? null : Xi.d(c);
         return null == c ? null : Qh.d(c);
       }(), yj, 0, y, "-");
-      return K(c) ? React.DOM.li(W(c), React.DOM.small(null, "Portfolio Company Employees")) : React.DOM.li(null, V(c), React.DOM.small(null, "Portfolio Company Employees"));
+      return K(c) ? React.DOM.li(W(c), React.DOM.small(null, "Total employees")) : React.DOM.li(null, V(c), React.DOM.small(null, "Total employees"));
     }()), V(Lt(b.v)));
   }, Jt.prototype.w = function() {
     return this.ug;
@@ -13932,10 +13932,10 @@ var Ot = function Nt(b, c) {
     }(), V(Ir(b.D))), React.DOM.ul(null, function() {
       var c = Y.d ? Y.d(b.qa) : Y.call(null, b.qa);
       return K(c) ? React.DOM.li(W(c), function() {
-        var c = Gt.f(b.qa, "Portfolio Company", E(["Portfolio Companies"], 0));
+        var c = Gt.f(b.qa, "Investor-backed company", E(["Investor-backed companies"], 0));
         return K(c) ? React.DOM.small(W(c), null) : React.DOM.small(null, V(c));
       }()) : React.DOM.li(null, V(c), function() {
-        var c = Gt.f(b.qa, "Portfolio Company", E(["Portfolio Companies"], 0));
+        var c = Gt.f(b.qa, "Investor-backed company", E(["Investor-backed companies"], 0));
         return K(c) ? React.DOM.small(W(c), null) : React.DOM.small(null, V(c));
       }());
     }(), function() {
@@ -13955,7 +13955,7 @@ var Ot = function Nt(b, c) {
         var c = b.Y, c = null == c ? null : Ej.d(c);
         return null == c ? null : Qh.d(c);
       }(), Vj, 2, y, "-");
-      return K(c) ? React.DOM.li(W(c), React.DOM.small(null, "Portfolio Company Turnover")) : React.DOM.li(null, V(c), React.DOM.small(null, "Portfolio Company Turnover"));
+      return K(c) ? React.DOM.li(W(c), React.DOM.small(null, "Total revenue")) : React.DOM.li(null, V(c), React.DOM.small(null, "Total revenue"));
     }(), function() {
       var c = Y.q ? Y.q(function() {
         var c = b.Y, c = null == c ? null : Xi.d(c);
@@ -13964,7 +13964,7 @@ var Ot = function Nt(b, c) {
         var c = b.Y, c = null == c ? null : Xi.d(c);
         return null == c ? null : Qh.d(c);
       }(), yj, 0, y, "-");
-      return K(c) ? React.DOM.li(W(c), React.DOM.small(null, "Portfolio Company Employees")) : React.DOM.li(null, V(c), React.DOM.small(null, "Portfolio Company Employees"));
+      return K(c) ? React.DOM.li(W(c), React.DOM.small(null, "Total employees")) : React.DOM.li(null, V(c), React.DOM.small(null, "Total employees"));
     }()), V(Lt(b.v)));
   }, Kt.prototype.w = function() {
     return this.vg;

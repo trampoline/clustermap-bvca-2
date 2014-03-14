@@ -22769,8 +22769,8 @@ clustermap.components.full_report.overview.overview = function overview(b) {
     return cljs.core._write.call(null, c, "clustermap.components.full-report.overview/t12228");
   }, clustermap.components.full_report.overview.t12228.prototype.om$core$IRender$ = !0, clustermap.components.full_report.overview.t12228.prototype.om$core$IRender$render$arity$1 = function(b) {
     var c = this;
-    return React.DOM.div({className:"full-report-overview"}, React.DOM.h4(null, "Overview of latest filings", React.DOM.small(null, "\u00a0(may span years : see table below for details)")), React.DOM.div({className:"table-responsive"}, React.DOM.table({className:"table-stats"}, React.DOM.thead(null, React.DOM.tr(null, React.DOM.th(null, "\u00a0"), React.DOM.th(null, "Portfolio Companies"), React.DOM.th(null, "Investors"), React.DOM.th(null, "Constituencies"), React.DOM.th(null, "Revenue"), React.DOM.th({colSpan:"2"}, 
-    "Rev. change"), React.DOM.th(null, "Employees"))), React.DOM.tbody(null, React.DOM.tr(null, React.DOM.th(null, React.DOM.i({className:"icon-info", "data-toggle":"tooltip", "data-container":"body", title:c.selection.call(null, new cljs.core.Keyword(null, "description", "description", 3584325486))}), sablono.interpreter.interpret.call(null, c.selection.call(null, new cljs.core.Keyword(null, "name", "name", 1017277949)))), React.DOM.td(null, function() {
+    return React.DOM.div({className:"full-report-overview"}, React.DOM.h4(null, "Overview of latest filings", React.DOM.small(null, "\u00a0(may span years : see table below for details)")), React.DOM.div({className:"table-responsive"}, React.DOM.table({className:"table-stats"}, React.DOM.thead(null, React.DOM.tr(null, React.DOM.th(null, "\u00a0"), React.DOM.th(null, "Investor-backed companies"), React.DOM.th(null, "Investors"), React.DOM.th(null, "Constituencies"), React.DOM.th(null, "Revenue"), 
+    React.DOM.th({colSpan:"2"}, "Rev. change"), React.DOM.th(null, "Employees"))), React.DOM.tbody(null, React.DOM.tr(null, React.DOM.th(null, React.DOM.i({className:"icon-info", "data-toggle":"tooltip", "data-container":"body", title:c.selection.call(null, new cljs.core.Keyword(null, "description", "description", 3584325486))}), sablono.interpreter.interpret.call(null, c.selection.call(null, new cljs.core.Keyword(null, "name", "name", 1017277949)))), React.DOM.td(null, function() {
       var b = (new cljs.core.Keyword(null, "portfolio-companies", "portfolio-companies", 1133429512)).cljs$core$IFn$_invoke$arity$1(c.selection);
       return cljs.core.map_QMARK_.call(null, b) ? React.DOM.span(sablono.interpreter.attributes.call(null, sablono.util.merge_with_class.call(null, new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "class", "class", 1108647146), new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, ["selection"], null)], null), b)), null) : React.DOM.span({className:"selection"}, sablono.interpreter.interpret.call(null, b));
     }()), React.DOM.td(null, function() {
@@ -27731,7 +27731,7 @@ clustermap.components.full_report.company_site_list.company_site_list = function
     var c = this;
     b = clustermap.components.table.paginate.call(null, c.comm, c.investments, new cljs.core.Keyword(null, "update-selection-investments-table-view", "update-selection-investments-table-view", 4277131912));
     return cljs.core.map_QMARK_.call(null, b) ? React.DOM.div(sablono.interpreter.attributes.call(null, sablono.util.merge_with_class.call(null, new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "class", "class", 1108647146), new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, ["full-report-list"], null)], null), b)), React.DOM.div({className:"table-responsive"}, React.DOM.table({className:"table"}, React.DOM.thead(null, React.DOM.tr(null, function() {
-      var b = clustermap.components.table.order_col.call(null, c.comm, c.investments, new cljs.core.Keyword(null, "update-selection-investments-table-view", "update-selection-investments-table-view", 4277131912), "Portfolio Company", new cljs.core.Keyword(null, "!portfolio_company_name_na", "!portfolio_company_name_na", 4778718111));
+      var b = clustermap.components.table.order_col.call(null, c.comm, c.investments, new cljs.core.Keyword(null, "update-selection-investments-table-view", "update-selection-investments-table-view", 4277131912), "Investor-backed Company", new cljs.core.Keyword(null, "!portfolio_company_name_na", "!portfolio_company_name_na", 4778718111));
       return cljs.core.map_QMARK_.call(null, b) ? React.DOM.th(sablono.interpreter.attributes.call(null, b), null) : React.DOM.th(null, sablono.interpreter.interpret.call(null, b));
     }(), function() {
       var b = clustermap.components.table.order_col.call(null, c.comm, c.investments, new cljs.core.Keyword(null, "update-selection-investments-table-view", "update-selection-investments-table-view", 4277131912), "Postcode", new cljs.core.Keyword(null, "?portfolio_company_site_postcode", "?portfolio_company_site_postcode", 2409284575));
@@ -27746,7 +27746,7 @@ clustermap.components.full_report.company_site_list.company_site_list = function
       var b = om.core.build_all.call(null, clustermap.components.full_report.company_site_list.investment, (new cljs.core.Keyword(null, "records", "records", 2096501172)).cljs$core$IFn$_invoke$arity$1(c.investments), new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "key", "key", 1014010321), new cljs.core.Keyword(null, "investment_uid", "investment_uid", 1858762838), new cljs.core.Keyword(null, "opts", "opts", 1017322386), c.opts], null));
       return cljs.core.map_QMARK_.call(null, b) ? React.DOM.tbody(sablono.interpreter.attributes.call(null, b), null) : React.DOM.tbody(null, sablono.interpreter.interpret.call(null, b));
     }())), sablono.interpreter.interpret.call(null, clustermap.components.table.paginate.call(null, c.comm, c.investments, new cljs.core.Keyword(null, "update-selection-investments-table-view", "update-selection-investments-table-view", 4277131912)))) : React.DOM.div({className:"full-report-list"}, sablono.interpreter.interpret.call(null, b), React.DOM.div({className:"table-responsive"}, React.DOM.table({className:"table"}, React.DOM.thead(null, React.DOM.tr(null, function() {
-      var b = clustermap.components.table.order_col.call(null, c.comm, c.investments, new cljs.core.Keyword(null, "update-selection-investments-table-view", "update-selection-investments-table-view", 4277131912), "Portfolio Company", new cljs.core.Keyword(null, "!portfolio_company_name_na", "!portfolio_company_name_na", 4778718111));
+      var b = clustermap.components.table.order_col.call(null, c.comm, c.investments, new cljs.core.Keyword(null, "update-selection-investments-table-view", "update-selection-investments-table-view", 4277131912), "Investor-backed Company", new cljs.core.Keyword(null, "!portfolio_company_name_na", "!portfolio_company_name_na", 4778718111));
       return cljs.core.map_QMARK_.call(null, b) ? React.DOM.th(sablono.interpreter.attributes.call(null, b), null) : React.DOM.th(null, sablono.interpreter.interpret.call(null, b));
     }(), function() {
       var b = clustermap.components.table.order_col.call(null, c.comm, c.investments, new cljs.core.Keyword(null, "update-selection-investments-table-view", "update-selection-investments-table-view", 4277131912), "Postcode", new cljs.core.Keyword(null, "?portfolio_company_site_postcode", "?portfolio_company_site_postcode", 2409284575));
@@ -27864,7 +27864,7 @@ clustermap.components.full_report.company_list.company_list = function company_l
     var c = this;
     b = clustermap.components.table.paginate.call(null, c.comm, c.companies, new cljs.core.Keyword(null, "update-selection-investment-aggs-table-view", "update-selection-investment-aggs-table-view", 4073717308));
     return cljs.core.map_QMARK_.call(null, b) ? React.DOM.div(sablono.interpreter.attributes.call(null, sablono.util.merge_with_class.call(null, new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "class", "class", 1108647146), new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, ["full-report-list"], null)], null), b)), React.DOM.div({className:"table-responsive"}, React.DOM.table({className:"table"}, React.DOM.thead(null, React.DOM.tr(null, function() {
-      var b = clustermap.components.table.order_col.call(null, c.comm, c.companies, new cljs.core.Keyword(null, "update-selection-investment-aggs-table-view", "update-selection-investment-aggs-table-view", 4073717308), "Portfolio Company", new cljs.core.Keyword(null, "name", "name", 1017277949));
+      var b = clustermap.components.table.order_col.call(null, c.comm, c.companies, new cljs.core.Keyword(null, "update-selection-investment-aggs-table-view", "update-selection-investment-aggs-table-view", 4073717308), "Investor-backed company", new cljs.core.Keyword(null, "name", "name", 1017277949));
       return cljs.core.map_QMARK_.call(null, b) ? React.DOM.th(sablono.interpreter.attributes.call(null, b), null) : React.DOM.th(null, sablono.interpreter.interpret.call(null, b));
     }(), React.DOM.th(null, "Investor"), React.DOM.th(null, "Constituency"), function() {
       var b = clustermap.components.table.order_col.call(null, c.comm, c.companies, new cljs.core.Keyword(null, "update-selection-investment-aggs-table-view", "update-selection-investment-aggs-table-view", 4073717308), "Revenue", new cljs.core.Keyword(null, "latest_turnover", "latest_turnover", 2012435451));
@@ -27876,7 +27876,7 @@ clustermap.components.full_report.company_list.company_list = function company_l
       var b = om.core.build_all.call(null, clustermap.components.full_report.company_list.portfolio_company, (new cljs.core.Keyword(null, "records", "records", 2096501172)).cljs$core$IFn$_invoke$arity$1(c.companies), new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "key", "key", 1014010321), new cljs.core.Keyword(null, "company_no", "company_no", 4461198389), new cljs.core.Keyword(null, "opts", "opts", 1017322386), c.opts], null));
       return cljs.core.map_QMARK_.call(null, b) ? React.DOM.tbody(sablono.interpreter.attributes.call(null, b), null) : React.DOM.tbody(null, sablono.interpreter.interpret.call(null, b));
     }())), sablono.interpreter.interpret.call(null, clustermap.components.table.paginate.call(null, c.comm, c.companies, new cljs.core.Keyword(null, "update-selection-investment-aggs-table-view", "update-selection-investment-aggs-table-view", 4073717308)))) : React.DOM.div({className:"full-report-list"}, sablono.interpreter.interpret.call(null, b), React.DOM.div({className:"table-responsive"}, React.DOM.table({className:"table"}, React.DOM.thead(null, React.DOM.tr(null, function() {
-      var b = clustermap.components.table.order_col.call(null, c.comm, c.companies, new cljs.core.Keyword(null, "update-selection-investment-aggs-table-view", "update-selection-investment-aggs-table-view", 4073717308), "Portfolio Company", new cljs.core.Keyword(null, "name", "name", 1017277949));
+      var b = clustermap.components.table.order_col.call(null, c.comm, c.companies, new cljs.core.Keyword(null, "update-selection-investment-aggs-table-view", "update-selection-investment-aggs-table-view", 4073717308), "Investor-backed company", new cljs.core.Keyword(null, "name", "name", 1017277949));
       return cljs.core.map_QMARK_.call(null, b) ? React.DOM.th(sablono.interpreter.attributes.call(null, b), null) : React.DOM.th(null, sablono.interpreter.interpret.call(null, b));
     }(), React.DOM.th(null, "Investor"), React.DOM.th(null, "Constituency"), function() {
       var b = clustermap.components.table.order_col.call(null, c.comm, c.companies, new cljs.core.Keyword(null, "update-selection-investment-aggs-table-view", "update-selection-investment-aggs-table-view", 4073717308), "Revenue", new cljs.core.Keyword(null, "latest_turnover", "latest_turnover", 2012435451));
@@ -29627,8 +29627,8 @@ clustermap.components.full_report.charts.charts = function charts(b, c) {
     b = (new cljs.core.Keyword(null, "selection-investment-account-timelines", "selection-investment-account-timelines", 1845704779)).cljs$core$IFn$_invoke$arity$1(this.data);
     b = cljs.core.truth_(b) ? new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "div.grid", "div.grid", 1323787765), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "div.tbl", "div.tbl", 2686480467), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "div.tbl-cell.charts", "div.tbl-cell.charts", 2527561447), new cljs.core.PersistentVector(null, 
     2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "div.tbl", "div.tbl", 2686480467), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "div.tbl-row", "div.tbl-row", 1065043552), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "div.tbl-cell", "div.tbl-cell", 2598766144), new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, 
-    [new cljs.core.Keyword(null, "div.box.box-first", "div.box.box-first", 2223624352), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "header", "header", 4087600639), "Turnover"], null), om.core.build.call(null, clustermap.components.timeline_chart.timeline_chart, (new cljs.core.Keyword(null, "turnover", "turnover", 1148922435)).cljs$core$IFn$_invoke$arity$1(b), new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, 
-    "opts", "opts", 1017322386), new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null, "id", "id", 1013907597), "turnover-timeline-chart", new cljs.core.Keyword(null, "y0-title", "y0-title", 2489744212), "Turnover", new cljs.core.Keyword(null, "y1-title", "y1-title", 3377247893), "# Filings"], null), new cljs.core.Keyword(null, "react-key", "react-key", 4184082563), "turnover-timeline-chart"], null))], null)], null)], null)], null)], null)], null)], null) : null;
+    [new cljs.core.Keyword(null, "div.box.box-first", "div.box.box-first", 2223624352), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "header", "header", 4087600639), "Revenue"], null), om.core.build.call(null, clustermap.components.timeline_chart.timeline_chart, (new cljs.core.Keyword(null, "turnover", "turnover", 1148922435)).cljs$core$IFn$_invoke$arity$1(b), new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "opts", 
+    "opts", 1017322386), new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null, "id", "id", 1013907597), "turnover-timeline-chart", new cljs.core.Keyword(null, "y0-title", "y0-title", 2489744212), "Revenue", new cljs.core.Keyword(null, "y1-title", "y1-title", 3377247893), "# Filings"], null), new cljs.core.Keyword(null, "react-key", "react-key", 4184082563), "turnover-timeline-chart"], null))], null)], null)], null)], null)], null)], null)], null) : null;
     return cljs.core.map_QMARK_.call(null, b) ? React.DOM.div(sablono.interpreter.attributes.call(null, sablono.util.merge_with_class.call(null, new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "class", "class", 1108647146), new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, ["full-report-charts"], null)], null), b)), null) : React.DOM.div({className:"full-report-charts"}, sablono.interpreter.interpret.call(null, b));
   }, clustermap.components.full_report.charts.t12006.prototype.cljs$core$IMeta$_meta$arity$1 = function(b) {
     return this.meta12007;
@@ -29722,7 +29722,7 @@ clustermap.components.page_title = {};
 clustermap.components.page_title.describe_type = function(a) {
   var b = cljs.core._EQ_;
   if (cljs.core.truth_(b.call(null, new cljs.core.Keyword(null, "portfolio-company", "portfolio-company", 3606204522), a))) {
-    return "Portfolio Company";
+    return "Investor-backed company";
   }
   if (cljs.core.truth_(b.call(null, new cljs.core.Keyword(null, "investor-company", "investor-company", 3983736762), a))) {
     return "Investor";
@@ -29770,7 +29770,7 @@ clustermap.components.page_title.page_title_component = function page_title_comp
     }}, "View on map"), sablono.interpreter.interpret.call(null, cljs.core.truth_(c.type_descr) ? clustermap.components.reset_selection_button.reset_selection_button.call(null, c.path_fn) : null), function() {
       var b;
       b = c.type_descr;
-      b = cljs.core.truth_(b) ? b : "All portfolio companies";
+      b = cljs.core.truth_(b) ? b : "All investor-backed companies";
       return cljs.core.map_QMARK_.call(null, b) ? React.DOM.h2(sablono.interpreter.attributes.call(null, b), null) : React.DOM.h2(null, sablono.interpreter.interpret.call(null, b));
     }(), function() {
       var b;
@@ -33143,7 +33143,7 @@ clustermap.components.search.search_component = function search_component(b, c) 
           }, null, null);
         }.call(null, b);
       }()) : null, cljs.core.truth_(cljs.core.not_empty.call(null, e)) ? cljs.core.into.call(null, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "div", "div", 1014003715), new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "li", "li", 1013907695), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "class", "class", 1108647146), "search-results-header"], 
-      null), "Companies"], null)], null), function() {
+      null), "Investor-backed companies"], null)], null), function() {
         return function w(b) {
           return new cljs.core.LazySeq(null, function() {
             for (;;) {
@@ -34315,12 +34315,12 @@ clustermap.components.map_report.all_portfolio_companies_summary_report = functi
     return cljs.core._write.call(null, c, "clustermap.components.map-report/t12446");
   }, clustermap.components.map_report.t12446.prototype.om$core$IRender$ = !0, clustermap.components.map_report.t12446.prototype.om$core$IRender$render$arity$1 = function(b) {
     var c = this;
-    return React.DOM.div(null, React.DOM.header({className:"secondary"}, React.DOM.h2(null, "All portfolio companies"), React.DOM.h3(null, "UK wide")), React.DOM.ul(null, function() {
+    return React.DOM.div(null, React.DOM.header({className:"secondary"}, React.DOM.h2(null, "All investor-backed companies"), React.DOM.h3(null, "UK wide")), React.DOM.ul(null, function() {
       var b = clustermap.formats.number.fnum.call(null, c.pc_count, new cljs.core.Keyword(null, "default", "default", 2558708147), "-");
-      return cljs.core.map_QMARK_.call(null, b) ? React.DOM.li(sablono.interpreter.attributes.call(null, b), React.DOM.small(null, "Portfolio Companies listed")) : React.DOM.li(null, sablono.interpreter.interpret.call(null, b), React.DOM.small(null, "Portfolio Companies listed"));
+      return cljs.core.map_QMARK_.call(null, b) ? React.DOM.li(sablono.interpreter.attributes.call(null, b), React.DOM.small(null, "Investor-backed companies")) : React.DOM.li(null, sablono.interpreter.interpret.call(null, b), React.DOM.small(null, "Investor-backed companies"));
     }(), function() {
       var b = clustermap.formats.number.fnum.call(null, c.ic_count, new cljs.core.Keyword(null, "default", "default", 2558708147), "-");
-      return cljs.core.map_QMARK_.call(null, b) ? React.DOM.li(sablono.interpreter.attributes.call(null, b), React.DOM.small(null, "Investors listed")) : React.DOM.li(null, sablono.interpreter.interpret.call(null, b), React.DOM.small(null, "Investors listed"));
+      return cljs.core.map_QMARK_.call(null, b) ? React.DOM.li(sablono.interpreter.attributes.call(null, b), React.DOM.small(null, "Investors")) : React.DOM.li(null, sablono.interpreter.interpret.call(null, b), React.DOM.small(null, "Investors"));
     }(), function() {
       var b = clustermap.formats.number.fnum.call(null, c.const_count, new cljs.core.Keyword(null, "default", "default", 2558708147), "-");
       return cljs.core.map_QMARK_.call(null, b) ? React.DOM.li(sablono.interpreter.attributes.call(null, b), function() {
@@ -34335,13 +34335,13 @@ clustermap.components.map_report.all_portfolio_companies_summary_report = functi
         var b = c.site_stats, b = null == b ? null : (new cljs.core.Keyword(null, "turnover", "turnover", 1148922435)).cljs$core$IFn$_invoke$arity$1(b);
         return null == b ? null : (new cljs.core.Keyword(null, "total", "total", 1124454070)).cljs$core$IFn$_invoke$arity$1(b);
       }(), new cljs.core.Keyword(null, "sf", "sf", 1013907909), 2, new cljs.core.Keyword(null, "default", "default", 2558708147), "-");
-      return cljs.core.map_QMARK_.call(null, b) ? React.DOM.li(sablono.interpreter.attributes.call(null, b), React.DOM.small(null, "Portfolio Company Turnover")) : React.DOM.li(null, sablono.interpreter.interpret.call(null, b), React.DOM.small(null, "Portfolio Company Turnover"));
+      return cljs.core.map_QMARK_.call(null, b) ? React.DOM.li(sablono.interpreter.attributes.call(null, b), React.DOM.small(null, "Total revenue")) : React.DOM.li(null, sablono.interpreter.interpret.call(null, b), React.DOM.small(null, "Total revenue"));
     }(), function() {
       var b = clustermap.formats.number.fnum.call(null, function() {
         var b = c.site_stats, b = null == b ? null : (new cljs.core.Keyword(null, "employee_count", "employee_count", 2542621616)).cljs$core$IFn$_invoke$arity$1(b);
         return null == b ? null : (new cljs.core.Keyword(null, "total", "total", 1124454070)).cljs$core$IFn$_invoke$arity$1(b);
       }(), new cljs.core.Keyword(null, "dec", "dec", 1014003572), 0, new cljs.core.Keyword(null, "default", "default", 2558708147), "-");
-      return cljs.core.map_QMARK_.call(null, b) ? React.DOM.li(sablono.interpreter.attributes.call(null, b), React.DOM.small(null, "Portfolio Company Employees")) : React.DOM.li(null, sablono.interpreter.interpret.call(null, b), React.DOM.small(null, "Portfolio Company Employees"));
+      return cljs.core.map_QMARK_.call(null, b) ? React.DOM.li(sablono.interpreter.attributes.call(null, b), React.DOM.small(null, "Total employees")) : React.DOM.li(null, sablono.interpreter.interpret.call(null, b), React.DOM.small(null, "Total employees"));
     }()), sablono.interpreter.interpret.call(null, clustermap.components.map_report.full_report_button.call(null, c.comm)));
   }, clustermap.components.map_report.t12446.prototype.cljs$core$IMeta$_meta$arity$1 = function(b) {
     return this.meta12447;
@@ -34371,7 +34371,7 @@ clustermap.components.map_report.portfolio_company_report = function portfolio_c
     return cljs.core._write.call(null, c, "clustermap.components.map-report/t12502");
   }, clustermap.components.map_report.t12502.prototype.om$core$IRender$ = !0, clustermap.components.map_report.t12502.prototype.om$core$IRender$render$arity$1 = function(b) {
     var c = this;
-    return React.DOM.div(null, React.DOM.header({className:"secondary"}, React.DOM.h2(null, "Portfolio Company"), function() {
+    return React.DOM.div(null, React.DOM.header({className:"secondary"}, React.DOM.h2(null, "Investor-backed company"), function() {
       var b = (new cljs.core.Keyword(null, "name", "name", 1017277949)).cljs$core$IFn$_invoke$arity$1(c.portfolio_company);
       return cljs.core.map_QMARK_.call(null, b) ? React.DOM.h3(sablono.interpreter.attributes.call(null, b), null) : React.DOM.h3(null, sablono.interpreter.interpret.call(null, b));
     }(), sablono.interpreter.interpret.call(null, clustermap.components.reset_selection_button.reset_selection_button.call(null, c.path_fn))), React.DOM.ul(null, function() {
@@ -34397,13 +34397,13 @@ clustermap.components.map_report.portfolio_company_report = function portfolio_c
         var b = c.site_stats, b = null == b ? null : (new cljs.core.Keyword(null, "turnover", "turnover", 1148922435)).cljs$core$IFn$_invoke$arity$1(b);
         return null == b ? null : (new cljs.core.Keyword(null, "total", "total", 1124454070)).cljs$core$IFn$_invoke$arity$1(b);
       }(), new cljs.core.Keyword(null, "sf", "sf", 1013907909), 2, new cljs.core.Keyword(null, "default", "default", 2558708147), "-");
-      return cljs.core.map_QMARK_.call(null, b) ? React.DOM.li(sablono.interpreter.attributes.call(null, b), React.DOM.small(null, "Portfolio Company Turnover")) : React.DOM.li(null, sablono.interpreter.interpret.call(null, b), React.DOM.small(null, "Portfolio Company Turnover"));
+      return cljs.core.map_QMARK_.call(null, b) ? React.DOM.li(sablono.interpreter.attributes.call(null, b), React.DOM.small(null, "Total revenue")) : React.DOM.li(null, sablono.interpreter.interpret.call(null, b), React.DOM.small(null, "Total revenue"));
     }(), function() {
       var b = clustermap.formats.number.fnum.call(null, function() {
         var b = c.site_stats, b = null == b ? null : (new cljs.core.Keyword(null, "employee_count", "employee_count", 2542621616)).cljs$core$IFn$_invoke$arity$1(b);
         return null == b ? null : (new cljs.core.Keyword(null, "total", "total", 1124454070)).cljs$core$IFn$_invoke$arity$1(b);
       }(), new cljs.core.Keyword(null, "dec", "dec", 1014003572), 0, new cljs.core.Keyword(null, "default", "default", 2558708147), "-");
-      return cljs.core.map_QMARK_.call(null, b) ? React.DOM.li(sablono.interpreter.attributes.call(null, b), React.DOM.small(null, "Portfolio Company Employees")) : React.DOM.li(null, sablono.interpreter.interpret.call(null, b), React.DOM.small(null, "Portfolio Company Employees"));
+      return cljs.core.map_QMARK_.call(null, b) ? React.DOM.li(sablono.interpreter.attributes.call(null, b), React.DOM.small(null, "Total employees")) : React.DOM.li(null, sablono.interpreter.interpret.call(null, b), React.DOM.small(null, "Total employees"));
     }()), sablono.interpreter.interpret.call(null, clustermap.components.map_report.full_report_button.call(null, c.comm)));
   }, clustermap.components.map_report.t12502.prototype.cljs$core$IMeta$_meta$arity$1 = function(b) {
     return this.meta12503;
@@ -34439,10 +34439,10 @@ clustermap.components.map_report.investor_company_report = function investor_com
     }(), sablono.interpreter.interpret.call(null, clustermap.components.reset_selection_button.reset_selection_button.call(null, c.path_fn))), React.DOM.ul(null, function() {
       var b = clustermap.formats.number.fnum.call(null, c.pc_count);
       return cljs.core.map_QMARK_.call(null, b) ? React.DOM.li(sablono.interpreter.attributes.call(null, b), function() {
-        var b = clustermap.formats.string.pluralize.call(null, c.pc_count, "Portfolio Company", "Portfolio Companies");
+        var b = clustermap.formats.string.pluralize.call(null, c.pc_count, "Investor-backed company", "Investor-backed companies");
         return cljs.core.map_QMARK_.call(null, b) ? React.DOM.small(sablono.interpreter.attributes.call(null, b), null) : React.DOM.small(null, sablono.interpreter.interpret.call(null, b));
       }()) : React.DOM.li(null, sablono.interpreter.interpret.call(null, b), function() {
-        var b = clustermap.formats.string.pluralize.call(null, c.pc_count, "Portfolio Company", "Portfolio Companies");
+        var b = clustermap.formats.string.pluralize.call(null, c.pc_count, "Investor-backed company", "Investor-backed companies");
         return cljs.core.map_QMARK_.call(null, b) ? React.DOM.small(sablono.interpreter.attributes.call(null, b), null) : React.DOM.small(null, sablono.interpreter.interpret.call(null, b));
       }());
     }(), function() {
@@ -34459,13 +34459,13 @@ clustermap.components.map_report.investor_company_report = function investor_com
         var b = c.site_stats, b = null == b ? null : (new cljs.core.Keyword(null, "turnover", "turnover", 1148922435)).cljs$core$IFn$_invoke$arity$1(b);
         return null == b ? null : (new cljs.core.Keyword(null, "total", "total", 1124454070)).cljs$core$IFn$_invoke$arity$1(b);
       }(), new cljs.core.Keyword(null, "sf", "sf", 1013907909), 2, new cljs.core.Keyword(null, "default", "default", 2558708147), "-");
-      return cljs.core.map_QMARK_.call(null, b) ? React.DOM.li(sablono.interpreter.attributes.call(null, b), React.DOM.small(null, "Portfolio Company Turnover")) : React.DOM.li(null, sablono.interpreter.interpret.call(null, b), React.DOM.small(null, "Portfolio Company Turnover"));
+      return cljs.core.map_QMARK_.call(null, b) ? React.DOM.li(sablono.interpreter.attributes.call(null, b), React.DOM.small(null, "Total revenue")) : React.DOM.li(null, sablono.interpreter.interpret.call(null, b), React.DOM.small(null, "Total revenue"));
     }(), function() {
       var b = clustermap.formats.number.fnum.call(null, function() {
         var b = c.site_stats, b = null == b ? null : (new cljs.core.Keyword(null, "employee_count", "employee_count", 2542621616)).cljs$core$IFn$_invoke$arity$1(b);
         return null == b ? null : (new cljs.core.Keyword(null, "total", "total", 1124454070)).cljs$core$IFn$_invoke$arity$1(b);
       }(), new cljs.core.Keyword(null, "dec", "dec", 1014003572), 0, new cljs.core.Keyword(null, "default", "default", 2558708147), "-");
-      return cljs.core.map_QMARK_.call(null, b) ? React.DOM.li(sablono.interpreter.attributes.call(null, b), React.DOM.small(null, "Portfolio Company Employees")) : React.DOM.li(null, sablono.interpreter.interpret.call(null, b), React.DOM.small(null, "Portfolio Company Employees"));
+      return cljs.core.map_QMARK_.call(null, b) ? React.DOM.li(sablono.interpreter.attributes.call(null, b), React.DOM.small(null, "Total employees")) : React.DOM.li(null, sablono.interpreter.interpret.call(null, b), React.DOM.small(null, "Total employees"));
     }()), sablono.interpreter.interpret.call(null, clustermap.components.map_report.full_report_button.call(null, c.comm)));
   }, clustermap.components.map_report.t12552.prototype.cljs$core$IMeta$_meta$arity$1 = function(b) {
     return this.meta12553;
@@ -34507,10 +34507,10 @@ clustermap.components.map_report.constituency_report = function constituency_rep
     }(), sablono.interpreter.interpret.call(null, clustermap.components.reset_selection_button.reset_selection_button.call(null, c.path_fn))), React.DOM.ul(null, function() {
       var b = clustermap.formats.number.fnum.call(null, c.pc_count);
       return cljs.core.map_QMARK_.call(null, b) ? React.DOM.li(sablono.interpreter.attributes.call(null, b), function() {
-        var b = clustermap.formats.string.pluralize.call(null, c.pc_count, "Portfolio Company", "Portfolio Companies");
+        var b = clustermap.formats.string.pluralize.call(null, c.pc_count, "Investor-backed company", "Investor-backed companies");
         return cljs.core.map_QMARK_.call(null, b) ? React.DOM.small(sablono.interpreter.attributes.call(null, b), null) : React.DOM.small(null, sablono.interpreter.interpret.call(null, b));
       }()) : React.DOM.li(null, sablono.interpreter.interpret.call(null, b), function() {
-        var b = clustermap.formats.string.pluralize.call(null, c.pc_count, "Portfolio Company", "Portfolio Companies");
+        var b = clustermap.formats.string.pluralize.call(null, c.pc_count, "Investor-backed company", "Investor-backed companies");
         return cljs.core.map_QMARK_.call(null, b) ? React.DOM.small(sablono.interpreter.attributes.call(null, b), null) : React.DOM.small(null, sablono.interpreter.interpret.call(null, b));
       }());
     }(), function() {
@@ -34527,13 +34527,13 @@ clustermap.components.map_report.constituency_report = function constituency_rep
         var b = c.site_stats, b = null == b ? null : (new cljs.core.Keyword(null, "turnover", "turnover", 1148922435)).cljs$core$IFn$_invoke$arity$1(b);
         return null == b ? null : (new cljs.core.Keyword(null, "total", "total", 1124454070)).cljs$core$IFn$_invoke$arity$1(b);
       }(), new cljs.core.Keyword(null, "sf", "sf", 1013907909), 2, new cljs.core.Keyword(null, "default", "default", 2558708147), "-");
-      return cljs.core.map_QMARK_.call(null, b) ? React.DOM.li(sablono.interpreter.attributes.call(null, b), React.DOM.small(null, "Portfolio Company Turnover")) : React.DOM.li(null, sablono.interpreter.interpret.call(null, b), React.DOM.small(null, "Portfolio Company Turnover"));
+      return cljs.core.map_QMARK_.call(null, b) ? React.DOM.li(sablono.interpreter.attributes.call(null, b), React.DOM.small(null, "Total revenue")) : React.DOM.li(null, sablono.interpreter.interpret.call(null, b), React.DOM.small(null, "Total revenue"));
     }(), function() {
       var b = clustermap.formats.number.fnum.call(null, function() {
         var b = c.site_stats, b = null == b ? null : (new cljs.core.Keyword(null, "employee_count", "employee_count", 2542621616)).cljs$core$IFn$_invoke$arity$1(b);
         return null == b ? null : (new cljs.core.Keyword(null, "total", "total", 1124454070)).cljs$core$IFn$_invoke$arity$1(b);
       }(), new cljs.core.Keyword(null, "dec", "dec", 1014003572), 0, new cljs.core.Keyword(null, "default", "default", 2558708147), "-");
-      return cljs.core.map_QMARK_.call(null, b) ? React.DOM.li(sablono.interpreter.attributes.call(null, b), React.DOM.small(null, "Portfolio Company Employees")) : React.DOM.li(null, sablono.interpreter.interpret.call(null, b), React.DOM.small(null, "Portfolio Company Employees"));
+      return cljs.core.map_QMARK_.call(null, b) ? React.DOM.li(sablono.interpreter.attributes.call(null, b), React.DOM.small(null, "Total employees")) : React.DOM.li(null, sablono.interpreter.interpret.call(null, b), React.DOM.small(null, "Total employees"));
     }()), sablono.interpreter.interpret.call(null, clustermap.components.map_report.full_report_button.call(null, c.comm)));
   }, clustermap.components.map_report.t12606.prototype.cljs$core$IMeta$_meta$arity$1 = function(b) {
     return this.meta12607;

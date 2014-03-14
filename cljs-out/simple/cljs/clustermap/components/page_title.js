@@ -20,7 +20,7 @@ goog.require('clustermap.om');
 goog.require('cljs.core.async');
 goog.require('clustermap.formats.number');
 clustermap.components.page_title.describe_type = (function describe_type(type){var pred__12645 = cljs.core._EQ_;var expr__12646 = type;if(cljs.core.truth_(pred__12645.call(null,new cljs.core.Keyword(null,"portfolio-company","portfolio-company",3606204522),expr__12646)))
-{return "Portfolio Company";
+{return "Investor-backed company";
 } else
 {if(cljs.core.truth_(pred__12645.call(null,new cljs.core.Keyword(null,"investor-company","investor-company",3983736762),expr__12646)))
 {return "Investor";
@@ -70,7 +70,7 @@ var this__9251__auto____$1 = this;return React.DOM.div({"id": "page-title"},Reac
 })},"View on map"),sablono.interpreter.interpret.call(null,(cljs.core.truth_(self__.type_descr)?clustermap.components.reset_selection_button.reset_selection_button.call(null,self__.path_fn):null)),(function (){var attrs12667 = (function (){var or__3441__auto__ = self__.type_descr;if(cljs.core.truth_(or__3441__auto__))
 {return or__3441__auto__;
 } else
-{return "All portfolio companies";
+{return "All investor-backed companies";
 }
 })();if(cljs.core.map_QMARK_.call(null,attrs12667))
 {return React.DOM.h2(sablono.interpreter.attributes.call(null,attrs12667),null);

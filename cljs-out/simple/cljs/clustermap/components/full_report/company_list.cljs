@@ -52,7 +52,7 @@
         [:table.table
          [:thead
           [:tr
-           [:th (table/order-col comm companies :update-selection-investment-aggs-table-view "Portfolio Company" :name)]
+           [:th (table/order-col comm companies :update-selection-investment-aggs-table-view "Investor-backed company" :name)]
            [:th "Investor"]
            [:th "Constituency"]
            [:th (table/order-col comm companies :update-selection-investment-aggs-table-view "Revenue" :latest_turnover)]

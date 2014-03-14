@@ -96,7 +96,7 @@ clustermap.components.full_report.company_site_list.t34046.cljs$lang$ctorPrWrite
 clustermap.components.full_report.company_site_list.t34046.prototype.om$core$IRender$ = true;
 clustermap.components.full_report.company_site_list.t34046.prototype.om$core$IRender$render$arity$1 = (function (this__9251__auto__){var self__ = this;
 var this__9251__auto____$1 = this;var attrs34049 = clustermap.components.table.paginate(self__.comm,self__.investments,cljs.core.constant$keyword$659);if(cljs.core.map_QMARK_(attrs34049))
-{return React.DOM.div(sablono.interpreter.attributes(sablono.util.merge_with_class.cljs$core$IFn$_invoke$arity$variadic(cljs.core.array_seq([new cljs.core.PersistentArrayMap(null, 1, [cljs.core.constant$keyword$574,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, ["full-report-list"], null)], null),attrs34049], 0))),React.DOM.div({"className": "table-responsive"},React.DOM.table({"className": "table"},React.DOM.thead(null,React.DOM.tr(null,(function (){var attrs34050 = clustermap.components.table.order_col(self__.comm,self__.investments,cljs.core.constant$keyword$659,"Portfolio Company",cljs.core.constant$keyword$660);if(cljs.core.map_QMARK_(attrs34050))
+{return React.DOM.div(sablono.interpreter.attributes(sablono.util.merge_with_class.cljs$core$IFn$_invoke$arity$variadic(cljs.core.array_seq([new cljs.core.PersistentArrayMap(null, 1, [cljs.core.constant$keyword$574,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, ["full-report-list"], null)], null),attrs34049], 0))),React.DOM.div({"className": "table-responsive"},React.DOM.table({"className": "table"},React.DOM.thead(null,React.DOM.tr(null,(function (){var attrs34050 = clustermap.components.table.order_col(self__.comm,self__.investments,cljs.core.constant$keyword$659,"Investor-backed Company",cljs.core.constant$keyword$660);if(cljs.core.map_QMARK_(attrs34050))
 {return React.DOM.th(sablono.interpreter.attributes(attrs34050),null);
 } else
 {return React.DOM.th(null,sablono.interpreter.interpret(attrs34050));
@@ -123,7 +123,7 @@ var this__9251__auto____$1 = this;var attrs34049 = clustermap.components.table.p
 }
 })())),sablono.interpreter.interpret(clustermap.components.table.paginate(self__.comm,self__.investments,cljs.core.constant$keyword$659)));
 } else
-{return React.DOM.div({"className": "full-report-list"},sablono.interpreter.interpret(attrs34049),React.DOM.div({"className": "table-responsive"},React.DOM.table({"className": "table"},React.DOM.thead(null,React.DOM.tr(null,(function (){var attrs34055 = clustermap.components.table.order_col(self__.comm,self__.investments,cljs.core.constant$keyword$659,"Portfolio Company",cljs.core.constant$keyword$660);if(cljs.core.map_QMARK_(attrs34055))
+{return React.DOM.div({"className": "full-report-list"},sablono.interpreter.interpret(attrs34049),React.DOM.div({"className": "table-responsive"},React.DOM.table({"className": "table"},React.DOM.thead(null,React.DOM.tr(null,(function (){var attrs34055 = clustermap.components.table.order_col(self__.comm,self__.investments,cljs.core.constant$keyword$659,"Investor-backed Company",cljs.core.constant$keyword$660);if(cljs.core.map_QMARK_(attrs34055))
 {return React.DOM.th(sablono.interpreter.attributes(attrs34055),null);
 } else
 {return React.DOM.th(null,sablono.interpreter.interpret(attrs34055));

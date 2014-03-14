@@ -18,17 +18,17 @@
            [:div.tbl-row
             [:div.tbl-cell
              [:div.box.box-first
-              [:header "Turnover"]
+              [:header "Revenue"]
               (om/build tl/timeline-chart (:turnover timelines) {:opts {:id "turnover-timeline-chart"
-                                                                        :y0-title "Turnover"
+                                                                        :y0-title "Revenue"
                                                                         :y1-title "# Filings"}
                                                                  :react-key "turnover-timeline-chart"})
               ]]
             ;; [:div.tbl-cell
             ;;  [:div.box.box-last
-            ;;   [:header "Employment"]
+            ;;   [:header "Employees"]
             ;;   (om/build tl/timeline-chart (:employee_count timelines) {:opts {:id "employment-timeline-chart"
-            ;;                                                                   :y0-title "Employment"
+            ;;                                                                   :y0-title "Employees"
             ;;                                                                   :y1-title "# Filings"}
             ;;                                                            :react-key "employment-timeline-chart"})
             ;;   ]]

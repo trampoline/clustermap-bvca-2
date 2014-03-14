@@ -11,7 +11,7 @@
 (defn describe-type
   [type]
   (condp = type
-    :portfolio-company "Portfolio Company"
+    :portfolio-company "Investor-backed company"
     :investor-company "Investor"
     :constituency "Constituency"))
 
@@ -28,7 +28,7 @@
              "View on map"]
             (when type-descr
               (rsb/reset-selection-button path-fn))
-            [:h2 (or type-descr "All portfolio companies")]
+            [:h2 (or type-descr "All investor-backed companies")]
             [:h3 (or name "UK wide")
              (when (= type :constituency) [:small "\u00A0(" (:mp value) ", " (:political_party value) ")"])]
             (if url [:a {:href url :target "_blank"} url])

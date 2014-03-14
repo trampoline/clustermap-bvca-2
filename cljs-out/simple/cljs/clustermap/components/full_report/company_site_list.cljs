@@ -31,7 +31,7 @@
         [:table.table
          [:thead
           [:tr
-           [:th (table/order-col comm investments :update-selection-investments-table-view "Portfolio Company" :!portfolio_company_name_na)]
+           [:th (table/order-col comm investments :update-selection-investments-table-view "Investor-backed Company" :!portfolio_company_name_na)]
            [:th (table/order-col comm investments :update-selection-investments-table-view "Postcode" :?portfolio_company_site_postcode)]
            [:th (table/order-col comm investments :update-selection-investments-table-view "Investor" :?investor_company_name_na)]
            [:th (table/order-col comm investments :update-selection-investments-table-view "Constituency" :?boundaryline_compact_name_na)]]]

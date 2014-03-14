@@ -111,7 +111,7 @@
                   )
                 (when (not-empty idx-pcs)
                   (into
-                   [:div [:li {:class "search-results-header"} "Companies"]]
+                   [:div [:li {:class "search-results-header"} "Investor-backed companies"]]
                    (for [[idx pc] idx-pcs]
                      (om/build search-result-link pc {:opts {:comm comm :path-fn path-fn}
                                                       :state {:selected (= idx selected-idx)}

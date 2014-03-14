@@ -92,7 +92,7 @@
               [:thead
                [:tr
                 [:th "\u00A0"]
-                [:th "Portfolio Companies"]
+                [:th "Investor-backed companies"]
                 [:th "Investors"]
                 [:th "Constituencies"]
                 [:th "Revenue"]

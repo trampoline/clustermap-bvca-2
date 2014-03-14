@@ -40,6 +40,7 @@ goog.addDependency("../clustermap/boundarylines.js", ['clustermap.boundarylines'
 goog.addDependency("../clojure/browser/event.js", ['clojure.browser.event'], ['cljs.core', 'goog.events.EventType', 'goog.events.EventTarget', 'goog.events']);
 goog.addDependency("../clojure/browser/net.js", ['clojure.browser.net'], ['goog.net.xpc.CrossPageChannel', 'clojure.browser.event', 'goog.net.xpc.CfgFields', 'cljs.core', 'goog.net.EventType', 'goog.json', 'goog.net.XhrIo']);
 goog.addDependency("../clojure/browser/repl.js", ['clojure.browser.repl'], ['clojure.browser.event', 'clojure.browser.net', 'cljs.core']);
+goog.addDependency("../clustermap/ganalytics.js", ['clustermap.ganalytics'], ['cljs.core']);
 goog.addDependency("../clustermap/routes.js", ['clustermap.routes'], ['sablono.core', 'cljs.core']);
 goog.addDependency("../secretary/core.js", ['secretary.core'], ['cljs.core', 'clojure.string']);
 goog.addDependency("../clustermap/model.js", ['clustermap.model'], ['cljs.core']);
@@ -50,6 +51,6 @@ goog.addDependency("../clustermap/nav.js", ['clustermap.nav'], ['cljs.core', 'do
 goog.addDependency("../clustermap/formats/string.js", ['clustermap.formats.string'], ['cljs.core']);
 goog.addDependency("../clustermap/components/map_report.js", ['clustermap.components.map_report'], ['sablono.core', 'cljs.core', 'domina.events', 'om.core', 'clustermap.formats.string', 'clustermap.components.reset_selection_button', 'clustermap.formats.money', 'clustermap.formats.number', 'om.dom', 'cljs.core.async']);
 goog.addDependency("../clustermap/components/map.js", ['clustermap.components.map'], ['clustermap.boundarylines', 'sablono.core', 'cljs.core', 'om.core', 'clustermap.rtree', 'hiccups.runtime', 'om.dom', 'clojure.set', 'cljs.core.async', 'jayq.core']);
-goog.addDependency("../clustermap/app.js", ['clustermap.app'], ['goog.history.EventType', 'clustermap.boundarylines', 'clustermap.api', 'clustermap.components.page_title', 'clustermap.components.full_report', 'cljs.core', 'clustermap.routes', 'secretary.core', 'om.core', 'goog.History', 'clustermap.rtree', 'clustermap.components.search', 'om.dom', 'clustermap.nav', 'cljs.core.async', 'clustermap.components.map_report', 'clustermap.components.map', 'goog.events']);
+goog.addDependency("../clustermap/app.js", ['clustermap.app'], ['clustermap.ganalytics', 'goog.history.EventType', 'clustermap.boundarylines', 'clustermap.api', 'clustermap.components.page_title', 'clustermap.components.full_report', 'cljs.core', 'clustermap.routes', 'secretary.core', 'om.core', 'goog.History', 'clustermap.rtree', 'clustermap.components.search', 'om.dom', 'clustermap.nav', 'cljs.core.async', 'clustermap.components.map_report', 'clustermap.components.map', 'goog.events']);
 goog.addDependency("../clustermap/core.js", ['clustermap.core'], ['cljs.core', 'clojure.browser.repl', 'clustermap.app']);
 goog.addDependency("../clustermap/async.js", ['clustermap.async'], ['cljs.core', 'cljs.core.async']);

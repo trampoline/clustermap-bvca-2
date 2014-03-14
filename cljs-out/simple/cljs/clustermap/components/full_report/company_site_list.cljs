@@ -12,8 +12,7 @@
     (om/component
      (html
       [:tr
-       [:td (link-fn :portfolio-company {:company_no (:portfolio_company_no investment)
-                                         :name (:portfolio_company_name investment)})]
+       [:td (:portfolio_company_name investment)]
        [:td (:portfolio_company_site_postcode investment)]
        [:td (link-fn :investor-company {:investor_company_uid (:investor_company_uid investment)
                                         :name (:investor_company_name investment)})]

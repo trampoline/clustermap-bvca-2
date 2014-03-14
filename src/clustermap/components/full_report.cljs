@@ -15,7 +15,9 @@
 (defn full-report-component
   [{:keys [selector selection all-portfolio-companies-summary] :as data} owner]
 
-  (let [{:keys [comm path-fn link-fn]} (om/get-shared owner)]
+  (let [{:keys [comm path-fn link-fn]} (om/get-shared owner)
+        path-fn (partial path-fn :lists)
+        link-fn (partial link-fn :lists)]
     (reify
       om/IRender
       (render [this]

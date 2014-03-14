@@ -238,8 +238,8 @@
 (defn init
   []
   (let [comm (chan)
-        path-fn (partial routes/path-for state)
-        link-fn (partial routes/link-for state)
+        path-fn routes/path-for
+        link-fn routes/link-for
         shared {:comm comm :path-fn path-fn :link-fn link-fn}]
     (nav/init comm)
     (init-routes comm)

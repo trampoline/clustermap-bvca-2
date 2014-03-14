@@ -93,6 +93,7 @@
 
 (defn map-report-component [data owner]
   (let [{:keys [comm path-fn]} (om/get-shared owner)
+        path-fn (partial path-fn :map)
         type (get-in data [:selection :type])
         value (get-in data [:selection :value])
         site-stats (:selection-investment-stats data)]

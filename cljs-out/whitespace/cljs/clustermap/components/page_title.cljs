@@ -18,6 +18,7 @@
 (defn page-title-component
   [{:keys [type value] :as selection} owner]
   (let [{:keys [comm path-fn]} (om/get-shared owner)
+        path-fn (partial path-fn :lists)
         type-descr (some-> selection :type describe-type)
         name (some-> selection :value :name)
         url (some-> selection :value :web_url)]

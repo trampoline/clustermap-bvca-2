@@ -7,45 +7,45 @@ goog.require('cljs.core');
 * first put each geojson geometry into a geojson featurecollection, along
 * with properties
 */
-clustermap.rtree.rtree_index = (function rtree_index(js_index){var rtree = (new RTree(10));var keys = Object.keys(js_index);var features = [];var js_feature_coll = cljs.core.clj__GT_js(new cljs.core.PersistentArrayMap(null, 1, [cljs.core.constant$keyword$582,"FeatureCollection"], null));var _ = (js_feature_coll["features"] = features);var seq__34908_34912 = cljs.core.seq(keys);var chunk__34909_34913 = null;var count__34910_34914 = 0;var i__34911_34915 = 0;while(true){
-if((i__34911_34915 < count__34910_34914))
-{var k_34916 = chunk__34909_34913.cljs$core$IIndexed$_nth$arity$2(null,i__34911_34915);var obj_34917 = (js_index[k_34916]);var geom_34918 = (obj_34917["geojson"]);var feature_34919 = cljs.core.clj__GT_js(new cljs.core.PersistentArrayMap(null, 2, [cljs.core.constant$keyword$582,"Feature",cljs.core.constant$keyword$735,new cljs.core.PersistentArrayMap(null, 2, [cljs.core.constant$keyword$578,(obj_34917["id"]),cljs.core.constant$keyword$653,(obj_34917["compact_name"])], null)], null));var __34920__$1 = (feature_34919["geometry"] = geom_34918);features.push(feature_34919);
+clustermap.rtree.rtree_index = (function rtree_index(js_index){var rtree = (new RTree(10));var keys = Object.keys(js_index);var features = [];var js_feature_coll = cljs.core.clj__GT_js(new cljs.core.PersistentArrayMap(null, 1, [cljs.core.constant$keyword$584,"FeatureCollection"], null));var _ = (js_feature_coll["features"] = features);var seq__34860_34864 = cljs.core.seq(keys);var chunk__34861_34865 = null;var count__34862_34866 = 0;var i__34863_34867 = 0;while(true){
+if((i__34863_34867 < count__34862_34866))
+{var k_34868 = chunk__34861_34865.cljs$core$IIndexed$_nth$arity$2(null,i__34863_34867);var obj_34869 = (js_index[k_34868]);var geom_34870 = (obj_34869["geojson"]);var feature_34871 = cljs.core.clj__GT_js(new cljs.core.PersistentArrayMap(null, 2, [cljs.core.constant$keyword$584,"Feature",cljs.core.constant$keyword$737,new cljs.core.PersistentArrayMap(null, 2, [cljs.core.constant$keyword$580,(obj_34869["id"]),cljs.core.constant$keyword$656,(obj_34869["compact_name"])], null)], null));var __34872__$1 = (feature_34871["geometry"] = geom_34870);features.push(feature_34871);
 {
-var G__34921 = seq__34908_34912;
-var G__34922 = chunk__34909_34913;
-var G__34923 = count__34910_34914;
-var G__34924 = (i__34911_34915 + 1);
-seq__34908_34912 = G__34921;
-chunk__34909_34913 = G__34922;
-count__34910_34914 = G__34923;
-i__34911_34915 = G__34924;
+var G__34873 = seq__34860_34864;
+var G__34874 = chunk__34861_34865;
+var G__34875 = count__34862_34866;
+var G__34876 = (i__34863_34867 + 1);
+seq__34860_34864 = G__34873;
+chunk__34861_34865 = G__34874;
+count__34862_34866 = G__34875;
+i__34863_34867 = G__34876;
 continue;
 }
 } else
-{var temp__4092__auto___34925 = cljs.core.seq(seq__34908_34912);if(temp__4092__auto___34925)
-{var seq__34908_34926__$1 = temp__4092__auto___34925;if(cljs.core.chunked_seq_QMARK_(seq__34908_34926__$1))
-{var c__4189__auto___34927 = cljs.core.chunk_first(seq__34908_34926__$1);{
-var G__34928 = cljs.core.chunk_rest(seq__34908_34926__$1);
-var G__34929 = c__4189__auto___34927;
-var G__34930 = cljs.core.count(c__4189__auto___34927);
-var G__34931 = 0;
-seq__34908_34912 = G__34928;
-chunk__34909_34913 = G__34929;
-count__34910_34914 = G__34930;
-i__34911_34915 = G__34931;
+{var temp__4092__auto___34877 = cljs.core.seq(seq__34860_34864);if(temp__4092__auto___34877)
+{var seq__34860_34878__$1 = temp__4092__auto___34877;if(cljs.core.chunked_seq_QMARK_(seq__34860_34878__$1))
+{var c__4189__auto___34879 = cljs.core.chunk_first(seq__34860_34878__$1);{
+var G__34880 = cljs.core.chunk_rest(seq__34860_34878__$1);
+var G__34881 = c__4189__auto___34879;
+var G__34882 = cljs.core.count(c__4189__auto___34879);
+var G__34883 = 0;
+seq__34860_34864 = G__34880;
+chunk__34861_34865 = G__34881;
+count__34862_34866 = G__34882;
+i__34863_34867 = G__34883;
 continue;
 }
 } else
-{var k_34932 = cljs.core.first(seq__34908_34926__$1);var obj_34933 = (js_index[k_34932]);var geom_34934 = (obj_34933["geojson"]);var feature_34935 = cljs.core.clj__GT_js(new cljs.core.PersistentArrayMap(null, 2, [cljs.core.constant$keyword$582,"Feature",cljs.core.constant$keyword$735,new cljs.core.PersistentArrayMap(null, 2, [cljs.core.constant$keyword$578,(obj_34933["id"]),cljs.core.constant$keyword$653,(obj_34933["compact_name"])], null)], null));var __34936__$1 = (feature_34935["geometry"] = geom_34934);features.push(feature_34935);
+{var k_34884 = cljs.core.first(seq__34860_34878__$1);var obj_34885 = (js_index[k_34884]);var geom_34886 = (obj_34885["geojson"]);var feature_34887 = cljs.core.clj__GT_js(new cljs.core.PersistentArrayMap(null, 2, [cljs.core.constant$keyword$584,"Feature",cljs.core.constant$keyword$737,new cljs.core.PersistentArrayMap(null, 2, [cljs.core.constant$keyword$580,(obj_34885["id"]),cljs.core.constant$keyword$656,(obj_34885["compact_name"])], null)], null));var __34888__$1 = (feature_34887["geometry"] = geom_34886);features.push(feature_34887);
 {
-var G__34937 = cljs.core.next(seq__34908_34926__$1);
-var G__34938 = null;
-var G__34939 = 0;
-var G__34940 = 0;
-seq__34908_34912 = G__34937;
-chunk__34909_34913 = G__34938;
-count__34910_34914 = G__34939;
-i__34911_34915 = G__34940;
+var G__34889 = cljs.core.next(seq__34860_34878__$1);
+var G__34890 = null;
+var G__34891 = 0;
+var G__34892 = 0;
+seq__34860_34864 = G__34889;
+chunk__34861_34865 = G__34890;
+count__34862_34866 = G__34891;
+i__34863_34867 = G__34892;
 continue;
 }
 }
@@ -57,6 +57,6 @@ break;
 rtree.geoJSON(js_feature_coll);
 return rtree;
 });
-clustermap.rtree.point_in_polygons = (function point_in_polygons(js_index,x,y){var hits = js_index.search(cljs.core.clj__GT_js(new cljs.core.PersistentArrayMap(null, 4, [cljs.core.constant$keyword$736,x,cljs.core.constant$keyword$737,y,cljs.core.constant$keyword$738,0,cljs.core.constant$keyword$739,0], null)));return cljs.core.filter((function (hit){return gju.pointInPolygon(cljs.core.clj__GT_js(new cljs.core.PersistentArrayMap(null, 2, [cljs.core.constant$keyword$582,"Point",cljs.core.constant$keyword$740,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [x,y], null)], null)),hit.geometry);
+clustermap.rtree.point_in_polygons = (function point_in_polygons(js_index,x,y){var hits = js_index.search(cljs.core.clj__GT_js(new cljs.core.PersistentArrayMap(null, 4, [cljs.core.constant$keyword$738,x,cljs.core.constant$keyword$739,y,cljs.core.constant$keyword$740,0,cljs.core.constant$keyword$741,0], null)));return cljs.core.filter((function (hit){return gju.pointInPolygon(cljs.core.clj__GT_js(new cljs.core.PersistentArrayMap(null, 2, [cljs.core.constant$keyword$584,"Point",cljs.core.constant$keyword$742,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [x,y], null)], null)),hit.geometry);
 }),hits);
 });

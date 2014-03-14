@@ -57,8 +57,9 @@
     nil))
 
 (defn search-component
-  [{{selection-type :type selection-value :value} :selection search-results :search-results} owner]
+  [{{selection-type :type selection-value :value} :selection view :view search-results :search-results} owner]
   (let [{:keys [comm path-fn]} (om/get-shared owner)
+        path-fn (partial path-fn view)
         {:keys [constituencies portfolio_companies investor_companies]} search-results]
     (reify
       om/IRenderState

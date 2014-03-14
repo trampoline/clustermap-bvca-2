@@ -1,7 +1,7 @@
 // Compiled by ClojureScript 0.0-2173
 goog.provide('clustermap.ganalytics');
 goog.require('cljs.core');
-clustermap.ganalytics.send_pageview = (function send_pageview(path){var ua_code = (function (){var G__23857 = window;var G__23857__$1 = (((G__23857 == null))?null:G__23857.config);var G__23857__$2 = (((G__23857__$1 == null))?null:G__23857__$1.ua);var G__23857__$3 = (((G__23857__$2 == null))?null:G__23857__$2.code);return G__23857__$3;
+clustermap.ganalytics.send_pageview = (function send_pageview(path){var ua_code = (function (){var G__23833 = window;var G__23833__$1 = (((G__23833 == null))?null:G__23833.config);var G__23833__$2 = (((G__23833__$1 == null))?null:G__23833__$1.ua);var G__23833__$3 = (((G__23833__$2 == null))?null:G__23833__$2.code);return G__23833__$3;
 })();if(cljs.core.truth_((function (){var and__3429__auto__ = window.ga;if(cljs.core.truth_(and__3429__auto__))
 {return ua_code;
 } else

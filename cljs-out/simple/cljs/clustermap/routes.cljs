@@ -11,20 +11,20 @@
   (get obj (get type-name-keys type)))
 
 (defn portfolio-company-path
-  [app-state obj]
-  (str "#/" (some-> app-state deref :view name) "/portfolio-company/" (:company_no obj)))
+  [view-id obj]
+  (str "#/" (name view-id) "/portfolio-company/" (:company_no obj)))
 
 (defn investor-company-path
-  [app-state obj]
-  (str "#/" (some-> app-state deref :view name) "/investor-company/" (:investor_company_uid obj)))
+  [view-id obj]
+  (str "#/" (name view-id) "/investor-company/" (:investor_company_uid obj)))
 
 (defn constituency-path
-  [app-state obj]
-  (str "#/" (some-> app-state deref :view name) "/constituency/" (:boundaryline_id obj)))
+  [view-id obj]
+  (str "#/" (name view-id) "/constituency/" (:boundaryline_id obj)))
 
 (defn no-selection-path
-  [app-state _]
-    (str "#/" (some-> app-state deref :view name)))
+  [view-id _]
+  (str "#/" (name view-id)))
 
 (def type-paths
   {:portfolio-company portfolio-company-path
@@ -33,13 +33,13 @@
    nil no-selection-path})
 
 (defn path-for
-  [app-state type obj]
+  [view-id type obj]
   (-> type-paths
       (get type)
-      (apply [app-state obj])))
+      (apply [view-id obj])))
 
 (defn link-for
-  [app-state type obj]
+  [view-id type obj]
   (html
-   [:a {:href (path-for app-state type obj)}
+   [:a {:href (path-for view-id type obj)}
     (name-for type obj)]))

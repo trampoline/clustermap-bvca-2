@@ -10,6 +10,7 @@
    [clustermap.api :as api]
    [clustermap.routes :as routes]
    [clustermap.nav :as nav]
+   [clustermap.ganalytics :as ga]
    [clustermap.components.map :as map]
    [clustermap.components.map-report :as map-report]
    [clustermap.components.full-report :as full-report]
@@ -228,7 +229,9 @@
   (events/listen history
                  EventType.NAVIGATE
                  (fn [e]
-                   (secretary/dispatch! (.-token e))))
+                   (let [token (.-token e)]
+                     (ga/send-pageview token)
+                     (secretary/dispatch! token))))
 
   (.setEnabled history true))
 

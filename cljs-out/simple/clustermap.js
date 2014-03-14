@@ -32749,7 +32749,7 @@ clustermap.ganalytics.send_pageview = function(a) {
   return cljs.core.truth_(function() {
     var a = window.ga;
     return cljs.core.truth_(a) ? b : a;
-  }()) ? ga(new cljs.core.Symbol(null, "send'", "send'", -1531208872, null), new cljs.core.Symbol(null, "pageview'", "pageview'", -735743316, null), a) : null;
+  }()) ? ga("send", "pageview", a) : null;
 };
 clustermap.routes = {};
 clustermap.routes.type_name_keys = new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null, "portfolio-company", "portfolio-company", 3606204522), new cljs.core.Keyword(null, "name", "name", 1017277949), new cljs.core.Keyword(null, "investor-company", "investor-company", 3983736762), new cljs.core.Keyword(null, "name", "name", 1017277949), new cljs.core.Keyword(null, "constituency", "constituency", 3902864696), new cljs.core.Keyword(null, "compact_name", "compact_name", 1128032665)], 

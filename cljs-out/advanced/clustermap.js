@@ -12552,7 +12552,7 @@ function Ks(a) {
   q(function() {
     var a = window.Fi;
     return q(a) ? b : a;
-  }()) && ga(new Cc(null, "send'", "send'", -1531208872, null), new Cc(null, "pageview'", "pageview'", -735743316, null), a);
+  }()) && ga("send", "pageview", a);
 }
 ;var Ls = new n(null, 3, [fi, oi, vk, oi, Lh, Hk], null), Ms = new n(null, 4, [fi, function(a, b) {
   return[v("#/"), v(function() {

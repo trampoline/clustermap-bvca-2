@@ -54139,7 +54139,7 @@ clustermap.ganalytics.send_pageview = function send_pageview(path) {
       return and__3429__auto__;
     }
   }())) {
-    return ga(new cljs.core.Symbol(null, "send'", "send'", -1531208872, null), new cljs.core.Symbol(null, "pageview'", "pageview'", -735743316, null), path);
+    return ga("send", "pageview", path);
   } else {
     return null;
   }

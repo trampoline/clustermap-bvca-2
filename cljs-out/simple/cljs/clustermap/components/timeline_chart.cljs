@@ -7,7 +7,8 @@
    [jayq.core :refer [$]]
    [sablono.core :as html :refer-macros [html]]
    [hiccups.runtime :as hiccupsrt]
-   [clustermap.formats.number :as num]))
+   [clustermap.formats.number :as num]
+   [clustermap.formats.money :as money]))
 
 (defn create-chart
   [data node {:keys [y0-title y1-title] :as opts}]
@@ -15,6 +16,7 @@
         stats (map :stats data)
         y-median (map (comp #(num/round-decimal % 0) #(get-in % [:stats :median])) data)
         y-mean (map (comp #(num/round-decimal % 0) #(get-in % [:stats :mean])) data)
+        y-total (map (comp #(num/round-decimal % 0) #(get-in % [:stats :total])) data)
         ;; y-total (into [] (concat (butlast yt) [(merge (last yt) {:color "#FF9900" :name "Not all data received for year"})]))
         ]
 
@@ -29,6 +31,7 @@
                    :labels {:rotation 270}}
            :yAxis [{:title {:text y0-title}
                     :min 0
+                    :labels {:formatter (fn [] (this-as this (money/readable (.-value this) :curr "")))}
                     ;; :type "logarithmic"
                     }
                    ;; {:title {:text y1-title} :opposite true}
@@ -38,10 +41,10 @@
                     ;;  :type "line"
                     ;;  :yAxis 0
                     ;;  :data y-median}
-                    {:name (str "Mean " y0-title)
+                    {:name (str "Total " y0-title)
                      :type "line"
                      :yAxis 0
-                     :data y-mean}
+                     :data y-total}
                     ;; {:name y1-title
                     ;;  :type "line"
                     ;;  :yAxis 1

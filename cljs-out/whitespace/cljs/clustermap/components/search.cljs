@@ -27,8 +27,7 @@
                     :onClick (fn [e]
                                (let [l (om/get-node owner "link")]
                                  (some-> l $ (.parents ".search-component") .toggle)))}
-                name
-                (if selected "*")]])))))
+                name]])))))
 
 (defn nth-search-result
   [{:keys [constituencies portfolio_companies investor_companies]} n]

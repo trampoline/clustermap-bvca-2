@@ -14,7 +14,7 @@
                 (put! comm (-> event
                                .-target
                                .getResponseText
-                               JSON/parse
+                               js/JSON.parse
                                (aget "data")
                                ((fn [d]
                                   (if raw

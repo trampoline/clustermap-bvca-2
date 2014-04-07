@@ -415,6 +415,10 @@ var this$__$1 = this;var node = om.core.get_node.call(null,self__.owner);var map
 om.core.set_state_BANG_.call(null,self__.owner,new cljs.core.Keyword(null,"path-highlights","path-highlights",2524998745),cljs.core.PersistentHashSet.EMPTY);
 leaflet_map.on("zoomend",(function (e){return cljs.core.swap_BANG_.call(null,om.core.get_shared.call(null,self__.owner,new cljs.core.Keyword(null,"app-state","app-state",1424976215)),cljs.core.assoc,new cljs.core.Keyword(null,"zoom","zoom",1017648965),leaflet_map.getZoom());
 }));
+leaflet_map.on("popupopen",(function (e){return jayq.core.$.call(null,e.popup._container).on("mousemove",(function (e__$1){e__$1.preventDefault();
+return false;
+}));
+}));
 jayq.core.$.call(null,document).on("clustermap-change-view",(function (e){var map__45042 = om.core.get_state.call(null,self__.owner);var map__45042__$1 = ((cljs.core.seq_QMARK_.call(null,map__45042))?cljs.core.apply.call(null,cljs.core.hash_map,map__45042):map__45042);var map__45043 = cljs.core.get.call(null,map__45042__$1,new cljs.core.Keyword(null,"map","map",1014012110));var map__45043__$1 = ((cljs.core.seq_QMARK_.call(null,map__45043))?cljs.core.apply.call(null,cljs.core.hash_map,map__45043):map__45043);var path_selections = cljs.core.get.call(null,map__45043__$1,new cljs.core.Keyword(null,"path-selections","path-selections",512369281));var paths = cljs.core.get.call(null,map__45043__$1,new cljs.core.Keyword(null,"paths","paths",1120343136));leaflet_map.invalidateSize();
 return clustermap.components.map.pan_to_selection.call(null,self__.owner,leaflet_map,paths,path_selections);
 }));

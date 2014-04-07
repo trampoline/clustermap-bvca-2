@@ -34826,6 +34826,12 @@ clustermap.components.map.map_component = function map_component(b, c) {
     d.on("zoomend", function(b) {
       return cljs.core.swap_BANG_.call(null, om.core.get_shared.call(null, c.owner, new cljs.core.Keyword(null, "app-state", "app-state", 1424976215)), cljs.core.assoc, new cljs.core.Keyword(null, "zoom", "zoom", 1017648965), d.getZoom());
     });
+    d.on("popupopen", function(b) {
+      return jayq.core.$.call(null, b.popup._container).on("mousemove", function(b) {
+        b.preventDefault();
+        return!1;
+      });
+    });
     jayq.core.$.call(null, document).on("clustermap-change-view", function(b) {
       b = om.core.get_state.call(null, c.owner);
       b = cljs.core.seq_QMARK_.call(null, b) ? cljs.core.apply.call(null, cljs.core.hash_map, b) : b;

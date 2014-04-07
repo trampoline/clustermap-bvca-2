@@ -255,6 +255,14 @@
         ;; yeuch
         (.on leaflet-map "zoomend" (fn [e] (swap! (om/get-shared owner :app-state) assoc :zoom (.getZoom leaflet-map))))
 
+        ;; discard mousemoves on open popups...
+        (.on leaflet-map "popupopen" (fn [e]
+                                       (-> e
+                                           .-popup
+                                           .-_container
+                                           $
+                                           (.on "mousemove" (fn [e] (.preventDefault e) false)))))
+
         (-> js/document $ (.on "clustermap-change-view"(fn [e]
                                                          ;; (.log js/console "change-view")
                                                          (let [{{:keys [paths path-selections]} :map} (om/get-state owner)]

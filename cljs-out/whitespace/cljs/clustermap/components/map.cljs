@@ -257,11 +257,15 @@
 
         ;; discard mousemoves on open popups...
         (.on leaflet-map "popupopen" (fn [e]
-                                       (-> e
-                                           .-popup
-                                           .-_container
-                                           $
-                                           (.on "mousemove" (fn [e] (.preventDefault e) false)))))
+                                       (let [popup-el (-> e .-popup .-_container)
+                                             marker-popup-location-list-cnt (-> popup-el $ (.find ".map-marker-popup-location-list") .-length)]
+                                         (if (> marker-popup-location-list-cnt 0)
+                                           (om/set-state! owner :popup-selected true))
+                                         (-> popup-el
+                                             $
+                                             (.on "mousemove" (fn [e] (.preventDefault e) false))))))
+
+        (.on leaflet-map "popupclose" (fn [e] (om/set-state! owner :popup-selected nil)))
 
         (-> js/document $ (.on "clustermap-change-view"(fn [e]
                                                          ;; (.log js/console "change-view")
@@ -308,10 +312,11 @@
                                  old-path-highlights (om/get-state owner :path-highlights)]
 
                              (when (and highlight-hit
-                                        (not= old-path-highlights highlight-path-ids))
+                                        (not= old-path-highlights highlight-path-ids)
+                                        (not (om/get-state owner :popup-selected)))
                                (doto (js/L.popup)
                                  (.setLatLng (clj->js [lat lng]))
-                                 (.setContent (str "<p>" (some-> highlight-hit .-properties .-compact_name ) "</p>"))
+                                 (.setContent (str "<p class=\"map-marker-constituency-name\">" (some-> highlight-hit .-properties .-compact_name ) "</p>"))
                                  (.openOn leaflet-map)))
 
                              (om/set-state! owner :path-highlights highlight-path-ids))))

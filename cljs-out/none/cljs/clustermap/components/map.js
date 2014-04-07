@@ -364,13 +364,13 @@ if(cljs.core.not_EQ_.call(null,next_uk_constituencies_rtree,uk_constituencies_rt
 return (function (hit){return hit.properties.id;
 });})(lat,lng,hits))
 ,hits);var highlight_hit = cljs.core.first.call(null,hits);var highlight_path_ids = cljs.core.set.call(null,cljs.core.take.call(null,1,hit_path_ids));var old_path_highlights = om.core.get_state.call(null,self__.owner,new cljs.core.Keyword(null,"path-highlights","path-highlights",2524998745));if(cljs.core.truth_((function (){var and__3429__auto__ = highlight_hit;if(cljs.core.truth_(and__3429__auto__))
-{return cljs.core.not_EQ_.call(null,old_path_highlights,highlight_path_ids);
+{return (cljs.core.not_EQ_.call(null,old_path_highlights,highlight_path_ids)) && (cljs.core.not.call(null,om.core.get_state.call(null,self__.owner,new cljs.core.Keyword(null,"popup-selected","popup-selected",4726192654))));
 } else
 {return and__3429__auto__;
 }
 })()))
 {var G__23237_23244 = L.popup();G__23237_23244.setLatLng(cljs.core.clj__GT_js.call(null,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [lat,lng], null)));
-G__23237_23244.setContent([cljs.core.str("<p>"),cljs.core.str((function (){var G__23238 = highlight_hit;var G__23238__$1 = (((G__23238 == null))?null:G__23238.properties);var G__23238__$2 = (((G__23238__$1 == null))?null:G__23238__$1.compact_name);return G__23238__$2;
+G__23237_23244.setContent([cljs.core.str("<p class=\"map-marker-constituency-name\">"),cljs.core.str((function (){var G__23238 = highlight_hit;var G__23238__$1 = (((G__23238 == null))?null:G__23238.properties);var G__23238__$2 = (((G__23238__$1 == null))?null:G__23238__$1.compact_name);return G__23238__$2;
 })()),cljs.core.str("</p>")].join(''));
 G__23237_23244.openOn(leaflet_map);
 } else
@@ -415,9 +415,15 @@ var this$__$1 = this;var node = om.core.get_node.call(null,self__.owner);var map
 om.core.set_state_BANG_.call(null,self__.owner,new cljs.core.Keyword(null,"path-highlights","path-highlights",2524998745),cljs.core.PersistentHashSet.EMPTY);
 leaflet_map.on("zoomend",(function (e){return cljs.core.swap_BANG_.call(null,om.core.get_shared.call(null,self__.owner,new cljs.core.Keyword(null,"app-state","app-state",1424976215)),cljs.core.assoc,new cljs.core.Keyword(null,"zoom","zoom",1017648965),leaflet_map.getZoom());
 }));
-leaflet_map.on("popupopen",(function (e){return jayq.core.$.call(null,e.popup._container).on("mousemove",(function (e__$1){e__$1.preventDefault();
+leaflet_map.on("popupopen",(function (e){var popup_el = e.popup._container;var marker_popup_location_list_cnt = jayq.core.$.call(null,popup_el).find(".map-marker-popup-location-list").length;if((marker_popup_location_list_cnt > 0))
+{om.core.set_state_BANG_.call(null,self__.owner,new cljs.core.Keyword(null,"popup-selected","popup-selected",4726192654),true);
+} else
+{}
+return jayq.core.$.call(null,popup_el).on("mousemove",(function (e__$1){e__$1.preventDefault();
 return false;
 }));
+}));
+leaflet_map.on("popupclose",(function (e){return om.core.set_state_BANG_.call(null,self__.owner,new cljs.core.Keyword(null,"popup-selected","popup-selected",4726192654),null);
 }));
 jayq.core.$.call(null,document).on("clustermap-change-view",(function (e){var map__23240 = om.core.get_state.call(null,self__.owner);var map__23240__$1 = ((cljs.core.seq_QMARK_.call(null,map__23240))?cljs.core.apply.call(null,cljs.core.hash_map,map__23240):map__23240);var map__23241 = cljs.core.get.call(null,map__23240__$1,new cljs.core.Keyword(null,"map","map",1014012110));var map__23241__$1 = ((cljs.core.seq_QMARK_.call(null,map__23241))?cljs.core.apply.call(null,cljs.core.hash_map,map__23241):map__23241);var path_selections = cljs.core.get.call(null,map__23241__$1,new cljs.core.Keyword(null,"path-selections","path-selections",512369281));var paths = cljs.core.get.call(null,map__23241__$1,new cljs.core.Keyword(null,"paths","paths",1120343136));leaflet_map.invalidateSize();
 return clustermap.components.map.pan_to_selection.call(null,self__.owner,leaflet_map,paths,path_selections);

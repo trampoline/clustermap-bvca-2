@@ -30744,7 +30744,7 @@ clustermap.api.GET = function() {
     goog.net.XhrIo.send(a, function(a) {
       cljs.core.async.put_BANG_.call(null, g, function(a) {
         return cljs.core.truth_(f) ? a : cljs.core.js__GT_clj.call(null, a, new cljs.core.Keyword(null, "keywordize-keys", "keywordize-keys", 4191781672), !0);
-      }.call(null, JSON.parse.call(null, a.target.getResponseText()).data));
+      }.call(null, JSON.parse(a.target.getResponseText()).data));
       return cljs.core.async.close_BANG_.call(null, g);
     });
     return g;
@@ -34797,7 +34797,7 @@ clustermap.components.map.map_component = function map_component(b, c) {
           return b.properties.id;
         };
       }(c, b, d), d), g = cljs.core.first.call(null, d), d = cljs.core.set.call(null, cljs.core.take.call(null, 1, f)), f = om.core.get_state.call(null, e.owner, new cljs.core.Keyword(null, "path-highlights", "path-highlights", 2524998745));
-      cljs.core.truth_(cljs.core.truth_(g) ? cljs.core.not_EQ_.call(null, f, d) : g) && (f = L.popup(), f.setLatLng(cljs.core.clj__GT_js.call(null, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [c, b], null))), f.setContent([cljs.core.str("\x3cp\x3e"), cljs.core.str(function() {
+      cljs.core.truth_(cljs.core.truth_(g) ? cljs.core.not_EQ_.call(null, f, d) && cljs.core.not.call(null, om.core.get_state.call(null, e.owner, new cljs.core.Keyword(null, "popup-selected", "popup-selected", 4726192654))) : g) && (f = L.popup(), f.setLatLng(cljs.core.clj__GT_js.call(null, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [c, b], null))), f.setContent([cljs.core.str('\x3cp class\x3d"map-marker-constituency-name"\x3e'), cljs.core.str(function() {
         var b = null == g ? null : g.properties;
         return null == b ? null : b.compact_name;
       }()), cljs.core.str("\x3c/p\x3e")].join("")), f.openOn(w));
@@ -34827,10 +34827,15 @@ clustermap.components.map.map_component = function map_component(b, c) {
       return cljs.core.swap_BANG_.call(null, om.core.get_shared.call(null, c.owner, new cljs.core.Keyword(null, "app-state", "app-state", 1424976215)), cljs.core.assoc, new cljs.core.Keyword(null, "zoom", "zoom", 1017648965), d.getZoom());
     });
     d.on("popupopen", function(b) {
-      return jayq.core.$.call(null, b.popup._container).on("mousemove", function(b) {
+      b = b.popup._container;
+      0 < jayq.core.$.call(null, b).find(".map-marker-popup-location-list").length && om.core.set_state_BANG_.call(null, c.owner, new cljs.core.Keyword(null, "popup-selected", "popup-selected", 4726192654), !0);
+      return jayq.core.$.call(null, b).on("mousemove", function(b) {
         b.preventDefault();
         return!1;
       });
+    });
+    d.on("popupclose", function(b) {
+      return om.core.set_state_BANG_.call(null, c.owner, new cljs.core.Keyword(null, "popup-selected", "popup-selected", 4726192654), null);
     });
     jayq.core.$.call(null, document).on("clustermap-change-view", function(b) {
       b = om.core.get_state.call(null, c.owner);

@@ -17,7 +17,7 @@ var GET__delegate = function (url,p__42488){var map__42490 = p__42488;var map__4
 } else
 {return cljs.core.js__GT_clj.call(null,d,new cljs.core.Keyword(null,"keywordize-keys","keywordize-keys",4191781672),true);
 }
-}).call(null,(JSON.parse.call(null,event.target.getResponseText())["data"])));
+}).call(null,(JSON.parse(event.target.getResponseText())["data"])));
 return cljs.core.async.close_BANG_.call(null,comm);
 }));
 return comm;

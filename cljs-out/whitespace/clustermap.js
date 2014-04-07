@@ -50878,7 +50878,7 @@ clustermap.api.GET = function() {
         } else {
           return cljs.core.js__GT_clj.call(null, d, new cljs.core.Keyword(null, "keywordize-keys", "keywordize-keys", 4191781672), true);
         }
-      }.call(null, JSON.parse.call(null, event.target.getResponseText())["data"]));
+      }.call(null, JSON.parse(event.target.getResponseText())["data"]));
       return cljs.core.async.close_BANG_.call(null, comm);
     });
     return comm;
@@ -58092,14 +58092,14 @@ clustermap.components.map.map_component = function map_component(p__45007, owner
           if (cljs.core.truth_(function() {
             var and__3429__auto__ = highlight_hit;
             if (cljs.core.truth_(and__3429__auto__)) {
-              return cljs.core.not_EQ_.call(null, old_path_highlights, highlight_path_ids);
+              return cljs.core.not_EQ_.call(null, old_path_highlights, highlight_path_ids) && cljs.core.not.call(null, om.core.get_state.call(null, self__.owner, new cljs.core.Keyword(null, "popup-selected", "popup-selected", 4726192654)));
             } else {
               return and__3429__auto__;
             }
           }())) {
             var G__45039_45046 = L.popup();
             G__45039_45046.setLatLng(cljs.core.clj__GT_js.call(null, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [lat, lng], null)));
-            G__45039_45046.setContent([cljs.core.str("\x3cp\x3e"), cljs.core.str(function() {
+            G__45039_45046.setContent([cljs.core.str('\x3cp class\x3d"map-marker-constituency-name"\x3e'), cljs.core.str(function() {
               var G__45040 = highlight_hit;
               var G__45040__$1 = G__45040 == null ? null : G__45040.properties;
               var G__45040__$2 = G__45040__$1 == null ? null : G__45040__$1.compact_name;
@@ -58165,10 +58165,19 @@ clustermap.components.map.map_component = function map_component(p__45007, owner
         return cljs.core.swap_BANG_.call(null, om.core.get_shared.call(null, self__.owner, new cljs.core.Keyword(null, "app-state", "app-state", 1424976215)), cljs.core.assoc, new cljs.core.Keyword(null, "zoom", "zoom", 1017648965), leaflet_map.getZoom());
       });
       leaflet_map.on("popupopen", function(e) {
-        return jayq.core.$.call(null, e.popup._container).on("mousemove", function(e__$1) {
+        var popup_el = e.popup._container;
+        var marker_popup_location_list_cnt = jayq.core.$.call(null, popup_el).find(".map-marker-popup-location-list").length;
+        if (marker_popup_location_list_cnt > 0) {
+          om.core.set_state_BANG_.call(null, self__.owner, new cljs.core.Keyword(null, "popup-selected", "popup-selected", 4726192654), true);
+        } else {
+        }
+        return jayq.core.$.call(null, popup_el).on("mousemove", function(e__$1) {
           e__$1.preventDefault();
           return false;
         });
+      });
+      leaflet_map.on("popupclose", function(e) {
+        return om.core.set_state_BANG_.call(null, self__.owner, new cljs.core.Keyword(null, "popup-selected", "popup-selected", 4726192654), null);
       });
       jayq.core.$.call(null, document).on("clustermap-change-view", function(e) {
         var map__45042 = om.core.get_state.call(null, self__.owner);

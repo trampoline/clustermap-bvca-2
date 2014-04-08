@@ -3230,6 +3230,12 @@ body.view-lists #search-results {
   margin: 0;
   padding: 2px 0;
 }
+#page-title h3 {
+  font-size: 22px;
+}
+#page-title h3 small {
+  font-size: 65%;
+}
 #page-title h2 {
   font-style: italic;
 }

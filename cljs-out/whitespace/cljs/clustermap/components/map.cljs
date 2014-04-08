@@ -237,6 +237,15 @@
             (pan-to-show initial-bounds)))
         ))))
 
+(defn constituency-marker-popup-content
+  [path-fn constituency]
+  (let [bl-id (some-> constituency .-properties .-id)
+        bl-name (some-> constituency .-properties .-compact_name) ]
+    (hiccups/html
+     [:a {:href (path-fn :map :constituency {:boundaryline_id bl-id :compact_name bl-name})}
+      [:p.map-marker-constituency-name
+       bl-name]])))
+
 (defn map-component
   "put the leaflet map as state in the om component"
   [{:keys [selection] :as app-state} owner]
@@ -316,7 +325,7 @@
                                         (not (om/get-state owner :popup-selected)))
                                (doto (js/L.popup)
                                  (.setLatLng (clj->js [lat lng]))
-                                 (.setContent (str "<p class=\"map-marker-constituency-name\">" (some-> highlight-hit .-properties .-compact_name ) "</p>"))
+                                 (.setContent (constituency-marker-popup-content path-fn highlight-hit))
                                  (.openOn leaflet-map)))
 
                              (om/set-state! owner :path-highlights highlight-path-ids))))

@@ -17,6 +17,7 @@
             geom (aget obj "geojson")
             feature (clj->js {:type "Feature"
                               :properties {:id (aget obj "id")
+                                           :boundaryline_id (aget obj "id")
                                            :compact_name (aget obj "compact_name")}})
             _ (aset feature "geometry" geom)]
         (.push features feature)))

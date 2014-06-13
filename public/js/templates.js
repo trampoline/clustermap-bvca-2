@@ -114,5 +114,23 @@ if (typeof define === 'function' && define.amd) {
 }
 });
 
+;require.register("unsupported.static", function(exports, require, module) {
+var __templateData = function template(locals) {
+var buf = [];
+var jade_mixins = {};
+
+buf.push("<!DOCTYPE html><html lang=\"en\"><head><title>BVCA v2</title><meta charset=\"utf-8\"></head><body><h1>BVCA Private Equity Map</h1><h2>Unsupported browser</h2><h3>This browser is completely unsupported. it will not work at all</h3><p>Please try one of :<ul><li><a href=\"http://www.google.com/chrome/\">Chrome</a></li><li><a href=\"http://www.mozilla.org/en-US/firefox/new/\">Firefox</a></li><li><a href=\"http://windows.microsoft.com/en-my/windows-vista/update-internet-explorer\">Internet Explorer v9 or newer</a></li></ul></p></body></html>");;return buf.join("");
+};
+if (typeof define === 'function' && define.amd) {
+  define([], function() {
+    return __templateData;
+  });
+} else if (typeof module === 'object' && module && module.exports) {
+  module.exports = __templateData;
+} else {
+  __templateData;
+}
+});
+
 ;
 //# sourceMappingURL=templates.js.map

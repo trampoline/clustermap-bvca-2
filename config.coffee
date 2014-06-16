@@ -8,25 +8,22 @@ exports.config =
     javascripts:
       joinTo:
         'js/app.js': /^app/
-        'js/html5.js': /^vendor\/html5_scripts/
+        'js/polyfills.js': /^vendor\/polyfill_scripts/
         'js/vendor.js': /^vendor\/scripts/
         'test/scenarios.js': /^test(\/|\\)e2e/
       order:
         before: [
-          'vendor/html5_scripts/json2.js',
-          'vendor/html5_scripts/es5-shim.js',
-          'vendor/html5_scripts/es5-sham.js',
-          'vendor/html5_scripts/html5shiv.js',
-          'vendor/scripts/console-polyfill.js',
-          'vendor/scripts/android-xpath.js',
-          'vendor/scripts/javascript-xpath.js',
-          'vendor/scripts/jquery.js',
-          'vendor/scripts/mapbox.js',
+          'vendor/polyfill_scripts/json2.js',
+          'vendor/polyfill_scripts/es5-shim.js',
+          'vendor/polyfill_scripts/es5-sham.js',
+          'vendor/polyfill_scripts/html5shiv.js',
+          'vendor/polyfill_scripts/console-polyfill.js',
+          'vendor/polyfill_scripts/android-xpath.js',
+          'vendor/polyfill_scripts/javascript-xpath.js',
           'vendor/scripts/bootstrap.js',
           'vendor/scripts/geojson-utils.js',
           'vendor/scripts/rtree.js',
-          'vendor/scripts/highcharts.js',
-          'vendor/scripts/react.js'
+          'vendor/scripts/highcharts.js'
         ]
 
     stylesheets:

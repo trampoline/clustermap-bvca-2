@@ -2,17 +2,17 @@
   :description "FIXME: write this!"
   :url "http://example.com/FIXME"
 
-  :dependencies [[org.clojure/clojure "1.5.1"]
-                 [org.clojure/clojurescript "0.0-2173"]
+  :dependencies [[org.clojure/clojure "1.6.0"]
+                 [org.clojure/clojurescript "0.0-2227"]
                  [org.clojure/core.async "0.1.267.0-0d7780-alpha"]
-                 [org.clojure/google-closure-library "0.0-20130212-95c19e7f0f5f"]
-                 [org.clojure/google-closure-library-third-party "0.0-20130212-95c19e7f0f5f"]
+                 [org.clojure/google-closure-library "0.0-2029-2"]
+                 [org.clojure/google-closure-library-third-party "0.0-2029-2"]
                  [domina "1.0.2"]
-                 [jayq "2.5.0"]
-                 [om "0.5.1"]
-                 [sablono "0.2.6"]
+                 [jayq "2.5.1"]
+                 [om "0.6.4"]
+                 [sablono "0.2.17"]
                  [hiccups "0.3.0"]
-                 [secretary "1.0.2"]
+                 [secretary "1.1.0"]
                  ]
 
 ;;  :exclusions [org.clojure/google-closure-library

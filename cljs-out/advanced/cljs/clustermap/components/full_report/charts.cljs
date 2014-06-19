@@ -18,7 +18,8 @@
            [:div.tbl-row
             [:div.tbl-cell
              [:div.box.box-first
-              [:header "Revenue"]
+              ;; fool sablono compiler into assigning react-ids
+              (filter identity [[:header "Revenue"]])
               (om/build tl/timeline-chart (:turnover timelines) {:opts {:id "turnover-timeline-chart"
                                                                         :y0-title "Revenue"
                                                                         :y1-title "# Filings"}

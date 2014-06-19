@@ -9,7 +9,7 @@ goog.require('om.dom');
 goog.require('om.core');
 goog.require('om.core');
 goog.require('cljs.core.async');
-clustermap.components.reset_selection_button.reset_selection_button = (function reset_selection_button(path_fn){return React.DOM.a({"href": path_fn.call(null,null,null)},React.DOM.button({"className": "btn btn-link btn-reset", "type": "reset"},"Reset to UK wide"));
+clustermap.components.reset_selection_button.reset_selection_button = (function reset_selection_button(path_fn){return React.DOM.a({"className": "btn btn-link btn-reset", "href": path_fn.call(null,null,null)},"Reset to UK wide");
 });
 
 //# sourceMappingURL=reset_selection_button.js.map

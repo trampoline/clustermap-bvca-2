@@ -4,7 +4,7 @@
  "sources":["reset_selection_button.cljs"],
  "lineCount":15,
  "mappings":
- ";AAAA;;;;;;;;;;AAQA,sEAAA,0CAAA,hHAAMA,uGACHC,SACD,OAAAC,YAAA,uCAAA,AAAAC,iBAAA,cAAA,kCAAA,SAAA,xGACW,kBAAA,KAAA,vBAACF",
+ ";AAAA;;;;;;;;;;AAQA,sEAAA,0CAAA,hHAAMA,uGACHC,SACD,OAAAC,YAAA,cAAA,gEAAA,9BACkC,kBAAA,KAAA,vBAACD",
  "names":
  ["clustermap.components.reset-selection-button/reset-selection-button",
-  "path-fn", "js/React.DOM.a", "js/React.DOM.button"]}
+  "path-fn", "js/React.DOM.a"]}

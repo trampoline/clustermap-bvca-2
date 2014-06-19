@@ -17,15 +17,14 @@
 
 (defn page-title-component
   [{:keys [type value] :as selection} owner]
-  (let [{:keys [comm path-fn]} (om/get-shared owner)
+  (let [{:keys [comm path-fn view-path-fn]} (om/get-shared owner)
         path-fn (partial path-fn :lists)
         type-descr (some-> selection :type describe-type)
         name (some-> selection :value :name)
         url (some-> selection :value :web_url)]
     (om/component
      (html [:div#page-title
-            [:button.btn {:type "button"
-                          :onClick (fn [e] (put! comm [:change-view "map"]))}
+            [:a.btn.btn-link {:href (view-path-fn :map)}
              "View on map"]
             (when type-descr
               (rsb/reset-selection-button path-fn))

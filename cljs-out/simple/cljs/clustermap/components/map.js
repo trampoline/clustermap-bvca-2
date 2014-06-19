@@ -22,7 +22,7 @@ goog.require('hiccups.runtime');
 clustermap.components.map.initial_bounds = new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [59.54,2.3], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [49.29,-11.29], null)], null);
 clustermap.components.map.locate_map = (function locate_map(m){return m.fitBounds(cljs.core.clj__GT_js.call(null,clustermap.components.map.initial_bounds),cljs.core.clj__GT_js.call(null,new cljs.core.PersistentArrayMap(null, 2, ["paddingTopLeft",new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [0,0], null),"paddingBottomRight",new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [0,0], null)], null)));
 });
-clustermap.components.map.api_key = (function (){var or__3539__auto__ = (function (){var G__12495 = config;var G__12495__$1 = (((G__12495 == null))?null:G__12495.components);var G__12495__$2 = (((G__12495__$1 == null))?null:G__12495__$1.map);var G__12495__$3 = (((G__12495__$2 == null))?null:G__12495__$2.api_key);return G__12495__$3;
+clustermap.components.map.api_key = (function (){var or__3539__auto__ = (function (){var G__12493 = config;var G__12493__$1 = (((G__12493 == null))?null:G__12493.components);var G__12493__$2 = (((G__12493__$1 == null))?null:G__12493__$1.map);var G__12493__$3 = (((G__12493__$2 == null))?null:G__12493__$2.api_key);return G__12493__$3;
 })();if(cljs.core.truth_(or__3539__auto__))
 {return or__3539__auto__;
 } else
@@ -75,40 +75,35 @@ var all_bounds = null;if (arguments.length > 1) {
   all_bounds = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
 return pan_to_show__delegate.call(this,m,all_bounds);};
 pan_to_show.cljs$lang$maxFixedArity = 1;
-pan_to_show.cljs$lang$applyTo = (function (arglist__12496){
-var m = cljs.core.first(arglist__12496);
-var all_bounds = cljs.core.rest(arglist__12496);
+pan_to_show.cljs$lang$applyTo = (function (arglist__12494){
+var m = cljs.core.first(arglist__12494);
+var all_bounds = cljs.core.rest(arglist__12494);
 return pan_to_show__delegate(m,all_bounds);
 });
 pan_to_show.cljs$core$IFn$_invoke$arity$variadic = pan_to_show__delegate;
 return pan_to_show;
 })()
 ;
-clustermap.components.map.marker_popup_content = (function marker_popup_content(path_fn,location_sites){return (''+cljs.core.str.cljs$core$IFn$_invoke$arity$1((function (){var attrs12499 = cljs.core.map.call(null,(function (site){return ("<a"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(hiccups.runtime.render_attr_map.call(null,new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"href","href",1017115293),path_fn.call(null,new cljs.core.Keyword(null,"map","map",1014012110),new cljs.core.Keyword(null,"portfolio-company","portfolio-company",3606204522),site),new cljs.core.Keyword(null,"id","id",1013907597),null,new cljs.core.Keyword(null,"class","class",1108647146),null], null)))+">"+cljs.core.str.cljs$core$IFn$_invoke$arity$1((function (){var attrs12500 = new cljs.core.Keyword(null,"name","name",1017277949).cljs$core$IFn$_invoke$arity$1(site);if(cljs.core.map_QMARK_.call(null,attrs12500))
-{return ("<li"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(hiccups.runtime.render_attr_map.call(null,cljs.core.merge.call(null,new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"id","id",1013907597),null,new cljs.core.Keyword(null,"class","class",1108647146),null], null),attrs12500)))+"></li>");
+clustermap.components.map.marker_popup_content = (function marker_popup_content(path_fn,location_sites){return (''+cljs.core.str.cljs$core$IFn$_invoke$arity$1((function (){var attrs12496 = cljs.core.map.call(null,(function (site){return ("<li><a"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(hiccups.runtime.render_attr_map.call(null,new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"href","href",1017115293),path_fn.call(null,new cljs.core.Keyword(null,"map","map",1014012110),new cljs.core.Keyword(null,"portfolio-company","portfolio-company",3606204522),site),new cljs.core.Keyword(null,"id","id",1013907597),null,new cljs.core.Keyword(null,"class","class",1108647146),null], null)))+">"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(hiccups.runtime.render_html.call(null,new cljs.core.Keyword(null,"name","name",1017277949).cljs$core$IFn$_invoke$arity$1(site)))+"</a></li>");
+}),location_sites);if(cljs.core.map_QMARK_.call(null,attrs12496))
+{return ("<ul"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(hiccups.runtime.render_attr_map.call(null,cljs.core.merge.call(null,new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"id","id",1013907597),null,new cljs.core.Keyword(null,"class","class",1108647146),"map-marker-popup-location-list"], null),attrs12496)))+"></ul>");
 } else
-{return ("<li>"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(hiccups.runtime.render_html.call(null,attrs12500))+"</li>");
-}
-})())+"</a>");
-}),location_sites);if(cljs.core.map_QMARK_.call(null,attrs12499))
-{return ("<ul"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(hiccups.runtime.render_attr_map.call(null,cljs.core.merge.call(null,new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"id","id",1013907597),null,new cljs.core.Keyword(null,"class","class",1108647146),"map-marker-popup-location-list"], null),attrs12499)))+"></ul>");
-} else
-{return ("<ul class=\"map-marker-popup-location-list\">"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(hiccups.runtime.render_html.call(null,attrs12499))+"</ul>");
+{return ("<ul class=\"map-marker-popup-location-list\">"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(hiccups.runtime.render_html.call(null,attrs12496))+"</ul>");
 }
 })()));
 });
-clustermap.components.map.create_marker = (function create_marker(path_fn,leaflet_map,location_sites){var temp__4124__auto__ = (function (){var G__12503 = location_sites;var G__12503__$1 = (((G__12503 == null))?null:cljs.core.first.call(null,G__12503));var G__12503__$2 = (((G__12503__$1 == null))?null:new cljs.core.Keyword(null,"location","location",2914947879).cljs$core$IFn$_invoke$arity$1(G__12503__$1));var G__12503__$3 = (((G__12503__$2 == null))?null:cljs.core.reverse.call(null,G__12503__$2));var G__12503__$4 = (((G__12503__$3 == null))?null:cljs.core.clj__GT_js.call(null,G__12503__$3));return G__12503__$4;
+clustermap.components.map.create_marker = (function create_marker(path_fn,leaflet_map,location_sites){var temp__4124__auto__ = (function (){var G__12499 = location_sites;var G__12499__$1 = (((G__12499 == null))?null:cljs.core.first.call(null,G__12499));var G__12499__$2 = (((G__12499__$1 == null))?null:new cljs.core.Keyword(null,"location","location",2914947879).cljs$core$IFn$_invoke$arity$1(G__12499__$1));var G__12499__$3 = (((G__12499__$2 == null))?null:cljs.core.reverse.call(null,G__12499__$2));var G__12499__$4 = (((G__12499__$3 == null))?null:cljs.core.clj__GT_js.call(null,G__12499__$3));return G__12499__$4;
 })();if(cljs.core.truth_(temp__4124__auto__))
 {var latlong = temp__4124__auto__;var icon = L.divIcon(cljs.core.clj__GT_js.call(null,new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null,"className","className",1004015509),"map-marker",new cljs.core.Keyword(null,"iconSize","iconSize",4570914700),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [24,28], null),new cljs.core.Keyword(null,"iconAnchor","iconAnchor",4290568192),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [12,14], null),new cljs.core.Keyword(null,"popupAnchor","popupAnchor",1041293811),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [0,-8], null)], null)));var marker = L.marker(latlong,cljs.core.clj__GT_js.call(null,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"icon","icon",1017130987),icon], null)));var popup_content = clustermap.components.map.marker_popup_content.call(null,path_fn,location_sites);marker.bindPopup(popup_content);
 marker.addTo(leaflet_map);
 return marker;
 } else
-{return console.log(("missing location: "+cljs.core.str.cljs$core$IFn$_invoke$arity$1((function (){var sb__4466__auto__ = (new goog.string.StringBuffer());var _STAR_print_fn_STAR_12504_12505 = cljs.core._STAR_print_fn_STAR_;try{cljs.core._STAR_print_fn_STAR_ = ((function (_STAR_print_fn_STAR_12504_12505,sb__4466__auto__,temp__4124__auto__){
+{return console.log(("missing location: "+cljs.core.str.cljs$core$IFn$_invoke$arity$1((function (){var sb__4466__auto__ = (new goog.string.StringBuffer());var _STAR_print_fn_STAR_12500_12501 = cljs.core._STAR_print_fn_STAR_;try{cljs.core._STAR_print_fn_STAR_ = ((function (_STAR_print_fn_STAR_12500_12501,sb__4466__auto__,temp__4124__auto__){
 return (function (x__4467__auto__){return sb__4466__auto__.append(x__4467__auto__);
-});})(_STAR_print_fn_STAR_12504_12505,sb__4466__auto__,temp__4124__auto__))
+});})(_STAR_print_fn_STAR_12500_12501,sb__4466__auto__,temp__4124__auto__))
 ;
 cljs.core.pr.call(null,location_sites);
-}finally {cljs.core._STAR_print_fn_STAR_ = _STAR_print_fn_STAR_12504_12505;
+}finally {cljs.core._STAR_print_fn_STAR_ = _STAR_print_fn_STAR_12500_12501;
 }return (''+cljs.core.str.cljs$core$IFn$_invoke$arity$1(sb__4466__auto__));
 })())));
 }
@@ -124,45 +119,45 @@ return (function (k){return new cljs.core.PersistentVector(null, 2, 5, cljs.core
 ,new_marker_keys));var updated_markers = cljs.core.into.call(null,cljs.core.PersistentArrayMap.EMPTY,cljs.core.map.call(null,((function (markers,marker_keys,location_keys,update_marker_keys,new_marker_keys,remove_marker_keys,new_markers){
 return (function (k){return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [k,clustermap.components.map.update_marker.call(null,path_fn,leaflet_map,cljs.core.get.call(null,markers,k),cljs.core.get.call(null,new_locations,k))], null);
 });})(markers,marker_keys,location_keys,update_marker_keys,new_marker_keys,remove_marker_keys,new_markers))
-,update_marker_keys));var _ = (function (){var seq__12510 = cljs.core.seq.call(null,remove_marker_keys);var chunk__12511 = null;var count__12512 = 0;var i__12513 = 0;while(true){
-if((i__12513 < count__12512))
-{var k = cljs.core._nth.call(null,chunk__12511,i__12513);clustermap.components.map.remove_marker.call(null,leaflet_map,cljs.core.get.call(null,markers,k));
+,update_marker_keys));var _ = (function (){var seq__12506 = cljs.core.seq.call(null,remove_marker_keys);var chunk__12507 = null;var count__12508 = 0;var i__12509 = 0;while(true){
+if((i__12509 < count__12508))
+{var k = cljs.core._nth.call(null,chunk__12507,i__12509);clustermap.components.map.remove_marker.call(null,leaflet_map,cljs.core.get.call(null,markers,k));
 {
-var G__12514 = seq__12510;
-var G__12515 = chunk__12511;
-var G__12516 = count__12512;
-var G__12517 = (i__12513 + 1);
-seq__12510 = G__12514;
-chunk__12511 = G__12515;
-count__12512 = G__12516;
-i__12513 = G__12517;
+var G__12510 = seq__12506;
+var G__12511 = chunk__12507;
+var G__12512 = count__12508;
+var G__12513 = (i__12509 + 1);
+seq__12506 = G__12510;
+chunk__12507 = G__12511;
+count__12508 = G__12512;
+i__12509 = G__12513;
 continue;
 }
 } else
-{var temp__4126__auto__ = cljs.core.seq.call(null,seq__12510);if(temp__4126__auto__)
-{var seq__12510__$1 = temp__4126__auto__;if(cljs.core.chunked_seq_QMARK_.call(null,seq__12510__$1))
-{var c__4295__auto__ = cljs.core.chunk_first.call(null,seq__12510__$1);{
-var G__12518 = cljs.core.chunk_rest.call(null,seq__12510__$1);
-var G__12519 = c__4295__auto__;
-var G__12520 = cljs.core.count.call(null,c__4295__auto__);
+{var temp__4126__auto__ = cljs.core.seq.call(null,seq__12506);if(temp__4126__auto__)
+{var seq__12506__$1 = temp__4126__auto__;if(cljs.core.chunked_seq_QMARK_.call(null,seq__12506__$1))
+{var c__4295__auto__ = cljs.core.chunk_first.call(null,seq__12506__$1);{
+var G__12514 = cljs.core.chunk_rest.call(null,seq__12506__$1);
+var G__12515 = c__4295__auto__;
+var G__12516 = cljs.core.count.call(null,c__4295__auto__);
+var G__12517 = 0;
+seq__12506 = G__12514;
+chunk__12507 = G__12515;
+count__12508 = G__12516;
+i__12509 = G__12517;
+continue;
+}
+} else
+{var k = cljs.core.first.call(null,seq__12506__$1);clustermap.components.map.remove_marker.call(null,leaflet_map,cljs.core.get.call(null,markers,k));
+{
+var G__12518 = cljs.core.next.call(null,seq__12506__$1);
+var G__12519 = null;
+var G__12520 = 0;
 var G__12521 = 0;
-seq__12510 = G__12518;
-chunk__12511 = G__12519;
-count__12512 = G__12520;
-i__12513 = G__12521;
-continue;
-}
-} else
-{var k = cljs.core.first.call(null,seq__12510__$1);clustermap.components.map.remove_marker.call(null,leaflet_map,cljs.core.get.call(null,markers,k));
-{
-var G__12522 = cljs.core.next.call(null,seq__12510__$1);
-var G__12523 = null;
-var G__12524 = 0;
-var G__12525 = 0;
-seq__12510 = G__12522;
-chunk__12511 = G__12523;
-count__12512 = G__12524;
-i__12513 = G__12525;
+seq__12506 = G__12518;
+chunk__12507 = G__12519;
+count__12508 = G__12520;
+i__12509 = G__12521;
 continue;
 }
 }
@@ -177,7 +172,7 @@ break;
 /**
 * turns a PostGIS envelope into a L.LatLngBounds
 */
-clustermap.components.map.postgis_envelope__GT_latlngbounds = (function postgis_envelope__GT_latlngbounds(envelope){var map__12534 = cljs.core.js__GT_clj.call(null,envelope);var map__12534__$1 = ((cljs.core.seq_QMARK_.call(null,map__12534))?cljs.core.apply.call(null,cljs.core.hash_map,map__12534):map__12534);var clj_envelope = map__12534__$1;var vec__12535 = cljs.core.get.call(null,map__12534__$1,"coordinates");var vec__12536 = cljs.core.nth.call(null,vec__12535,0,null);var vec__12537 = cljs.core.nth.call(null,vec__12536,0,null);var miny0 = cljs.core.nth.call(null,vec__12537,0,null);var minx0 = cljs.core.nth.call(null,vec__12537,1,null);var vec__12538 = cljs.core.nth.call(null,vec__12536,1,null);var maxy1 = cljs.core.nth.call(null,vec__12538,0,null);var minx1 = cljs.core.nth.call(null,vec__12538,1,null);var vec__12539 = cljs.core.nth.call(null,vec__12536,2,null);var maxy2 = cljs.core.nth.call(null,vec__12539,0,null);var maxx2 = cljs.core.nth.call(null,vec__12539,1,null);var vec__12540 = cljs.core.nth.call(null,vec__12536,3,null);var miny3 = cljs.core.nth.call(null,vec__12540,0,null);var maxx3 = cljs.core.nth.call(null,vec__12540,1,null);var vec__12541 = cljs.core.nth.call(null,vec__12536,4,null);var miny4 = cljs.core.nth.call(null,vec__12541,0,null);var minx4 = cljs.core.nth.call(null,vec__12541,1,null);var inner = vec__12536;var coords = vec__12535;return L.latLngBounds(cljs.core.clj__GT_js.call(null,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [minx0,miny0], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [maxx2,maxy2], null)], null)));
+clustermap.components.map.postgis_envelope__GT_latlngbounds = (function postgis_envelope__GT_latlngbounds(envelope){var map__12530 = cljs.core.js__GT_clj.call(null,envelope);var map__12530__$1 = ((cljs.core.seq_QMARK_.call(null,map__12530))?cljs.core.apply.call(null,cljs.core.hash_map,map__12530):map__12530);var clj_envelope = map__12530__$1;var vec__12531 = cljs.core.get.call(null,map__12530__$1,"coordinates");var vec__12532 = cljs.core.nth.call(null,vec__12531,0,null);var vec__12533 = cljs.core.nth.call(null,vec__12532,0,null);var miny0 = cljs.core.nth.call(null,vec__12533,0,null);var minx0 = cljs.core.nth.call(null,vec__12533,1,null);var vec__12534 = cljs.core.nth.call(null,vec__12532,1,null);var maxy1 = cljs.core.nth.call(null,vec__12534,0,null);var minx1 = cljs.core.nth.call(null,vec__12534,1,null);var vec__12535 = cljs.core.nth.call(null,vec__12532,2,null);var maxy2 = cljs.core.nth.call(null,vec__12535,0,null);var maxx2 = cljs.core.nth.call(null,vec__12535,1,null);var vec__12536 = cljs.core.nth.call(null,vec__12532,3,null);var miny3 = cljs.core.nth.call(null,vec__12536,0,null);var maxx3 = cljs.core.nth.call(null,vec__12536,1,null);var vec__12537 = cljs.core.nth.call(null,vec__12532,4,null);var miny4 = cljs.core.nth.call(null,vec__12537,0,null);var minx4 = cljs.core.nth.call(null,vec__12537,1,null);var inner = vec__12532;var coords = vec__12531;return L.latLngBounds(cljs.core.clj__GT_js.call(null,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [minx0,miny0], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [maxx2,maxy2], null)], null)));
 });
 /**
 * get the best cached boundaryline, async fetch a better one if required
@@ -188,7 +183,7 @@ clustermap.components.map.tolerance_boundaryline = (function tolerance_boundaryl
 {return default$;
 }
 });
-clustermap.components.map.style_leaflet_path = (function style_leaflet_path(leaflet_path,p__12542){var map__12544 = p__12542;var map__12544__$1 = ((cljs.core.seq_QMARK_.call(null,map__12544))?cljs.core.apply.call(null,cljs.core.hash_map,map__12544):map__12544);var highlighted = cljs.core.get.call(null,map__12544__$1,new cljs.core.Keyword(null,"highlighted","highlighted",3500421061));var selected = cljs.core.get.call(null,map__12544__$1,new cljs.core.Keyword(null,"selected","selected",2205476365));if(cljs.core.truth_((function (){var and__3527__auto__ = selected;if(cljs.core.truth_(and__3527__auto__))
+clustermap.components.map.style_leaflet_path = (function style_leaflet_path(leaflet_path,p__12538){var map__12540 = p__12538;var map__12540__$1 = ((cljs.core.seq_QMARK_.call(null,map__12540))?cljs.core.apply.call(null,cljs.core.hash_map,map__12540):map__12540);var highlighted = cljs.core.get.call(null,map__12540__$1,new cljs.core.Keyword(null,"highlighted","highlighted",3500421061));var selected = cljs.core.get.call(null,map__12540__$1,new cljs.core.Keyword(null,"selected","selected",2205476365));if(cljs.core.truth_((function (){var and__3527__auto__ = selected;if(cljs.core.truth_(and__3527__auto__))
 {return highlighted;
 } else
 {return and__3527__auto__;
@@ -211,11 +206,11 @@ clustermap.components.map.style_leaflet_path = (function style_leaflet_path(leaf
 }
 }
 });
-clustermap.components.map.create_path = (function create_path(comm,leaflet_map,boundaryline_id,js_boundaryline,p__12545){var map__12547 = p__12545;var map__12547__$1 = ((cljs.core.seq_QMARK_.call(null,map__12547))?cljs.core.apply.call(null,cljs.core.hash_map,map__12547):map__12547);var path_attrs = map__12547__$1;var selected = cljs.core.get.call(null,map__12547__$1,new cljs.core.Keyword(null,"selected","selected",2205476365));var tolerance = (js_boundaryline["tolerance"]);var bounds = clustermap.components.map.postgis_envelope__GT_latlngbounds.call(null,(js_boundaryline["envelope"]));var leaflet_path = L.geoJson((js_boundaryline["geojson"]));clustermap.components.map.style_leaflet_path.call(null,leaflet_path,path_attrs);
+clustermap.components.map.create_path = (function create_path(comm,leaflet_map,boundaryline_id,js_boundaryline,p__12541){var map__12543 = p__12541;var map__12543__$1 = ((cljs.core.seq_QMARK_.call(null,map__12543))?cljs.core.apply.call(null,cljs.core.hash_map,map__12543):map__12543);var path_attrs = map__12543__$1;var selected = cljs.core.get.call(null,map__12543__$1,new cljs.core.Keyword(null,"selected","selected",2205476365));var tolerance = (js_boundaryline["tolerance"]);var bounds = clustermap.components.map.postgis_envelope__GT_latlngbounds.call(null,(js_boundaryline["envelope"]));var leaflet_path = L.geoJson((js_boundaryline["geojson"]));clustermap.components.map.style_leaflet_path.call(null,leaflet_path,path_attrs);
 leaflet_path.addTo(leaflet_map);
-leaflet_path.on("click",((function (tolerance,bounds,leaflet_path,map__12547,map__12547__$1,path_attrs,selected){
+leaflet_path.on("click",((function (tolerance,bounds,leaflet_path,map__12543,map__12543__$1,path_attrs,selected){
 return (function (e){return cljs.core.async.put_BANG_.call(null,comm,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"select","select",4402849902),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"constituency","constituency",3902864696),boundaryline_id], null)], null));
-});})(tolerance,bounds,leaflet_path,map__12547,map__12547__$1,path_attrs,selected))
+});})(tolerance,bounds,leaflet_path,map__12543,map__12543__$1,path_attrs,selected))
 );
 return new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null,"id","id",1013907597),boundaryline_id,new cljs.core.Keyword(null,"tolerance","tolerance",2046976895),tolerance,new cljs.core.Keyword(null,"selected","selected",2205476365),selected,new cljs.core.Keyword(null,"leaflet-path","leaflet-path",1462260071),leaflet_path,new cljs.core.Keyword(null,"bounds","bounds",3925666343),bounds], null);
 });
@@ -223,7 +218,7 @@ return new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null,"id
 * create leaflet paths for every boundaryline in boundaryline-index
 */
 clustermap.components.map.fetch_create_path = (function fetch_create_path(comm,fetch_boundaryline_fn,js_boundaryline_index,leaflet_map,boundaryline_id,path_attrs){var temp__4124__auto__ = clustermap.components.map.tolerance_boundaryline.call(null,fetch_boundaryline_fn,js_boundaryline_index,boundaryline_id,leaflet_map.getZoom());if(cljs.core.truth_(temp__4124__auto__))
-{var vec__12549 = temp__4124__auto__;var tolerance = cljs.core.nth.call(null,vec__12549,0,null);var js_boundaryline = cljs.core.nth.call(null,vec__12549,1,null);return clustermap.components.map.create_path.call(null,comm,leaflet_map,boundaryline_id,js_boundaryline,path_attrs);
+{var vec__12545 = temp__4124__auto__;var tolerance = cljs.core.nth.call(null,vec__12545,0,null);var js_boundaryline = cljs.core.nth.call(null,vec__12545,1,null);return clustermap.components.map.create_path.call(null,comm,leaflet_map,boundaryline_id,js_boundaryline,path_attrs);
 } else
 {return null;
 }
@@ -234,8 +229,8 @@ return clustermap.components.map.create_path.call(null,comm,leaflet_map,new cljs
 /**
 * update a Leaflet path for a boundaryline
 */
-clustermap.components.map.update_path = (function update_path(comm,fetch_boundaryline_fn,js_boundaryline_index,leaflet_map,p__12550,path_attrs){var map__12553 = p__12550;var map__12553__$1 = ((cljs.core.seq_QMARK_.call(null,map__12553))?cljs.core.apply.call(null,cljs.core.hash_map,map__12553):map__12553);var path = map__12553__$1;var boundaryline_id = cljs.core.get.call(null,map__12553__$1,new cljs.core.Keyword(null,"id","id",1013907597));var temp__4124__auto__ = clustermap.components.map.tolerance_boundaryline.call(null,fetch_boundaryline_fn,js_boundaryline_index,boundaryline_id,leaflet_map.getZoom());if(cljs.core.truth_(temp__4124__auto__))
-{var vec__12554 = temp__4124__auto__;var tolerance = cljs.core.nth.call(null,vec__12554,0,null);var js_boundaryline = cljs.core.nth.call(null,vec__12554,1,null);if(cljs.core.not_EQ_.call(null,tolerance,new cljs.core.Keyword(null,"tolerance","tolerance",2046976895).cljs$core$IFn$_invoke$arity$1(path)))
+clustermap.components.map.update_path = (function update_path(comm,fetch_boundaryline_fn,js_boundaryline_index,leaflet_map,p__12546,path_attrs){var map__12549 = p__12546;var map__12549__$1 = ((cljs.core.seq_QMARK_.call(null,map__12549))?cljs.core.apply.call(null,cljs.core.hash_map,map__12549):map__12549);var path = map__12549__$1;var boundaryline_id = cljs.core.get.call(null,map__12549__$1,new cljs.core.Keyword(null,"id","id",1013907597));var temp__4124__auto__ = clustermap.components.map.tolerance_boundaryline.call(null,fetch_boundaryline_fn,js_boundaryline_index,boundaryline_id,leaflet_map.getZoom());if(cljs.core.truth_(temp__4124__auto__))
+{var vec__12550 = temp__4124__auto__;var tolerance = cljs.core.nth.call(null,vec__12550,0,null);var js_boundaryline = cljs.core.nth.call(null,vec__12550,1,null);if(cljs.core.not_EQ_.call(null,tolerance,new cljs.core.Keyword(null,"tolerance","tolerance",2046976895).cljs$core$IFn$_invoke$arity$1(path)))
 {return clustermap.components.map.replace_path.call(null,comm,leaflet_map,boundaryline_id,path,js_boundaryline,path_attrs);
 } else
 {clustermap.components.map.style_leaflet_path.call(null,new cljs.core.Keyword(null,"leaflet-path","leaflet-path",1462260071).cljs$core$IFn$_invoke$arity$1(path),path_attrs);
@@ -254,51 +249,51 @@ return (function (k){return clustermap.components.map.fetch_create_path.call(nul
 ,create_path_keys);var updated_paths = cljs.core.map.call(null,((function (paths,path_keys,old_selection_path_keys,new_selection_path_keys,live_path_keys,create_path_keys,delete_path_keys,update_path_keys,created_paths){
 return (function (k){return clustermap.components.map.update_path.call(null,comm,fetch_boundaryline_fn,js_boundaryline_index,leaflet_map,cljs.core.get.call(null,paths,k),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"selected","selected",2205476365),cljs.core.contains_QMARK_.call(null,new_selection_path_keys,k),new cljs.core.Keyword(null,"highlighted","highlighted",3500421061),cljs.core.contains_QMARK_.call(null,new_path_highlights,k)], null));
 });})(paths,path_keys,old_selection_path_keys,new_selection_path_keys,live_path_keys,create_path_keys,delete_path_keys,update_path_keys,created_paths))
-,update_path_keys);var _ = (function (){var seq__12561 = cljs.core.seq.call(null,delete_path_keys);var chunk__12562 = null;var count__12563 = 0;var i__12564 = 0;while(true){
-if((i__12564 < count__12563))
-{var k = cljs.core._nth.call(null,chunk__12562,i__12564);var temp__4124__auto___12567 = cljs.core.get.call(null,paths,k);if(cljs.core.truth_(temp__4124__auto___12567))
-{var path_12568 = temp__4124__auto___12567;clustermap.components.map.delete_path.call(null,leaflet_map,path_12568);
+,update_path_keys);var _ = (function (){var seq__12557 = cljs.core.seq.call(null,delete_path_keys);var chunk__12558 = null;var count__12559 = 0;var i__12560 = 0;while(true){
+if((i__12560 < count__12559))
+{var k = cljs.core._nth.call(null,chunk__12558,i__12560);var temp__4124__auto___12563 = cljs.core.get.call(null,paths,k);if(cljs.core.truth_(temp__4124__auto___12563))
+{var path_12564 = temp__4124__auto___12563;clustermap.components.map.delete_path.call(null,leaflet_map,path_12564);
 } else
 {}
 {
-var G__12569 = seq__12561;
-var G__12570 = chunk__12562;
-var G__12571 = count__12563;
-var G__12572 = (i__12564 + 1);
-seq__12561 = G__12569;
-chunk__12562 = G__12570;
-count__12563 = G__12571;
-i__12564 = G__12572;
+var G__12565 = seq__12557;
+var G__12566 = chunk__12558;
+var G__12567 = count__12559;
+var G__12568 = (i__12560 + 1);
+seq__12557 = G__12565;
+chunk__12558 = G__12566;
+count__12559 = G__12567;
+i__12560 = G__12568;
 continue;
 }
 } else
-{var temp__4126__auto__ = cljs.core.seq.call(null,seq__12561);if(temp__4126__auto__)
-{var seq__12561__$1 = temp__4126__auto__;if(cljs.core.chunked_seq_QMARK_.call(null,seq__12561__$1))
-{var c__4295__auto__ = cljs.core.chunk_first.call(null,seq__12561__$1);{
-var G__12573 = cljs.core.chunk_rest.call(null,seq__12561__$1);
-var G__12574 = c__4295__auto__;
-var G__12575 = cljs.core.count.call(null,c__4295__auto__);
-var G__12576 = 0;
-seq__12561 = G__12573;
-chunk__12562 = G__12574;
-count__12563 = G__12575;
-i__12564 = G__12576;
+{var temp__4126__auto__ = cljs.core.seq.call(null,seq__12557);if(temp__4126__auto__)
+{var seq__12557__$1 = temp__4126__auto__;if(cljs.core.chunked_seq_QMARK_.call(null,seq__12557__$1))
+{var c__4295__auto__ = cljs.core.chunk_first.call(null,seq__12557__$1);{
+var G__12569 = cljs.core.chunk_rest.call(null,seq__12557__$1);
+var G__12570 = c__4295__auto__;
+var G__12571 = cljs.core.count.call(null,c__4295__auto__);
+var G__12572 = 0;
+seq__12557 = G__12569;
+chunk__12558 = G__12570;
+count__12559 = G__12571;
+i__12560 = G__12572;
 continue;
 }
 } else
-{var k = cljs.core.first.call(null,seq__12561__$1);var temp__4124__auto___12577 = cljs.core.get.call(null,paths,k);if(cljs.core.truth_(temp__4124__auto___12577))
-{var path_12578 = temp__4124__auto___12577;clustermap.components.map.delete_path.call(null,leaflet_map,path_12578);
+{var k = cljs.core.first.call(null,seq__12557__$1);var temp__4124__auto___12573 = cljs.core.get.call(null,paths,k);if(cljs.core.truth_(temp__4124__auto___12573))
+{var path_12574 = temp__4124__auto___12573;clustermap.components.map.delete_path.call(null,leaflet_map,path_12574);
 } else
 {}
 {
-var G__12579 = cljs.core.next.call(null,seq__12561__$1);
-var G__12580 = null;
-var G__12581 = 0;
-var G__12582 = 0;
-seq__12561 = G__12579;
-chunk__12562 = G__12580;
-count__12563 = G__12581;
-i__12564 = G__12582;
+var G__12575 = cljs.core.next.call(null,seq__12557__$1);
+var G__12576 = null;
+var G__12577 = 0;
+var G__12578 = 0;
+seq__12557 = G__12575;
+chunk__12558 = G__12576;
+count__12559 = G__12577;
+i__12560 = G__12578;
 continue;
 }
 }
@@ -309,7 +304,7 @@ continue;
 break;
 }
 })();var new_paths = cljs.core.reduce.call(null,((function (paths,path_keys,old_selection_path_keys,new_selection_path_keys,live_path_keys,create_path_keys,delete_path_keys,update_path_keys,created_paths,updated_paths,_){
-return (function (m,p__12565){var map__12566 = p__12565;var map__12566__$1 = ((cljs.core.seq_QMARK_.call(null,map__12566))?cljs.core.apply.call(null,cljs.core.hash_map,map__12566):map__12566);var path = map__12566__$1;var id = cljs.core.get.call(null,map__12566__$1,new cljs.core.Keyword(null,"id","id",1013907597));return cljs.core.assoc.call(null,m,id,path);
+return (function (m,p__12561){var map__12562 = p__12561;var map__12562__$1 = ((cljs.core.seq_QMARK_.call(null,map__12562))?cljs.core.apply.call(null,cljs.core.hash_map,map__12562):map__12562);var path = map__12562__$1;var id = cljs.core.get.call(null,map__12562__$1,new cljs.core.Keyword(null,"id","id",1013907597));return cljs.core.assoc.call(null,m,id,path);
 });})(paths,path_keys,old_selection_path_keys,new_selection_path_keys,live_path_keys,create_path_keys,delete_path_keys,update_path_keys,created_paths,updated_paths,_))
 ,cljs.core.PersistentArrayMap.EMPTY,cljs.core.filter.call(null,cljs.core.identity,cljs.core.concat.call(null,created_paths,updated_paths)));cljs.core.reset_BANG_.call(null,path_selections_atom,new_selection_path_keys);
 return cljs.core.reset_BANG_.call(null,paths_atom,new_paths);
@@ -327,7 +322,7 @@ clustermap.components.map.pan_to_selection = (function pan_to_selection(owner,le
 {om.core.set_state_BANG_.call(null,owner,new cljs.core.Keyword(null,"pan-pending","pan-pending",3214812121),false);
 } else
 {}
-var temp__4124__auto__ = (function (){var G__12584 = cljs.core.select_keys.call(null,paths,path_selections);var G__12584__$1 = (((G__12584 == null))?null:cljs.core.vals.call(null,G__12584));var G__12584__$2 = (((G__12584__$1 == null))?null:cljs.core.map.call(null,new cljs.core.Keyword(null,"bounds","bounds",3925666343),G__12584__$1));var G__12584__$3 = (((G__12584__$2 == null))?null:cljs.core.not_empty.call(null,G__12584__$2));return G__12584__$3;
+var temp__4124__auto__ = (function (){var G__12580 = cljs.core.select_keys.call(null,paths,path_selections);var G__12580__$1 = (((G__12580 == null))?null:cljs.core.vals.call(null,G__12580));var G__12580__$2 = (((G__12580__$1 == null))?null:cljs.core.map.call(null,new cljs.core.Keyword(null,"bounds","bounds",3925666343),G__12580__$1));var G__12580__$3 = (((G__12580__$2 == null))?null:cljs.core.not_empty.call(null,G__12580__$2));return G__12580__$3;
 })();if(cljs.core.truth_(temp__4124__auto__))
 {var bounds = temp__4124__auto__;return cljs.core.apply.call(null,clustermap.components.map.pan_to_show,leaflet_map,bounds);
 } else
@@ -336,75 +331,75 @@ var temp__4124__auto__ = (function (){var G__12584 = cljs.core.select_keys.call(
 }
 }
 });
-clustermap.components.map.constituency_marker_popup_content = (function constituency_marker_popup_content(path_fn,constituency){var bl_id = (function (){var G__12588 = constituency;var G__12588__$1 = (((G__12588 == null))?null:G__12588.properties);var G__12588__$2 = (((G__12588__$1 == null))?null:G__12588__$1.id);return G__12588__$2;
-})();var bl_name = (function (){var G__12589 = constituency;var G__12589__$1 = (((G__12589 == null))?null:G__12589.properties);var G__12589__$2 = (((G__12589__$1 == null))?null:G__12589__$1.compact_name);return G__12589__$2;
-})();return ("<a"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(hiccups.runtime.render_attr_map.call(null,new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"href","href",1017115293),path_fn.call(null,new cljs.core.Keyword(null,"map","map",1014012110),new cljs.core.Keyword(null,"constituency","constituency",3902864696),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"boundaryline_id","boundaryline_id",3312170318),bl_id,new cljs.core.Keyword(null,"compact_name","compact_name",1128032665),bl_name], null)),new cljs.core.Keyword(null,"id","id",1013907597),null,new cljs.core.Keyword(null,"class","class",1108647146),null], null)))+">"+cljs.core.str.cljs$core$IFn$_invoke$arity$1((function (){var attrs12590 = bl_name;if(cljs.core.map_QMARK_.call(null,attrs12590))
-{return ("<p"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(hiccups.runtime.render_attr_map.call(null,cljs.core.merge.call(null,new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"id","id",1013907597),null,new cljs.core.Keyword(null,"class","class",1108647146),"map-marker-constituency-name"], null),attrs12590)))+" />");
+clustermap.components.map.constituency_marker_popup_content = (function constituency_marker_popup_content(path_fn,constituency){var bl_id = (function (){var G__12584 = constituency;var G__12584__$1 = (((G__12584 == null))?null:G__12584.properties);var G__12584__$2 = (((G__12584__$1 == null))?null:G__12584__$1.id);return G__12584__$2;
+})();var bl_name = (function (){var G__12585 = constituency;var G__12585__$1 = (((G__12585 == null))?null:G__12585.properties);var G__12585__$2 = (((G__12585__$1 == null))?null:G__12585__$1.compact_name);return G__12585__$2;
+})();return ("<a"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(hiccups.runtime.render_attr_map.call(null,new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"href","href",1017115293),path_fn.call(null,new cljs.core.Keyword(null,"map","map",1014012110),new cljs.core.Keyword(null,"constituency","constituency",3902864696),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"boundaryline_id","boundaryline_id",3312170318),bl_id,new cljs.core.Keyword(null,"compact_name","compact_name",1128032665),bl_name], null)),new cljs.core.Keyword(null,"id","id",1013907597),null,new cljs.core.Keyword(null,"class","class",1108647146),null], null)))+">"+cljs.core.str.cljs$core$IFn$_invoke$arity$1((function (){var attrs12586 = bl_name;if(cljs.core.map_QMARK_.call(null,attrs12586))
+{return ("<span"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(hiccups.runtime.render_attr_map.call(null,cljs.core.merge.call(null,new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"id","id",1013907597),null,new cljs.core.Keyword(null,"class","class",1108647146),"map-marker-constituency-name"], null),attrs12586)))+"></span>");
 } else
-{return ("<p class=\"map-marker-constituency-name\">"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(hiccups.runtime.render_html.call(null,attrs12590))+"</p>");
+{return ("<span class=\"map-marker-constituency-name\">"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(hiccups.runtime.render_html.call(null,attrs12586))+"</span>");
 }
 })())+"</a>");
 });
 /**
 * put the leaflet map as state in the om component
 */
-clustermap.components.map.map_component = (function map_component(p__12591,owner){var map__12610 = p__12591;var map__12610__$1 = ((cljs.core.seq_QMARK_.call(null,map__12610))?cljs.core.apply.call(null,cljs.core.hash_map,map__12610):map__12610);var app_state = map__12610__$1;var selection = cljs.core.get.call(null,map__12610__$1,new cljs.core.Keyword(null,"selection","selection",3592905982));if(typeof clustermap.components.map.t12611 !== 'undefined')
+clustermap.components.map.map_component = (function map_component(p__12587,owner){var map__12606 = p__12587;var map__12606__$1 = ((cljs.core.seq_QMARK_.call(null,map__12606))?cljs.core.apply.call(null,cljs.core.hash_map,map__12606):map__12606);var app_state = map__12606__$1;var selection = cljs.core.get.call(null,map__12606__$1,new cljs.core.Keyword(null,"selection","selection",3592905982));if(typeof clustermap.components.map.t12607 !== 'undefined')
 {} else
 {
 /**
 * @constructor
 */
-clustermap.components.map.t12611 = (function (selection,app_state,map__12610,owner,p__12591,map_component,meta12612){
+clustermap.components.map.t12607 = (function (selection,app_state,map__12606,owner,p__12587,map_component,meta12608){
 this.selection = selection;
 this.app_state = app_state;
-this.map__12610 = map__12610;
+this.map__12606 = map__12606;
 this.owner = owner;
-this.p__12591 = p__12591;
+this.p__12587 = p__12587;
 this.map_component = map_component;
-this.meta12612 = meta12612;
+this.meta12608 = meta12608;
 this.cljs$lang$protocol_mask$partition1$ = 0;
 this.cljs$lang$protocol_mask$partition0$ = 393216;
 })
-clustermap.components.map.t12611.cljs$lang$type = true;
-clustermap.components.map.t12611.cljs$lang$ctorStr = "clustermap.components.map/t12611";
-clustermap.components.map.t12611.cljs$lang$ctorPrWriter = ((function (map__12610,map__12610__$1,app_state,selection){
-return (function (this__4106__auto__,writer__4107__auto__,opt__4108__auto__){return cljs.core._write.call(null,writer__4107__auto__,"clustermap.components.map/t12611");
-});})(map__12610,map__12610__$1,app_state,selection))
+clustermap.components.map.t12607.cljs$lang$type = true;
+clustermap.components.map.t12607.cljs$lang$ctorStr = "clustermap.components.map/t12607";
+clustermap.components.map.t12607.cljs$lang$ctorPrWriter = ((function (map__12606,map__12606__$1,app_state,selection){
+return (function (this__4106__auto__,writer__4107__auto__,opt__4108__auto__){return cljs.core._write.call(null,writer__4107__auto__,"clustermap.components.map/t12607");
+});})(map__12606,map__12606__$1,app_state,selection))
 ;
-clustermap.components.map.t12611.prototype.om$core$IWillUpdate$ = true;
-clustermap.components.map.t12611.prototype.om$core$IWillUpdate$will_update$arity$3 = ((function (map__12610,map__12610__$1,app_state,selection){
-return (function (this$,p__12614,p__12615){var self__ = this;
-var map__12616 = p__12614;var map__12616__$1 = ((cljs.core.seq_QMARK_.call(null,map__12616))?cljs.core.apply.call(null,cljs.core.hash_map,map__12616):map__12616);var next_selection = cljs.core.get.call(null,map__12616__$1,new cljs.core.Keyword(null,"selection","selection",3592905982));var next_locations = cljs.core.get.call(null,map__12616__$1,new cljs.core.Keyword(null,"selection-portfolio-company-locations","selection-portfolio-company-locations",1821239162));var next_uk_constituencies = cljs.core.get.call(null,map__12616__$1,new cljs.core.Keyword(null,"uk-constituencies","uk-constituencies",2507232365));var next_uk_constituencies_rtree = cljs.core.get.call(null,map__12616__$1,new cljs.core.Keyword(null,"uk-constituencies-rtree","uk-constituencies-rtree",3542903600));var next_boundarylines = cljs.core.get.call(null,map__12616__$1,new cljs.core.Keyword(null,"boundarylines","boundarylines",2397299847));var next_zoom = cljs.core.get.call(null,map__12616__$1,new cljs.core.Keyword(null,"zoom","zoom",1017648965));var map__12617 = p__12615;var map__12617__$1 = ((cljs.core.seq_QMARK_.call(null,map__12617))?cljs.core.apply.call(null,cljs.core.hash_map,map__12617):map__12617);var next_path_highlights = cljs.core.get.call(null,map__12617__$1,new cljs.core.Keyword(null,"path-highlights","path-highlights",2524998745));var this$__$1 = this;var map__12618 = om.core.get_props.call(null,self__.owner);var map__12618__$1 = ((cljs.core.seq_QMARK_.call(null,map__12618))?cljs.core.apply.call(null,cljs.core.hash_map,map__12618):map__12618);var uk_constituencies_rtree = cljs.core.get.call(null,map__12618__$1,new cljs.core.Keyword(null,"uk-constituencies-rtree","uk-constituencies-rtree",3542903600));var map__12619 = om.core.get_shared.call(null,self__.owner);var map__12619__$1 = ((cljs.core.seq_QMARK_.call(null,map__12619))?cljs.core.apply.call(null,cljs.core.hash_map,map__12619):map__12619);var path_fn = cljs.core.get.call(null,map__12619__$1,new cljs.core.Keyword(null,"path-fn","path-fn",4517369570));var link_fn = cljs.core.get.call(null,map__12619__$1,new cljs.core.Keyword(null,"link-fn","link-fn",1190936301));var fetch_boundaryline_fn = cljs.core.get.call(null,map__12619__$1,new cljs.core.Keyword(null,"fetch-boundaryline-fn","fetch-boundaryline-fn",3464186934));var comm = cljs.core.get.call(null,map__12619__$1,new cljs.core.Keyword(null,"comm","comm",1016963710));var map__12620 = om.core.get_state.call(null,self__.owner);var map__12620__$1 = ((cljs.core.seq_QMARK_.call(null,map__12620))?cljs.core.apply.call(null,cljs.core.hash_map,map__12620):map__12620);var map__12621 = cljs.core.get.call(null,map__12620__$1,new cljs.core.Keyword(null,"map","map",1014012110));var map__12621__$1 = ((cljs.core.seq_QMARK_.call(null,map__12621))?cljs.core.apply.call(null,cljs.core.hash_map,map__12621):map__12621);var path_selections = cljs.core.get.call(null,map__12621__$1,new cljs.core.Keyword(null,"path-selections","path-selections",512369281));var paths = cljs.core.get.call(null,map__12621__$1,new cljs.core.Keyword(null,"paths","paths",1120343136));var markers = cljs.core.get.call(null,map__12621__$1,new cljs.core.Keyword(null,"markers","markers",1853155051));var leaflet_map = cljs.core.get.call(null,map__12621__$1,new cljs.core.Keyword(null,"leaflet-map","leaflet-map",4353500414));var pan_pending = cljs.core.get.call(null,map__12620__$1,new cljs.core.Keyword(null,"pan-pending","pan-pending",3214812121));var path_highlights = cljs.core.get.call(null,map__12620__$1,new cljs.core.Keyword(null,"path-highlights","path-highlights",2524998745));var mousemove_listener = cljs.core.get.call(null,map__12620__$1,new cljs.core.Keyword(null,"mousemove-listener","mousemove-listener",3228037661));var click_listener = cljs.core.get.call(null,map__12620__$1,new cljs.core.Keyword(null,"click-listener","click-listener",1807691467));clustermap.components.map.update_markers.call(null,path_fn,leaflet_map,markers,next_locations);
+clustermap.components.map.t12607.prototype.om$core$IWillUpdate$ = true;
+clustermap.components.map.t12607.prototype.om$core$IWillUpdate$will_update$arity$3 = ((function (map__12606,map__12606__$1,app_state,selection){
+return (function (this$,p__12610,p__12611){var self__ = this;
+var map__12612 = p__12610;var map__12612__$1 = ((cljs.core.seq_QMARK_.call(null,map__12612))?cljs.core.apply.call(null,cljs.core.hash_map,map__12612):map__12612);var next_selection = cljs.core.get.call(null,map__12612__$1,new cljs.core.Keyword(null,"selection","selection",3592905982));var next_locations = cljs.core.get.call(null,map__12612__$1,new cljs.core.Keyword(null,"selection-portfolio-company-locations","selection-portfolio-company-locations",1821239162));var next_uk_constituencies = cljs.core.get.call(null,map__12612__$1,new cljs.core.Keyword(null,"uk-constituencies","uk-constituencies",2507232365));var next_uk_constituencies_rtree = cljs.core.get.call(null,map__12612__$1,new cljs.core.Keyword(null,"uk-constituencies-rtree","uk-constituencies-rtree",3542903600));var next_boundarylines = cljs.core.get.call(null,map__12612__$1,new cljs.core.Keyword(null,"boundarylines","boundarylines",2397299847));var next_zoom = cljs.core.get.call(null,map__12612__$1,new cljs.core.Keyword(null,"zoom","zoom",1017648965));var map__12613 = p__12611;var map__12613__$1 = ((cljs.core.seq_QMARK_.call(null,map__12613))?cljs.core.apply.call(null,cljs.core.hash_map,map__12613):map__12613);var next_path_highlights = cljs.core.get.call(null,map__12613__$1,new cljs.core.Keyword(null,"path-highlights","path-highlights",2524998745));var this$__$1 = this;var map__12614 = om.core.get_props.call(null,self__.owner);var map__12614__$1 = ((cljs.core.seq_QMARK_.call(null,map__12614))?cljs.core.apply.call(null,cljs.core.hash_map,map__12614):map__12614);var uk_constituencies_rtree = cljs.core.get.call(null,map__12614__$1,new cljs.core.Keyword(null,"uk-constituencies-rtree","uk-constituencies-rtree",3542903600));var map__12615 = om.core.get_shared.call(null,self__.owner);var map__12615__$1 = ((cljs.core.seq_QMARK_.call(null,map__12615))?cljs.core.apply.call(null,cljs.core.hash_map,map__12615):map__12615);var path_fn = cljs.core.get.call(null,map__12615__$1,new cljs.core.Keyword(null,"path-fn","path-fn",4517369570));var link_fn = cljs.core.get.call(null,map__12615__$1,new cljs.core.Keyword(null,"link-fn","link-fn",1190936301));var fetch_boundaryline_fn = cljs.core.get.call(null,map__12615__$1,new cljs.core.Keyword(null,"fetch-boundaryline-fn","fetch-boundaryline-fn",3464186934));var comm = cljs.core.get.call(null,map__12615__$1,new cljs.core.Keyword(null,"comm","comm",1016963710));var map__12616 = om.core.get_state.call(null,self__.owner);var map__12616__$1 = ((cljs.core.seq_QMARK_.call(null,map__12616))?cljs.core.apply.call(null,cljs.core.hash_map,map__12616):map__12616);var map__12617 = cljs.core.get.call(null,map__12616__$1,new cljs.core.Keyword(null,"map","map",1014012110));var map__12617__$1 = ((cljs.core.seq_QMARK_.call(null,map__12617))?cljs.core.apply.call(null,cljs.core.hash_map,map__12617):map__12617);var path_selections = cljs.core.get.call(null,map__12617__$1,new cljs.core.Keyword(null,"path-selections","path-selections",512369281));var paths = cljs.core.get.call(null,map__12617__$1,new cljs.core.Keyword(null,"paths","paths",1120343136));var markers = cljs.core.get.call(null,map__12617__$1,new cljs.core.Keyword(null,"markers","markers",1853155051));var leaflet_map = cljs.core.get.call(null,map__12617__$1,new cljs.core.Keyword(null,"leaflet-map","leaflet-map",4353500414));var pan_pending = cljs.core.get.call(null,map__12616__$1,new cljs.core.Keyword(null,"pan-pending","pan-pending",3214812121));var path_highlights = cljs.core.get.call(null,map__12616__$1,new cljs.core.Keyword(null,"path-highlights","path-highlights",2524998745));var mousemove_listener = cljs.core.get.call(null,map__12616__$1,new cljs.core.Keyword(null,"mousemove-listener","mousemove-listener",3228037661));var click_listener = cljs.core.get.call(null,map__12616__$1,new cljs.core.Keyword(null,"click-listener","click-listener",1807691467));clustermap.components.map.update_markers.call(null,path_fn,leaflet_map,markers,next_locations);
 if(cljs.core.not_EQ_.call(null,next_uk_constituencies_rtree,uk_constituencies_rtree))
-{om.core.set_state_BANG_.call(null,self__.owner,new cljs.core.Keyword(null,"mousemove-listener","mousemove-listener",3228037661),((function (map__12618,map__12618__$1,uk_constituencies_rtree,map__12619,map__12619__$1,path_fn,link_fn,fetch_boundaryline_fn,comm,map__12620,map__12620__$1,map__12621,map__12621__$1,path_selections,paths,markers,leaflet_map,pan_pending,path_highlights,mousemove_listener,click_listener,this$__$1,map__12616,map__12616__$1,next_selection,next_locations,next_uk_constituencies,next_uk_constituencies_rtree,next_boundarylines,next_zoom,map__12617,map__12617__$1,next_path_highlights,map__12610,map__12610__$1,app_state,selection){
-return (function (e){var lat = e.latlng.lat;var lng = e.latlng.lng;var hits = clustermap.rtree.point_in_polygons.call(null,next_uk_constituencies_rtree,lng,lat);var hit_path_ids = cljs.core.map.call(null,((function (lat,lng,hits,map__12618,map__12618__$1,uk_constituencies_rtree,map__12619,map__12619__$1,path_fn,link_fn,fetch_boundaryline_fn,comm,map__12620,map__12620__$1,map__12621,map__12621__$1,path_selections,paths,markers,leaflet_map,pan_pending,path_highlights,mousemove_listener,click_listener,this$__$1,map__12616,map__12616__$1,next_selection,next_locations,next_uk_constituencies,next_uk_constituencies_rtree,next_boundarylines,next_zoom,map__12617,map__12617__$1,next_path_highlights,map__12610,map__12610__$1,app_state,selection){
+{om.core.set_state_BANG_.call(null,self__.owner,new cljs.core.Keyword(null,"mousemove-listener","mousemove-listener",3228037661),((function (map__12614,map__12614__$1,uk_constituencies_rtree,map__12615,map__12615__$1,path_fn,link_fn,fetch_boundaryline_fn,comm,map__12616,map__12616__$1,map__12617,map__12617__$1,path_selections,paths,markers,leaflet_map,pan_pending,path_highlights,mousemove_listener,click_listener,this$__$1,map__12612,map__12612__$1,next_selection,next_locations,next_uk_constituencies,next_uk_constituencies_rtree,next_boundarylines,next_zoom,map__12613,map__12613__$1,next_path_highlights,map__12606,map__12606__$1,app_state,selection){
+return (function (e){var lat = e.latlng.lat;var lng = e.latlng.lng;var hits = clustermap.rtree.point_in_polygons.call(null,next_uk_constituencies_rtree,lng,lat);var hit_path_ids = cljs.core.map.call(null,((function (lat,lng,hits,map__12614,map__12614__$1,uk_constituencies_rtree,map__12615,map__12615__$1,path_fn,link_fn,fetch_boundaryline_fn,comm,map__12616,map__12616__$1,map__12617,map__12617__$1,path_selections,paths,markers,leaflet_map,pan_pending,path_highlights,mousemove_listener,click_listener,this$__$1,map__12612,map__12612__$1,next_selection,next_locations,next_uk_constituencies,next_uk_constituencies_rtree,next_boundarylines,next_zoom,map__12613,map__12613__$1,next_path_highlights,map__12606,map__12606__$1,app_state,selection){
 return (function (hit){return hit.properties.id;
-});})(lat,lng,hits,map__12618,map__12618__$1,uk_constituencies_rtree,map__12619,map__12619__$1,path_fn,link_fn,fetch_boundaryline_fn,comm,map__12620,map__12620__$1,map__12621,map__12621__$1,path_selections,paths,markers,leaflet_map,pan_pending,path_highlights,mousemove_listener,click_listener,this$__$1,map__12616,map__12616__$1,next_selection,next_locations,next_uk_constituencies,next_uk_constituencies_rtree,next_boundarylines,next_zoom,map__12617,map__12617__$1,next_path_highlights,map__12610,map__12610__$1,app_state,selection))
+});})(lat,lng,hits,map__12614,map__12614__$1,uk_constituencies_rtree,map__12615,map__12615__$1,path_fn,link_fn,fetch_boundaryline_fn,comm,map__12616,map__12616__$1,map__12617,map__12617__$1,path_selections,paths,markers,leaflet_map,pan_pending,path_highlights,mousemove_listener,click_listener,this$__$1,map__12612,map__12612__$1,next_selection,next_locations,next_uk_constituencies,next_uk_constituencies_rtree,next_boundarylines,next_zoom,map__12613,map__12613__$1,next_path_highlights,map__12606,map__12606__$1,app_state,selection))
 ,hits);var highlight_hit = cljs.core.first.call(null,hits);var highlight_path_ids = cljs.core.set.call(null,cljs.core.take.call(null,1,hit_path_ids));var old_path_highlights = om.core.get_state.call(null,self__.owner,new cljs.core.Keyword(null,"path-highlights","path-highlights",2524998745));if(cljs.core.truth_((function (){var and__3527__auto__ = highlight_hit;if(cljs.core.truth_(and__3527__auto__))
 {return (cljs.core.not_EQ_.call(null,old_path_highlights,highlight_path_ids)) && (cljs.core.not.call(null,om.core.get_state.call(null,self__.owner,new cljs.core.Keyword(null,"popup-selected","popup-selected",4726192654))));
 } else
 {return and__3527__auto__;
 }
 })()))
-{var G__12622_12628 = L.popup();G__12622_12628.setLatLng(cljs.core.clj__GT_js.call(null,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [lat,lng], null)));
-G__12622_12628.setContent(clustermap.components.map.constituency_marker_popup_content.call(null,path_fn,highlight_hit));
-G__12622_12628.openOn(leaflet_map);
+{var G__12618_12624 = L.popup();G__12618_12624.setLatLng(cljs.core.clj__GT_js.call(null,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [lat,lng], null)));
+G__12618_12624.setContent(clustermap.components.map.constituency_marker_popup_content.call(null,path_fn,highlight_hit));
+G__12618_12624.openOn(leaflet_map);
 } else
 {}
 return om.core.set_state_BANG_.call(null,self__.owner,new cljs.core.Keyword(null,"path-highlights","path-highlights",2524998745),highlight_path_ids);
-});})(map__12618,map__12618__$1,uk_constituencies_rtree,map__12619,map__12619__$1,path_fn,link_fn,fetch_boundaryline_fn,comm,map__12620,map__12620__$1,map__12621,map__12621__$1,path_selections,paths,markers,leaflet_map,pan_pending,path_highlights,mousemove_listener,click_listener,this$__$1,map__12616,map__12616__$1,next_selection,next_locations,next_uk_constituencies,next_uk_constituencies_rtree,next_boundarylines,next_zoom,map__12617,map__12617__$1,next_path_highlights,map__12610,map__12610__$1,app_state,selection))
+});})(map__12614,map__12614__$1,uk_constituencies_rtree,map__12615,map__12615__$1,path_fn,link_fn,fetch_boundaryline_fn,comm,map__12616,map__12616__$1,map__12617,map__12617__$1,path_selections,paths,markers,leaflet_map,pan_pending,path_highlights,mousemove_listener,click_listener,this$__$1,map__12612,map__12612__$1,next_selection,next_locations,next_uk_constituencies,next_uk_constituencies_rtree,next_boundarylines,next_zoom,map__12613,map__12613__$1,next_path_highlights,map__12606,map__12606__$1,app_state,selection))
 );
 if(cljs.core.truth_(mousemove_listener))
 {leaflet_map.off("mousemove",mousemove_listener);
 } else
 {}
 leaflet_map.on("mousemove",om.core.get_state.call(null,self__.owner,new cljs.core.Keyword(null,"mousemove-listener","mousemove-listener",3228037661)));
-om.core.set_state_BANG_.call(null,self__.owner,new cljs.core.Keyword(null,"click-listener","click-listener",1807691467),((function (map__12618,map__12618__$1,uk_constituencies_rtree,map__12619,map__12619__$1,path_fn,link_fn,fetch_boundaryline_fn,comm,map__12620,map__12620__$1,map__12621,map__12621__$1,path_selections,paths,markers,leaflet_map,pan_pending,path_highlights,mousemove_listener,click_listener,this$__$1,map__12616,map__12616__$1,next_selection,next_locations,next_uk_constituencies,next_uk_constituencies_rtree,next_boundarylines,next_zoom,map__12617,map__12617__$1,next_path_highlights,map__12610,map__12610__$1,app_state,selection){
-return (function (e){var hits = clustermap.rtree.point_in_polygons.call(null,next_uk_constituencies_rtree,e.latlng.lng,e.latlng.lat);var hit_path_ids = cljs.core.map.call(null,((function (hits,map__12618,map__12618__$1,uk_constituencies_rtree,map__12619,map__12619__$1,path_fn,link_fn,fetch_boundaryline_fn,comm,map__12620,map__12620__$1,map__12621,map__12621__$1,path_selections,paths,markers,leaflet_map,pan_pending,path_highlights,mousemove_listener,click_listener,this$__$1,map__12616,map__12616__$1,next_selection,next_locations,next_uk_constituencies,next_uk_constituencies_rtree,next_boundarylines,next_zoom,map__12617,map__12617__$1,next_path_highlights,map__12610,map__12610__$1,app_state,selection){
+om.core.set_state_BANG_.call(null,self__.owner,new cljs.core.Keyword(null,"click-listener","click-listener",1807691467),((function (map__12614,map__12614__$1,uk_constituencies_rtree,map__12615,map__12615__$1,path_fn,link_fn,fetch_boundaryline_fn,comm,map__12616,map__12616__$1,map__12617,map__12617__$1,path_selections,paths,markers,leaflet_map,pan_pending,path_highlights,mousemove_listener,click_listener,this$__$1,map__12612,map__12612__$1,next_selection,next_locations,next_uk_constituencies,next_uk_constituencies_rtree,next_boundarylines,next_zoom,map__12613,map__12613__$1,next_path_highlights,map__12606,map__12606__$1,app_state,selection){
+return (function (e){var hits = clustermap.rtree.point_in_polygons.call(null,next_uk_constituencies_rtree,e.latlng.lng,e.latlng.lat);var hit_path_ids = cljs.core.map.call(null,((function (hits,map__12614,map__12614__$1,uk_constituencies_rtree,map__12615,map__12615__$1,path_fn,link_fn,fetch_boundaryline_fn,comm,map__12616,map__12616__$1,map__12617,map__12617__$1,path_selections,paths,markers,leaflet_map,pan_pending,path_highlights,mousemove_listener,click_listener,this$__$1,map__12612,map__12612__$1,next_selection,next_locations,next_uk_constituencies,next_uk_constituencies_rtree,next_boundarylines,next_zoom,map__12613,map__12613__$1,next_path_highlights,map__12606,map__12606__$1,app_state,selection){
 return (function (hit){return hit.properties.id;
-});})(hits,map__12618,map__12618__$1,uk_constituencies_rtree,map__12619,map__12619__$1,path_fn,link_fn,fetch_boundaryline_fn,comm,map__12620,map__12620__$1,map__12621,map__12621__$1,path_selections,paths,markers,leaflet_map,pan_pending,path_highlights,mousemove_listener,click_listener,this$__$1,map__12616,map__12616__$1,next_selection,next_locations,next_uk_constituencies,next_uk_constituencies_rtree,next_boundarylines,next_zoom,map__12617,map__12617__$1,next_path_highlights,map__12610,map__12610__$1,app_state,selection))
+});})(hits,map__12614,map__12614__$1,uk_constituencies_rtree,map__12615,map__12615__$1,path_fn,link_fn,fetch_boundaryline_fn,comm,map__12616,map__12616__$1,map__12617,map__12617__$1,path_selections,paths,markers,leaflet_map,pan_pending,path_highlights,mousemove_listener,click_listener,this$__$1,map__12612,map__12612__$1,next_selection,next_locations,next_uk_constituencies,next_uk_constituencies_rtree,next_boundarylines,next_zoom,map__12613,map__12613__$1,next_path_highlights,map__12606,map__12606__$1,app_state,selection))
 ,hits);return cljs.core.async.put_BANG_.call(null,comm,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"select","select",4402849902),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"constituency","constituency",3902864696),cljs.core.first.call(null,hit_path_ids)], null)], null));
-});})(map__12618,map__12618__$1,uk_constituencies_rtree,map__12619,map__12619__$1,path_fn,link_fn,fetch_boundaryline_fn,comm,map__12620,map__12620__$1,map__12621,map__12621__$1,path_selections,paths,markers,leaflet_map,pan_pending,path_highlights,mousemove_listener,click_listener,this$__$1,map__12616,map__12616__$1,next_selection,next_locations,next_uk_constituencies,next_uk_constituencies_rtree,next_boundarylines,next_zoom,map__12617,map__12617__$1,next_path_highlights,map__12610,map__12610__$1,app_state,selection))
+});})(map__12614,map__12614__$1,uk_constituencies_rtree,map__12615,map__12615__$1,path_fn,link_fn,fetch_boundaryline_fn,comm,map__12616,map__12616__$1,map__12617,map__12617__$1,path_selections,paths,markers,leaflet_map,pan_pending,path_highlights,mousemove_listener,click_listener,this$__$1,map__12612,map__12612__$1,next_selection,next_locations,next_uk_constituencies,next_uk_constituencies_rtree,next_boundarylines,next_zoom,map__12613,map__12613__$1,next_path_highlights,map__12606,map__12606__$1,app_state,selection))
 );
 if(cljs.core.truth_(click_listener))
 {leaflet_map.off("click",click_listener);
@@ -427,63 +422,63 @@ if(cljs.core.truth_((function (){var or__3539__auto__ = pan_pending;if(cljs.core
 } else
 {return null;
 }
-});})(map__12610,map__12610__$1,app_state,selection))
+});})(map__12606,map__12606__$1,app_state,selection))
 ;
-clustermap.components.map.t12611.prototype.om$core$IDidMount$ = true;
-clustermap.components.map.t12611.prototype.om$core$IDidMount$did_mount$arity$1 = ((function (map__12610,map__12610__$1,app_state,selection){
+clustermap.components.map.t12607.prototype.om$core$IDidMount$ = true;
+clustermap.components.map.t12607.prototype.om$core$IDidMount$did_mount$arity$1 = ((function (map__12606,map__12606__$1,app_state,selection){
 return (function (this$){var self__ = this;
-var this$__$1 = this;var node = om.core.get_node.call(null,self__.owner);var map__12623 = clustermap.components.map.create_map.call(null,node);var map__12623__$1 = ((cljs.core.seq_QMARK_.call(null,map__12623))?cljs.core.apply.call(null,cljs.core.hash_map,map__12623):map__12623);var map = map__12623__$1;var path = cljs.core.get.call(null,map__12623__$1,new cljs.core.Keyword(null,"path","path",1017337751));var markers = cljs.core.get.call(null,map__12623__$1,new cljs.core.Keyword(null,"markers","markers",1853155051));var leaflet_map = cljs.core.get.call(null,map__12623__$1,new cljs.core.Keyword(null,"leaflet-map","leaflet-map",4353500414));om.core.set_state_BANG_.call(null,self__.owner,new cljs.core.Keyword(null,"map","map",1014012110),map);
+var this$__$1 = this;var node = om.core.get_node.call(null,self__.owner);var map__12619 = clustermap.components.map.create_map.call(null,node);var map__12619__$1 = ((cljs.core.seq_QMARK_.call(null,map__12619))?cljs.core.apply.call(null,cljs.core.hash_map,map__12619):map__12619);var map = map__12619__$1;var path = cljs.core.get.call(null,map__12619__$1,new cljs.core.Keyword(null,"path","path",1017337751));var markers = cljs.core.get.call(null,map__12619__$1,new cljs.core.Keyword(null,"markers","markers",1853155051));var leaflet_map = cljs.core.get.call(null,map__12619__$1,new cljs.core.Keyword(null,"leaflet-map","leaflet-map",4353500414));om.core.set_state_BANG_.call(null,self__.owner,new cljs.core.Keyword(null,"map","map",1014012110),map);
 om.core.set_state_BANG_.call(null,self__.owner,new cljs.core.Keyword(null,"path-highlights","path-highlights",2524998745),cljs.core.PersistentHashSet.EMPTY);
-leaflet_map.on("zoomend",((function (node,map__12623,map__12623__$1,map,path,markers,leaflet_map,this$__$1,map__12610,map__12610__$1,app_state,selection){
+leaflet_map.on("zoomend",((function (node,map__12619,map__12619__$1,map,path,markers,leaflet_map,this$__$1,map__12606,map__12606__$1,app_state,selection){
 return (function (e){return cljs.core.swap_BANG_.call(null,om.core.get_shared.call(null,self__.owner,new cljs.core.Keyword(null,"app-state","app-state",1424976215)),cljs.core.assoc,new cljs.core.Keyword(null,"zoom","zoom",1017648965),leaflet_map.getZoom());
-});})(node,map__12623,map__12623__$1,map,path,markers,leaflet_map,this$__$1,map__12610,map__12610__$1,app_state,selection))
+});})(node,map__12619,map__12619__$1,map,path,markers,leaflet_map,this$__$1,map__12606,map__12606__$1,app_state,selection))
 );
-leaflet_map.on("popupopen",((function (node,map__12623,map__12623__$1,map,path,markers,leaflet_map,this$__$1,map__12610,map__12610__$1,app_state,selection){
+leaflet_map.on("popupopen",((function (node,map__12619,map__12619__$1,map,path,markers,leaflet_map,this$__$1,map__12606,map__12606__$1,app_state,selection){
 return (function (e){var popup_el = e.popup._container;var marker_popup_location_list_cnt = jayq.core.$.call(null,popup_el).find(".map-marker-popup-location-list").length;if((marker_popup_location_list_cnt > 0))
 {om.core.set_state_BANG_.call(null,self__.owner,new cljs.core.Keyword(null,"popup-selected","popup-selected",4726192654),true);
 } else
 {}
-return jayq.core.$.call(null,popup_el).on("mousemove",((function (popup_el,marker_popup_location_list_cnt,node,map__12623,map__12623__$1,map,path,markers,leaflet_map,this$__$1,map__12610,map__12610__$1,app_state,selection){
+return jayq.core.$.call(null,popup_el).on("mousemove",((function (popup_el,marker_popup_location_list_cnt,node,map__12619,map__12619__$1,map,path,markers,leaflet_map,this$__$1,map__12606,map__12606__$1,app_state,selection){
 return (function (e__$1){e__$1.preventDefault();
 return false;
-});})(popup_el,marker_popup_location_list_cnt,node,map__12623,map__12623__$1,map,path,markers,leaflet_map,this$__$1,map__12610,map__12610__$1,app_state,selection))
+});})(popup_el,marker_popup_location_list_cnt,node,map__12619,map__12619__$1,map,path,markers,leaflet_map,this$__$1,map__12606,map__12606__$1,app_state,selection))
 );
-});})(node,map__12623,map__12623__$1,map,path,markers,leaflet_map,this$__$1,map__12610,map__12610__$1,app_state,selection))
+});})(node,map__12619,map__12619__$1,map,path,markers,leaflet_map,this$__$1,map__12606,map__12606__$1,app_state,selection))
 );
-leaflet_map.on("popupclose",((function (node,map__12623,map__12623__$1,map,path,markers,leaflet_map,this$__$1,map__12610,map__12610__$1,app_state,selection){
+leaflet_map.on("popupclose",((function (node,map__12619,map__12619__$1,map,path,markers,leaflet_map,this$__$1,map__12606,map__12606__$1,app_state,selection){
 return (function (e){return om.core.set_state_BANG_.call(null,self__.owner,new cljs.core.Keyword(null,"popup-selected","popup-selected",4726192654),null);
-});})(node,map__12623,map__12623__$1,map,path,markers,leaflet_map,this$__$1,map__12610,map__12610__$1,app_state,selection))
+});})(node,map__12619,map__12619__$1,map,path,markers,leaflet_map,this$__$1,map__12606,map__12606__$1,app_state,selection))
 );
-jayq.core.$.call(null,document).on("clustermap-change-view",((function (node,map__12623,map__12623__$1,map,path,markers,leaflet_map,this$__$1,map__12610,map__12610__$1,app_state,selection){
-return (function (e){var map__12624 = om.core.get_state.call(null,self__.owner);var map__12624__$1 = ((cljs.core.seq_QMARK_.call(null,map__12624))?cljs.core.apply.call(null,cljs.core.hash_map,map__12624):map__12624);var map__12625 = cljs.core.get.call(null,map__12624__$1,new cljs.core.Keyword(null,"map","map",1014012110));var map__12625__$1 = ((cljs.core.seq_QMARK_.call(null,map__12625))?cljs.core.apply.call(null,cljs.core.hash_map,map__12625):map__12625);var path_selections = cljs.core.get.call(null,map__12625__$1,new cljs.core.Keyword(null,"path-selections","path-selections",512369281));var paths = cljs.core.get.call(null,map__12625__$1,new cljs.core.Keyword(null,"paths","paths",1120343136));leaflet_map.invalidateSize();
+jayq.core.$.call(null,document).on("clustermap-change-view",((function (node,map__12619,map__12619__$1,map,path,markers,leaflet_map,this$__$1,map__12606,map__12606__$1,app_state,selection){
+return (function (e){var map__12620 = om.core.get_state.call(null,self__.owner);var map__12620__$1 = ((cljs.core.seq_QMARK_.call(null,map__12620))?cljs.core.apply.call(null,cljs.core.hash_map,map__12620):map__12620);var map__12621 = cljs.core.get.call(null,map__12620__$1,new cljs.core.Keyword(null,"map","map",1014012110));var map__12621__$1 = ((cljs.core.seq_QMARK_.call(null,map__12621))?cljs.core.apply.call(null,cljs.core.hash_map,map__12621):map__12621);var path_selections = cljs.core.get.call(null,map__12621__$1,new cljs.core.Keyword(null,"path-selections","path-selections",512369281));var paths = cljs.core.get.call(null,map__12621__$1,new cljs.core.Keyword(null,"paths","paths",1120343136));leaflet_map.invalidateSize();
 return clustermap.components.map.pan_to_selection.call(null,self__.owner,leaflet_map,paths,path_selections);
-});})(node,map__12623,map__12623__$1,map,path,markers,leaflet_map,this$__$1,map__12610,map__12610__$1,app_state,selection))
+});})(node,map__12619,map__12619__$1,map,path,markers,leaflet_map,this$__$1,map__12606,map__12606__$1,app_state,selection))
 );
 return om.core.update_BANG_.call(null,self__.app_state,cljs.core.assoc,new cljs.core.Keyword(null,"zoom","zoom",1017648965),leaflet_map.getZoom());
-});})(map__12610,map__12610__$1,app_state,selection))
+});})(map__12606,map__12606__$1,app_state,selection))
 ;
-clustermap.components.map.t12611.prototype.om$core$IRender$ = true;
-clustermap.components.map.t12611.prototype.om$core$IRender$render$arity$1 = ((function (map__12610,map__12610__$1,app_state,selection){
+clustermap.components.map.t12607.prototype.om$core$IRender$ = true;
+clustermap.components.map.t12607.prototype.om$core$IRender$render$arity$1 = ((function (map__12606,map__12606__$1,app_state,selection){
 return (function (this$){var self__ = this;
 var this$__$1 = this;return React.DOM.div({"className": "map", "ref": "map"});
-});})(map__12610,map__12610__$1,app_state,selection))
+});})(map__12606,map__12606__$1,app_state,selection))
 ;
-clustermap.components.map.t12611.prototype.cljs$core$IMeta$_meta$arity$1 = ((function (map__12610,map__12610__$1,app_state,selection){
-return (function (_12613){var self__ = this;
-var _12613__$1 = this;return self__.meta12612;
-});})(map__12610,map__12610__$1,app_state,selection))
+clustermap.components.map.t12607.prototype.cljs$core$IMeta$_meta$arity$1 = ((function (map__12606,map__12606__$1,app_state,selection){
+return (function (_12609){var self__ = this;
+var _12609__$1 = this;return self__.meta12608;
+});})(map__12606,map__12606__$1,app_state,selection))
 ;
-clustermap.components.map.t12611.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = ((function (map__12610,map__12610__$1,app_state,selection){
-return (function (_12613,meta12612__$1){var self__ = this;
-var _12613__$1 = this;return (new clustermap.components.map.t12611(self__.selection,self__.app_state,self__.map__12610,self__.owner,self__.p__12591,self__.map_component,meta12612__$1));
-});})(map__12610,map__12610__$1,app_state,selection))
+clustermap.components.map.t12607.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = ((function (map__12606,map__12606__$1,app_state,selection){
+return (function (_12609,meta12608__$1){var self__ = this;
+var _12609__$1 = this;return (new clustermap.components.map.t12607(self__.selection,self__.app_state,self__.map__12606,self__.owner,self__.p__12587,self__.map_component,meta12608__$1));
+});})(map__12606,map__12606__$1,app_state,selection))
 ;
-clustermap.components.map.__GT_t12611 = ((function (map__12610,map__12610__$1,app_state,selection){
-return (function __GT_t12611(selection__$1,app_state__$1,map__12610__$2,owner__$1,p__12591__$1,map_component__$1,meta12612){return (new clustermap.components.map.t12611(selection__$1,app_state__$1,map__12610__$2,owner__$1,p__12591__$1,map_component__$1,meta12612));
-});})(map__12610,map__12610__$1,app_state,selection))
+clustermap.components.map.__GT_t12607 = ((function (map__12606,map__12606__$1,app_state,selection){
+return (function __GT_t12607(selection__$1,app_state__$1,map__12606__$2,owner__$1,p__12587__$1,map_component__$1,meta12608){return (new clustermap.components.map.t12607(selection__$1,app_state__$1,map__12606__$2,owner__$1,p__12587__$1,map_component__$1,meta12608));
+});})(map__12606,map__12606__$1,app_state,selection))
 ;
 }
-return (new clustermap.components.map.t12611(selection,app_state,map__12610__$1,owner,p__12591,map_component,null));
+return (new clustermap.components.map.t12607(selection,app_state,map__12606__$1,owner,p__12587,map_component,null));
 });
 clustermap.components.map.mount = (function mount(app_state,elem_id,shared){return om.core.root.call(null,clustermap.components.map.map_component,app_state,new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"shared","shared",4405305303),cljs.core.merge.call(null,shared,new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"app-state","app-state",1424976215),app_state,new cljs.core.Keyword(null,"fetch-boundaryline-fn","fetch-boundaryline-fn",3464186934),cljs.core.partial.call(null,clustermap.boundarylines.get_or_fetch_best_boundaryline,app_state,new cljs.core.Keyword(null,"boundarylines","boundarylines",2397299847))], null)),new cljs.core.Keyword(null,"target","target",4427965699),document.getElementById(elem_id)], null));
 });

@@ -8,8 +8,8 @@
  "names":
  ["clustermap.rtree/rtree-index", "js-index", "rtree", "js/RTree",
   "keys", "js/Object.keys", "features", "js-feature-coll",
-  "cljs.core/clj->js", "_", "seq__24321", "cljs.core/seq",
-  "chunk__24322", "count__24323", "i__24324", "cljs.core/-nth",
+  "cljs.core/clj->js", "_", "seq__24305", "cljs.core/seq",
+  "chunk__24306", "count__24307", "i__24308", "cljs.core/-nth",
   "temp__4126__auto__", "cljs.core/chunked-seq?", "c__4295__auto__",
   "cljs.core/chunk-first", "cljs.core/chunk-rest", "cljs.core/count",
   "cljs.core/first", "cljs.core/next", "k", "obj", "geom", "feature",

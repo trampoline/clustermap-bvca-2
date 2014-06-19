@@ -6,5 +6,5 @@
  "mappings":
  ";AAAA;;AAEA,sCAAA,8BAAA,pEAAMA,8DACHC,MACD,IAAMC,UAAQ,iBAAAC,sBAAAA,eAAA,EAAA,CAAAA,YAAA,OAAA,KAAA,AAAAA,qBAAAA,eAAA,EAAA,CAAAA,gBAAA,OAAA,KAAA,AAAAA,qBAAAA,eAAA,EAAA,CAAAA,gBAAA,OAAA,KAAA,AAAAA,mBAAA,AAAAA,9MAAQC;KAAtB,AACE,oBAAM,iBAAAC,8BAAA,AAAA,oBAAAA,9BAAKC;CAAaJ;;CAAlBG;;;CAAN,AACE,UAAA,OAAA,VAACE,qBAAwBN;;CAD3B",
  "names":
- ["clustermap.ganalytics/send-pageview", "path", "ua-code", "G__24247",
+ ["clustermap.ganalytics/send-pageview", "path", "ua-code", "G__24231",
   "js/window", "and__3527__auto__", "js/window.ga", "js/ga"]}

@@ -9,5 +9,4 @@
 (defn reset-selection-button
   [path-fn]
   (html
-   [:a {href (path-fn nil nil)}
-    [:button.btn.btn-link.btn-reset {:type "reset"} "Reset to UK wide"]]))
+   [:a.btn.btn-link.btn-reset {href (path-fn nil nil)} "Reset to UK wide"]))

@@ -1,5 +1,6 @@
 (ns clustermap.routes
-  (:require [sablono.core :as html :refer-macros [html]]))
+  (:require [sablono.core :as html :refer-macros [html]]
+            [clojure.string :as str]))
 
 (def type-name-keys
   {:portfolio-company :name
@@ -43,3 +44,9 @@
   (html
    [:a {:href (path-for view-id type obj)}
     (name-for type obj)]))
+
+(defn path-for-view
+  [current-route-fn view-id]
+  (let [r (current-route-fn)
+        comps ["#" (name view-id) (:type r) (:id r)]]
+    (str/join "/" (filter identity comps))))

@@ -97,41 +97,42 @@
                   _ (if (not= selected-idx (:selected-idx state)) (om/set-state! owner :selected-idx selected-idx))]
               [:div {:class "search-results"}
                [:ul
+
+                ;; trick the sablono compiler into assigning react-ids
+                (filter identity [(when (not-empty idx-cons) [:li {:class "search-results-header"} "Constituencies"])])
                 (when (not-empty idx-cons)
-                  (into
-                   [:div [:li {:class "search-results-header"} "Constituencies"]]
-                   (for [[idx con] idx-cons]
-                     (om/build search-result-link con {:opts {:comm comm :path-fn path-fn}
-                                                       :state {:selected (= idx selected-idx)}
-                                                       :fn (fn [data] (assoc data
-                                                                        :type :constituency
-                                                                        :id (get data :boundaryline_id)
-                                                                        :uid (str "constituency:" (get data :boundaryline_id))))
-                                                       :key :uid})))
-                  )
-                (when (not-empty idx-pcs)
-                  (into
-                   [:div [:li {:class "search-results-header"} "Investor-backed companies"]]
-                   (for [[idx pc] idx-pcs]
-                     (om/build search-result-link pc {:opts {:comm comm :path-fn path-fn}
+                  (for [[idx con] idx-cons]
+                    (om/build search-result-link con {:opts {:comm comm :path-fn path-fn}
                                                       :state {:selected (= idx selected-idx)}
                                                       :fn (fn [data] (assoc data
-                                                                       :type :portfolio-company
-                                                                       :id (get data :company_no)
-                                                                       :uid (str "portfolio-company:" (get data :company_no))))
-                                                      :key :uid}))))
+                                                                       :type :constituency
+                                                                       :id (get data :boundaryline_id)
+                                                                       :uid (str "constituency-" (get data :boundaryline_id))))
+                                                      :key :uid})))
 
+                (filter identity [(when (not-empty idx-pcs) [:li {:class "search-results-header"} "Investor-backed companies"])])
+                (when (not-empty idx-pcs)
+                  (for [[idx pc] idx-pcs]
+                    (om/build search-result-link pc {:opts {:comm comm :path-fn path-fn}
+                                                     :state {:selected (= idx selected-idx)}
+                                                     :fn (fn [data] (assoc data
+                                                                      :type :portfolio-company
+                                                                      :id (get data :company_no)
+                                                                      :uid (str "portfolio-company-" (get data :company_no))))
+                                                     :key :uid})))
+
+                (filter identity [(when (not-empty idx-invs) [:li {:class "search-results-header"} "Investors"])])
                 (when (not-empty idx-invs)
-                  (into
-                   [:div [:li {:class "search-results-header"} "Investors"]]
-                   (for [[idx inv] idx-invs]
-                     (om/build search-result-link inv {:opts {:comm comm :path-fn path-fn}
-                                                       :state {:selected (= idx selected-idx)}
-                                                       :fn (fn [data] (assoc data
-                                                                        :type :investor-company
-                                                                        :id (get data :investor_company_uid)
-                                                                        :uid (str "investor-company:" (get data :investor_company_uid))))
-                                                       :key :uid}))))]]))])))))
+                  (for [[idx inv] idx-invs]
+                    (om/build search-result-link inv {:opts {:comm comm :path-fn path-fn}
+                                                      :state {:selected (= idx selected-idx)}
+                                                      :fn (fn [data] (assoc data
+                                                                       :type :investor-company
+                                                                       :id (get data :investor_company_uid)
+                                                                       :uid (str "investor-company-" (get data :investor_company_uid))))
+                                                      :key :uid})))
+                ]]))
+          ])))))
 
 (defn mount
   [app-state elem-id shared]

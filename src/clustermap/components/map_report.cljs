@@ -10,9 +10,8 @@
             [clustermap.components.reset-selection-button :as rsb]))
 
 (defn full-report-button
-  [comm]
-  (html [:button.btn {:type "button"
-                      :onClick (fn [e] (put! comm [:change-view "lists"]))}
+  [comm view-path-fn]
+  (html [:a.btn.btn-link {:href (view-path-fn :lists)}
          [:i.icon-lists-sm]
          "Full report"]))
 
@@ -23,12 +22,12 @@
    :const-count (some-> site-stats :constituency_count)})
 
 (defn all-portfolio-companies-summary-report
-  [site-stats comm]
+  [site-stats comm view-path-fn]
   (let [{:keys [pc-count ic-count const-count]} (type-counts site-stats)]
 
     (om/component
      (html [:div
-            [:header.secondary
+            [:div.header.secondary
              [:h2 "All investor-backed companies"]
              [:h3 "UK wide"]]
             [:ul
@@ -36,16 +35,15 @@
              [:li (fnum ic-count :default "-") [:small "Investors"]]
              [:li (fnum const-count :default "-") [:small (pluralize const-count "Constituency" "Constituencies")]]
              [:li (fmoney (some-> site-stats :turnover :total) :sf 2 :default "-") [:small "Total revenue"]]
-             [:li (fnum (some-> site-stats :employee_count :total) :dec 0 :default "-") [:small "Total employees"]]
-             ]
-            (full-report-button comm)]))))
+             [:li (fnum (some-> site-stats :employee_count :total) :dec 0 :default "-") [:small "Total employees"]]]
+            (full-report-button comm view-path-fn)]))))
 
 (defn portfolio-company-report
-  [portfolio-company site-stats comm path-fn]
+  [portfolio-company site-stats comm path-fn view-path-fn]
   (let [{:keys [pc-count ic-count const-count]} (type-counts site-stats)]
     (om/component
      (html [:div
-            [:header.secondary
+            [:div.header.secondary
              [:h2 "Investor-backed company"]
              [:h3 (:name portfolio-company)]
              (rsb/reset-selection-button path-fn)]
@@ -54,14 +52,14 @@
              [:li (fnum const-count) [:small (pluralize const-count "Constituency" "Constituencies")]]
              [:li (fmoney (some-> site-stats :turnover :total) :sf 2 :default "-") [:small "Total revenue"]]
              [:li (fnum (some-> site-stats :employee_count :total) :dec 0 :default "-") [:small "Total employees"]]]
-            (full-report-button comm)]))))
+            (full-report-button comm view-path-fn)]))))
 
 (defn investor-company-report
-  [investor-company site-stats comm path-fn]
+  [investor-company site-stats comm path-fn view-path-fn]
   (let [{:keys [pc-count ic-count const-count]} (type-counts site-stats)]
     (om/component
      (html [:div
-            [:header.secondary
+            [:div.header.secondary
              [:h2 "Investor"]
              [:h3 (:name investor-company)]
              (rsb/reset-selection-button path-fn)]
@@ -70,14 +68,14 @@
              [:li (fnum const-count) [:small (pluralize const-count "Constituency" "Constituencies")]]
              [:li (fmoney (some-> site-stats :turnover :total) :sf 2 :default "-") [:small "Total revenue"]]
              [:li (fnum (some-> site-stats :employee_count :total) :dec 0 :default "-") [:small "Total employees"]]]
-            (full-report-button comm)]))))
+            (full-report-button comm view-path-fn)]))))
 
 (defn constituency-report
-  [constituency site-stats comm path-fn]
+  [constituency site-stats comm path-fn view-path-fn]
   (let [{:keys [pc-count ic-count const-count]} (type-counts site-stats)]
     (om/component
      (html [:div
-            [:header.secondary
+            [:div.header.secondary
              [:h2 "Constituency"]
              [:h3 (:name constituency)
               [:br]
@@ -89,19 +87,19 @@
              [:li (fnum ic-count) [:small (pluralize ic-count "Investor")]]
              [:li (fmoney (some-> site-stats :turnover :total) :sf 2 :default "-") [:small "Total revenue"]]
              [:li (fnum (some-> site-stats :employee_count :total) :dec 0 :default "-") [:small "Total employees"]]]
-            (full-report-button comm)]))))
+            (full-report-button comm view-path-fn)]))))
 
 (defn map-report-component [data owner]
-  (let [{:keys [comm path-fn]} (om/get-shared owner)
+  (let [{:keys [comm path-fn view-path-fn]} (om/get-shared owner)
         path-fn (partial path-fn :map)
         type (get-in data [:selection :type])
         value (get-in data [:selection :value])
         site-stats (:selection-investment-stats data)]
     (condp == type
-        :portfolio-company (portfolio-company-report value site-stats comm path-fn)
-        :investor-company (investor-company-report value site-stats comm path-fn)
-        :constituency (constituency-report value site-stats comm path-fn)
-        (all-portfolio-companies-summary-report site-stats comm))))
+        :portfolio-company (portfolio-company-report value site-stats comm path-fn view-path-fn)
+        :investor-company (investor-company-report value site-stats comm path-fn view-path-fn)
+        :constituency (constituency-report value site-stats comm path-fn view-path-fn)
+        (all-portfolio-companies-summary-report site-stats comm view-path-fn))))
 
 (defn mount
   [app-state elem-id shared]

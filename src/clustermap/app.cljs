@@ -166,6 +166,9 @@
      :type type
      :id id}))
 
+(def change-view-path
+  (partial routes/path-for-view parse-route))
+
 (defn set-selection-route
   [[type id]]
   (let [{:keys [view]} (parse-route)]
@@ -240,7 +243,7 @@
   (let [comm (chan)
         path-fn routes/path-for
         link-fn routes/link-for
-        shared {:comm comm :path-fn path-fn :link-fn link-fn}]
+        shared {:comm comm :path-fn path-fn :link-fn link-fn :view-path-fn change-view-path}]
     (nav/init comm)
     (init-routes comm)
 

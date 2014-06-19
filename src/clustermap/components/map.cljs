@@ -66,7 +66,7 @@
          (map (fn [site]
                 ;; (.log js/console (clj->js site))
                 (hiccups/html
-                 [:a {:href (path-fn :map :portfolio-company site)} [:li (:name site)]]))))]))
+                 [:li [:a {:href (path-fn :map :portfolio-company site)} (:name site)]]))))]))
 
 (defn create-marker
   [path-fn leaflet-map location-sites]
@@ -243,8 +243,7 @@
         bl-name (some-> constituency .-properties .-compact_name) ]
     (hiccups/html
      [:a {:href (path-fn :map :constituency {:boundaryline_id bl-id :compact_name bl-name})}
-      [:p.map-marker-constituency-name
-       bl-name]])))
+      [:span.map-marker-constituency-name bl-name]])))
 
 (defn map-component
   "put the leaflet map as state in the om component"

@@ -2,6 +2,7 @@
   (:require-macros
    [cljs.core.async.macros :refer [go]])
   (:require
+   [clojure.string :as str]
    [goog.events :as events]
    [cljs.core.async :refer [chan <! put! sliding-buffer]]
    [secretary.core :as secretary :include-macros true :refer [defroute]]
@@ -161,7 +162,9 @@
 (defn parse-route
   []
   (let [fragment (.getToken history)
-        [_ view type id] (re-matches #"/([^/]+)(?:/([^/]+)/(.+))?$" fragment)]
+        [_ view type id] (re-matches #"/([^/]+)(?:/([^/]+)/(.+))?$" fragment)
+        type (when (> (some-> type str/trim count) 0) (str/trim type))
+        id (when (> (some-> id str/trim count) 0) (str/trim id))]
     {:view view
      :type type
      :id id}))

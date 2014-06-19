@@ -60,16 +60,14 @@ goog.net.xpc.IframePollingTransport = function(channel, opt_domHelper) {
    * @type {string}
    * @private
    */
-  this.sendUri_ =
-      this.channel_.getConfig()[goog.net.xpc.CfgFields.PEER_POLL_URI];
+  this.sendUri_ = this.channel_.cfg_[goog.net.xpc.CfgFields.PEER_POLL_URI];
 
   /**
    * The URI which is polled for incoming messages.
    * @type {string}
    * @private
    */
-  this.rcvUri_ =
-      this.channel_.getConfig()[goog.net.xpc.CfgFields.LOCAL_POLL_URI];
+  this.rcvUri_ = this.channel_.cfg_[goog.net.xpc.CfgFields.LOCAL_POLL_URI];
 
   /**
    * The queue to hold messages which can't be sent immediately.
@@ -176,7 +174,7 @@ goog.net.xpc.IframePollingTransport.prototype.isChannelAvailable = function() {
 /**
  * Safely retrieves the frames from the peer window. If an error is thrown
  * (e.g. the window is closing) an empty frame object is returned.
- * @return {!Object.<!Window>} The frames from the peer window.
+ * @return {!Object.<!Window>}
  * @private
  */
 goog.net.xpc.IframePollingTransport.prototype.getPeerFrames_ = function() {
@@ -195,8 +193,7 @@ goog.net.xpc.IframePollingTransport.prototype.getPeerFrames_ = function() {
 /**
  * Safely retrieves the peer frame with the specified name.
  * @param {string} frameName The name of the peer frame to retrieve.
- * @return {Window} The peer frame with the specified name.
- * @private
+ * @return {Window}
  */
 goog.net.xpc.IframePollingTransport.prototype.getPeerFrame_ = function(
     frameName) {
@@ -477,7 +474,7 @@ goog.net.xpc.IframePollingTransport.prototype.checkIfConnected_ = function() {
 
       for (var i = 0, m; i < this.deliveryQueue_.length; i++) {
         m = this.deliveryQueue_[i];
-        this.channel_.xpcDeliver(m.service, m.payload);
+        this.channel_.deliver_(m.service, m.payload);
       }
       delete this.deliveryQueue_;
     }
@@ -622,7 +619,7 @@ goog.net.xpc.IframePollingTransport.prototype.deliverPayload_ = function(s) {
         push({service: service, payload: payload});
     goog.net.xpc.logger.finest('queued delivery');
   } else {
-    this.channel_.xpcDeliver(service, payload);
+    this.channel_.deliver_(service, payload);
   }
 };
 
@@ -725,25 +722,23 @@ goog.net.xpc.IframePollingTransport.TIME_SHORT_POLL_AFTER_ACTIVITY_ =
  * @private
  */
 goog.net.xpc.IframePollingTransport.receive_ = function() {
-  var receivers = goog.net.xpc.IframePollingTransport.receivers_;
-  var receiver;
   var rcvd = false;
-
   /** @preserveTry */
   try {
-    for (var i = 0; receiver = receivers[i]; i++) {
-      rcvd = rcvd || receiver.receive();
+    for (var i = 0, l = goog.net.xpc.IframePollingTransport.receivers_.length;
+         i < l; i++) {
+      rcvd = rcvd ||
+          goog.net.xpc.IframePollingTransport.receivers_[i].receive();
     }
   } catch (e) {
     goog.net.xpc.logger.info('receive_() failed: ' + e);
-
     // Notify the channel that the transport had an error.
-    receiver.transport_.channel_.notifyTransportError();
-
-    // notifyTransportError() closes the channel and disposes the transport.
+    goog.net.xpc.IframePollingTransport.receivers_[i].
+        transport_.channel_.notifyTransportError_();
+    // notifyTransportError_() closes the channel and dispoases the transport.
     // If there are no other channels present, this.receivers_ will now be empty
-    // and there is no need to keep polling.
-    if (!receivers.length) {
+    // and there is not need to keep polling.
+    if (!goog.net.xpc.IframePollingTransport.receivers_.length) {
       return;
     }
   }
@@ -861,8 +856,7 @@ goog.net.xpc.IframePollingTransport.Sender.prototype.send = function(payload) {
  * goog.net.xpc.IframePollingTransport.Receiver
  *
  * @constructor
- * @param {goog.net.xpc.IframePollingTransport} transport The transport to
- *     receive from.
+ * @param {goog.net.xpc.Transport} transport The transport to receive from.
  * @param {Object} windowObj The window-object to poll for location-changes.
  * @param {Function} callback The callback-function to be called when
  *     location has changed.
@@ -870,11 +864,7 @@ goog.net.xpc.IframePollingTransport.Sender.prototype.send = function(payload) {
 goog.net.xpc.IframePollingTransport.Receiver = function(transport,
                                                         windowObj,
                                                         callback) {
-  /**
-   * The transport to receive from.
-   * @type {goog.net.xpc.IframePollingTransport}
-   * @private
-   */
+
   this.transport_ = transport;
   this.rcvFrame_ = windowObj;
 

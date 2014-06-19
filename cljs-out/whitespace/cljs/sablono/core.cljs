@@ -1,5 +1,5 @@
 (ns sablono.core
-         (:require-macros [sablono.core :refer [defelem]])
+         (:require-macros [sablono.core :refer [defelem gen-input-fields]])
   (:require [clojure.string :refer [upper-case]]
             [clojure.walk :refer [postwalk-replace]]
             [sablono.util :refer [as-str to-uri]]
@@ -64,9 +64,7 @@
 (defn render
   "Render the React `component` as an HTML string."
   [component]
-  (let [html (atom nil)]
-    (.renderComponentToString js/React component #(reset! html %))
-    (deref html)))
+  (.renderComponentToString js/React component))
 
 (defn include-css
   "Include a list of external stylesheet files."
@@ -85,7 +83,7 @@
       
 (defn include-react
   "Include Facebook's React JavaScript library."
-  [] (include-js "http://fb.me/react-0.8.0.js"))
+  [] (include-js "http://fb.me/react-0.9.0.js"))
 
 (defelem link-to
   "Wraps some content in a HTML hyperlink with the supplied URL."
@@ -135,7 +133,7 @@
   (reduce #(str %1 "-" %2)
           (conj *group* (as-str name))))
 
-(defn- input-field
+(defn- input-field*
   "Creates a new <input> element."
   [type name value]
   [:input {:type type
@@ -143,25 +141,41 @@
            :id (make-id name)
            :value value}])
 
-(defelem hidden-field
-  "Creates a hidden input field."
-  ([name] (hidden-field name nil))
-  ([name value] (input-field "hidden" name value)))
+     
+                                  
+                                                  
+                                                                
+                      
+                 
+                                     
+                                                                                      
 
-(defelem text-field
-  "Creates a new text input field."
-  ([name] (text-field name nil))
-  ([name value] (input-field "text" name value)))
+                          
+                               
+    
+                      
+                     
+                         
+                               
+                      
+                     
+                       
+                      
+                       
+                         
+                      
+                       
+                    
+                     
+                     
+                    
+                       
+        
+                                        
 
-(defelem password-field
-  "Creates a new password field."
-  ([name] (password-field name nil))
-  ([name value] (input-field "password" name value)))
+(gen-input-fields)
 
-(defelem email-field
-  "Creates a new email input field."
-  ([name] (email-field name nil))
-  ([name value] (input-field "email" name value)))
+(def file-upload file-field)
 
 (defelem check-box
   "Creates a check box."
@@ -191,10 +205,11 @@
   ([coll selected]
      (for [x coll]
        (if (sequential? x)
-         (let [[text val] x]
+         (let [[text val disabled?] x
+               disabled? (boolean disabled?)]
            (if (sequential? val)
              [:optgroup {:label text} (select-options val selected)]
-             [:option {:value val :selected (= val selected)} text]))
+             [:option {:value val :selected (= val selected) :disabled disabled?} text]))
          [:option {:selected (= x selected)} x]))))
 
 (defelem drop-down
@@ -212,11 +227,6 @@
       {:name (make-name name)
        :id (make-id name)
        :value value}]))
-
-(defelem file-upload
-  "Creates a file upload input."
-  [name]
-  (input-field "file" name nil))
 
 (defelem label
   "Creates a label for an input field with the supplied name."

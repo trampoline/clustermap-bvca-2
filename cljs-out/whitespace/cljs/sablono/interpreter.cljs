@@ -8,10 +8,11 @@
 ;; Taken from om, to hack around form elements.
 
       
-(defn wrap-form-element [ctor]
+(defn wrap-form-element [ctor display-name]
   (js/React.createClass
    #js
-   {:getInitialState
+   {:displayName display-name
+    :getInitialState
     (fn []
       (this-as this #js {:value (aget (.-props this) "value")}))
     :onChange
@@ -35,11 +36,9 @@
                    :onChange (aget this "onChange")
                    :children (aget (.-props this) "children")}))))}))
 
-      
-(def input (wrap-form-element js/React.DOM.input))
-
-      
-(def textarea (wrap-form-element js/React.DOM.textarea))
+       (def input (wrap-form-element js/React.DOM.input "Input"))
+       (def option (wrap-form-element js/React.DOM.option "Option"))
+       (def textarea (wrap-form-element js/React.DOM.textarea "Textarea"))
 
       
 (defn dom-fn [tag]
@@ -52,8 +51,10 @@
       
 (defn attributes [attrs]
   (let [attrs (clj->js (html-to-dom-attrs attrs))
-        class (join " " (flatten (seq (.-className attrs))))]
-    (if-not (blank? class)
+        class (.-className attrs)
+        class (if (array? class) (join " " class) class)]
+    (if (blank? class)
+      (js-delete attrs "className")
       (set! (.-className attrs) class))
     attrs))
 
@@ -66,8 +67,7 @@
      (attributes attrs)
      (cond
       (and (sequential? content)
-           (string? (first content))
-           (empty? (rest content)))
+           (= 1 (count content)))
       (interpret (first content))
       content
       (interpret content)

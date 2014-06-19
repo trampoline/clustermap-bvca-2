@@ -23,8 +23,9 @@ goog.provide('goog.string.StringBuffer');
 /**
  * Utility class to facilitate string concatenation.
  *
- * @param {*=} opt_a1 Optional first initial item to append.
- * @param {...*} var_args Other initial items to
+ * @param {Object|number|string|boolean=} opt_a1 Optional first initial item
+ *     to append.
+ * @param {...Object|number|string|boolean} var_args Other initial items to
  *     append, e.g., new goog.string.StringBuffer('foo', 'bar').
  * @constructor
  */
@@ -47,7 +48,7 @@ goog.string.StringBuffer.prototype.buffer_ = '';
  * Sets the contents of the string buffer object, replacing what's currently
  * there.
  *
- * @param {*} s String to set.
+ * @param {Object|number|string|boolean} s String to set.
  */
 goog.string.StringBuffer.prototype.set = function(s) {
   this.buffer_ = '' + s;
@@ -59,9 +60,9 @@ goog.string.StringBuffer.prototype.set = function(s) {
  *
  * Calling this with null, undefined, or empty arguments is an error.
  *
- * @param {*} a1 Required first string.
- * @param {*=} opt_a2 Optional second string.
- * @param {...*} var_args Other items to append,
+ * @param {Object|number|string|boolean} a1 Required first string.
+ * @param {Object|number|string|boolean=} opt_a2 Optional second string.
+ * @param {...Object|number|string|boolean} var_args Other items to append,
  *     e.g., sb.append('foo', 'bar', 'baz').
  * @return {goog.string.StringBuffer} This same StringBuffer object.
  * @suppress {duplicate}
@@ -101,3 +102,4 @@ goog.string.StringBuffer.prototype.getLength = function() {
 goog.string.StringBuffer.prototype.toString = function() {
   return this.buffer_;
 };
+

@@ -1,4 +1,4 @@
-// Compiled by ClojureScript 0.0-2173
+// Compiled by ClojureScript 0.0-2227
 goog.provide('cljs.core.async.impl.dispatch');
 goog.require('cljs.core');
 goog.require('cljs.core.async.impl.buffers');
@@ -10,14 +10,14 @@ cljs.core.async.impl.dispatch.queued_QMARK_ = false;
 cljs.core.async.impl.dispatch.TASK_BATCH_SIZE = 1024;
 cljs.core.async.impl.dispatch.process_messages = (function process_messages(){cljs.core.async.impl.dispatch.running_QMARK_ = true;
 cljs.core.async.impl.dispatch.queued_QMARK_ = false;
-var count_38410 = 0;while(true){
-var m_38411 = cljs.core.async.impl.dispatch.tasks.pop();if((m_38411 == null))
+var count_39189 = 0;while(true){
+var m_39190 = cljs.core.async.impl.dispatch.tasks.pop();if((m_39190 == null))
 {} else
-{(m_38411.cljs$core$IFn$_invoke$arity$0 ? m_38411.cljs$core$IFn$_invoke$arity$0() : m_38411.call(null));
-if((count_38410 < cljs.core.async.impl.dispatch.TASK_BATCH_SIZE))
+{(m_39190.cljs$core$IFn$_invoke$arity$0 ? m_39190.cljs$core$IFn$_invoke$arity$0() : m_39190.call(null));
+if((count_39189 < cljs.core.async.impl.dispatch.TASK_BATCH_SIZE))
 {{
-var G__38412 = (count_38410 + 1);
-count_38410 = G__38412;
+var G__39191 = (count_39189 + 1);
+count_39189 = G__39191;
 continue;
 }
 } else
@@ -38,10 +38,10 @@ cljs.core.async.impl.dispatch.message_channel.port1.onmessage = (function (msg){
 });
 } else
 {}
-cljs.core.async.impl.dispatch.queue_dispatcher = (function queue_dispatcher(){if(cljs.core.truth_((function (){var and__3429__auto__ = cljs.core.async.impl.dispatch.queued_QMARK_;if(and__3429__auto__)
+cljs.core.async.impl.dispatch.queue_dispatcher = (function queue_dispatcher(){if(cljs.core.truth_((function (){var and__3527__auto__ = cljs.core.async.impl.dispatch.queued_QMARK_;if(and__3527__auto__)
 {return cljs.core.async.impl.dispatch.running_QMARK_;
 } else
-{return and__3429__auto__;
+{return and__3527__auto__;
 }
 })()))
 {return null;
@@ -53,7 +53,7 @@ if(typeof MessageChannel !== 'undefined')
 {if(typeof setImmediate !== 'undefined')
 {return setImmediate(cljs.core.async.impl.dispatch.process_messages);
 } else
-{if(cljs.core.constant$keyword$544)
+{if(cljs.core.constant$keyword$578)
 {return setTimeout(cljs.core.async.impl.dispatch.process_messages,0);
 } else
 {return null;

@@ -1,4 +1,4 @@
-// Compiled by ClojureScript 0.0-2173
+// Compiled by ClojureScript 0.0-2227
 goog.provide('clustermap.core');
 goog.require('cljs.core');
 goog.require('clustermap.app');

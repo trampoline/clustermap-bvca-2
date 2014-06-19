@@ -1,20 +1,20 @@
-// Compiled by ClojureScript 0.0-2173
+// Compiled by ClojureScript 0.0-2227
 goog.provide('clustermap.routes');
 goog.require('cljs.core');
 goog.require('sablono.core');
 goog.require('sablono.core');
-clustermap.routes.type_name_keys = new cljs.core.PersistentArrayMap(null, 3, [cljs.core.constant$keyword$633,cljs.core.constant$keyword$598,cljs.core.constant$keyword$634,cljs.core.constant$keyword$598,cljs.core.constant$keyword$635,cljs.core.constant$keyword$660], null);
+clustermap.routes.type_name_keys = new cljs.core.PersistentArrayMap(null, 3, [cljs.core.constant$keyword$698,cljs.core.constant$keyword$643,cljs.core.constant$keyword$699,cljs.core.constant$keyword$643,cljs.core.constant$keyword$701,cljs.core.constant$keyword$616], null);
 clustermap.routes.name_for = (function name_for(type,obj){return cljs.core.get.cljs$core$IFn$_invoke$arity$2(obj,cljs.core.get.cljs$core$IFn$_invoke$arity$2(clustermap.routes.type_name_keys,type));
 });
-clustermap.routes.portfolio_company_path = (function portfolio_company_path(view_id,obj){return [cljs.core.str("#/"),cljs.core.str(cljs.core.name(view_id)),cljs.core.str("/portfolio-company/"),cljs.core.str(cljs.core.constant$keyword$696.cljs$core$IFn$_invoke$arity$1(obj))].join('');
+clustermap.routes.portfolio_company_path = (function portfolio_company_path(view_id,obj){return ("#/"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(cljs.core.name(view_id))+"/portfolio-company/"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(cljs.core.constant$keyword$710.cljs$core$IFn$_invoke$arity$1(obj)));
 });
-clustermap.routes.investor_company_path = (function investor_company_path(view_id,obj){return [cljs.core.str("#/"),cljs.core.str(cljs.core.name(view_id)),cljs.core.str("/investor-company/"),cljs.core.str(cljs.core.constant$keyword$657.cljs$core$IFn$_invoke$arity$1(obj))].join('');
+clustermap.routes.investor_company_path = (function investor_company_path(view_id,obj){return ("#/"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(cljs.core.name(view_id))+"/investor-company/"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(cljs.core.constant$keyword$713.cljs$core$IFn$_invoke$arity$1(obj)));
 });
-clustermap.routes.constituency_path = (function constituency_path(view_id,obj){return [cljs.core.str("#/"),cljs.core.str(cljs.core.name(view_id)),cljs.core.str("/constituency/"),cljs.core.str(cljs.core.constant$keyword$659.cljs$core$IFn$_invoke$arity$1(obj))].join('');
+clustermap.routes.constituency_path = (function constituency_path(view_id,obj){return ("#/"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(cljs.core.name(view_id))+"/constituency/"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(cljs.core.constant$keyword$615.cljs$core$IFn$_invoke$arity$1(obj)));
 });
-clustermap.routes.no_selection_path = (function no_selection_path(view_id,_){return [cljs.core.str("#/"),cljs.core.str(cljs.core.name(view_id))].join('');
+clustermap.routes.no_selection_path = (function no_selection_path(view_id,_){return ("#/"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(cljs.core.name(view_id)));
 });
-clustermap.routes.type_paths = new cljs.core.PersistentArrayMap(null, 4, [cljs.core.constant$keyword$633,clustermap.routes.portfolio_company_path,cljs.core.constant$keyword$634,clustermap.routes.investor_company_path,cljs.core.constant$keyword$635,clustermap.routes.constituency_path,null,clustermap.routes.no_selection_path], null);
+clustermap.routes.type_paths = new cljs.core.PersistentArrayMap(null, 4, [cljs.core.constant$keyword$698,clustermap.routes.portfolio_company_path,cljs.core.constant$keyword$699,clustermap.routes.investor_company_path,cljs.core.constant$keyword$701,clustermap.routes.constituency_path,null,clustermap.routes.no_selection_path], null);
 clustermap.routes.path_for = (function path_for(view_id,type,obj){return cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.get.cljs$core$IFn$_invoke$arity$2(clustermap.routes.type_paths,type),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [view_id,obj], null));
 });
 clustermap.routes.link_for = (function link_for(view_id,type,obj){return React.DOM.a({"href": clustermap.routes.path_for(view_id,type,obj)},sablono.interpreter.interpret(clustermap.routes.name_for(type,obj)));

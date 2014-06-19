@@ -1,31 +1,31 @@
-// Compiled by ClojureScript 0.0-2173
+// Compiled by ClojureScript 0.0-2227
 goog.provide('clustermap.formats.string');
 goog.require('cljs.core');
 /**
 * @param {...*} var_args
 */
 clustermap.formats.string.pluralize = (function() { 
-var pluralize__delegate = function (n,word,p__23738){var vec__23740 = p__23738;var irreg = cljs.core.nth.call(null,vec__23740,0,null);if((n === 1))
+var pluralize__delegate = function (n,word,p__24240){var vec__24242 = p__24240;var irreg = cljs.core.nth.call(null,vec__24242,0,null);if((n === 1))
 {return word;
 } else
-{var or__3441__auto__ = irreg;if(cljs.core.truth_(or__3441__auto__))
-{return or__3441__auto__;
+{var or__3539__auto__ = irreg;if(cljs.core.truth_(or__3539__auto__))
+{return or__3539__auto__;
 } else
-{return [cljs.core.str(word),cljs.core.str("s")].join('');
+{return (''+cljs.core.str.cljs$core$IFn$_invoke$arity$1(word)+"s");
 }
 }
 };
 var pluralize = function (n,word,var_args){
-var p__23738 = null;if (arguments.length > 2) {
-  p__23738 = cljs.core.array_seq(Array.prototype.slice.call(arguments, 2),0);} 
-return pluralize__delegate.call(this,n,word,p__23738);};
+var p__24240 = null;if (arguments.length > 2) {
+  p__24240 = cljs.core.array_seq(Array.prototype.slice.call(arguments, 2),0);} 
+return pluralize__delegate.call(this,n,word,p__24240);};
 pluralize.cljs$lang$maxFixedArity = 2;
-pluralize.cljs$lang$applyTo = (function (arglist__23741){
-var n = cljs.core.first(arglist__23741);
-arglist__23741 = cljs.core.next(arglist__23741);
-var word = cljs.core.first(arglist__23741);
-var p__23738 = cljs.core.rest(arglist__23741);
-return pluralize__delegate(n,word,p__23738);
+pluralize.cljs$lang$applyTo = (function (arglist__24243){
+var n = cljs.core.first(arglist__24243);
+arglist__24243 = cljs.core.next(arglist__24243);
+var word = cljs.core.first(arglist__24243);
+var p__24240 = cljs.core.rest(arglist__24243);
+return pluralize__delegate(n,word,p__24240);
 });
 pluralize.cljs$core$IFn$_invoke$arity$variadic = pluralize__delegate;
 return pluralize;

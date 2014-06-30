@@ -16,7 +16,7 @@ clojure.browser.repl.repl_print = (function repl_print(data){var temp__4124__aut
 * Process a single block of JavaScript received from the server
 */
 clojure.browser.repl.evaluate_javascript = (function evaluate_javascript(conn,block){var result = (function (){try{return new cljs.core.PersistentArrayMap(null, 2, [cljs.core.constant$keyword$853,cljs.core.constant$keyword$730,cljs.core.constant$keyword$585,(''+cljs.core.str.cljs$core$IFn$_invoke$arity$1(eval(block)))], null);
-}catch (e40099){var e = e40099;return new cljs.core.PersistentArrayMap(null, 3, [cljs.core.constant$keyword$853,cljs.core.constant$keyword$855,cljs.core.constant$keyword$585,cljs.core.pr_str.cljs$core$IFn$_invoke$arity$variadic(cljs.core.array_seq([e], 0)),cljs.core.constant$keyword$854,(cljs.core.truth_(e.hasOwnProperty("stack"))?e.stack:"No stacktrace available.")], null);
+}catch (e40101){var e = e40101;return new cljs.core.PersistentArrayMap(null, 3, [cljs.core.constant$keyword$853,cljs.core.constant$keyword$855,cljs.core.constant$keyword$585,cljs.core.pr_str.cljs$core$IFn$_invoke$arity$variadic(cljs.core.array_seq([e], 0)),cljs.core.constant$keyword$854,(cljs.core.truth_(e.hasOwnProperty("stack"))?e.stack:"No stacktrace available.")], null);
 }})();return cljs.core.pr_str.cljs$core$IFn$_invoke$arity$variadic(cljs.core.array_seq([result], 0));
 });
 clojure.browser.repl.send_result = (function send_result(connection,url,data){return clojure.browser.net.transmit.cljs$core$IFn$_invoke$arity$6(connection,url,"POST",data,null,0);

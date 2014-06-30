@@ -7,45 +7,45 @@ goog.require('cljs.core');
 * first put each geojson geometry into a geojson featurecollection, along
 * with properties
 */
-clustermap.rtree.rtree_index = (function rtree_index(js_index){var rtree = (new RTree(10));var keys = Object.keys(js_index);var features = [];var js_feature_coll = cljs.core.clj__GT_js.call(null,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"type","type",1017479852),"FeatureCollection"], null));var _ = (js_feature_coll["features"] = features);var seq__46557_46561 = cljs.core.seq.call(null,keys);var chunk__46558_46562 = null;var count__46559_46563 = 0;var i__46560_46564 = 0;while(true){
-if((i__46560_46564 < count__46559_46563))
-{var k_46565 = cljs.core._nth.call(null,chunk__46558_46562,i__46560_46564);var obj_46566 = (js_index[k_46565]);var geom_46567 = (obj_46566["geojson"]);var feature_46568 = cljs.core.clj__GT_js.call(null,new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"type","type",1017479852),"Feature",new cljs.core.Keyword(null,"properties","properties",4382818469),new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"id","id",1013907597),(obj_46566["id"]),new cljs.core.Keyword(null,"boundaryline_id","boundaryline_id",3312170318),(obj_46566["id"]),new cljs.core.Keyword(null,"compact_name","compact_name",1128032665),(obj_46566["compact_name"])], null)], null));var __46569__$1 = (feature_46568["geometry"] = geom_46567);features.push(feature_46568);
+clustermap.rtree.rtree_index = (function rtree_index(js_index){var rtree = (new RTree(10));var keys = Object.keys(js_index);var features = [];var js_feature_coll = cljs.core.clj__GT_js.call(null,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"type","type",1017479852),"FeatureCollection"], null));var _ = (js_feature_coll["features"] = features);var seq__13181_13185 = cljs.core.seq.call(null,keys);var chunk__13182_13186 = null;var count__13183_13187 = 0;var i__13184_13188 = 0;while(true){
+if((i__13184_13188 < count__13183_13187))
+{var k_13189 = cljs.core._nth.call(null,chunk__13182_13186,i__13184_13188);var obj_13190 = (js_index[k_13189]);var geom_13191 = (obj_13190["geojson"]);var feature_13192 = cljs.core.clj__GT_js.call(null,new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"type","type",1017479852),"Feature",new cljs.core.Keyword(null,"properties","properties",4382818469),new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"id","id",1013907597),(obj_13190["id"]),new cljs.core.Keyword(null,"boundaryline_id","boundaryline_id",3312170318),(obj_13190["id"]),new cljs.core.Keyword(null,"compact_name","compact_name",1128032665),(obj_13190["compact_name"])], null)], null));var __13193__$1 = (feature_13192["geometry"] = geom_13191);features.push(feature_13192);
 {
-var G__46570 = seq__46557_46561;
-var G__46571 = chunk__46558_46562;
-var G__46572 = count__46559_46563;
-var G__46573 = (i__46560_46564 + 1);
-seq__46557_46561 = G__46570;
-chunk__46558_46562 = G__46571;
-count__46559_46563 = G__46572;
-i__46560_46564 = G__46573;
+var G__13194 = seq__13181_13185;
+var G__13195 = chunk__13182_13186;
+var G__13196 = count__13183_13187;
+var G__13197 = (i__13184_13188 + 1);
+seq__13181_13185 = G__13194;
+chunk__13182_13186 = G__13195;
+count__13183_13187 = G__13196;
+i__13184_13188 = G__13197;
 continue;
 }
 } else
-{var temp__4126__auto___46574 = cljs.core.seq.call(null,seq__46557_46561);if(temp__4126__auto___46574)
-{var seq__46557_46575__$1 = temp__4126__auto___46574;if(cljs.core.chunked_seq_QMARK_.call(null,seq__46557_46575__$1))
-{var c__4295__auto___46576 = cljs.core.chunk_first.call(null,seq__46557_46575__$1);{
-var G__46577 = cljs.core.chunk_rest.call(null,seq__46557_46575__$1);
-var G__46578 = c__4295__auto___46576;
-var G__46579 = cljs.core.count.call(null,c__4295__auto___46576);
-var G__46580 = 0;
-seq__46557_46561 = G__46577;
-chunk__46558_46562 = G__46578;
-count__46559_46563 = G__46579;
-i__46560_46564 = G__46580;
+{var temp__4126__auto___13198 = cljs.core.seq.call(null,seq__13181_13185);if(temp__4126__auto___13198)
+{var seq__13181_13199__$1 = temp__4126__auto___13198;if(cljs.core.chunked_seq_QMARK_.call(null,seq__13181_13199__$1))
+{var c__4297__auto___13200 = cljs.core.chunk_first.call(null,seq__13181_13199__$1);{
+var G__13201 = cljs.core.chunk_rest.call(null,seq__13181_13199__$1);
+var G__13202 = c__4297__auto___13200;
+var G__13203 = cljs.core.count.call(null,c__4297__auto___13200);
+var G__13204 = 0;
+seq__13181_13185 = G__13201;
+chunk__13182_13186 = G__13202;
+count__13183_13187 = G__13203;
+i__13184_13188 = G__13204;
 continue;
 }
 } else
-{var k_46581 = cljs.core.first.call(null,seq__46557_46575__$1);var obj_46582 = (js_index[k_46581]);var geom_46583 = (obj_46582["geojson"]);var feature_46584 = cljs.core.clj__GT_js.call(null,new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"type","type",1017479852),"Feature",new cljs.core.Keyword(null,"properties","properties",4382818469),new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"id","id",1013907597),(obj_46582["id"]),new cljs.core.Keyword(null,"boundaryline_id","boundaryline_id",3312170318),(obj_46582["id"]),new cljs.core.Keyword(null,"compact_name","compact_name",1128032665),(obj_46582["compact_name"])], null)], null));var __46585__$1 = (feature_46584["geometry"] = geom_46583);features.push(feature_46584);
+{var k_13205 = cljs.core.first.call(null,seq__13181_13199__$1);var obj_13206 = (js_index[k_13205]);var geom_13207 = (obj_13206["geojson"]);var feature_13208 = cljs.core.clj__GT_js.call(null,new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"type","type",1017479852),"Feature",new cljs.core.Keyword(null,"properties","properties",4382818469),new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"id","id",1013907597),(obj_13206["id"]),new cljs.core.Keyword(null,"boundaryline_id","boundaryline_id",3312170318),(obj_13206["id"]),new cljs.core.Keyword(null,"compact_name","compact_name",1128032665),(obj_13206["compact_name"])], null)], null));var __13209__$1 = (feature_13208["geometry"] = geom_13207);features.push(feature_13208);
 {
-var G__46586 = cljs.core.next.call(null,seq__46557_46575__$1);
-var G__46587 = null;
-var G__46588 = 0;
-var G__46589 = 0;
-seq__46557_46561 = G__46586;
-chunk__46558_46562 = G__46587;
-count__46559_46563 = G__46588;
-i__46560_46564 = G__46589;
+var G__13210 = cljs.core.next.call(null,seq__13181_13199__$1);
+var G__13211 = null;
+var G__13212 = 0;
+var G__13213 = 0;
+seq__13181_13185 = G__13210;
+chunk__13182_13186 = G__13211;
+count__13183_13187 = G__13212;
+i__13184_13188 = G__13213;
 continue;
 }
 }

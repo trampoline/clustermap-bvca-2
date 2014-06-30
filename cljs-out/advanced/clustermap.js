@@ -1666,8 +1666,8 @@ var id = function vd(b, c) {
       this.Ug = g;
       this.s = 0;
       this.j = 393217;
-    }, gb.S = !0, gb.R = "cljs.core/t35648", gb.W = function(b, c) {
-      return sc(c, "cljs.core/t35648");
+    }, gb.S = !0, gb.R = "cljs.core/t35650", gb.W = function(b, c) {
+      return sc(c, "cljs.core/t35650");
     }, gb.prototype.call = function() {
       function b(d, g) {
         d = this;
@@ -8096,8 +8096,8 @@ function Mn(a) {
     this.Xg = e;
     this.s = 0;
     this.j = 425984;
-  }, Nn.S = !0, Nn.R = "cljs.core.async.impl.channels/t39171", Nn.W = function(b, d) {
-    return sc(d, "cljs.core.async.impl.channels/t39171");
+  }, Nn.S = !0, Nn.R = "cljs.core.async.impl.channels/t39173", Nn.W = function(b, d) {
+    return sc(d, "cljs.core.async.impl.channels/t39173");
   }, Nn.prototype.Pb = function() {
     return this.ta;
   }, Nn.prototype.B = function() {
@@ -8196,8 +8196,8 @@ var Tn, Vn = function Un(b) {
     this.Wg = e;
     this.s = 0;
     this.j = 393216;
-  }, Tn.S = !0, Tn.R = "cljs.core.async.impl.ioc-helpers/t39098", Tn.W = function(b, d) {
-    return sc(d, "cljs.core.async.impl.ioc-helpers/t39098");
+  }, Tn.S = !0, Tn.R = "cljs.core.async.impl.ioc-helpers/t39100", Tn.W = function(b, d) {
+    return sc(d, "cljs.core.async.impl.ioc-helpers/t39100");
   }, Tn.prototype.oe = function() {
     return!0;
   }, Tn.prototype.B = function() {
@@ -8347,8 +8347,8 @@ var co = function bo(b) {
     this.Vg = e;
     this.s = 0;
     this.j = 393216;
-  }, tn.S = !0, tn.R = "cljs.core.async/t36520", tn.W = function(b, d) {
-    return sc(d, "cljs.core.async/t36520");
+  }, tn.S = !0, tn.R = "cljs.core.async/t36522", tn.W = function(b, d) {
+    return sc(d, "cljs.core.async/t36522");
   }, tn.prototype.oe = function() {
     return!0;
   }, tn.prototype.B = function() {
@@ -9382,8 +9382,8 @@ function ip(a, b) {
             var d = c[1];
             if (7 === d) {
               var d = c[7], e = c[2], d = M.e(e, 0, null), e = M.e(e, 1, null), f = Dd(d);
-              c[8] = e;
               c[7] = d;
+              c[8] = e;
               c[1] = f ? 8 : 9;
               return pj;
             }
@@ -11934,9 +11934,9 @@ var Zr = function Yr(b, c, d) {
     this.Fg = N;
     this.s = 0;
     this.j = 393216;
-  }, Vr.S = !0, Vr.R = "clustermap.components.full-report.company-list/t34533", Vr.W = function() {
+  }, Vr.S = !0, Vr.R = "clustermap.components.full-report.company-list/t34535", Vr.W = function() {
     return function(b, c) {
-      return sc(c, "clustermap.components.full-report.company-list/t34533");
+      return sc(c, "clustermap.components.full-report.company-list/t34535");
     };
   }(h, d, e, e, f, g), Vr.prototype.Ha = !0, Vr.prototype.Da = function(b, c, d, e, f, g) {
     return function() {
@@ -12006,9 +12006,9 @@ var Zr = function Yr(b, c, d) {
     this.Gg = n;
     this.s = 0;
     this.j = 393216;
-  }, Wr.S = !0, Wr.R = "clustermap.components.full-report.company-list/t34564", Wr.W = function() {
+  }, Wr.S = !0, Wr.R = "clustermap.components.full-report.company-list/t34566", Wr.W = function() {
     return function(b, c) {
-      return sc(c, "clustermap.components.full-report.company-list/t34564");
+      return sc(c, "clustermap.components.full-report.company-list/t34566");
     };
   }(e), Wr.prototype.Ha = !0, Wr.prototype.Da = function() {
     return function() {
@@ -12065,9 +12065,9 @@ function ds(a, b, c) {
     this.Hg = A;
     this.s = 0;
     this.j = 393216;
-  }, bs.S = !0, bs.R = "clustermap.components.full-report.company-site-list/t34594", bs.W = function() {
+  }, bs.S = !0, bs.R = "clustermap.components.full-report.company-site-list/t34596", bs.W = function() {
     return function(a, b) {
-      return sc(b, "clustermap.components.full-report.company-site-list/t34594");
+      return sc(b, "clustermap.components.full-report.company-site-list/t34596");
     };
   }(g, c, d, d, e, f), bs.prototype.Ha = !0, bs.prototype.Da = function() {
     return function() {
@@ -12108,9 +12108,9 @@ var fs = function es(b, c, d) {
     this.Ig = n;
     this.s = 0;
     this.j = 393216;
-  }, cs.S = !0, cs.R = "clustermap.components.full-report.company-site-list/t34615", cs.W = function() {
+  }, cs.S = !0, cs.R = "clustermap.components.full-report.company-site-list/t34617", cs.W = function() {
     return function(b, c) {
-      return sc(c, "clustermap.components.full-report.company-site-list/t34615");
+      return sc(c, "clustermap.components.full-report.company-site-list/t34617");
     };
   }(e), cs.prototype.Ha = !0, cs.prototype.Da = function() {
     return function() {
@@ -12757,9 +12757,9 @@ var nt = function mt(b, c, d) {
     this.Tg = w;
     this.s = 0;
     this.j = 393216;
-  }, kt.S = !0, kt.R = "clustermap.components.timeline-chart/t35296", kt.W = function() {
+  }, kt.S = !0, kt.R = "clustermap.components.timeline-chart/t35298", kt.W = function() {
     return function(b, c) {
-      return sc(c, "clustermap.components.timeline-chart/t35296");
+      return sc(c, "clustermap.components.timeline-chart/t35298");
     };
   }(d, e, e, f), kt.prototype.Me = !0, kt.prototype.Td = function() {
     return function() {
@@ -12800,8 +12800,8 @@ var ot, qt = function pt(b, c) {
     this.Eg = g;
     this.s = 0;
     this.j = 393216;
-  }, ot.S = !0, ot.R = "clustermap.components.full-report.charts/t34505", ot.W = function(b, c) {
-    return sc(c, "clustermap.components.full-report.charts/t34505");
+  }, ot.S = !0, ot.R = "clustermap.components.full-report.charts/t34507", ot.W = function(b, c) {
+    return sc(c, "clustermap.components.full-report.charts/t34507");
   }, ot.prototype.Ha = !0, ot.prototype.Da = function() {
     var b;
     b = Lk.d(this.data);
@@ -12932,9 +12932,9 @@ var vt = function ut(b) {
     this.Jg = w;
     this.s = 0;
     this.j = 393216;
-  }, rt.S = !0, rt.R = "clustermap.components.full-report.overview/t34713", rt.W = function() {
+  }, rt.S = !0, rt.R = "clustermap.components.full-report.overview/t34715", rt.W = function() {
     return function(b, c) {
-      return sc(c, "clustermap.components.full-report.overview/t34713");
+      return sc(c, "clustermap.components.full-report.overview/t34715");
     };
   }(c, d, e, f, g), rt.prototype.Ha = !0, rt.prototype.Da = function() {
     return function() {
@@ -12990,19 +12990,19 @@ var yt = function xt(b, c) {
     this.F = d;
     this.data = e;
     this.Zd = f;
-    this.ha = g;
-    this.ng = h;
+    this.Dh = g;
+    this.ha = h;
     this.dg = l;
     this.w = m;
-    this.Dh = q;
+    this.sf = q;
     this.og = n;
-    this.sf = t;
+    this.ng = t;
     this.Kg = w;
     this.s = 0;
     this.j = 393216;
-  }, Ur.S = !0, Ur.R = "clustermap.components.full-report/t34740", Ur.W = function() {
+  }, Ur.S = !0, Ur.R = "clustermap.components.full-report/t34742", Ur.W = function() {
     return function(b, c) {
-      return sc(c, "clustermap.components.full-report/t34740");
+      return sc(c, "clustermap.components.full-report/t34742");
     };
   }(h, l, m, n, q, t, w, b, d, d, e, f, g), Ur.prototype.Me = !0, Ur.prototype.Td = function() {
     return function() {
@@ -13023,10 +13023,10 @@ var yt = function xt(b, c) {
     };
   }(h, l, m, n, q, t, w, b, d, d, e, f, g), Ur.prototype.C = function() {
     return function(b, c) {
-      return new Ur(this.selection, this.A, this.F, this.data, this.Zd, this.ha, this.ng, this.dg, this.w, this.Dh, this.og, this.sf, c);
+      return new Ur(this.selection, this.A, this.F, this.data, this.Zd, this.Dh, this.ha, this.dg, this.w, this.sf, this.og, this.ng, c);
     };
   }(h, l, m, n, q, t, w, b, d, d, e, f, g));
-  return new Ur(f, c, t, d, g, w, d, xt, q, b, l, e, null);
+  return new Ur(f, c, t, d, g, b, w, xt, q, e, l, d, null);
 };
 function zt(a) {
   var b = function() {
@@ -13090,24 +13090,24 @@ function Gt(a, b, c) {
 ;var Ht, It, Kt = function Jt(b, c, d) {
   var e = Jd(b) ? P.c(kg, b) : b, f = O.c(e, qj), g = O.c(e, Pi), h = Jd(d) ? P.c(kg, d) : d, l = O.c(h, Al), m = O.c(h, aj);
   "undefined" === typeof Ht && (Ht = function(b, c, d, e, f, g, h, l, m, Z, ea, ka, pa) {
-    this.A = b;
-    this.F = c;
-    this.Rh = d;
-    this.Gh = e;
-    this.name = f;
-    this.w = g;
-    this.Yd = h;
-    this.type = l;
+    this.xg = b;
+    this.A = c;
+    this.F = d;
+    this.Rh = e;
+    this.Gh = f;
+    this.wg = g;
+    this.name = h;
+    this.w = l;
     this.Hh = m;
-    this.qa = Z;
-    this.wg = ea;
-    this.xg = ka;
+    this.Yd = Z;
+    this.type = ea;
+    this.qa = ka;
     this.Rg = pa;
     this.s = 0;
     this.j = 393216;
-  }, Ht.S = !0, Ht.R = "clustermap.components.search/t35154", Ht.W = function() {
+  }, Ht.S = !0, Ht.R = "clustermap.components.search/t35156", Ht.W = function() {
     return function(b, c) {
-      return sc(c, "clustermap.components.search/t35154");
+      return sc(c, "clustermap.components.search/t35156");
     };
   }(b, e, e, f, g, d, h, h, l, m), Ht.prototype.Xe = !0, Ht.prototype.Ud = function(b, c, d, e, f, g, h, l, m, Z) {
     return function(ea, ka) {
@@ -13125,10 +13125,10 @@ function Gt(a, b, c) {
     };
   }(b, e, e, f, g, d, h, h, l, m), Ht.prototype.C = function() {
     return function(b, c) {
-      return new Ht(this.A, this.F, this.Rh, this.Gh, this.name, this.w, this.Yd, this.type, this.Hh, this.qa, this.wg, this.xg, c);
+      return new Ht(this.xg, this.A, this.F, this.Rh, this.Gh, this.wg, this.name, this.w, this.Hh, this.Yd, this.type, this.qa, c);
     };
   }(b, e, e, f, g, d, h, h, l, m));
-  return new Ht(c, l, Jt, b, g, m, e, f, d, h, e, h, null);
+  return new Ht(h, c, l, Jt, b, e, g, m, d, e, f, h, null);
 };
 function Lt(a, b) {
   var c = Jd(a) ? P.c(kg, a) : a, d = O.c(c, Ji), e = O.c(c, Xl), c = O.c(c, ni), f = s(c) ? c : W, e = s(e) ? e : W, d = s(d) ? d : W;
@@ -13166,23 +13166,23 @@ var Ot = function Nt(b, c) {
     this.A = d;
     this.F = e;
     this.view = f;
-    this.Wd = g;
-    this.zg = h;
-    this.yg = l;
-    this.wd = m;
-    this.Kd = q;
-    this.Wh = n;
-    this.Ag = t;
-    this.w = w;
+    this.Bg = g;
+    this.Wd = h;
+    this.wd = l;
+    this.Kd = m;
+    this.Wh = q;
+    this.yg = n;
+    this.w = t;
+    this.Ag = w;
     this.Vh = A;
-    this.Bg = y;
+    this.zg = y;
     this.Ih = I;
     this.Sg = N;
     this.s = 0;
     this.j = 393216;
-  }, It.S = !0, It.R = "clustermap.components.search/t35214", It.W = function() {
+  }, It.S = !0, It.R = "clustermap.components.search/t35216", It.W = function() {
     return function(b, c) {
-      return sc(c, "clustermap.components.search/t35214");
+      return sc(c, "clustermap.components.search/t35216");
     };
   }(n, q, t, w, y, m, A, I, N, U, b, d, e, f, g, h, l, m), It.prototype.Xe = !0, It.prototype.Ud = function(b, c, d, e, f, g, h, l, m, q, n, t, w, A, y, I, N, Fa) {
     return function(va, Pa) {
@@ -13345,10 +13345,10 @@ var Ot = function Nt(b, c) {
     };
   }(n, q, t, w, y, m, A, I, N, U, b, d, e, f, g, h, l, m), It.prototype.C = function() {
     return function(b, c) {
-      return new It(this.jf, this.Qh, this.A, this.F, this.view, this.Wd, this.zg, this.yg, this.wd, this.Kd, this.Wh, this.Ag, this.w, this.Vh, this.Bg, this.Ih, c);
+      return new It(this.jf, this.Qh, this.A, this.F, this.view, this.Bg, this.Wd, this.wd, this.Kd, this.Wh, this.yg, this.w, this.Ag, this.Vh, this.zg, this.Ih, c);
     };
   }(n, q, t, w, y, m, A, I, N, U, b, d, e, f, g, h, l, m));
-  return new It(m, Nt, c, y, l, N, f, d, U, I, h, q, w, g, A, b, null);
+  return new It(m, Nt, c, y, l, A, N, U, I, h, d, w, q, g, f, b, null);
 };
 var Pt = document.createElement("div");
 Pt.innerHTML = "   \x3clink/\x3e\x3ctable\x3e\x3c/table\x3e\x3ca href\x3d'/a' style\x3d'top:1px;float:left;opacity:.55;'\x3ea\x3c/a\x3e\x3cinput type\x3d'checkbox'/\x3e";
@@ -13575,8 +13575,8 @@ var ou = window.document.documentElement, qu = function pu(b) {
         this.Pd = g;
         this.s = 0;
         this.j = 393472;
-      }, lu.S = !0, lu.R = "domina.events/t39948", lu.W = function(b, c) {
-        return sc(c, "domina.events/t39948");
+      }, lu.S = !0, lu.R = "domina.events/t39950", lu.W = function(b, c) {
+        return sc(c, "domina.events/t39950");
       }, lu.prototype.N = function(b, c) {
         var f = this.Ya[c];
         return s(f) ? f : this.Ya[ee(c)];
@@ -13601,8 +13601,8 @@ var ou = window.document.documentElement, qu = function pu(b) {
         this.Pd = g;
         this.s = 0;
         this.j = 393472;
-      }, lu.S = !0, lu.R = "domina.events/t39948", lu.W = function(b, c) {
-        return sc(c, "domina.events/t39948");
+      }, lu.S = !0, lu.R = "domina.events/t39950", lu.W = function(b, c) {
+        return sc(c, "domina.events/t39950");
       }, lu.prototype.N = function(b, c) {
         var f = this.Ya[c];
         return s(f) ? f : this.Ya[ee(c)];
@@ -13725,9 +13725,9 @@ var Cu = function Bu(b, c, d) {
     this.Mg = N;
     this.s = 0;
     this.j = 393216;
-  }, vu.S = !0, vu.R = "clustermap.components.map-report/t34919", vu.W = function() {
+  }, vu.S = !0, vu.R = "clustermap.components.map-report/t34921", vu.W = function() {
     return function(b, c) {
-      return sc(c, "clustermap.components.map-report/t34919");
+      return sc(c, "clustermap.components.map-report/t34921");
     };
   }(e, f, g, h, l), vu.prototype.Ha = !0, vu.prototype.Da = function() {
     return function() {
@@ -13785,17 +13785,17 @@ var Cu = function Bu(b, c, d) {
     this.ja = d;
     this.$c = e;
     this.oa = f;
-    this.w = g;
-    this.xa = h;
-    this.rg = l;
+    this.rg = g;
+    this.w = h;
+    this.xa = l;
     this.Mh = m;
     this.$ = n;
     this.Ng = ka;
     this.s = 0;
     this.j = 393216;
-  }, wu.S = !0, wu.R = "clustermap.components.map-report/t34975", wu.W = function() {
+  }, wu.S = !0, wu.R = "clustermap.components.map-report/t34977", wu.W = function() {
     return function(b, c) {
-      return sc(c, "clustermap.components.map-report/t34975");
+      return sc(c, "clustermap.components.map-report/t34977");
     };
   }(g, h, l, m, n), wu.prototype.Ha = !0, wu.prototype.Da = function() {
     return function() {
@@ -13847,19 +13847,19 @@ var Cu = function Bu(b, c, d) {
     };
   }(g, h, l, m, n), wu.prototype.C = function() {
     return function(b, c) {
-      return new wu(this.ra, this.F, this.ja, this.$c, this.oa, this.w, this.xa, this.rg, this.Mh, this.$, c);
+      return new wu(this.ra, this.F, this.ja, this.$c, this.oa, this.rg, this.w, this.xa, this.Mh, this.$, c);
     };
   }(g, h, l, m, n));
-  return new wu(n, e, l, b, m, d, f, h, Du, c, null);
+  return new wu(n, e, l, b, m, h, d, f, Du, c, null);
 }, Gu = function Fu(b, c, d, e, f) {
   var g = Au(c), h = Jd(g) ? P.c(kg, g) : g, l = O.c(h, Sl), m = O.c(h, Nh), n = O.c(h, ol);
   "undefined" === typeof xu && (xu = function(b, c, d, e, f, g, h, l, m, n, ka) {
     this.ra = b;
-    this.sg = c;
-    this.F = d;
-    this.ja = e;
-    this.Ge = f;
-    this.oa = g;
+    this.F = c;
+    this.ja = d;
+    this.Ge = e;
+    this.oa = f;
+    this.sg = g;
     this.w = h;
     this.hg = l;
     this.xa = m;
@@ -13867,9 +13867,9 @@ var Cu = function Bu(b, c, d) {
     this.Og = ka;
     this.s = 0;
     this.j = 393216;
-  }, xu.S = !0, xu.R = "clustermap.components.map-report/t35025", xu.W = function() {
+  }, xu.S = !0, xu.R = "clustermap.components.map-report/t35027", xu.W = function() {
     return function(b, c) {
-      return sc(c, "clustermap.components.map-report/t35025");
+      return sc(c, "clustermap.components.map-report/t35027");
     };
   }(g, h, l, m, n), xu.prototype.Ha = !0, xu.prototype.Da = function() {
     return function() {
@@ -13921,10 +13921,10 @@ var Cu = function Bu(b, c, d) {
     };
   }(g, h, l, m, n), xu.prototype.C = function() {
     return function(b, c) {
-      return new xu(this.ra, this.sg, this.F, this.ja, this.Ge, this.oa, this.w, this.hg, this.xa, this.$, c);
+      return new xu(this.ra, this.F, this.ja, this.Ge, this.oa, this.sg, this.w, this.hg, this.xa, this.$, c);
     };
   }(g, h, l, m, n));
-  return new xu(n, h, e, l, b, m, d, Fu, f, c, null);
+  return new xu(n, e, l, b, m, h, d, Fu, f, c, null);
 }, Iu = function Hu(b, c, d, e, f) {
   var g = Au(c), h = Jd(g) ? P.c(kg, g) : g, l = O.c(h, Sl), m = O.c(h, Nh), n = O.c(h, ol);
   "undefined" === typeof yu && (yu = function(b, c, d, e, f, g, h, l, m, n, ka) {
@@ -13932,18 +13932,18 @@ var Cu = function Bu(b, c, d) {
     this.F = c;
     this.ja = d;
     this.oa = e;
-    this.Yf = f;
-    this.w = g;
-    this.ib = h;
-    this.xa = l;
-    this.tg = m;
+    this.tg = f;
+    this.Yf = g;
+    this.w = h;
+    this.ib = l;
+    this.xa = m;
     this.$ = n;
     this.Pg = ka;
     this.s = 0;
     this.j = 393216;
-  }, yu.S = !0, yu.R = "clustermap.components.map-report/t35079", yu.W = function() {
+  }, yu.S = !0, yu.R = "clustermap.components.map-report/t35081", yu.W = function() {
     return function(b, c) {
-      return sc(c, "clustermap.components.map-report/t35079");
+      return sc(c, "clustermap.components.map-report/t35081");
     };
   }(g, h, l, m, n), yu.prototype.Ha = !0, yu.prototype.Da = function() {
     return function() {
@@ -14001,10 +14001,10 @@ var Cu = function Bu(b, c, d) {
     };
   }(g, h, l, m, n), yu.prototype.C = function() {
     return function(b, c) {
-      return new yu(this.ra, this.F, this.ja, this.oa, this.Yf, this.w, this.ib, this.xa, this.tg, this.$, c);
+      return new yu(this.ra, this.F, this.ja, this.oa, this.tg, this.Yf, this.w, this.ib, this.xa, this.$, c);
     };
   }(g, h, l, m, n));
-  return new yu(n, e, l, m, Hu, d, b, f, h, c, null);
+  return new yu(n, e, l, m, h, Hu, d, b, f, c, null);
 };
 function Ju(a, b) {
   var c = vr.d(b), d = Jd(c) ? P.c(kg, c) : c, c = O.c(d, Fj), e = O.c(d, Al), d = O.c(d, aj), e = Ee.c(e, Dl), f = Ze.c(a, new V(null, 2, 5, X, [ul, qj], null)), g = Ze.c(a, new V(null, 2, 5, X, [ul, Zi], null)), h = zj.d(a);
@@ -14214,9 +14214,9 @@ var bv = function av(b) {
     this.Yg = t;
     this.s = 0;
     this.j = 393216;
-  }, Ku.S = !0, Ku.R = "secretary.core/t39584", Ku.W = function() {
+  }, Ku.S = !0, Ku.R = "secretary.core/t39586", Ku.W = function() {
     return function(b, c) {
-      return sc(c, "secretary.core/t39584");
+      return sc(c, "secretary.core/t39586");
     };
   }(c, d, e, f), Ku.prototype.ed = function() {
     return function(b, c) {
@@ -14737,8 +14737,8 @@ var hv, iv = function() {
       this.Zg = d;
       this.s = 0;
       this.j = 393216;
-    }, hv.S = !0, hv.R = "domina.css/t40131", hv.W = function(a, b) {
-      return sc(b, "domina.css/t40131");
+    }, hv.S = !0, hv.R = "domina.css/t40133", hv.W = function(a, b) {
+      return sc(b, "domina.css/t40133");
     }, hv.prototype.Tb = function() {
       var a = this;
       return Se.c(function() {
@@ -14822,8 +14822,8 @@ var nv = function() {
       this.$g = d;
       this.s = 0;
       this.j = 393216;
-    }, jv.S = !0, jv.R = "domina.xpath/t40591", jv.W = function(a, b) {
-      return sc(b, "domina.xpath/t40591");
+    }, jv.S = !0, jv.R = "domina.xpath/t40593", jv.W = function(a, b) {
+      return sc(b, "domina.xpath/t40593");
     }, jv.prototype.Tb = function() {
       return Se.c(Ee.c(mv, this.Gb), cu(this.xb));
     }, jv.prototype.Ad = function() {
@@ -14962,10 +14962,10 @@ function sv(a) {
     this.A = c;
     this.F = d;
     this.be = e;
-    this.value = f;
-    this.name = g;
-    this.w = h;
-    this.vg = l;
+    this.vg = f;
+    this.value = g;
+    this.name = h;
+    this.w = l;
     this.Kh = m;
     this.type = n;
     this.xa = q;
@@ -14975,9 +14975,9 @@ function sv(a) {
     this.Qg = Uc;
     this.s = 0;
     this.j = 393216;
-  }, tv.S = !0, tv.R = "clustermap.components.page-title/t35137", tv.W = function() {
+  }, tv.S = !0, tv.R = "clustermap.components.page-title/t35139", tv.W = function() {
     return function(b, c) {
-      return sc(c, "clustermap.components.page-title/t35137");
+      return sc(c, "clustermap.components.page-title/t35139");
     };
   }(g, h, l, m, n, q, t, w, y, b, d, d, e, f), tv.prototype.Ha = !0, tv.prototype.Da = function() {
     return function() {
@@ -15000,10 +15000,10 @@ function sv(a) {
     };
   }(g, h, l, m, n, q, t, w, y, b, d, d, e, f), tv.prototype.C = function() {
     return function(b, c) {
-      return new tv(this.selection, this.A, this.F, this.be, this.value, this.name, this.w, this.vg, this.Kh, this.type, this.xa, this.ug, this.url, this.Fh, c);
+      return new tv(this.selection, this.A, this.F, this.be, this.vg, this.value, this.name, this.w, this.Kh, this.type, this.xa, this.ug, this.url, this.Fh, c);
     };
   }(g, h, l, m, n, q, t, w, y, b, d, d, e, f));
-  return new tv(d, c, q, t, e, w, n, h, uv, f, l, d, y, b, null);
+  return new tv(d, c, q, t, h, e, w, n, uv, f, l, d, y, b, null);
 };
 var vv, wv = new V(null, 2, 5, X, [new V(null, 2, 5, X, [59.54, 2.3], null), new V(null, 2, 5, X, [49.29, -11.29], null)], null);
 function xv(a) {
@@ -15254,9 +15254,9 @@ var Qv = function Pv(b, c) {
     this.Lg = q;
     this.s = 0;
     this.j = 393216;
-  }, vv.S = !0, vv.R = "clustermap.components.map/t34859", vv.W = function() {
+  }, vv.S = !0, vv.R = "clustermap.components.map/t34861", vv.W = function() {
     return function(b, c) {
-      return sc(c, "clustermap.components.map/t34859");
+      return sc(c, "clustermap.components.map/t34861");
     };
   }(b, d, d, e), vv.prototype.rh = !0, vv.prototype.bf = function(b, c, d, e) {
     return function(m, n, q) {

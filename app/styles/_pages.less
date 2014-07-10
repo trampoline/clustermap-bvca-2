@@ -376,7 +376,7 @@ body {
     }
     &.info {
       position: absolute;
-      bottom: (@asideSizeLg * 2) + 1;
+      bottom: @asideSizeLg;
       a {
         background-position: 0 -256px;
       }
@@ -386,7 +386,7 @@ body {
     }
     &.method {
       position: absolute;
-      bottom: @asideSizeLg;
+      bottom: (@asideSizeLg * 2) + 1;
       a {
         background-position: 0 -192px;
       }
@@ -415,7 +415,7 @@ body {
 }
 
 @map-arrow-size: 28px;
-@map-details-size: 270px;
+@map-details-size: 300px;
 @shadow: -2px 2px 2px rgba(0,0,0,.15);
 
 #map-report {
@@ -466,20 +466,20 @@ body {
       }
     }
   }
-  header.secondary, div.secondary {
+  header.secondary {
     margin: 0 -20px;
     background: @gray-lighter;
     padding: 10px 20px;
     h2 {
-      margin: 0;
+      margin: 6px 0 0 0;
     }
     h3 {
-      margin: 0;
+      margin: 8px 0 0 0;
       font-size: 22px;
       line-height: 1;
     }
-    a, button {
-      margin-top: 8px;
+    button {
+      margin-top: 10px;
     }
   }
   ul, li {
@@ -680,7 +680,7 @@ body {
   h2 {
     font-style: italic;
   }
-  a.btn-link, button {
+  button {
     float: right;
     margin-top: 10px;
     margin-right: 3px;
@@ -715,13 +715,13 @@ body {
 
 // Leaflet & Map Styles
 .leaflet-popup-content-wrapper {
-  background: #D0202F;
+  background: @brand-primary;
   padding: 10px 25px;
   color: #fff;
 }
 
 .leaflet-popup-tip {
-  border-top-color: #D0202F;
+  border-top-color: @brand-primary;
 }
 
 .leaflet-container {
@@ -853,7 +853,7 @@ body {
         }
       }
       &.info {
-        right: (@asideSize * 2) + 1;
+        right: @asideSize;
         bottom: auto;
         top: 0;
         a {
@@ -864,7 +864,7 @@ body {
         }
       }
       &.method {
-        right: @asideSize;
+        right: (@asideSize * 2) + 1;
         bottom: auto;
         top: 0;
         a {

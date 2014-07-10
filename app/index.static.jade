@@ -1,12 +1,12 @@
 doctype html
 html(lang='en')
   head
-    title BVCA Private Equity Map
+    title EU Startup Data
     meta(charset='utf-8')
     //if IE
       meta(http-equiv="X-UA-Compatible", content="IE=edge,chrome=1")
     meta(name='viewport', content='width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0')
-    meta(name='description', content='BVCA Private Equity Map')
+    meta(name='description', content='EU Startup Data')
     meta(name='author', content='Trampoline Systems Ltd')
 
     link(type='text/css', rel='stylesheet', href="http://api.tiles.mapbox.com/mapbox.js/v1.6.4/mapbox.css")
@@ -88,25 +88,14 @@ html(lang='en')
           .modal-header
             button.close(type='button' data-dismiss='modal' aria-hidden='true') &times;
             h4.
-              BVCA Private Equity Map
+              EU Startup Data
           .modal-body
             p.
-              Private equity and venture capital play a key role in the British economy.
-              Over the last five years £33bn has been invested in over 4,500 UK companies.
-              In 2012 alone £5.7bn was invested in over 800 businesses, employing the equivalent
-              of around 130,000 full time jobs. Around 90% of these were small and medium-sized
-              enterprises, a crucial component of economic health.
-            p.
-              Many are unfamiliar with the work of private equity and venture capital and its
-              impact in their local community. To help address this the BVCA has produced the
-              Private Equity Map to demonstrate the industry’s role in supporting businesses across the country.
+              EU Startup Data
             p
-              | This map is constantly updated. Please contact&ensp;
-              a(href="mailto:communications@bvca.co.uk") communications@bvca.co.uk
-              | &ensp;if you have any comments or questions. If you require further information about private
-              | equity and venture capital in the UK please head to the&ensp;
-              a.no-rmargin(href="http://www.bvca.co.uk") BVCA website here
-              |.
+              | Please contact&ensp;
+              a(href="mailto:eustartupdata@trampolinesystems.com") eustartupdata@trampolinesystems.com
+              | &ensp;if you have any comments or questions.
 
 
     #page-methodology.modal.fade
@@ -118,30 +107,19 @@ html(lang='en')
               Methodology
           .modal-body
             p.
-              We track and regularly update investment information as supplied by our members covering Investor-backed company sites across the UK.
-            p.
-              Investor-backed companies were matched up with the Companies House database and site addresses were matched to Parliamentary Constituencies using the ONS Postcode database and the Ordnance Survey Boundary-Line product.
-            p.
-              Historical turnover and employment information was then taken from Companies House accounts filings. In cases where investments were made in Investor-backed companies with multiple sites, the declared revenue and employees of those companies were shared equally amongst the company's sites
-            p
-              |We are constantly updating the details of our members’ investor-backed companies. If you believe that any companies are missing or any details are incorrect, please contact us
-              a.no-rmargin(href='mailto:research@bvca.co.uk?subject=PE Map Corrections') &nbsp;here
-              |.
-
-
-
+              We take registry data from many European countries.
 
     #wrap
       aside#nav
         ul
-          li.search(data-toggle='tooltip' data-placement='right' title='Search for a Constituency or Company'): a(href='#') Search
+          li.search(data-toggle='tooltip' data-placement='right' title='Search'): a(href='#') Search
           li.map.active(data-toggle='tooltip' data-placement='right' title='View on map'): a(href='#') Map
           li.lists(data-toggle='tooltip' data-placement='right' title='View full report'): a(href='#') Full Report
           li.info(data-toggle='tooltip' data-placement='right' title='More Information')
             a(data-toggle='modal' data-target='#page-info') Info
           li.method(data-toggle='tooltip' data-placement='right' title='Methodology')
             a(data-toggle='modal' data-target='#page-methodology') Methodology
-          li.logo: a(href='http://www.bvca.co.uk') BVCA
+          li.logo: a(href='#') #
 
       section#main
         .container
@@ -189,8 +167,8 @@ html(lang='en')
 
                 aside
                   header.primary
-                    h1 Welcome to the BVCA Private Equity Map
-                    h2 View Investment across the UK
+                    h1 EU Startup Data
+                    h2 View Startups across Europe
 
                   #map-report-component
                     header.secondary
@@ -201,13 +179,7 @@ html(lang='en')
                     ul
                       li
                         | -
-                        small Investor-backed companies
-                      li
-                        | -
-                        small Investors
-                      li
-                        | -
-                        small Constituencies
+                        small Companies
                       li
                         | -
                         small Total revenue
@@ -383,11 +355,11 @@ html(lang='en')
               .trampoline
                 p
                   | Produced by the&nbsp;
-                  a(href='http://www.bvca.co.uk') BVCA
+                  a(href='http://www.grantthornton.com/') Grant Thornton
                   | &nbsp;and&nbsp;
                   a(href='http://www.trampolinesystems.com/') Trampoline Systems
                 p
-                  a(href='mailto:bvca-pemap-issues@trampolinesystems.com?subject=BVCA Private Equity Map issue report') Report issue
+                  a(href='mailto:clustermap-issues@trampolinesystems.com?subject=EU Startup Data issue report') Report issue
               //   p
               //     a(href='#') Terms
               // .issues

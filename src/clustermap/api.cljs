@@ -70,6 +70,14 @@
        (map (fn [[k v]] (str (name k) "=" (js/JSON.stringify (clj->js v)))))
        (str/join "&")))
 
+(defn fetch
+  "put the results of an api call into an atom... makes ad-hoc api calls easy"
+  [comm]
+  (let [r (atom nil)]
+    (go
+      (reset! r (<! comm)))
+    r))
+
 (def api-prefix js/config.api.prefix)
 
 ;; boundarylines

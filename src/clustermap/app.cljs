@@ -17,12 +17,57 @@
    [clustermap.components.full-report :as full-report]
    [clustermap.components.page-title :as page-title]
    [clustermap.components.search :as search]
-   [clustermap.boundarylines :as bl]
-   [clustermap.rtree :as rtree])
+   [clustermap.boundarylines :as bl])
   (:import [goog History]
            [goog.history EventType]))
 
-(def state (atom {:uk-constituencies nil
+(def state (atom {
+;;;;;;;;;;;;;;;;;;;;;;;;;
+
+                  :boundaryline-collections
+                  {
+                   :uk_boroughs {:index nil
+                                 :rtree nil
+                                 :boundarylines {}}
+                   :uk_wards {:index nil
+                              :rtree nil
+                              :boundarylines {}}}
+
+                  :multiview
+                  {
+                   :type :multiview
+                   :filter nil ;; will be passed down to all contained views
+
+                   :views {
+                           :map {:type :geoport
+                                 :datasource "companies"
+                                 :boundaryline_collections [[0 "uk_regions"] [7 "uk_boroughs"] [10 "uk_wards"]]
+                                 :controls {:extents {:zoom 7 :bounds nil}
+                                            :boundaryline-agg {:type :stats
+                                                               :variable "!latest_employee_count"
+                                                               :boundaryline-collection "uk_boroughs"}}
+                                 :data nil}
+
+                           :turnover_timeline {:type :timeline
+                                               :datasource "company_accounts"
+                                               :controls {:variable "accounts_date"
+                                                          :after "2003-01-01"
+                                                          :before "2012-01-01"
+                                                          :interval "year"}
+                                               :data nil}
+
+                           :table  {:type :table
+                                    :datasource "companies"
+                                    :controls {:order nil
+                                               :offset 0
+                                               :limit 50
+                                               :variables ["!name" "!postcode" "!formation_date" "!sic07"
+                                                           "!latest_accounts_date" "!latest_employee_count"
+                                                           "!latest_turnover"]}
+                                    :data nil}}}
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+                  :uk-constituencies nil
                   :uk-constituencies-rtree nil
                   :boundarylines nil
                   :zoom nil
@@ -64,19 +109,35 @@
   [& {:as path-values}]
   (swap! state new-state path-values))
 
-(defn load-uk-constituencies
+;;;;;;;;;;;;;;;;;;;;;;;; load and index boundarylines
+
+(def bl-collections [:uk_boroughs :uk_wards])
+
+(defn load-boundaryline-collection-indexes
+  []
+  (doseq [blcoll bl-collections]
+    (bl/fetch-boundaryline-collection-index state :boundaryline-collections blcoll)))
+
+;;;;;;;;;;;;;;;;;;;;;;;; load initial aggregations
+
+(defn load-aggs
   []
   (go
-    (let [bls (<! (api/boundaryline-collection-index "uk_constituencies" :raw true))
-          rt (rtree/rtree-index bls)]
-      (set-state :uk-constituencies bls
-                 :uk-constituencies-rtree rt))))
+    (let [;; turnover (<! (api/boundaryline-aggregation "companies" "company" "uk_boroughs" "!latest_turnover"))
+          employment (<! (api/boundaryline-aggregation "companies" "company" "uk_boroughs" "!latest_employee_count"))]
+      ;; (set-state [:dataview :queries :map :boundaryline-aggs :turnover :data] turnover)
+      (set-state [:multiview :views :map :data] employment))))
+
+;;;;;;;;;;;;;;;;;;;;;;;
+
 
 (defn load-all-investment-stats
   []
   (go
     (let [all-investment-stats (<! (api/investment-stats))]
       (set-state :all-investment-stats all-investment-stats))))
+
+
 
 (defn process-search-results
   "process a search"
@@ -96,7 +157,7 @@
              :selection-investment-account-timelines selection-investment-account-timelines
              :selection-investment-aggs selection-investment-aggs
              :selection-investments selection-investments
-             :selection-portfolio-company-locations selection-portfolio-company-locations))
+             :selection-portfolio-company-locations) selection-portfolio-company-locations)
 
 (defn make-selection
   "set the selection
@@ -250,7 +311,7 @@
     (nav/init comm)
     (init-routes comm)
 
-    (load-uk-constituencies)
+    (load-boundaryline-collection-indexes)
     (load-all-investment-stats)
 
     (map/mount state "map-component" shared)

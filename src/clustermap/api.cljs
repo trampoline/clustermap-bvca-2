@@ -88,8 +88,13 @@
 
 (defn boundaryline-collection-index
   [id & opts]
-  (apply GET (str "/api/boundaryline-collection-index/" id) opts))
+  (apply GET (str "/api/boundaryline-collection-index/" (name id)) opts))
 
+;; aggregation over boundarylines
+
+(defn boundaryline-aggregation
+  [index type blcoll attr & [type-ids]]
+  (GET (str "/api/" api-prefix "/boundaryline-agg/" index "/" type "/" blcoll "/" attr "?" (map-json-params type-ids))))
 
 ;; search
 

@@ -3,7 +3,7 @@
   :url "http://example.com/FIXME"
 
   :dependencies [[org.clojure/clojure "1.6.0"]
-                 [org.clojure/clojurescript "0.0-2261"]
+                 [org.clojure/clojurescript "0.0-2268"]
                  [org.clojure/core.async "0.1.267.0-0d7780-alpha"]
                  [org.clojure/google-closure-library "0.0-2029-2"]
                  [org.clojure/google-closure-library-third-party "0.0-2029-2"]

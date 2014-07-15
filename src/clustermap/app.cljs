@@ -25,14 +25,16 @@
 (def state (atom {
 ;;;;;;;;;;;;;;;;;;;;;;;;;
 
-                  :boundaryline-collections
+                  :boundarylines
                   {
-                   :uk_boroughs {:index nil
-                                 :rtree nil
-                                 :boundarylines {}}
-                   :uk_wards {:index nil
-                              :rtree nil
-                              :boundarylines {}}}
+                   :collections {
+                                 :uk_boroughs {:index nil
+                                               :rtree nil
+                                               :boundarylines {}}
+                                 :uk_wards {:index nil
+                                            :rtree nil
+                                            :boundarylines {}}}
+                   :boundarylines {}}
 
                   :multiview
                   {
@@ -50,8 +52,9 @@
                                                                :key "boundaryline_id"
                                                                :variable "!latest_employee_count"
                                                                :boundaryline-collection "uk_boroughs"}
-                                            :colorchooser {:fn clustermap.data.colorchooser/brewer-green
-                                                           :scale :log}}
+                                            :colorchooser {:scheme [:Oranges :3]
+                                                           :scale :log
+                                                           :variable :sum}}
                                  :data nil}
 
                            :turnover_timeline {:type :timeline
@@ -75,7 +78,6 @@
 
                   :uk-constituencies nil
                   :uk-constituencies-rtree nil
-                  :boundarylines nil
                   :zoom nil
                   :view :map
 
@@ -122,17 +124,19 @@
 (defn load-boundaryline-collection-indexes
   []
   (doseq [blcoll bl-collections]
-    (bl/fetch-boundaryline-collection-index state :boundaryline-collections blcoll)))
+    (bl/fetch-boundaryline-collection-index state :boundarylines blcoll)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;; load initial aggregations
 
+(defn load-aggregation
+  [blcoll variable]
+  (go
+    (let [employment (<! (api/boundaryline-aggregation "companies" "company" blcoll variable))]
+      (set-state [:multiview :views :map :data] employment))))
+
 (defn load-initial-aggregations
   []
-  (go
-    (let [;; turnover (<! (api/boundaryline-aggregation "companies" "company" "uk_boroughs" "!latest_turnover"))
-          employment (<! (api/boundaryline-aggregation "companies" "company" "uk_boroughs" "!latest_employee_count"))]
-      ;; (set-state [:dataview :queries :map :boundaryline-aggs :turnover :data] turnover)
-      (set-state [:multiview :views :map :data] employment))))
+  (load-aggregation "uk_boroughs" "!latest_employee_count"))
 
 ;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -317,8 +321,8 @@
                 :path-fn path-fn
                 :link-fn link-fn
                 :view-path-fn change-view-path
-                :fetch-boundaryline-fn (partial bl/get-or-fetch-best-boundaryline state :boundaryline-collections :uk_boroughs)
-                :point-in-boundarylines-fn (partial bl/point-in-boundarylines state :boundaryline-collections :uk_boroughs)}]
+                :fetch-boundaryline-fn (partial bl/get-or-fetch-best-boundaryline state :boundarylines nil)
+                :point-in-boundarylines-fn (partial bl/point-in-boundarylines state :boundarylines :uk_boroughs)}]
     (nav/init comm)
     ;; (init-routes comm)
 

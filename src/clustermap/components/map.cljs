@@ -351,7 +351,7 @@
         ;; (update-markers path-fn leaflet-map markers next-locations)
 
 
-        (let [selection-path-colours (colorchooser/choose colorchooser/brewer-green
+        (let [selection-path-colours (colorchooser/choose (:scheme colorchooser-control)
                                                           (:scale colorchooser-control)
                                                           :boundaryline_id
                                                           (:variable colorchooser-control)

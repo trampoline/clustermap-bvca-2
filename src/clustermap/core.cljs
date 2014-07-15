@@ -1,6 +1,7 @@
 (ns clustermap.core
-  (:require [clojure.browser.repl :as repl]
-            [clustermap.app :as app]))
+  (:require
+   [weasel.repl :as ws-repl]
+   [clustermap.app :as app]))
 
 (defn init []
   (app/init))
@@ -8,7 +9,9 @@
 (cond
    ;; need this delay here when developing, otherwise Leaflet.js init seems to bork cljs REPL init
  js/config.repl
- (js/setTimeout init 9000)
+ (do
+   (ws-repl/connect "ws://localhost:9001" :verbose true)
+   (init))
 
  true
  (init))

@@ -14,9 +14,9 @@ goog.require('clojure.browser.event');
 goog.require('goog.net.xpc.CfgFields');
 goog.require('clojure.browser.event');
 clojure.browser.net._STAR_timeout_STAR_ = (10000);
-clojure.browser.net.event_types = cljs.core.into(cljs.core.PersistentArrayMap.EMPTY,cljs.core.map.cljs$core$IFn$_invoke$arity$2((function (p__40499){var vec__40500 = p__40499;var k = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__40500,(0),null);var v = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__40500,(1),null);return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.keyword.cljs$core$IFn$_invoke$arity$1(k.toLowerCase()),v], null);
+clojure.browser.net.event_types = cljs.core.into(cljs.core.PersistentArrayMap.EMPTY,cljs.core.map.cljs$core$IFn$_invoke$arity$2((function (p__40865){var vec__40866 = p__40865;var k = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__40866,(0),null);var v = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__40866,(1),null);return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.keyword.cljs$core$IFn$_invoke$arity$1(k.toLowerCase()),v], null);
 }),cljs.core.merge.cljs$core$IFn$_invoke$arity$variadic(cljs.core.array_seq([cljs.core.js__GT_clj.cljs$core$IFn$_invoke$arity$1(goog.net.EventType)], 0))));
-clojure.browser.net.IConnection = (function (){var obj40502 = {};return obj40502;
+clojure.browser.net.IConnection = (function (){var obj40868 = {};return obj40868;
 })();
 clojure.browser.net.connect = (function() {
 var connect = null;
@@ -267,7 +267,7 @@ clojure.browser.net.close = (function close(this$){if((function (){var and__3531
 });
 goog.net.XhrIo.prototype.clojure$browser$event$EventType$ = true;
 goog.net.XhrIo.prototype.clojure$browser$event$EventType$event_types$arity$1 = (function (this$){var this$__$1 = this;return cljs.core.into(cljs.core.PersistentArrayMap.EMPTY,cljs.core.map.cljs$core$IFn$_invoke$arity$2(((function (this$__$1){
-return (function (p__40503){var vec__40504 = p__40503;var k = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__40504,(0),null);var v = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__40504,(1),null);return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.keyword.cljs$core$IFn$_invoke$arity$1(k.toLowerCase()),v], null);
+return (function (p__40869){var vec__40870 = p__40869;var k = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__40870,(0),null);var v = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__40870,(1),null);return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.keyword.cljs$core$IFn$_invoke$arity$1(k.toLowerCase()),v], null);
 });})(this$__$1))
 ,cljs.core.merge.cljs$core$IFn$_invoke$arity$variadic(cljs.core.array_seq([cljs.core.js__GT_clj.cljs$core$IFn$_invoke$arity$1(goog.net.EventType)], 0))));
 });
@@ -283,14 +283,14 @@ goog.net.XhrIo.prototype.clojure$browser$net$IConnection$transmit$arity$5 = (fun
 goog.net.XhrIo.prototype.clojure$browser$net$IConnection$transmit$arity$6 = (function (this$,uri,method,content,headers,timeout){var this$__$1 = this;this$__$1.setTimeoutInterval(timeout);
 return this$__$1.send(uri,method,content,headers);
 });
-clojure.browser.net.xpc_config_fields = cljs.core.into(cljs.core.PersistentArrayMap.EMPTY,cljs.core.map.cljs$core$IFn$_invoke$arity$2((function (p__40505){var vec__40506 = p__40505;var k = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__40506,(0),null);var v = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__40506,(1),null);return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.keyword.cljs$core$IFn$_invoke$arity$1(k.toLowerCase()),v], null);
+clojure.browser.net.xpc_config_fields = cljs.core.into(cljs.core.PersistentArrayMap.EMPTY,cljs.core.map.cljs$core$IFn$_invoke$arity$2((function (p__40871){var vec__40872 = p__40871;var k = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__40872,(0),null);var v = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__40872,(1),null);return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.keyword.cljs$core$IFn$_invoke$arity$1(k.toLowerCase()),v], null);
 }),cljs.core.js__GT_clj.cljs$core$IFn$_invoke$arity$1(goog.net.xpc.CfgFields)));
 /**
 * Returns an XhrIo connection
 */
 clojure.browser.net.xhr_connection = (function xhr_connection(){return (new goog.net.XhrIo());
 });
-clojure.browser.net.ICrossPageChannel = (function (){var obj40508 = {};return obj40508;
+clojure.browser.net.ICrossPageChannel = (function (){var obj40874 = {};return obj40874;
 })();
 clojure.browser.net.register_service = (function() {
 var register_service = null;
@@ -386,13 +386,13 @@ var xpc_connection__0 = (function (){var temp__4126__auto__ = (new goog.Uri(wind
 {return null;
 }
 });
-var xpc_connection__1 = (function (config){return (new goog.net.xpc.CrossPageChannel(cljs.core.reduce.cljs$core$IFn$_invoke$arity$3((function (sum,p__40514){var vec__40515 = p__40514;var k = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__40515,(0),null);var v = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__40515,(1),null);var temp__4124__auto__ = cljs.core.get.cljs$core$IFn$_invoke$arity$2(clojure.browser.net.xpc_config_fields,k);if(cljs.core.truth_(temp__4124__auto__))
-{var field = temp__4124__auto__;var G__40516 = sum;(G__40516[field] = v);
-return G__40516;
+var xpc_connection__1 = (function (config){return (new goog.net.xpc.CrossPageChannel(cljs.core.reduce.cljs$core$IFn$_invoke$arity$3((function (sum,p__40880){var vec__40881 = p__40880;var k = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__40881,(0),null);var v = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__40881,(1),null);var temp__4124__auto__ = cljs.core.get.cljs$core$IFn$_invoke$arity$2(clojure.browser.net.xpc_config_fields,k);if(cljs.core.truth_(temp__4124__auto__))
+{var field = temp__4124__auto__;var G__40882 = sum;(G__40882[field] = v);
+return G__40882;
 } else
 {return sum;
 }
-}),(function (){var obj40518 = {};return obj40518;
+}),(function (){var obj40884 = {};return obj40884;
 })(),config)));
 });
 xpc_connection = function(config){

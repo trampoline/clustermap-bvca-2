@@ -25,14 +25,19 @@
 (def state (atom {
 ;;;;;;;;;;;;;;;;;;;;;;;;;
 
-                  :boundaryline-collections
+                  :boundarylines
                   {
-                   :uk_boroughs {:index nil
-                                 :rtree nil
-                                 :boundarylines {}}
-                   :uk_wards {:index nil
-                              :rtree nil
-                              :boundarylines {}}}
+                   :collections {
+                                 "uk_boroughs" {:index nil
+                                               :rtree nil
+                                               :boundarylines {}}
+                                 "uk_wards" {:index nil
+                                             :rtree nil
+                                             :boundarylines {}}
+                                 "uk_regions" {:index nil
+                                               :rtree nil
+                                               :boundarylines {}}}
+                   :boundarylines {}}
 
                   :multiview
                   {
@@ -42,16 +47,19 @@
                    :views {
                            :map {:type :geoport
                                  :datasource "companies"
-                                 :boundaryline_collections [[0 "uk_regions"] [7 "uk_boroughs"] [10 "uk_wards"]]
+                                 :boundaryline-collections [[0 "uk_regions"] [7 "uk_boroughs"] [10 "uk_wards"]]
                                  :controls {:initial-bounds [[59.54 2.3] [49.29 -11.29]]
                                             :zoom nil
                                             :bounds nil
+                                            :boundaryline-collection nil
                                             :boundaryline-agg {:type :stats
+                                                               :index "companies"
+                                                               :index-type "company"
                                                                :key "boundaryline_id"
-                                                               :variable "!latest_employee_count"
-                                                               :boundaryline-collection "uk_boroughs"}
-                                            :colorchooser {:fn clustermap.data.colorchooser/brewer-green
-                                                           :scale :log}}
+                                                               :variable "!latest_employee_count"}
+                                            :colorchooser {:scheme [:Oranges :3]
+                                                           :scale :log
+                                                           :variable :sum}}
                                  :data nil}
 
                            :turnover_timeline {:type :timeline
@@ -75,7 +83,6 @@
 
                   :uk-constituencies nil
                   :uk-constituencies-rtree nil
-                  :boundarylines nil
                   :zoom nil
                   :view :map
 
@@ -117,22 +124,24 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;; load and index boundarylines
 
-(def bl-collections [:uk_boroughs :uk_wards])
+(def bl-collections ["uk_regions" "uk_boroughs" "uk_wards"])
 
 (defn load-boundaryline-collection-indexes
   []
   (doseq [blcoll bl-collections]
-    (bl/fetch-boundaryline-collection-index state :boundaryline-collections blcoll)))
+    (bl/fetch-boundaryline-collection-index state :boundarylines blcoll)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;; load initial aggregations
 
+(defn load-aggregation
+  [blcoll variable]
+  (go
+    (let [employment (<! (api/boundaryline-aggregation "companies" "company" blcoll variable))]
+      (set-state [:multiview :views :map :data] employment))))
+
 (defn load-initial-aggregations
   []
-  (go
-    (let [;; turnover (<! (api/boundaryline-aggregation "companies" "company" "uk_boroughs" "!latest_turnover"))
-          employment (<! (api/boundaryline-aggregation "companies" "company" "uk_boroughs" "!latest_employee_count"))]
-      ;; (set-state [:dataview :queries :map :boundaryline-aggs :turnover :data] turnover)
-      (set-state [:multiview :views :map :data] employment))))
+  (load-aggregation "uk_boroughs" "!latest_employee_count"))
 
 ;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -317,13 +326,14 @@
                 :path-fn path-fn
                 :link-fn link-fn
                 :view-path-fn change-view-path
-                :fetch-boundaryline-fn (partial bl/get-or-fetch-best-boundaryline state :boundaryline-collections :uk_boroughs)
-                :point-in-boundarylines-fn (partial bl/point-in-boundarylines state :boundaryline-collections :uk_boroughs)}]
+                :fetch-boundaryline-fn (partial bl/get-or-fetch-best-boundaryline state :boundarylines)
+                :point-in-boundarylines-fn (partial bl/point-in-boundarylines state :boundarylines :uk_boroughs)
+                :set-app-state-fn set-state}]
     (nav/init comm)
     ;; (init-routes comm)
 
     (load-boundaryline-collection-indexes)
-    (load-initial-aggregations)
+    ;; (load-initial-aggregations)
 
     (map/mount state [:multiview :views :map] "map-component" shared)
     ;; (search/mount state "search-component" shared)

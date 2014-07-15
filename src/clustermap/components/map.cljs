@@ -185,7 +185,7 @@
 
         old-selection-path-keys @path-selections-atom
         new-selection-path-keys (-> new-selection-paths keys set)
-        _ (.log js/console (clj->js ["new-selection-path-keys" new-selection-path-keys]))
+        ;; _ (.log js/console (clj->js ["new-selection-path-keys" new-selection-path-keys]))
 
         live-path-keys (set/union new-selection-path-keys new-path-highlights)
 
@@ -328,7 +328,8 @@
     (will-update [this
                   {next-data :data
                    {next-zoom :zoom
-                    next-bounds :bounds} :controls}
+                    next-bounds :bounds
+                    colorchooser-control :colorchooser} :controls}
                   {next-path-highlights :path-highlights}]
 
       (let [{data :data
@@ -349,16 +350,23 @@
 
         ;; (update-markers path-fn leaflet-map markers next-locations)
 
-        (when (not= next-data data)
-          (.log js/console (clj->js ["next-data" next-data]))
 
-          (.log js/console (clj->js ["boundaryline-colors" ]))
+        (let [selection-path-colours (colorchooser/choose colorchooser/brewer-green
+                                                          (:scale colorchooser-control)
+                                                          :boundaryline_id
+                                                          (:variable colorchooser-control)
+                                                          (:records next-data))]
+
+          (when (not= next-data data)
+            (.log js/console (clj->js ["next-data" next-data]))
+
+            (.log js/console (clj->js ["selection-path-colours" selection-path-colours]))
+
+            )
+
+          (update-paths comm fetch-boundaryline-fn leaflet-map paths path-selections next-path-highlights selection-path-colours)
 
           )
-
-        (let [selection-path-colours (colorchooser/choose colorchooser/brewer-green :linear :boundaryline_id :avg (:records next-data))]
-
-          (update-paths comm fetch-boundaryline-fn leaflet-map paths path-selections next-path-highlights selection-path-colours))
 
         ;; (when (or pan-pending (not= next-selection selection))
         ;;   (pan-to-selection owner leaflet-map paths path-selections))

@@ -44,14 +44,16 @@
                    :views {
                            :map {:type :geoport
                                  :datasource "companies"
-                                 :boundaryline_collections [[0 "uk_regions"] [7 "uk_boroughs"] [10 "uk_wards"]]
+                                 :boundaryline-collections [[0 "uk_regions"] [7 "uk_boroughs"] [10 "uk_wards"]]
                                  :controls {:initial-bounds [[59.54 2.3] [49.29 -11.29]]
                                             :zoom nil
                                             :bounds nil
+                                            :boundaryline-collection nil
                                             :boundaryline-agg {:type :stats
+                                                               :index "companies"
+                                                               :index-type "company"
                                                                :key "boundaryline_id"
-                                                               :variable "!latest_employee_count"
-                                                               :boundaryline-collection "uk_boroughs"}
+                                                               :variable "!latest_employee_count"}
                                             :colorchooser {:scheme [:Oranges :3]
                                                            :scale :log
                                                            :variable :sum}}
@@ -322,12 +324,13 @@
                 :link-fn link-fn
                 :view-path-fn change-view-path
                 :fetch-boundaryline-fn (partial bl/get-or-fetch-best-boundaryline state :boundarylines nil)
-                :point-in-boundarylines-fn (partial bl/point-in-boundarylines state :boundarylines :uk_boroughs)}]
+                :point-in-boundarylines-fn (partial bl/point-in-boundarylines state :boundarylines :uk_boroughs)
+                :set-app-state-fn set-state}]
     (nav/init comm)
     ;; (init-routes comm)
 
     (load-boundaryline-collection-indexes)
-    (load-initial-aggregations)
+    ;; (load-initial-aggregations)
 
     (map/mount state [:multiview :views :map] "map-component" shared)
     ;; (search/mount state "search-component" shared)

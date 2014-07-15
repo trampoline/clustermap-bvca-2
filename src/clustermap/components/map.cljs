@@ -1,13 +1,15 @@
 (ns clustermap.components.map
-  (:require-macros [hiccups.core :as hiccups])
+  (:require-macros [hiccups.core :as hiccups]
+                   [cljs.core.async.macros :refer [go]])
   (:require
    [clojure.set :as set]
-   [cljs.core.async :refer [put!]]
+   [cljs.core.async :refer [put! <!]]
    [om.core :as om :include-macros true]
    [om.dom :as dom :include-macros true]
    [jayq.core :refer [$]]
    [sablono.core :as html :refer-macros [html]]
    [hiccups.runtime :as hiccupsrt]
+   [clustermap.api :as api]
    [clustermap.boundarylines :as bl]
    [clustermap.data.colorchooser :as colorchooser]))
 
@@ -154,7 +156,7 @@
   "create leaflet paths for every boundaryline in boundaryline-index"
   [comm fetch-boundaryline-fn leaflet-map boundaryline-id path-attrs]
 ;;  (.log js/console (clj->js ["fetch-create" boundaryline-id]))
-  (if-let [[tolerance js-boundaryline] (fetch-boundaryline-fn boundaryline-id (.getZoom leaflet-map) :min-zoom 7)]
+  (if-let [[tolerance js-boundaryline] (fetch-boundaryline-fn boundaryline-id (.getZoom leaflet-map))]
     (create-path comm leaflet-map boundaryline-id js-boundaryline path-attrs)))
 
 (defn replace-path
@@ -166,7 +168,7 @@
   "update a Leaflet path for a boundaryline"
   [comm fetch-boundaryline-fn leaflet-map {boundaryline-id :id :as path} path-attrs]
 ;;  (.log js/console (clj->js ["update" boundaryline-id]))
-  (if-let [[tolerance js-boundaryline] (fetch-boundaryline-fn boundaryline-id (.getZoom leaflet-map) :min-zoom 7)]
+  (if-let [[tolerance js-boundaryline] (fetch-boundaryline-fn boundaryline-id (.getZoom leaflet-map))]
     (if (not= tolerance (:tolerance path))
       (replace-path comm leaflet-map boundaryline-id path js-boundaryline path-attrs)
       (do (style-leaflet-path (:leaflet-path path) path-attrs)
@@ -243,6 +245,20 @@
     (hiccups/html
      [:a {:href (path-fn :map :constituency {:boundaryline_id bl-id :compact_name bl-name})}
       [:span.map-marker-constituency-name bl-name]])))
+
+(defn choose-boundaryline-collection
+  [threshold-collections zoom]
+  (->> threshold-collections
+       (filter (fn [[tz collection]] (>= zoom tz)))
+       reverse
+       first
+       last))
+
+(defn fetch-aggregation-data
+  [set-app-state-fn index index-type blcoll variable]
+  (go
+    (let [employment (<! (api/boundaryline-aggregation index index-type blcoll variable))]
+      (set-app-state-fn [:multiview :views :map :data] employment))))
 
 (defn map-component
   "put the leaflet map as state in the om component"
@@ -327,14 +343,18 @@
     om/IWillUpdate
     (will-update [this
                   {next-data :data
+                   next-boundaryline-collections :boundaryline-collections
                    {next-zoom :zoom
                     next-bounds :bounds
-                    colorchooser-control :colorchooser} :controls}
+                    next-boundaryline-collection :boundaryline-collection
+                    colorchooser-control :colorchooser
+                    next-boundaryline-agg :boundaryline-agg} :controls}
                   {next-path-highlights :path-highlights}]
 
       (let [{data :data
-             {:keys [initial-bounds bounds zoom]} :controls} (om/get-props owner)
-            {:keys [comm path-fn link-fn fetch-boundaryline-fn point-in-boundarylines-fn ]} (om/get-shared owner)
+             boundaryline-collections :boundaryline-collections
+             {:keys [initial-bounds bounds zoom boundaryline-collection boundaryline-agg]} :controls} (om/get-props owner)
+            {:keys [comm path-fn link-fn fetch-boundaryline-fn point-in-boundarylines-fn set-app-state-fn ]} (om/get-shared owner)
             {{:keys [leaflet-map markers paths path-selections]} :map
              pan-pending :pan-pending
              path-highlights :path-highlights} (om/get-state owner)]
@@ -348,7 +368,22 @@
           (.fitBounds leaflet-map (clj->js next-bounds))
           (om/update! cursor [:controls :bounds] (bounds-array (.getBounds leaflet-map))))
 
+        (when (and leaflet-map boundaryline-collections (not= next-boundaryline-collection (choose-boundaryline-collection next-boundaryline-collections (.getZoom leaflet-map))))
+          (.log js/console (clj->js ["change-collection" (choose-boundaryline-collection next-boundaryline-collections (.getZoom leaflet-map))]))
+          (om/update! cursor [:controls :boundaryline-collection] (choose-boundaryline-collection next-boundaryline-collections (.getZoom leaflet-map))))
+
         ;; (update-markers path-fn leaflet-map markers next-locations)
+
+        (when (and next-boundaryline-collection
+                   (or (and next-boundaryline-agg (= next-data nil))
+                       (and next-boundaryline-agg (not= next-boundaryline-agg boundaryline-agg))
+                       (not= next-boundaryline-collection boundaryline-collection)))
+          ;; time for some new data !
+          (fetch-aggregation-data set-app-state-fn
+                                  (:index next-boundaryline-agg)
+                                  (:index-type next-boundaryline-agg)
+                                  next-boundaryline-collection
+                                  (:variable next-boundaryline-agg)))
 
 
         (let [selection-path-colours (colorchooser/choose (:scheme colorchooser-control)

@@ -399,7 +399,7 @@
 
             )
 
-          (update-paths comm fetch-boundaryline-fn leaflet-map paths path-selections next-path-highlights selection-path-colours)
+          (update-paths comm (partial fetch-boundaryline-fn next-boundaryline-collection) leaflet-map paths path-selections next-path-highlights selection-path-colours)
 
           )
 

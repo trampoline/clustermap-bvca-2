@@ -28,12 +28,15 @@
                   :boundarylines
                   {
                    :collections {
-                                 :uk_boroughs {:index nil
+                                 "uk_boroughs" {:index nil
                                                :rtree nil
                                                :boundarylines {}}
-                                 :uk_wards {:index nil
-                                            :rtree nil
-                                            :boundarylines {}}}
+                                 "uk_wards" {:index nil
+                                             :rtree nil
+                                             :boundarylines {}}
+                                 "uk_regions" {:index nil
+                                               :rtree nil
+                                               :boundarylines {}}}
                    :boundarylines {}}
 
                   :multiview
@@ -121,7 +124,7 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;; load and index boundarylines
 
-(def bl-collections [:uk_boroughs :uk_wards])
+(def bl-collections ["uk_regions" "uk_boroughs" "uk_wards"])
 
 (defn load-boundaryline-collection-indexes
   []
@@ -323,7 +326,7 @@
                 :path-fn path-fn
                 :link-fn link-fn
                 :view-path-fn change-view-path
-                :fetch-boundaryline-fn (partial bl/get-or-fetch-best-boundaryline state :boundarylines nil)
+                :fetch-boundaryline-fn (partial bl/get-or-fetch-best-boundaryline state :boundarylines)
                 :point-in-boundarylines-fn (partial bl/point-in-boundarylines state :boundarylines :uk_boroughs)
                 :set-app-state-fn set-state}]
     (nav/init comm)

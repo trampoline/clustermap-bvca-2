@@ -17,7 +17,8 @@
    [clustermap.components.full-report :as full-report]
    [clustermap.components.page-title :as page-title]
    [clustermap.components.search :as search]
-   [clustermap.boundarylines :as bl])
+   [clustermap.boundarylines :as bl]
+   [clustermap.data.colorchooser :as colorchooser])
   (:import [goog History]
            [goog.history EventType]))
 
@@ -42,10 +43,15 @@
                            :map {:type :geoport
                                  :datasource "companies"
                                  :boundaryline_collections [[0 "uk_regions"] [7 "uk_boroughs"] [10 "uk_wards"]]
-                                 :controls {:extents {:zoom 7 :bounds nil}
+                                 :controls {:initial-bounds [[59.54 2.3] [49.29 -11.29]]
+                                            :zoom nil
+                                            :bounds nil
                                             :boundaryline-agg {:type :stats
+                                                               :key "boundaryline_id"
                                                                :variable "!latest_employee_count"
-                                                               :boundaryline-collection "uk_boroughs"}}
+                                                               :boundaryline-collection "uk_boroughs"}
+                                            :colorchooser {:fn clustermap.data.colorchooser/brewer-green
+                                                           :scale :log}}
                                  :data nil}
 
                            :turnover_timeline {:type :timeline
@@ -120,7 +126,7 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;; load initial aggregations
 
-(defn load-aggs
+(defn load-initial-aggregations
   []
   (go
     (let [;; turnover (<! (api/boundaryline-aggregation "companies" "company" "uk_boroughs" "!latest_turnover"))
@@ -307,20 +313,26 @@
   (let [comm (chan)
         path-fn routes/path-for
         link-fn routes/link-for
-        shared {:comm comm :path-fn path-fn :link-fn link-fn :view-path-fn change-view-path}]
+        shared {:comm comm
+                :path-fn path-fn
+                :link-fn link-fn
+                :view-path-fn change-view-path
+                :fetch-boundaryline-fn (partial bl/get-or-fetch-best-boundaryline state :boundaryline-collections :uk_boroughs)
+                :point-in-boundarylines-fn (partial bl/point-in-boundarylines state :boundaryline-collections :uk_boroughs)}]
     (nav/init comm)
-    (init-routes comm)
+    ;; (init-routes comm)
 
     (load-boundaryline-collection-indexes)
-    (load-all-investment-stats)
+    (load-initial-aggregations)
 
-    (map/mount state "map-component" shared)
-    (search/mount state "search-component" shared)
-    (map-report/mount state "map-report-component" shared)
-    (page-title/mount state "page-title-component" shared)
-    (full-report/mount state "full-report-component" shared)
+    (map/mount state [:multiview :views :map] "map-component" shared)
+    ;; (search/mount state "search-component" shared)
+    ;; (map-report/mount state "map-report-component" shared)
+    ;; (page-title/mount state "page-title-component" shared)
+    ;; (full-report/mount state "full-report-component" shared)
 
-    (go
-     (while true
-       (let [[type val] (<! comm)]
-         (handle-event type val))))))
+    ;; (go
+    ;;  (while true
+    ;;    (let [[type val] (<! comm)]
+    ;;      (handle-event type val))))
+    ))

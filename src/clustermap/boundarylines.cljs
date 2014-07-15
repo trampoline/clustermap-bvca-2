@@ -33,6 +33,11 @@
         (some avail-set finer)
         (some avail-set coarser))))
 
+(defn make-sequential
+  [x]
+  (cond (nil? x) nil
+        (sequential? x) x
+        true [x]))
 
 (defn- fetch-boundaryline
   "fetch a boundaryline for a given tolerance and add it to the collection-specific cache
@@ -40,15 +45,16 @@
   [app-state boundarylines-path collection-boundarylines-path boundaryline-id tolerance]
 ;;  (.log js/console (clj->js ["rq" app-state boundaryline-id tolerance]))
   (let [comm (api/boundarylines boundaryline-id tolerance :raw true)
-        boundarylines-path (if (sequential? boundarylines-path) boundarylines-path [boundarylines-path])
-        collection-boundarylines-path (if (sequential? collection-boundarylines-path) collection-boundarylines-path [collection-boundarylines-path])
+        boundarylines-path (make-sequential boundarylines-path)
+        collection-boundarylines-path (make-sequential collection-boundarylines-path)
         general-cache-path (concat boundarylines-path [boundaryline-id tolerance])
-        collection-cache-path (concat collection-boundarylines-path [boundaryline-id tolerance])]
+        collection-cache-path (when collection-boundarylines-path (concat collection-boundarylines-path [boundaryline-id tolerance]))]
     (go
      (let [bl (<! comm)]
        ;;       (.log js/console (clj->js ["rx" app-state boundaryline-id tolerance bl]))
        (swap! app-state update-in general-cache-path (fn [old] bl))
-       (swap! app-state update-in collection-cache-path (fn [old] bl))))))
+       (when collection-cache-path
+         (swap! app-state update-in collection-cache-path (fn [old] bl)))))))
 
 
 (defn- fetch-from-index
@@ -68,39 +74,40 @@
            (<= zoom min-zoom)"
   [app-state boundarylines-path collection-id boundaryline-id zoom & {:keys [min-zoom]}]
   ;;  (.log js/console (clj->js ["get-or-fetch" app-state korks boundaryline-id zoom]))
-  (let [boundarylines-path (if (sequential? boundarylines-path) boundarylines-path [boundarylines-path])
+  (let [boundarylines-path (make-sequential boundarylines-path)
         all-collections-path (concat boundarylines-path [:collections])
-        collection-path (concat all-collections-path [collection-id])
-        index-path (concat collection-path [:index])
-        index (get-in @app-state index-path)]
+        collection-path (when collection-id (concat all-collections-path [collection-id]))
+        collection-index-path (when collection-id (concat collection-path [:index]))
+        collection-index (when collection-id (get-in @app-state collection-index-path))]
 
     (if (and min-zoom (<= zoom min-zoom))
 
       ;; zoom <= min-zoom... fetch from the index if it exists
-      (fetch-from-index index boundaryline-id)
+      (fetch-from-index collection-index boundaryline-id)
 
       ;; zoom > min-zoom...
       (let [general-cache-path (concat boundarylines-path [:boundarylines])
-            collection-boundarylines-path (concat collection-path [:boundarylines])
-            boundarylines (get-in @app-state collection-boundarylines-path)
+            general-cache (get-in @app-state general-cache-path)
+            collection-cache-path (when collection-path (concat collection-path [:boundarylines]))
+            collection-cache (get-in @app-state collection-cache-path)
 
-            bl-versions (get boundarylines boundaryline-id)
+            bl-versions (or (get collection-cache boundaryline-id) (get general-cache boundaryline-id))
             i-tol (ideal-tolerance zoom)
             use-tol (best-available-tolerance zoom (keys bl-versions))
-            use-bl (get-in boundarylines [boundaryline-id use-tol])]
+            use-bl (get bl-versions use-tol)]
 
         (when (not= i-tol use-tol)
-          (fetch-boundaryline app-state general-cache-path collection-boundarylines-path boundaryline-id i-tol))
+          (fetch-boundaryline app-state general-cache-path collection-cache-path boundaryline-id i-tol))
 
         (if use-bl
           [use-tol use-bl]
 
-          (fetch-from-index index boundaryline-id))))))
+          (fetch-from-index collection-index boundaryline-id))))))
 
 (defn boundaryline-collection-rtree
   "atomically fetch or create the rtree index object for a collection"
   [app-state boundarylines-path collection-id]
-  (let [boundarylines-path (if (sequential? boundarylines-path) boundarylines-path [boundarylines-path])
+  (let [boundarylines-path (make-sequential boundarylines-path)
         all-collections-path (concat boundarylines-path [:collections])
         collection-path (concat all-collections-path [collection-id])
         rtree-path (concat collection-path [:rtree])]
@@ -133,7 +140,7 @@
 
 (defn fetch-boundaryline-collection-index
   [app-state boundarylines-path collection-id]
-  (let [boundarylines-path (if (sequential? boundarylines-path) boundarylines-path [boundarylines-path])
+  (let [boundarylines-path (make-sequential boundarylines-path)
         all-collections-path (concat boundarylines-path [:collections])
         collection-path (concat all-collections-path [collection-id])
         index-path (concat collection-path [:index])
@@ -154,7 +161,7 @@
   "use the rtree index to find which paths from a collection a point is inside.
    returns a list of boundaryline objects"
   [app-state boundarylines-path collection-id x y]
-  (let [boundarylines-path (if (sequential? boundarylines-path) boundarylines-path [boundarylines-path])
+  (let [boundarylines-path (make-sequential boundarylines-path)
         all-collections-path (concat boundarylines-path [:collections])
         collection-path (concat all-collections-path [collection-id])
         rtree-path (concat collection-path [:rtree])

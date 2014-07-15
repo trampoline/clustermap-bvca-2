@@ -1,31 +1,31 @@
-// Compiled by ClojureScript 0.0-2227
+// Compiled by ClojureScript 0.0-2261
 goog.provide('clustermap.formats.string');
 goog.require('cljs.core');
 /**
 * @param {...*} var_args
 */
 clustermap.formats.string.pluralize = (function() { 
-var pluralize__delegate = function (n,word,p__46478){var vec__46480 = p__46478;var irreg = cljs.core.nth.call(null,vec__46480,0,null);if((n === 1))
+var pluralize__delegate = function (n,word,p__47026){var vec__47028 = p__47026;var irreg = cljs.core.nth.call(null,vec__47028,(0),null);if((n === (1)))
 {return word;
 } else
-{var or__3541__auto__ = irreg;if(cljs.core.truth_(or__3541__auto__))
-{return or__3541__auto__;
+{var or__3543__auto__ = irreg;if(cljs.core.truth_(or__3543__auto__))
+{return or__3543__auto__;
 } else
 {return (''+cljs.core.str.cljs$core$IFn$_invoke$arity$1(word)+"s");
 }
 }
 };
 var pluralize = function (n,word,var_args){
-var p__46478 = null;if (arguments.length > 2) {
-  p__46478 = cljs.core.array_seq(Array.prototype.slice.call(arguments, 2),0);} 
-return pluralize__delegate.call(this,n,word,p__46478);};
+var p__47026 = null;if (arguments.length > 2) {
+  p__47026 = cljs.core.array_seq(Array.prototype.slice.call(arguments, 2),0);} 
+return pluralize__delegate.call(this,n,word,p__47026);};
 pluralize.cljs$lang$maxFixedArity = 2;
-pluralize.cljs$lang$applyTo = (function (arglist__46481){
-var n = cljs.core.first(arglist__46481);
-arglist__46481 = cljs.core.next(arglist__46481);
-var word = cljs.core.first(arglist__46481);
-var p__46478 = cljs.core.rest(arglist__46481);
-return pluralize__delegate(n,word,p__46478);
+pluralize.cljs$lang$applyTo = (function (arglist__47029){
+var n = cljs.core.first(arglist__47029);
+arglist__47029 = cljs.core.next(arglist__47029);
+var word = cljs.core.first(arglist__47029);
+var p__47026 = cljs.core.rest(arglist__47029);
+return pluralize__delegate(n,word,p__47026);
 });
 pluralize.cljs$core$IFn$_invoke$arity$variadic = pluralize__delegate;
 return pluralize;

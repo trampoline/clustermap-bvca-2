@@ -1,13 +1,15 @@
-// Compiled by ClojureScript 0.0-2227
+// Compiled by ClojureScript 0.0-2261
 goog.provide('clustermap.core');
 goog.require('cljs.core');
 goog.require('clustermap.app');
 goog.require('clustermap.app');
-goog.require('clojure.browser.repl');
+goog.require('weasel.repl');
+goog.require('weasel.repl');
 clustermap.core.init = (function init(){return clustermap.app.init();
 });
 if(cljs.core.truth_(config.repl))
-{setTimeout(clustermap.core.init,2000);
+{weasel.repl.connect.cljs$core$IFn$_invoke$arity$variadic("ws://localhost:9001",cljs.core.array_seq([cljs.core.constant$keyword$953,true], 0));
+clustermap.core.init();
 } else
 {if(true)
 {clustermap.core.init();

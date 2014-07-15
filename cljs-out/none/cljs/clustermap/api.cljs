@@ -70,6 +70,14 @@
        (map (fn [[k v]] (str (name k) "=" (js/JSON.stringify (clj->js v)))))
        (str/join "&")))
 
+(defn fetch
+  "put the results of an api call into an atom... makes ad-hoc api calls easy"
+  [comm]
+  (let [r (atom nil)]
+    (go
+      (reset! r (<! comm)))
+    r))
+
 (def api-prefix js/config.api.prefix)
 
 ;; boundarylines
@@ -80,8 +88,13 @@
 
 (defn boundaryline-collection-index
   [id & opts]
-  (apply GET (str "/api/boundaryline-collection-index/" id) opts))
+  (apply GET (str "/api/boundaryline-collection-index/" (name id)) opts))
 
+;; aggregation over boundarylines
+
+(defn boundaryline-aggregation
+  [index type blcoll attr & [type-ids]]
+  (GET (str "/api/" api-prefix "/boundaryline-agg/" index "/" type "/" blcoll "/" attr "?" (map-json-params type-ids))))
 
 ;; search
 

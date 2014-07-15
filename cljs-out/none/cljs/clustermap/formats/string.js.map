@@ -1,11 +1,11 @@
 {"version":3,
  "file":
- "/Users/mccraig/dev/clustermap.all/clustermap-bvca-2/cljs-out/none/cljs/clustermap/formats/string.js",
+ "/Users/mccraig/dev/clustermap.all/clustermap-eustartupdata/cljs-out/none/cljs/clustermap/formats/string.js",
  "sources":["string.cljs"],
  "lineCount":35,
  "mappings":
- ";AAAA;;AAEA;;;sCAAA,tCAAMG;2CAANH,UAAA,AAAA,IAAAC,aAAAD,qBAAA,AAAAE,wBAAAD,WAAA,EAAA,MAAA,lGAAiBG,EAAEC,6CAAQC,mDACzB,GAAI,OAAA,NAAIF;CACNC;;CACA,IAAAE,yBAAA,AAAA,oBAAAA,1BAAID;CAAJC;;CAAU,6DAAA,NAAKF;;;;0BAHFD,EAAEC;IAAnBL;EAAAA;4CAAAA,PAAiBI,EAAEC;;;IAAFD;;IAAEC;IAAnBL;kCAAAA,PAAiBI,EAAEC",
+ ";AAAA;;AAEA;;;sCAAA,tCAAMG;2CAANH,UAAA,AAAA,IAAAC,aAAAD,qBAAA,AAAAE,wBAAAD,WAAA,IAAA,MAAA,pGAAiBG,EAAEC,6CAAQC,qDACzB,GAAI,OAAA,NAAIF;CACNC;;CACA,IAAAE,yBAAA,AAAA,oBAAAA,1BAAID;CAAJC;;CAAU,6DAAA,NAAKF;;;;0BAHFD,EAAEC;IAAnBL;EAAAA;4CAAAA,PAAiBI,EAAEC;;;IAAFD;;IAAEC;IAAnBL;kCAAAA,PAAiBI,EAAEC",
  "names":
- ["p__46478", "vec__46480", "cljs.core/nth",
+ ["p__47026", "vec__47028", "cljs.core/nth",
   "clustermap.formats.string/pluralize", "n", "word", "irreg",
-  "or__3541__auto__"]}
+  "or__3543__auto__"]}

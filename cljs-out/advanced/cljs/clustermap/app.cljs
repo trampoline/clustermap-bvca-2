@@ -18,11 +18,62 @@
    [clustermap.components.page-title :as page-title]
    [clustermap.components.search :as search]
    [clustermap.boundarylines :as bl]
-   [clustermap.rtree :as rtree])
+   [clustermap.data.colorchooser :as colorchooser])
   (:import [goog History]
            [goog.history EventType]))
 
-(def state (atom {:uk-constituencies nil
+(def state (atom {
+;;;;;;;;;;;;;;;;;;;;;;;;;
+
+                  :boundaryline-collections
+                  {
+                   :uk_boroughs {:index nil
+                                 :rtree nil
+                                 :boundarylines {}}
+                   :uk_wards {:index nil
+                              :rtree nil
+                              :boundarylines {}}}
+
+                  :multiview
+                  {
+                   :type :multiview
+                   :filter nil ;; will be passed down to all contained views
+
+                   :views {
+                           :map {:type :geoport
+                                 :datasource "companies"
+                                 :boundaryline_collections [[0 "uk_regions"] [7 "uk_boroughs"] [10 "uk_wards"]]
+                                 :controls {:initial-bounds [[59.54 2.3] [49.29 -11.29]]
+                                            :zoom nil
+                                            :bounds nil
+                                            :boundaryline-agg {:type :stats
+                                                               :key "boundaryline_id"
+                                                               :variable "!latest_employee_count"
+                                                               :boundaryline-collection "uk_boroughs"}
+                                            :colorchooser {:fn clustermap.data.colorchooser/brewer-green
+                                                           :scale :log}}
+                                 :data nil}
+
+                           :turnover_timeline {:type :timeline
+                                               :datasource "company_accounts"
+                                               :controls {:variable "accounts_date"
+                                                          :after "2003-01-01"
+                                                          :before "2012-01-01"
+                                                          :interval "year"}
+                                               :data nil}
+
+                           :table  {:type :table
+                                    :datasource "companies"
+                                    :controls {:order nil
+                                               :offset 0
+                                               :limit 50
+                                               :variables ["!name" "!postcode" "!formation_date" "!sic07"
+                                                           "!latest_accounts_date" "!latest_employee_count"
+                                                           "!latest_turnover"]}
+                                    :data nil}}}
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+                  :uk-constituencies nil
                   :uk-constituencies-rtree nil
                   :boundarylines nil
                   :zoom nil
@@ -64,19 +115,35 @@
   [& {:as path-values}]
   (swap! state new-state path-values))
 
-(defn load-uk-constituencies
+;;;;;;;;;;;;;;;;;;;;;;;; load and index boundarylines
+
+(def bl-collections [:uk_boroughs :uk_wards])
+
+(defn load-boundaryline-collection-indexes
+  []
+  (doseq [blcoll bl-collections]
+    (bl/fetch-boundaryline-collection-index state :boundaryline-collections blcoll)))
+
+;;;;;;;;;;;;;;;;;;;;;;;; load initial aggregations
+
+(defn load-initial-aggregations
   []
   (go
-    (let [bls (<! (api/boundaryline-collection-index "uk_constituencies" :raw true))
-          rt (rtree/rtree-index bls)]
-      (set-state :uk-constituencies bls
-                 :uk-constituencies-rtree rt))))
+    (let [;; turnover (<! (api/boundaryline-aggregation "companies" "company" "uk_boroughs" "!latest_turnover"))
+          employment (<! (api/boundaryline-aggregation "companies" "company" "uk_boroughs" "!latest_employee_count"))]
+      ;; (set-state [:dataview :queries :map :boundaryline-aggs :turnover :data] turnover)
+      (set-state [:multiview :views :map :data] employment))))
+
+;;;;;;;;;;;;;;;;;;;;;;;
+
 
 (defn load-all-investment-stats
   []
   (go
     (let [all-investment-stats (<! (api/investment-stats))]
       (set-state :all-investment-stats all-investment-stats))))
+
+
 
 (defn process-search-results
   "process a search"
@@ -96,7 +163,7 @@
              :selection-investment-account-timelines selection-investment-account-timelines
              :selection-investment-aggs selection-investment-aggs
              :selection-investments selection-investments
-             :selection-portfolio-company-locations selection-portfolio-company-locations))
+             :selection-portfolio-company-locations) selection-portfolio-company-locations)
 
 (defn make-selection
   "set the selection
@@ -246,20 +313,26 @@
   (let [comm (chan)
         path-fn routes/path-for
         link-fn routes/link-for
-        shared {:comm comm :path-fn path-fn :link-fn link-fn :view-path-fn change-view-path}]
+        shared {:comm comm
+                :path-fn path-fn
+                :link-fn link-fn
+                :view-path-fn change-view-path
+                :fetch-boundaryline-fn (partial bl/get-or-fetch-best-boundaryline state :boundaryline-collections :uk_boroughs)
+                :point-in-boundarylines-fn (partial bl/point-in-boundarylines state :boundaryline-collections :uk_boroughs)}]
     (nav/init comm)
-    (init-routes comm)
+    ;; (init-routes comm)
 
-    (load-uk-constituencies)
-    (load-all-investment-stats)
+    (load-boundaryline-collection-indexes)
+    (load-initial-aggregations)
 
-    (map/mount state "map-component" shared)
-    (search/mount state "search-component" shared)
-    (map-report/mount state "map-report-component" shared)
-    (page-title/mount state "page-title-component" shared)
-    (full-report/mount state "full-report-component" shared)
+    (map/mount state [:multiview :views :map] "map-component" shared)
+    ;; (search/mount state "search-component" shared)
+    ;; (map-report/mount state "map-report-component" shared)
+    ;; (page-title/mount state "page-title-component" shared)
+    ;; (full-report/mount state "full-report-component" shared)
 
-    (go
-     (while true
-       (let [[type val] (<! comm)]
-         (handle-event type val))))))
+    ;; (go
+    ;;  (while true
+    ;;    (let [[type val] (<! comm)]
+    ;;      (handle-event type val))))
+    ))

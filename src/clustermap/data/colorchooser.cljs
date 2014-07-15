@@ -1,5 +1,6 @@
 (ns clustermap.data.colorchooser
-  (:require [clustermap.data.picker :as picker]))
+  (:require [clustermap.data.picker :as picker]
+            [clustermap.data.colorbrewer :as colorbrewer]))
 
 
 (def brewer-green
@@ -30,9 +31,9 @@
 
 (defn choose
   "return a map of {key-value => colours}"
-  [color-scheme scale key variable data]
-
-  (let [col-count (count color-scheme)
+  [color-scheme-spec scale key variable data]
+  (let [color-scheme (get-in colorbrewer/schemes color-scheme-spec )
+        col-count (count color-scheme)
         values (picker/pick-variable variable data)
         min-value (apply min values)
         max-value (apply max values)

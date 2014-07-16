@@ -13484,7 +13484,7 @@ function yu(a, b, c, d, e) {
         return function(b) {
           b = b.target.value;
           console.log(b);
-          return Bt.e(h.cursor, new Y(null, 2, 5, Z, [Bk, zi], null), r(E.c ? E.c("group", b) : E.call(null, "group", b)) ? new p(null, 1, [nk, new p(null, 1, ["!is_group", !1], null)], null) : r(E.c ? E.c("notgroup", b) : E.call(null, "notgroup", b)) ? new p(null, 1, [nk, new p(null, 1, ["!is_group", !0], null)], null) : null);
+          return Bt.e(h.cursor, new Y(null, 2, 5, Z, [Bk, zi], null), r(E.c ? E.c("group", b) : E.call(null, "group", b)) ? new p(null, 1, [nk, new p(null, 1, ["!is_group", !0], null)], null) : r(E.c ? E.c("notgroup", b) : E.call(null, "notgroup", b)) ? new p(null, 1, [nk, new p(null, 1, ["!is_group", !1], null)], null) : null);
         };
       }(this, b, c, d)}, React.DOM.option({value:""}, "any"), React.DOM.option({value:"group"}, "group"), React.DOM.option({value:"notgroup"}, "not group")))), React.DOM.div({className:"tbl-row"}, React.DOM.div({className:"tbl-cell"}, "turnover"), React.DOM.div({className:"tbl-cell"}, React.DOM.select({onChange:function() {
         return function(b) {

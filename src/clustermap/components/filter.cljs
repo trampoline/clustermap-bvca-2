@@ -44,8 +44,8 @@
                                                  (.log js/console val)
                                                  (om/update! cursor [:components :group]
                                                              (condp = val
-                                                                   "group" {:term {"!is_group" false}}
-                                                                   "notgroup" {:term {"!is_group" true}}
+                                                                   "group" {:term {"!is_group" true}}
+                                                                   "notgroup" {:term {"!is_group" false}}
                                                                    nil))))}
                           [:option {:value ""} "any"]
                           [:option {:value "group"} "group"]

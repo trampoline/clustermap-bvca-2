@@ -60554,10 +60554,10 @@ clustermap.components.filter.filter_component = function filter_component(p__127
               var pred__12880 = cljs.core._EQ_;
               var expr__12881 = val;
               if (cljs.core.truth_(pred__12880.call(null, "group", expr__12881))) {
-                return new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "term", "term", -1817390416), new cljs.core.PersistentArrayMap(null, 1, ["!is_group", false], null)], null);
+                return new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "term", "term", -1817390416), new cljs.core.PersistentArrayMap(null, 1, ["!is_group", true], null)], null);
               } else {
                 if (cljs.core.truth_(pred__12880.call(null, "notgroup", expr__12881))) {
-                  return new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "term", "term", -1817390416), new cljs.core.PersistentArrayMap(null, 1, ["!is_group", true], null)], null);
+                  return new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "term", "term", -1817390416), new cljs.core.PersistentArrayMap(null, 1, ["!is_group", false], null)], null);
                 } else {
                   return null;
                 }

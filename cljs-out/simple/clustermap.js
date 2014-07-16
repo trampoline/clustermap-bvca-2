@@ -36862,7 +36862,7 @@ clustermap.components.filter.filter_component = function filter_component(b, c) 
           console.log(c);
           return om.core.update_BANG_.call(null, l.cursor, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "components", "components", -1073188942), new cljs.core.Keyword(null, "group", "group", 582596132)], null), function() {
             var b = cljs.core._EQ_;
-            return cljs.core.truth_(b.call(null, "group", c)) ? new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "term", "term", -1817390416), new cljs.core.PersistentArrayMap(null, 1, ["!is_group", !1], null)], null) : cljs.core.truth_(b.call(null, "notgroup", c)) ? new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "term", "term", -1817390416), new cljs.core.PersistentArrayMap(null, 1, ["!is_group", !0], null)], null) : null;
+            return cljs.core.truth_(b.call(null, "group", c)) ? new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "term", "term", -1817390416), new cljs.core.PersistentArrayMap(null, 1, ["!is_group", !0], null)], null) : cljs.core.truth_(b.call(null, "notgroup", c)) ? new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "term", "term", -1817390416), new cljs.core.PersistentArrayMap(null, 1, ["!is_group", !1], null)], null) : null;
           }());
         };
       }(this, b, c, d)}, React.DOM.option({value:""}, "any"), React.DOM.option({value:"group"}, "group"), React.DOM.option({value:"notgroup"}, "not group")))), React.DOM.div({className:"tbl-row"}, React.DOM.div({className:"tbl-cell"}, "turnover"), React.DOM.div({className:"tbl-cell"}, React.DOM.select({onChange:function(b, c, d, e) {

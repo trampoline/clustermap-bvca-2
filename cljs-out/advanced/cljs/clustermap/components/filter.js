@@ -69,10 +69,10 @@ return om.core.update_BANG_.cljs$core$IFn$_invoke$arity$3(self__.cursor,new cljs
 },React.DOM.option({"value": ""},"any"),React.DOM.option({"value": "new"},"< 5 years old"),React.DOM.option({"value": "old"},">= 5 years old")))),React.DOM.div({"className": "tbl-row"},React.DOM.div({"className": "tbl-cell"},"group ?"),React.DOM.div({"className": "tbl-cell"},React.DOM.select({"onChange": ((function (this$__$1,map__36460,map__36460__$1,cursor){
 return (function (e){var val = e.target.value;console.log(val);
 return om.core.update_BANG_.cljs$core$IFn$_invoke$arity$3(self__.cursor,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.constant$keyword$1027,cljs.core.constant$keyword$1033], null),(function (){var pred__36542 = cljs.core._EQ_;var expr__36543 = val;if(cljs.core.truth_((pred__36542.cljs$core$IFn$_invoke$arity$2 ? pred__36542.cljs$core$IFn$_invoke$arity$2("group",expr__36543) : pred__36542.call(null,"group",expr__36543))))
-{return new cljs.core.PersistentArrayMap(null, 1, [cljs.core.constant$keyword$1034,new cljs.core.PersistentArrayMap(null, 1, ["!is_group",false], null)], null);
+{return new cljs.core.PersistentArrayMap(null, 1, [cljs.core.constant$keyword$1034,new cljs.core.PersistentArrayMap(null, 1, ["!is_group",true], null)], null);
 } else
 {if(cljs.core.truth_((pred__36542.cljs$core$IFn$_invoke$arity$2 ? pred__36542.cljs$core$IFn$_invoke$arity$2("notgroup",expr__36543) : pred__36542.call(null,"notgroup",expr__36543))))
-{return new cljs.core.PersistentArrayMap(null, 1, [cljs.core.constant$keyword$1034,new cljs.core.PersistentArrayMap(null, 1, ["!is_group",true], null)], null);
+{return new cljs.core.PersistentArrayMap(null, 1, [cljs.core.constant$keyword$1034,new cljs.core.PersistentArrayMap(null, 1, ["!is_group",false], null)], null);
 } else
 {return null;
 }

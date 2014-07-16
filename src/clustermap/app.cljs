@@ -13,6 +13,8 @@
    [clustermap.nav :as nav]
    [clustermap.ganalytics :as ga]
    [clustermap.components.map :as map]
+   [clustermap.components.filter :as filter]
+   [clustermap.components.multiview :as multiview]
    [clustermap.components.map-report :as map-report]
    [clustermap.components.full-report :as full-report]
    [clustermap.components.page-title :as page-title]
@@ -42,7 +44,10 @@
                   :multiview
                   {
                    :type :multiview
-                   :filter nil ;; will be passed down to all contained views
+
+                    ;; the compiled filter will be passed down to all contained views
+                   :filter {:components {}
+                            :compiled nil}
 
                    :views {
                            :map {:type :geoport
@@ -136,7 +141,7 @@
 (defn load-aggregation
   [blcoll variable]
   (go
-    (let [employment (<! (api/boundaryline-aggregation "companies" "company" blcoll variable))]
+    (let [employment (<! (api/boundaryline-aggregation "companies" "company" blcoll variable nil))]
       (set-state [:multiview :views :map :data] employment))))
 
 (defn load-initial-aggregations
@@ -336,6 +341,7 @@
     ;; (load-initial-aggregations)
 
     (map/mount state [:multiview :views :map] "map-component" shared)
+    (multiview/mount state [:multiview] "search-component" shared)
     ;; (search/mount state "search-component" shared)
     ;; (map-report/mount state "map-report-component" shared)
     ;; (page-title/mount state "page-title-component" shared)

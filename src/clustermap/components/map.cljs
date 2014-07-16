@@ -390,11 +390,12 @@
                                   (om/-value next-filter)))
 
 
-        (let [[threshold-colors selection-path-colours] (colorchooser/choose (:scheme colorchooser-control)
-                                                          (:scale colorchooser-control)
-                                                          :boundaryline_id
-                                                          (keyword (:variable colorchooser-control))
-                                                          (:records next-data))]
+        (let [[threshold-colors selection-path-colours] (colorchooser/choose
+                                                         (:scheme colorchooser-control)
+                                                         (keyword (:scale colorchooser-control))
+                                                         :boundaryline_id
+                                                         (keyword (:variable colorchooser-control))
+                                                         (:records next-data))]
 
           (when (not= next-data data)
             (.log js/console (clj->js ["next-data" next-data]))

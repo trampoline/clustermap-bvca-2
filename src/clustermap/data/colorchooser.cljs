@@ -10,11 +10,14 @@
 
 (defn log-scale
   [min max steps]
-  (let [log-min (Math/log min)
-        log-max (Math/log max)
-        log-linear-scale (linear-scale log-min log-max steps)]
+  (let [translation (- 1 min) ;; translate to avoid NaNs
+
+        log-min (Math/log min)
+        log-max (Math/log (+ max translation))
+
+        log-linear-scale (linear-scale 1 log-max steps)]
     (->> log-linear-scale
-         (map (fn [n] (Math/pow Math/E n))))))
+         (map (fn [n] (- (Math/pow Math/E n) translation))))))
 
 (defn choose-from-scheme
   [scheme thresholds value]

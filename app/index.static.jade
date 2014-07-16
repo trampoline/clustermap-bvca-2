@@ -112,7 +112,7 @@ html(lang='en')
     #wrap
       aside#nav
         ul
-          li.search(data-toggle='tooltip' data-placement='right' title='Search'): a(href='#') Search
+          li.search(data-toggle='tooltip' data-placement='right' title='Filter'): a(href='#') Search
           li.map.active(data-toggle='tooltip' data-placement='right' title='View on map'): a(href='#') Map
           li.lists(data-toggle='tooltip' data-placement='right' title='View full report'): a(href='#') Full Report
           li.info(data-toggle='tooltip' data-placement='right' title='More Information')
@@ -124,8 +124,8 @@ html(lang='en')
       section#main
         .container
           header#main-header
-            #search-component
-              #search
+            #search
+              #search-component
                 div.tbl
                   div.tbl-cell(style='width: 100%')
                     input(type='text', placeholder='Search')
@@ -151,12 +151,20 @@ html(lang='en')
                       a(href='#')
                         | -
                         small Investor-backed company
-            #page-title-component
-              #page-title
-                button(type='button').btn View on map
-                // button(type='reset').btn.btn-link.btn-reset Reset to UK wide
-                h2 -
-                h3 -
+              .tbl
+                .tbl-row
+                  .tbl-cell
+                    h3 Shading
+                  .tbl-cell
+              #variable-selection-component
+              #stat-selection-component
+              #scale-selection-component
+          #page-title-component
+            #page-title
+              button(type='button').btn View on map
+              // button(type='reset').btn.btn-link.btn-reset Reset to UK wide
+              h2 -
+              h3 -
 
           #main-content
 

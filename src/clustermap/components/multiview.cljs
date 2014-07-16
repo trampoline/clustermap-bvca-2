@@ -17,7 +17,7 @@
     om/IRenderState
     (render-state [this state]
       (html
-       [:div.search-component#search
+       [:div
         (om/build filter-component/filter-component filter-spec)]))
 
     om/IWillUpdate

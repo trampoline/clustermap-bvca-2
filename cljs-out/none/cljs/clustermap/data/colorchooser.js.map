@@ -2,18 +2,17 @@
  "file":
  "/Users/mccraig/dev/clustermap.all/clustermap-eustartupdata/cljs-out/none/cljs/clustermap/data/colorchooser.js",
  "sources":["colorchooser.cljs"],
- "lineCount":37,
+ "lineCount":36,
  "mappings":
- "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",
+ "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",
  "names":
- ["clustermap.data.colorchooser/brewer-green",
-  "clustermap.data.colorchooser/linear-scale", "min", "max", "steps",
+ ["clustermap.data.colorchooser/linear-scale", "min", "max", "steps",
   "step", "cljs.core/range", "cljs.core/map", "i",
-  "clustermap.data.colorchooser/log-scale", "log-min", "Math/log",
-  "log-max", "log-linear-scale", "n", "Math/pow", "Math/E",
+  "clustermap.data.colorchooser/log-scale", "translation", "log-min",
+  "Math/log", "log-max", "log-linear-scale", "n", "Math/pow", "Math/E",
   "clustermap.data.colorchooser/choose-from-scheme", "scheme",
   "thresholds", "value", "scheme-thresholds", "cljs.core/vector",
-  "chosen", "cljs.core/filter", "p__49297", "vec__49298",
+  "chosen", "cljs.core/filter", "p__49533", "vec__49534",
   "cljs.core/nth", "t", "cljs.core/first", "cljs.core/last",
   "or__3543__auto__", "clustermap.data.colorchooser/choose",
   "color-scheme-spec", "scale", "key", "variable", "data",
@@ -21,5 +20,6 @@
   "clustermap.data.colorbrewer/schemes", "col-count",
   "cljs.core/count", "values", "clustermap.data.picker/pick-variable",
   "min-value", "cljs.core/apply", "cljs.core/min", "max-value",
-  "cljs.core/max", "cljs.core/=", "chooser", "cljs.core/partial", "r",
-  "cljs.core/get", "cljs.core/into"]}
+  "cljs.core/max", "cljs.core/=", "chooser", "cljs.core/partial",
+  "value-colors", "r", "cljs.core/get", "cljs.core/into",
+  "threshold-colors", "cljs.core/concat"]}

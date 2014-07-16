@@ -103,7 +103,7 @@
     <div id="wrap">
       <aside id="nav">
         <ul>
-          <li data-toggle="tooltip" data-placement="right" title="Search" class="search"><a href="#">Search</a></li>
+          <li data-toggle="tooltip" data-placement="right" title="Filter" class="search"><a href="#">Search</a></li>
           <li data-toggle="tooltip" data-placement="right" title="View on map" class="map active"><a href="#">Map</a></li>
           <li data-toggle="tooltip" data-placement="right" title="View full report" class="lists"><a href="#">Full Report</a></li>
           <li data-toggle="tooltip" data-placement="right" title="More Information" class="info"><a data-toggle="modal" data-target="#page-info">Info</a></li>
@@ -114,8 +114,8 @@
       <section id="main">
         <div class="container">
           <header id="main-header">
-            <div id="search-component">
-              <div id="search">
+            <div id="search">
+              <div id="search-component">
                 <div class="tbl">
                   <div style="width: 100%" class="tbl-cell">
                     <input type="text" placeholder="Search">
@@ -132,16 +132,27 @@
                   </ul>
                 </div>
               </div>
-            </div>
-            <div id="page-title-component">
-              <div id="page-title">
-                <button type="button" class="btn">View on map</button>
-                <!-- button(type='reset').btn.btn-link.btn-reset Reset to UK wide-->
-                <h2>-</h2>
-                <h3>-</h3>
+              <div class="tbl">
+                <div class="tbl-row">
+                  <div class="tbl-cell">
+                    <h3>Shading</h3>
+                  </div>
+                  <div class="tbl-cell"></div>
+                </div>
               </div>
+              <div id="variable-selection-component"></div>
+              <div id="stat-selection-component"></div>
+              <div id="scale-selection-component"></div>
             </div>
           </header>
+          <div id="page-title-component">
+            <div id="page-title">
+              <button type="button" class="btn">View on map</button>
+              <!-- button(type='reset').btn.btn-link.btn-reset Reset to UK wide-->
+              <h2>-</h2>
+              <h3>-</h3>
+            </div>
+          </div>
           <div id="main-content">
             <div id="page-map">
               <div id="map-report" class="open"><a href="#"><i>Show / hide</i></a>

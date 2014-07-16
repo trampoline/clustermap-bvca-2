@@ -289,14 +289,14 @@
 (defn brewer [scheme steps idx]
   (let [steps-key (keyword (str steps))]
     (get-in
-     color-schemes
+     schemes
      [scheme steps-key idx])))
 
 ;; To get the color range for legends.
 (defn colors [scheme steps]
   (let [steps-key (keyword (str steps))]
     (get-in
-     color-schemes
+     schemes
      [scheme steps-key])))
 
 ;; (defn brewer [v min max steps scheme]

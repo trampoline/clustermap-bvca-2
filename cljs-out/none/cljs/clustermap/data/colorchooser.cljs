@@ -2,10 +2,6 @@
   (:require [clustermap.data.picker :as picker]
             [clustermap.data.colorbrewer :as colorbrewer]))
 
-
-(def brewer-green
-  ["#f7fcfd" "#e5f5f9" "#ccece6" "#99d8c9" "#66c2a4" "#41ae76" "#238b45" "#06d2c" "#0441b"])
-
 (defn linear-scale
   [min max steps]
   (let [step (/ (- max min) steps)]
@@ -14,11 +10,14 @@
 
 (defn log-scale
   [min max steps]
-  (let [log-min (Math/log min)
-        log-max (Math/log max)
-        log-linear-scale (linear-scale log-min log-max steps)]
+  (let [translation (- 1 min) ;; translate to avoid NaNs
+
+        log-min (Math/log min)
+        log-max (Math/log (+ max translation))
+
+        log-linear-scale (linear-scale 1 log-max steps)]
     (->> log-linear-scale
-         (map (fn [n] (Math/pow Math/E n))))))
+         (map (fn [n] (- (Math/pow Math/E n) translation))))))
 
 (defn choose-from-scheme
   [scheme thresholds value]
@@ -40,8 +39,10 @@
         thresholds (if (= scale :log)
                      (log-scale min-value max-value col-count)
                      (linear-scale min-value max-value col-count))
-        chooser (partial choose-from-scheme color-scheme thresholds)]
-    (->> data
-         (map (fn [r]
-                [(get r key) (chooser (get r variable))]))
-         (into {}))))
+        chooser (partial choose-from-scheme color-scheme thresholds)
+        value-colors (->> data
+                          (map (fn [r]
+                                 [(get r key) (chooser (get r variable))]))
+                          (into {}))
+        threshold-colors (map vector (concat thresholds [max-value]) color-scheme)]
+    [threshold-colors value-colors]))

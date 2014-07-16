@@ -132,10 +132,10 @@
 
 (defn style-leaflet-path
   [leaflet-path {:keys [selected highlighted fill-color]}]
-  (cond (and selected highlighted) (.setStyle leaflet-path (clj->js {:fillColor fill-color :weight 2 :opacity 1 :fill true :fillOpacity 0.6}))
-        selected                   (.setStyle leaflet-path (clj->js {:fillColor fill-color :weight 2 :opacity 1 :fill true :fillOpacity 0.6}))
-        highlighted                (.setStyle leaflet-path (clj->js {:fillColor fill-color :weight 2 :opacity 1 :fill false}))
-        true                       (.setStyle leaflet-path (clj->js {:fillColor fill-color :weight 2 :opacity 0 :fill false :fillOpacity 0}))))
+  (cond (and selected highlighted) (.setStyle leaflet-path (clj->js {:color "#000000" :fillColor fill-color :weight 2 :opacity 1 :fill true :fillOpacity 0.6}))
+        selected                   (.setStyle leaflet-path (clj->js {:color "#8c2d04" :fillColor fill-color :weight 1 :opacity 1 :fill true :fillOpacity 0.6}))
+        highlighted                (.setStyle leaflet-path (clj->js {:color "#000000" :fillColor fill-color :weight 2 :opacity 1 :fill false}))
+        true                       (.setStyle leaflet-path (clj->js {:color "#8c2d04" :fillColor fill-color :weight 1 :opacity 0 :fill false :fillOpacity 0}))))
 
 (defn create-path
   [comm leaflet-map boundaryline-id js-boundaryline {:keys [selected] :as path-attrs}]
@@ -390,16 +390,18 @@
                                   (om/-value next-filter)))
 
 
-        (let [selection-path-colours (colorchooser/choose (:scheme colorchooser-control)
-                                                          (:scale colorchooser-control)
-                                                          :boundaryline_id
-                                                          (:variable colorchooser-control)
-                                                          (:records next-data))]
+        (let [[threshold-colors selection-path-colours] (colorchooser/choose
+                                                         (:scheme colorchooser-control)
+                                                         (keyword (:scale colorchooser-control))
+                                                         :boundaryline_id
+                                                         (keyword (:variable colorchooser-control))
+                                                         (:records next-data))]
 
           (when (not= next-data data)
             (.log js/console (clj->js ["next-data" next-data]))
 
-            (.log js/console (clj->js ["selection-path-colours" selection-path-colours]))
+            (.log js/console (clj->js ["threshold-colors" threshold-colors]))
+            (.log js/console (clj->js ["selection-path-colors" selection-path-colours]))
 
             )
 

@@ -8,7 +8,7 @@ goog.require('weasel.repl');
 clustermap.core.init = (function init(){return clustermap.app.init();
 });
 if(cljs.core.truth_(config.repl))
-{weasel.repl.connect.cljs$core$IFn$_invoke$arity$variadic("ws://localhost:9001",cljs.core.array_seq([cljs.core.constant$keyword$1121,true], 0));
+{weasel.repl.connect.cljs$core$IFn$_invoke$arity$variadic("ws://localhost:9001",cljs.core.array_seq([cljs.core.constant$keyword$1124,true], 0));
 clustermap.core.init();
 } else
 {if(true)

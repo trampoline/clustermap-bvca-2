@@ -15,6 +15,7 @@
    [clustermap.components.map :as map]
    [clustermap.components.filter :as filter]
    [clustermap.components.multiview :as multiview]
+   [clustermap.components.select-chooser :as select-chooser]
    [clustermap.components.map-report :as map-report]
    [clustermap.components.full-report :as full-report]
    [clustermap.components.page-title :as page-title]
@@ -62,7 +63,7 @@
                                                                :index-type "company"
                                                                :key "boundaryline_id"
                                                                :variable "!latest_employee_count"}
-                                            :colorchooser {:scheme [:Oranges :3]
+                                            :colorchooser {:scheme [:Oranges :9]
                                                            :scale :log
                                                            :variable :sum}}
                                  :data nil}
@@ -342,6 +343,10 @@
 
     (map/mount state [:multiview :views :map] "map-component" shared)
     (multiview/mount state [:multiview] "search-component" shared)
+    (select-chooser/mount state [:multiview :views :map :controls :boundaryline-agg] "variable-selection-component" shared "Variable" :variable [["!latest_employee_count" "Employee count"] ["!latest_turnover" "Turnover"]])
+    (select-chooser/mount state [:multiview :views :map :controls :colorchooser] "stat-selection-component" shared "Statistic" :variable [["sum" "Sum"] ["max" "Maximum"] ["avg" "Mean"] ["boundaryline_id_doc_count" "Count"]])
+    (select-chooser/mount state [:multiview :views :map :controls :colorchooser] "scale-selection-component" shared "Scale" :scale [["log" "Log"] ["linear" "Linear"]])
+
     ;; (search/mount state "search-component" shared)
     ;; (map-report/mount state "map-report-component" shared)
     ;; (page-title/mount state "page-title-component" shared)

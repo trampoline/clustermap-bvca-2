@@ -17,7 +17,7 @@ return (function (n){return Math.pow.call(null,Math.E,n);
 ,log_linear_scale);
 });
 clustermap.data.colorchooser.choose_from_scheme = (function choose_from_scheme(scheme,thresholds,value){var scheme_thresholds = cljs.core.map.call(null,cljs.core.vector,thresholds,scheme);var chosen = cljs.core.last.call(null,cljs.core.first.call(null,cljs.core.filter.call(null,((function (scheme_thresholds){
-return (function (p__13352){var vec__13353 = p__13352;var t = cljs.core.nth.call(null,vec__13353,(0),null);var i = cljs.core.nth.call(null,vec__13353,(1),null);return (value <= t);
+return (function (p__13804){var vec__13805 = p__13804;var t = cljs.core.nth.call(null,vec__13805,(0),null);var i = cljs.core.nth.call(null,vec__13805,(1),null);return (value <= t);
 });})(scheme_thresholds))
 ,scheme_thresholds)));var or__3543__auto__ = chosen;if(cljs.core.truth_(or__3543__auto__))
 {return or__3543__auto__;

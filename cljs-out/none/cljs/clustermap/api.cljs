@@ -6,7 +6,7 @@
    [cljs.core.async :as async :refer [<! chan close! put! sliding-buffer to-chan]]
    [goog.net.XhrIo :as xhr]))
 
-(defn GET [url & {:keys [raw]}]
+(defn AJAX [url & {:keys [raw method content]}]
   "send a GET request, returning a channel with a single result value"
   (let [comm (chan 1)]
     (xhr/send url
@@ -20,8 +20,20 @@
                                   (if raw
                                     d
                                     (js->clj d :keywordize-keys true))))))
-                (close! comm)))
+                (close! comm))
+              (or (some-> method name str/upper-case) "GET")
+              (when content (js/JSON.stringify (clj->js content)))
+              (when content (clj->js {"Content-Type" "application/json"})))
     comm))
+
+(defn GET [url & {:as opts}]
+  (apply AJAX url (apply concat (merge opts {:method "GET"}))))
+
+(defn POST [url content & {:as opts}]
+  (apply AJAX url (apply concat (merge opts {:method "POST" :content content}))))
+
+(defn PUT [url content & {:as opts}]
+  (apply AJAX url (apply concat (merge opts {:method "PUT" :content content}))))
 
 (defn- ordered-api-results
   "- ocomm : a channel containing [result-chans result-handler-args]
@@ -93,8 +105,9 @@
 ;; aggregation over boundarylines
 
 (defn boundaryline-aggregation
-  [index type blcoll attr & [type-ids]]
-  (GET (str "/api/" api-prefix "/boundaryline-agg/" index "/" type "/" blcoll "/" attr "?" (map-json-params type-ids))))
+  [index type blcoll attr filter & [type-ids]]
+  (POST (str "/api/" api-prefix "/boundaryline-agg/" index "/" type "/" blcoll "/" attr "?" (map-json-params type-ids))
+      {:filter filter}))
 
 ;; search
 

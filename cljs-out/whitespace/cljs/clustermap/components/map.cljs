@@ -255,9 +255,9 @@
        last))
 
 (defn fetch-aggregation-data
-  [set-app-state-fn index index-type blcoll variable]
+  [set-app-state-fn index index-type blcoll variable filter]
   (go
-    (let [employment (<! (api/boundaryline-aggregation index index-type blcoll variable))]
+    (let [employment (<! (api/boundaryline-aggregation index index-type blcoll variable filter))]
       (set-app-state-fn [:multiview :views :map :data] employment))))
 
 (defn map-component
@@ -342,7 +342,8 @@
 
     om/IWillUpdate
     (will-update [this
-                  {next-data :data
+                  {next-filter :filter
+                   next-data :data
                    next-boundaryline-collections :boundaryline-collections
                    {next-zoom :zoom
                     next-bounds :bounds
@@ -351,7 +352,8 @@
                     next-boundaryline-agg :boundaryline-agg} :controls}
                   {next-path-highlights :path-highlights}]
 
-      (let [{data :data
+      (let [{filter :filter
+             data :data
              boundaryline-collections :boundaryline-collections
              {:keys [initial-bounds bounds zoom boundaryline-collection boundaryline-agg]} :controls} (om/get-props owner)
             {:keys [comm path-fn link-fn fetch-boundaryline-fn point-in-boundarylines-fn set-app-state-fn ]} (om/get-shared owner)
@@ -377,13 +379,15 @@
         (when (and next-boundaryline-collection
                    (or (and next-boundaryline-agg (= next-data nil))
                        (and next-boundaryline-agg (not= next-boundaryline-agg boundaryline-agg))
-                       (not= next-boundaryline-collection boundaryline-collection)))
+                       (not= next-boundaryline-collection boundaryline-collection)
+                       (not= next-filter filter)))
           ;; time for some new data !
           (fetch-aggregation-data set-app-state-fn
                                   (:index next-boundaryline-agg)
                                   (:index-type next-boundaryline-agg)
                                   next-boundaryline-collection
-                                  (:variable next-boundaryline-agg)))
+                                  (:variable next-boundaryline-agg)
+                                  (om/-value next-filter)))
 
 
         (let [selection-path-colours (colorchooser/choose (:scheme colorchooser-control)

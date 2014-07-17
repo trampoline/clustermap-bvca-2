@@ -16,6 +16,7 @@
    [clustermap.components.filter :as filter]
    [clustermap.components.multiview :as multiview]
    [clustermap.components.select-chooser :as select-chooser]
+   [clustermap.components.color-scale :as color-scale]
    [clustermap.components.map-report :as map-report]
    [clustermap.components.full-report :as full-report]
    [clustermap.components.page-title :as page-title]
@@ -346,6 +347,7 @@
     (select-chooser/mount state [:multiview :views :map :controls :boundaryline-agg] "variable-selection-component" shared "Variable" :variable [["!latest_employee_count" "Employee count"] ["!latest_turnover" "Turnover"]])
     (select-chooser/mount state [:multiview :views :map :controls :colorchooser] "stat-selection-component" shared "Statistic" :variable [["sum" "Sum"] ["max" "Maximum"] ["avg" "Mean"] ["boundaryline_id_doc_count" "Count"]])
     (select-chooser/mount state [:multiview :views :map :controls :colorchooser] "scale-selection-component" shared "Scale" :scale [["log" "Log"] ["linear" "Linear"]])
+    (color-scale/mount state [:multiview :views :map :controls :threshold-colors] "color-scale-component" shared)
 
     ;; (search/mount state "search-component" shared)
     ;; (map-report/mount state "map-report-component" shared)

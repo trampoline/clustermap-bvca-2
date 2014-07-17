@@ -348,14 +348,15 @@
                    {next-zoom :zoom
                     next-bounds :bounds
                     next-boundaryline-collection :boundaryline-collection
-                    colorchooser-control :colorchooser
-                    next-boundaryline-agg :boundaryline-agg} :controls}
+                    next-colorchooser-control :colorchooser
+                    next-boundaryline-agg :boundaryline-agg
+                    next-threshold-colors :threshold-colors} :controls}
                   {next-path-highlights :path-highlights}]
 
       (let [{filter :filter
              data :data
              boundaryline-collections :boundaryline-collections
-             {:keys [initial-bounds bounds zoom boundaryline-collection boundaryline-agg]} :controls} (om/get-props owner)
+             {:keys [initial-bounds bounds zoom boundaryline-collection colorchooser-control boundaryline-agg threshold-colors]} :controls} (om/get-props owner)
             {:keys [comm path-fn link-fn fetch-boundaryline-fn point-in-boundarylines-fn set-app-state-fn ]} (om/get-shared owner)
             {{:keys [leaflet-map markers paths path-selections]} :map
              pan-pending :pan-pending
@@ -390,17 +391,20 @@
                                   (om/-value next-filter)))
 
 
-        (let [[threshold-colors selection-path-colours] (colorchooser/choose
-                                                         (:scheme colorchooser-control)
-                                                         (keyword (:scale colorchooser-control))
-                                                         :boundaryline_id
-                                                         (keyword (:variable colorchooser-control))
-                                                         (:records next-data))]
+        (let [[new-threshold-colors selection-path-colours] (colorchooser/choose
+                                                             (:scheme next-colorchooser-control)
+                                                             (keyword (:scale next-colorchooser-control))
+                                                             :boundaryline_id
+                                                             (keyword (:variable next-colorchooser-control))
+                                                             (:records next-data))]
+
+          (when (not= new-threshold-colors next-threshold-colors)
+            (om/update! cursor [:controls :threshold-colors] new-threshold-colors))
 
           (when (not= next-data data)
             (.log js/console (clj->js ["next-data" next-data]))
 
-            (.log js/console (clj->js ["threshold-colors" threshold-colors]))
+            (.log js/console (clj->js ["threshold-colors" new-threshold-colors]))
             (.log js/console (clj->js ["selection-path-colors" selection-path-colours]))
 
             )

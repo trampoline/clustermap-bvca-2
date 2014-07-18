@@ -154,26 +154,24 @@
 
 (defn fetch-create-path
   "create leaflet paths for every boundaryline in boundaryline-index"
-  [comm fetch-boundaryline-fn leaflet-map boundaryline-id path-attrs]
-;;  (.log js/console (clj->js ["fetch-create" boundaryline-id]))
-  (if-let [[tolerance js-boundaryline] (fetch-boundaryline-fn boundaryline-id (.getZoom leaflet-map))]
-    (create-path comm leaflet-map boundaryline-id js-boundaryline path-attrs)))
+  [comm leaflet-map boundaryline-id tolerance js-boundaryline path-attrs]
+  ;;  (.log js/console (clj->js ["fetch-create" boundaryline-id]))
+  (create-path comm leaflet-map boundaryline-id js-boundaryline path-attrs))
 
 (defn replace-path
   [comm leaflet-map boundaryline-id old-path js-boundaryline path-attrs]
+  ;; (.log js/console (clj->js ["replace-path" boundaryline-id old-path js-boundaryline path-attrs]))
   (.removeLayer leaflet-map (:leaflet-path old-path))
   (create-path comm leaflet-map (:id old-path) js-boundaryline path-attrs))
 
 (defn update-path
   "update a Leaflet path for a boundaryline"
-  [comm fetch-boundaryline-fn leaflet-map {boundaryline-id :id :as path} path-attrs]
-;;  (.log js/console (clj->js ["update" boundaryline-id]))
-  (if-let [[tolerance js-boundaryline] (fetch-boundaryline-fn boundaryline-id (.getZoom leaflet-map))]
-    (if (not= tolerance (:tolerance path))
-      (replace-path comm leaflet-map boundaryline-id path js-boundaryline path-attrs)
-      (do (style-leaflet-path (:leaflet-path path) path-attrs)
-          path))
-    path))
+  [comm leaflet-map {boundaryline-id :id :as path} tolerance js-boundaryline path-attrs]
+  ;; (.log js/console (clj->js ["update-path" boundaryline-id path tolerance js-boundaryline path-attrs]))
+  (if (not= tolerance (:tolerance path))
+    (replace-path comm leaflet-map boundaryline-id path js-boundaryline path-attrs)
+    (do (style-leaflet-path (:leaflet-path path) path-attrs)
+        path)))
 
 (defn delete-path
   [leaflet-map path]
@@ -181,7 +179,7 @@
   (.removeLayer leaflet-map (:leaflet-path path)))
 
 (defn update-paths
-  [comm fetch-boundaryline-fn leaflet-map paths-atom path-selections-atom new-path-highlights new-selection-paths]
+  [comm fetch-boundarylines-fn leaflet-map paths-atom path-selections-atom new-path-highlights new-selection-paths]
   (let [paths @paths-atom
         path-keys (-> paths keys set)
 
@@ -195,17 +193,42 @@
         delete-path-keys (set/difference path-keys live-path-keys)
         update-path-keys (set/intersection path-keys live-path-keys)
 
+        tolerance-paths (fetch-boundarylines-fn live-path-keys (.getZoom leaflet-map))
+
+        ;; _ (.log js/console (clj->js tolerance-paths))
+
         created-paths (->> create-path-keys
-                           (map (fn [k] (fetch-create-path comm fetch-boundaryline-fn leaflet-map k {:selected (contains? new-selection-path-keys k)
-                                                                                                     :fill-color (new-selection-paths k)
-                                                                                                     :highlighted (contains? new-path-highlights k)}))))
+                           (map (fn [k] (let [[tolerance js-boundaryline] (get tolerance-paths k)]
+                                          (when (and k tolerance js-boundaryline)
+                                            [k tolerance js-boundaryline]))))
+                           (filter identity)
+                           (map (fn [[k tolerance js-boundaryline]] (fetch-create-path comm
+                                                                                     leaflet-map
+                                                                                     k
+                                                                                     tolerance
+                                                                                     js-boundaryline
+                                                                                     {:selected (contains? new-selection-path-keys k)
+                                                                                      :fill-color (new-selection-paths k)
+                                                                                      :highlighted (contains? new-path-highlights k)}))))
 
         updated-paths (->> update-path-keys
-                           (map (fn [k] (update-path comm fetch-boundaryline-fn leaflet-map (get paths k) {:selected (contains? new-selection-path-keys k)
-                                                                                                           :fill-color (new-selection-paths k)
-                                                                                                           :highlighted (contains? new-path-highlights k)}))))
+                           (map (fn [k] (let [[tolerance js-boundaryline] (get tolerance-paths k)]
+                                          (when (and k tolerance js-boundaryline)
+                                            [k tolerance js-boundaryline]))))
+                           (filter identity)
+                           (map (fn [[k tolerance js-boundaryline]] (update-path comm
+                                                                               leaflet-map
+                                                                               (get paths k)
+                                                                               tolerance
+                                                                               js-boundaryline
+                                                                               {:selected (contains? new-selection-path-keys k)
+                                                                                :fill-color (new-selection-paths k)
+                                                                                :highlighted (contains? new-path-highlights k)})))
+                           )
 
         _ (doseq [k delete-path-keys] (if-let [path (get paths k)] (delete-path leaflet-map path)))
+
+        ;; _ (.log js/console (clj->js updated-paths))
 
         new-paths (->> (concat created-paths updated-paths)
                        (filter identity)
@@ -273,7 +296,7 @@
     (did-mount [this]
       (let [node (om/get-node owner)
             {:keys [leaflet-map markers path] :as map} (create-map node initial-bounds)
-            {:keys [comm fetch-boundaryline-fn point-in-boundarylines-fn link-fn path-fn]} (om/get-shared owner)]
+            {:keys [comm fetch-boundarylines-fn point-in-boundarylines-fn link-fn path-fn]} (om/get-shared owner)]
 
         ;; reflect bounds and zoom in controls immediately
         (om/update! cursor [:controls :zoom] (.getZoom leaflet-map))
@@ -357,7 +380,7 @@
              data :data
              boundaryline-collections :boundaryline-collections
              {:keys [initial-bounds bounds zoom boundaryline-collection colorchooser-control boundaryline-agg threshold-colors]} :controls} (om/get-props owner)
-            {:keys [comm path-fn link-fn fetch-boundaryline-fn point-in-boundarylines-fn set-app-state-fn ]} (om/get-shared owner)
+            {:keys [comm path-fn link-fn fetch-boundarylines-fn point-in-boundarylines-fn set-app-state-fn ]} (om/get-shared owner)
             {{:keys [leaflet-map markers paths path-selections]} :map
              pan-pending :pan-pending
              path-highlights :path-highlights} (om/get-state owner)]
@@ -409,7 +432,7 @@
 
             )
 
-          (update-paths comm (partial fetch-boundaryline-fn next-boundaryline-collection) leaflet-map paths path-selections next-path-highlights selection-path-colours)
+          (update-paths comm (partial fetch-boundarylines-fn next-boundaryline-collection) leaflet-map paths path-selections next-path-highlights selection-path-colours)
 
           )
 

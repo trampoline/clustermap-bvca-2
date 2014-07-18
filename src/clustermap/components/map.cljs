@@ -401,8 +401,7 @@
         ;; (update-markers path-fn leaflet-map markers next-locations)
 
         (when (and next-boundaryline-collection
-                   (or (and next-boundaryline-agg (= next-data nil))
-                       (and next-boundaryline-agg (not= next-boundaryline-agg boundaryline-agg))
+                   (or (and next-boundaryline-agg (not= next-boundaryline-agg boundaryline-agg))
                        (not= next-boundaryline-collection boundaryline-collection)
                        (not= next-filter filter)))
           ;; time for some new data !

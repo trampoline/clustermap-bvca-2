@@ -3,7 +3,7 @@
   :url "http://example.com/FIXME"
 
   :dependencies [[org.clojure/clojure "1.6.0"]
-                 [org.clojure/clojurescript "0.0-2261" :scope "provided"]
+                 [org.clojure/clojurescript "0.0-2268" :scope "provided"]
                  [org.clojure/core.async "0.1.267.0-0d7780-alpha" :scope "provided"]
                  [weasel "0.3.0"]
                  [domina "1.0.2"]

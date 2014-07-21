@@ -1,4 +1,4 @@
-// Compiled by ClojureScript 0.0-2261
+// Compiled by ClojureScript 0.0-2268
 goog.provide('cljs.core.async.impl.buffers');
 goog.require('cljs.core');
 goog.require('cljs.core.async.impl.protocols');
@@ -7,8 +7,8 @@ cljs.core.async.impl.buffers.acopy = (function acopy(src,src_start,dest,dest_sta
 if((cnt < len))
 {(dest[(dest_start + cnt)] = (src[(src_start + cnt)]));
 {
-var G__41576 = (cnt + (1));
-cnt = G__41576;
+var G__43613 = (cnt + (1));
+cnt = G__43613;
 continue;
 }
 } else
@@ -81,13 +81,13 @@ return self__.arr = new_arr;
 cljs.core.async.impl.buffers.RingBuffer.prototype.cleanup = (function (keep_QMARK_){var self__ = this;
 var this$ = this;var n__4399__auto__ = self__.length;var x = (0);while(true){
 if((x < n__4399__auto__))
-{var v_41577 = this$.pop();if((keep_QMARK_.cljs$core$IFn$_invoke$arity$1 ? keep_QMARK_.cljs$core$IFn$_invoke$arity$1(v_41577) : keep_QMARK_.call(null,v_41577)))
-{this$.unshift(v_41577);
+{var v_43614 = this$.pop();if((keep_QMARK_.cljs$core$IFn$_invoke$arity$1 ? keep_QMARK_.cljs$core$IFn$_invoke$arity$1(v_43614) : keep_QMARK_.call(null,v_43614)))
+{this$.unshift(v_43614);
 } else
 {}
 {
-var G__41578 = (x + (1));
-x = G__41578;
+var G__43615 = (x + (1));
+x = G__43615;
 continue;
 }
 } else

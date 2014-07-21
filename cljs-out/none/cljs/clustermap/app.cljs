@@ -333,7 +333,7 @@
                 :path-fn path-fn
                 :link-fn link-fn
                 :view-path-fn change-view-path
-                :fetch-boundaryline-fn (partial bl/get-or-fetch-best-boundaryline state :boundarylines)
+                :fetch-boundarylines-fn (partial bl/get-or-fetch-best-boundarylines state :boundarylines)
                 :point-in-boundarylines-fn (partial bl/point-in-boundarylines state :boundarylines :uk_boroughs)
                 :set-app-state-fn set-state}]
     (nav/init comm)

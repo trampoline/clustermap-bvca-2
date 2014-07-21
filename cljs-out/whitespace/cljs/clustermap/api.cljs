@@ -6,7 +6,7 @@
    [cljs.core.async :as async :refer [<! chan close! put! sliding-buffer to-chan]]
    [goog.net.XhrIo :as xhr]))
 
-(defn AJAX [url & {:keys [raw method content]}]
+(defn AJAX [url & {:keys [raw method content] :as opts}]
   "send a GET request, returning a channel with a single result value"
   (let [comm (chan 1)]
     (xhr/send url
@@ -101,6 +101,14 @@
 (defn boundaryline-collection-index
   [id & opts]
   (apply GET (str "/api/boundaryline-collection-index/" (name id)) opts))
+
+(defn boundaryline-set
+  "fetch a whole set of boundarylines in one api hit"
+  [ids tolerance & opts]
+  (apply POST "/api/boundaryline-set"
+         {:ids ids
+          :tolerance tolerance}
+         opts))
 
 ;; aggregation over boundarylines
 

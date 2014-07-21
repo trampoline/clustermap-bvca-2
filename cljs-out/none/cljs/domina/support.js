@@ -1,13 +1,13 @@
-// Compiled by ClojureScript 0.0-2261
+// Compiled by ClojureScript 0.0-2268
 goog.provide('domina.support');
 goog.require('cljs.core');
 goog.require('goog.events');
 goog.require('goog.events');
 goog.require('goog.dom');
 goog.require('goog.dom');
-var div_54950 = document.createElement("div");var test_html_54951 = "   <link/><table></table><a href='/a' style='top:1px;float:left;opacity:.55;'>a</a><input type='checkbox'/>";div_54950.innerHTML = test_html_54951;
-domina.support.leading_whitespace_QMARK_ = cljs.core._EQ_.call(null,div_54950.firstChild.nodeType,(3));
-domina.support.extraneous_tbody_QMARK_ = cljs.core._EQ_.call(null,div_54950.getElementsByTagName("tbody").length,(0));
-domina.support.unscoped_html_elements_QMARK_ = cljs.core._EQ_.call(null,div_54950.getElementsByTagName("link").length,(0));
+var div_57666 = document.createElement("div");var test_html_57667 = "   <link/><table></table><a href='/a' style='top:1px;float:left;opacity:.55;'>a</a><input type='checkbox'/>";div_57666.innerHTML = test_html_57667;
+domina.support.leading_whitespace_QMARK_ = cljs.core._EQ_.call(null,div_57666.firstChild.nodeType,(3));
+domina.support.extraneous_tbody_QMARK_ = cljs.core._EQ_.call(null,div_57666.getElementsByTagName("tbody").length,(0));
+domina.support.unscoped_html_elements_QMARK_ = cljs.core._EQ_.call(null,div_57666.getElementsByTagName("link").length,(0));
 
 //# sourceMappingURL=support.js.map

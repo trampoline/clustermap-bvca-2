@@ -1,4 +1,4 @@
-// Compiled by ClojureScript 0.0-2261
+// Compiled by ClojureScript 0.0-2268
 goog.provide('clustermap.routes');
 goog.require('cljs.core');
 goog.require('clojure.string');

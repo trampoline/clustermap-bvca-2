@@ -175,7 +175,7 @@
 
 (defn delete-path
   [leaflet-map path]
-;;  (.log js/console (clj->js ["update" (:id path)]))
+;;   (.log js/console (clj->js ["delete-path" (:id path)]))
   (.removeLayer leaflet-map (:leaflet-path path)))
 
 (defn update-paths
@@ -193,7 +193,7 @@
         delete-path-keys (set/difference path-keys live-path-keys)
         update-path-keys (set/intersection path-keys live-path-keys)
 
-        tolerance-paths (fetch-boundarylines-fn live-path-keys (.getZoom leaflet-map))
+        [tolerance-paths notifychan] (fetch-boundarylines-fn live-path-keys (.getZoom leaflet-map))
 
         ;; _ (.log js/console (clj->js tolerance-paths))
 
@@ -235,8 +235,12 @@
                        (reduce (fn [m {:keys [id] :as path}] (assoc m id path))
                                {}))]
 
+    ;; (.log js/console (clj->js live-path-keys))
+
     (reset! path-selections-atom new-selection-path-keys)
-    (reset! paths-atom new-paths)))
+    (reset! paths-atom new-paths)
+    notifychan
+    ))
 
 ;; (defn pan-to-selection
 ;;   [owner leaflet-map paths-atom path-selections-atom]
@@ -374,7 +378,9 @@
                     next-colorchooser-control :colorchooser
                     next-boundaryline-agg :boundaryline-agg
                     next-threshold-colors :threshold-colors} :controls}
-                  {next-path-highlights :path-highlights}]
+                  {{next-paths :paths
+                    next-path-selections :path-selections} :map
+                   next-path-highlights :path-highlights}]
 
       (let [{filter :filter
              data :data
@@ -410,30 +416,41 @@
                                   (:index-type next-boundaryline-agg)
                                   next-boundaryline-collection
                                   (:variable next-boundaryline-agg)
-                                  (om/-value next-filter)))
+                                  (om/-value next-filter))
 
 
-        (let [[new-threshold-colors selection-path-colours] (colorchooser/choose
-                                                             (:scheme next-colorchooser-control)
-                                                             (keyword (:scale next-colorchooser-control))
-                                                             :boundaryline_id
-                                                             (keyword (:variable next-colorchooser-control))
-                                                             (:records next-data))]
-
-          (when (not= new-threshold-colors next-threshold-colors)
-            (om/update! cursor [:controls :threshold-colors] new-threshold-colors))
-
-          (when (not= next-data data)
-            (.log js/console (clj->js ["next-data" next-data]))
-
-            (.log js/console (clj->js ["threshold-colors" new-threshold-colors]))
-            (.log js/console (clj->js ["selection-path-colors" selection-path-colours]))
-
-            )
-
-          (update-paths comm (partial fetch-boundarylines-fn next-boundaryline-collection) leaflet-map paths path-selections next-path-highlights selection-path-colours)
 
           )
+
+        (when (not= next-data data)
+
+          ;; (.log js/console (clj->js ["next-data" next-data]))
+          ;; (.log js/console (clj->js ["threshold-colors" new-threshold-colors]))
+          ;; (.log js/console (clj->js ["selection-path-colors" selection-path-colours]))
+
+          (let [[new-threshold-colors selection-path-colours] (colorchooser/choose
+                                                               (:scheme next-colorchooser-control)
+                                                               (keyword (:scale next-colorchooser-control))
+                                                               :boundaryline_id
+                                                               (keyword (:variable next-colorchooser-control))
+                                                               (:records next-data))
+
+                update-paths-invocation (fn [] (update-paths comm
+                                                             (partial fetch-boundarylines-fn next-boundaryline-collection)
+                                                             leaflet-map
+                                                             next-paths
+                                                             next-path-selections
+                                                             next-path-highlights
+                                                             selection-path-colours))]
+
+            (when (not= new-threshold-colors next-threshold-colors)
+              (om/update! cursor [:controls :threshold-colors] new-threshold-colors))
+
+            (when-let [notify-chan (update-paths-invocation)]
+
+              (go
+                (let [_ (<! notify-chan)]
+                  (update-paths-invocation))))))
 
         ;; (when (or pan-pending (not= next-selection selection))
         ;;   (pan-to-selection owner leaflet-map paths path-selections))

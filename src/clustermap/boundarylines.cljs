@@ -41,7 +41,7 @@
 
 (defn fetch-boundarylines
   "fetch a set of boundarylines for a given tolerance in one API call, add the results to the collection-specific and
-   general caches"
+   general caches. returns a single value true on the go-block channel when complete"
   [app-state boundarylines-path collection-boundarylines-path boundaryline-ids tolerance]
     (let [boundarylines-path (make-sequential boundarylines-path)
           collection-boundarylines-path (make-sequential collection-boundarylines-path)
@@ -56,7 +56,8 @@
               ;;       (.log js/console (clj->js ["rx" app-state boundaryline-id tolerance bl]))
               (swap! app-state update-in general-cache-path (fn [old] bl))
               (when collection-cache-path
-                (swap! app-state update-in collection-cache-path (fn [old] bl)))))))))
+                (swap! app-state update-in collection-cache-path (fn [old] bl))))))
+        true)))
 
 (defn- fetch-from-index
   [index boundaryline-id]
@@ -107,12 +108,10 @@
                           (filter (fn [[blid [tol bl]]] (not= tol i-tol)))
                           (map first))
             ;;_     (.log js/console (clj->js ["required" required]))
-]
+            notify-chan (when (not-empty required)
+                          (fetch-boundarylines app-state general-cache-path collection-cache-path boundaryline-ids i-tol))]
 
-        (when (not-empty required)
-          (fetch-boundarylines app-state general-cache-path collection-cache-path boundaryline-ids i-tol))
-
-        best-versions))))
+        [best-versions notify-chan]))))
 
 (defn boundaryline-collection-rtree
   "atomically fetch or create the rtree index object for a collection"

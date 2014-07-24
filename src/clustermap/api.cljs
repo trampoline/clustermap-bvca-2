@@ -110,6 +110,12 @@
           :tolerance tolerance}
          opts))
 
+(defn boundaryline-collection-view
+  [collection-id tolerance bounds & opts]
+  (apply POST (str "/api/boundaryline-collection-view/" (name collection-id) "/" tolerance)
+         {:bounds bounds}
+         opts))
+
 ;; aggregation over boundarylines
 
 (defn boundaryline-aggregation

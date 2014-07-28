@@ -119,9 +119,10 @@
 ;; aggregation over boundarylines
 
 (defn boundaryline-aggregation
-  [index type blcoll attr filter & [type-ids]]
+  [index type blcoll attr filter bounds & [type-ids]]
   (POST (str "/api/" api-prefix "/boundaryline-agg/" index "/" type "/" blcoll "/" attr "?" (map-json-params type-ids))
-      {:filter filter}))
+      {:filter filter
+       :bounds bounds}))
 
 ;; search
 

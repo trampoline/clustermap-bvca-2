@@ -36,7 +36,7 @@ clojure.walk.prewalk = (function prewalk(f,form){return clojure.walk.walk(cljs.c
 /**
 * Recursively transforms all map keys from strings to keywords.
 */
-clojure.walk.keywordize_keys = (function keywordize_keys(m){var f = (function (p__44058){var vec__44059 = p__44058;var k = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__44059,(0),null);var v = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__44059,(1),null);if(typeof k === 'string')
+clojure.walk.keywordize_keys = (function keywordize_keys(m){var f = (function (p__44073){var vec__44074 = p__44073;var k = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__44074,(0),null);var v = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__44074,(1),null);if(typeof k === 'string')
 {return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.keyword.cljs$core$IFn$_invoke$arity$1(k),v], null);
 } else
 {return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [k,v], null);
@@ -53,7 +53,7 @@ return (function (x){if(cljs.core.map_QMARK_(x))
 /**
 * Recursively transforms all map keys from keywords to strings.
 */
-clojure.walk.stringify_keys = (function stringify_keys(m){var f = (function (p__44062){var vec__44063 = p__44062;var k = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__44063,(0),null);var v = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__44063,(1),null);if((k instanceof cljs.core.Keyword))
+clojure.walk.stringify_keys = (function stringify_keys(m){var f = (function (p__44077){var vec__44078 = p__44077;var k = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__44078,(0),null);var v = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__44078,(1),null);if((k instanceof cljs.core.Keyword))
 {return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.name(k),v], null);
 } else
 {return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [k,v], null);

@@ -611,26 +611,52 @@ return boundaryline_set;
 /**
 * @param {...*} var_args
 */
-clustermap.api.boundaryline_aggregation = (function() { 
-var boundaryline_aggregation__delegate = function (index,type,blcoll,attr,filter,p__8810){var vec__8812 = p__8810;var type_ids = cljs.core.nth.call(null,vec__8812,(0),null);return clustermap.api.POST.call(null,("/api/"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(clustermap.api.api_prefix)+"/boundaryline-agg/"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(index)+"/"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(type)+"/"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(blcoll)+"/"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(attr)+"?"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(clustermap.api.map_json_params.call(null,type_ids))),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"filter","filter",-948537934),filter], null));
+clustermap.api.boundaryline_collection_view = (function() { 
+var boundaryline_collection_view__delegate = function (collection_id,tolerance,bounds,opts){return cljs.core.apply.call(null,clustermap.api.POST,("/api/boundaryline-collection-view/"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(cljs.core.name.call(null,collection_id))+"/"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(tolerance)),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"bounds","bounds",1691609455),bounds], null),opts);
 };
-var boundaryline_aggregation = function (index,type,blcoll,attr,filter,var_args){
-var p__8810 = null;if (arguments.length > 5) {
-  p__8810 = cljs.core.array_seq(Array.prototype.slice.call(arguments, 5),0);} 
-return boundaryline_aggregation__delegate.call(this,index,type,blcoll,attr,filter,p__8810);};
-boundaryline_aggregation.cljs$lang$maxFixedArity = 5;
-boundaryline_aggregation.cljs$lang$applyTo = (function (arglist__8813){
-var index = cljs.core.first(arglist__8813);
-arglist__8813 = cljs.core.next(arglist__8813);
-var type = cljs.core.first(arglist__8813);
-arglist__8813 = cljs.core.next(arglist__8813);
-var blcoll = cljs.core.first(arglist__8813);
-arglist__8813 = cljs.core.next(arglist__8813);
-var attr = cljs.core.first(arglist__8813);
-arglist__8813 = cljs.core.next(arglist__8813);
-var filter = cljs.core.first(arglist__8813);
-var p__8810 = cljs.core.rest(arglist__8813);
-return boundaryline_aggregation__delegate(index,type,blcoll,attr,filter,p__8810);
+var boundaryline_collection_view = function (collection_id,tolerance,bounds,var_args){
+var opts = null;if (arguments.length > 3) {
+  opts = cljs.core.array_seq(Array.prototype.slice.call(arguments, 3),0);} 
+return boundaryline_collection_view__delegate.call(this,collection_id,tolerance,bounds,opts);};
+boundaryline_collection_view.cljs$lang$maxFixedArity = 3;
+boundaryline_collection_view.cljs$lang$applyTo = (function (arglist__8810){
+var collection_id = cljs.core.first(arglist__8810);
+arglist__8810 = cljs.core.next(arglist__8810);
+var tolerance = cljs.core.first(arglist__8810);
+arglist__8810 = cljs.core.next(arglist__8810);
+var bounds = cljs.core.first(arglist__8810);
+var opts = cljs.core.rest(arglist__8810);
+return boundaryline_collection_view__delegate(collection_id,tolerance,bounds,opts);
+});
+boundaryline_collection_view.cljs$core$IFn$_invoke$arity$variadic = boundaryline_collection_view__delegate;
+return boundaryline_collection_view;
+})()
+;
+/**
+* @param {...*} var_args
+*/
+clustermap.api.boundaryline_aggregation = (function() { 
+var boundaryline_aggregation__delegate = function (index,type,blcoll,attr,filter,bounds,p__8811){var vec__8813 = p__8811;var type_ids = cljs.core.nth.call(null,vec__8813,(0),null);return clustermap.api.POST.call(null,("/api/"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(clustermap.api.api_prefix)+"/boundaryline-agg/"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(index)+"/"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(type)+"/"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(blcoll)+"/"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(attr)+"?"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(clustermap.api.map_json_params.call(null,type_ids))),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"filter","filter",-948537934),filter,new cljs.core.Keyword(null,"bounds","bounds",1691609455),bounds], null));
+};
+var boundaryline_aggregation = function (index,type,blcoll,attr,filter,bounds,var_args){
+var p__8811 = null;if (arguments.length > 6) {
+  p__8811 = cljs.core.array_seq(Array.prototype.slice.call(arguments, 6),0);} 
+return boundaryline_aggregation__delegate.call(this,index,type,blcoll,attr,filter,bounds,p__8811);};
+boundaryline_aggregation.cljs$lang$maxFixedArity = 6;
+boundaryline_aggregation.cljs$lang$applyTo = (function (arglist__8814){
+var index = cljs.core.first(arglist__8814);
+arglist__8814 = cljs.core.next(arglist__8814);
+var type = cljs.core.first(arglist__8814);
+arglist__8814 = cljs.core.next(arglist__8814);
+var blcoll = cljs.core.first(arglist__8814);
+arglist__8814 = cljs.core.next(arglist__8814);
+var attr = cljs.core.first(arglist__8814);
+arglist__8814 = cljs.core.next(arglist__8814);
+var filter = cljs.core.first(arglist__8814);
+arglist__8814 = cljs.core.next(arglist__8814);
+var bounds = cljs.core.first(arglist__8814);
+var p__8811 = cljs.core.rest(arglist__8814);
+return boundaryline_aggregation__delegate(index,type,blcoll,attr,filter,bounds,p__8811);
 });
 boundaryline_aggregation.cljs$core$IFn$_invoke$arity$variadic = boundaryline_aggregation__delegate;
 return boundaryline_aggregation;
@@ -650,16 +676,16 @@ clustermap.api.portfolio_company = (function portfolio_company(id){return cluste
 * @param {...*} var_args
 */
 clustermap.api.portfolio_company_sites = (function() { 
-var portfolio_company_sites__delegate = function (p__8814){var vec__8816 = p__8814;var type_ids = cljs.core.nth.call(null,vec__8816,(0),null);var type_ids__$1 = cljs.core.merge.call(null,new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"size","size",1098693007),(100),new cljs.core.Keyword(null,"sort","sort",953465918),new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"!latest_turnover","!latest_turnover",-1853433972),"desc"], null)], null)], null),type_ids);return clustermap.api.GET.call(null,("/api/"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(clustermap.api.api_prefix)+"/portfolio-company-sites?"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(clustermap.api.map_json_params.call(null,type_ids__$1))));
+var portfolio_company_sites__delegate = function (p__8815){var vec__8817 = p__8815;var type_ids = cljs.core.nth.call(null,vec__8817,(0),null);var type_ids__$1 = cljs.core.merge.call(null,new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"size","size",1098693007),(100),new cljs.core.Keyword(null,"sort","sort",953465918),new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"!latest_turnover","!latest_turnover",-1853433972),"desc"], null)], null)], null),type_ids);return clustermap.api.GET.call(null,("/api/"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(clustermap.api.api_prefix)+"/portfolio-company-sites?"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(clustermap.api.map_json_params.call(null,type_ids__$1))));
 };
 var portfolio_company_sites = function (var_args){
-var p__8814 = null;if (arguments.length > 0) {
-  p__8814 = cljs.core.array_seq(Array.prototype.slice.call(arguments, 0),0);} 
-return portfolio_company_sites__delegate.call(this,p__8814);};
+var p__8815 = null;if (arguments.length > 0) {
+  p__8815 = cljs.core.array_seq(Array.prototype.slice.call(arguments, 0),0);} 
+return portfolio_company_sites__delegate.call(this,p__8815);};
 portfolio_company_sites.cljs$lang$maxFixedArity = 0;
-portfolio_company_sites.cljs$lang$applyTo = (function (arglist__8817){
-var p__8814 = cljs.core.seq(arglist__8817);
-return portfolio_company_sites__delegate(p__8814);
+portfolio_company_sites.cljs$lang$applyTo = (function (arglist__8818){
+var p__8815 = cljs.core.seq(arglist__8818);
+return portfolio_company_sites__delegate(p__8815);
 });
 portfolio_company_sites.cljs$core$IFn$_invoke$arity$variadic = portfolio_company_sites__delegate;
 return portfolio_company_sites;
@@ -669,16 +695,16 @@ return portfolio_company_sites;
 * @param {...*} var_args
 */
 clustermap.api.portfolio_company_sites_by_company = (function() { 
-var portfolio_company_sites_by_company__delegate = function (p__8818){var vec__8820 = p__8818;var type_ids = cljs.core.nth.call(null,vec__8820,(0),null);var type_ids__$1 = cljs.core.merge.call(null,new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"size","size",1098693007),(100),new cljs.core.Keyword(null,"sort","sort",953465918),new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"!latest_turnover","!latest_turnover",-1853433972),"desc"], null)], null)], null),type_ids);return clustermap.api.GET.call(null,("/api/"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(clustermap.api.api_prefix)+"/portfolio-company-sites-by-company?"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(clustermap.api.map_json_params.call(null,type_ids__$1))));
+var portfolio_company_sites_by_company__delegate = function (p__8819){var vec__8821 = p__8819;var type_ids = cljs.core.nth.call(null,vec__8821,(0),null);var type_ids__$1 = cljs.core.merge.call(null,new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"size","size",1098693007),(100),new cljs.core.Keyword(null,"sort","sort",953465918),new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"!latest_turnover","!latest_turnover",-1853433972),"desc"], null)], null)], null),type_ids);return clustermap.api.GET.call(null,("/api/"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(clustermap.api.api_prefix)+"/portfolio-company-sites-by-company?"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(clustermap.api.map_json_params.call(null,type_ids__$1))));
 };
 var portfolio_company_sites_by_company = function (var_args){
-var p__8818 = null;if (arguments.length > 0) {
-  p__8818 = cljs.core.array_seq(Array.prototype.slice.call(arguments, 0),0);} 
-return portfolio_company_sites_by_company__delegate.call(this,p__8818);};
+var p__8819 = null;if (arguments.length > 0) {
+  p__8819 = cljs.core.array_seq(Array.prototype.slice.call(arguments, 0),0);} 
+return portfolio_company_sites_by_company__delegate.call(this,p__8819);};
 portfolio_company_sites_by_company.cljs$lang$maxFixedArity = 0;
-portfolio_company_sites_by_company.cljs$lang$applyTo = (function (arglist__8821){
-var p__8818 = cljs.core.seq(arglist__8821);
-return portfolio_company_sites_by_company__delegate(p__8818);
+portfolio_company_sites_by_company.cljs$lang$applyTo = (function (arglist__8822){
+var p__8819 = cljs.core.seq(arglist__8822);
+return portfolio_company_sites_by_company__delegate(p__8819);
 });
 portfolio_company_sites_by_company.cljs$core$IFn$_invoke$arity$variadic = portfolio_company_sites_by_company__delegate;
 return portfolio_company_sites_by_company;
@@ -688,16 +714,16 @@ return portfolio_company_sites_by_company;
 * @param {...*} var_args
 */
 clustermap.api.portfolio_company_locations = (function() { 
-var portfolio_company_locations__delegate = function (p__8822){var vec__8824 = p__8822;var type_ids = cljs.core.nth.call(null,vec__8824,(0),null);return clustermap.api.GET.call(null,("/api/"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(clustermap.api.api_prefix)+"/portfolio-company-locations?"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(clustermap.api.map_json_params.call(null,type_ids))));
+var portfolio_company_locations__delegate = function (p__8823){var vec__8825 = p__8823;var type_ids = cljs.core.nth.call(null,vec__8825,(0),null);return clustermap.api.GET.call(null,("/api/"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(clustermap.api.api_prefix)+"/portfolio-company-locations?"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(clustermap.api.map_json_params.call(null,type_ids))));
 };
 var portfolio_company_locations = function (var_args){
-var p__8822 = null;if (arguments.length > 0) {
-  p__8822 = cljs.core.array_seq(Array.prototype.slice.call(arguments, 0),0);} 
-return portfolio_company_locations__delegate.call(this,p__8822);};
+var p__8823 = null;if (arguments.length > 0) {
+  p__8823 = cljs.core.array_seq(Array.prototype.slice.call(arguments, 0),0);} 
+return portfolio_company_locations__delegate.call(this,p__8823);};
 portfolio_company_locations.cljs$lang$maxFixedArity = 0;
-portfolio_company_locations.cljs$lang$applyTo = (function (arglist__8825){
-var p__8822 = cljs.core.seq(arglist__8825);
-return portfolio_company_locations__delegate(p__8822);
+portfolio_company_locations.cljs$lang$applyTo = (function (arglist__8826){
+var p__8823 = cljs.core.seq(arglist__8826);
+return portfolio_company_locations__delegate(p__8823);
 });
 portfolio_company_locations.cljs$core$IFn$_invoke$arity$variadic = portfolio_company_locations__delegate;
 return portfolio_company_locations;
@@ -707,16 +733,16 @@ return portfolio_company_locations;
 * @param {...*} var_args
 */
 clustermap.api.portfolio_company_site_stats = (function() { 
-var portfolio_company_site_stats__delegate = function (p__8826){var vec__8828 = p__8826;var type_ids = cljs.core.nth.call(null,vec__8828,(0),null);return clustermap.api.GET.call(null,("/api/"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(clustermap.api.api_prefix)+"/portfolio-company-site-stats?"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(clustermap.api.map_json_params.call(null,type_ids))));
+var portfolio_company_site_stats__delegate = function (p__8827){var vec__8829 = p__8827;var type_ids = cljs.core.nth.call(null,vec__8829,(0),null);return clustermap.api.GET.call(null,("/api/"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(clustermap.api.api_prefix)+"/portfolio-company-site-stats?"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(clustermap.api.map_json_params.call(null,type_ids))));
 };
 var portfolio_company_site_stats = function (var_args){
-var p__8826 = null;if (arguments.length > 0) {
-  p__8826 = cljs.core.array_seq(Array.prototype.slice.call(arguments, 0),0);} 
-return portfolio_company_site_stats__delegate.call(this,p__8826);};
+var p__8827 = null;if (arguments.length > 0) {
+  p__8827 = cljs.core.array_seq(Array.prototype.slice.call(arguments, 0),0);} 
+return portfolio_company_site_stats__delegate.call(this,p__8827);};
 portfolio_company_site_stats.cljs$lang$maxFixedArity = 0;
-portfolio_company_site_stats.cljs$lang$applyTo = (function (arglist__8829){
-var p__8826 = cljs.core.seq(arglist__8829);
-return portfolio_company_site_stats__delegate(p__8826);
+portfolio_company_site_stats.cljs$lang$applyTo = (function (arglist__8830){
+var p__8827 = cljs.core.seq(arglist__8830);
+return portfolio_company_site_stats__delegate(p__8827);
 });
 portfolio_company_site_stats.cljs$core$IFn$_invoke$arity$variadic = portfolio_company_site_stats__delegate;
 return portfolio_company_site_stats;
@@ -726,16 +752,16 @@ return portfolio_company_site_stats;
 * @param {...*} var_args
 */
 clustermap.api.portfolio_company_site_account_timelines = (function() { 
-var portfolio_company_site_account_timelines__delegate = function (p__8830){var vec__8832 = p__8830;var type_ids = cljs.core.nth.call(null,vec__8832,(0),null);return clustermap.api.GET.call(null,("/api/"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(clustermap.api.api_prefix)+"/portfolio-company-site-account-timelines?"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(clustermap.api.map_json_params.call(null,type_ids))));
+var portfolio_company_site_account_timelines__delegate = function (p__8831){var vec__8833 = p__8831;var type_ids = cljs.core.nth.call(null,vec__8833,(0),null);return clustermap.api.GET.call(null,("/api/"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(clustermap.api.api_prefix)+"/portfolio-company-site-account-timelines?"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(clustermap.api.map_json_params.call(null,type_ids))));
 };
 var portfolio_company_site_account_timelines = function (var_args){
-var p__8830 = null;if (arguments.length > 0) {
-  p__8830 = cljs.core.array_seq(Array.prototype.slice.call(arguments, 0),0);} 
-return portfolio_company_site_account_timelines__delegate.call(this,p__8830);};
+var p__8831 = null;if (arguments.length > 0) {
+  p__8831 = cljs.core.array_seq(Array.prototype.slice.call(arguments, 0),0);} 
+return portfolio_company_site_account_timelines__delegate.call(this,p__8831);};
 portfolio_company_site_account_timelines.cljs$lang$maxFixedArity = 0;
-portfolio_company_site_account_timelines.cljs$lang$applyTo = (function (arglist__8833){
-var p__8830 = cljs.core.seq(arglist__8833);
-return portfolio_company_site_account_timelines__delegate(p__8830);
+portfolio_company_site_account_timelines.cljs$lang$applyTo = (function (arglist__8834){
+var p__8831 = cljs.core.seq(arglist__8834);
+return portfolio_company_site_account_timelines__delegate(p__8831);
 });
 portfolio_company_site_account_timelines.cljs$core$IFn$_invoke$arity$variadic = portfolio_company_site_account_timelines__delegate;
 return portfolio_company_site_account_timelines;
@@ -747,16 +773,16 @@ clustermap.api.investor_company = (function investor_company(id){return clusterm
 * @param {...*} var_args
 */
 clustermap.api.investment_account_timelines = (function() { 
-var investment_account_timelines__delegate = function (p__8834){var vec__8836 = p__8834;var type_ids = cljs.core.nth.call(null,vec__8836,(0),null);return clustermap.api.GET.call(null,("/api/"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(clustermap.api.api_prefix)+"/investment-account-timelines?"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(clustermap.api.map_json_params.call(null,type_ids))));
+var investment_account_timelines__delegate = function (p__8835){var vec__8837 = p__8835;var type_ids = cljs.core.nth.call(null,vec__8837,(0),null);return clustermap.api.GET.call(null,("/api/"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(clustermap.api.api_prefix)+"/investment-account-timelines?"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(clustermap.api.map_json_params.call(null,type_ids))));
 };
 var investment_account_timelines = function (var_args){
-var p__8834 = null;if (arguments.length > 0) {
-  p__8834 = cljs.core.array_seq(Array.prototype.slice.call(arguments, 0),0);} 
-return investment_account_timelines__delegate.call(this,p__8834);};
+var p__8835 = null;if (arguments.length > 0) {
+  p__8835 = cljs.core.array_seq(Array.prototype.slice.call(arguments, 0),0);} 
+return investment_account_timelines__delegate.call(this,p__8835);};
 investment_account_timelines.cljs$lang$maxFixedArity = 0;
-investment_account_timelines.cljs$lang$applyTo = (function (arglist__8837){
-var p__8834 = cljs.core.seq(arglist__8837);
-return investment_account_timelines__delegate(p__8834);
+investment_account_timelines.cljs$lang$applyTo = (function (arglist__8838){
+var p__8835 = cljs.core.seq(arglist__8838);
+return investment_account_timelines__delegate(p__8835);
 });
 investment_account_timelines.cljs$core$IFn$_invoke$arity$variadic = investment_account_timelines__delegate;
 return investment_account_timelines;
@@ -766,16 +792,16 @@ return investment_account_timelines;
 * @param {...*} var_args
 */
 clustermap.api.investment_stats = (function() { 
-var investment_stats__delegate = function (p__8838){var vec__8840 = p__8838;var type_ids = cljs.core.nth.call(null,vec__8840,(0),null);return clustermap.api.GET.call(null,("/api/"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(clustermap.api.api_prefix)+"/investment-stats?"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(clustermap.api.map_json_params.call(null,type_ids))));
+var investment_stats__delegate = function (p__8839){var vec__8841 = p__8839;var type_ids = cljs.core.nth.call(null,vec__8841,(0),null);return clustermap.api.GET.call(null,("/api/"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(clustermap.api.api_prefix)+"/investment-stats?"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(clustermap.api.map_json_params.call(null,type_ids))));
 };
 var investment_stats = function (var_args){
-var p__8838 = null;if (arguments.length > 0) {
-  p__8838 = cljs.core.array_seq(Array.prototype.slice.call(arguments, 0),0);} 
-return investment_stats__delegate.call(this,p__8838);};
+var p__8839 = null;if (arguments.length > 0) {
+  p__8839 = cljs.core.array_seq(Array.prototype.slice.call(arguments, 0),0);} 
+return investment_stats__delegate.call(this,p__8839);};
 investment_stats.cljs$lang$maxFixedArity = 0;
-investment_stats.cljs$lang$applyTo = (function (arglist__8841){
-var p__8838 = cljs.core.seq(arglist__8841);
-return investment_stats__delegate(p__8838);
+investment_stats.cljs$lang$applyTo = (function (arglist__8842){
+var p__8839 = cljs.core.seq(arglist__8842);
+return investment_stats__delegate(p__8839);
 });
 investment_stats.cljs$core$IFn$_invoke$arity$variadic = investment_stats__delegate;
 return investment_stats;
@@ -785,16 +811,16 @@ return investment_stats;
 * @param {...*} var_args
 */
 clustermap.api.investment_aggs = (function() { 
-var investment_aggs__delegate = function (p__8842){var vec__8844 = p__8842;var type_ids = cljs.core.nth.call(null,vec__8844,(0),null);var type_ids__$1 = cljs.core.merge.call(null,new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"size","size",1098693007),(50),new cljs.core.Keyword(null,"order","order",-1254677256),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"latest_turnover","latest_turnover",-1335568590),"desc"], null)], null),type_ids);return clustermap.api.GET.call(null,("/api/"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(clustermap.api.api_prefix)+"/investment-aggs?"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(clustermap.api.map_json_params.call(null,type_ids__$1))));
+var investment_aggs__delegate = function (p__8843){var vec__8845 = p__8843;var type_ids = cljs.core.nth.call(null,vec__8845,(0),null);var type_ids__$1 = cljs.core.merge.call(null,new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"size","size",1098693007),(50),new cljs.core.Keyword(null,"order","order",-1254677256),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"latest_turnover","latest_turnover",-1335568590),"desc"], null)], null),type_ids);return clustermap.api.GET.call(null,("/api/"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(clustermap.api.api_prefix)+"/investment-aggs?"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(clustermap.api.map_json_params.call(null,type_ids__$1))));
 };
 var investment_aggs = function (var_args){
-var p__8842 = null;if (arguments.length > 0) {
-  p__8842 = cljs.core.array_seq(Array.prototype.slice.call(arguments, 0),0);} 
-return investment_aggs__delegate.call(this,p__8842);};
+var p__8843 = null;if (arguments.length > 0) {
+  p__8843 = cljs.core.array_seq(Array.prototype.slice.call(arguments, 0),0);} 
+return investment_aggs__delegate.call(this,p__8843);};
 investment_aggs.cljs$lang$maxFixedArity = 0;
-investment_aggs.cljs$lang$applyTo = (function (arglist__8845){
-var p__8842 = cljs.core.seq(arglist__8845);
-return investment_aggs__delegate(p__8842);
+investment_aggs.cljs$lang$applyTo = (function (arglist__8846){
+var p__8843 = cljs.core.seq(arglist__8846);
+return investment_aggs__delegate(p__8843);
 });
 investment_aggs.cljs$core$IFn$_invoke$arity$variadic = investment_aggs__delegate;
 return investment_aggs;
@@ -804,16 +830,16 @@ return investment_aggs;
 * @param {...*} var_args
 */
 clustermap.api.investments = (function() { 
-var investments__delegate = function (p__8846){var vec__8848 = p__8846;var type_ids = cljs.core.nth.call(null,vec__8848,(0),null);var type_ids__$1 = cljs.core.merge.call(null,new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"size","size",1098693007),(50),new cljs.core.Keyword(null,"order","order",-1254677256),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"?boundaryline_compact_name_na","?boundaryline_compact_name_na",35068819),"asc"], null),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"?investor_company_name_na","?investor_company_name_na",2080546953),"asc"], null)], null)], null),type_ids);return clustermap.api.GET.call(null,("/api/"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(clustermap.api.api_prefix)+"/investments?"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(clustermap.api.map_json_params.call(null,type_ids__$1))));
+var investments__delegate = function (p__8847){var vec__8849 = p__8847;var type_ids = cljs.core.nth.call(null,vec__8849,(0),null);var type_ids__$1 = cljs.core.merge.call(null,new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"size","size",1098693007),(50),new cljs.core.Keyword(null,"order","order",-1254677256),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"?boundaryline_compact_name_na","?boundaryline_compact_name_na",35068819),"asc"], null),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"?investor_company_name_na","?investor_company_name_na",2080546953),"asc"], null)], null)], null),type_ids);return clustermap.api.GET.call(null,("/api/"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(clustermap.api.api_prefix)+"/investments?"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(clustermap.api.map_json_params.call(null,type_ids__$1))));
 };
 var investments = function (var_args){
-var p__8846 = null;if (arguments.length > 0) {
-  p__8846 = cljs.core.array_seq(Array.prototype.slice.call(arguments, 0),0);} 
-return investments__delegate.call(this,p__8846);};
+var p__8847 = null;if (arguments.length > 0) {
+  p__8847 = cljs.core.array_seq(Array.prototype.slice.call(arguments, 0),0);} 
+return investments__delegate.call(this,p__8847);};
 investments.cljs$lang$maxFixedArity = 0;
-investments.cljs$lang$applyTo = (function (arglist__8849){
-var p__8846 = cljs.core.seq(arglist__8849);
-return investments__delegate(p__8846);
+investments.cljs$lang$applyTo = (function (arglist__8850){
+var p__8847 = cljs.core.seq(arglist__8850);
+return investments__delegate(p__8847);
 });
 investments.cljs$core$IFn$_invoke$arity$variadic = investments__delegate;
 return investments;

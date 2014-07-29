@@ -51,7 +51,7 @@ var temp__4126__auto__ = cljs.core.seq(s__37228__$1);if(temp__4126__auto__)
 {var s__37228__$2 = temp__4126__auto__;if(cljs.core.chunked_seq_QMARK_(s__37228__$2))
 {var c__4266__auto__ = cljs.core.chunk_first(s__37228__$2);var size__4267__auto__ = cljs.core.count(c__4266__auto__);var b__37230 = cljs.core.chunk_buffer(size__4267__auto__);if((function (){var i__37229 = (0);while(true){
 if((i__37229 < size__4267__auto__))
-{var vec__37233 = cljs.core._nth.cljs$core$IFn$_invoke$arity$2(c__4266__auto__,i__37229);var threshold = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__37233,(0),null);var color = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__37233,(1),null);cljs.core.chunk_append(b__37230,React.DOM.div({"className": "tbl-cell", "style": {"background-color": color, "color": clustermap.formats.color.stand_out_color(color)}},sablono.interpreter.interpret(clustermap.formats.money.readable.cljs$core$IFn$_invoke$arity$variadic(threshold,cljs.core.array_seq([cljs.core.constant$keyword$826,(2),cljs.core.constant$keyword$898,"",cljs.core.constant$keyword$775,""], 0)))));
+{var vec__37233 = cljs.core._nth.cljs$core$IFn$_invoke$arity$2(c__4266__auto__,i__37229);var threshold = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__37233,(0),null);var color = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__37233,(1),null);cljs.core.chunk_append(b__37230,React.DOM.div({"className": "tbl-cell", "style": {"background-color": color, "color": clustermap.formats.color.stand_out_color(color)}},sablono.interpreter.interpret(clustermap.formats.money.readable.cljs$core$IFn$_invoke$arity$variadic(threshold,cljs.core.array_seq([cljs.core.constant$keyword$824,(2),cljs.core.constant$keyword$896,"",cljs.core.constant$keyword$773,""], 0)))));
 {
 var G__37235 = (i__37229 + (1));
 i__37229 = G__37235;
@@ -68,7 +68,7 @@ break;
 {return cljs.core.chunk_cons(cljs.core.chunk(b__37230),null);
 }
 } else
-{var vec__37234 = cljs.core.first(s__37228__$2);var threshold = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__37234,(0),null);var color = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__37234,(1),null);return cljs.core.cons(React.DOM.div({"className": "tbl-cell", "style": {"background-color": color, "color": clustermap.formats.color.stand_out_color(color)}},sablono.interpreter.interpret(clustermap.formats.money.readable.cljs$core$IFn$_invoke$arity$variadic(threshold,cljs.core.array_seq([cljs.core.constant$keyword$826,(2),cljs.core.constant$keyword$898,"",cljs.core.constant$keyword$775,""], 0)))),iter__37227(cljs.core.rest(s__37228__$2)));
+{var vec__37234 = cljs.core.first(s__37228__$2);var threshold = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__37234,(0),null);var color = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__37234,(1),null);return cljs.core.cons(React.DOM.div({"className": "tbl-cell", "style": {"background-color": color, "color": clustermap.formats.color.stand_out_color(color)}},sablono.interpreter.interpret(clustermap.formats.money.readable.cljs$core$IFn$_invoke$arity$variadic(threshold,cljs.core.array_seq([cljs.core.constant$keyword$824,(2),cljs.core.constant$keyword$896,"",cljs.core.constant$keyword$773,""], 0)))),iter__37227(cljs.core.rest(s__37228__$2)));
 }
 } else
 {return null;
@@ -92,5 +92,5 @@ clustermap.components.color_scale.__GT_t37224 = (function __GT_t37224(owner__$1,
 }
 return (new clustermap.components.color_scale.t37224(owner,threshold_colors,color_scale_component,null));
 });
-clustermap.components.color_scale.mount = (function mount(app_state,path,elem_id,shared){return om.core.root(clustermap.components.color_scale.color_scale_component,app_state,new cljs.core.PersistentArrayMap(null, 3, [cljs.core.constant$keyword$894,shared,cljs.core.constant$keyword$897,document.getElementById(elem_id),cljs.core.constant$keyword$869,path], null));
+clustermap.components.color_scale.mount = (function mount(app_state,path,elem_id,shared){return om.core.root(clustermap.components.color_scale.color_scale_component,app_state,new cljs.core.PersistentArrayMap(null, 3, [cljs.core.constant$keyword$892,shared,cljs.core.constant$keyword$895,document.getElementById(elem_id),cljs.core.constant$keyword$867,path], null));
 });

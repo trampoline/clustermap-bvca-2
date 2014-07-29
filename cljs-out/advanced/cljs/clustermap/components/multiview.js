@@ -20,7 +20,7 @@ goog.require('clustermap.components.filter');
 goog.require('clustermap.routes');
 goog.require('om.core');
 goog.require('om.core');
-clustermap.components.multiview.multiview_component = (function multiview_component(p__38146,owner){var map__38161 = p__38146;var map__38161__$1 = ((cljs.core.seq_QMARK_(map__38161))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__38161):map__38161);var cursor = map__38161__$1;var filter_spec = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__38161__$1,cljs.core.constant$keyword$804);if(typeof clustermap.components.multiview.t38162 !== 'undefined')
+clustermap.components.multiview.multiview_component = (function multiview_component(p__38146,owner){var map__38161 = p__38146;var map__38161__$1 = ((cljs.core.seq_QMARK_(map__38161))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__38161):map__38161);var cursor = map__38161__$1;var filter_spec = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__38161__$1,cljs.core.constant$keyword$802);if(typeof clustermap.components.multiview.t38162 !== 'undefined')
 {} else
 {
 /**
@@ -46,10 +46,10 @@ return (function (this__4110__auto__,writer__4111__auto__,opt__4112__auto__){ret
 clustermap.components.multiview.t38162.prototype.om$core$IWillUpdate$ = true;
 clustermap.components.multiview.t38162.prototype.om$core$IWillUpdate$will_update$arity$3 = ((function (map__38161,map__38161__$1,cursor,filter_spec){
 return (function (this$,p__38165,next_state){var self__ = this;
-var map__38166 = p__38165;var map__38166__$1 = ((cljs.core.seq_QMARK_(map__38166))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__38166):map__38166);var map__38167 = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__38166__$1,cljs.core.constant$keyword$804);var map__38167__$1 = ((cljs.core.seq_QMARK_(map__38167))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__38167):map__38167);var next_compiled_filter = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__38167__$1,cljs.core.constant$keyword$1049);var next_views = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__38166__$1,cljs.core.constant$keyword$1092);var this$__$1 = this;var map__38168 = om.core.get_props(self__.owner);var map__38168__$1 = ((cljs.core.seq_QMARK_(map__38168))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__38168):map__38168);var map__38169 = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__38168__$1,cljs.core.constant$keyword$804);var map__38169__$1 = ((cljs.core.seq_QMARK_(map__38169))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__38169):map__38169);var compiled_filter = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__38169__$1,cljs.core.constant$keyword$1049);var views = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__38168__$1,cljs.core.constant$keyword$1092);if(cljs.core.not_EQ_.cljs$core$IFn$_invoke$arity$2(next_compiled_filter,compiled_filter))
+var map__38166 = p__38165;var map__38166__$1 = ((cljs.core.seq_QMARK_(map__38166))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__38166):map__38166);var map__38167 = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__38166__$1,cljs.core.constant$keyword$802);var map__38167__$1 = ((cljs.core.seq_QMARK_(map__38167))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__38167):map__38167);var next_compiled_filter = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__38167__$1,cljs.core.constant$keyword$1047);var next_views = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__38166__$1,cljs.core.constant$keyword$1090);var this$__$1 = this;var map__38168 = om.core.get_props(self__.owner);var map__38168__$1 = ((cljs.core.seq_QMARK_(map__38168))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__38168):map__38168);var map__38169 = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__38168__$1,cljs.core.constant$keyword$802);var map__38169__$1 = ((cljs.core.seq_QMARK_(map__38169))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__38169):map__38169);var compiled_filter = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__38169__$1,cljs.core.constant$keyword$1047);var views = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__38168__$1,cljs.core.constant$keyword$1090);if(cljs.core.not_EQ_.cljs$core$IFn$_invoke$arity$2(next_compiled_filter,compiled_filter))
 {var seq__38170 = cljs.core.seq(cljs.core.keys(next_views));var chunk__38171 = null;var count__38172 = (0);var i__38173 = (0);while(true){
 if((i__38173 < count__38172))
-{var view_key = chunk__38171.cljs$core$IIndexed$_nth$arity$2(null,i__38173);om.core.update_BANG_.cljs$core$IFn$_invoke$arity$3(self__.cursor,new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.constant$keyword$1092,view_key,cljs.core.constant$keyword$804], null),next_compiled_filter);
+{var view_key = chunk__38171.cljs$core$IIndexed$_nth$arity$2(null,i__38173);om.core.update_BANG_.cljs$core$IFn$_invoke$arity$3(self__.cursor,new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.constant$keyword$1090,view_key,cljs.core.constant$keyword$802], null),next_compiled_filter);
 {
 var G__38175 = seq__38170;
 var G__38176 = chunk__38171;
@@ -76,7 +76,7 @@ i__38173 = G__38182;
 continue;
 }
 } else
-{var view_key = cljs.core.first(seq__38170__$1);om.core.update_BANG_.cljs$core$IFn$_invoke$arity$3(self__.cursor,new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.constant$keyword$1092,view_key,cljs.core.constant$keyword$804], null),next_compiled_filter);
+{var view_key = cljs.core.first(seq__38170__$1);om.core.update_BANG_.cljs$core$IFn$_invoke$arity$3(self__.cursor,new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.constant$keyword$1090,view_key,cljs.core.constant$keyword$802], null),next_compiled_filter);
 {
 var G__38183 = cljs.core.next(seq__38170__$1);
 var G__38184 = null;
@@ -123,5 +123,5 @@ return (function __GT_t38162(filter_spec__$1,cursor__$1,map__38161__$2,owner__$1
 }
 return (new clustermap.components.multiview.t38162(filter_spec,cursor,map__38161__$1,owner,p__38146,multiview_component,null));
 });
-clustermap.components.multiview.mount = (function mount(app_state,path,elem_id,shared){return om.core.root(clustermap.components.multiview.multiview_component,app_state,new cljs.core.PersistentArrayMap(null, 3, [cljs.core.constant$keyword$894,shared,cljs.core.constant$keyword$897,document.getElementById(elem_id),cljs.core.constant$keyword$869,path], null));
+clustermap.components.multiview.mount = (function mount(app_state,path,elem_id,shared){return om.core.root(clustermap.components.multiview.multiview_component,app_state,new cljs.core.PersistentArrayMap(null, 3, [cljs.core.constant$keyword$892,shared,cljs.core.constant$keyword$895,document.getElementById(elem_id),cljs.core.constant$keyword$867,path], null));
 });

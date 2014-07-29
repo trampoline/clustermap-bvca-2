@@ -25,7 +25,7 @@ clojure.string.replace = (function replace(s,match,replacement){if(typeof match 
 {if(cljs.core.truth_(match.hasOwnProperty("source")))
 {return s.replace((new RegExp(match.source,"g")),replacement);
 } else
-{if(cljs.core.constant$keyword$774)
+{if(cljs.core.constant$keyword$772)
 {throw ("Invalid match arg: "+cljs.core.str.cljs$core$IFn$_invoke$arity$1(match));
 } else
 {return null;

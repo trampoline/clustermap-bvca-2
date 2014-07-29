@@ -7,7 +7,7 @@
 
 (def ^:private zoom-tolerances
   [[7 0.01]
-   [9 0.002]
+   [10 0.002]
    [12 0.0003]
    [nil 0]])
 

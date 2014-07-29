@@ -380,7 +380,7 @@
                    {next-zoom :zoom
                     next-bounds :bounds
                     next-boundaryline-collection :boundaryline-collection
-                    next-colorchooser-control :colorchooser
+                    next-colorchooser :colorchooser
                     next-boundaryline-agg :boundaryline-agg
                     next-threshold-colors :threshold-colors} :controls}
                   {{next-paths :paths
@@ -390,7 +390,7 @@
       (let [{filter :filter
              data :data
              boundaryline-collections :boundaryline-collections
-             {:keys [initial-bounds bounds zoom boundaryline-collection colorchooser-control boundaryline-agg threshold-colors]} :controls} (om/get-props owner)
+             {:keys [initial-bounds bounds zoom boundaryline-collection colorchooser boundaryline-agg threshold-colors]} :controls} (om/get-props owner)
              {:keys [comm path-fn link-fn fetch-boundarylines-fn point-in-boundarylines-fn set-app-state-fn get-app-state-fn ]} (om/get-shared owner)
              {{:keys [leaflet-map markers paths path-selections]} :map
               pan-pending :pan-pending
@@ -431,7 +431,7 @@
           )
 
         (when (or (not= next-data data)
-                  ;; (not= next-colorchooser-control colorchooser-control)
+                  (not= next-colorchooser colorchooser)
                   )
 
           ;; (.log js/console (clj->js ["next-data" next-data]))
@@ -439,10 +439,10 @@
           ;; (.log js/console (clj->js ["selection-path-colors" selection-path-colours]))
 
           (let [[new-threshold-colors selection-path-colours] (colorchooser/choose
-                                                               (:scheme next-colorchooser-control)
-                                                               (keyword (:scale next-colorchooser-control))
+                                                               (:scheme next-colorchooser)
+                                                               (keyword (:scale next-colorchooser))
                                                                :boundaryline_id
-                                                               (keyword (:variable next-colorchooser-control))
+                                                               (keyword (:variable next-colorchooser))
                                                                (:records next-data))
 
                 update-paths-invocation (fn [] (update-paths comm

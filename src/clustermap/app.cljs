@@ -129,6 +129,10 @@
   [& {:as path-values}]
   (swap! state new-state path-values))
 
+(defn get-state
+  [& path]
+  (get-in @state (flatten path)))
+
 ;;;;;;;;;;;;;;;;;;;;;;;; load and index boundarylines
 
 (def bl-collections ["uk_regions" "uk_boroughs" "uk_wards"])
@@ -143,7 +147,7 @@
 (defn load-aggregation
   [blcoll variable]
   (go
-    (let [employment (<! (api/boundaryline-aggregation "companies" "company" blcoll variable nil))]
+    (let [employment (<! (api/boundaryline-aggregation "companies" "company" blcoll variable nil nil))]
       (set-state [:multiview :views :map :data] employment))))
 
 (defn load-initial-aggregations
@@ -335,6 +339,7 @@
                 :view-path-fn change-view-path
                 :fetch-boundarylines-fn (partial bl/get-or-fetch-best-boundarylines state :boundarylines)
                 :point-in-boundarylines-fn (partial bl/point-in-boundarylines state :boundarylines :uk_boroughs)
+                :get-app-state-fn get-state
                 :set-app-state-fn set-state}]
     (nav/init comm)
     ;; (init-routes comm)

@@ -13,6 +13,12 @@
    [clustermap.boundarylines :as bl]
    [clustermap.data.colorchooser :as colorchooser]))
 
+(def ^:private ticket (atom 0))
+
+(defn next-ticket
+  []
+  (swap! ticket inc))
+
 (defn bounds-array
   "convert a Leaflet LatLngBounds object into nested-array form"
   [bounds]
@@ -193,7 +199,7 @@
         delete-path-keys (set/difference path-keys live-path-keys)
         update-path-keys (set/intersection path-keys live-path-keys)
 
-        [tolerance-paths notifychan] (fetch-boundarylines-fn live-path-keys (.getZoom leaflet-map))
+        [tolerance-paths notifychan] (fetch-boundarylines-fn (bounds-array (.getBounds leaflet-map)) (.getZoom leaflet-map) :boundaryline-ids live-path-keys)
 
         ;; _ (.log js/console (clj->js tolerance-paths))
 
@@ -282,10 +288,11 @@
        last))
 
 (defn fetch-aggregation-data
-  [set-app-state-fn index index-type blcoll variable filter bounds]
+  [set-app-state-fn get-app-state-fn ticket index index-type blcoll variable filter bounds]
   (go
     (let [employment (<! (api/boundaryline-aggregation index index-type blcoll variable filter (bounds-array bounds)))]
-      (set-app-state-fn [:multiview :views :map :data] employment))))
+      (when (= ticket (get-app-state-fn [:multiview :views :map :controls :ticket]))
+        (set-app-state-fn [:multiview :views :map :data] employment)))))
 
 (defn map-component
   "put the leaflet map as state in the om component"
@@ -310,11 +317,13 @@
         (om/set-state! owner :path-highlights #{})
 
         ;; yeuch
-        (.on leaflet-map "zoomend" (fn [e]
-                                     (om/update! cursor [:controls :zoom] (.getZoom leaflet-map))
-                                     (om/update! cursor [:controls :bounds] (bounds-array (.getBounds leaflet-map)))))
+        ;; (.on leaflet-map "zoomend" (fn [e]
+        ;;                              (.log js/console "zoomend")
+        ;;                              (om/update! cursor [:controls :zoom] (.getZoom leaflet-map))
+        ;;                              (om/update! cursor [:controls :bounds] (bounds-array (.getBounds leaflet-map)))))
 
         (.on leaflet-map "moveend" (fn [e]
+                                     (.log js/console "moveend")
                                      (om/update! cursor [:controls :zoom] (.getZoom leaflet-map))
                                      (om/update! cursor [:controls :bounds] (bounds-array (.getBounds leaflet-map)))))
 
@@ -386,7 +395,7 @@
              data :data
              boundaryline-collections :boundaryline-collections
              {:keys [initial-bounds bounds zoom boundaryline-collection colorchooser-control boundaryline-agg threshold-colors]} :controls} (om/get-props owner)
-            {:keys [comm path-fn link-fn fetch-boundarylines-fn point-in-boundarylines-fn set-app-state-fn ]} (om/get-shared owner)
+            {:keys [comm path-fn link-fn fetch-boundarylines-fn point-in-boundarylines-fn set-app-state-fn get-app-state-fn ]} (om/get-shared owner)
             {{:keys [leaflet-map markers paths path-selections]} :map
              pan-pending :pan-pending
              path-highlights :path-highlights} (om/get-state owner)]
@@ -409,15 +418,20 @@
         (when (and next-boundaryline-collection
                    (or (and next-boundaryline-agg (not= next-boundaryline-agg boundaryline-agg))
                        (not= next-boundaryline-collection boundaryline-collection)
-                       (not= next-filter filter)))
-          ;; time for some new data !
-          (fetch-aggregation-data set-app-state-fn
-                                  (:index next-boundaryline-agg)
-                                  (:index-type next-boundaryline-agg)
-                                  next-boundaryline-collection
-                                  (:variable next-boundaryline-agg)
-                                  (om/-value next-filter)
-                                  (.getBounds leaflet-map))
+                       (not= next-filter filter)
+                       (not= next-bounds bounds)))
+          (let [ticket (next-ticket)]
+            (om/update! cursor [:controls :ticket] ticket)
+            ;; time for some new data !
+            (fetch-aggregation-data set-app-state-fn
+                                    get-app-state-fn
+                                    ticket
+                                    (:index next-boundaryline-agg)
+                                    (:index-type next-boundaryline-agg)
+                                    next-boundaryline-collection
+                                    (:variable next-boundaryline-agg)
+                                    (om/-value next-filter)
+                                    (.getBounds leaflet-map)))
 
 
 

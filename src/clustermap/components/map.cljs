@@ -199,6 +199,8 @@
         delete-path-keys (set/difference path-keys live-path-keys)
         update-path-keys (set/intersection path-keys live-path-keys)
 
+        _ (.log js/console (clj->js {:create create-path-keys :delete delete-path-keys :update update-path-keys}))
+
         [tolerance-paths notifychan] (fetch-boundarylines-fn (bounds-array (.getBounds leaflet-map)) (.getZoom leaflet-map) :boundaryline-ids live-path-keys)
 
         ;; _ (.log js/console (clj->js tolerance-paths))
@@ -426,12 +428,11 @@
                                     (:variable next-boundaryline-agg)
                                     (om/-value next-filter)
                                     (bounds-array (.getBounds leaflet-map))))
-
-
-
           )
 
-        (when (not= next-data data)
+        (when (or (not= next-data data)
+                  ;; (not= next-colorchooser-control colorchooser-control)
+                  )
 
           ;; (.log js/console (clj->js ["next-data" next-data]))
           ;; (.log js/console (clj->js ["threshold-colors" new-threshold-colors]))
@@ -459,7 +460,8 @@
 
               (go
                 (let [_ (<! notify-chan)]
-                  (update-paths-invocation))))))
+                  (update-paths-invocation)))
+              )))
         ))))
 
   (defn mount

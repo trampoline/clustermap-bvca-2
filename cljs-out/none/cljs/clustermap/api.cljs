@@ -111,10 +111,12 @@
          opts))
 
 (defn boundaryline-collection-view
-  [collection-id tolerance bounds & opts]
-  (apply POST (str "/api/boundaryline-collection-view/" (name collection-id) "/" tolerance)
-         {:bounds bounds}
-         opts))
+  [collection-id tolerance bounds & {:keys [boundaryline-ids] :as opts}]
+  (let [opts (-> opts (dissoc :boundaryline-ids) seq flatten)]
+    (apply POST (str "/api/boundaryline-collection-view/" (name collection-id) "/" tolerance)
+           {:bounds bounds
+            :boundaryline-ids boundaryline-ids}
+           opts)))
 
 ;; aggregation over boundarylines
 

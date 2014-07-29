@@ -142,18 +142,6 @@
   (doseq [blcoll bl-collections]
     (bl/fetch-boundaryline-collection-index state :boundarylines blcoll)))
 
-;;;;;;;;;;;;;;;;;;;;;;;; load initial aggregations
-
-(defn load-aggregation
-  [blcoll variable]
-  (go
-    (let [employment (<! (api/boundaryline-aggregation "companies" "company" blcoll variable nil nil))]
-      (set-state [:multiview :views :map :data] employment))))
-
-(defn load-initial-aggregations
-  []
-  (load-aggregation "uk_boroughs" "!latest_employee_count"))
-
 ;;;;;;;;;;;;;;;;;;;;;;;
 
 
@@ -345,7 +333,6 @@
     ;; (init-routes comm)
 
     (load-boundaryline-collection-indexes)
-    ;; (load-initial-aggregations)
 
     (map/mount state [:multiview :views :map] "map-component" shared)
     (multiview/mount state [:multiview] "search-component" shared)

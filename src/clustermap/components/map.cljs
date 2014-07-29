@@ -181,7 +181,7 @@
 
 (defn delete-path
   [leaflet-map path]
-;;   (.log js/console (clj->js ["delete-path" (:id path)]))
+  ;;   (.log js/console (clj->js ["delete-path" (:id path)]))
   (.removeLayer leaflet-map (:leaflet-path path)))
 
 (defn update-paths
@@ -209,13 +209,13 @@
                                             [k tolerance js-boundaryline]))))
                            (filter identity)
                            (map (fn [[k tolerance js-boundaryline]] (fetch-create-path comm
-                                                                                     leaflet-map
-                                                                                     k
-                                                                                     tolerance
-                                                                                     js-boundaryline
-                                                                                     {:selected (contains? new-selection-path-keys k)
-                                                                                      :fill-color (new-selection-paths k)
-                                                                                      :highlighted (contains? new-path-highlights k)}))))
+                                                                                       leaflet-map
+                                                                                       k
+                                                                                       tolerance
+                                                                                       js-boundaryline
+                                                                                       {:selected (contains? new-selection-path-keys k)
+                                                                                        :fill-color (new-selection-paths k)
+                                                                                        :highlighted (contains? new-path-highlights k)}))))
 
         updated-paths (->> update-path-keys
                            (map (fn [k] (let [[tolerance js-boundaryline] (get tolerance-paths k)]
@@ -223,13 +223,13 @@
                                             [k tolerance js-boundaryline]))))
                            (filter identity)
                            (map (fn [[k tolerance js-boundaryline]] (update-path comm
-                                                                               leaflet-map
-                                                                               (get paths k)
-                                                                               tolerance
-                                                                               js-boundaryline
-                                                                               {:selected (contains? new-selection-path-keys k)
-                                                                                :fill-color (new-selection-paths k)
-                                                                                :highlighted (contains? new-path-highlights k)})))
+                                                                                 leaflet-map
+                                                                                 (get paths k)
+                                                                                 tolerance
+                                                                                 js-boundaryline
+                                                                                 {:selected (contains? new-selection-path-keys k)
+                                                                                  :fill-color (new-selection-paths k)
+                                                                                  :highlighted (contains? new-path-highlights k)})))
                            )
 
         _ (doseq [k delete-path-keys] (if-let [path (get paths k)] (delete-path leaflet-map path)))
@@ -316,12 +316,6 @@
         (om/set-state! owner :map map)
         (om/set-state! owner :path-highlights #{})
 
-        ;; yeuch
-        ;; (.on leaflet-map "zoomend" (fn [e]
-        ;;                              (.log js/console "zoomend")
-        ;;                              (om/update! cursor [:controls :zoom] (.getZoom leaflet-map))
-        ;;                              (om/update! cursor [:controls :bounds] (bounds-array (.getBounds leaflet-map)))))
-
         (.on leaflet-map "moveend" (fn [e]
                                      (.log js/console "moveend")
                                      (om/update! cursor [:controls :zoom] (.getZoom leaflet-map))
@@ -389,35 +383,35 @@
                     next-threshold-colors :threshold-colors} :controls}
                   {{next-paths :paths
                     next-path-selections :path-selections} :map
-                   next-path-highlights :path-highlights}]
+                    next-path-highlights :path-highlights}]
 
       (let [{filter :filter
              data :data
              boundaryline-collections :boundaryline-collections
              {:keys [initial-bounds bounds zoom boundaryline-collection colorchooser-control boundaryline-agg threshold-colors]} :controls} (om/get-props owner)
-            {:keys [comm path-fn link-fn fetch-boundarylines-fn point-in-boundarylines-fn set-app-state-fn get-app-state-fn ]} (om/get-shared owner)
-            {{:keys [leaflet-map markers paths path-selections]} :map
-             pan-pending :pan-pending
-             path-highlights :path-highlights} (om/get-state owner)]
+             {:keys [comm path-fn link-fn fetch-boundarylines-fn point-in-boundarylines-fn set-app-state-fn get-app-state-fn ]} (om/get-shared owner)
+             {{:keys [leaflet-map markers paths path-selections]} :map
+              pan-pending :pan-pending
+              path-highlights :path-highlights} (om/get-state owner)]
 
         ;; apply any requested but not-yet-applied zoom
         (when (and leaflet-map next-zoom (not= next-zoom zoom) (not= next-zoom (.getZoom leaflet-map)))
           (.setZoom leaflet-map next-zoom))
 
-        ;; apply any requested but not-yet-applied bounds changes
+        ;; apply requested but not-yet-applied bounds changes
         (when (and leaflet-map next-bounds (not= next-bounds bounds) (not= next-bounds (bounds-array (.getBounds leaflet-map))))
           (.fitBounds leaflet-map (clj->js next-bounds))
           (om/update! cursor [:controls :bounds] (bounds-array (.getBounds leaflet-map))))
 
-        (when (and leaflet-map boundaryline-collections (not= next-boundaryline-collection (choose-boundaryline-collection next-boundaryline-collections (.getZoom leaflet-map))))
+        ;; change the boundaryline-collection if necessary
+        (when (and leaflet-map boundaryline-collections
+                   (not= next-boundaryline-collection
+                         (choose-boundaryline-collection next-boundaryline-collections (.getZoom leaflet-map))))
           (.log js/console (clj->js ["change-collection" (choose-boundaryline-collection next-boundaryline-collections (.getZoom leaflet-map))]))
           (om/update! cursor [:controls :boundaryline-collection] (choose-boundaryline-collection next-boundaryline-collections (.getZoom leaflet-map))))
 
-        ;; (update-markers path-fn leaflet-map markers next-locations)
-
         (when (and next-boundaryline-collection
                    (or (and next-boundaryline-agg (not= next-boundaryline-agg boundaryline-agg))
-                       (not= next-boundaryline-collection boundaryline-collection)
                        (not= next-filter filter)
                        (not= next-bounds bounds)))
           (let [ticket (next-ticket)]
@@ -428,7 +422,7 @@
                                     ticket
                                     (:index next-boundaryline-agg)
                                     (:index-type next-boundaryline-agg)
-                                    next-boundaryline-collection
+                                    (choose-boundaryline-collection next-boundaryline-collections (.getZoom leaflet-map))
                                     (:variable next-boundaryline-agg)
                                     (om/-value next-filter)
                                     (bounds-array (.getBounds leaflet-map))))
@@ -466,15 +460,12 @@
               (go
                 (let [_ (<! notify-chan)]
                   (update-paths-invocation))))))
-
-        ;; (when (or pan-pending (not= next-selection selection))
-        ;;   (pan-to-selection owner leaflet-map paths path-selections))
         ))))
 
-(defn mount
-  [app-state path elem-id shared]
-  (om/root map-component
-           app-state
-           {:shared shared
-            :target (.getElementById js/document elem-id)
-            :path path}))
+  (defn mount
+    [app-state path elem-id shared]
+    (om/root map-component
+             app-state
+             {:shared shared
+              :target (.getElementById js/document elem-id)
+              :path path}))

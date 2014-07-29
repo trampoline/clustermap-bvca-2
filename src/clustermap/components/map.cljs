@@ -290,7 +290,7 @@
 (defn fetch-aggregation-data
   [set-app-state-fn get-app-state-fn ticket index index-type blcoll variable filter bounds]
   (go
-    (let [employment (<! (api/boundaryline-aggregation index index-type blcoll variable filter (bounds-array bounds)))]
+    (let [employment (<! (api/boundaryline-aggregation index index-type blcoll variable filter bounds))]
       (when (= ticket (get-app-state-fn [:multiview :views :map :controls :ticket]))
         (set-app-state-fn [:multiview :views :map :data] employment)))))
 
@@ -431,7 +431,7 @@
                                     next-boundaryline-collection
                                     (:variable next-boundaryline-agg)
                                     (om/-value next-filter)
-                                    (.getBounds leaflet-map)))
+                                    (bounds-array (.getBounds leaflet-map))))
 
 
 

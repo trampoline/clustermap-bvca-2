@@ -39,24 +39,30 @@
         (sequential? x) x
         true [x]))
 
+(defn cache-boundarylines
+  "cache a seq of boundarylines in the general and collection-specific caches"
+  [app-state boundarylines-path collection-boundarylines-path boundarylines]
+  (let [boundarylines-path (make-sequential boundarylines-path)
+        collection-boundarylines-path (make-sequential collection-boundarylines-path)]
+
+    (doseq [bl boundarylines]
+      (let [boundaryline-id (aget bl "id")
+            tolerance (aget bl "tolerance")
+            general-cache-path (concat boundarylines-path [boundaryline-id tolerance])
+            collection-cache-path (when collection-boundarylines-path (concat collection-boundarylines-path [boundaryline-id tolerance]))]
+              ;;       (.log js/console (clj->js ["rx" app-state boundaryline-id tolerance bl]))
+        (swap! app-state update-in general-cache-path (fn [old] bl))
+        (when collection-cache-path
+          (swap! app-state update-in collection-cache-path (fn [old] bl)))))))
+
 (defn fetch-boundarylines
   "fetch a set of boundarylines for a given tolerance in one API call, add the results to the collection-specific and
    general caches. returns a single value true on the go-block channel when complete"
   [app-state boundarylines-path collection-boundarylines-path boundaryline-ids tolerance]
-    (let [boundarylines-path (make-sequential boundarylines-path)
-          collection-boundarylines-path (make-sequential collection-boundarylines-path)
-
-          comm (api/boundaryline-set boundaryline-ids tolerance :raw true)]
+  (let [comm (api/boundaryline-set boundaryline-ids tolerance :raw true)]
       (go
         (let [bls (<! comm)]
-          (doseq [bl bls]
-            (let [boundaryline-id (aget bl "id")
-                  general-cache-path (concat boundarylines-path [boundaryline-id tolerance])
-                  collection-cache-path (when collection-boundarylines-path (concat collection-boundarylines-path [boundaryline-id tolerance]))]
-              ;;       (.log js/console (clj->js ["rx" app-state boundaryline-id tolerance bl]))
-              (swap! app-state update-in general-cache-path (fn [old] bl))
-              (when collection-cache-path
-                (swap! app-state update-in collection-cache-path (fn [old] bl))))))
+          (cache-boundarylines app-state boundarylines-path collection-boundarylines-path bls))
         true)))
 
 (defn- fetch-from-index

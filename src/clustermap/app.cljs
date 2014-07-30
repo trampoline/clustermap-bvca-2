@@ -54,7 +54,7 @@
                    :views {
                            :map {:type :geoport
                                  :datasource "companies"
-                                 :boundaryline-collections [[0 "uk_regions"] [7 "uk_boroughs"] [10 "uk_wards"]]
+                                 :boundaryline-collections [[0 "uk_counties"] [7 "uk_boroughs"] [10 "uk_wards"]]
                                  :controls {:initial-bounds [[59.54 2.3] [49.29 -11.29]]
                                             :zoom nil
                                             :bounds nil

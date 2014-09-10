@@ -49,7 +49,7 @@
 
 (defn create-map
   [id-or-el initial-bounds]
-  (let [m ((-> js/L .-map) id-or-el #js {:zoomControl false})
+  (let [m ((-> js/L .-map) id-or-el #js {:zoomControl false :maxZoom 19})
         tiles ((-> js/L .-mapbox .-tileLayer) api-key #js {:detectRetina (not js/config.repl)})
         zoom ((-> js/L .-control .-zoom) #js {:position "bottomright"})]
     (.addLayer m tiles)

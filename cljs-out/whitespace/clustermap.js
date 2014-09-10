@@ -63712,7 +63712,7 @@ clustermap.components.map.api_key = function() {
   }
 }();
 clustermap.components.map.create_map = function create_map(id_or_el, initial_bounds) {
-  var m = L.map.call(null, id_or_el, {"zoomControl":false});
+  var m = L.map.call(null, id_or_el, {"maxZoom":19, "zoomControl":false});
   var tiles = L.mapbox.tileLayer.call(null, clustermap.components.map.api_key, {"detectRetina":cljs.core.not.call(null, config.repl)});
   var zoom = L.control.zoom.call(null, {"position":"bottomright"});
   m.addLayer(tiles);

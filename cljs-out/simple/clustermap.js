@@ -38580,7 +38580,7 @@ clustermap.components.map.api_key = function() {
   return cljs.core.truth_(a) ? a : "mccraigmccraig.h4f921b9";
 }();
 clustermap.components.map.create_map = function(a, b) {
-  var c = L.map.call(null, a, {zoomControl:!1}), d = L.mapbox.tileLayer.call(null, clustermap.components.map.api_key, {detectRetina:cljs.core.not.call(null, config.repl)}), e = L.control.zoom.call(null, {position:"bottomright"});
+  var c = L.map.call(null, a, {maxZoom:19, zoomControl:!1}), d = L.mapbox.tileLayer.call(null, clustermap.components.map.api_key, {detectRetina:cljs.core.not.call(null, config.repl)}), e = L.control.zoom.call(null, {position:"bottomright"});
   c.addLayer(d);
   c.addControl(e);
   clustermap.components.map.locate_map.call(null, c, b);

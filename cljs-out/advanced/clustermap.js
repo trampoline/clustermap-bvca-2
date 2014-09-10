@@ -14589,7 +14589,7 @@ var uw, vw, ww = config, xw = null == ww ? null : ww.xk, yw = null == xw ? null 
 vw = null == yw ? null : yw.fk;
 uw = r(vw) ? vw : "mccraigmccraig.h4f921b9";
 function zw(a, b) {
-  var c = L.map.call(null, a, {zoomControl:!1}), d = L.Hk.fl.call(null, uw, {detectRetina:nb(config.qh)}), e = L.control.zoom.call(null, {position:"bottomright"});
+  var c = L.map.call(null, a, {maxZoom:19, zoomControl:!1}), d = L.Hk.fl.call(null, uw, {detectRetina:nb(config.qh)}), e = L.control.zoom.call(null, {position:"bottomright"});
   c.ck(d);
   c.bk(e);
   c.ng(Ph(b), Ph(new p(null, 2, ["paddingTopLeft", new W(null, 2, 5, Y, [0, 0], null), "paddingBottomRight", new W(null, 2, 5, Y, [0, 0], null)], null)));

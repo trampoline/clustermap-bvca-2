@@ -110,16 +110,18 @@
         marker-keys (-> markers keys set)
         location-keys (-> new-locations keys set)
 
+        _ (.log js/console (clj->js [(count location-keys) location-keys]))
+
         update-marker-keys (set/intersection marker-keys location-keys)
         new-marker-keys (set/difference location-keys marker-keys)
         remove-marker-keys (set/difference marker-keys location-keys)
 
         new-markers (->> new-marker-keys
-                         (map (fn [k] [k (create-marker path-fn leaflet-map (get new-locations k))]))
+                         (map (fn [k] [k (create-marker path-fn leaflet-map (get-in new-locations [k :records]))]))
                          (into {}))
 
         updated-markers (->> update-marker-keys
-                             (map (fn [k] [k (update-marker path-fn leaflet-map (get markers k) (get new-locations k))]))
+                             (map (fn [k] [k (update-marker path-fn leaflet-map (get markers k) (get-in new-locations [k :records]))]))
                              (into {}))
 
         _ (doseq [k remove-marker-keys] (remove-marker leaflet-map (get markers k)))]
@@ -296,6 +298,20 @@
       (when (= ticket (get-app-state-fn [:multiview :views :map :controls :ticket]))
         (set-app-state-fn [:multiview :views :map :data] employment)))))
 
+(defn fetch-point-data
+  [set-app-state-fn get-app-state-fn ticket index index-type filter bounds]
+  (go
+    (let [locations (<! (api/location-lists
+                         index
+                         index-type
+                         "!postcode"
+                         ["!name" "!location" "!latest_employee_count" "!latest_turnover"]
+                         1000
+                         filter
+                         bounds))]
+      (when (= ticket (get-app-state-fn [:multiview :views :map :controls :ticket]))
+        (set-app-state-fn [:multiview :views :map :point-data] locations)))))
+
 (defn map-component
   "put the leaflet map as state in the om component"
   [{{:keys [initial-bounds]} :controls :as cursor}
@@ -376,6 +392,7 @@
     (will-update [this
                   {next-filter :filter
                    next-data :data
+                   next-point-data :point-data
                    next-boundaryline-collections :boundaryline-collections
                    {next-zoom :zoom
                     next-bounds :bounds
@@ -383,12 +400,14 @@
                     next-colorchooser :colorchooser
                     next-boundaryline-agg :boundaryline-agg
                     next-threshold-colors :threshold-colors} :controls}
-                  {{next-paths :paths
+                  {{next-markers :markers
+                    next-paths :paths
                     next-path-selections :path-selections} :map
                     next-path-highlights :path-highlights}]
 
       (let [{filter :filter
              data :data
+             point-data :point-data
              boundaryline-collections :boundaryline-collections
              {:keys [initial-bounds bounds zoom boundaryline-collection colorchooser boundaryline-agg threshold-colors]} :controls} (om/get-props owner)
              {:keys [comm path-fn link-fn fetch-boundarylines-fn point-in-boundarylines-fn set-app-state-fn get-app-state-fn ]} (om/get-shared owner)
@@ -427,8 +446,16 @@
                                     (choose-boundaryline-collection next-boundaryline-collections (.getZoom leaflet-map))
                                     (:variable next-boundaryline-agg)
                                     (om/-value next-filter)
-                                    (bounds-array (.getBounds leaflet-map))))
-          )
+                                    (bounds-array (.getBounds leaflet-map)))
+
+            (fetch-point-data set-app-state-fn
+                              get-app-state-fn
+                              ticket
+                              (:index next-boundaryline-agg)
+                              (:index-type next-boundaryline-agg)
+                              (om/-value next-filter)
+                              (bounds-array (.getBounds leaflet-map)))
+            ))
 
         (when (or (not= next-data data)
                   (not= next-colorchooser colorchooser)
@@ -462,6 +489,11 @@
                 (let [_ (<! notify-chan)]
                   (update-paths-invocation)))
               )))
+
+        (when (not= next-point-data point-data)
+
+          (update-markers path-fn leaflet-map next-markers (:records next-point-data))
+          )
         ))))
 
   (defn mount

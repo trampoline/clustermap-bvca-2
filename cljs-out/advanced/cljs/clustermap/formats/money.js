@@ -7,8 +7,8 @@ clustermap.formats.money.money_suffixes = new cljs.core.PersistentArrayMap(null,
 /**
 * take an exponent and return a suffix
 */
-clustermap.formats.money.money_suffix = (function money_suffix(exp){var or__3543__auto__ = (clustermap.formats.money.money_suffixes.cljs$core$IFn$_invoke$arity$1 ? clustermap.formats.money.money_suffixes.cljs$core$IFn$_invoke$arity$1(exp) : clustermap.formats.money.money_suffixes.call(null,exp));if(cljs.core.truth_(or__3543__auto__))
-{return or__3543__auto__;
+clustermap.formats.money.money_suffix = (function money_suffix(exp){var or__3541__auto__ = (clustermap.formats.money.money_suffixes.cljs$core$IFn$_invoke$arity$1 ? clustermap.formats.money.money_suffixes.cljs$core$IFn$_invoke$arity$1(exp) : clustermap.formats.money.money_suffixes.call(null,exp));if(cljs.core.truth_(or__3541__auto__))
+{return or__3541__auto__;
 } else
 {return ("x10^"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(exp));
 }
@@ -22,11 +22,11 @@ clustermap.formats.money.money_suffix = (function money_suffix(exp){var or__3543
 * @param {...*} var_args
 */
 clustermap.formats.money.readable = (function() { 
-var readable__delegate = function (n,p__38445){var map__38448 = p__38445;var map__38448__$1 = ((cljs.core.seq_QMARK_(map__38448))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__38448):map__38448);var default$ = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__38448__$1,cljs.core.constant$keyword$773);var plus_QMARK_ = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__38448__$1,cljs.core.constant$keyword$825);var curr = cljs.core.get.cljs$core$IFn$_invoke$arity$3(map__38448__$1,cljs.core.constant$keyword$896,"\u00A3");var sf = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__38448__$1,cljs.core.constant$keyword$824);if(cljs.core.truth_(n))
-{var vec__38449 = clustermap.formats.number.eng_notation.cljs$core$IFn$_invoke$arity$variadic(n,cljs.core.array_seq([cljs.core.constant$keyword$824,sf], 0));var sig = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__38449,(0),null);var exp = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__38449,(1),null);var abs_sig = Math.abs(sig);var suffix = clustermap.formats.money.money_suffix(exp);return cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.str,cljs.core.filter(cljs.core.identity,new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [(cljs.core.truth_((function (){var and__3531__auto__ = plus_QMARK_;if(cljs.core.truth_(and__3531__auto__))
+var readable__delegate = function (n,p__38866){var map__38869 = p__38866;var map__38869__$1 = ((cljs.core.seq_QMARK_(map__38869))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__38869):map__38869);var default$ = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__38869__$1,cljs.core.constant$keyword$779);var plus_QMARK_ = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__38869__$1,cljs.core.constant$keyword$833);var curr = cljs.core.get.cljs$core$IFn$_invoke$arity$3(map__38869__$1,cljs.core.constant$keyword$904,"\u00A3");var sf = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__38869__$1,cljs.core.constant$keyword$832);if(cljs.core.truth_(n))
+{var vec__38870 = clustermap.formats.number.eng_notation.cljs$core$IFn$_invoke$arity$variadic(n,cljs.core.array_seq([cljs.core.constant$keyword$832,sf], 0));var sig = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__38870,(0),null);var exp = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__38870,(1),null);var abs_sig = Math.abs(sig);var suffix = clustermap.formats.money.money_suffix(exp);return cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.str,cljs.core.filter(cljs.core.identity,new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [(cljs.core.truth_((function (){var and__3529__auto__ = plus_QMARK_;if(cljs.core.truth_(and__3529__auto__))
 {return (sig > (0));
 } else
-{return and__3531__auto__;
+{return and__3529__auto__;
 }
 })())?"+":(((sig < (0)))?"-":null)),curr,abs_sig,suffix], null)));
 } else
@@ -34,14 +34,14 @@ var readable__delegate = function (n,p__38445){var map__38448 = p__38445;var map
 }
 };
 var readable = function (n,var_args){
-var p__38445 = null;if (arguments.length > 1) {
-  p__38445 = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return readable__delegate.call(this,n,p__38445);};
+var p__38866 = null;if (arguments.length > 1) {
+  p__38866 = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return readable__delegate.call(this,n,p__38866);};
 readable.cljs$lang$maxFixedArity = 1;
-readable.cljs$lang$applyTo = (function (arglist__38450){
-var n = cljs.core.first(arglist__38450);
-var p__38445 = cljs.core.rest(arglist__38450);
-return readable__delegate(n,p__38445);
+readable.cljs$lang$applyTo = (function (arglist__38871){
+var n = cljs.core.first(arglist__38871);
+var p__38866 = cljs.core.rest(arglist__38871);
+return readable__delegate(n,p__38866);
 });
 readable.cljs$core$IFn$_invoke$arity$variadic = readable__delegate;
 return readable;

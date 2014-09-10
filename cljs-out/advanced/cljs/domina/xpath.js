@@ -4,10 +4,10 @@ goog.require('cljs.core');
 goog.require('goog.dom');
 goog.require('goog.dom');
 goog.require('domina');
-domina.xpath.select_node_STAR_ = (function select_node_STAR_(path,node,technique_1,technique_2){var doc = goog.dom.getOwnerDocument(node);if(cljs.core.truth_((function (){var and__3531__auto__ = node.selectSingleNode;if(cljs.core.truth_(and__3531__auto__))
+domina.xpath.select_node_STAR_ = (function select_node_STAR_(path,node,technique_1,technique_2){var doc = goog.dom.getOwnerDocument(node);if(cljs.core.truth_((function (){var and__3529__auto__ = node.selectSingleNode;if(cljs.core.truth_(and__3529__auto__))
 {return doc.setProperty;
 } else
-{return and__3531__auto__;
+{return and__3529__auto__;
 }
 })()))
 {doc.setProperty("SelectionLanguage","XPath");
@@ -16,7 +16,7 @@ return (technique_1.cljs$core$IFn$_invoke$arity$2 ? technique_1.cljs$core$IFn$_i
 {if(cljs.core.truth_(doc.evaluate))
 {return (technique_2.cljs$core$IFn$_invoke$arity$4 ? technique_2.cljs$core$IFn$_invoke$arity$4(null,doc,node,path) : technique_2.call(null,null,doc,node,path));
 } else
-{if(cljs.core.constant$keyword$772)
+{if(cljs.core.constant$keyword$778)
 {throw (new Error("Could not find XPath support in this browser."));
 } else
 {return null;
@@ -38,10 +38,10 @@ domina.xpath.select_nodes = (function select_nodes(expr,node){return domina.xpat
 }),(function (resolver,doc,node__$1,expr__$1){var result = doc.evaluate(expr__$1,node__$1,null,XPathResult.ORDERED_NODE_SNAPSHOT_TYPE,null);var num_results = result.snapshotLength;var i = (0);var acc = null;while(true){
 if((i < num_results))
 {{
-var G__43773 = (i + (1));
-var G__43774 = cljs.core.cons(result.snapshotItem(i),acc);
-i = G__43773;
-acc = G__43774;
+var G__44194 = (i + (1));
+var G__44195 = cljs.core.cons(result.snapshotItem(i),acc);
+i = G__44194;
+acc = G__44195;
 continue;
 }
 } else
@@ -60,41 +60,41 @@ domina.xpath.xpath = (function() {
 var xpath = null;
 var xpath__1 = (function (expr){return xpath.cljs$core$IFn$_invoke$arity$2(domina.xpath.root_element(),expr);
 });
-var xpath__2 = (function (base,expr){if(typeof domina.xpath.t43778 !== 'undefined')
+var xpath__2 = (function (base,expr){if(typeof domina.xpath.t44199 !== 'undefined')
 {} else
 {
 /**
 * @constructor
 */
-domina.xpath.t43778 = (function (expr,base,xpath,meta43779){
+domina.xpath.t44199 = (function (expr,base,xpath,meta44200){
 this.expr = expr;
 this.base = base;
 this.xpath = xpath;
-this.meta43779 = meta43779;
+this.meta44200 = meta44200;
 this.cljs$lang$protocol_mask$partition1$ = 0;
 this.cljs$lang$protocol_mask$partition0$ = 393216;
 })
-domina.xpath.t43778.cljs$lang$type = true;
-domina.xpath.t43778.cljs$lang$ctorStr = "domina.xpath/t43778";
-domina.xpath.t43778.cljs$lang$ctorPrWriter = (function (this__4110__auto__,writer__4111__auto__,opt__4112__auto__){return cljs.core._write(writer__4111__auto__,"domina.xpath/t43778");
+domina.xpath.t44199.cljs$lang$type = true;
+domina.xpath.t44199.cljs$lang$ctorStr = "domina.xpath/t44199";
+domina.xpath.t44199.cljs$lang$ctorPrWriter = (function (this__4108__auto__,writer__4109__auto__,opt__4110__auto__){return cljs.core._write(writer__4109__auto__,"domina.xpath/t44199");
 });
-domina.xpath.t43778.prototype.domina$DomContent$ = true;
-domina.xpath.t43778.prototype.domina$DomContent$nodes$arity$1 = (function (_){var self__ = this;
+domina.xpath.t44199.prototype.domina$DomContent$ = true;
+domina.xpath.t44199.prototype.domina$DomContent$nodes$arity$1 = (function (_){var self__ = this;
 var ___$1 = this;return cljs.core.mapcat.cljs$core$IFn$_invoke$arity$2(cljs.core.partial.cljs$core$IFn$_invoke$arity$2(domina.xpath.select_nodes,self__.expr),domina.nodes(self__.base));
 });
-domina.xpath.t43778.prototype.domina$DomContent$single_node$arity$1 = (function (_){var self__ = this;
+domina.xpath.t44199.prototype.domina$DomContent$single_node$arity$1 = (function (_){var self__ = this;
 var ___$1 = this;return cljs.core.first(cljs.core.filter(cljs.core.complement(cljs.core.nil_QMARK_),cljs.core.map.cljs$core$IFn$_invoke$arity$2(cljs.core.partial.cljs$core$IFn$_invoke$arity$2(domina.xpath.select_node,self__.expr),domina.nodes(self__.base))));
 });
-domina.xpath.t43778.prototype.cljs$core$IMeta$_meta$arity$1 = (function (_43780){var self__ = this;
-var _43780__$1 = this;return self__.meta43779;
+domina.xpath.t44199.prototype.cljs$core$IMeta$_meta$arity$1 = (function (_44201){var self__ = this;
+var _44201__$1 = this;return self__.meta44200;
 });
-domina.xpath.t43778.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = (function (_43780,meta43779__$1){var self__ = this;
-var _43780__$1 = this;return (new domina.xpath.t43778(self__.expr,self__.base,self__.xpath,meta43779__$1));
+domina.xpath.t44199.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = (function (_44201,meta44200__$1){var self__ = this;
+var _44201__$1 = this;return (new domina.xpath.t44199(self__.expr,self__.base,self__.xpath,meta44200__$1));
 });
-domina.xpath.__GT_t43778 = (function __GT_t43778(expr__$1,base__$1,xpath__$1,meta43779){return (new domina.xpath.t43778(expr__$1,base__$1,xpath__$1,meta43779));
+domina.xpath.__GT_t44199 = (function __GT_t44199(expr__$1,base__$1,xpath__$1,meta44200){return (new domina.xpath.t44199(expr__$1,base__$1,xpath__$1,meta44200));
 });
 }
-return (new domina.xpath.t43778(expr,base,xpath,null));
+return (new domina.xpath.t44199(expr,base,xpath,null));
 });
 xpath = function(base,expr){
 switch(arguments.length){

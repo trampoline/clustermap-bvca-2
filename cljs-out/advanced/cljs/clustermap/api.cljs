@@ -126,6 +126,15 @@
       {:filter filter
        :bounds bounds}))
 
+;; points in view
+(defn location-lists
+  [index type location-attr attrs max-count filter bounds & [type-ids]]
+  (POST (str "/api/" api-prefix "/location-lists/" index "/" type "/" location-attr "?" (map-json-params type-ids))
+      {:max-count max-count
+       :attrs attrs
+       :filter filter
+       :bounds bounds}))
+
 ;; search
 
 (defn search

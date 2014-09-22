@@ -3,15 +3,15 @@
   :url "http://example.com/FIXME"
 
   :dependencies [[org.clojure/clojure "1.6.0"]
-                 [org.clojure/clojurescript "0.0-2268" :scope "provided"]
+                 [org.clojure/clojurescript "0.0-2322" :scope "provided"]
                  [org.clojure/core.async "0.1.267.0-0d7780-alpha" :scope "provided"]
                  [weasel "0.3.0"]
                  [domina "1.0.2"]
-                 [jayq "2.5.1"]
-                 [om "0.6.4"]
-                 [sablono "0.2.17"]
+                 [jayq "2.5.2"]
+                 [om "0.7.3"]
+                 [sablono "0.2.22"]
                  [hiccups "0.3.0"]
-                 [secretary "1.1.0"]
+                 [secretary "1.2.0"]
                  ]
 
 ;;  :exclusions [org.clojure/google-closure-library

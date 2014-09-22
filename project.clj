@@ -5,7 +5,8 @@
   :dependencies [[org.clojure/clojure "1.6.0"]
                  [org.clojure/clojurescript "0.0-2322" :scope "provided"]
                  [org.clojure/core.async "0.1.267.0-0d7780-alpha" :scope "provided"]
-                 [weasel "0.3.0"]
+                 [weasel "0.4.0-SNAPSHOT"]
+                 [figwheel "0.1.4-SNAPSHOT"]
                  [domina "1.0.2"]
                  [jayq "2.5.2"]
                  [om "0.7.3"]
@@ -26,15 +27,16 @@
 
   :source-paths ["src"]
 
-  :plugins [[lein-cljsbuild "1.0.3"]]
+  :plugins [[lein-cljsbuild "1.0.3"]
+            [lein-figwheel "0.1.4-SNAPSHOT"]]
 
   :cljsbuild {
               :builds {:none
                        {:source-paths ["src"]
                         :compiler {
-                                   :output-to  "cljs-out/none/clustermap.js"
+                                   :output-to  "resources/public/clustermap.js"
                                    :source-map true
-                                   :output-dir "cljs-out/none/cljs"
+                                   :output-dir "resources/public/cljs"
                                    :optimizations :none
                                    :pretty-print true}}
 

@@ -12,10 +12,9 @@
  js/config.repl
  (do
    (ws-repl/connect "ws://localhost:9001" :verbose true)
-   (enable-console-print!)
    (fw/watch-and-reload
-    :websocket-url "ws://localhost:3449/figwheel-ws" default
-    :jsload-callback (fn [] (print "reloaded")))
+    :websocket-url "ws://localhost:3449/figwheel-ws"
+    :jsload-callback (fn [] (.log js/console "reloaded")))
    (init))
 
  true

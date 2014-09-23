@@ -62,7 +62,11 @@
                                          :variable :sum}}
                :data nil}
 
-         :map-report {}
+         :map-report {:controls {:summary-stats {:index "companies"
+                                                 :index-type "company"
+                                                 :variable "!latest_employee_count"}}
+                      :summary-stats nil
+                      }
 
          :turnover_timeline {:type :timeline
                              :datasource "company_accounts"

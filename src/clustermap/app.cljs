@@ -330,7 +330,6 @@
 
     (load-boundaryline-collection-indexes)
 
-    ;; (map/mount state [:multiview :views :map] "map-component" shared)
     (mount/mount map/map-component
                  state
                  :target "map-component"
@@ -344,13 +343,30 @@
                  :shared shared
                  :path [:filter])
 
-    (select-chooser/mount state [:map :controls :boundaryline-agg] "variable-selection-component" shared "Variable" :variable [["!latest_employee_count" "Employee count"] ["!latest_turnover" "Turnover"]])
+    (mount/mount (partial select-chooser/select-chooser-component "Variable" :variable [["!latest_employee_count" "Employee count"] ["!latest_turnover" "Turnover"]])
+                 state
+                 :target "variable-selection-component"
+                 :shared shared
+                 :path [:map :controls :boundaryline-agg])
 
-    (select-chooser/mount state [:map :controls :colorchooser] "stat-selection-component" shared "Statistic" :variable [["sum" "Sum"] ["max" "Maximum"] ["avg" "Mean"] ["boundaryline_id_doc_count" "Count"]])
+    (mount/mount (partial select-chooser/select-chooser-component "Statistic" :variable [["sum" "Sum"] ["max" "Maximum"] ["avg" "Mean"] ["boundaryline_id_doc_count" "Count"]])
+                 state
+                 :target "stat-selection-component"
+                 :shared shared
+                 :path [:map :controls :colorchooser])
 
-    (select-chooser/mount state [:map :controls :colorchooser] "scale-selection-component" shared "Scale" :scale [["log" "Log"] ["linear" "Linear"]])
+    (mount/mount (partial select-chooser/select-chooser-component "Scale" :scale [["log" "Log"] ["linear" "Linear"]])
+                 state
+                 :target "scale-selection-component"
+                 :shared shared
+                 :path [:map :controls :colorchooser])
 
-    (color-scale/mount state [:map :controls :threshold-colors] "color-scale-component" shared)
+    (mount/mount color-scale/color-scale-component
+                 state
+                 :target "color-scale-component"
+                 :shared shared
+                 :path [:map :controls :threshold-colors])
+
 
     ;; (search/mount state "search-component" shared)
     ;; (map-report/mount state "map-report-component" shared)

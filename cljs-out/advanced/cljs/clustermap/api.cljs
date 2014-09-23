@@ -126,6 +126,13 @@
       {:filter filter
        :bounds bounds}))
 
+;; summary stats
+(defn summary-stats
+  [index type statsattr filter bounds & [type-ids]]
+  (POST (str "/api/" api-prefix "/summary-stats/" index "/" type "/" statsattr "?" (map-json-params type-ids))
+      {:filter filter
+       :bounds bounds}))
+
 ;; points in view
 (defn location-lists
   [index type location-attr attrs max-count filter bounds & [type-ids]]

@@ -10,6 +10,7 @@
    [sablono.core :as html :refer-macros [html]]
    [hiccups.runtime :as hiccupsrt]
    [clustermap.api :as api]
+   [clustermap.ordered-resource :as ordered-resource]
    [clustermap.boundarylines :as bl]
    [clustermap.data.colorchooser :as colorchooser]))
 
@@ -291,31 +292,39 @@
        first
        last))
 
-(defn fetch-aggregation-data
-  [set-app-state-fn get-app-state-fn ticket index index-type blcoll variable filter bounds]
-  (go
-    (let [employment (<! (api/boundaryline-aggregation index index-type blcoll variable filter bounds))]
-      (when (= ticket (get-app-state-fn [:multiview :views :map :controls :ticket]))
-        (set-app-state-fn [:multiview :views :map :data] employment)))))
+(defn request-aggregation-data
+  [resource index index-type blcoll variable filter bounds]
+  (ordered-resource/api-call resource
+                             api/boundaryline-aggregation
+                             index
+                             index-type
+                             blcoll
+                             variable
+                             filter
+                             bounds))
 
-(defn fetch-point-data
-  [set-app-state-fn get-app-state-fn ticket index index-type filter bounds]
-  (go
-    (let [locations (<! (api/location-lists
-                         index
-                         index-type
-                         "!postcode"
-                         ["!name" "!location" "!latest_employee_count" "!latest_turnover"]
-                         1000
-                         filter
-                         bounds))]
-      (when (= ticket (get-app-state-fn [:multiview :views :map :controls :ticket]))
-        (set-app-state-fn [:multiview :views :map :point-data] locations)))))
+(defn request-point-data
+  [resource index index-type filter bounds]
+  (ordered-resource/api-call resource
+                             api/location-lists
+                             index
+                             index-type
+                             "!postcode"
+                             ["!name" "!location" "!latest_employee_count" "!latest_turnover"]
+                             1000
+                             filter
+                             bounds))
 
 (defn map-component
   "put the leaflet map as state in the om component"
-  [{{:keys [initial-bounds]} :controls :as cursor}
+  [{{data :data
+     point-data :point-data
+     boundaryline-collections :boundaryline-collections
+     {:keys [initial-bounds bounds zoom boundaryline-collection colorchooser boundaryline-agg threshold-colors]} :controls :as cursor} :map-state
+     filter :filter
+     :as cursor-data}
    owner]
+
   (reify
     om/IRender
     (render [this]
@@ -386,34 +395,44 @@
                                    (let [hits (point-in-boundarylines-fn (-> e .-latlng .-lng) (-> e .-latlng .-lat))
                                          boundaryline-id (some-> hits first :id)]
                                      (when boundaryline-id
-                                       (put! comm [:select [:constituency boundaryline-id]])))))))
+                                       (put! comm [:select [:constituency boundaryline-id]])))))
+
+        (let [adr (ordered-resource/make-discard-stale-resource "aggregation-data-resource")]
+          (om/set-state! owner :aggregation-data-resource adr)
+          (ordered-resource/retrieve-responses adr (fn [data] (om/update! cursor [:data] data))))
+
+        (let [pdr (ordered-resource/make-discard-stale-resource "point-data-resource")]
+          (om/set-state! owner :point-data-resource pdr)
+          (ordered-resource/retrieve-responses pdr (fn [point-data] (om/update! cursor [:point-data] point-data))))
+        ))
 
     om/IWillUpdate
     (will-update [this
-                  {next-filter :filter
-                   next-data :data
-                   next-point-data :point-data
-                   next-boundaryline-collections :boundaryline-collections
-                   {next-zoom :zoom
-                    next-bounds :bounds
-                    next-boundaryline-collection :boundaryline-collection
-                    next-colorchooser :colorchooser
-                    next-boundaryline-agg :boundaryline-agg
-                    next-threshold-colors :threshold-colors} :controls}
+                  {{next-data :data
+                    next-point-data :point-data
+                    next-boundaryline-collections :boundaryline-collections
+                    {next-zoom :zoom
+                     next-bounds :bounds
+                     next-boundaryline-collection :boundaryline-collection
+                     next-colorchooser :colorchooser
+                     next-boundaryline-agg :boundaryline-agg
+                     next-threshold-colors :threshold-colors} :controls
+                    :as next-cursor
+                    } :map-state
+                     next-filter :filter
+                     :as next-cursor-data}
                   {{next-markers :markers
                     next-paths :paths
                     next-path-selections :path-selections} :map
-                    next-path-highlights :path-highlights}]
+                    next-path-highlights :path-highlights
+                    next-aggregation-data-resource :aggregation-data-resource
+                    next-point-data-resource :point-data-resource
+                    }]
 
-      (let [{filter :filter
-             data :data
-             point-data :point-data
-             boundaryline-collections :boundaryline-collections
-             {:keys [initial-bounds bounds zoom boundaryline-collection colorchooser boundaryline-agg threshold-colors]} :controls} (om/get-props owner)
-             {:keys [comm path-fn link-fn fetch-boundarylines-fn point-in-boundarylines-fn set-app-state-fn get-app-state-fn ]} (om/get-shared owner)
-             {{:keys [leaflet-map markers paths path-selections]} :map
-              pan-pending :pan-pending
-              path-highlights :path-highlights} (om/get-state owner)]
+      (let [{:keys [comm path-fn link-fn fetch-boundarylines-fn point-in-boundarylines-fn]} (om/get-shared owner)
+            {{:keys [leaflet-map markers paths path-selections]} :map
+             pan-pending :pan-pending
+             path-highlights :path-highlights} (om/get-state owner)]
 
         ;; apply any requested but not-yet-applied zoom
         (when (and leaflet-map next-zoom (not= next-zoom zoom) (not= next-zoom (.getZoom leaflet-map)))
@@ -438,23 +457,19 @@
           (let [ticket (next-ticket)]
             (om/update! cursor [:controls :ticket] ticket)
             ;; time for some new data !
-            (fetch-aggregation-data set-app-state-fn
-                                    get-app-state-fn
-                                    ticket
-                                    (:index next-boundaryline-agg)
-                                    (:index-type next-boundaryline-agg)
-                                    (choose-boundaryline-collection next-boundaryline-collections (.getZoom leaflet-map))
-                                    (:variable next-boundaryline-agg)
-                                    (om/-value next-filter)
-                                    (bounds-array (.getBounds leaflet-map)))
+            (request-aggregation-data next-aggregation-data-resource
+                                      (:index next-boundaryline-agg)
+                                      (:index-type next-boundaryline-agg)
+                                      (choose-boundaryline-collection next-boundaryline-collections (.getZoom leaflet-map))
+                                      (:variable next-boundaryline-agg)
+                                      (om/-value next-filter)
+                                      (bounds-array (.getBounds leaflet-map)))
 
-            (fetch-point-data set-app-state-fn
-                              get-app-state-fn
-                              ticket
-                              (:index next-boundaryline-agg)
-                              (:index-type next-boundaryline-agg)
-                              (om/-value next-filter)
-                              (bounds-array (.getBounds leaflet-map)))
+            (request-point-data next-point-data-resource
+                                (:index next-boundaryline-agg)
+                                (:index-type next-boundaryline-agg)
+                                (om/-value next-filter)
+                                (bounds-array (.getBounds leaflet-map)))
             ))
 
         (when (or (not= next-data data)
@@ -493,13 +508,12 @@
         (when (not= next-point-data point-data)
 
           (update-markers path-fn leaflet-map next-markers (:records next-point-data))
-          )
-        ))))
+          )))
 
-  (defn mount
-    [app-state path elem-id shared]
-    (om/root map-component
-             app-state
-             {:shared shared
-              :target (.getElementById js/document elem-id)
-              :path path}))
+    om/IWillUnmount
+    (will-unmount [this]
+      (let [{:keys [aggregation-data-resource point-data-resource]} (om/get-state owner)]
+        (ordered-resource/close aggregation-data-resource)
+        (ordered-resource/close point-data-resource)))
+
+    ))

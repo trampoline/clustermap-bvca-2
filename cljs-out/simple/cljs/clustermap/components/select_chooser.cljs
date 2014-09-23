@@ -23,11 +23,3 @@
                                 (om/update! cursor key val)))}
          (for [[value description] value-descriptions]
            [:option {:value value} description])]]]]])))
-
-(defn mount
-  [app-state path elem-id shared title key value-descriptions]
-  (om/root (partial select-chooser-component title key value-descriptions)
-           app-state
-           {:shared shared
-            :target (.getElementById js/document elem-id)
-            :path path}))

@@ -1,4 +1,4 @@
-// Compiled by ClojureScript 0.0-2268
+// Compiled by ClojureScript 0.0-2322
 goog.provide('hiccups.runtime');
 goog.require('cljs.core');
 goog.require('clojure.string');
@@ -21,12 +21,12 @@ hiccups.runtime.as_str = (function as_str(x){if(((x instanceof cljs.core.Keyword
 {return (''+cljs.core.str.cljs$core$IFn$_invoke$arity$1(x));
 }
 });
-hiccups.runtime._STAR_html_mode_STAR_ = cljs.core.constant$keyword$928;
-hiccups.runtime.xml_mode_QMARK_ = (function xml_mode_QMARK_(){return cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(hiccups.runtime._STAR_html_mode_STAR_,cljs.core.constant$keyword$928);
+hiccups.runtime._STAR_html_mode_STAR_ = cljs.core.constant$keyword$978;
+hiccups.runtime.xml_mode_QMARK_ = (function xml_mode_QMARK_(){return cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(hiccups.runtime._STAR_html_mode_STAR_,cljs.core.constant$keyword$978);
 });
-hiccups.runtime.in_mode = (function in_mode(mode,f){var _STAR_html_mode_STAR_43501 = hiccups.runtime._STAR_html_mode_STAR_;try{hiccups.runtime._STAR_html_mode_STAR_ = mode;
+hiccups.runtime.in_mode = (function in_mode(mode,f){var _STAR_html_mode_STAR_43989 = hiccups.runtime._STAR_html_mode_STAR_;try{hiccups.runtime._STAR_html_mode_STAR_ = mode;
 return (f.cljs$core$IFn$_invoke$arity$0 ? f.cljs$core$IFn$_invoke$arity$0() : f.call(null));
-}finally {hiccups.runtime._STAR_html_mode_STAR_ = _STAR_html_mode_STAR_43501;
+}finally {hiccups.runtime._STAR_html_mode_STAR_ = _STAR_html_mode_STAR_43989;
 }});
 /**
 * Change special characters into HTML character entities.
@@ -42,7 +42,7 @@ hiccups.runtime.end_tag = (function end_tag(){if(hiccups.runtime.xml_mode_QMARK_
 });
 hiccups.runtime.xml_attribute = (function xml_attribute(name,value){return (" "+cljs.core.str.cljs$core$IFn$_invoke$arity$1(hiccups.runtime.as_str(name))+"=\""+cljs.core.str.cljs$core$IFn$_invoke$arity$1(hiccups.runtime.escape_html(value))+"\"");
 });
-hiccups.runtime.render_attribute = (function render_attribute(p__43502){var vec__43504 = p__43502;var name = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__43504,(0),null);var value = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__43504,(1),null);if(value === true)
+hiccups.runtime.render_attribute = (function render_attribute(p__43990){var vec__43992 = p__43990;var name = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__43992,(0),null);var value = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__43992,(1),null);if(value === true)
 {if(hiccups.runtime.xml_mode_QMARK_())
 {return hiccups.runtime.xml_attribute(name,name);
 } else
@@ -52,11 +52,8 @@ hiccups.runtime.render_attribute = (function render_attribute(p__43502){var vec_
 {if(cljs.core.not(value))
 {return "";
 } else
-{if(cljs.core.constant$keyword$778)
 {return hiccups.runtime.xml_attribute(name,value);
-} else
-{return null;
-}
+
 }
 }
 });
@@ -65,11 +62,11 @@ hiccups.runtime.render_attr_map = (function render_attr_map(attrs){return cljs.c
 /**
 * Ensure a tag vector is of the form [tag-name attrs content].
 */
-hiccups.runtime.normalize_element = (function normalize_element(p__43505){var vec__43508 = p__43505;var tag = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__43508,(0),null);var content = cljs.core.nthnext(vec__43508,(1));if(!(((tag instanceof cljs.core.Keyword)) || ((tag instanceof cljs.core.Symbol)) || (typeof tag === 'string')))
+hiccups.runtime.normalize_element = (function normalize_element(p__43993){var vec__43996 = p__43993;var tag = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__43996,(0),null);var content = cljs.core.nthnext(vec__43996,(1));if(!(((tag instanceof cljs.core.Keyword)) || ((tag instanceof cljs.core.Symbol)) || (typeof tag === 'string')))
 {throw (''+cljs.core.str.cljs$core$IFn$_invoke$arity$1(tag)+" is not a valid tag name");
 } else
 {}
-var vec__43509 = cljs.core.re_matches(hiccups.runtime.re_tag,hiccups.runtime.as_str(tag));var _ = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__43509,(0),null);var tag__$1 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__43509,(1),null);var id = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__43509,(2),null);var class$ = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__43509,(3),null);var tag_attrs = new cljs.core.PersistentArrayMap(null, 2, [cljs.core.constant$keyword$824,id,cljs.core.constant$keyword$835,(cljs.core.truth_(class$)?clojure.string.replace(class$,"."," "):null)], null);var map_attrs = cljs.core.first(content);if(cljs.core.map_QMARK_(map_attrs))
+var vec__43997 = cljs.core.re_matches(hiccups.runtime.re_tag,hiccups.runtime.as_str(tag));var _ = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__43997,(0),null);var tag__$1 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__43997,(1),null);var id = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__43997,(2),null);var class$ = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__43997,(3),null);var tag_attrs = new cljs.core.PersistentArrayMap(null, 2, [cljs.core.constant$keyword$873,id,cljs.core.constant$keyword$885,(cljs.core.truth_(class$)?clojure.string.replace(class$,"."," "):null)], null);var map_attrs = cljs.core.first(content);if(cljs.core.map_QMARK_(map_attrs))
 {return new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [tag__$1,cljs.core.merge.cljs$core$IFn$_invoke$arity$variadic(cljs.core.array_seq([tag_attrs,map_attrs], 0)),cljs.core.next(content)], null);
 } else
 {return new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [tag__$1,tag_attrs,content], null);
@@ -78,8 +75,8 @@ var vec__43509 = cljs.core.re_matches(hiccups.runtime.re_tag,hiccups.runtime.as_
 /**
 * Render a tag vector as a HTML element.
 */
-hiccups.runtime.render_element = (function render_element(element){var vec__43511 = hiccups.runtime.normalize_element(element);var tag = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__43511,(0),null);var attrs = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__43511,(1),null);var content = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__43511,(2),null);if(cljs.core.truth_((function (){var or__3541__auto__ = content;if(cljs.core.truth_(or__3541__auto__))
-{return or__3541__auto__;
+hiccups.runtime.render_element = (function render_element(element){var vec__43999 = hiccups.runtime.normalize_element(element);var tag = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__43999,(0),null);var attrs = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__43999,(1),null);var content = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__43999,(2),null);if(cljs.core.truth_((function (){var or__3558__auto__ = content;if(cljs.core.truth_(or__3558__auto__))
+{return or__3558__auto__;
 } else
 {return (hiccups.runtime.container_tags.cljs$core$IFn$_invoke$arity$1 ? hiccups.runtime.container_tags.cljs$core$IFn$_invoke$arity$1(tag) : hiccups.runtime.container_tags.call(null,tag));
 }
@@ -98,11 +95,8 @@ hiccups.runtime.render_html = (function render_html(x){if(cljs.core.vector_QMARK
 {if(cljs.core.seq_QMARK_(x))
 {return cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.str,cljs.core.map.cljs$core$IFn$_invoke$arity$2(render_html,x));
 } else
-{if(cljs.core.constant$keyword$778)
 {return hiccups.runtime.as_str(x);
-} else
-{return null;
-}
+
 }
 }
 });

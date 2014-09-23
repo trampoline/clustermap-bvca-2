@@ -295,16 +295,43 @@
   [uri]
   (-> uri locate-route :route route-value))
 
+(defn- prefix
+  []
+  (str (get-config [:prefix])))
+
+(defn- uri-without-prefix
+  [uri]
+  (string/replace uri (re-pattern (str "^" (prefix))) ""))
+
+(defn- uri-with-leading-slash
+  "Ensures that the uri has a leading slash"
+  [uri]
+  (if (= "/" (first uri))
+    uri
+    (str "/" uri)))
+
 (defn dispatch!
   "Dispatch an action for a given route if it matches the URI path."
   [uri]
-  (let [[uri-path query-string] (string/split uri #"\?")
+  (let [[uri-path query-string] (string/split (uri-without-prefix uri) #"\?")
+        uri-path (uri-with-leading-slash uri-path)
         query-params (when query-string
                        {:query-params (decode-query-params query-string)})
         {:keys [action params]} (locate-route uri-path)
         action (or action identity)
         params (merge params query-params)]
     (action params)))
+
+(defn invalid-params [params validations]
+  (reduce (fn [m [key validation]]
+            (let [value (get params key)]
+              (if (re-matches validation value)
+                m
+                (assoc m key [value validation]))))
+          {} (partition 2 validations)))
+
+(defn- params-valid? [params validations]
+  (empty? (invalid-params params validations)))
 
 ;;----------------------------------------------------------------------
 ;; Protocol implementations
@@ -317,7 +344,13 @@
   js/RegExp
   (route-matches [this route]
     (when-let [[_ & ms] (re-matches* this route)]
-      (vec ms))))
+      (vec ms)))
+
+  cljs.core/PersistentVector
+  (route-matches [[route-string & validations] route]
+    (let [params (route-matches (compile-route route-string) route)]
+      (when (params-valid? params validations)
+        params))))
 
 (extend-protocol IRouteValue
   string
@@ -325,7 +358,11 @@
     (route-value (compile-route this)))
 
   js/RegExp
-  (route-value [this] this))
+  (route-value [this] this)
+
+  cljs.core/PersistentVector
+  (route-value [[route-string & validations]]
+    (vec (cons (route-value route-string) validations))))
 
 (extend-protocol IRenderRoute
   string
@@ -340,7 +377,7 @@
                            (let [lookup (keyword (if (= $1 "*")
                                                    $1
                                                    (subs $1 1)))
-                                 v (@a lookup)
+                                 v (get @a lookup)
                                  replacement (if (sequential? v)
                                                (do
                                                  (swap! a assoc lookup (next v))
@@ -351,4 +388,14 @@
       (if-let [query-string (and query-params
                                  (encode-query-params query-params))]
         (str path "?" query-string)
-        path))))
+        path)))
+
+  cljs.core/PersistentVector
+  (render-route [this]
+    (render-route this {}))
+
+  (render-route [[route-string & validations] params]
+    (let [invalid (invalid-params params validations)]
+      (if (empty? invalid)
+        (render-route route-string params)
+        (throw (ex-info "Could not build route: invalid params" invalid))))))

@@ -1,4 +1,4 @@
-// Compiled by ClojureScript 0.0-2268
+// Compiled by ClojureScript 0.0-2322
 goog.provide('weasel.impls.websocket');
 goog.require('cljs.core');
 goog.require('clojure.browser.event');
@@ -9,21 +9,21 @@ goog.require('clojure.browser.event');
 goog.require('clojure.browser.event');
 goog.require('clojure.browser.net');
 goog.require('clojure.browser.net');
-weasel.impls.websocket.IWebSocket = (function (){var obj43731 = {};return obj43731;
+weasel.impls.websocket.IWebSocket = (function (){var obj44219 = {};return obj44219;
 })();
-weasel.impls.websocket.open_QMARK_ = (function open_QMARK_(this$){if((function (){var and__3529__auto__ = this$;if(and__3529__auto__)
+weasel.impls.websocket.open_QMARK_ = (function open_QMARK_(this$){if((function (){var and__3546__auto__ = this$;if(and__3546__auto__)
 {return this$.weasel$impls$websocket$IWebSocket$open_QMARK_$arity$1;
 } else
-{return and__3529__auto__;
+{return and__3546__auto__;
 }
 })())
 {return this$.weasel$impls$websocket$IWebSocket$open_QMARK_$arity$1(this$);
 } else
-{var x__4168__auto__ = (((this$ == null))?null:this$);return (function (){var or__3541__auto__ = (weasel.impls.websocket.open_QMARK_[goog.typeOf(x__4168__auto__)]);if(or__3541__auto__)
-{return or__3541__auto__;
+{var x__4185__auto__ = (((this$ == null))?null:this$);return (function (){var or__3558__auto__ = (weasel.impls.websocket.open_QMARK_[goog.typeOf(x__4185__auto__)]);if(or__3558__auto__)
+{return or__3558__auto__;
 } else
-{var or__3541__auto____$1 = (weasel.impls.websocket.open_QMARK_["_"]);if(or__3541__auto____$1)
-{return or__3541__auto____$1;
+{var or__3558__auto____$1 = (weasel.impls.websocket.open_QMARK_["_"]);if(or__3558__auto____$1)
+{return or__3558__auto____$1;
 } else
 {throw cljs.core.missing_protocol("IWebSocket.open?",this$);
 }
@@ -56,9 +56,9 @@ websocket_connection.cljs$core$IFn$_invoke$arity$2 = websocket_connection__2;
 return websocket_connection;
 })()
 ;
-goog.net.WebSocket.prototype.clojure$browser$event$EventType$ = true;
-goog.net.WebSocket.prototype.clojure$browser$event$EventType$event_types$arity$1 = (function (this$){var this$__$1 = this;return cljs.core.into(cljs.core.PersistentArrayMap.EMPTY,cljs.core.map.cljs$core$IFn$_invoke$arity$2(((function (this$__$1){
-return (function (p__43732){var vec__43733 = p__43732;var k = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__43733,(0),null);var v = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__43733,(1),null);return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.keyword.cljs$core$IFn$_invoke$arity$1(k.toLowerCase()),v], null);
+goog.net.WebSocket.prototype.clojure$browser$event$IEventType$ = true;
+goog.net.WebSocket.prototype.clojure$browser$event$IEventType$event_types$arity$1 = (function (this$){var this$__$1 = this;return cljs.core.into.cljs$core$IFn$_invoke$arity$2(cljs.core.PersistentArrayMap.EMPTY,cljs.core.map.cljs$core$IFn$_invoke$arity$2(((function (this$__$1){
+return (function (p__44220){var vec__44221 = p__44220;var k = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__44221,(0),null);var v = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__44221,(1),null);return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.keyword.cljs$core$IFn$_invoke$arity$1(k.toLowerCase()),v], null);
 });})(this$__$1))
 ,cljs.core.merge.cljs$core$IFn$_invoke$arity$variadic(cljs.core.array_seq([cljs.core.js__GT_clj.cljs$core$IFn$_invoke$arity$1(goog.net.WebSocket.EventType)], 0))));
 });

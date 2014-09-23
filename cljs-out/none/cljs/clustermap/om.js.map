@@ -1,6 +1,6 @@
 {"version":3,
  "file":
- "/Users/mccraig/dev/clustermap.all/clustermap-eustartupdata/cljs-out/none/cljs/clustermap/om.js",
+ "/Users/mccraig/dev/clustermap.all/clustermap-eustartupdata/resources/public/cljs/clustermap/om.js",
  "sources":["om.cljs"],
  "lineCount":29,
  "mappings":

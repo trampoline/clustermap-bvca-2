@@ -37,7 +37,6 @@ goog.require('goog.asserts');
 goog.require('goog.dom.BrowserFeature');
 goog.require('goog.dom.NodeType');
 goog.require('goog.dom.TagName');
-goog.require('goog.dom.classes');
 goog.require('goog.functions');
 goog.require('goog.math.Coordinate');
 goog.require('goog.math.Size');
@@ -515,10 +514,16 @@ goog.dom.getDocumentHeight_ = function(win) {
     // But there are patterns.  It just takes a lot of time and persistence
     // to figure out.
 
-    // Get the height of the viewport
-    var vh = goog.dom.getViewportSize_(win).height;
+    // If the window has no contents, it has no height. (In IE10,
+    // document.body & document.documentElement are null in an empty iFrame.)
     var body = doc.body;
     var docEl = doc.documentElement;
+    if (!body && !docEl) {
+      return 0;
+    }
+
+    // Get the height of the viewport
+    var vh = goog.dom.getViewportSize_(win).height;
     if (goog.dom.isCss1CompatMode_(doc) && docEl.scrollHeight) {
       // In Strict mode:
       // The inner content height is contained in either:
@@ -608,7 +613,7 @@ goog.dom.getDocumentScroll_ = function(doc) {
 
 /**
  * Gets the document scroll element.
- * @return {Element} Scrolling element.
+ * @return {!Element} Scrolling element.
  */
 goog.dom.getDocumentScrollElement = function() {
   return goog.dom.getDocumentScrollElement_(document);
@@ -618,7 +623,7 @@ goog.dom.getDocumentScrollElement = function() {
 /**
  * Helper for {@code getDocumentScrollElement}.
  * @param {!Document} doc The document to get the scroll element for.
- * @return {Element} Scrolling element.
+ * @return {!Element} Scrolling element.
  * @private
  */
 goog.dom.getDocumentScrollElement_ = function(doc) {
@@ -727,7 +732,7 @@ goog.dom.createDom_ = function(doc, args) {
     if (goog.isString(attributes)) {
       element.className = attributes;
     } else if (goog.isArray(attributes)) {
-      goog.dom.classes.add.apply(null, [element].concat(attributes));
+      element.className = attributes.join(' ');
     } else {
       goog.dom.setProperties(element, attributes);
     }
@@ -1286,6 +1291,7 @@ goog.dom.isWindow = function(obj) {
  * @return {Element} The parent, or null if not an Element.
  */
 goog.dom.getParentElement = function(element) {
+  var parent;
   if (goog.dom.BrowserFeature.CAN_USE_PARENT_ELEMENT_PROPERTY) {
     var isIe9 = goog.userAgent.IE &&
         goog.userAgent.isVersionOrHigher('9') &&
@@ -1294,10 +1300,13 @@ goog.dom.getParentElement = function(element) {
     // goog.global['SVGElement'] is not defined in IE9 quirks mode.
     if (!(isIe9 && goog.global['SVGElement'] &&
         element instanceof goog.global['SVGElement'])) {
-      return element.parentElement;
+      parent = element.parentElement;
+      if (parent) {
+        return parent;
+      }
     }
   }
-  var parent = element.parentNode;
+  parent = element.parentNode;
   return goog.dom.isElement(parent) ? /** @type {!Element} */ (parent) : null;
 };
 
@@ -1508,8 +1517,8 @@ goog.dom.findCommonAncestor = function(var_args) {
  * @return {!Document} The document owning the node.
  */
 goog.dom.getOwnerDocument = function(node) {
-  // TODO(arv): Remove IE5 code.
-  // IE5 uses document instead of ownerDocument
+  // TODO(nnaze): Update param signature to be non-nullable.
+  goog.asserts.assert(node, 'Node cannot be null or undefined.');
   return /** @type {!Document} */ (
       node.nodeType == goog.dom.NodeType.DOCUMENT ? node :
       node.ownerDocument || node.document);
@@ -2015,7 +2024,8 @@ goog.dom.getAncestorByTagNameAndClass = function(element, opt_tag, opt_class) {
   return /** @type {Element} */ (goog.dom.getAncestor(element,
       function(node) {
         return (!tagName || node.nodeName == tagName) &&
-               (!opt_class || goog.dom.classes.has(node, opt_class));
+               (!opt_class || goog.isString(node.className) &&
+                   goog.array.contains(node.className.split(/\s+/), opt_class));
       }, true));
 };
 
@@ -2453,7 +2463,7 @@ goog.dom.DomHelper.prototype.getWindow = function() {
 
 /**
  * Gets the document scroll element.
- * @return {Element} Scrolling element.
+ * @return {!Element} Scrolling element.
  */
 goog.dom.DomHelper.prototype.getDocumentScrollElement = function() {
   return goog.dom.getDocumentScrollElement_(this.document_);

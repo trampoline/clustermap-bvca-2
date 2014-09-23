@@ -1,6 +1,6 @@
 {"version":3,
  "file":
- "/Users/mccraig/dev/clustermap.all/clustermap-eustartupdata/cljs-out/none/cljs/clustermap/routes.js",
+ "/Users/mccraig/dev/clustermap.all/clustermap-eustartupdata/resources/public/cljs/clustermap/routes.js",
  "sources":["routes.cljs"],
  "lineCount":27,
  "mappings":

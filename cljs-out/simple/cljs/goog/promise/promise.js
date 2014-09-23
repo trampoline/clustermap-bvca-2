@@ -57,7 +57,7 @@ goog.require('goog.promise.Resolver');
  *
  * @param {function(
  *             this:RESOLVER_CONTEXT,
- *             function((TYPE|IThenable.<TYPE>|Thenable)),
+ *             function((TYPE|IThenable.<TYPE>|Thenable)=),
  *             function(*)): void} resolver
  *     Initialization function that is invoked immediately with {@code resolve}
  *     and {@code reject} functions as arguments. The Promise is resolved or
@@ -166,7 +166,7 @@ goog.Promise = function(resolver, opt_context) {
  * @define {boolean} Whether traces of {@code then} calls should be included in
  * exceptions thrown
  */
-goog.define('goog.Promise.LONG_STACK_TRACES', goog.DEBUG);
+goog.define('goog.Promise.LONG_STACK_TRACES', false);
 
 
 /**
@@ -358,13 +358,23 @@ goog.Promise.withResolver = function() {
  * exception, the child Promise will be rejected with the thrown value instead.
  *
  * If the Promise is rejected, the {@code onRejected} callback will be invoked
- * with the rejection reason as argument, and the child Promise will be rejected
- * with the return value (or thrown value) of the callback.
+ * with the rejection reason as argument, and the child Promise will be resolved
+ * with the return value or rejected with the thrown value of the callback.
  *
  * @override
  */
 goog.Promise.prototype.then = function(
     opt_onFulfilled, opt_onRejected, opt_context) {
+
+  if (opt_onFulfilled != null) {
+    goog.asserts.assertFunction(opt_onFulfilled,
+        'opt_onFulfilled should be a function.');
+  }
+  if (opt_onRejected != null) {
+    goog.asserts.assertFunction(opt_onRejected,
+        'opt_onRejected should be a function. Did you pass opt_context ' +
+        'as the second argument instead of the third?');
+  }
 
   if (goog.Promise.LONG_STACK_TRACES) {
     this.addStackTrace_(new Error('then'));
@@ -955,7 +965,7 @@ goog.Promise.CancellationError.prototype.name = 'cancel';
  * Internal implementation of the resolver interface.
  *
  * @param {!goog.Promise.<TYPE>} promise
- * @param {function((TYPE|goog.Promise.<TYPE>|Thenable))} resolve
+ * @param {function((TYPE|goog.Promise.<TYPE>|Thenable)=)} resolve
  * @param {function(*): void} reject
  * @implements {goog.promise.Resolver.<TYPE>}
  * @final @struct

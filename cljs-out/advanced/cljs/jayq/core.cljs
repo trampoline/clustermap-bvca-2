@@ -115,11 +115,17 @@
 (defn add-class [$elem cl]
   (.addClass $elem (name cl)))
 
-(defn remove-class [$elem cl]
-  (.removeClass $elem (name cl)))
+(defn remove-class 
+  ([$elem]
+   (.removeClass $elem))
+  ([$elem cl]
+   (.removeClass $elem (name cl))))
 
-(defn toggle-class [$elem cl]
-  (.toggleClass $elem (name cl)))
+(defn toggle-class
+  ([$elem cl]
+   (.toggleClass $elem (name cl)))
+  ([$elem cl switch]
+   (.toggleClass $elem (name cl) (boolean switch))))
 
 (defn has-class [$elem cl]
   (.hasClass $elem (name cl)))
@@ -325,7 +331,8 @@
         (#(if ct
             (assoc % :contentType ct)
             %))
-        (#(if (clj-content-type? ct)
+        (#(if (and ct
+                   (clj-content-type? ct))
             (assoc % :data (pr-str data))
             %)))))
 

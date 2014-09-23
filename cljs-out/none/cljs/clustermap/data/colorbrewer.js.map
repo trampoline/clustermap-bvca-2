@@ -1,6 +1,6 @@
 {"version":3,
  "file":
- "/Users/mccraig/dev/clustermap.all/clustermap-eustartupdata/cljs-out/none/cljs/clustermap/data/colorbrewer.js",
+ "/Users/mccraig/dev/clustermap.all/clustermap-eustartupdata/resources/public/cljs/clustermap/data/colorbrewer.js",
  "sources":["colorbrewer.cljs"],
  "lineCount":10,
  "mappings":

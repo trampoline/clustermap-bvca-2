@@ -11,7 +11,8 @@
 (defn wrap-form-element [ctor display-name]
   (js/React.createClass
    #js
-   {:displayName display-name
+   {:getDisplayName
+    (fn [] display-name)
     :getInitialState
     (fn []
       (this-as this #js {:value (aget (.-props this) "value")}))
@@ -36,14 +37,15 @@
                    :onChange (aget this "onChange")
                    :children (aget (.-props this) "children")}))))}))
 
-       (def input (wrap-form-element js/React.DOM.input "Input"))
-       (def option (wrap-form-element js/React.DOM.option "Option"))
-       (def textarea (wrap-form-element js/React.DOM.textarea "Textarea"))
+       (def input (wrap-form-element js/React.DOM.input "input"))
+       (def option (wrap-form-element js/React.DOM.option "option"))
+       (def textarea (wrap-form-element js/React.DOM.textarea "textarea"))
 
       
 (defn dom-fn [tag]
   (if-let [dom-fn (aget js/React.DOM (name tag))]
     (get {:input sablono.interpreter/input
+          :option sablono.interpreter/option
           :textarea sablono.interpreter/textarea}
          (keyword tag) dom-fn)
     (throw (ex-info (str "Unsupported HTML tag: " (name tag)) {:tag tag}))))
@@ -62,16 +64,16 @@
 (defn element
   "Render an element vector as a HTML element."
   [element]
-  (let [[tag attrs content] (normalize-element element)]
-    ((dom-fn tag)
-     (attributes attrs)
-     (cond
-      (and (sequential? content)
-           (= 1 (count content)))
-      (interpret (first content))
-      content
-      (interpret content)
-      :else nil))))
+  (let [[tag attrs content] (normalize-element element)
+        f (dom-fn tag)
+        js-attrs (attributes attrs)]
+    (cond
+     (and (sequential? content)
+          (= 1 (count content)))
+     (f js-attrs (interpret (first content)))
+     content
+     (apply f js-attrs (interpret content))
+     :else (f js-attrs nil))))
 
 (defn- interpret-seq [s]
   (into-array (map interpret s)))
@@ -93,6 +95,9 @@
   IndexedSeq
   (interpret [this]
     (interpret-seq this))
+  Subvec
+  (interpret [this]
+    (element this))
   PersistentVector
   (interpret [this]
     (element this))

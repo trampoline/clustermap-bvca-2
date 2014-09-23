@@ -23,11 +23,3 @@
                                  :color (color/stand-out-color color)}}
           (money/readable threshold :sf 2 :curr "" :default "")])
 ]]])))
-
-(defn mount
-  [app-state path elem-id shared]
-  (om/root color-scale-component
-           app-state
-           {:shared shared
-            :target (.getElementById js/document elem-id)
-            :path path}))

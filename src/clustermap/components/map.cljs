@@ -464,14 +464,6 @@
                                       (:variable next-boundaryline-agg)
                                       (om/-value next-filter)
                                       (bounds-array (.getBounds leaflet-map)))
-            ;; (fetch-aggregation-data next-cursor
-            ;;                         ticket
-            ;;                         (:index next-boundaryline-agg)
-            ;;                         (:index-type next-boundaryline-agg)
-            ;;                         (choose-boundaryline-collection next-boundaryline-collections (.getZoom leaflet-map))
-            ;;                         (:variable next-boundaryline-agg)
-            ;;                         (om/-value next-filter)
-            ;;                         (bounds-array (.getBounds leaflet-map)))
 
             (request-point-data next-point-data-resource
                                 (:index next-boundaryline-agg)

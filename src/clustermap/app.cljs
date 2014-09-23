@@ -12,9 +12,9 @@
    [clustermap.routes :as routes]
    [clustermap.nav :as nav]
    [clustermap.ganalytics :as ga]
+   [clustermap.components.mount :as mount]
    [clustermap.components.map :as map]
    [clustermap.components.filter :as filter]
-   [clustermap.components.multiview :as multiview]
    [clustermap.components.select-chooser :as select-chooser]
    [clustermap.components.color-scale :as color-scale]
    [clustermap.components.map-report :as map-report]
@@ -29,7 +29,7 @@
 (def state (atom {
 ;;;;;;;;;;;;;;;;;;;;;;;;;
 
-                  :boundarylines
+                  :boundarylinesa
                   {
                    :collections {
                                  "uk_boroughs" {:index nil
@@ -43,49 +43,45 @@
                                                :boundarylines {}}}
                    :boundarylines {}}
 
-                  :multiview
-                  {
-                   :type :multiview
+                  :filter {:components {}
+                           :compiled nil}
 
-                    ;; the compiled filter will be passed down to all contained views
-                   :filter {:components {}
-                            :compiled nil}
+                  :map {:type :geoport
+                        :datasource "companies"
+                        :boundaryline-collections [[0 "uk_regions"] [5 "uk_counties"] [7 "uk_boroughs"] [10 "uk_wards"]]
+                        :controls {:initial-bounds [[59.54 2.3] [49.29 -11.29]]
+                                   :zoom nil
+                                   :bounds nil
+                                   :boundaryline-collection nil
+                                   :boundaryline-agg {:type :stats
+                                                      :index "companies"
+                                                      :index-type "company"
+                                                      :key "boundaryline_id"
+                                                      :variable "!latest_employee_count"}
+                                   :colorchooser {:scheme [:Oranges :9]
+                                                  :scale :log
+                                                  :variable :sum}}
+                        :data nil}
 
-                   :views {
-                           :map {:type :geoport
-                                 :datasource "companies"
-                                 :boundaryline-collections [[0 "uk_regions"] [5 "uk_counties"] [7 "uk_boroughs"] [10 "uk_wards"]]
-                                 :controls {:initial-bounds [[59.54 2.3] [49.29 -11.29]]
-                                            :zoom nil
-                                            :bounds nil
-                                            :boundaryline-collection nil
-                                            :boundaryline-agg {:type :stats
-                                                               :index "companies"
-                                                               :index-type "company"
-                                                               :key "boundaryline_id"
-                                                               :variable "!latest_employee_count"}
-                                            :colorchooser {:scheme [:Oranges :9]
-                                                           :scale :log
-                                                           :variable :sum}}
-                                 :data nil}
+                  :turnover_timeline {:type :timeline
+                                      :datasource "company_accounts"
+                                      :controls {:variable "accounts_date"
+                                                 :after "2003-01-01"
+                                                 :before "2012-01-01"
+                                                 :interval "year"}
+                                      :data nil}
 
-                           :turnover_timeline {:type :timeline
-                                               :datasource "company_accounts"
-                                               :controls {:variable "accounts_date"
-                                                          :after "2003-01-01"
-                                                          :before "2012-01-01"
-                                                          :interval "year"}
-                                               :data nil}
+                  :table  {:type :table
+                           :datasource "companies"
+                           :controls {:order nil
+                                      :offset 0
+                                      :limit 50
+                                      :variables ["!name" "!postcode" "!formation_date" "!sic07"
+                                                  "!latest_accounts_date" "!latest_employee_count"
+                                                  "!latest_turnover"]}
+                           :data nil}
 
-                           :table  {:type :table
-                                    :datasource "companies"
-                                    :controls {:order nil
-                                               :offset 0
-                                               :limit 50
-                                               :variables ["!name" "!postcode" "!formation_date" "!sic07"
-                                                           "!latest_accounts_date" "!latest_employee_count"
-                                                           "!latest_turnover"]}
-                                    :data nil}}}
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 
                   :uk-constituencies nil
@@ -334,12 +330,27 @@
 
     (load-boundaryline-collection-indexes)
 
-    (map/mount state [:multiview :views :map] "map-component" shared)
-    (multiview/mount state [:multiview] "search-component" shared)
-    (select-chooser/mount state [:multiview :views :map :controls :boundaryline-agg] "variable-selection-component" shared "Variable" :variable [["!latest_employee_count" "Employee count"] ["!latest_turnover" "Turnover"]])
-    (select-chooser/mount state [:multiview :views :map :controls :colorchooser] "stat-selection-component" shared "Statistic" :variable [["sum" "Sum"] ["max" "Maximum"] ["avg" "Mean"] ["boundaryline_id_doc_count" "Count"]])
-    (select-chooser/mount state [:multiview :views :map :controls :colorchooser] "scale-selection-component" shared "Scale" :scale [["log" "Log"] ["linear" "Linear"]])
-    (color-scale/mount state [:multiview :views :map :controls :threshold-colors] "color-scale-component" shared)
+    ;; (map/mount state [:multiview :views :map] "map-component" shared)
+    (mount/mount map/map-component
+                 state
+                 :target "map-component"
+                 :shared shared
+                 :paths {:map-state [:map]
+                         :filter [:filter :compiled]})
+
+    (mount/mount filter/filter-component
+                 state
+                 :target "search-component"
+                 :shared shared
+                 :path [:filter])
+
+    (select-chooser/mount state [:map :controls :boundaryline-agg] "variable-selection-component" shared "Variable" :variable [["!latest_employee_count" "Employee count"] ["!latest_turnover" "Turnover"]])
+
+    (select-chooser/mount state [:map :controls :colorchooser] "stat-selection-component" shared "Statistic" :variable [["sum" "Sum"] ["max" "Maximum"] ["avg" "Mean"] ["boundaryline_id_doc_count" "Count"]])
+
+    (select-chooser/mount state [:map :controls :colorchooser] "scale-selection-component" shared "Scale" :scale [["log" "Log"] ["linear" "Linear"]])
+
+    (color-scale/mount state [:map :controls :threshold-colors] "color-scale-component" shared)
 
     ;; (search/mount state "search-component" shared)
     ;; (map-report/mount state "map-report-component" shared)

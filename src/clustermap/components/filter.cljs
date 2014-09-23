@@ -135,11 +135,3 @@
 
         (when (not= next-components components)
           (om/update! cursor [:compiled] (->> next-components vals (map om/-value) (filter identity) (into []))))))))
-
-(defn mount
-  [app-state path elem-id shared]
-  (om/root filter-component
-           app-state
-           {:shared shared
-            :target (.getElementById js/document elem-id)
-            :path path}))

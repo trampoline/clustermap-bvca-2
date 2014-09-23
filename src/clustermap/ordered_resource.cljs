@@ -2,7 +2,7 @@
   (:require-macros
    [cljs.core.async.macros :refer [go]])
   (:require
-   [cljs.core.async :as async :refer [chan <! >!]]))
+   [cljs.core.async :as async :refer [chan close! <! >!]]))
 
 (defprotocol IOrderedResource
 
@@ -11,7 +11,10 @@
 
   (get-response-chan [this]
     "return the response channel, from which can be read
-     valid responses"))
+     valid responses")
+
+  (close [this]
+    "close the response channel"))
 
 (deftype DiscardStaleResource [name ticket response-chan]
 
@@ -33,7 +36,10 @@
       nil))
 
   (get-response-chan [this]
-    response-chan))
+    response-chan)
+
+  (close [this]
+    (close! response-chan)))
 
 (defn make-discard-stale-resource
   "creates an ordered-resource which will discard a response if
@@ -48,3 +54,14 @@
    - args : to be passed to the api-fn"
   [ordered-resource api-fn & args]
   (add-request ordered-resource (apply api-fn args)))
+
+(defn retrieve-responses
+  "loop reading responses from the ordered-resource response channel
+   and calling f with the response, for side-effects. stop when the
+   response channel is closed"
+  [ordered-resource f]
+  (go
+    (while (let [resp (<! (get-response-chan ordered-resource))]
+             (when resp
+               (f resp)
+               true)))))

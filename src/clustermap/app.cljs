@@ -26,85 +26,86 @@
   (:import [goog History]
            [goog.history EventType]))
 
-(def state (atom {
-;;;;;;;;;;;;;;;;;;;;;;;;;
+(def state
+  (atom {
 
-                  :boundarylinesa
-                  {
-                   :collections {
-                                 "uk_boroughs" {:index nil
-                                               :rtree nil
-                                               :boundarylines {}}
-                                 "uk_wards" {:index nil
-                                             :rtree nil
-                                             :boundarylines {}}
-                                 "uk_regions" {:index nil
-                                               :rtree nil
-                                               :boundarylines {}}}
-                   :boundarylines {}}
+         :boundarylines {
+                         :collections {
+                                       "uk_boroughs" {:index nil
+                                                      :rtree nil
+                                                      :boundarylines {}}
+                                       "uk_wards" {:index nil
+                                                   :rtree nil
+                                                   :boundarylines {}}
+                                       "uk_regions" {:index nil
+                                                     :rtree nil
+                                                     :boundarylines {}}}
+                         :boundarylines {}}
 
-                  :filter {:components {}
-                           :compiled nil}
+         :filter {:components {}
+                  :compiled nil}
 
-                  :map {:type :geoport
-                        :datasource "companies"
-                        :boundaryline-collections [[0 "uk_regions"] [5 "uk_counties"] [7 "uk_boroughs"] [10 "uk_wards"]]
-                        :controls {:initial-bounds [[59.54 2.3] [49.29 -11.29]]
-                                   :zoom nil
-                                   :bounds nil
-                                   :boundaryline-collection nil
-                                   :boundaryline-agg {:type :stats
-                                                      :index "companies"
-                                                      :index-type "company"
-                                                      :key "boundaryline_id"
-                                                      :variable "!latest_employee_count"}
-                                   :colorchooser {:scheme [:Oranges :9]
-                                                  :scale :log
-                                                  :variable :sum}}
-                        :data nil}
+         :map {:type :geoport
+               :datasource "companies"
+               :boundaryline-collections [[0 "uk_regions"] [5 "uk_counties"] [7 "uk_boroughs"] [10 "uk_wards"]]
+               :controls {:initial-bounds [[59.54 2.3] [49.29 -11.29]]
+                          :zoom nil
+                          :bounds nil
+                          :boundaryline-collection nil
+                          :boundaryline-agg {:type :stats
+                                             :index "companies"
+                                             :index-type "company"
+                                             :key "boundaryline_id"
+                                             :variable "!latest_employee_count"}
+                          :colorchooser {:scheme [:Oranges :9]
+                                         :scale :log
+                                         :variable :sum}}
+               :data nil}
 
-                  :turnover_timeline {:type :timeline
-                                      :datasource "company_accounts"
-                                      :controls {:variable "accounts_date"
-                                                 :after "2003-01-01"
-                                                 :before "2012-01-01"
-                                                 :interval "year"}
-                                      :data nil}
+         :map-report {}
 
-                  :table  {:type :table
-                           :datasource "companies"
-                           :controls {:order nil
-                                      :offset 0
-                                      :limit 50
-                                      :variables ["!name" "!postcode" "!formation_date" "!sic07"
-                                                  "!latest_accounts_date" "!latest_employee_count"
-                                                  "!latest_turnover"]}
-                           :data nil}
+         :turnover_timeline {:type :timeline
+                             :datasource "company_accounts"
+                             :controls {:variable "accounts_date"
+                                        :after "2003-01-01"
+                                        :before "2012-01-01"
+                                        :interval "year"}
+                             :data nil}
+
+         :table  {:type :table
+                  :datasource "companies"
+                  :controls {:order nil
+                             :offset 0
+                             :limit 50
+                             :variables ["!name" "!postcode" "!formation_date" "!sic07"
+                                         "!latest_accounts_date" "!latest_employee_count"
+                                         "!latest_turnover"]}
+                  :data nil}
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-                  :uk-constituencies nil
-                  :uk-constituencies-rtree nil
-                  :zoom nil
-                  :view :map
+         :uk-constituencies nil
+         :uk-constituencies-rtree nil
+         :zoom nil
+         :view :map
 
-                  :all-investment-stats nil
-                  :all-portfolio-company-site-stats nil
+         :all-investment-stats nil
+         :all-portfolio-company-site-stats nil
 
-                  :search-results {}
+         :search-results {}
 
-                  :selector nil
-                  :selection-investments-table-view nil
-                  :selection-investment-aggs-table-view nil
+         :selector nil
+         :selection-investments-table-view nil
+         :selection-investment-aggs-table-view nil
 
-                  :selection nil
-                  :selection-investment-stats nil
-                  :selection-investment-account-timelines nil
-                  :selection-investment-aggs nil
-                  :selection-investments nil
-                  :selection-portfolio-company-locations nil
-                  }))
+         :selection nil
+         :selection-investment-stats nil
+         :selection-investment-account-timelines nil
+         :selection-investment-aggs nil
+         :selection-investments nil
+         :selection-portfolio-company-locations nil
+         }))
 
 (defn new-state
   "create a new app-state based on the old state
@@ -322,9 +323,7 @@
                 :link-fn link-fn
                 :view-path-fn change-view-path
                 :fetch-boundarylines-fn (partial bl/get-or-fetch-best-boundarylines state :boundarylines)
-                :point-in-boundarylines-fn (partial bl/point-in-boundarylines state :boundarylines :uk_boroughs)
-                :get-app-state-fn get-state
-                :set-app-state-fn set-state}]
+                :point-in-boundarylines-fn (partial bl/point-in-boundarylines state :boundarylines :uk_boroughs)}]
     (nav/init comm)
     ;; (init-routes comm)
 
@@ -336,6 +335,13 @@
                  :shared shared
                  :paths {:map-state [:map]
                          :filter [:filter :compiled]})
+
+    (mount/mount map-report/map-report-component
+                 state
+                 :target "map-report-component"
+                 :shared shared
+                 :paths {:filter [:filter :compiled]
+                         :map-report [:map-report]})
 
     (mount/mount filter/filter-component
                  state

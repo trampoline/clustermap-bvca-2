@@ -429,7 +429,7 @@
                     next-point-data-resource :point-data-resource
                     }]
 
-      (let [{:keys [comm path-fn link-fn fetch-boundarylines-fn point-in-boundarylines-fn set-app-state-fn get-app-state-fn ]} (om/get-shared owner)
+      (let [{:keys [comm path-fn link-fn fetch-boundarylines-fn point-in-boundarylines-fn]} (om/get-shared owner)
             {{:keys [leaflet-map markers paths path-selections]} :map
              pan-pending :pan-pending
              path-highlights :path-highlights} (om/get-state owner)]

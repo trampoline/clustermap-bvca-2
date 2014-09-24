@@ -128,9 +128,10 @@
 
 ;; summary stats
 (defn summary-stats
-  [index type statsattr filter bounds & [type-ids]]
-  (POST (str "/api/" api-prefix "/summary-stats/" index "/" type "/" statsattr "?" (map-json-params type-ids))
-      {:filter filter
+  [index type statsattrs filter bounds & [type-ids]]
+  (POST (str "/api/" api-prefix "/summary-stats/" index "/" type "?" (map-json-params type-ids))
+      {:statsattrs statsattrs
+       :filter filter
        :bounds bounds}))
 
 ;; points in view

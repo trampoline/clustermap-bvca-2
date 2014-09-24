@@ -654,25 +654,25 @@ return boundaryline_aggregation;
 * @param {...*} var_args
 */
 clustermap.api.summary_stats = (function() { 
-var summary_stats__delegate = function (index,type,statsattr,filter,bounds,p__8851){var vec__8853 = p__8851;var type_ids = cljs.core.nth.call(null,vec__8853,(0),null);return clustermap.api.POST.call(null,("/api/"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(clustermap.api.api_prefix)+"/summary-stats/"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(index)+"/"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(type)+"/"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(statsattr)+"?"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(clustermap.api.map_json_params.call(null,type_ids))),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"filter","filter",-948537934),filter,new cljs.core.Keyword(null,"bounds","bounds",1691609455),bounds], null));
+var summary_stats__delegate = function (index,type,statsattrs,filter,bounds,p__8851){var vec__8853 = p__8851;var type_ids = cljs.core.nth.call(null,vec__8853,(0),null);return clustermap.api.POST.call(null,("/api/"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(clustermap.api.api_prefix)+"/summary-stats/"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(index)+"/"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(type)+"?"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(clustermap.api.map_json_params.call(null,type_ids))),new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"statsattrs","statsattrs",1724366357),statsattrs,new cljs.core.Keyword(null,"filter","filter",-948537934),filter,new cljs.core.Keyword(null,"bounds","bounds",1691609455),bounds], null));
 };
-var summary_stats = function (index,type,statsattr,filter,bounds,var_args){
+var summary_stats = function (index,type,statsattrs,filter,bounds,var_args){
 var p__8851 = null;if (arguments.length > 5) {
   p__8851 = cljs.core.array_seq(Array.prototype.slice.call(arguments, 5),0);} 
-return summary_stats__delegate.call(this,index,type,statsattr,filter,bounds,p__8851);};
+return summary_stats__delegate.call(this,index,type,statsattrs,filter,bounds,p__8851);};
 summary_stats.cljs$lang$maxFixedArity = 5;
 summary_stats.cljs$lang$applyTo = (function (arglist__8854){
 var index = cljs.core.first(arglist__8854);
 arglist__8854 = cljs.core.next(arglist__8854);
 var type = cljs.core.first(arglist__8854);
 arglist__8854 = cljs.core.next(arglist__8854);
-var statsattr = cljs.core.first(arglist__8854);
+var statsattrs = cljs.core.first(arglist__8854);
 arglist__8854 = cljs.core.next(arglist__8854);
 var filter = cljs.core.first(arglist__8854);
 arglist__8854 = cljs.core.next(arglist__8854);
 var bounds = cljs.core.first(arglist__8854);
 var p__8851 = cljs.core.rest(arglist__8854);
-return summary_stats__delegate(index,type,statsattr,filter,bounds,p__8851);
+return summary_stats__delegate(index,type,statsattrs,filter,bounds,p__8851);
 });
 summary_stats.cljs$core$IFn$_invoke$arity$variadic = summary_stats__delegate;
 return summary_stats;

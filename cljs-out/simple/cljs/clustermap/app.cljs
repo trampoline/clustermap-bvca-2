@@ -64,7 +64,8 @@
 
          :map-report {:controls {:summary-stats {:index "companies"
                                                  :index-type "company"
-                                                 :variable "!latest_employee_count"}}
+                                                 :variables ["!latest_employee_count" "!latest_turnover"]
+                                                 :filter-by-view false}}
                       :summary-stats nil
                       }
 
@@ -345,6 +346,7 @@
                  :target "map-report-component"
                  :shared shared
                  :paths {:filter [:filter :compiled]
+                         :map-controls [:map :controls]
                          :map-report [:map-report]})
 
     (mount/mount filter/filter-component

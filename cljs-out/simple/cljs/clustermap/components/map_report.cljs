@@ -18,39 +18,44 @@
          "Full report"]))
 
 (defn summary-stats-report
-  [comm view-path-fn
-   {{sum :sum
-     count :count
-     :as record} :record
+  [map-report-data comm view-path-fn
+   {{{sum-employee-count :sum count :viewfilter_doc_count} :!latest_employee_count
+     {sum-turnover :sum} :!latest_turnover
+     :as data} :data
     :as summary-stats-data}]
   (html [:div
            [:div.header.secondary
             [:h2 "Summary stats"]
             ;; [:h3 "UK wide"]
             ]
-           [:ul
-            [:li (fnum count :default "-") [:small "Companies"]]
-            [:li (fmoney nil :sf 2 :default "-") [:small "Total revenue"]]
-            [:li (fnum sum :dec 0 :default "-") [:small "Total employees"]]]
-           (full-report-button comm view-path-fn)]))
+         [:ul
+          [:li [:input {:type "checkbox" :name "filter-by-view" :value "true"
+                        :onChange (fn [e] (let [val (-> e .-target .-checked)]
+                                            (om/update! map-report-data [:controls :summary-stats :filter-by-view] val)))}]
+           [:small "Filter by view"]]
+          [:li (fnum count :default "-") [:small "Companies"]]
+          [:li (fmoney sum-turnover :sf 2 :default "-") [:small "Total revenue"]]
+          [:li (fnum sum-employee-count :dec 0 :default "-") [:small "Total employees"]]]
+         (full-report-button comm view-path-fn)]))
 
 (defn request-summary-stats
-  [resource index index-type attr filter bounds]
+  [resource index index-type attrs filter bounds]
   (ordered-resource/api-call resource
                              api/summary-stats
                              index
                              index-type
-                             attr
+                             attrs
                              filter
                              bounds))
 
 (defn map-report-component
   [{filt :filter
-    {{{:keys [index index-type variable]
+    {{{:keys [index index-type variables filter-by-view]
        :as summary-stats} :summary-stats
        :as controls} :controls
        summary-stats-data :summary-stats-data
        :as map-report} :map-report
+    {:keys [bounds]} :map-controls
     :as data}
    owner]
 
@@ -64,7 +69,7 @@
     om/IRenderState
     (render-state [_ state]
       (let [{:keys [comm path-fn view-path-fn]} (om/get-shared owner)]
-        (summary-stats-report comm view-path-fn summary-stats-data))
+        (summary-stats-report map-report comm view-path-fn summary-stats-data))
       )
 
     om/IWillUpdate
@@ -72,24 +77,28 @@
                   {next-filt :filter
                    {{{next-index :index
                       next-index-type :index-type
-                      next-variable :variable
+                      next-variables :variables
+                      next-filter-by-view :filter-by-view
                       :as next-summary-stats} :summary-stats
                       :as next-controls} :controls
                       next-summary-stats-data :summary-stats-data
-                    :as next-map-report} :map-report
+                      :as next-map-report} :map-report
+                   {next-bounds :bounds :as map-controls} :map-controls
                    :as next-data}
                   {:keys [summary-stats-resource]
                    :as next-state}]
 
       (when (or (not next-summary-stats-data)
-                (not= next-filt filt))
+                (not= next-filt filt)
+                (not= next-filter-by-view filter-by-view)
+                (and next-filter-by-view (not= next-bounds bounds)))
 
         (request-summary-stats summary-stats-resource
                                next-index
                                next-index-type
-                               next-variable
+                               next-variables
                                next-filt
-                               nil)))
+                               (when next-filter-by-view (om/-value next-bounds)))))
 
     )
   )

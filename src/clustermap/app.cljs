@@ -64,7 +64,7 @@
 
          :map-report {:controls {:summary-stats {:index "companies"
                                                  :index-type "company"
-                                                 :variable "!latest_employee_count"}}
+                                                 :variables ["!latest_employee_count" "!latest_turnover"]}}
                       :summary-stats nil
                       }
 

@@ -19,9 +19,9 @@
 
 (defn summary-stats-report
   [comm view-path-fn
-   {{sum :sum
-     count :count
-     :as record} :record
+   {{{sum-employee-count :sum count :viewfilter_doc_count} :!latest_employee_count
+     {sum-turnover :sum} :!latest_turnover
+     :as data} :data
     :as summary-stats-data}]
   (html [:div
            [:div.header.secondary
@@ -30,23 +30,23 @@
             ]
            [:ul
             [:li (fnum count :default "-") [:small "Companies"]]
-            [:li (fmoney nil :sf 2 :default "-") [:small "Total revenue"]]
-            [:li (fnum sum :dec 0 :default "-") [:small "Total employees"]]]
+            [:li (fmoney sum-turnover :sf 2 :default "-") [:small "Total revenue"]]
+            [:li (fnum sum-employee-count :dec 0 :default "-") [:small "Total employees"]]]
            (full-report-button comm view-path-fn)]))
 
 (defn request-summary-stats
-  [resource index index-type attr filter bounds]
+  [resource index index-type attrs filter bounds]
   (ordered-resource/api-call resource
                              api/summary-stats
                              index
                              index-type
-                             attr
+                             attrs
                              filter
                              bounds))
 
 (defn map-report-component
   [{filt :filter
-    {{{:keys [index index-type variable]
+    {{{:keys [index index-type variables]
        :as summary-stats} :summary-stats
        :as controls} :controls
        summary-stats-data :summary-stats-data
@@ -72,7 +72,7 @@
                   {next-filt :filter
                    {{{next-index :index
                       next-index-type :index-type
-                      next-variable :variable
+                      next-variables :variables
                       :as next-summary-stats} :summary-stats
                       :as next-controls} :controls
                       next-summary-stats-data :summary-stats-data
@@ -87,7 +87,7 @@
         (request-summary-stats summary-stats-resource
                                next-index
                                next-index-type
-                               next-variable
+                               next-variables
                                next-filt
                                nil)))
 

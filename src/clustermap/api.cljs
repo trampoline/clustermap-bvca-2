@@ -143,72 +143,84 @@
        :filter filter
        :bounds bounds}))
 
-;; search
+;; tabular data
+(defn simple-table
+  [index type filter-spec bounds sort-spec offset limit & [type-ids]]
+  (POST (str "/api/" api-prefix "/simple-table/" index "/" type "?" (map-json-params type-ids))
+      {:filter filter-spec
+       :bounds bounds
+       :sort sort-spec
+       :offset offset
+       :limit limit}))
 
-(defn search
-  [q]
-  (if (> (-> q str/trim count) 0)
-    (GET (str "/api/" api-prefix "/search?q=" q))
-    (to-chan [#js {}])))
+;;; --------------------------
 
-;; constituencies
+;; ;; search
 
-(defn constituency
-  [id]
-  (GET (str "/api/" api-prefix "/constituencies/" id)))
+;; (defn search
+;;   [q]
+;;   (if (> (-> q str/trim count) 0)
+;;     (GET (str "/api/" api-prefix "/search?q=" q))
+;;     (to-chan [#js {}])))
 
-;; portfolio-companies
+;; ;; constituencies
 
-(defn portfolio-company
-  [id]
-  (GET (str "/api/" api-prefix "/portfolio-companies/" id)))
+;; (defn constituency
+;;   [id]
+;;   (GET (str "/api/" api-prefix "/constituencies/" id)))
 
-;; portfolio-company-sites
+;; ;; portfolio-companies
 
-(defn portfolio-company-sites
-  [& [type-ids]]
-  (let [type-ids (merge {:size 100 :sort [{:!latest_turnover "desc"}]} type-ids)]
-    (GET (str "/api/" api-prefix "/portfolio-company-sites?" (map-json-params type-ids)))))
+;; (defn portfolio-company
+;;   [id]
+;;   (GET (str "/api/" api-prefix "/portfolio-companies/" id)))
 
-(defn portfolio-company-sites-by-company
-  [& [type-ids]]
-  (let [type-ids (merge {:size 100 :sort [{:!latest_turnover "desc"}]} type-ids)]
-    (GET (str "/api/" api-prefix "/portfolio-company-sites-by-company?" (map-json-params type-ids)))))
+;; ;; portfolio-company-sites
 
-(defn portfolio-company-locations
-  [& [type-ids]]
-  (GET (str "/api/" api-prefix "/portfolio-company-locations?" (map-json-params type-ids))))
+;; (defn portfolio-company-sites
+;;   [& [type-ids]]
+;;   (let [type-ids (merge {:size 100 :sort [{:!latest_turnover "desc"}]} type-ids)]
+;;     (GET (str "/api/" api-prefix "/portfolio-company-sites?" (map-json-params type-ids)))))
 
-(defn portfolio-company-site-stats
-  [& [type-ids]]
-  (GET (str "/api/" api-prefix "/portfolio-company-site-stats?" (map-json-params type-ids))))
+;; (defn portfolio-company-sites-by-company
+;;   [& [type-ids]]
+;;   (let [type-ids (merge {:size 100 :sort [{:!latest_turnover "desc"}]} type-ids)]
+;;     (GET (str "/api/" api-prefix "/portfolio-company-sites-by-company?" (map-json-params type-ids)))))
 
-(defn portfolio-company-site-account-timelines
-  [& [type-ids]]
-  (GET (str "/api/" api-prefix "/portfolio-company-site-account-timelines?" (map-json-params type-ids))))
+;; (defn portfolio-company-locations
+;;   [& [type-ids]]
+;;   (GET (str "/api/" api-prefix "/portfolio-company-locations?" (map-json-params type-ids))))
 
-;; investor-companies
+;; (defn portfolio-company-site-stats
+;;   [& [type-ids]]
+;;   (GET (str "/api/" api-prefix "/portfolio-company-site-stats?" (map-json-params type-ids))))
 
-(defn investor-company
-  [id]
-  (GET (str "/api/" api-prefix "/investor-companies/" id)))
+;; (defn portfolio-company-site-account-timelines
+;;   [& [type-ids]]
+;;   (GET (str "/api/" api-prefix "/portfolio-company-site-account-timelines?" (map-json-params type-ids))))
+
+;; ;; investor-companies
+
+;; (defn investor-company
+;;   [id]
+;;   (GET (str "/api/" api-prefix "/investor-companies/" id)))
 
 
-;; investment-account-timelines
-(defn investment-account-timelines
-  [& [type-ids]]
-  (GET (str "/api/" api-prefix "/investment-account-timelines?" (map-json-params type-ids))))
+;; ;; investment-account-timelines
+;; (defn investment-account-timelines
+;;   [& [type-ids]]
+;;   (GET (str "/api/" api-prefix "/investment-account-timelines?" (map-json-params type-ids))))
 
-(defn investment-stats
-  [& [type-ids]]
-  (GET (str "/api/" api-prefix "/investment-stats?" (map-json-params type-ids))))
+;; (defn investment-stats
+;;   [& [type-ids]]
+;;   (GET (str "/api/" api-prefix "/investment-stats?" (map-json-params type-ids))))
 
-(defn investment-aggs
-  [& [type-ids]]
-  (let [type-ids (merge {:size 50 :order {:latest_turnover "desc"}} type-ids)]
-    (GET (str "/api/" api-prefix "/investment-aggs?" (map-json-params type-ids)))))
+;; (defn investment-aggs
+;;   [& [type-ids]]
+;;   (let [type-ids (merge {:size 50 :order {:latest_turnover "desc"}} type-ids)]
+;;     (GET (str "/api/" api-prefix "/investment-aggs?" (map-json-params type-ids)))))
 
-(defn investments
-  [& [type-ids]]
-  (let [type-ids (merge {:size 50 :order [{:?boundaryline_compact_name_na "asc"} {:?investor_company_name_na "asc"}]} type-ids)]
-    (GET (str "/api/" api-prefix "/investments?" (map-json-params type-ids)))))
+;; (defn investments
+;;   [& [type-ids]]
+;;   (let [type-ids (merge {:size 50 :order [{:?boundaryline_compact_name_na "asc"} {:?investor_company_name_na "asc"}]} type-ids)]
+;;     (GET (str "/api/" api-prefix "/investments?" (map-json-params type-ids)))))

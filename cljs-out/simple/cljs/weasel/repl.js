@@ -19,10 +19,10 @@ weasel.repl.process_message = (function (){var method_table__4424__auto__ = cljs
 cljs.core._add_method.call(null,weasel.repl.process_message,new cljs.core.Keyword(null,"error","error",-978969032),(function (message){return console.error(("Websocket REPL error "+cljs.core.str.cljs$core$IFn$_invoke$arity$1(new cljs.core.Keyword(null,"type","type",1174270348).cljs$core$IFn$_invoke$arity$1(message))));
 }));
 cljs.core._add_method.call(null,weasel.repl.process_message,new cljs.core.Keyword(null,"eval-js","eval-js",760905924),(function (message){var code = new cljs.core.Keyword(null,"code","code",1586293142).cljs$core$IFn$_invoke$arity$1(message);return new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"op","op",-1882987955),new cljs.core.Keyword(null,"result","result",1415092211),new cljs.core.Keyword(null,"value","value",305978217),(function (){try{return new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"status","status",-1997798413),new cljs.core.Keyword(null,"success","success",1890645906),new cljs.core.Keyword(null,"value","value",305978217),(''+cljs.core.str.cljs$core$IFn$_invoke$arity$1(eval(code)))], null);
-}catch (e31666){if((e31666 instanceof Error))
-{var e = e31666;return new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"status","status",-1997798413),new cljs.core.Keyword(null,"exception","exception",-335277064),new cljs.core.Keyword(null,"value","value",305978217),cljs.core.pr_str.call(null,e),new cljs.core.Keyword(null,"stacktrace","stacktrace",-95588394),(cljs.core.truth_(e.hasOwnProperty("stack"))?e.stack:"No stacktrace available.")], null);
+}catch (e32480){if((e32480 instanceof Error))
+{var e = e32480;return new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"status","status",-1997798413),new cljs.core.Keyword(null,"exception","exception",-335277064),new cljs.core.Keyword(null,"value","value",305978217),cljs.core.pr_str.call(null,e),new cljs.core.Keyword(null,"stacktrace","stacktrace",-95588394),(cljs.core.truth_(e.hasOwnProperty("stack"))?e.stack:"No stacktrace available.")], null);
 } else
-{var e = e31666;return new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"status","status",-1997798413),new cljs.core.Keyword(null,"exception","exception",-335277064),new cljs.core.Keyword(null,"value","value",305978217),cljs.core.pr_str.call(null,e),new cljs.core.Keyword(null,"stacktrace","stacktrace",-95588394),"No stacktrace available."], null);
+{var e = e32480;return new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"status","status",-1997798413),new cljs.core.Keyword(null,"exception","exception",-335277064),new cljs.core.Keyword(null,"value","value",305978217),cljs.core.pr_str.call(null,e),new cljs.core.Keyword(null,"stacktrace","stacktrace",-95588394),"No stacktrace available."], null);
 
 }
 }})()], null);
@@ -37,8 +37,8 @@ weasel.repl.repl_print = (function repl_print(x){var temp__4124__auto__ = cljs.c
 * @param {...*} var_args
 */
 weasel.repl.connect = (function() { 
-var connect__delegate = function (repl_server_url,p__31667){var map__31670 = p__31667;var map__31670__$1 = ((cljs.core.seq_QMARK_.call(null,map__31670))?cljs.core.apply.call(null,cljs.core.hash_map,map__31670):map__31670);var on_close = cljs.core.get.call(null,map__31670__$1,new cljs.core.Keyword(null,"on-close","on-close",-761178394));var on_error = cljs.core.get.call(null,map__31670__$1,new cljs.core.Keyword(null,"on-error","on-error",1728533530));var on_open = cljs.core.get.call(null,map__31670__$1,new cljs.core.Keyword(null,"on-open","on-open",-1391088163));var verbose = cljs.core.get.call(null,map__31670__$1,new cljs.core.Keyword(null,"verbose","verbose",1694226060),true);var repl_connection = weasel.impls.websocket.websocket_connection.call(null);cljs.core.swap_BANG_.call(null,weasel.repl.ws_connection,cljs.core.constantly.call(null,repl_connection));
-clojure.browser.event.listen.call(null,repl_connection,new cljs.core.Keyword(null,"opened","opened",-1451743091),((function (repl_connection,map__31670,map__31670__$1,on_close,on_error,on_open,verbose){
+var connect__delegate = function (repl_server_url,p__32481){var map__32484 = p__32481;var map__32484__$1 = ((cljs.core.seq_QMARK_.call(null,map__32484))?cljs.core.apply.call(null,cljs.core.hash_map,map__32484):map__32484);var on_close = cljs.core.get.call(null,map__32484__$1,new cljs.core.Keyword(null,"on-close","on-close",-761178394));var on_error = cljs.core.get.call(null,map__32484__$1,new cljs.core.Keyword(null,"on-error","on-error",1728533530));var on_open = cljs.core.get.call(null,map__32484__$1,new cljs.core.Keyword(null,"on-open","on-open",-1391088163));var verbose = cljs.core.get.call(null,map__32484__$1,new cljs.core.Keyword(null,"verbose","verbose",1694226060),true);var repl_connection = weasel.impls.websocket.websocket_connection.call(null);cljs.core.swap_BANG_.call(null,weasel.repl.ws_connection,cljs.core.constantly.call(null,repl_connection));
+clojure.browser.event.listen.call(null,repl_connection,new cljs.core.Keyword(null,"opened","opened",-1451743091),((function (repl_connection,map__32484,map__32484__$1,on_close,on_error,on_open,verbose){
 return (function (evt){clojure.browser.net.transmit.call(null,repl_connection,cljs.core.pr_str.call(null,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"op","op",-1882987955),new cljs.core.Keyword(null,"ready","ready",1086465795)], null)));
 if(cljs.core.truth_(verbose))
 {console.info("Opened Websocket REPL connection");
@@ -49,13 +49,13 @@ if(cljs.core.fn_QMARK_.call(null,on_open))
 } else
 {return null;
 }
-});})(repl_connection,map__31670,map__31670__$1,on_close,on_error,on_open,verbose))
+});})(repl_connection,map__32484,map__32484__$1,on_close,on_error,on_open,verbose))
 );
-clojure.browser.event.listen.call(null,repl_connection,new cljs.core.Keyword(null,"message","message",-406056002),((function (repl_connection,map__31670,map__31670__$1,on_close,on_error,on_open,verbose){
-return (function (evt){var map__31671 = cljs.reader.read_string.call(null,evt.message);var map__31671__$1 = ((cljs.core.seq_QMARK_.call(null,map__31671))?cljs.core.apply.call(null,cljs.core.hash_map,map__31671):map__31671);var message = map__31671__$1;var op = cljs.core.get.call(null,map__31671__$1,new cljs.core.Keyword(null,"op","op",-1882987955));var response = cljs.core.pr_str.call(null,weasel.repl.process_message.call(null,message));return clojure.browser.net.transmit.call(null,repl_connection,response);
-});})(repl_connection,map__31670,map__31670__$1,on_close,on_error,on_open,verbose))
+clojure.browser.event.listen.call(null,repl_connection,new cljs.core.Keyword(null,"message","message",-406056002),((function (repl_connection,map__32484,map__32484__$1,on_close,on_error,on_open,verbose){
+return (function (evt){var map__32485 = cljs.reader.read_string.call(null,evt.message);var map__32485__$1 = ((cljs.core.seq_QMARK_.call(null,map__32485))?cljs.core.apply.call(null,cljs.core.hash_map,map__32485):map__32485);var message = map__32485__$1;var op = cljs.core.get.call(null,map__32485__$1,new cljs.core.Keyword(null,"op","op",-1882987955));var response = cljs.core.pr_str.call(null,weasel.repl.process_message.call(null,message));return clojure.browser.net.transmit.call(null,repl_connection,response);
+});})(repl_connection,map__32484,map__32484__$1,on_close,on_error,on_open,verbose))
 );
-clojure.browser.event.listen.call(null,repl_connection,new cljs.core.Keyword(null,"closed","closed",-919675359),((function (repl_connection,map__31670,map__31670__$1,on_close,on_error,on_open,verbose){
+clojure.browser.event.listen.call(null,repl_connection,new cljs.core.Keyword(null,"closed","closed",-919675359),((function (repl_connection,map__32484,map__32484__$1,on_close,on_error,on_open,verbose){
 return (function (evt){cljs.core.reset_BANG_.call(null,weasel.repl.ws_connection,null);
 if(cljs.core.truth_(verbose))
 {console.info("Closed Websocket REPL connection");
@@ -66,9 +66,9 @@ if(cljs.core.fn_QMARK_.call(null,on_close))
 } else
 {return null;
 }
-});})(repl_connection,map__31670,map__31670__$1,on_close,on_error,on_open,verbose))
+});})(repl_connection,map__32484,map__32484__$1,on_close,on_error,on_open,verbose))
 );
-clojure.browser.event.listen.call(null,repl_connection,new cljs.core.Keyword(null,"error","error",-978969032),((function (repl_connection,map__31670,map__31670__$1,on_close,on_error,on_open,verbose){
+clojure.browser.event.listen.call(null,repl_connection,new cljs.core.Keyword(null,"error","error",-978969032),((function (repl_connection,map__32484,map__32484__$1,on_close,on_error,on_open,verbose){
 return (function (evt){if(cljs.core.truth_(verbose))
 {console.error("WebSocket error",evt);
 } else
@@ -78,19 +78,19 @@ if(cljs.core.fn_QMARK_.call(null,on_error))
 } else
 {return null;
 }
-});})(repl_connection,map__31670,map__31670__$1,on_close,on_error,on_open,verbose))
+});})(repl_connection,map__32484,map__32484__$1,on_close,on_error,on_open,verbose))
 );
 return clojure.browser.net.connect.call(null,repl_connection,repl_server_url);
 };
 var connect = function (repl_server_url,var_args){
-var p__31667 = null;if (arguments.length > 1) {
-  p__31667 = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return connect__delegate.call(this,repl_server_url,p__31667);};
+var p__32481 = null;if (arguments.length > 1) {
+  p__32481 = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return connect__delegate.call(this,repl_server_url,p__32481);};
 connect.cljs$lang$maxFixedArity = 1;
-connect.cljs$lang$applyTo = (function (arglist__31672){
-var repl_server_url = cljs.core.first(arglist__31672);
-var p__31667 = cljs.core.rest(arglist__31672);
-return connect__delegate(repl_server_url,p__31667);
+connect.cljs$lang$applyTo = (function (arglist__32486){
+var repl_server_url = cljs.core.first(arglist__32486);
+var p__32481 = cljs.core.rest(arglist__32486);
+return connect__delegate(repl_server_url,p__32481);
 });
 connect.cljs$core$IFn$_invoke$arity$variadic = connect__delegate;
 return connect;

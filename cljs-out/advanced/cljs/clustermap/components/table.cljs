@@ -1,7 +1,11 @@
 (ns clustermap.components.table
   (:require
    [cljs.core.async :refer [put!]]
-   [sablono.core :as html :refer-macros [html]]))
+   [om.core :as om :include-macros true]
+   [sablono.core :as html :refer-macros [html]]
+   [clustermap.api :as api]
+   [clustermap.ordered-resource :as ordered-resource]
+))
 
 (defn order-col
   "generate a table-ordering link for table-headers"
@@ -49,3 +53,112 @@
                        (put! comm [view-update-key {:from (+ from size)}]))}
         [:i.icon-arrow-right]]]
       [:span.next [:i.icon-arrow-right]])]))
+
+(defn- render-table-row
+  [{:keys [columns record] :as data}]
+  (om/component
+   (html
+    (let [row
+          (into [:tr]
+                (apply concat
+                       (for [col columns]
+                         (for [[col-key col-name] col]
+                           (do
+                             (.log js/console (clj->js ["KEYS" col-key (type col-key) col-name (type col-name) (get record col-key)]))
+                             [:td (get record col-key)])))))
+          _ (.log js/console (clj->js ["ROW" columns record row]))]
+      row))))
+
+(defn- render-table
+  [columns table-data opts]
+  (html
+    [:div.full-report-list
+     ;;(table/paginate comm companies :update-selection-investment-aggs-table-view)
+     [:div.table-responsive
+      [:table.table
+       [:thead
+        (into [:tr]
+              (apply concat
+                (for [col columns]
+                  (for [[col-key col-name] col]
+                    [:th col-name]))))]
+         [:tbody
+          (om/build-all render-table-row (:data table-data) {:key :key :fn (fn [r] {:columns columns
+                                                                                    :record r
+                                                                                    :key (:?natural_id r )})})
+          ]]]
+     ;;(table/paginate comm companies :update-selection-investment-aggs-table-view)
+     ]))
+
+(defn- request-table-data
+  [resource index index-type filter-spec bounds sort-spec offset limit]
+  (ordered-resource/api-call resource
+                             api/simple-table
+                             index
+                             index-type
+                             filter-spec
+                             bounds
+                             sort-spec
+                             offset
+                             limit))
+
+(defn table-component
+  [{{table-data :table-data
+     {index :index
+      sort-spec :sort-spec
+      offset :offset
+      limit :limit
+      filter-by-view :filter-by-view
+      columns :columns
+      :as controls} :controls
+     :as table-state} :table-state
+    filter-spec :filter
+    bounds :bounds
+    :as props}
+   owner]
+
+  (reify
+    om/IDidMount
+    (did-mount [_]
+      (let [tdr (ordered-resource/make-discard-stale-resource "table-data-resource")]
+        (om/set-state! owner :table-data-resource tdr)
+        (ordered-resource/retrieve-responses tdr (fn [data] (om/update! table-state [:table-data] data))))
+      )
+
+    om/IRender
+    (render [_]
+       (render-table columns table-data {}))
+
+    om/IWillUpdate
+    (will-update [_
+                  {{next-table-data :table-data
+                    {next-index :index
+                     next-index-type :index-type
+                     next-sort-spec :sort-spec
+                     next-offset :offset
+                     next-limit :limit
+                     next-filter-by-view :filter-by-view
+                     :as next-controls} :controls
+                    :as next-table-state} :table-state
+                    next-filter-spec :filter
+                    next-bounds :bounds
+                   :as next-props}
+                  {table-data-resource :table-data-resource
+                   :as next-state}]
+
+      (when (or (not next-table-data)
+                (not= next-controls controls)
+                (not= next-filter-spec filter-spec)
+                (and next-filter-by-view
+                     (or (not filter-by-view)
+                         (not= next-bounds bounds))))
+
+        (request-table-data table-data-resource
+                            next-index
+                            next-index-type
+                            next-filter-spec
+                            next-bounds
+                            next-sort-spec
+                            next-offset
+                            next-limit))
+      )))

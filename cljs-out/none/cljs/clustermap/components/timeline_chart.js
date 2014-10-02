@@ -17,95 +17,95 @@ goog.require('om.core');
 goog.require('om.core');
 goog.require('clustermap.formats.money');
 goog.require('hiccups.runtime');
-clustermap.components.timeline_chart.create_chart = (function create_chart(data,node,p__51543){var map__51545 = p__51543;var map__51545__$1 = ((cljs.core.seq_QMARK_.call(null,map__51545))?cljs.core.apply.call(null,cljs.core.hash_map,map__51545):map__51545);var opts = map__51545__$1;var y1_title = cljs.core.get.call(null,map__51545__$1,new cljs.core.Keyword(null,"y1-title","y1-title",472065763));var y0_title = cljs.core.get.call(null,map__51545__$1,new cljs.core.Keyword(null,"y0-title","y0-title",-809800001));var x_labels = cljs.core.map.call(null,new cljs.core.Keyword(null,"date","date",-1463434462),data);var stats = cljs.core.map.call(null,new cljs.core.Keyword(null,"stats","stats",-85643011),data);var y_median = cljs.core.map.call(null,cljs.core.comp.call(null,((function (x_labels,stats,map__51545,map__51545__$1,opts,y1_title,y0_title){
-return (function (p1__51537_SHARP_){return clustermap.formats.number.round_decimal.call(null,p1__51537_SHARP_,(0));
-});})(x_labels,stats,map__51545,map__51545__$1,opts,y1_title,y0_title))
-,((function (x_labels,stats,map__51545,map__51545__$1,opts,y1_title,y0_title){
-return (function (p1__51538_SHARP_){return cljs.core.get_in.call(null,p1__51538_SHARP_,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"stats","stats",-85643011),new cljs.core.Keyword(null,"median","median",569566131)], null));
-});})(x_labels,stats,map__51545,map__51545__$1,opts,y1_title,y0_title))
-),data);var y_mean = cljs.core.map.call(null,cljs.core.comp.call(null,((function (x_labels,stats,y_median,map__51545,map__51545__$1,opts,y1_title,y0_title){
-return (function (p1__51539_SHARP_){return clustermap.formats.number.round_decimal.call(null,p1__51539_SHARP_,(0));
-});})(x_labels,stats,y_median,map__51545,map__51545__$1,opts,y1_title,y0_title))
-,((function (x_labels,stats,y_median,map__51545,map__51545__$1,opts,y1_title,y0_title){
-return (function (p1__51540_SHARP_){return cljs.core.get_in.call(null,p1__51540_SHARP_,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"stats","stats",-85643011),new cljs.core.Keyword(null,"mean","mean",-1359234715)], null));
-});})(x_labels,stats,y_median,map__51545,map__51545__$1,opts,y1_title,y0_title))
-),data);var y_total = cljs.core.map.call(null,cljs.core.comp.call(null,((function (x_labels,stats,y_median,y_mean,map__51545,map__51545__$1,opts,y1_title,y0_title){
-return (function (p1__51541_SHARP_){return clustermap.formats.number.round_decimal.call(null,p1__51541_SHARP_,(0));
-});})(x_labels,stats,y_median,y_mean,map__51545,map__51545__$1,opts,y1_title,y0_title))
-,((function (x_labels,stats,y_median,y_mean,map__51545,map__51545__$1,opts,y1_title,y0_title){
-return (function (p1__51542_SHARP_){return cljs.core.get_in.call(null,p1__51542_SHARP_,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"stats","stats",-85643011),new cljs.core.Keyword(null,"total","total",1916810418)], null));
-});})(x_labels,stats,y_median,y_mean,map__51545,map__51545__$1,opts,y1_title,y0_title))
-),data);return jayq.core.$.call(null,node).highcharts(cljs.core.clj__GT_js.call(null,new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null,"chart","chart",1173225425),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"width","width",-384071477),null,new cljs.core.Keyword(null,"height","height",1025178622),(300)], null),new cljs.core.Keyword(null,"title","title",636505583),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"text","text",-1790561697),null], null),new cljs.core.Keyword(null,"xAxis","xAxis",1266196059),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"categories","categories",178386610),x_labels,new cljs.core.Keyword(null,"labels","labels",-626734591),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"rotation","rotation",-1728051644),(270)], null)], null),new cljs.core.Keyword(null,"yAxis","yAxis",1793336722),new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"title","title",636505583),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"text","text",-1790561697),y0_title], null),new cljs.core.Keyword(null,"min","min",444991522),(0),new cljs.core.Keyword(null,"labels","labels",-626734591),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"formatter","formatter",-483008823),((function (x_labels,stats,y_median,y_mean,y_total,map__51545,map__51545__$1,opts,y1_title,y0_title){
+clustermap.components.timeline_chart.create_chart = (function create_chart(data,node,p__53171){var map__53173 = p__53171;var map__53173__$1 = ((cljs.core.seq_QMARK_.call(null,map__53173))?cljs.core.apply.call(null,cljs.core.hash_map,map__53173):map__53173);var opts = map__53173__$1;var y1_title = cljs.core.get.call(null,map__53173__$1,new cljs.core.Keyword(null,"y1-title","y1-title",472065763));var y0_title = cljs.core.get.call(null,map__53173__$1,new cljs.core.Keyword(null,"y0-title","y0-title",-809800001));var x_labels = cljs.core.map.call(null,new cljs.core.Keyword(null,"date","date",-1463434462),data);var stats = cljs.core.map.call(null,new cljs.core.Keyword(null,"stats","stats",-85643011),data);var y_median = cljs.core.map.call(null,cljs.core.comp.call(null,((function (x_labels,stats,map__53173,map__53173__$1,opts,y1_title,y0_title){
+return (function (p1__53165_SHARP_){return clustermap.formats.number.round_decimal.call(null,p1__53165_SHARP_,(0));
+});})(x_labels,stats,map__53173,map__53173__$1,opts,y1_title,y0_title))
+,((function (x_labels,stats,map__53173,map__53173__$1,opts,y1_title,y0_title){
+return (function (p1__53166_SHARP_){return cljs.core.get_in.call(null,p1__53166_SHARP_,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"stats","stats",-85643011),new cljs.core.Keyword(null,"median","median",569566131)], null));
+});})(x_labels,stats,map__53173,map__53173__$1,opts,y1_title,y0_title))
+),data);var y_mean = cljs.core.map.call(null,cljs.core.comp.call(null,((function (x_labels,stats,y_median,map__53173,map__53173__$1,opts,y1_title,y0_title){
+return (function (p1__53167_SHARP_){return clustermap.formats.number.round_decimal.call(null,p1__53167_SHARP_,(0));
+});})(x_labels,stats,y_median,map__53173,map__53173__$1,opts,y1_title,y0_title))
+,((function (x_labels,stats,y_median,map__53173,map__53173__$1,opts,y1_title,y0_title){
+return (function (p1__53168_SHARP_){return cljs.core.get_in.call(null,p1__53168_SHARP_,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"stats","stats",-85643011),new cljs.core.Keyword(null,"mean","mean",-1359234715)], null));
+});})(x_labels,stats,y_median,map__53173,map__53173__$1,opts,y1_title,y0_title))
+),data);var y_total = cljs.core.map.call(null,cljs.core.comp.call(null,((function (x_labels,stats,y_median,y_mean,map__53173,map__53173__$1,opts,y1_title,y0_title){
+return (function (p1__53169_SHARP_){return clustermap.formats.number.round_decimal.call(null,p1__53169_SHARP_,(0));
+});})(x_labels,stats,y_median,y_mean,map__53173,map__53173__$1,opts,y1_title,y0_title))
+,((function (x_labels,stats,y_median,y_mean,map__53173,map__53173__$1,opts,y1_title,y0_title){
+return (function (p1__53170_SHARP_){return cljs.core.get_in.call(null,p1__53170_SHARP_,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"stats","stats",-85643011),new cljs.core.Keyword(null,"total","total",1916810418)], null));
+});})(x_labels,stats,y_median,y_mean,map__53173,map__53173__$1,opts,y1_title,y0_title))
+),data);return jayq.core.$.call(null,node).highcharts(cljs.core.clj__GT_js.call(null,new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null,"chart","chart",1173225425),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"width","width",-384071477),null,new cljs.core.Keyword(null,"height","height",1025178622),(300)], null),new cljs.core.Keyword(null,"title","title",636505583),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"text","text",-1790561697),null], null),new cljs.core.Keyword(null,"xAxis","xAxis",1266196059),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"categories","categories",178386610),x_labels,new cljs.core.Keyword(null,"labels","labels",-626734591),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"rotation","rotation",-1728051644),(270)], null)], null),new cljs.core.Keyword(null,"yAxis","yAxis",1793336722),new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"title","title",636505583),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"text","text",-1790561697),y0_title], null),new cljs.core.Keyword(null,"min","min",444991522),(0),new cljs.core.Keyword(null,"labels","labels",-626734591),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"formatter","formatter",-483008823),((function (x_labels,stats,y_median,y_mean,y_total,map__53173,map__53173__$1,opts,y1_title,y0_title){
 return (function (){var this$ = this;return clustermap.formats.money.readable.call(null,this$.value,new cljs.core.Keyword(null,"curr","curr",-1092372808),"");
-});})(x_labels,stats,y_median,y_mean,y_total,map__51545,map__51545__$1,opts,y1_title,y0_title))
+});})(x_labels,stats,y_median,y_mean,y_total,map__53173,map__53173__$1,opts,y1_title,y0_title))
 ], null)], null)], null),new cljs.core.Keyword(null,"series","series",600710694),new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null,"name","name",1843675177),("Total "+cljs.core.str.cljs$core$IFn$_invoke$arity$1(y0_title)),new cljs.core.Keyword(null,"type","type",1174270348),"line",new cljs.core.Keyword(null,"yAxis","yAxis",1793336722),(0),new cljs.core.Keyword(null,"data","data",-232669377),y_total], null)], null)], null)));
 });
-clustermap.components.timeline_chart.timeline_chart = (function timeline_chart(data,owner,p__51546){var map__51551 = p__51546;var map__51551__$1 = ((cljs.core.seq_QMARK_.call(null,map__51551))?cljs.core.apply.call(null,cljs.core.hash_map,map__51551):map__51551);var opts = map__51551__$1;var id = cljs.core.get.call(null,map__51551__$1,new cljs.core.Keyword(null,"id","id",-1388402092));if(typeof clustermap.components.timeline_chart.t51552 !== 'undefined')
+clustermap.components.timeline_chart.timeline_chart = (function timeline_chart(data,owner,p__53174){var map__53179 = p__53174;var map__53179__$1 = ((cljs.core.seq_QMARK_.call(null,map__53179))?cljs.core.apply.call(null,cljs.core.hash_map,map__53179):map__53179);var opts = map__53179__$1;var id = cljs.core.get.call(null,map__53179__$1,new cljs.core.Keyword(null,"id","id",-1388402092));if(typeof clustermap.components.timeline_chart.t53180 !== 'undefined')
 {} else
 {
 /**
 * @constructor
 */
-clustermap.components.timeline_chart.t51552 = (function (id,opts,map__51551,p__51546,owner,data,timeline_chart,meta51553){
+clustermap.components.timeline_chart.t53180 = (function (id,opts,map__53179,p__53174,owner,data,timeline_chart,meta53181){
 this.id = id;
 this.opts = opts;
-this.map__51551 = map__51551;
-this.p__51546 = p__51546;
+this.map__53179 = map__53179;
+this.p__53174 = p__53174;
 this.owner = owner;
 this.data = data;
 this.timeline_chart = timeline_chart;
-this.meta51553 = meta51553;
+this.meta53181 = meta53181;
 this.cljs$lang$protocol_mask$partition1$ = 0;
 this.cljs$lang$protocol_mask$partition0$ = 393216;
 })
-clustermap.components.timeline_chart.t51552.cljs$lang$type = true;
-clustermap.components.timeline_chart.t51552.cljs$lang$ctorStr = "clustermap.components.timeline-chart/t51552";
-clustermap.components.timeline_chart.t51552.cljs$lang$ctorPrWriter = ((function (map__51551,map__51551__$1,opts,id){
-return (function (this__4125__auto__,writer__4126__auto__,opt__4127__auto__){return cljs.core._write.call(null,writer__4126__auto__,"clustermap.components.timeline-chart/t51552");
-});})(map__51551,map__51551__$1,opts,id))
+clustermap.components.timeline_chart.t53180.cljs$lang$type = true;
+clustermap.components.timeline_chart.t53180.cljs$lang$ctorStr = "clustermap.components.timeline-chart/t53180";
+clustermap.components.timeline_chart.t53180.cljs$lang$ctorPrWriter = ((function (map__53179,map__53179__$1,opts,id){
+return (function (this__4125__auto__,writer__4126__auto__,opt__4127__auto__){return cljs.core._write.call(null,writer__4126__auto__,"clustermap.components.timeline-chart/t53180");
+});})(map__53179,map__53179__$1,opts,id))
 ;
-clustermap.components.timeline_chart.t51552.prototype.om$core$IDidUpdate$ = true;
-clustermap.components.timeline_chart.t51552.prototype.om$core$IDidUpdate$did_update$arity$3 = ((function (map__51551,map__51551__$1,opts,id){
+clustermap.components.timeline_chart.t53180.prototype.om$core$IDidUpdate$ = true;
+clustermap.components.timeline_chart.t53180.prototype.om$core$IDidUpdate$did_update$arity$3 = ((function (map__53179,map__53179__$1,opts,id){
 return (function (this$,prev_props,prev_state){var self__ = this;
 var this$__$1 = this;var root_node = om.core.get_node.call(null,self__.owner);return clustermap.components.timeline_chart.create_chart.call(null,self__.data,om.core.get_node.call(null,self__.owner,"chart"),self__.opts);
-});})(map__51551,map__51551__$1,opts,id))
+});})(map__53179,map__53179__$1,opts,id))
 ;
-clustermap.components.timeline_chart.t51552.prototype.om$core$IDidMount$ = true;
-clustermap.components.timeline_chart.t51552.prototype.om$core$IDidMount$did_mount$arity$1 = ((function (map__51551,map__51551__$1,opts,id){
+clustermap.components.timeline_chart.t53180.prototype.om$core$IDidMount$ = true;
+clustermap.components.timeline_chart.t53180.prototype.om$core$IDidMount$did_mount$arity$1 = ((function (map__53179,map__53179__$1,opts,id){
 return (function (this$){var self__ = this;
 var this$__$1 = this;var node = om.core.get_node.call(null,self__.owner);clustermap.components.timeline_chart.create_chart.call(null,self__.data,om.core.get_node.call(null,self__.owner,"chart"),self__.opts);
-return jayq.core.$.call(null,document).on("clustermap-change-view",((function (node,this$__$1,map__51551,map__51551__$1,opts,id){
+return jayq.core.$.call(null,document).on("clustermap-change-view",((function (node,this$__$1,map__53179,map__53179__$1,opts,id){
 return (function (e){var chart = jayq.core.$.call(null,om.core.get_node.call(null,self__.owner,"chart"));if(cljs.core.truth_(chart.is(":visible")))
 {return chart.highcharts().reflow();
 } else
 {return null;
 }
-});})(node,this$__$1,map__51551,map__51551__$1,opts,id))
+});})(node,this$__$1,map__53179,map__53179__$1,opts,id))
 );
-});})(map__51551,map__51551__$1,opts,id))
+});})(map__53179,map__53179__$1,opts,id))
 ;
-clustermap.components.timeline_chart.t51552.prototype.om$core$IRender$ = true;
-clustermap.components.timeline_chart.t51552.prototype.om$core$IRender$render$arity$1 = ((function (map__51551,map__51551__$1,opts,id){
+clustermap.components.timeline_chart.t53180.prototype.om$core$IRender$ = true;
+clustermap.components.timeline_chart.t53180.prototype.om$core$IRender$render$arity$1 = ((function (map__53179,map__53179__$1,opts,id){
 return (function (this$){var self__ = this;
 var this$__$1 = this;return React.DOM.div({"className": "timeline-chart", "id": self__.id, "ref": "chart"});
-});})(map__51551,map__51551__$1,opts,id))
+});})(map__53179,map__53179__$1,opts,id))
 ;
-clustermap.components.timeline_chart.t51552.prototype.cljs$core$IMeta$_meta$arity$1 = ((function (map__51551,map__51551__$1,opts,id){
-return (function (_51554){var self__ = this;
-var _51554__$1 = this;return self__.meta51553;
-});})(map__51551,map__51551__$1,opts,id))
+clustermap.components.timeline_chart.t53180.prototype.cljs$core$IMeta$_meta$arity$1 = ((function (map__53179,map__53179__$1,opts,id){
+return (function (_53182){var self__ = this;
+var _53182__$1 = this;return self__.meta53181;
+});})(map__53179,map__53179__$1,opts,id))
 ;
-clustermap.components.timeline_chart.t51552.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = ((function (map__51551,map__51551__$1,opts,id){
-return (function (_51554,meta51553__$1){var self__ = this;
-var _51554__$1 = this;return (new clustermap.components.timeline_chart.t51552(self__.id,self__.opts,self__.map__51551,self__.p__51546,self__.owner,self__.data,self__.timeline_chart,meta51553__$1));
-});})(map__51551,map__51551__$1,opts,id))
+clustermap.components.timeline_chart.t53180.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = ((function (map__53179,map__53179__$1,opts,id){
+return (function (_53182,meta53181__$1){var self__ = this;
+var _53182__$1 = this;return (new clustermap.components.timeline_chart.t53180(self__.id,self__.opts,self__.map__53179,self__.p__53174,self__.owner,self__.data,self__.timeline_chart,meta53181__$1));
+});})(map__53179,map__53179__$1,opts,id))
 ;
-clustermap.components.timeline_chart.__GT_t51552 = ((function (map__51551,map__51551__$1,opts,id){
-return (function __GT_t51552(id__$1,opts__$1,map__51551__$2,p__51546__$1,owner__$1,data__$1,timeline_chart__$1,meta51553){return (new clustermap.components.timeline_chart.t51552(id__$1,opts__$1,map__51551__$2,p__51546__$1,owner__$1,data__$1,timeline_chart__$1,meta51553));
-});})(map__51551,map__51551__$1,opts,id))
+clustermap.components.timeline_chart.__GT_t53180 = ((function (map__53179,map__53179__$1,opts,id){
+return (function __GT_t53180(id__$1,opts__$1,map__53179__$2,p__53174__$1,owner__$1,data__$1,timeline_chart__$1,meta53181){return (new clustermap.components.timeline_chart.t53180(id__$1,opts__$1,map__53179__$2,p__53174__$1,owner__$1,data__$1,timeline_chart__$1,meta53181));
+});})(map__53179,map__53179__$1,opts,id))
 ;
 }
-return (new clustermap.components.timeline_chart.t51552(id,opts,map__51551__$1,p__51546,owner,data,timeline_chart,null));
+return (new clustermap.components.timeline_chart.t53180(id,opts,map__53179__$1,p__53174,owner,data,timeline_chart,null));
 });
 
 //# sourceMappingURL=timeline_chart.js.map

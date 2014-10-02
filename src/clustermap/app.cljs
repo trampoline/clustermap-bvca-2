@@ -21,6 +21,7 @@
    [clustermap.components.full-report :as full-report]
    [clustermap.components.page-title :as page-title]
    [clustermap.components.search :as search]
+   [clustermap.components.table :as table]
    [clustermap.boundarylines :as bl]
    [clustermap.data.colorchooser :as colorchooser])
   (:import [goog History]
@@ -78,14 +79,17 @@
                              :data nil}
 
          :table  {:type :table
-                  :datasource "companies"
-                  :controls {:order nil
+                  :controls {:index "companies"
+                             :index-type "company"
+                             :sort-spec nil
                              :offset 0
                              :limit 50
-                             :variables ["!name" "!postcode" "!formation_date" "!sic07"
-                                         "!latest_accounts_date" "!latest_employee_count"
-                                         "!latest_turnover"]}
-                  :data nil}
+                             :filter-by-view false
+                             :columns [{:!name "Name"} {:!postcode "Postcode"} {:!formation_date "Formation date"}
+                                       {:!latest_accounts_date "Filing date"}
+                                       {:!latest_employee_count "Employees"}
+                                       {:!latest_turnover "Turnover"}]}
+                  :table-data nil}
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -296,18 +300,22 @@
   [comm]
 
   (defroute "" []
-    (put! comm [:route-select nil]))
+    ;; (put! comm [:route-select nil])
+    )
 
   (defroute "/" []
-    (put! comm [:route-select nil]))
+    ;; (put! comm [:route-select nil])
+    )
 
   (defroute "/:view" [view]
     (put! comm [:route-change-view view])
-    (put! comm [:route-select nil]))
+    ;; (put! comm [:route-select nil])
+    )
 
   (defroute "/:view/:type/:id" [view type id]
     (put! comm [:route-change-view view])
-    (put! comm [:route-select [(keyword type) id]]))
+    ;; (put! comm [:route-select [(keyword type) id]])
+    )
 
   (events/listen history
                  EventType.NAVIGATE
@@ -330,18 +338,20 @@
                 :fetch-boundarylines-fn (partial bl/get-or-fetch-best-boundarylines state :boundarylines)
                 :point-in-boundarylines-fn (partial bl/point-in-boundarylines state :boundarylines :uk_boroughs)}]
     (nav/init comm)
-    ;; (init-routes comm)
+    (init-routes comm)
 
     (load-boundaryline-collection-indexes)
 
-    (mount/mount map/map-component
+    (mount/mount :map
+                 map/map-component
                  state
                  :target "map-component"
                  :shared shared
                  :paths {:map-state [:map]
                          :filter [:filter :compiled]})
 
-    (mount/mount map-report/map-report-component
+    (mount/mount :map-report
+                 map-report/map-report-component
                  state
                  :target "map-report-component"
                  :shared shared
@@ -349,35 +359,49 @@
                          :map-controls [:map :controls]
                          :map-report [:map-report]})
 
-    (mount/mount filter/filter-component
+    (mount/mount :search
+                 filter/filter-component
                  state
                  :target "search-component"
                  :shared shared
                  :path [:filter])
 
-    (mount/mount (partial select-chooser/select-chooser-component "Variable" :variable [["!latest_employee_count" "Employee count"] ["!latest_turnover" "Turnover"]])
+    (mount/mount :var-select
+                 (partial select-chooser/select-chooser-component "Variable" :variable [["!latest_employee_count" "Employee count"] ["!latest_turnover" "Turnover"]])
                  state
                  :target "variable-selection-component"
                  :shared shared
                  :path [:map :controls :boundaryline-agg])
 
-    (mount/mount (partial select-chooser/select-chooser-component "Statistic" :variable [["sum" "Sum"] ["max" "Maximum"] ["avg" "Mean"] ["boundaryline_id_doc_count" "Count"]])
+    (mount/mount :stat-select
+                 (partial select-chooser/select-chooser-component "Statistic" :variable [["sum" "Sum"] ["max" "Maximum"] ["avg" "Mean"] ["boundaryline_id_doc_count" "Count"]])
                  state
                  :target "stat-selection-component"
                  :shared shared
                  :path [:map :controls :colorchooser])
 
-    (mount/mount (partial select-chooser/select-chooser-component "Scale" :scale [["log" "Log"] ["linear" "Linear"]])
+    (mount/mount :scale-select
+                 (partial select-chooser/select-chooser-component "Scale" :scale [["log" "Log"] ["linear" "Linear"]])
                  state
                  :target "scale-selection-component"
                  :shared shared
                  :path [:map :controls :colorchooser])
 
-    (mount/mount color-scale/color-scale-component
+    (mount/mount :color-scale
+                 color-scale/color-scale-component
                  state
                  :target "color-scale-component"
                  :shared shared
                  :path [:map :controls :threshold-colors])
+
+    (mount/mount :table
+                 table/table-component
+                 state
+                 :target "full-report-table"
+                 :shared shared
+                 :paths {:table-state [:table]
+                         :filter [:filter :compiled]
+                         :bounds [:map :controls :bounds]})
 
 
     ;; (search/mount state "search-component" shared)
@@ -385,8 +409,8 @@
     ;; (page-title/mount state "page-title-component" shared)
     ;; (full-report/mount state "full-report-component" shared)
 
-    ;; (go
-    ;;  (while true
-    ;;    (let [[type val] (<! comm)]
-    ;;      (handle-event type val))))
+    (go
+     (while true
+       (let [[type val] (<! comm)]
+         (handle-event type val))))
     ))

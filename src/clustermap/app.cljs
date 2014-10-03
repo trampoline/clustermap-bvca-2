@@ -82,8 +82,8 @@
                   :controls {:index "companies"
                              :index-type "company"
                              :sort-spec nil
-                             :offset 0
-                             :limit 50
+                             :from 0
+                             :size 50
                              :filter-by-view false
                              :columns [{:!name "Name"} {:!postcode "Postcode"} {:!formation_date "Formation date"}
                                        {:!latest_accounts_date "Filing date"}

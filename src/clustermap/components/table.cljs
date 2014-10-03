@@ -32,30 +32,36 @@
 
 (defn paginate
   "generate a table pagination control"
-  [comm {:keys [count from size] :as collection} view-update-key]
-  (html
-   [:div.paginate
-    (if (> from 0)
-      [:span.prev
-       [:a {:href "#"
-            :onClick (fn [e]
-                       (.preventDefault e)
-                       (put! comm [view-update-key {:from (max (- from size) 0)}]))}
-        [:i.icon-arrow-left]]]
-      [:span.prev [:i.icon-arrow-left]])
-    [:span.page
-     (str (inc from) "-" (min (+ from size) count) " of " count)]
-    (if (< (+ from size) count)
-      [:span.next
-       [:a {:href "#"
-            :onClick (fn [e]
-                       (.preventDefault e)
-                       (put! comm [view-update-key {:from (+ from size)}]))}
-        [:i.icon-arrow-right]]]
-      [:span.next [:i.icon-arrow-right]])]))
+  [{controls :controls
+    {count :count
+     from :from
+     size :size
+     :as table-data} :table-data} owner opts]
+  (om/component
+   (html
+    [:div.paginate
+     (if (and from (> from 0))
+       [:span.prev
+        [:a {:href "#"
+             :onClick (fn [e]
+                        (.preventDefault e)
+                        (om/update! controls :from (max 0 (- from size))))}
+         [:i.icon-arrow-left]]]
+       [:span.prev [:i.icon-arrow-left]])
+     [:span.page
+      (str (inc from) "-" (min (+ from size) count) " of " count)]
+     (if (< (+ from size) count)
+       [:span.next
+        [:a {:href "#"
+             :onClick (fn [e]
+                        (.preventDefault e)
+                        (om/update! controls :from (+ from size))
+                        )}
+         [:i.icon-arrow-right]]]
+       [:span.next [:i.icon-arrow-right]])])))
 
 (defn- render-table-row
-  [{:keys [columns record] :as data}]
+  [{:keys [columns record]}]
   (om/component
    (html
     (let [row
@@ -64,34 +70,41 @@
                        (for [col columns]
                          (for [[col-key col-name] col]
                            (do
-                             (.log js/console (clj->js ["KEYS" col-key (type col-key) col-name (type col-name) (get record col-key)]))
+                             ;; (.log js/console (clj->js ["KEYS" col-key (type col-key) col-name (type col-name) (get record col-key)]))
                              [:td (get record col-key)])))))
-          _ (.log js/console (clj->js ["ROW" columns record row]))]
+          ;; _ (.log js/console (clj->js ["ROW" columns record row]))
+          ]
       row))))
 
 (defn- render-table
-  [columns table-data opts]
+  [{table-data :table-data
+    {columns :columns
+     :as controls} :controls
+    :as props}
+   owner
+   opts]
   (html
-    [:div.full-report-list
-     ;;(table/paginate comm companies :update-selection-investment-aggs-table-view)
+   [:div.full-report-list
+    (om/build paginate {:controls controls :table-data table-data})
      [:div.table-responsive
       [:table.table
        [:thead
         (into [:tr]
               (apply concat
-                (for [col columns]
-                  (for [[col-key col-name] col]
-                    [:th col-name]))))]
-         [:tbody
-          (om/build-all render-table-row (:data table-data) {:key :key :fn (fn [r] {:columns columns
-                                                                                    :record r
-                                                                                    :key (:?natural_id r )})})
-          ]]]
-     ;;(table/paginate comm companies :update-selection-investment-aggs-table-view)
-     ]))
+                     (for [col columns]
+                       (for [[col-key col-name] col]
+                         [:th col-name]))))]
+       [:tbody
+        (om/build-all render-table-row (:data table-data) {:key :key :fn (fn [r] {:columns columns
+                                                                                  :record r
+                                                                                  :key (:?natural_id r )})})
+        ]]]
+    (om/build paginate {:controls controls :table-data table-data})
+     ])
+  )
 
 (defn- request-table-data
-  [resource index index-type filter-spec bounds sort-spec offset limit]
+  [resource index index-type filter-spec bounds sort-spec from size]
   (ordered-resource/api-call resource
                              api/simple-table
                              index
@@ -99,15 +112,15 @@
                              filter-spec
                              bounds
                              sort-spec
-                             offset
-                             limit))
+                             from
+                             size))
 
 (defn table-component
   [{{table-data :table-data
      {index :index
       sort-spec :sort-spec
-      offset :offset
-      limit :limit
+      from :from
+      size :size
       filter-by-view :filter-by-view
       columns :columns
       :as controls} :controls
@@ -127,7 +140,7 @@
 
     om/IRender
     (render [_]
-       (render-table columns table-data {}))
+      (render-table {:table-data table-data :controls controls} owner {}))
 
     om/IWillUpdate
     (will-update [_
@@ -135,8 +148,8 @@
                     {next-index :index
                      next-index-type :index-type
                      next-sort-spec :sort-spec
-                     next-offset :offset
-                     next-limit :limit
+                     next-from :from
+                     next-size :size
                      next-filter-by-view :filter-by-view
                      :as next-controls} :controls
                     :as next-table-state} :table-state
@@ -159,6 +172,6 @@
                             next-filter-spec
                             next-bounds
                             next-sort-spec
-                            next-offset
-                            next-limit))
+                            next-from
+                            next-size))
       )))

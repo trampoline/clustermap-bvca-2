@@ -87,11 +87,6 @@
   (html
    [:div.full-report-list
     (om/build paginate {:controls controls :table-data table-data})
-    [:label "Filter by view"
-     [:input {:type "checkbox" :name "filter-by-view" :value (str (boolean filter-by-view))
-              :onChange (fn [e] (let [val (-> e .-target .-checked)]
-                                  (om/update! controls [:filter-by-view] val)))}]]
-
      [:div.table-responsive
       [:table.table
        [:thead
@@ -127,11 +122,11 @@
       sort-spec :sort-spec
       from :from
       size :size
-      filter-by-view :filter-by-view
       columns :columns
       :as controls} :controls
      :as table-state} :table-state
-    filter-spec :filter
+     {filter-by-view :filter-by-view
+      filter-spec :compiled} :filter-spec
     bounds :bounds
     :as props}
    owner]
@@ -156,10 +151,10 @@
                      next-sort-spec :sort-spec
                      next-from :from
                      next-size :size
-                     next-filter-by-view :filter-by-view
-                     :as next-controls} :controls
+                          :as next-controls} :controls
                     :as next-table-state} :table-state
-                    next-filter-spec :filter
+                    {next-filter-by-view :filter-by-view
+                     next-filter-spec :compiled} :filter-spec
                     next-bounds :bounds
                    :as next-props}
                   {table-data-resource :table-data-resource
@@ -168,9 +163,8 @@
       (when (or (not next-table-data)
                 (not= next-controls controls)
                 (not= next-filter-spec filter-spec)
-                (and next-filter-by-view
-                     (or (not filter-by-view)
-                         (not= next-bounds bounds))))
+                (not= next-filter-by-view filter-by-view)
+                (and next-filter-by-view (not= next-bounds bounds)))
 
         (request-table-data table-data-resource
                             next-index

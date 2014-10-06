@@ -11,7 +11,9 @@
             [clustermap.ordered-resource :as ordered-resource]))
 
 (defn render
-  [cursor owner state]
+  [{bounds :bounds
+    filter-spec :filter-spec}
+   owner state]
   (html
    [:div.filter-component
 
@@ -19,13 +21,17 @@
      [:div.tbl-row
       [:div.tbl-cell
        [:h3 "Filter"]]]
-
+     [:div.tbl-row
+      [:div.tbl-cell "filter by view"]
+      [:div.tbl-cell [:input {:type "checkbox" :name "filter-by-view" :value "true"
+                              :onChange (fn [e] (let [val (-> e .-target .-checked)]
+                                                  (om/update! filter-spec [:filter-by-view] val)))}]]]
      [:div.tbl-row
       [:div.tbl-cell "age"]
       [:div.tbl-cell [:select {:onChange (fn [e]
                                            (let [val (-> e .-target .-value)]
                                              (.log js/console val)
-                                             (om/update! cursor [:components :age]
+                                             (om/update! filter-spec [:components :age]
                                                          (condp = val
                                                            "new" {:range {"!formation_date" {:gte "2009-01-01"}}}
                                                            "old" {:range {"!formation_date" {:lt "2009-01-01"}}}
@@ -39,7 +45,7 @@
       [:div.tbl-cell [:select {:onChange (fn [e]
                                            (let [val (-> e .-target .-value)]
                                              (.log js/console val)
-                                             (om/update! cursor [:components :group]
+                                             (om/update! filter-spec [:components :group]
                                                          (condp = val
                                                            "group" {:term {"!is_group" true}}
                                                            "notgroup" {:term {"!is_group" false}}
@@ -53,7 +59,7 @@
       [:div.tbl-cell [:select {:onChange (fn [e]
                                            (let [val (-> e .-target .-value)]
                                              (.log js/console val)
-                                             (om/update! cursor [:components :turnover]
+                                             (om/update! filter-spec [:components :turnover]
                                                          (condp = val
                                                            "low" {:range {"!latest_turnover" {:lt 1000000}}}
                                                            "high" {:range {"!latest_turnover" {:gte 1000000}}}
@@ -69,7 +75,7 @@
                  :onChange (fn [e]
                              (let [val (-> e .-target .-value)]
                                (.log js/console (-> e .-target .-value))
-                               (om/update! cursor [:components :sic]
+                               (om/update! filter-spec [:components :sic]
                                            (condp = val
                                              "A" {:range {"!sic07" {:gte "01110" :lte "03220"}}}
                                              "B" {:range {"!sic07" {:gte "05101" :lte "09900"}}}
@@ -121,27 +127,35 @@
 
 
 (defn filter-component
-  [{components :components
-    compiled :compiled
-    :as cursor}
+  [{{components :components
+     filter-by-view :filter-by-view
+     compiled :compiled
+     :as filter-spec} :filter-spec
+    bounds :bounds
+    :as props}
    owner]
 
   (reify
 
     om/IRenderState
     (render-state [_ state]
-      (render cursor owner state))
+      (render props owner state))
 
     om/IWillUpdate
     (will-update [_
-                  {next-components :components
-                   next-compiled :compiled}
+                  {{next-components :components
+                    next-filter-by-view :filter-by-view
+                    next-compiled :compiled} :filter-spec
+                    next-bounds :bounds}
                   next-state]
-      (when (not= next-components components)
-        (om/update! cursor [:compiled] (->> next-components
-                                            vals
-                                            (map om/-value)
-                                            (filter identity)
-                                            (into [])))
+      (when (or (not= next-components components)
+                (not= next-filter-by-view filter-by-view)
+                (and next-filter-by-view (not= next-bounds bounds)))
+
+        (om/update! filter-spec [:compiled] (->> next-components
+                                                 vals
+                                                 (map om/-value)
+                                                 (filter identity)
+                                                 (into [])))
         ))
     ))

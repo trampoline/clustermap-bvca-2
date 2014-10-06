@@ -79,6 +79,7 @@
 (defn- render-table
   [{table-data :table-data
     {columns :columns
+     filter-by-view :filter-by-view
      :as controls} :controls
     :as props}
    owner
@@ -86,6 +87,11 @@
   (html
    [:div.full-report-list
     (om/build paginate {:controls controls :table-data table-data})
+    [:label "Filter by view"
+     [:input {:type "checkbox" :name "filter-by-view" :value (str (boolean filter-by-view))
+              :onChange (fn [e] (let [val (-> e .-target .-checked)]
+                                  (om/update! controls [:filter-by-view] val)))}]]
+
      [:div.table-responsive
       [:table.table
        [:thead
@@ -170,7 +176,7 @@
                             next-index
                             next-index-type
                             next-filter-spec
-                            next-bounds
+                            (when next-filter-by-view next-bounds)
                             next-sort-spec
                             next-from
                             next-size))

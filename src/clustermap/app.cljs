@@ -91,30 +91,9 @@
                                         :interval "year"}
                              :data nil}
 
-
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-         :uk-constituencies nil
-         :uk-constituencies-rtree nil
-         :zoom nil
          :view :map
 
-         :all-investment-stats nil
-         :all-portfolio-company-site-stats nil
 
-         :search-results {}
-
-         :selector nil
-         :selection-investments-table-view nil
-         :selection-investment-aggs-table-view nil
-
-         :selection nil
-         :selection-investment-stats nil
-         :selection-investment-account-timelines nil
-         :selection-investment-aggs nil
-         :selection-investments nil
-         :selection-portfolio-company-locations nil
          }))
 
 (defn new-state

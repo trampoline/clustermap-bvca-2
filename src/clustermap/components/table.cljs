@@ -68,12 +68,12 @@
    (html
     (let [row
           (into [:tr]
-                (apply concat
-                       (for [col columns]
-                         (for [[col-key col-name] col]
-                           (do
-                             ;; (.log js/console (clj->js ["KEYS" col-key (type col-key) col-name (type col-name) (get record col-key)]))
-                             [:td (get record col-key)])))))
+                (for [col columns]
+                  (let [[col-key col-name formatter] col
+                        formatter (or formatter identity)]
+                    ;; (.log js/console (clj->js [col-key col-name]))
+                    ;; (.log js/console (clj->js ["KEYS" col-key (type col-key) col-name (type col-name) (get record col-key)]))
+                    [:td (formatter (get record col-key))])))
           ;; _ (.log js/console (clj->js ["ROW" columns record row]))
           ]
       row))))
@@ -86,6 +86,7 @@
     :as props}
    owner
    opts]
+  (.log js/console (clj->js ["COLUMNS" columns]))
   (html
    [:div.full-report-list
     (om/build paginate {:controls controls :table-data table-data})
@@ -93,10 +94,10 @@
       [:table.table
        [:thead
         (into [:tr]
-              (apply concat
-                     (for [col columns]
-                       (for [[col-key col-name] col]
-                         [:th (order-col controls table-data col-key col-name)]))))]
+              (for [col columns]
+                       (let [[col-key col-name] col]
+                         ;; (.log js/console (clj->js [col-key col-name]))
+                         [:th (order-col controls table-data col-key col-name)])))]
        [:tbody
         (om/build-all render-table-row (:data table-data) {:key :key :fn (fn [r] {:columns columns
                                                                                   :record r

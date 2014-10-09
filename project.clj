@@ -14,6 +14,7 @@
                  [sablono "0.2.22"]
                  [hiccups "0.3.0"]
                  [secretary "1.2.0"]
+                 [com.andrewmcveigh/cljs-time "0.2.1"]
                  ]
 
 ;;  :exclusions [org.clojure/google-closure-library

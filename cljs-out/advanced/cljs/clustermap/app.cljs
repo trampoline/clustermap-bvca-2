@@ -12,6 +12,9 @@
    [clustermap.routes :as routes]
    [clustermap.nav :as nav]
    [clustermap.ganalytics :as ga]
+   [clustermap.formats.money :as money]
+   [clustermap.formats.time :as time]
+   [clustermap.formats.number :as num]
    [clustermap.components.mount :as mount]
    [clustermap.components.map :as map]
    [clustermap.components.filter :as filter]
@@ -75,13 +78,15 @@
          :table  {:type :table
                   :controls {:index "companies"
                              :index-type "company"
-                             :sort-spec nil
+                             :sort-spec {:!latest_turnover {:order "desc"}}
                              :from 0
                              :size 50
-                             :columns [{:!name "Name"} {:!postcode "Postcode"} {:!formation_date "Formation date"}
-                                       {:!latest_accounts_date "Filing date"}
-                                       {:!latest_employee_count "Employees"}
-                                       {:!latest_turnover "Turnover"}]}
+                             :columns [[:!name "Name"]
+                                       [:!postcode "Postcode"]
+                                       [:!formation_date "Formation date" #(time/format-date %)]
+                                       [:!latest_accounts_date "Filing date" #(time/format-date %)]
+                                       [:!latest_employee_count "Employees" #(num/readable % :dec 0)]
+                                       [:!latest_turnover "Turnover" #(money/readable % :sf 3 :curr "")]]}
                   :table-data nil}
 
          :turnover-timeline {:type :timeline

@@ -34,7 +34,7 @@
                    :labels {:rotation 270}}
            :yAxis [{:title {:text y0-title}
                     :min 0
-                    :labels {:formatter (fn [] (this-as this (money/readable (.-value this) :curr "")))}
+                    :labels {:formatter (fn [] (this-as this (money/readable (.-value this) :sf 3 :curr "")))}
                     ;; :type "logarithmic"
                     }
                    ;; {:title {:text y1-title} :opposite true}
@@ -83,7 +83,8 @@
      :as filter-spec} :filter-spec
      bounds :bounds
     :as props}
-   owner {:keys [id] :as opts}]
+   owner
+   {:keys [id] :as opts}]
 
   (render
    [_]
@@ -93,7 +94,9 @@
    [_]
    (let [tdr (ordered-resource/make-discard-stale-resource "timeline-data-resource")]
      (om/set-state! owner :timeline-data-resource tdr)
-     (ordered-resource/retrieve-responses tdr (fn [{data :data :as response}] (om/update! timeline-chart [:timeline-data] data))))
+     (ordered-resource/retrieve-responses tdr (fn [{data :data :as response}]
+                                                (.log js/console (clj->js ["TIMELINE RESPONSE: " response]))
+                                                (om/update! timeline-chart [:timeline-data] data))))
 
    (let [node (om/get-node owner)]
      (-> js/document
@@ -103,9 +106,9 @@
                                          ;; they disappear otherwise
                                          (let [chart (-> (om/get-node owner "chart") $)]
                                            (when (.is chart ":visible")
-                                             (-> chart
-                                                 .highcharts
-                                                 .reflow))))))))
+                                             (some-> chart
+                                                     .highcharts
+                                                     .reflow))))))))
   (will-update
    [_
     {{{next-index :index
@@ -120,7 +123,7 @@
         next-compiled-filter :compiled
         :as next-filter-spec} :filter-spec
         next-bounds :bounds
-        :as props}
+        :as next-props}
     {next-timeline-data-resource :timeline-data-resource}]
 
    (.log js/console (clj->js ["FILTER_SPEC: " next-filter-spec]))
@@ -139,7 +142,20 @@
                             next-measure-variables)))
 
   (did-update
-   [_ _ _]
-   (let [root-node (om/get-node owner)]
-     (create-chart timeline-data (om/get-node owner "chart") opts)))
-  )
+   [_
+    {{{prev-index :index
+       prev-index-type :index-type
+       prev-time-variable :time-variable
+       prev-measure-variables :measure-variables
+       prev-interval :interval
+       :as prev-controls} :controls
+       prev-timeline-data :timeline-data
+       :as prev-timeline-chart} :timeline-chart
+       {prev-filter-by-view :filter-by-view
+        prev-compiled-filter :compiled
+        :as prev-filter-spec} :filter-spec
+        prev-bounds :bounds
+        :as prev-props}
+    _]
+   (when (not= prev-timeline-data timeline-data)
+     (create-chart timeline-data (om/get-node owner "chart") opts))))

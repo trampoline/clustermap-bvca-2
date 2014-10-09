@@ -209,53 +209,63 @@ html(lang='en')
                   .div-fixed
 
                     #full-report-component
-                      .full-report-overview
-                        h4 - Overview
+                      // .full-report-overview
+                      //   h4 - Overview
 
-                        .table-responsive
-                          table.table-stats
-                            thead
-                              tr
-                                th &nbsp;
-                                th Investor-backed companies
-                                th Investors
-                                th Constituencies
-                                th Revenue
-                                th Rev. change
-                                th Employees
-                            tbody
-                              tr
-                                th
-                                  i.icon-info(data-toggle='tooltip', data-container='body', title='Total')
-                                  | Total
-                                td
-                                  span.totals -
-                                td
-                                  span.totals -
-                                td
-                                  span.totals -
-                                td
-                                  span.totals -
-                                td
-                                  span.totals -
-                                td
-                                  span.totals -
-                              tr
-                                th
-                                  i.icon-info(data-toggle='tooltip', data-container='body', title='Average')
-                                  | Average
-                                td
-                                  span.averages -
-                                td
-                                  span.averages -
-                                td
-                                  span.averages -
-                                td
-                                  span.averages -
-                                td
-                                  span.averages -
-                                td
-                                  span.averages -
+                      //   .table-responsive
+                      //     table.table-stats
+                      //       thead
+                      //         tr
+                      //           th &nbsp;
+                      //           th Investor-backed companies
+                      //           th Investors
+                      //           th Constituencies
+                      //           th Revenue
+                      //           th Rev. change
+                      //           th Employees
+                      //       tbody
+                      //         tr
+                      //           th
+                      //             i.icon-info(data-toggle='tooltip', data-container='body', title='Total')
+                      //             | Total
+                      //           td
+                      //             span.totals -
+                      //           td
+                      //             span.totals -
+                      //           td
+                      //             span.totals -
+                      //           td
+                      //             span.totals -
+                      //           td
+                      //             span.totals -
+                      //           td
+                      //             span.totals -
+                      //         tr
+                      //           th
+                      //             i.icon-info(data-toggle='tooltip', data-container='body', title='Average')
+                      //             | Average
+                      //           td
+                      //             span.averages -
+                      //           td
+                      //             span.averages -
+                      //           td
+                      //             span.averages -
+                      //           td
+                      //             span.averages -
+                      //           td
+                      //             span.averages -
+                      //           td
+                      //             span.averages -
+                      #full-report-charts
+                        .grid
+                          .tbl
+                            .tbl-cell.charts
+                              .tbl
+                                .tbl-row
+                                  .tbl-cell
+                                    .box.box-first
+                                      header Turnover
+                                      #turnover-timeline
 
                       #full-report-table.full-report-portfolio-company-sites
                         .table-responsive
@@ -363,7 +373,7 @@ html(lang='en')
             .inner
               .trampoline
                 p
-                  | Produced by the&nbsp;
+                  | Produced by&nbsp;
                   a(href='http://www.grantthornton.com/') Grant Thornton
                   | &nbsp;and&nbsp;
                   a(href='http://www.trampolinesystems.com/') Trampoline Systems

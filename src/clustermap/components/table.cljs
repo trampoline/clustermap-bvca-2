@@ -9,23 +9,25 @@
 
 (defn order-col
   "generate a table-ordering link for table-headers"
-  [comm collection view-update-key title col]
-  (let [current-order (:order collection)
-        current-order (if (sequential? current-order) (first current-order) current-order)
-        current-order-key (-> current-order keys first)
-        current-order-dir (-> current-order vals first)]
+  [controls
+   {current-sort-spec :sort-spec :as table-data}
+   col-key
+   col-name]
+  (let [current-sort-spec (if (sequential? current-sort-spec) (first current-sort-spec) current-sort-spec)
+        current-sort-key (some-> current-sort-spec keys first)
+        current-sort-dir (some-> current-sort-spec current-sort-key :order)]
     (html
      [:a
       {:href "#"
        :onClick (fn [e]
                   (.preventDefault e)
-                  (condp = current-order-dir
-                    "asc" (put! comm [view-update-key {:order {col :desc}}])
-                    "desc" (put! comm [view-update-key {:order {col :asc}}])
-                    (put! comm [view-update-key {:order {col :desc}}])))}
-      title
-      (if (= current-order-key col)
-        (condp = current-order-dir
+                  (condp = current-sort-dir
+                    "asc" (om/update! controls :sort-spec {col-key {:order :desc}})
+                    "desc" (om/update! controls :sort-spec {col-key {:order :asc}})
+                    (om/update! controls :sort-spec {col-key {:order :desc}})))}
+      col-name
+      (if (= current-sort-key col-key)
+        (condp = current-sort-dir
           "asc" [:i.icon-asc]
           [:i.icon-desc]))])))
 
@@ -94,7 +96,7 @@
               (apply concat
                      (for [col columns]
                        (for [[col-key col-name] col]
-                         [:th col-name]))))]
+                         [:th (order-col controls table-data col-key col-name)]))))]
        [:tbody
         (om/build-all render-table-row (:data table-data) {:key :key :fn (fn [r] {:columns columns
                                                                                   :record r
@@ -162,6 +164,7 @@
 
       (when (or (not next-table-data)
                 (not= next-controls controls)
+                (not= next-sort-spec sort-spec)
                 (not= next-filter-spec filter-spec)
                 (not= next-filter-by-view filter-by-view)
                 (and next-filter-by-view (not= next-bounds bounds)))

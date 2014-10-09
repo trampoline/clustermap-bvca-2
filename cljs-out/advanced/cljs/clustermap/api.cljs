@@ -145,13 +145,13 @@
 
 ;; tabular data
 (defn simple-table
-  [index type filter-spec bounds sort-spec offset limit & [type-ids]]
+  [index type filter-spec bounds sort-spec from size & [type-ids]]
   (POST (str "/api/" api-prefix "/simple-table/" index "/" type "?" (map-json-params type-ids))
       {:filter filter-spec
        :bounds bounds
        :sort sort-spec
-       :offset offset
-       :limit limit}))
+       :from from
+       :size size}))
 
 ;;; --------------------------
 

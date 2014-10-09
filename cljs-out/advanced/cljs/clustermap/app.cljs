@@ -43,8 +43,10 @@
                                                      :boundarylines {}}}
                          :boundarylines {}}
 
-         :filter {:components {}
-                  :compiled nil}
+         :filter-spec {:components {}
+                       :filter-by-view false
+                       :bounds nil
+                       :compiled nil}
 
          :map {:type :geoport
                :datasource "companies"
@@ -65,10 +67,21 @@
 
          :map-report {:controls {:summary-stats {:index "companies"
                                                  :index-type "company"
-                                                 :variables ["!latest_employee_count" "!latest_turnover"]
-                                                 :filter-by-view false}}
+                                                 :variables ["!latest_employee_count" "!latest_turnover"]}}
                       :summary-stats nil
                       }
+
+         :table  {:type :table
+                  :controls {:index "companies"
+                             :index-type "company"
+                             :sort-spec nil
+                             :from 0
+                             :size 50
+                             :columns [{:!name "Name"} {:!postcode "Postcode"} {:!formation_date "Formation date"}
+                                       {:!latest_accounts_date "Filing date"}
+                                       {:!latest_employee_count "Employees"}
+                                       {:!latest_turnover "Turnover"}]}
+                  :table-data nil}
 
          :turnover_timeline {:type :timeline
                              :datasource "company_accounts"
@@ -78,42 +91,9 @@
                                         :interval "year"}
                              :data nil}
 
-         :table  {:type :table
-                  :controls {:index "companies"
-                             :index-type "company"
-                             :sort-spec nil
-                             :offset 0
-                             :limit 50
-                             :filter-by-view false
-                             :columns [{:!name "Name"} {:!postcode "Postcode"} {:!formation_date "Formation date"}
-                                       {:!latest_accounts_date "Filing date"}
-                                       {:!latest_employee_count "Employees"}
-                                       {:!latest_turnover "Turnover"}]}
-                  :table-data nil}
-
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-         :uk-constituencies nil
-         :uk-constituencies-rtree nil
-         :zoom nil
          :view :map
 
-         :all-investment-stats nil
-         :all-portfolio-company-site-stats nil
 
-         :search-results {}
-
-         :selector nil
-         :selection-investments-table-view nil
-         :selection-investment-aggs-table-view nil
-
-         :selection nil
-         :selection-investment-stats nil
-         :selection-investment-account-timelines nil
-         :selection-investment-aggs nil
-         :selection-investments nil
-         :selection-portfolio-company-locations nil
          }))
 
 (defn new-state
@@ -348,14 +328,14 @@
                  :target "map-component"
                  :shared shared
                  :paths {:map-state [:map]
-                         :filter [:filter :compiled]})
+                         :filter [:filter-spec :compiled]})
 
     (mount/mount :map-report
                  map-report/map-report-component
                  state
                  :target "map-report-component"
                  :shared shared
-                 :paths {:filter [:filter :compiled]
+                 :paths {:filter-spec [:filter-spec]
                          :map-controls [:map :controls]
                          :map-report [:map-report]})
 
@@ -364,7 +344,8 @@
                  state
                  :target "search-component"
                  :shared shared
-                 :path [:filter])
+                 :paths {:filter-spec [:filter-spec]
+                         :bounds [:map :controls :bounds]})
 
     (mount/mount :var-select
                  (partial select-chooser/select-chooser-component "Variable" :variable [["!latest_employee_count" "Employee count"] ["!latest_turnover" "Turnover"]])
@@ -400,7 +381,7 @@
                  :target "full-report-table"
                  :shared shared
                  :paths {:table-state [:table]
-                         :filter [:filter :compiled]
+                         :filter-spec [:filter-spec]
                          :bounds [:map :controls :bounds]})
 
 

@@ -1923,7 +1923,7 @@ cljs.core._invoke = function() {
       throw cljs.core.missing_protocol.call(null, "IFn.-invoke", a);
     }
     return v.call(null, a, b, c, d, e, f, g, h, k, l, q, r, m, n, p, s, t, u);
-  }, y = function(a, b, c, d, e, f, g, h, k, l, q, r, m, n, p, s, t, u, v) {
+  }, x = function(a, b, c, d, e, f, g, h, k, l, q, r, m, n, p, s, t, u, v) {
     if (a ? a.cljs$core$IFn$_invoke$arity$19 : a) {
       return a.cljs$core$IFn$_invoke$arity$19(a, b, c, d, e, f, g, h, k, l, q, r, m, n, p, s, t, u, v);
     }
@@ -1937,66 +1937,66 @@ cljs.core._invoke = function() {
     if (a ? a.cljs$core$IFn$_invoke$arity$20 : a) {
       return a.cljs$core$IFn$_invoke$arity$20(a, b, c, d, e, f, g, h, k, l, q, r, m, n, p, s, t, u, v, w);
     }
-    var E;
-    E = cljs.core._invoke[goog.typeOf(null == a ? null : a)];
-    if (!E && (E = cljs.core._invoke._, !E)) {
-      throw cljs.core.missing_protocol.call(null, "IFn.-invoke", a);
-    }
-    return E.call(null, a, b, c, d, e, f, g, h, k, l, q, r, m, n, p, s, t, u, v, w);
-  }, E = function(a, b, c, d, e, f, g, h, k, l, q, r, m, n, p, s, t, u, v, w, E) {
-    if (a ? a.cljs$core$IFn$_invoke$arity$21 : a) {
-      return a.cljs$core$IFn$_invoke$arity$21(a, b, c, d, e, f, g, h, k, l, q, r, m, n, p, s, t, u, v, w, E);
-    }
     var y;
     y = cljs.core._invoke[goog.typeOf(null == a ? null : a)];
     if (!y && (y = cljs.core._invoke._, !y)) {
       throw cljs.core.missing_protocol.call(null, "IFn.-invoke", a);
     }
-    return y.call(null, a, b, c, d, e, f, g, h, k, l, q, r, m, n, p, s, t, u, v, w, E);
-  }, a = function(a, F, z, A, G, N, I, J, K, P, R, O, Q, T, B, x, C, D, M, H, W) {
+    return y.call(null, a, b, c, d, e, f, g, h, k, l, q, r, m, n, p, s, t, u, v, w);
+  }, y = function(a, b, c, d, e, f, g, h, k, l, q, r, m, n, p, s, t, u, v, w, y) {
+    if (a ? a.cljs$core$IFn$_invoke$arity$21 : a) {
+      return a.cljs$core$IFn$_invoke$arity$21(a, b, c, d, e, f, g, h, k, l, q, r, m, n, p, s, t, u, v, w, y);
+    }
+    var x;
+    x = cljs.core._invoke[goog.typeOf(null == a ? null : a)];
+    if (!x && (x = cljs.core._invoke._, !x)) {
+      throw cljs.core.missing_protocol.call(null, "IFn.-invoke", a);
+    }
+    return x.call(null, a, b, c, d, e, f, g, h, k, l, q, r, m, n, p, s, t, u, v, w, y);
+  }, a = function(a, J, z, C, F, N, H, I, G, Q, O, T, V, W, E, A, D, B, P, M, U) {
     switch(arguments.length) {
       case 1:
         return b.call(this, a);
       case 2:
-        return c.call(this, a, F);
+        return c.call(this, a, J);
       case 3:
-        return d.call(this, a, F, z);
+        return d.call(this, a, J, z);
       case 4:
-        return e.call(this, a, F, z, A);
+        return e.call(this, a, J, z, C);
       case 5:
-        return f.call(this, a, F, z, A, G);
+        return f.call(this, a, J, z, C, F);
       case 6:
-        return g.call(this, a, F, z, A, G, N);
+        return g.call(this, a, J, z, C, F, N);
       case 7:
-        return h.call(this, a, F, z, A, G, N, I);
+        return h.call(this, a, J, z, C, F, N, H);
       case 8:
-        return k.call(this, a, F, z, A, G, N, I, J);
+        return k.call(this, a, J, z, C, F, N, H, I);
       case 9:
-        return l.call(this, a, F, z, A, G, N, I, J, K);
+        return l.call(this, a, J, z, C, F, N, H, I, G);
       case 10:
-        return m.call(this, a, F, z, A, G, N, I, J, K, P);
+        return m.call(this, a, J, z, C, F, N, H, I, G, Q);
       case 11:
-        return n.call(this, a, F, z, A, G, N, I, J, K, P, R);
+        return n.call(this, a, J, z, C, F, N, H, I, G, Q, O);
       case 12:
-        return p.call(this, a, F, z, A, G, N, I, J, K, P, R, O);
+        return p.call(this, a, J, z, C, F, N, H, I, G, Q, O, T);
       case 13:
-        return q.call(this, a, F, z, A, G, N, I, J, K, P, R, O, Q);
+        return q.call(this, a, J, z, C, F, N, H, I, G, Q, O, T, V);
       case 14:
-        return r.call(this, a, F, z, A, G, N, I, J, K, P, R, O, Q, T);
+        return r.call(this, a, J, z, C, F, N, H, I, G, Q, O, T, V, W);
       case 15:
-        return s.call(this, a, F, z, A, G, N, I, J, K, P, R, O, Q, T, B);
+        return s.call(this, a, J, z, C, F, N, H, I, G, Q, O, T, V, W, E);
       case 16:
-        return t.call(this, a, F, z, A, G, N, I, J, K, P, R, O, Q, T, B, x);
+        return t.call(this, a, J, z, C, F, N, H, I, G, Q, O, T, V, W, E, A);
       case 17:
-        return u.call(this, a, F, z, A, G, N, I, J, K, P, R, O, Q, T, B, x, C);
+        return u.call(this, a, J, z, C, F, N, H, I, G, Q, O, T, V, W, E, A, D);
       case 18:
-        return v.call(this, a, F, z, A, G, N, I, J, K, P, R, O, Q, T, B, x, C, D);
+        return v.call(this, a, J, z, C, F, N, H, I, G, Q, O, T, V, W, E, A, D, B);
       case 19:
-        return y.call(this, a, F, z, A, G, N, I, J, K, P, R, O, Q, T, B, x, C, D, M);
+        return x.call(this, a, J, z, C, F, N, H, I, G, Q, O, T, V, W, E, A, D, B, P);
       case 20:
-        return w.call(this, a, F, z, A, G, N, I, J, K, P, R, O, Q, T, B, x, C, D, M, H);
+        return w.call(this, a, J, z, C, F, N, H, I, G, Q, O, T, V, W, E, A, D, B, P, M);
       case 21:
-        return E.call(this, a, F, z, A, G, N, I, J, K, P, R, O, Q, T, B, x, C, D, M, H, W);
+        return y.call(this, a, J, z, C, F, N, H, I, G, Q, O, T, V, W, E, A, D, B, P, M, U);
     }
     throw Error("Invalid arity: " + arguments.length);
   };
@@ -2018,9 +2018,9 @@ cljs.core._invoke = function() {
   a.cljs$core$IFn$_invoke$arity$16 = t;
   a.cljs$core$IFn$_invoke$arity$17 = u;
   a.cljs$core$IFn$_invoke$arity$18 = v;
-  a.cljs$core$IFn$_invoke$arity$19 = y;
+  a.cljs$core$IFn$_invoke$arity$19 = x;
   a.cljs$core$IFn$_invoke$arity$20 = w;
-  a.cljs$core$IFn$_invoke$arity$21 = E;
+  a.cljs$core$IFn$_invoke$arity$21 = y;
   return a;
 }();
 cljs.core.ICloneable = function() {
@@ -3946,60 +3946,60 @@ cljs.core.MetaFn.prototype.call = function() {
     return this.afn.call(null, b, c, d, e, f, g, h, k, l, q, r, m, n, p, s, t);
   }, v = function(a, b, c, d, e, f, g, h, k, l, q, r, m, n, p, s, t, u) {
     return this.afn.call(null, b, c, d, e, f, g, h, k, l, q, r, m, n, p, s, t, u);
-  }, y = function(a, b, c, d, e, f, g, h, k, l, q, r, m, n, p, s, t, u, V) {
-    return this.afn.call(null, b, c, d, e, f, g, h, k, l, q, r, m, n, p, s, t, u, V);
-  }, w = function(a, b, c, d, e, f, g, h, k, l, q, r, m, n, p, s, t, u, V, v) {
-    return this.afn.call(null, b, c, d, e, f, g, h, k, l, q, r, m, n, p, s, t, u, V, v);
-  }, E = function(a, b, c, d, e, f, g, h, k, l, q, r, m, n, p, s, t, u, V, v, w) {
-    return this.afn.call(null, b, c, d, e, f, g, h, k, l, q, r, m, n, p, s, t, u, V, v, w);
-  }, V = function(a, b, c, d, e, f, g, h, k, l, q, r, m, n, p, s, t, u, V, v, w, E) {
-    return cljs.core.apply.call(null, this.afn, b, c, d, e, f, g, h, k, l, q, r, m, n, p, s, t, u, V, v, w, E);
-  }, a = function(a, z, A, G, N, I, J, K, P, R, O, Q, T, B, x, C, D, M, H, W, U, S) {
+  }, x = function(a, b, c, d, e, f, g, h, k, l, q, r, m, n, p, s, t, u, K) {
+    return this.afn.call(null, b, c, d, e, f, g, h, k, l, q, r, m, n, p, s, t, u, K);
+  }, w = function(a, b, c, d, e, f, g, h, k, l, q, r, m, n, p, s, t, u, K, v) {
+    return this.afn.call(null, b, c, d, e, f, g, h, k, l, q, r, m, n, p, s, t, u, K, v);
+  }, y = function(a, b, c, d, e, f, g, h, k, l, q, r, m, n, p, s, t, u, K, v, w) {
+    return this.afn.call(null, b, c, d, e, f, g, h, k, l, q, r, m, n, p, s, t, u, K, v, w);
+  }, K = function(a, b, c, d, e, f, g, h, k, l, q, r, m, n, p, s, t, u, K, v, w, y) {
+    return cljs.core.apply.call(null, this.afn, b, c, d, e, f, g, h, k, l, q, r, m, n, p, s, t, u, K, v, w, y);
+  }, a = function(a, z, C, F, N, H, I, G, Q, O, T, V, W, E, A, D, B, P, M, U, S, R) {
     switch(arguments.length) {
       case 1:
         return b.call(this, a);
       case 2:
         return c.call(this, a, z);
       case 3:
-        return d.call(this, a, z, A);
+        return d.call(this, a, z, C);
       case 4:
-        return e.call(this, a, z, A, G);
+        return e.call(this, a, z, C, F);
       case 5:
-        return f.call(this, a, z, A, G, N);
+        return f.call(this, a, z, C, F, N);
       case 6:
-        return g.call(this, a, z, A, G, N, I);
+        return g.call(this, a, z, C, F, N, H);
       case 7:
-        return h.call(this, a, z, A, G, N, I, J);
+        return h.call(this, a, z, C, F, N, H, I);
       case 8:
-        return k.call(this, a, z, A, G, N, I, J, K);
+        return k.call(this, a, z, C, F, N, H, I, G);
       case 9:
-        return l.call(this, a, z, A, G, N, I, J, K, P);
+        return l.call(this, a, z, C, F, N, H, I, G, Q);
       case 10:
-        return m.call(this, a, z, A, G, N, I, J, K, P, R);
+        return m.call(this, a, z, C, F, N, H, I, G, Q, O);
       case 11:
-        return n.call(this, a, z, A, G, N, I, J, K, P, R, O);
+        return n.call(this, a, z, C, F, N, H, I, G, Q, O, T);
       case 12:
-        return p.call(this, a, z, A, G, N, I, J, K, P, R, O, Q);
+        return p.call(this, a, z, C, F, N, H, I, G, Q, O, T, V);
       case 13:
-        return q.call(this, a, z, A, G, N, I, J, K, P, R, O, Q, T);
+        return q.call(this, a, z, C, F, N, H, I, G, Q, O, T, V, W);
       case 14:
-        return r.call(this, a, z, A, G, N, I, J, K, P, R, O, Q, T, B);
+        return r.call(this, a, z, C, F, N, H, I, G, Q, O, T, V, W, E);
       case 15:
-        return s.call(this, a, z, A, G, N, I, J, K, P, R, O, Q, T, B, x);
+        return s.call(this, a, z, C, F, N, H, I, G, Q, O, T, V, W, E, A);
       case 16:
-        return t.call(this, a, z, A, G, N, I, J, K, P, R, O, Q, T, B, x, C);
+        return t.call(this, a, z, C, F, N, H, I, G, Q, O, T, V, W, E, A, D);
       case 17:
-        return u.call(this, a, z, A, G, N, I, J, K, P, R, O, Q, T, B, x, C, D);
+        return u.call(this, a, z, C, F, N, H, I, G, Q, O, T, V, W, E, A, D, B);
       case 18:
-        return v.call(this, a, z, A, G, N, I, J, K, P, R, O, Q, T, B, x, C, D, M);
+        return v.call(this, a, z, C, F, N, H, I, G, Q, O, T, V, W, E, A, D, B, P);
       case 19:
-        return y.call(this, a, z, A, G, N, I, J, K, P, R, O, Q, T, B, x, C, D, M, H);
+        return x.call(this, a, z, C, F, N, H, I, G, Q, O, T, V, W, E, A, D, B, P, M);
       case 20:
-        return w.call(this, a, z, A, G, N, I, J, K, P, R, O, Q, T, B, x, C, D, M, H, W);
+        return w.call(this, a, z, C, F, N, H, I, G, Q, O, T, V, W, E, A, D, B, P, M, U);
       case 21:
-        return E.call(this, a, z, A, G, N, I, J, K, P, R, O, Q, T, B, x, C, D, M, H, W, U);
+        return y.call(this, a, z, C, F, N, H, I, G, Q, O, T, V, W, E, A, D, B, P, M, U, S);
       case 22:
-        return V.call(this, a, z, A, G, N, I, J, K, P, R, O, Q, T, B, x, C, D, M, H, W, U, S);
+        return K.call(this, a, z, C, F, N, H, I, G, Q, O, T, V, W, E, A, D, B, P, M, U, S, R);
     }
     throw Error("Invalid arity: " + arguments.length);
   };
@@ -4021,10 +4021,10 @@ cljs.core.MetaFn.prototype.call = function() {
   a.cljs$core$IFn$_invoke$arity$16 = t;
   a.cljs$core$IFn$_invoke$arity$17 = u;
   a.cljs$core$IFn$_invoke$arity$18 = v;
-  a.cljs$core$IFn$_invoke$arity$19 = y;
+  a.cljs$core$IFn$_invoke$arity$19 = x;
   a.cljs$core$IFn$_invoke$arity$20 = w;
-  a.cljs$core$IFn$_invoke$arity$21 = E;
-  a.cljs$core$IFn$_invoke$arity$22 = V;
+  a.cljs$core$IFn$_invoke$arity$21 = y;
+  a.cljs$core$IFn$_invoke$arity$22 = K;
   return a;
 }();
 cljs.core.MetaFn.prototype.apply = function(a, b) {
@@ -4090,11 +4090,11 @@ cljs.core.MetaFn.prototype.cljs$core$IFn$_invoke$arity$18 = function(a, b, c, d,
 cljs.core.MetaFn.prototype.cljs$core$IFn$_invoke$arity$19 = function(a, b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v) {
   return this.afn.call(null, a, b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v);
 };
-cljs.core.MetaFn.prototype.cljs$core$IFn$_invoke$arity$20 = function(a, b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, y) {
-  return this.afn.call(null, a, b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, y);
+cljs.core.MetaFn.prototype.cljs$core$IFn$_invoke$arity$20 = function(a, b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, x) {
+  return this.afn.call(null, a, b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, x);
 };
-cljs.core.MetaFn.prototype.cljs$core$IFn$_invoke$arity$21 = function(a, b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, y, w) {
-  return cljs.core.apply.call(null, this.afn, a, b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, y, w);
+cljs.core.MetaFn.prototype.cljs$core$IFn$_invoke$arity$21 = function(a, b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, x, w) {
+  return cljs.core.apply.call(null, this.afn, a, b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, x, w);
 };
 cljs.core.MetaFn.prototype.cljs$core$Fn$ = !0;
 cljs.core.MetaFn.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(a, b) {
@@ -6862,27 +6862,27 @@ cljs.core.apply_to = function(a, b, c) {
   if (15 === b) {
     return a.cljs$core$IFn$_invoke$arity$15 ? a.cljs$core$IFn$_invoke$arity$15(c, d, e, f, g, h, k, l, m, n, p, q, r, s, t) : a.call(null, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t);
   }
-  var u = cljs.core._first.call(null, v), y = cljs.core._rest.call(null, v);
+  var u = cljs.core._first.call(null, v), x = cljs.core._rest.call(null, v);
   if (16 === b) {
     return a.cljs$core$IFn$_invoke$arity$16 ? a.cljs$core$IFn$_invoke$arity$16(c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u) : a.call(null, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u);
   }
-  var v = cljs.core._first.call(null, y), w = cljs.core._rest.call(null, y);
+  var v = cljs.core._first.call(null, x), w = cljs.core._rest.call(null, x);
   if (17 === b) {
     return a.cljs$core$IFn$_invoke$arity$17 ? a.cljs$core$IFn$_invoke$arity$17(c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v) : a.call(null, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v);
   }
-  var y = cljs.core._first.call(null, w), E = cljs.core._rest.call(null, w);
+  var x = cljs.core._first.call(null, w), y = cljs.core._rest.call(null, w);
   if (18 === b) {
-    return a.cljs$core$IFn$_invoke$arity$18 ? a.cljs$core$IFn$_invoke$arity$18(c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, y) : a.call(null, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, y);
+    return a.cljs$core$IFn$_invoke$arity$18 ? a.cljs$core$IFn$_invoke$arity$18(c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, x) : a.call(null, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, x);
   }
-  w = cljs.core._first.call(null, E);
-  E = cljs.core._rest.call(null, E);
+  w = cljs.core._first.call(null, y);
+  y = cljs.core._rest.call(null, y);
   if (19 === b) {
-    return a.cljs$core$IFn$_invoke$arity$19 ? a.cljs$core$IFn$_invoke$arity$19(c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, y, w) : a.call(null, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, y, w);
+    return a.cljs$core$IFn$_invoke$arity$19 ? a.cljs$core$IFn$_invoke$arity$19(c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, x, w) : a.call(null, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, x, w);
   }
-  var V = cljs.core._first.call(null, E);
-  cljs.core._rest.call(null, E);
+  var K = cljs.core._first.call(null, y);
+  cljs.core._rest.call(null, y);
   if (20 === b) {
-    return a.cljs$core$IFn$_invoke$arity$20 ? a.cljs$core$IFn$_invoke$arity$20(c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, y, w, V) : a.call(null, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, y, w, V);
+    return a.cljs$core$IFn$_invoke$arity$20 ? a.cljs$core$IFn$_invoke$arity$20(c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, x, w, K) : a.call(null, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, x, w, K);
   }
   throw Error("Only up to 20 arguments supported on functions");
 };
@@ -7069,27 +7069,27 @@ cljs.core.not_empty = function(a) {
   return cljs.core.seq.call(null, a) ? a : null;
 };
 cljs.core.nil_iter = function nil_iter() {
-  "undefined" === typeof cljs.core.t28124 && (cljs.core.t28124 = function(b, c) {
+  "undefined" === typeof cljs.core.t28554 && (cljs.core.t28554 = function(b, c) {
     this.nil_iter = b;
-    this.meta28125 = c;
+    this.meta28555 = c;
     this.cljs$lang$protocol_mask$partition1$ = 0;
     this.cljs$lang$protocol_mask$partition0$ = 393216;
-  }, cljs.core.t28124.cljs$lang$type = !0, cljs.core.t28124.cljs$lang$ctorStr = "cljs.core/t28124", cljs.core.t28124.cljs$lang$ctorPrWriter = function(b, c, d) {
-    return cljs.core._write.call(null, c, "cljs.core/t28124");
-  }, cljs.core.t28124.prototype.hasNext = function() {
+  }, cljs.core.t28554.cljs$lang$type = !0, cljs.core.t28554.cljs$lang$ctorStr = "cljs.core/t28554", cljs.core.t28554.cljs$lang$ctorPrWriter = function(b, c, d) {
+    return cljs.core._write.call(null, c, "cljs.core/t28554");
+  }, cljs.core.t28554.prototype.hasNext = function() {
     return!1;
-  }, cljs.core.t28124.prototype.next = function() {
+  }, cljs.core.t28554.prototype.next = function() {
     return Error("No such element");
-  }, cljs.core.t28124.prototype.remove = function() {
+  }, cljs.core.t28554.prototype.remove = function() {
     return Error("Unsupported operation");
-  }, cljs.core.t28124.prototype.cljs$core$IMeta$_meta$arity$1 = function(b) {
-    return this.meta28125;
-  }, cljs.core.t28124.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(b, c) {
-    return new cljs.core.t28124(this.nil_iter, c);
-  }, cljs.core.__GT_t28124 = function(b, c) {
-    return new cljs.core.t28124(b, c);
+  }, cljs.core.t28554.prototype.cljs$core$IMeta$_meta$arity$1 = function(b) {
+    return this.meta28555;
+  }, cljs.core.t28554.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(b, c) {
+    return new cljs.core.t28554(this.nil_iter, c);
+  }, cljs.core.__GT_t28554 = function(b, c) {
+    return new cljs.core.t28554(b, c);
   });
-  return new cljs.core.t28124(nil_iter, null);
+  return new cljs.core.t28554(nil_iter, null);
 };
 cljs.core.StringIter = function(a, b) {
   this.s = a;
@@ -8450,11 +8450,11 @@ cljs.core.every_pred = function() {
           return cljs.core.truth_(l) && (l = b.call(null, d), cljs.core.truth_(l) && (l = c.call(null, d), cljs.core.truth_(l) && (l = a.call(null, e), cljs.core.truth_(l) && (l = b.call(null, e), cljs.core.truth_(l) && (l = c.call(null, e), cljs.core.truth_(l) && (l = a.call(null, k), cljs.core.truth_(l))))))) ? (l = b.call(null, k), cljs.core.truth_(l) ? c.call(null, k) : l) : l;
         }());
       }, p = function() {
-        var e = function(e, l, q, r) {
+        var e = function(e, l, q, m) {
           return cljs.core.boolean$.call(null, d.call(null, e, l, q) && cljs.core.every_QMARK_.call(null, function(d) {
             var e = a.call(null, d);
             return cljs.core.truth_(e) ? (e = b.call(null, d), cljs.core.truth_(e) ? c.call(null, d) : e) : e;
-          }, r));
+          }, m));
         }, l = function(a, b, c, d) {
           var f = null;
           3 < arguments.length && (f = cljs.core.array_seq(Array.prototype.slice.call(arguments, 3), 0));
@@ -15368,7 +15368,7 @@ cljs.core.js__GT_clj = function() {
           return function s(e) {
             return cljs.core.seq_QMARK_.call(null, e) ? cljs.core.doall.call(null, cljs.core.map.call(null, s, e)) : cljs.core.coll_QMARK_.call(null, e) ? cljs.core.into.call(null, cljs.core.empty.call(null, e), cljs.core.map.call(null, s, e)) : e instanceof Array ? cljs.core.vec.call(null, cljs.core.map.call(null, s, e)) : cljs.core.type.call(null, e) === Object ? cljs.core.into.call(null, cljs.core.PersistentArrayMap.EMPTY, function() {
               return function(a, b, c, d) {
-                return function V(f) {
+                return function K(f) {
                   return new cljs.core.LazySeq(null, function(a, b, c, d) {
                     return function() {
                       for (;;) {
@@ -15389,10 +15389,10 @@ cljs.core.js__GT_clj = function() {
                               }
                               b = void 0;
                             }
-                            return b ? cljs.core.chunk_cons.call(null, cljs.core.chunk.call(null, g), V.call(null, cljs.core.chunk_rest.call(null, a))) : cljs.core.chunk_cons.call(null, cljs.core.chunk.call(null, g), null);
+                            return b ? cljs.core.chunk_cons.call(null, cljs.core.chunk.call(null, g), K.call(null, cljs.core.chunk_rest.call(null, a))) : cljs.core.chunk_cons.call(null, cljs.core.chunk.call(null, g), null);
                           }
                           g = cljs.core.first.call(null, a);
-                          return cljs.core.cons.call(null, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [d.call(null, g), s.call(null, e[g])], null), V.call(null, cljs.core.rest.call(null, a)));
+                          return cljs.core.cons.call(null, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [d.call(null, g), s.call(null, e[g])], null), K.call(null, cljs.core.rest.call(null, a)));
                         }
                         return null;
                       }
@@ -15976,118 +15976,118 @@ cljs.core.MultiFn.prototype.call = function() {
     return l.call(null, b, c, d, e, f, g, h);
   }, k = function(a, b, c, d, e, f, g, h, k) {
     a = this;
-    var l = a.dispatch_fn.call(null, b, c, d, e, f, g, h, k), q = this.cljs$core$IMultiFn$_get_method$arity$2(null, l);
-    cljs.core.truth_(q) || cljs.core.throw_no_method_error.call(null, a.name, l);
-    return q.call(null, b, c, d, e, f, g, h, k);
+    var l = a.dispatch_fn.call(null, b, c, d, e, f, g, h, k), m = this.cljs$core$IMultiFn$_get_method$arity$2(null, l);
+    cljs.core.truth_(m) || cljs.core.throw_no_method_error.call(null, a.name, l);
+    return m.call(null, b, c, d, e, f, g, h, k);
   }, l = function(a, b, c, d, e, f, g, h, k, l) {
     a = this;
-    var q = a.dispatch_fn.call(null, b, c, d, e, f, g, h, k, l), m = this.cljs$core$IMultiFn$_get_method$arity$2(null, q);
-    cljs.core.truth_(m) || cljs.core.throw_no_method_error.call(null, a.name, q);
-    return m.call(null, b, c, d, e, f, g, h, k, l);
-  }, m = function(a, b, c, d, e, f, g, h, k, l, q) {
+    var m = a.dispatch_fn.call(null, b, c, d, e, f, g, h, k, l), q = this.cljs$core$IMultiFn$_get_method$arity$2(null, m);
+    cljs.core.truth_(q) || cljs.core.throw_no_method_error.call(null, a.name, m);
+    return q.call(null, b, c, d, e, f, g, h, k, l);
+  }, m = function(a, b, c, d, e, f, g, h, k, l, m) {
     a = this;
-    var m = a.dispatch_fn.call(null, b, c, d, e, f, g, h, k, l, q), r = this.cljs$core$IMultiFn$_get_method$arity$2(null, m);
-    cljs.core.truth_(r) || cljs.core.throw_no_method_error.call(null, a.name, m);
-    return r.call(null, b, c, d, e, f, g, h, k, l, q);
-  }, n = function(a, b, c, d, e, f, g, h, k, l, q, m) {
+    var q = a.dispatch_fn.call(null, b, c, d, e, f, g, h, k, l, m), r = this.cljs$core$IMultiFn$_get_method$arity$2(null, q);
+    cljs.core.truth_(r) || cljs.core.throw_no_method_error.call(null, a.name, q);
+    return r.call(null, b, c, d, e, f, g, h, k, l, m);
+  }, n = function(a, b, c, d, e, f, g, h, k, l, m, q) {
     a = this;
-    var r = a.dispatch_fn.call(null, b, c, d, e, f, g, h, k, l, q, m), n = this.cljs$core$IMultiFn$_get_method$arity$2(null, r);
+    var r = a.dispatch_fn.call(null, b, c, d, e, f, g, h, k, l, m, q), n = this.cljs$core$IMultiFn$_get_method$arity$2(null, r);
     cljs.core.truth_(n) || cljs.core.throw_no_method_error.call(null, a.name, r);
-    return n.call(null, b, c, d, e, f, g, h, k, l, q, m);
-  }, p = function(a, b, c, d, e, f, g, h, k, l, q, m, r) {
+    return n.call(null, b, c, d, e, f, g, h, k, l, m, q);
+  }, p = function(a, b, c, d, e, f, g, h, k, l, m, q, r) {
     a = this;
-    var n = a.dispatch_fn.call(null, b, c, d, e, f, g, h, k, l, q, m, r), p = this.cljs$core$IMultiFn$_get_method$arity$2(null, n);
+    var n = a.dispatch_fn.call(null, b, c, d, e, f, g, h, k, l, m, q, r), p = this.cljs$core$IMultiFn$_get_method$arity$2(null, n);
     cljs.core.truth_(p) || cljs.core.throw_no_method_error.call(null, a.name, n);
-    return p.call(null, b, c, d, e, f, g, h, k, l, q, m, r);
-  }, q = function(a, b, c, d, e, f, g, h, k, l, q, m, r, n) {
+    return p.call(null, b, c, d, e, f, g, h, k, l, m, q, r);
+  }, q = function(a, b, c, d, e, f, g, h, k, l, m, q, r, n) {
     a = this;
-    var p = a.dispatch_fn.call(null, b, c, d, e, f, g, h, k, l, q, m, r, n), s = this.cljs$core$IMultiFn$_get_method$arity$2(null, p);
+    var p = a.dispatch_fn.call(null, b, c, d, e, f, g, h, k, l, m, q, r, n), s = this.cljs$core$IMultiFn$_get_method$arity$2(null, p);
     cljs.core.truth_(s) || cljs.core.throw_no_method_error.call(null, a.name, p);
-    return s.call(null, b, c, d, e, f, g, h, k, l, q, m, r, n);
-  }, r = function(a, b, c, d, e, f, g, h, k, l, q, m, r, n, p) {
+    return s.call(null, b, c, d, e, f, g, h, k, l, m, q, r, n);
+  }, r = function(a, b, c, d, e, f, g, h, k, l, m, q, r, n, p) {
     a = this;
-    var s = a.dispatch_fn.call(null, b, c, d, e, f, g, h, k, l, q, m, r, n, p), u = this.cljs$core$IMultiFn$_get_method$arity$2(null, s);
+    var s = a.dispatch_fn.call(null, b, c, d, e, f, g, h, k, l, m, q, r, n, p), u = this.cljs$core$IMultiFn$_get_method$arity$2(null, s);
     cljs.core.truth_(u) || cljs.core.throw_no_method_error.call(null, a.name, s);
-    return u.call(null, b, c, d, e, f, g, h, k, l, q, m, r, n, p);
-  }, s = function(a, b, c, d, e, f, g, h, k, l, q, m, r, n, p, s) {
+    return u.call(null, b, c, d, e, f, g, h, k, l, m, q, r, n, p);
+  }, s = function(a, b, c, d, e, f, g, h, k, l, m, q, r, n, p, s) {
     a = this;
-    var u = a.dispatch_fn.call(null, b, c, d, e, f, g, h, k, l, q, m, r, n, p, s), t = this.cljs$core$IMultiFn$_get_method$arity$2(null, u);
+    var u = a.dispatch_fn.call(null, b, c, d, e, f, g, h, k, l, m, q, r, n, p, s), t = this.cljs$core$IMultiFn$_get_method$arity$2(null, u);
     cljs.core.truth_(t) || cljs.core.throw_no_method_error.call(null, a.name, u);
-    return t.call(null, b, c, d, e, f, g, h, k, l, q, m, r, n, p, s);
-  }, t = function(a, b, c, d, e, f, g, h, k, l, q, m, r, n, p, s, u) {
+    return t.call(null, b, c, d, e, f, g, h, k, l, m, q, r, n, p, s);
+  }, t = function(a, b, c, d, e, f, g, h, k, l, m, q, r, n, p, s, u) {
     a = this;
-    var t = a.dispatch_fn.call(null, b, c, d, e, f, g, h, k, l, q, m, r, n, p, s, u), w = this.cljs$core$IMultiFn$_get_method$arity$2(null, t);
+    var t = a.dispatch_fn.call(null, b, c, d, e, f, g, h, k, l, m, q, r, n, p, s, u), w = this.cljs$core$IMultiFn$_get_method$arity$2(null, t);
     cljs.core.truth_(w) || cljs.core.throw_no_method_error.call(null, a.name, t);
-    return w.call(null, b, c, d, e, f, g, h, k, l, q, m, r, n, p, s, u);
-  }, u = function(a, b, c, d, e, f, g, h, k, l, q, m, r, n, p, s, u, t) {
+    return w.call(null, b, c, d, e, f, g, h, k, l, m, q, r, n, p, s, u);
+  }, u = function(a, b, c, d, e, f, g, h, k, l, m, q, r, n, p, s, u, t) {
     a = this;
-    var w = a.dispatch_fn.call(null, b, c, d, e, f, g, h, k, l, q, m, r, n, p, s, u, t), v = this.cljs$core$IMultiFn$_get_method$arity$2(null, w);
-    cljs.core.truth_(v) || cljs.core.throw_no_method_error.call(null, a.name, w);
-    return v.call(null, b, c, d, e, f, g, h, k, l, q, m, r, n, p, s, u, t);
-  }, v = function(a, b, c, d, e, f, g, h, k, l, q, m, r, n, p, s, u, t, w) {
+    var w = a.dispatch_fn.call(null, b, c, d, e, f, g, h, k, l, m, q, r, n, p, s, u, t), y = this.cljs$core$IMultiFn$_get_method$arity$2(null, w);
+    cljs.core.truth_(y) || cljs.core.throw_no_method_error.call(null, a.name, w);
+    return y.call(null, b, c, d, e, f, g, h, k, l, m, q, r, n, p, s, u, t);
+  }, v = function(a, b, c, d, e, f, g, h, k, l, m, q, r, n, p, s, u, t, w) {
     a = this;
-    var v = a.dispatch_fn.call(null, b, c, d, e, f, g, h, k, l, q, m, r, n, p, s, u, t, w), E = this.cljs$core$IMultiFn$_get_method$arity$2(null, v);
-    cljs.core.truth_(E) || cljs.core.throw_no_method_error.call(null, a.name, v);
-    return E.call(null, b, c, d, e, f, g, h, k, l, q, m, r, n, p, s, u, t, w);
-  }, y = function(a, b, c, d, e, f, g, h, k, l, q, m, r, n, p, s, u, t, w, v) {
+    var y = a.dispatch_fn.call(null, b, c, d, e, f, g, h, k, l, m, q, r, n, p, s, u, t, w), v = this.cljs$core$IMultiFn$_get_method$arity$2(null, y);
+    cljs.core.truth_(v) || cljs.core.throw_no_method_error.call(null, a.name, y);
+    return v.call(null, b, c, d, e, f, g, h, k, l, m, q, r, n, p, s, u, t, w);
+  }, x = function(a, b, c, d, e, f, g, h, k, l, m, q, r, n, p, s, u, t, w, y) {
     a = this;
-    var E = a.dispatch_fn.call(null, b, c, d, e, f, g, h, k, l, q, m, r, n, p, s, u, t, w, v), y = this.cljs$core$IMultiFn$_get_method$arity$2(null, E);
-    cljs.core.truth_(y) || cljs.core.throw_no_method_error.call(null, a.name, E);
-    return y.call(null, b, c, d, e, f, g, h, k, l, q, m, r, n, p, s, u, t, w, v);
-  }, w = function(a, b, c, d, e, f, g, h, k, l, q, m, r, n, p, s, u, t, w, v, E) {
+    var v = a.dispatch_fn.call(null, b, c, d, e, f, g, h, k, l, m, q, r, n, p, s, u, t, w, y), x = this.cljs$core$IMultiFn$_get_method$arity$2(null, v);
+    cljs.core.truth_(x) || cljs.core.throw_no_method_error.call(null, a.name, v);
+    return x.call(null, b, c, d, e, f, g, h, k, l, m, q, r, n, p, s, u, t, w, y);
+  }, w = function(a, b, c, d, e, f, g, h, k, l, m, q, r, n, p, s, u, t, w, y, v) {
     a = this;
-    var y = a.dispatch_fn.call(null, b, c, d, e, f, g, h, k, l, q, m, r, n, p, s, u, t, w, v, E), S = this.cljs$core$IMultiFn$_get_method$arity$2(null, y);
-    cljs.core.truth_(S) || cljs.core.throw_no_method_error.call(null, a.name, y);
-    return S.call(null, b, c, d, e, f, g, h, k, l, q, m, r, n, p, s, u, t, w, v, E);
-  }, E = function(a, b, c, d, e, f, g, h, k, l, q, m, r, n, p, s, u, t, w, v, E, y) {
+    var x = a.dispatch_fn.call(null, b, c, d, e, f, g, h, k, l, m, q, r, n, p, s, u, t, w, y, v), R = this.cljs$core$IMultiFn$_get_method$arity$2(null, x);
+    cljs.core.truth_(R) || cljs.core.throw_no_method_error.call(null, a.name, x);
+    return R.call(null, b, c, d, e, f, g, h, k, l, m, q, r, n, p, s, u, t, w, y, v);
+  }, y = function(a, b, c, d, e, f, g, h, k, l, m, q, r, n, p, s, u, t, w, y, v, x) {
     a = this;
-    var S = cljs.core.apply.call(null, a.dispatch_fn, b, c, d, e, f, g, h, k, l, q, m, r, n, p, s, u, t, w, v, E, y), X = this.cljs$core$IMultiFn$_get_method$arity$2(null, S);
-    cljs.core.truth_(X) || cljs.core.throw_no_method_error.call(null, a.name, S);
-    return cljs.core.apply.call(null, X, b, c, d, e, f, g, h, k, l, q, m, r, n, p, s, u, t, w, v, E, y);
-  }, a = function(a, F, z, A, G, N, I, J, K, P, R, O, Q, T, B, x, C, D, M, H, W, U) {
+    var R = cljs.core.apply.call(null, a.dispatch_fn, b, c, d, e, f, g, h, k, l, m, q, r, n, p, s, u, t, w, y, v, x), X = this.cljs$core$IMultiFn$_get_method$arity$2(null, R);
+    cljs.core.truth_(X) || cljs.core.throw_no_method_error.call(null, a.name, R);
+    return cljs.core.apply.call(null, X, b, c, d, e, f, g, h, k, l, m, q, r, n, p, s, u, t, w, y, v, x);
+  }, a = function(a, J, z, C, F, N, H, I, G, Q, O, T, V, W, E, A, D, B, P, M, U, S) {
     switch(arguments.length) {
       case 2:
-        return b.call(this, a, F);
+        return b.call(this, a, J);
       case 3:
-        return c.call(this, a, F, z);
+        return c.call(this, a, J, z);
       case 4:
-        return d.call(this, a, F, z, A);
+        return d.call(this, a, J, z, C);
       case 5:
-        return e.call(this, a, F, z, A, G);
+        return e.call(this, a, J, z, C, F);
       case 6:
-        return f.call(this, a, F, z, A, G, N);
+        return f.call(this, a, J, z, C, F, N);
       case 7:
-        return g.call(this, a, F, z, A, G, N, I);
+        return g.call(this, a, J, z, C, F, N, H);
       case 8:
-        return h.call(this, a, F, z, A, G, N, I, J);
+        return h.call(this, a, J, z, C, F, N, H, I);
       case 9:
-        return k.call(this, a, F, z, A, G, N, I, J, K);
+        return k.call(this, a, J, z, C, F, N, H, I, G);
       case 10:
-        return l.call(this, a, F, z, A, G, N, I, J, K, P);
+        return l.call(this, a, J, z, C, F, N, H, I, G, Q);
       case 11:
-        return m.call(this, a, F, z, A, G, N, I, J, K, P, R);
+        return m.call(this, a, J, z, C, F, N, H, I, G, Q, O);
       case 12:
-        return n.call(this, a, F, z, A, G, N, I, J, K, P, R, O);
+        return n.call(this, a, J, z, C, F, N, H, I, G, Q, O, T);
       case 13:
-        return p.call(this, a, F, z, A, G, N, I, J, K, P, R, O, Q);
+        return p.call(this, a, J, z, C, F, N, H, I, G, Q, O, T, V);
       case 14:
-        return q.call(this, a, F, z, A, G, N, I, J, K, P, R, O, Q, T);
+        return q.call(this, a, J, z, C, F, N, H, I, G, Q, O, T, V, W);
       case 15:
-        return r.call(this, a, F, z, A, G, N, I, J, K, P, R, O, Q, T, B);
+        return r.call(this, a, J, z, C, F, N, H, I, G, Q, O, T, V, W, E);
       case 16:
-        return s.call(this, a, F, z, A, G, N, I, J, K, P, R, O, Q, T, B, x);
+        return s.call(this, a, J, z, C, F, N, H, I, G, Q, O, T, V, W, E, A);
       case 17:
-        return t.call(this, a, F, z, A, G, N, I, J, K, P, R, O, Q, T, B, x, C);
+        return t.call(this, a, J, z, C, F, N, H, I, G, Q, O, T, V, W, E, A, D);
       case 18:
-        return u.call(this, a, F, z, A, G, N, I, J, K, P, R, O, Q, T, B, x, C, D);
+        return u.call(this, a, J, z, C, F, N, H, I, G, Q, O, T, V, W, E, A, D, B);
       case 19:
-        return v.call(this, a, F, z, A, G, N, I, J, K, P, R, O, Q, T, B, x, C, D, M);
+        return v.call(this, a, J, z, C, F, N, H, I, G, Q, O, T, V, W, E, A, D, B, P);
       case 20:
-        return y.call(this, a, F, z, A, G, N, I, J, K, P, R, O, Q, T, B, x, C, D, M, H);
+        return x.call(this, a, J, z, C, F, N, H, I, G, Q, O, T, V, W, E, A, D, B, P, M);
       case 21:
-        return w.call(this, a, F, z, A, G, N, I, J, K, P, R, O, Q, T, B, x, C, D, M, H, W);
+        return w.call(this, a, J, z, C, F, N, H, I, G, Q, O, T, V, W, E, A, D, B, P, M, U);
       case 22:
-        return E.call(this, a, F, z, A, G, N, I, J, K, P, R, O, Q, T, B, x, C, D, M, H, W, U);
+        return y.call(this, a, J, z, C, F, N, H, I, G, Q, O, T, V, W, E, A, D, B, P, M, U, S);
     }
     throw Error("Invalid arity: " + arguments.length);
   };
@@ -16109,9 +16109,9 @@ cljs.core.MultiFn.prototype.call = function() {
   a.cljs$core$IFn$_invoke$arity$17 = t;
   a.cljs$core$IFn$_invoke$arity$18 = u;
   a.cljs$core$IFn$_invoke$arity$19 = v;
-  a.cljs$core$IFn$_invoke$arity$20 = y;
+  a.cljs$core$IFn$_invoke$arity$20 = x;
   a.cljs$core$IFn$_invoke$arity$21 = w;
-  a.cljs$core$IFn$_invoke$arity$22 = E;
+  a.cljs$core$IFn$_invoke$arity$22 = y;
   return a;
 }();
 cljs.core.MultiFn.prototype.apply = function(a, b) {
@@ -16203,24 +16203,24 @@ cljs.core.MultiFn.prototype.cljs$core$IFn$_invoke$arity$17 = function(a, b, c, d
   return v.call(null, a, b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t);
 };
 cljs.core.MultiFn.prototype.cljs$core$IFn$_invoke$arity$18 = function(a, b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u) {
-  var v = this.dispatch_fn.call(null, a, b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u), y = this.cljs$core$IMultiFn$_get_method$arity$2(null, v);
-  cljs.core.truth_(y) || cljs.core.throw_no_method_error.call(null, this.name, v);
-  return y.call(null, a, b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u);
+  var v = this.dispatch_fn.call(null, a, b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u), x = this.cljs$core$IMultiFn$_get_method$arity$2(null, v);
+  cljs.core.truth_(x) || cljs.core.throw_no_method_error.call(null, this.name, v);
+  return x.call(null, a, b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u);
 };
 cljs.core.MultiFn.prototype.cljs$core$IFn$_invoke$arity$19 = function(a, b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v) {
-  var y = this.dispatch_fn.call(null, a, b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v), w = this.cljs$core$IMultiFn$_get_method$arity$2(null, y);
-  cljs.core.truth_(w) || cljs.core.throw_no_method_error.call(null, this.name, y);
+  var x = this.dispatch_fn.call(null, a, b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v), w = this.cljs$core$IMultiFn$_get_method$arity$2(null, x);
+  cljs.core.truth_(w) || cljs.core.throw_no_method_error.call(null, this.name, x);
   return w.call(null, a, b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v);
 };
-cljs.core.MultiFn.prototype.cljs$core$IFn$_invoke$arity$20 = function(a, b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, y) {
-  var w = this.dispatch_fn.call(null, a, b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, y), E = this.cljs$core$IMultiFn$_get_method$arity$2(null, w);
-  cljs.core.truth_(E) || cljs.core.throw_no_method_error.call(null, this.name, w);
-  return E.call(null, a, b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, y);
+cljs.core.MultiFn.prototype.cljs$core$IFn$_invoke$arity$20 = function(a, b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, x) {
+  var w = this.dispatch_fn.call(null, a, b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, x), y = this.cljs$core$IMultiFn$_get_method$arity$2(null, w);
+  cljs.core.truth_(y) || cljs.core.throw_no_method_error.call(null, this.name, w);
+  return y.call(null, a, b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, x);
 };
-cljs.core.MultiFn.prototype.cljs$core$IFn$_invoke$arity$21 = function(a, b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, y, w) {
-  var E = cljs.core.apply.call(null, this.dispatch_fn, a, b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, y, w), V = this.cljs$core$IMultiFn$_get_method$arity$2(null, E);
-  cljs.core.truth_(V) || cljs.core.throw_no_method_error.call(null, this.name, E);
-  return cljs.core.apply.call(null, V, a, b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, y, w);
+cljs.core.MultiFn.prototype.cljs$core$IFn$_invoke$arity$21 = function(a, b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, x, w) {
+  var y = cljs.core.apply.call(null, this.dispatch_fn, a, b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, x, w), K = this.cljs$core$IMultiFn$_get_method$arity$2(null, y);
+  cljs.core.truth_(K) || cljs.core.throw_no_method_error.call(null, this.name, y);
+  return cljs.core.apply.call(null, K, a, b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, x, w);
 };
 cljs.core.__GT_MultiFn = function(a, b, c, d, e, f, g, h) {
   return new cljs.core.MultiFn(a, b, c, d, e, f, g, h);
@@ -19857,7 +19857,7 @@ sablono.core.include_js = function(a) {
 sablono.core.include_react = function() {
   return sablono.core.include_js.call(null, "http://fb.me/react-0.9.0.js");
 };
-sablono.core.link_to32008 = function() {
+sablono.core.link_to32438 = function() {
   var a = function(a, b) {
     return new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "a", "a", -2123407586), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "href", "href", -793805698), sablono.util.as_str.call(null, a)], null), b], null);
   }, b = function(b, d) {
@@ -19874,8 +19874,8 @@ sablono.core.link_to32008 = function() {
   b.cljs$core$IFn$_invoke$arity$variadic = a;
   return b;
 }();
-sablono.core.link_to = sablono.core.wrap_attrs.call(null, sablono.core.link_to32008);
-sablono.core.mail_to32010 = function() {
+sablono.core.link_to = sablono.core.wrap_attrs.call(null, sablono.core.link_to32438);
+sablono.core.mail_to32440 = function() {
   var a = function(a, b) {
     var e = cljs.core.nth.call(null, b, 0, null), f = cljs.core.PersistentVector, g = cljs.core.PersistentVector.EMPTY_NODE, h = new cljs.core.Keyword(null, "a", "a", -2123407586), k = new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "href", "href", -793805698), "mailto:" + cljs.core.str.cljs$core$IFn$_invoke$arity$1(a)], null);
     e = cljs.core.truth_(e) ? e : a;
@@ -19894,8 +19894,8 @@ sablono.core.mail_to32010 = function() {
   b.cljs$core$IFn$_invoke$arity$variadic = a;
   return b;
 }();
-sablono.core.mail_to = sablono.core.wrap_attrs.call(null, sablono.core.mail_to32010);
-sablono.core.unordered_list32015 = function(a) {
+sablono.core.mail_to = sablono.core.wrap_attrs.call(null, sablono.core.mail_to32440);
+sablono.core.unordered_list32445 = function(a) {
   return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "ul", "ul", -1349521403), function() {
     return function c(a) {
       return new cljs.core.LazySeq(null, function() {
@@ -19928,8 +19928,8 @@ sablono.core.unordered_list32015 = function(a) {
     }.call(null, a);
   }()], null);
 };
-sablono.core.unordered_list = sablono.core.wrap_attrs.call(null, sablono.core.unordered_list32015);
-sablono.core.ordered_list32025 = function(a) {
+sablono.core.unordered_list = sablono.core.wrap_attrs.call(null, sablono.core.unordered_list32445);
+sablono.core.ordered_list32455 = function(a) {
   return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "ol", "ol", 932524051), function() {
     return function c(a) {
       return new cljs.core.LazySeq(null, function() {
@@ -19962,8 +19962,8 @@ sablono.core.ordered_list32025 = function(a) {
     }.call(null, a);
   }()], null);
 };
-sablono.core.ordered_list = sablono.core.wrap_attrs.call(null, sablono.core.ordered_list32025);
-sablono.core.image32035 = function() {
+sablono.core.ordered_list = sablono.core.wrap_attrs.call(null, sablono.core.ordered_list32455);
+sablono.core.image32465 = function() {
   var a = null, b = function(a) {
     return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "img", "img", 1442687358), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "src", "src", -1651076051), sablono.util.as_str.call(null, a)], null)], null);
   }, c = function(a, b) {
@@ -19981,7 +19981,7 @@ sablono.core.image32035 = function() {
   a.cljs$core$IFn$_invoke$arity$2 = c;
   return a;
 }();
-sablono.core.image = sablono.core.wrap_attrs.call(null, sablono.core.image32035);
+sablono.core.image = sablono.core.wrap_attrs.call(null, sablono.core.image32465);
 sablono.core._STAR_group_STAR_ = cljs.core.PersistentVector.EMPTY;
 sablono.core.make_name = function(a) {
   return cljs.core.reduce.call(null, function(a, c) {
@@ -19997,7 +19997,7 @@ sablono.core.input_field_STAR_ = function(a, b, c) {
   return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "input", "input", 556931961), new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null, "type", "type", 1174270348), a, new cljs.core.Keyword(null, "name", "name", 1843675177), sablono.core.make_name.call(null, b), new cljs.core.Keyword(null, "id", "id", -1388402092), sablono.core.make_id.call(null, b), new cljs.core.Keyword(null, "value", "value", 305978217), c], null)], 
   null);
 };
-sablono.core.color_field32040 = function() {
+sablono.core.color_field32470 = function() {
   var a = null, b = function(b) {
     return a.call(null, b, null);
   }, c = function(a, b) {
@@ -20015,8 +20015,8 @@ sablono.core.color_field32040 = function() {
   a.cljs$core$IFn$_invoke$arity$2 = c;
   return a;
 }();
-sablono.core.color_field = sablono.core.wrap_attrs.call(null, sablono.core.color_field32040);
-sablono.core.date_field32041 = function() {
+sablono.core.color_field = sablono.core.wrap_attrs.call(null, sablono.core.color_field32470);
+sablono.core.date_field32471 = function() {
   var a = null, b = function(b) {
     return a.call(null, b, null);
   }, c = function(a, b) {
@@ -20034,8 +20034,8 @@ sablono.core.date_field32041 = function() {
   a.cljs$core$IFn$_invoke$arity$2 = c;
   return a;
 }();
-sablono.core.date_field = sablono.core.wrap_attrs.call(null, sablono.core.date_field32041);
-sablono.core.datetime_field32042 = function() {
+sablono.core.date_field = sablono.core.wrap_attrs.call(null, sablono.core.date_field32471);
+sablono.core.datetime_field32472 = function() {
   var a = null, b = function(b) {
     return a.call(null, b, null);
   }, c = function(a, b) {
@@ -20053,8 +20053,8 @@ sablono.core.datetime_field32042 = function() {
   a.cljs$core$IFn$_invoke$arity$2 = c;
   return a;
 }();
-sablono.core.datetime_field = sablono.core.wrap_attrs.call(null, sablono.core.datetime_field32042);
-sablono.core.datetime_local_field32043 = function() {
+sablono.core.datetime_field = sablono.core.wrap_attrs.call(null, sablono.core.datetime_field32472);
+sablono.core.datetime_local_field32473 = function() {
   var a = null, b = function(b) {
     return a.call(null, b, null);
   }, c = function(a, b) {
@@ -20072,8 +20072,8 @@ sablono.core.datetime_local_field32043 = function() {
   a.cljs$core$IFn$_invoke$arity$2 = c;
   return a;
 }();
-sablono.core.datetime_local_field = sablono.core.wrap_attrs.call(null, sablono.core.datetime_local_field32043);
-sablono.core.email_field32044 = function() {
+sablono.core.datetime_local_field = sablono.core.wrap_attrs.call(null, sablono.core.datetime_local_field32473);
+sablono.core.email_field32474 = function() {
   var a = null, b = function(b) {
     return a.call(null, b, null);
   }, c = function(a, b) {
@@ -20091,8 +20091,8 @@ sablono.core.email_field32044 = function() {
   a.cljs$core$IFn$_invoke$arity$2 = c;
   return a;
 }();
-sablono.core.email_field = sablono.core.wrap_attrs.call(null, sablono.core.email_field32044);
-sablono.core.file_field32045 = function() {
+sablono.core.email_field = sablono.core.wrap_attrs.call(null, sablono.core.email_field32474);
+sablono.core.file_field32475 = function() {
   var a = null, b = function(b) {
     return a.call(null, b, null);
   }, c = function(a, b) {
@@ -20110,8 +20110,8 @@ sablono.core.file_field32045 = function() {
   a.cljs$core$IFn$_invoke$arity$2 = c;
   return a;
 }();
-sablono.core.file_field = sablono.core.wrap_attrs.call(null, sablono.core.file_field32045);
-sablono.core.hidden_field32046 = function() {
+sablono.core.file_field = sablono.core.wrap_attrs.call(null, sablono.core.file_field32475);
+sablono.core.hidden_field32476 = function() {
   var a = null, b = function(b) {
     return a.call(null, b, null);
   }, c = function(a, b) {
@@ -20129,8 +20129,8 @@ sablono.core.hidden_field32046 = function() {
   a.cljs$core$IFn$_invoke$arity$2 = c;
   return a;
 }();
-sablono.core.hidden_field = sablono.core.wrap_attrs.call(null, sablono.core.hidden_field32046);
-sablono.core.month_field32047 = function() {
+sablono.core.hidden_field = sablono.core.wrap_attrs.call(null, sablono.core.hidden_field32476);
+sablono.core.month_field32477 = function() {
   var a = null, b = function(b) {
     return a.call(null, b, null);
   }, c = function(a, b) {
@@ -20148,8 +20148,8 @@ sablono.core.month_field32047 = function() {
   a.cljs$core$IFn$_invoke$arity$2 = c;
   return a;
 }();
-sablono.core.month_field = sablono.core.wrap_attrs.call(null, sablono.core.month_field32047);
-sablono.core.number_field32048 = function() {
+sablono.core.month_field = sablono.core.wrap_attrs.call(null, sablono.core.month_field32477);
+sablono.core.number_field32478 = function() {
   var a = null, b = function(b) {
     return a.call(null, b, null);
   }, c = function(a, b) {
@@ -20167,8 +20167,8 @@ sablono.core.number_field32048 = function() {
   a.cljs$core$IFn$_invoke$arity$2 = c;
   return a;
 }();
-sablono.core.number_field = sablono.core.wrap_attrs.call(null, sablono.core.number_field32048);
-sablono.core.password_field32049 = function() {
+sablono.core.number_field = sablono.core.wrap_attrs.call(null, sablono.core.number_field32478);
+sablono.core.password_field32479 = function() {
   var a = null, b = function(b) {
     return a.call(null, b, null);
   }, c = function(a, b) {
@@ -20186,8 +20186,8 @@ sablono.core.password_field32049 = function() {
   a.cljs$core$IFn$_invoke$arity$2 = c;
   return a;
 }();
-sablono.core.password_field = sablono.core.wrap_attrs.call(null, sablono.core.password_field32049);
-sablono.core.range_field32050 = function() {
+sablono.core.password_field = sablono.core.wrap_attrs.call(null, sablono.core.password_field32479);
+sablono.core.range_field32480 = function() {
   var a = null, b = function(b) {
     return a.call(null, b, null);
   }, c = function(a, b) {
@@ -20205,8 +20205,8 @@ sablono.core.range_field32050 = function() {
   a.cljs$core$IFn$_invoke$arity$2 = c;
   return a;
 }();
-sablono.core.range_field = sablono.core.wrap_attrs.call(null, sablono.core.range_field32050);
-sablono.core.search_field32051 = function() {
+sablono.core.range_field = sablono.core.wrap_attrs.call(null, sablono.core.range_field32480);
+sablono.core.search_field32481 = function() {
   var a = null, b = function(b) {
     return a.call(null, b, null);
   }, c = function(a, b) {
@@ -20224,8 +20224,8 @@ sablono.core.search_field32051 = function() {
   a.cljs$core$IFn$_invoke$arity$2 = c;
   return a;
 }();
-sablono.core.search_field = sablono.core.wrap_attrs.call(null, sablono.core.search_field32051);
-sablono.core.tel_field32052 = function() {
+sablono.core.search_field = sablono.core.wrap_attrs.call(null, sablono.core.search_field32481);
+sablono.core.tel_field32482 = function() {
   var a = null, b = function(b) {
     return a.call(null, b, null);
   }, c = function(a, b) {
@@ -20243,8 +20243,8 @@ sablono.core.tel_field32052 = function() {
   a.cljs$core$IFn$_invoke$arity$2 = c;
   return a;
 }();
-sablono.core.tel_field = sablono.core.wrap_attrs.call(null, sablono.core.tel_field32052);
-sablono.core.text_field32053 = function() {
+sablono.core.tel_field = sablono.core.wrap_attrs.call(null, sablono.core.tel_field32482);
+sablono.core.text_field32483 = function() {
   var a = null, b = function(b) {
     return a.call(null, b, null);
   }, c = function(a, b) {
@@ -20262,8 +20262,8 @@ sablono.core.text_field32053 = function() {
   a.cljs$core$IFn$_invoke$arity$2 = c;
   return a;
 }();
-sablono.core.text_field = sablono.core.wrap_attrs.call(null, sablono.core.text_field32053);
-sablono.core.time_field32054 = function() {
+sablono.core.text_field = sablono.core.wrap_attrs.call(null, sablono.core.text_field32483);
+sablono.core.time_field32484 = function() {
   var a = null, b = function(b) {
     return a.call(null, b, null);
   }, c = function(a, b) {
@@ -20281,8 +20281,8 @@ sablono.core.time_field32054 = function() {
   a.cljs$core$IFn$_invoke$arity$2 = c;
   return a;
 }();
-sablono.core.time_field = sablono.core.wrap_attrs.call(null, sablono.core.time_field32054);
-sablono.core.url_field32055 = function() {
+sablono.core.time_field = sablono.core.wrap_attrs.call(null, sablono.core.time_field32484);
+sablono.core.url_field32485 = function() {
   var a = null, b = function(b) {
     return a.call(null, b, null);
   }, c = function(a, b) {
@@ -20300,8 +20300,8 @@ sablono.core.url_field32055 = function() {
   a.cljs$core$IFn$_invoke$arity$2 = c;
   return a;
 }();
-sablono.core.url_field = sablono.core.wrap_attrs.call(null, sablono.core.url_field32055);
-sablono.core.week_field32056 = function() {
+sablono.core.url_field = sablono.core.wrap_attrs.call(null, sablono.core.url_field32485);
+sablono.core.week_field32486 = function() {
   var a = null, b = function(b) {
     return a.call(null, b, null);
   }, c = function(a, b) {
@@ -20319,9 +20319,9 @@ sablono.core.week_field32056 = function() {
   a.cljs$core$IFn$_invoke$arity$2 = c;
   return a;
 }();
-sablono.core.week_field = sablono.core.wrap_attrs.call(null, sablono.core.week_field32056);
+sablono.core.week_field = sablono.core.wrap_attrs.call(null, sablono.core.week_field32486);
 sablono.core.file_upload = sablono.core.file_field;
-sablono.core.check_box32057 = function() {
+sablono.core.check_box32487 = function() {
   var a = null, b = function(b) {
     return a.call(null, b, null);
   }, c = function(b, c) {
@@ -20345,8 +20345,8 @@ sablono.core.check_box32057 = function() {
   a.cljs$core$IFn$_invoke$arity$3 = d;
   return a;
 }();
-sablono.core.check_box = sablono.core.wrap_attrs.call(null, sablono.core.check_box32057);
-sablono.core.radio_button32058 = function() {
+sablono.core.check_box = sablono.core.wrap_attrs.call(null, sablono.core.check_box32487);
+sablono.core.radio_button32488 = function() {
   var a = null, b = function(b) {
     return a.call(null, b, null);
   }, c = function(b, c) {
@@ -20370,8 +20370,8 @@ sablono.core.radio_button32058 = function() {
   a.cljs$core$IFn$_invoke$arity$3 = d;
   return a;
 }();
-sablono.core.radio_button = sablono.core.wrap_attrs.call(null, sablono.core.radio_button32058);
-sablono.core.select_options32059 = function() {
+sablono.core.radio_button = sablono.core.wrap_attrs.call(null, sablono.core.radio_button32488);
+sablono.core.select_options32489 = function() {
   var a = null, b = function(b) {
     return a.call(null, b, null);
   }, c = function(b, c) {
@@ -20422,8 +20422,8 @@ sablono.core.select_options32059 = function() {
   a.cljs$core$IFn$_invoke$arity$2 = c;
   return a;
 }();
-sablono.core.select_options = sablono.core.wrap_attrs.call(null, sablono.core.select_options32059);
-sablono.core.drop_down32077 = function() {
+sablono.core.select_options = sablono.core.wrap_attrs.call(null, sablono.core.select_options32489);
+sablono.core.drop_down32507 = function() {
   var a = null, b = function(b, c) {
     return a.call(null, b, c, null);
   }, c = function(a, b, c) {
@@ -20441,8 +20441,8 @@ sablono.core.drop_down32077 = function() {
   a.cljs$core$IFn$_invoke$arity$3 = c;
   return a;
 }();
-sablono.core.drop_down = sablono.core.wrap_attrs.call(null, sablono.core.drop_down32077);
-sablono.core.text_area32078 = function() {
+sablono.core.drop_down = sablono.core.wrap_attrs.call(null, sablono.core.drop_down32507);
+sablono.core.text_area32508 = function() {
   var a = null, b = function(b) {
     return a.call(null, b, null);
   }, c = function(a, b) {
@@ -20460,20 +20460,20 @@ sablono.core.text_area32078 = function() {
   a.cljs$core$IFn$_invoke$arity$2 = c;
   return a;
 }();
-sablono.core.text_area = sablono.core.wrap_attrs.call(null, sablono.core.text_area32078);
-sablono.core.label32079 = function(a, b) {
+sablono.core.text_area = sablono.core.wrap_attrs.call(null, sablono.core.text_area32508);
+sablono.core.label32509 = function(a, b) {
   return new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "label", "label", 1718410804), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "htmlFor", "htmlFor", -1050291720), sablono.core.make_id.call(null, a)], null), b], null);
 };
-sablono.core.label = sablono.core.wrap_attrs.call(null, sablono.core.label32079);
-sablono.core.submit_button32080 = function(a) {
+sablono.core.label = sablono.core.wrap_attrs.call(null, sablono.core.label32509);
+sablono.core.submit_button32510 = function(a) {
   return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "input", "input", 556931961), new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "type", "type", 1174270348), "submit", new cljs.core.Keyword(null, "value", "value", 305978217), a], null)], null);
 };
-sablono.core.submit_button = sablono.core.wrap_attrs.call(null, sablono.core.submit_button32080);
-sablono.core.reset_button32081 = function(a) {
+sablono.core.submit_button = sablono.core.wrap_attrs.call(null, sablono.core.submit_button32510);
+sablono.core.reset_button32511 = function(a) {
   return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "input", "input", 556931961), new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "type", "type", 1174270348), "reset", new cljs.core.Keyword(null, "value", "value", 305978217), a], null)], null);
 };
-sablono.core.reset_button = sablono.core.wrap_attrs.call(null, sablono.core.reset_button32081);
-sablono.core.form_to32082 = function() {
+sablono.core.reset_button = sablono.core.wrap_attrs.call(null, sablono.core.reset_button32511);
+sablono.core.form_to32512 = function() {
   var a = function(a, b) {
     var e = cljs.core.nth.call(null, a, 0, null), f = cljs.core.nth.call(null, a, 1, null), g = clojure.string.upper_case.call(null, cljs.core.name.call(null, e)), f = sablono.util.to_uri.call(null, f);
     return cljs.core.vec.call(null, cljs.core.concat.call(null, cljs.core.contains_QMARK_.call(null, new cljs.core.PersistentHashSet(null, new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "get", "get", 1683182755), null, new cljs.core.Keyword(null, "post", "post", 269697687), null], null), null), e) ? new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "form", "form", -1624062471), new cljs.core.PersistentArrayMap(null, 
@@ -20493,7 +20493,7 @@ sablono.core.form_to32082 = function() {
   b.cljs$core$IFn$_invoke$arity$variadic = a;
   return b;
 }();
-sablono.core.form_to = sablono.core.wrap_attrs.call(null, sablono.core.form_to32082);
+sablono.core.form_to = sablono.core.wrap_attrs.call(null, sablono.core.form_to32512);
 var clustermap = {routes:{}};
 clustermap.routes.type_name_keys = new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null, "portfolio-company", "portfolio-company", 2036028415), new cljs.core.Keyword(null, "name", "name", 1843675177), new cljs.core.Keyword(null, "investor-company", "investor-company", 13706558), new cljs.core.Keyword(null, "name", "name", 1843675177), new cljs.core.Keyword(null, "constituency", "constituency", 1803637324), new cljs.core.Keyword(null, "compact_name", "compact_name", 1525822383)], 
 null);
@@ -21808,24 +21808,24 @@ cljs.core.async.impl.dispatch.queue_delay = function(a, b) {
 };
 cljs.core.async.impl.channels = {};
 cljs.core.async.impl.channels.box = function box(b) {
-  "undefined" === typeof cljs.core.async.impl.channels.t31523 && (cljs.core.async.impl.channels.t31523 = function(b, d, e) {
+  "undefined" === typeof cljs.core.async.impl.channels.t31953 && (cljs.core.async.impl.channels.t31953 = function(b, d, e) {
     this.val = b;
     this.box = d;
-    this.meta31524 = e;
+    this.meta31954 = e;
     this.cljs$lang$protocol_mask$partition1$ = 0;
     this.cljs$lang$protocol_mask$partition0$ = 425984;
-  }, cljs.core.async.impl.channels.t31523.cljs$lang$type = !0, cljs.core.async.impl.channels.t31523.cljs$lang$ctorStr = "cljs.core.async.impl.channels/t31523", cljs.core.async.impl.channels.t31523.cljs$lang$ctorPrWriter = function(b, d, e) {
-    return cljs.core._write.call(null, d, "cljs.core.async.impl.channels/t31523");
-  }, cljs.core.async.impl.channels.t31523.prototype.cljs$core$IDeref$_deref$arity$1 = function(b) {
+  }, cljs.core.async.impl.channels.t31953.cljs$lang$type = !0, cljs.core.async.impl.channels.t31953.cljs$lang$ctorStr = "cljs.core.async.impl.channels/t31953", cljs.core.async.impl.channels.t31953.cljs$lang$ctorPrWriter = function(b, d, e) {
+    return cljs.core._write.call(null, d, "cljs.core.async.impl.channels/t31953");
+  }, cljs.core.async.impl.channels.t31953.prototype.cljs$core$IDeref$_deref$arity$1 = function(b) {
     return this.val;
-  }, cljs.core.async.impl.channels.t31523.prototype.cljs$core$IMeta$_meta$arity$1 = function(b) {
-    return this.meta31524;
-  }, cljs.core.async.impl.channels.t31523.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(b, d) {
-    return new cljs.core.async.impl.channels.t31523(this.val, this.box, d);
-  }, cljs.core.async.impl.channels.__GT_t31523 = function(b, d, e) {
-    return new cljs.core.async.impl.channels.t31523(b, d, e);
+  }, cljs.core.async.impl.channels.t31953.prototype.cljs$core$IMeta$_meta$arity$1 = function(b) {
+    return this.meta31954;
+  }, cljs.core.async.impl.channels.t31953.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(b, d) {
+    return new cljs.core.async.impl.channels.t31953(this.val, this.box, d);
+  }, cljs.core.async.impl.channels.__GT_t31953 = function(b, d, e) {
+    return new cljs.core.async.impl.channels.t31953(b, d, e);
   });
-  return new cljs.core.async.impl.channels.t31523(b, box, null);
+  return new cljs.core.async.impl.channels.t31953(b, box, null);
 };
 cljs.core.async.impl.channels.PutBox = function(a, b) {
   this.handler = a;
@@ -21967,26 +21967,26 @@ cljs.core.async.impl.ioc_helpers.finished_QMARK_ = function(a) {
   return cljs.core.keyword_identical_QMARK_.call(null, a[cljs.core.async.impl.ioc_helpers.STATE_IDX], new cljs.core.Keyword(null, "finished", "finished", -1018867731));
 };
 cljs.core.async.impl.ioc_helpers.fn_handler = function fn_handler(b) {
-  "undefined" === typeof cljs.core.async.impl.ioc_helpers.t31450 && (cljs.core.async.impl.ioc_helpers.t31450 = function(b, d, e) {
+  "undefined" === typeof cljs.core.async.impl.ioc_helpers.t31880 && (cljs.core.async.impl.ioc_helpers.t31880 = function(b, d, e) {
     this.f = b;
     this.fn_handler = d;
-    this.meta31451 = e;
+    this.meta31881 = e;
     this.cljs$lang$protocol_mask$partition1$ = 0;
     this.cljs$lang$protocol_mask$partition0$ = 393216;
-  }, cljs.core.async.impl.ioc_helpers.t31450.cljs$lang$type = !0, cljs.core.async.impl.ioc_helpers.t31450.cljs$lang$ctorStr = "cljs.core.async.impl.ioc-helpers/t31450", cljs.core.async.impl.ioc_helpers.t31450.cljs$lang$ctorPrWriter = function(b, d, e) {
-    return cljs.core._write.call(null, d, "cljs.core.async.impl.ioc-helpers/t31450");
-  }, cljs.core.async.impl.ioc_helpers.t31450.prototype.cljs$core$async$impl$protocols$Handler$ = !0, cljs.core.async.impl.ioc_helpers.t31450.prototype.cljs$core$async$impl$protocols$Handler$active_QMARK_$arity$1 = function(b) {
+  }, cljs.core.async.impl.ioc_helpers.t31880.cljs$lang$type = !0, cljs.core.async.impl.ioc_helpers.t31880.cljs$lang$ctorStr = "cljs.core.async.impl.ioc-helpers/t31880", cljs.core.async.impl.ioc_helpers.t31880.cljs$lang$ctorPrWriter = function(b, d, e) {
+    return cljs.core._write.call(null, d, "cljs.core.async.impl.ioc-helpers/t31880");
+  }, cljs.core.async.impl.ioc_helpers.t31880.prototype.cljs$core$async$impl$protocols$Handler$ = !0, cljs.core.async.impl.ioc_helpers.t31880.prototype.cljs$core$async$impl$protocols$Handler$active_QMARK_$arity$1 = function(b) {
     return!0;
-  }, cljs.core.async.impl.ioc_helpers.t31450.prototype.cljs$core$async$impl$protocols$Handler$commit$arity$1 = function(b) {
+  }, cljs.core.async.impl.ioc_helpers.t31880.prototype.cljs$core$async$impl$protocols$Handler$commit$arity$1 = function(b) {
     return this.f;
-  }, cljs.core.async.impl.ioc_helpers.t31450.prototype.cljs$core$IMeta$_meta$arity$1 = function(b) {
-    return this.meta31451;
-  }, cljs.core.async.impl.ioc_helpers.t31450.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(b, d) {
-    return new cljs.core.async.impl.ioc_helpers.t31450(this.f, this.fn_handler, d);
-  }, cljs.core.async.impl.ioc_helpers.__GT_t31450 = function(b, d, e) {
-    return new cljs.core.async.impl.ioc_helpers.t31450(b, d, e);
+  }, cljs.core.async.impl.ioc_helpers.t31880.prototype.cljs$core$IMeta$_meta$arity$1 = function(b) {
+    return this.meta31881;
+  }, cljs.core.async.impl.ioc_helpers.t31880.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(b, d) {
+    return new cljs.core.async.impl.ioc_helpers.t31880(this.f, this.fn_handler, d);
+  }, cljs.core.async.impl.ioc_helpers.__GT_t31880 = function(b, d, e) {
+    return new cljs.core.async.impl.ioc_helpers.t31880(b, d, e);
   });
-  return new cljs.core.async.impl.ioc_helpers.t31450(b, fn_handler, null);
+  return new cljs.core.async.impl.ioc_helpers.t31880(b, fn_handler, null);
 };
 cljs.core.async.impl.ioc_helpers.run_state_machine = function(a) {
   return cljs.core.async.impl.ioc_helpers.aget_object.call(null, a, cljs.core.async.impl.ioc_helpers.FN_IDX).call(null, a);
@@ -22443,26 +22443,26 @@ cljs.core.async.impl.timers.timeout = function(a) {
   return e;
 };
 cljs.core.async.fn_handler = function fn_handler$$0(b) {
-  "undefined" === typeof cljs.core.async.t28872 && (cljs.core.async.t28872 = function(b, d, e) {
+  "undefined" === typeof cljs.core.async.t29302 && (cljs.core.async.t29302 = function(b, d, e) {
     this.f = b;
     this.fn_handler = d;
-    this.meta28873 = e;
+    this.meta29303 = e;
     this.cljs$lang$protocol_mask$partition1$ = 0;
     this.cljs$lang$protocol_mask$partition0$ = 393216;
-  }, cljs.core.async.t28872.cljs$lang$type = !0, cljs.core.async.t28872.cljs$lang$ctorStr = "cljs.core.async/t28872", cljs.core.async.t28872.cljs$lang$ctorPrWriter = function(b, d, e) {
-    return cljs.core._write.call(null, d, "cljs.core.async/t28872");
-  }, cljs.core.async.t28872.prototype.cljs$core$async$impl$protocols$Handler$ = !0, cljs.core.async.t28872.prototype.cljs$core$async$impl$protocols$Handler$active_QMARK_$arity$1 = function(b) {
+  }, cljs.core.async.t29302.cljs$lang$type = !0, cljs.core.async.t29302.cljs$lang$ctorStr = "cljs.core.async/t29302", cljs.core.async.t29302.cljs$lang$ctorPrWriter = function(b, d, e) {
+    return cljs.core._write.call(null, d, "cljs.core.async/t29302");
+  }, cljs.core.async.t29302.prototype.cljs$core$async$impl$protocols$Handler$ = !0, cljs.core.async.t29302.prototype.cljs$core$async$impl$protocols$Handler$active_QMARK_$arity$1 = function(b) {
     return!0;
-  }, cljs.core.async.t28872.prototype.cljs$core$async$impl$protocols$Handler$commit$arity$1 = function(b) {
+  }, cljs.core.async.t29302.prototype.cljs$core$async$impl$protocols$Handler$commit$arity$1 = function(b) {
     return this.f;
-  }, cljs.core.async.t28872.prototype.cljs$core$IMeta$_meta$arity$1 = function(b) {
-    return this.meta28873;
-  }, cljs.core.async.t28872.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(b, d) {
-    return new cljs.core.async.t28872(this.f, this.fn_handler, d);
-  }, cljs.core.async.__GT_t28872 = function(b, d, e) {
-    return new cljs.core.async.t28872(b, d, e);
+  }, cljs.core.async.t29302.prototype.cljs$core$IMeta$_meta$arity$1 = function(b) {
+    return this.meta29303;
+  }, cljs.core.async.t29302.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(b, d) {
+    return new cljs.core.async.t29302(this.f, this.fn_handler, d);
+  }, cljs.core.async.__GT_t29302 = function(b, d, e) {
+    return new cljs.core.async.t29302(b, d, e);
   });
-  return new cljs.core.async.t28872(b, fn_handler$$0, null);
+  return new cljs.core.async.t29302(b, fn_handler$$0, null);
 };
 cljs.core.async.buffer = function(a) {
   return cljs.core.async.impl.buffers.fixed_buffer.call(null, a);
@@ -22582,63 +22582,63 @@ cljs.core.async.random_array = function(a) {
 };
 cljs.core.async.alt_flag = function alt_flag() {
   var b = cljs.core.atom.call(null, !0);
-  "undefined" === typeof cljs.core.async.t28885 && (cljs.core.async.t28885 = function(b, d, e) {
+  "undefined" === typeof cljs.core.async.t29315 && (cljs.core.async.t29315 = function(b, d, e) {
     this.flag = b;
     this.alt_flag = d;
-    this.meta28886 = e;
+    this.meta29316 = e;
     this.cljs$lang$protocol_mask$partition1$ = 0;
     this.cljs$lang$protocol_mask$partition0$ = 393216;
-  }, cljs.core.async.t28885.cljs$lang$type = !0, cljs.core.async.t28885.cljs$lang$ctorStr = "cljs.core.async/t28885", cljs.core.async.t28885.cljs$lang$ctorPrWriter = function(b) {
+  }, cljs.core.async.t29315.cljs$lang$type = !0, cljs.core.async.t29315.cljs$lang$ctorStr = "cljs.core.async/t29315", cljs.core.async.t29315.cljs$lang$ctorPrWriter = function(b) {
     return function(b, c, f) {
-      return cljs.core._write.call(null, c, "cljs.core.async/t28885");
+      return cljs.core._write.call(null, c, "cljs.core.async/t29315");
     };
-  }(b), cljs.core.async.t28885.prototype.cljs$core$async$impl$protocols$Handler$ = !0, cljs.core.async.t28885.prototype.cljs$core$async$impl$protocols$Handler$active_QMARK_$arity$1 = function(b) {
+  }(b), cljs.core.async.t29315.prototype.cljs$core$async$impl$protocols$Handler$ = !0, cljs.core.async.t29315.prototype.cljs$core$async$impl$protocols$Handler$active_QMARK_$arity$1 = function(b) {
     return function(b) {
       return cljs.core.deref.call(null, this.flag);
     };
-  }(b), cljs.core.async.t28885.prototype.cljs$core$async$impl$protocols$Handler$commit$arity$1 = function(b) {
+  }(b), cljs.core.async.t29315.prototype.cljs$core$async$impl$protocols$Handler$commit$arity$1 = function(b) {
     return function(b) {
       cljs.core.reset_BANG_.call(null, this.flag, null);
       return!0;
     };
-  }(b), cljs.core.async.t28885.prototype.cljs$core$IMeta$_meta$arity$1 = function(b) {
+  }(b), cljs.core.async.t29315.prototype.cljs$core$IMeta$_meta$arity$1 = function(b) {
     return function(b) {
-      return this.meta28886;
+      return this.meta29316;
     };
-  }(b), cljs.core.async.t28885.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(b) {
+  }(b), cljs.core.async.t29315.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(b) {
     return function(b, c) {
-      return new cljs.core.async.t28885(this.flag, this.alt_flag, c);
+      return new cljs.core.async.t29315(this.flag, this.alt_flag, c);
     };
-  }(b), cljs.core.async.__GT_t28885 = function(b) {
+  }(b), cljs.core.async.__GT_t29315 = function(b) {
     return function(b, c, f) {
-      return new cljs.core.async.t28885(b, c, f);
+      return new cljs.core.async.t29315(b, c, f);
     };
   }(b));
-  return new cljs.core.async.t28885(b, alt_flag, null);
+  return new cljs.core.async.t29315(b, alt_flag, null);
 };
 cljs.core.async.alt_handler = function alt_handler(b, c) {
-  "undefined" === typeof cljs.core.async.t28891 && (cljs.core.async.t28891 = function(b, c, f, g) {
+  "undefined" === typeof cljs.core.async.t29321 && (cljs.core.async.t29321 = function(b, c, f, g) {
     this.cb = b;
     this.flag = c;
     this.alt_handler = f;
-    this.meta28892 = g;
+    this.meta29322 = g;
     this.cljs$lang$protocol_mask$partition1$ = 0;
     this.cljs$lang$protocol_mask$partition0$ = 393216;
-  }, cljs.core.async.t28891.cljs$lang$type = !0, cljs.core.async.t28891.cljs$lang$ctorStr = "cljs.core.async/t28891", cljs.core.async.t28891.cljs$lang$ctorPrWriter = function(b, c, f) {
-    return cljs.core._write.call(null, c, "cljs.core.async/t28891");
-  }, cljs.core.async.t28891.prototype.cljs$core$async$impl$protocols$Handler$ = !0, cljs.core.async.t28891.prototype.cljs$core$async$impl$protocols$Handler$active_QMARK_$arity$1 = function(b) {
+  }, cljs.core.async.t29321.cljs$lang$type = !0, cljs.core.async.t29321.cljs$lang$ctorStr = "cljs.core.async/t29321", cljs.core.async.t29321.cljs$lang$ctorPrWriter = function(b, c, f) {
+    return cljs.core._write.call(null, c, "cljs.core.async/t29321");
+  }, cljs.core.async.t29321.prototype.cljs$core$async$impl$protocols$Handler$ = !0, cljs.core.async.t29321.prototype.cljs$core$async$impl$protocols$Handler$active_QMARK_$arity$1 = function(b) {
     return cljs.core.async.impl.protocols.active_QMARK_.call(null, this.flag);
-  }, cljs.core.async.t28891.prototype.cljs$core$async$impl$protocols$Handler$commit$arity$1 = function(b) {
+  }, cljs.core.async.t29321.prototype.cljs$core$async$impl$protocols$Handler$commit$arity$1 = function(b) {
     cljs.core.async.impl.protocols.commit.call(null, this.flag);
     return this.cb;
-  }, cljs.core.async.t28891.prototype.cljs$core$IMeta$_meta$arity$1 = function(b) {
-    return this.meta28892;
-  }, cljs.core.async.t28891.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(b, c) {
-    return new cljs.core.async.t28891(this.cb, this.flag, this.alt_handler, c);
-  }, cljs.core.async.__GT_t28891 = function(b, c, f, g) {
-    return new cljs.core.async.t28891(b, c, f, g);
+  }, cljs.core.async.t29321.prototype.cljs$core$IMeta$_meta$arity$1 = function(b) {
+    return this.meta29322;
+  }, cljs.core.async.t29321.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(b, c) {
+    return new cljs.core.async.t29321(this.cb, this.flag, this.alt_handler, c);
+  }, cljs.core.async.__GT_t29321 = function(b, c, f, g) {
+    return new cljs.core.async.t29321(b, c, f, g);
   });
-  return new cljs.core.async.t28891(c, b, alt_handler, null);
+  return new cljs.core.async.t29321(c, b, alt_handler, null);
 };
 cljs.core.async.do_alts = function(a, b, c) {
   var d = cljs.core.async.alt_flag.call(null), e = cljs.core.count.call(null, b), f = cljs.core.async.random_array.call(null, e), g = (new cljs.core.Keyword(null, "priority", "priority", 1431093715)).cljs$core$IFn$_invoke$arity$1(c), h = function() {
@@ -22692,42 +22692,42 @@ cljs.core.async.alts_BANG_ = function() {
   return b;
 }();
 cljs.core.async.map_LT_ = function map_LT_(b, c) {
-  "undefined" === typeof cljs.core.async.t28907 && (cljs.core.async.t28907 = function(b, c, f, g) {
+  "undefined" === typeof cljs.core.async.t29337 && (cljs.core.async.t29337 = function(b, c, f, g) {
     this.ch = b;
     this.f = c;
     this.map_LT_ = f;
-    this.meta28908 = g;
+    this.meta29338 = g;
     this.cljs$lang$protocol_mask$partition1$ = 0;
     this.cljs$lang$protocol_mask$partition0$ = 393216;
-  }, cljs.core.async.t28907.cljs$lang$type = !0, cljs.core.async.t28907.cljs$lang$ctorStr = "cljs.core.async/t28907", cljs.core.async.t28907.cljs$lang$ctorPrWriter = function(b, c, f) {
-    return cljs.core._write.call(null, c, "cljs.core.async/t28907");
-  }, cljs.core.async.t28907.prototype.cljs$core$async$impl$protocols$WritePort$ = !0, cljs.core.async.t28907.prototype.cljs$core$async$impl$protocols$WritePort$put_BANG_$arity$3 = function(b, c, f) {
+  }, cljs.core.async.t29337.cljs$lang$type = !0, cljs.core.async.t29337.cljs$lang$ctorStr = "cljs.core.async/t29337", cljs.core.async.t29337.cljs$lang$ctorPrWriter = function(b, c, f) {
+    return cljs.core._write.call(null, c, "cljs.core.async/t29337");
+  }, cljs.core.async.t29337.prototype.cljs$core$async$impl$protocols$WritePort$ = !0, cljs.core.async.t29337.prototype.cljs$core$async$impl$protocols$WritePort$put_BANG_$arity$3 = function(b, c, f) {
     return cljs.core.async.impl.protocols.put_BANG_.call(null, this.ch, c, f);
-  }, cljs.core.async.t28907.prototype.cljs$core$async$impl$protocols$ReadPort$ = !0, cljs.core.async.t28907.prototype.cljs$core$async$impl$protocols$ReadPort$take_BANG_$arity$2 = function(b, c) {
+  }, cljs.core.async.t29337.prototype.cljs$core$async$impl$protocols$ReadPort$ = !0, cljs.core.async.t29337.prototype.cljs$core$async$impl$protocols$ReadPort$take_BANG_$arity$2 = function(b, c) {
     var f = this, g = this, h = cljs.core.async.impl.protocols.take_BANG_.call(null, f.ch, function() {
-      "undefined" === typeof cljs.core.async.t28910 && (cljs.core.async.t28910 = function(b, c, d, e, f, g, h) {
+      "undefined" === typeof cljs.core.async.t29340 && (cljs.core.async.t29340 = function(b, c, d, e, f, g, h) {
         this.fn1 = b;
         this._ = c;
-        this.meta28908 = d;
+        this.meta29338 = d;
         this.ch = e;
         this.f = f;
         this.map_LT_ = g;
-        this.meta28911 = h;
+        this.meta29341 = h;
         this.cljs$lang$protocol_mask$partition1$ = 0;
         this.cljs$lang$protocol_mask$partition0$ = 393216;
-      }, cljs.core.async.t28910.cljs$lang$type = !0, cljs.core.async.t28910.cljs$lang$ctorStr = "cljs.core.async/t28910", cljs.core.async.t28910.cljs$lang$ctorPrWriter = function(b) {
+      }, cljs.core.async.t29340.cljs$lang$type = !0, cljs.core.async.t29340.cljs$lang$ctorStr = "cljs.core.async/t29340", cljs.core.async.t29340.cljs$lang$ctorPrWriter = function(b) {
         return function(b, c, d) {
-          return cljs.core._write.call(null, c, "cljs.core.async/t28910");
+          return cljs.core._write.call(null, c, "cljs.core.async/t29340");
         };
-      }(g), cljs.core.async.t28910.prototype.cljs$core$async$impl$protocols$Handler$ = !0, cljs.core.async.t28910.prototype.cljs$core$async$impl$protocols$Handler$active_QMARK_$arity$1 = function(b) {
+      }(g), cljs.core.async.t29340.prototype.cljs$core$async$impl$protocols$Handler$ = !0, cljs.core.async.t29340.prototype.cljs$core$async$impl$protocols$Handler$active_QMARK_$arity$1 = function(b) {
         return function(b) {
           return cljs.core.async.impl.protocols.active_QMARK_.call(null, this.fn1);
         };
-      }(g), cljs.core.async.t28910.prototype.cljs$core$async$impl$protocols$Handler$lock_id$arity$1 = function(b) {
+      }(g), cljs.core.async.t29340.prototype.cljs$core$async$impl$protocols$Handler$lock_id$arity$1 = function(b) {
         return function(b) {
           return cljs.core.async.impl.protocols.lock_id.call(null, this.fn1);
         };
-      }(g), cljs.core.async.t28910.prototype.cljs$core$async$impl$protocols$Handler$commit$arity$1 = function(b) {
+      }(g), cljs.core.async.t29340.prototype.cljs$core$async$impl$protocols$Handler$commit$arity$1 = function(b) {
         return function(c) {
           var d = this;
           return function(b, c, e) {
@@ -22736,82 +22736,82 @@ cljs.core.async.map_LT_ = function map_LT_(b, c) {
             };
           }(cljs.core.async.impl.protocols.commit.call(null, d.fn1), this, b);
         };
-      }(g), cljs.core.async.t28910.prototype.cljs$core$IMeta$_meta$arity$1 = function(b) {
+      }(g), cljs.core.async.t29340.prototype.cljs$core$IMeta$_meta$arity$1 = function(b) {
         return function(b) {
-          return this.meta28911;
+          return this.meta29341;
         };
-      }(g), cljs.core.async.t28910.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(b) {
+      }(g), cljs.core.async.t29340.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(b) {
         return function(b, c) {
-          return new cljs.core.async.t28910(this.fn1, this._, this.meta28908, this.ch, this.f, this.map_LT_, c);
+          return new cljs.core.async.t29340(this.fn1, this._, this.meta29338, this.ch, this.f, this.map_LT_, c);
         };
-      }(g), cljs.core.async.__GT_t28910 = function(b) {
+      }(g), cljs.core.async.__GT_t29340 = function(b) {
         return function(b, c, d, e, f, g, h) {
-          return new cljs.core.async.t28910(b, c, d, e, f, g, h);
+          return new cljs.core.async.t29340(b, c, d, e, f, g, h);
         };
       }(g));
-      return new cljs.core.async.t28910(c, g, f.meta28908, f.ch, f.f, f.map_LT_, null);
+      return new cljs.core.async.t29340(c, g, f.meta29338, f.ch, f.f, f.map_LT_, null);
     }());
     return cljs.core.truth_(cljs.core.truth_(h) ? null != cljs.core.deref.call(null, h) : h) ? cljs.core.async.impl.channels.box.call(null, f.f.call(null, cljs.core.deref.call(null, h))) : h;
-  }, cljs.core.async.t28907.prototype.cljs$core$async$impl$protocols$Channel$ = !0, cljs.core.async.t28907.prototype.cljs$core$async$impl$protocols$Channel$close_BANG_$arity$1 = function(b) {
+  }, cljs.core.async.t29337.prototype.cljs$core$async$impl$protocols$Channel$ = !0, cljs.core.async.t29337.prototype.cljs$core$async$impl$protocols$Channel$close_BANG_$arity$1 = function(b) {
     return cljs.core.async.impl.protocols.close_BANG_.call(null, this.ch);
-  }, cljs.core.async.t28907.prototype.cljs$core$IMeta$_meta$arity$1 = function(b) {
-    return this.meta28908;
-  }, cljs.core.async.t28907.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(b, c) {
-    return new cljs.core.async.t28907(this.ch, this.f, this.map_LT_, c);
-  }, cljs.core.async.__GT_t28907 = function(b, c, f, g) {
-    return new cljs.core.async.t28907(b, c, f, g);
+  }, cljs.core.async.t29337.prototype.cljs$core$IMeta$_meta$arity$1 = function(b) {
+    return this.meta29338;
+  }, cljs.core.async.t29337.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(b, c) {
+    return new cljs.core.async.t29337(this.ch, this.f, this.map_LT_, c);
+  }, cljs.core.async.__GT_t29337 = function(b, c, f, g) {
+    return new cljs.core.async.t29337(b, c, f, g);
   });
-  return new cljs.core.async.t28907(c, b, map_LT_, null);
+  return new cljs.core.async.t29337(c, b, map_LT_, null);
 };
 cljs.core.async.map_GT_ = function map_GT_(b, c) {
-  "undefined" === typeof cljs.core.async.t28916 && (cljs.core.async.t28916 = function(b, c, f, g) {
+  "undefined" === typeof cljs.core.async.t29346 && (cljs.core.async.t29346 = function(b, c, f, g) {
     this.ch = b;
     this.f = c;
     this.map_GT_ = f;
-    this.meta28917 = g;
+    this.meta29347 = g;
     this.cljs$lang$protocol_mask$partition1$ = 0;
     this.cljs$lang$protocol_mask$partition0$ = 393216;
-  }, cljs.core.async.t28916.cljs$lang$type = !0, cljs.core.async.t28916.cljs$lang$ctorStr = "cljs.core.async/t28916", cljs.core.async.t28916.cljs$lang$ctorPrWriter = function(b, c, f) {
-    return cljs.core._write.call(null, c, "cljs.core.async/t28916");
-  }, cljs.core.async.t28916.prototype.cljs$core$async$impl$protocols$WritePort$ = !0, cljs.core.async.t28916.prototype.cljs$core$async$impl$protocols$WritePort$put_BANG_$arity$3 = function(b, c, f) {
+  }, cljs.core.async.t29346.cljs$lang$type = !0, cljs.core.async.t29346.cljs$lang$ctorStr = "cljs.core.async/t29346", cljs.core.async.t29346.cljs$lang$ctorPrWriter = function(b, c, f) {
+    return cljs.core._write.call(null, c, "cljs.core.async/t29346");
+  }, cljs.core.async.t29346.prototype.cljs$core$async$impl$protocols$WritePort$ = !0, cljs.core.async.t29346.prototype.cljs$core$async$impl$protocols$WritePort$put_BANG_$arity$3 = function(b, c, f) {
     return cljs.core.async.impl.protocols.put_BANG_.call(null, this.ch, this.f.call(null, c), f);
-  }, cljs.core.async.t28916.prototype.cljs$core$async$impl$protocols$ReadPort$ = !0, cljs.core.async.t28916.prototype.cljs$core$async$impl$protocols$ReadPort$take_BANG_$arity$2 = function(b, c) {
+  }, cljs.core.async.t29346.prototype.cljs$core$async$impl$protocols$ReadPort$ = !0, cljs.core.async.t29346.prototype.cljs$core$async$impl$protocols$ReadPort$take_BANG_$arity$2 = function(b, c) {
     return cljs.core.async.impl.protocols.take_BANG_.call(null, this.ch, c);
-  }, cljs.core.async.t28916.prototype.cljs$core$async$impl$protocols$Channel$ = !0, cljs.core.async.t28916.prototype.cljs$core$async$impl$protocols$Channel$close_BANG_$arity$1 = function(b) {
+  }, cljs.core.async.t29346.prototype.cljs$core$async$impl$protocols$Channel$ = !0, cljs.core.async.t29346.prototype.cljs$core$async$impl$protocols$Channel$close_BANG_$arity$1 = function(b) {
     return cljs.core.async.impl.protocols.close_BANG_.call(null, this.ch);
-  }, cljs.core.async.t28916.prototype.cljs$core$IMeta$_meta$arity$1 = function(b) {
-    return this.meta28917;
-  }, cljs.core.async.t28916.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(b, c) {
-    return new cljs.core.async.t28916(this.ch, this.f, this.map_GT_, c);
-  }, cljs.core.async.__GT_t28916 = function(b, c, f, g) {
-    return new cljs.core.async.t28916(b, c, f, g);
+  }, cljs.core.async.t29346.prototype.cljs$core$IMeta$_meta$arity$1 = function(b) {
+    return this.meta29347;
+  }, cljs.core.async.t29346.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(b, c) {
+    return new cljs.core.async.t29346(this.ch, this.f, this.map_GT_, c);
+  }, cljs.core.async.__GT_t29346 = function(b, c, f, g) {
+    return new cljs.core.async.t29346(b, c, f, g);
   });
-  return new cljs.core.async.t28916(c, b, map_GT_, null);
+  return new cljs.core.async.t29346(c, b, map_GT_, null);
 };
 cljs.core.async.filter_GT_ = function filter_GT_(b, c) {
-  "undefined" === typeof cljs.core.async.t28922 && (cljs.core.async.t28922 = function(b, c, f, g) {
+  "undefined" === typeof cljs.core.async.t29352 && (cljs.core.async.t29352 = function(b, c, f, g) {
     this.ch = b;
     this.p = c;
     this.filter_GT_ = f;
-    this.meta28923 = g;
+    this.meta29353 = g;
     this.cljs$lang$protocol_mask$partition1$ = 0;
     this.cljs$lang$protocol_mask$partition0$ = 393216;
-  }, cljs.core.async.t28922.cljs$lang$type = !0, cljs.core.async.t28922.cljs$lang$ctorStr = "cljs.core.async/t28922", cljs.core.async.t28922.cljs$lang$ctorPrWriter = function(b, c, f) {
-    return cljs.core._write.call(null, c, "cljs.core.async/t28922");
-  }, cljs.core.async.t28922.prototype.cljs$core$async$impl$protocols$WritePort$ = !0, cljs.core.async.t28922.prototype.cljs$core$async$impl$protocols$WritePort$put_BANG_$arity$3 = function(b, c, f) {
+  }, cljs.core.async.t29352.cljs$lang$type = !0, cljs.core.async.t29352.cljs$lang$ctorStr = "cljs.core.async/t29352", cljs.core.async.t29352.cljs$lang$ctorPrWriter = function(b, c, f) {
+    return cljs.core._write.call(null, c, "cljs.core.async/t29352");
+  }, cljs.core.async.t29352.prototype.cljs$core$async$impl$protocols$WritePort$ = !0, cljs.core.async.t29352.prototype.cljs$core$async$impl$protocols$WritePort$put_BANG_$arity$3 = function(b, c, f) {
     return cljs.core.truth_(this.p.call(null, c)) ? cljs.core.async.impl.protocols.put_BANG_.call(null, this.ch, c, f) : cljs.core.async.impl.channels.box.call(null, null);
-  }, cljs.core.async.t28922.prototype.cljs$core$async$impl$protocols$ReadPort$ = !0, cljs.core.async.t28922.prototype.cljs$core$async$impl$protocols$ReadPort$take_BANG_$arity$2 = function(b, c) {
+  }, cljs.core.async.t29352.prototype.cljs$core$async$impl$protocols$ReadPort$ = !0, cljs.core.async.t29352.prototype.cljs$core$async$impl$protocols$ReadPort$take_BANG_$arity$2 = function(b, c) {
     return cljs.core.async.impl.protocols.take_BANG_.call(null, this.ch, c);
-  }, cljs.core.async.t28922.prototype.cljs$core$async$impl$protocols$Channel$ = !0, cljs.core.async.t28922.prototype.cljs$core$async$impl$protocols$Channel$close_BANG_$arity$1 = function(b) {
+  }, cljs.core.async.t29352.prototype.cljs$core$async$impl$protocols$Channel$ = !0, cljs.core.async.t29352.prototype.cljs$core$async$impl$protocols$Channel$close_BANG_$arity$1 = function(b) {
     return cljs.core.async.impl.protocols.close_BANG_.call(null, this.ch);
-  }, cljs.core.async.t28922.prototype.cljs$core$IMeta$_meta$arity$1 = function(b) {
-    return this.meta28923;
-  }, cljs.core.async.t28922.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(b, c) {
-    return new cljs.core.async.t28922(this.ch, this.p, this.filter_GT_, c);
-  }, cljs.core.async.__GT_t28922 = function(b, c, f, g) {
-    return new cljs.core.async.t28922(b, c, f, g);
+  }, cljs.core.async.t29352.prototype.cljs$core$IMeta$_meta$arity$1 = function(b) {
+    return this.meta29353;
+  }, cljs.core.async.t29352.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(b, c) {
+    return new cljs.core.async.t29352(this.ch, this.p, this.filter_GT_, c);
+  }, cljs.core.async.__GT_t29352 = function(b, c, f, g) {
+    return new cljs.core.async.t29352(b, c, f, g);
   });
-  return new cljs.core.async.t28922(c, b, filter_GT_, null);
+  return new cljs.core.async.t29352(c, b, filter_GT_, null);
 };
 cljs.core.async.remove_GT_ = function(a, b) {
   return cljs.core.async.filter_GT_.call(null, cljs.core.complement.call(null, a), b);
@@ -22982,20 +22982,42 @@ cljs.core.async.mapcat_STAR_ = function(a, b, c) {
             }
             if (20 === e) {
               var f = d[7], g = d[2], e = cljs.core.next.call(null, f), h;
-              d[8] = g;
-              d[9] = 0;
-              d[10] = e;
-              d[11] = 0;
+              d[8] = 0;
+              d[9] = e;
+              d[10] = 0;
+              d[11] = g;
               d[12] = null;
               d[2] = null;
               d[1] = 8;
               return new cljs.core.Keyword(null, "recur", "recur", -437573268);
             }
-            return 1 === e ? (d[2] = null, d[1] = 2, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 4 === e ? (e = d[13], e = d[2], d[13] = e, cljs.core.truth_(null == e) ? d[1] = 5 : d[1] = 6, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 15 === e ? (d[2] = null, d[1] = 16, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 13 === e ? (g = d[9], e = d[10], h = d[11], f = d[12], d[14] = d[2], d[9] = g, d[10] = e, d[11] = h + 1, d[12] = f, d[2] = null, d[1] = 
-            8, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 6 === e ? (e = d[13], e = a.call(null, e), e = cljs.core.seq.call(null, e), d[9] = 0, d[10] = e, d[11] = 0, d[12] = null, d[2] = null, d[1] = 8, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 17 === e ? (f = d[7], e = cljs.core.chunk_first.call(null, f), f = cljs.core.chunk_rest.call(null, f), g = cljs.core.count.call(null, e), d[9] = g, d[10] = f, d[11] = 0, d[12] = e, d[2] = null, d[1] = 8, new cljs.core.Keyword(null, 
-            "recur", "recur", -437573268)) : 3 === e ? (e = d[2], cljs.core.async.impl.ioc_helpers.return_chan.call(null, d, e)) : 12 === e ? (e = d[2], d[2] = e, d[1] = 9, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 2 === e ? cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, d, 4, b) : 19 === e ? (e = d[2], d[2] = e, d[1] = 16, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 11 === e ? (e = d[10], e = cljs.core.seq.call(null, e), d[7] = e, d[1] = e ? 14 : 15, new cljs.core.Keyword(null, 
-            "recur", "recur", -437573268)) : 9 === e ? (d[15] = d[2], d[2] = null, d[1] = 2, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 5 === e ? (e = cljs.core.async.close_BANG_.call(null, c), d[2] = e, d[1] = 7, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 14 === e ? (f = d[7], e = cljs.core.chunked_seq_QMARK_.call(null, f), d[1] = e ? 17 : 18, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 16 === e ? (e = d[2], d[2] = e, d[1] = 12, new cljs.core.Keyword(null, 
-            "recur", "recur", -437573268)) : 10 === e ? (h = d[11], f = d[12], e = cljs.core._nth.call(null, f, h), cljs.core.async.impl.ioc_helpers.put_BANG_.call(null, d, 13, c, e)) : 18 === e ? (f = d[7], e = cljs.core.first.call(null, f), cljs.core.async.impl.ioc_helpers.put_BANG_.call(null, d, 20, c, e)) : 8 === e ? (g = d[9], h = d[11], e = h < g, cljs.core.truth_(e) ? d[1] = 10 : d[1] = 11, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : null;
+            if (1 === e) {
+              return d[2] = null, d[1] = 2, new cljs.core.Keyword(null, "recur", "recur", -437573268);
+            }
+            if (4 === e) {
+              return e = d[13], e = d[2], d[13] = e, cljs.core.truth_(null == e) ? d[1] = 5 : d[1] = 6, new cljs.core.Keyword(null, "recur", "recur", -437573268);
+            }
+            if (15 === e) {
+              return d[2] = null, d[1] = 16, new cljs.core.Keyword(null, "recur", "recur", -437573268);
+            }
+            if (13 === e) {
+              g = d[8];
+              e = d[9];
+              h = d[10];
+              var f = d[12], q = d[2];
+              d[8] = g;
+              d[9] = e;
+              d[14] = q;
+              d[10] = h + 1;
+              d[12] = f;
+              d[2] = null;
+              d[1] = 8;
+              return new cljs.core.Keyword(null, "recur", "recur", -437573268);
+            }
+            return 6 === e ? (e = d[13], e = a.call(null, e), e = cljs.core.seq.call(null, e), d[8] = 0, d[9] = e, d[10] = 0, d[12] = null, d[2] = null, d[1] = 8, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 17 === e ? (f = d[7], e = cljs.core.chunk_first.call(null, f), f = cljs.core.chunk_rest.call(null, f), g = cljs.core.count.call(null, e), d[8] = g, d[9] = f, d[10] = 0, d[12] = e, d[2] = null, d[1] = 8, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 3 === e ? (e = 
+            d[2], cljs.core.async.impl.ioc_helpers.return_chan.call(null, d, e)) : 12 === e ? (e = d[2], d[2] = e, d[1] = 9, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 2 === e ? cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, d, 4, b) : 19 === e ? (e = d[2], d[2] = e, d[1] = 16, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 11 === e ? (e = d[9], e = cljs.core.seq.call(null, e), d[7] = e, d[1] = e ? 14 : 15, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 
+            9 === e ? (d[15] = d[2], d[2] = null, d[1] = 2, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 5 === e ? (e = cljs.core.async.close_BANG_.call(null, c), d[2] = e, d[1] = 7, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 14 === e ? (f = d[7], e = cljs.core.chunked_seq_QMARK_.call(null, f), d[1] = e ? 17 : 18, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 16 === e ? (e = d[2], d[2] = e, d[1] = 12, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 
+            10 === e ? (h = d[10], f = d[12], e = cljs.core._nth.call(null, f, h), cljs.core.async.impl.ioc_helpers.put_BANG_.call(null, d, 13, c, e)) : 18 === e ? (f = d[7], e = cljs.core.first.call(null, f), cljs.core.async.impl.ioc_helpers.put_BANG_.call(null, d, 20, c, e)) : 8 === e ? (g = d[8], h = d[10], e = h < g, cljs.core.truth_(e) ? d[1] = 10 : d[1] = 11, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : null;
           };
         }(d), d);
       }(), g = function() {
@@ -23464,50 +23486,50 @@ cljs.core.async.untap_all_STAR_ = function(a) {
 };
 cljs.core.async.mult = function mult(b) {
   var c = cljs.core.atom.call(null, cljs.core.PersistentArrayMap.EMPTY), d = function() {
-    "undefined" === typeof cljs.core.async.t29817 && (cljs.core.async.t29817 = function(b, c, d, e) {
+    "undefined" === typeof cljs.core.async.t30247 && (cljs.core.async.t30247 = function(b, c, d, e) {
       this.cs = b;
       this.ch = c;
       this.mult = d;
-      this.meta29818 = e;
+      this.meta30248 = e;
       this.cljs$lang$protocol_mask$partition1$ = 0;
       this.cljs$lang$protocol_mask$partition0$ = 393216;
-    }, cljs.core.async.t29817.cljs$lang$type = !0, cljs.core.async.t29817.cljs$lang$ctorStr = "cljs.core.async/t29817", cljs.core.async.t29817.cljs$lang$ctorPrWriter = function(b) {
+    }, cljs.core.async.t30247.cljs$lang$type = !0, cljs.core.async.t30247.cljs$lang$ctorStr = "cljs.core.async/t30247", cljs.core.async.t30247.cljs$lang$ctorPrWriter = function(b) {
       return function(b, c, d) {
-        return cljs.core._write.call(null, c, "cljs.core.async/t29817");
+        return cljs.core._write.call(null, c, "cljs.core.async/t30247");
       };
-    }(c), cljs.core.async.t29817.prototype.cljs$core$async$Mult$ = !0, cljs.core.async.t29817.prototype.cljs$core$async$Mult$tap_STAR_$arity$3 = function(b) {
+    }(c), cljs.core.async.t30247.prototype.cljs$core$async$Mult$ = !0, cljs.core.async.t30247.prototype.cljs$core$async$Mult$tap_STAR_$arity$3 = function(b) {
       return function(b, c, d) {
         cljs.core.swap_BANG_.call(null, this.cs, cljs.core.assoc, c, d);
         return null;
       };
-    }(c), cljs.core.async.t29817.prototype.cljs$core$async$Mult$untap_STAR_$arity$2 = function(b) {
+    }(c), cljs.core.async.t30247.prototype.cljs$core$async$Mult$untap_STAR_$arity$2 = function(b) {
       return function(b, c) {
         cljs.core.swap_BANG_.call(null, this.cs, cljs.core.dissoc, c);
         return null;
       };
-    }(c), cljs.core.async.t29817.prototype.cljs$core$async$Mult$untap_all_STAR_$arity$1 = function(b) {
+    }(c), cljs.core.async.t30247.prototype.cljs$core$async$Mult$untap_all_STAR_$arity$1 = function(b) {
       return function(b) {
         cljs.core.reset_BANG_.call(null, this.cs, cljs.core.PersistentArrayMap.EMPTY);
         return null;
       };
-    }(c), cljs.core.async.t29817.prototype.cljs$core$async$Mux$ = !0, cljs.core.async.t29817.prototype.cljs$core$async$Mux$muxch_STAR_$arity$1 = function(b) {
+    }(c), cljs.core.async.t30247.prototype.cljs$core$async$Mux$ = !0, cljs.core.async.t30247.prototype.cljs$core$async$Mux$muxch_STAR_$arity$1 = function(b) {
       return function(b) {
         return this.ch;
       };
-    }(c), cljs.core.async.t29817.prototype.cljs$core$IMeta$_meta$arity$1 = function(b) {
+    }(c), cljs.core.async.t30247.prototype.cljs$core$IMeta$_meta$arity$1 = function(b) {
       return function(b) {
-        return this.meta29818;
+        return this.meta30248;
       };
-    }(c), cljs.core.async.t29817.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(b) {
+    }(c), cljs.core.async.t30247.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(b) {
       return function(b, c) {
-        return new cljs.core.async.t29817(this.cs, this.ch, this.mult, c);
+        return new cljs.core.async.t30247(this.cs, this.ch, this.mult, c);
       };
-    }(c), cljs.core.async.__GT_t29817 = function(b) {
+    }(c), cljs.core.async.__GT_t30247 = function(b) {
       return function(b, c, d, e) {
-        return new cljs.core.async.t29817(b, c, d, e);
+        return new cljs.core.async.t30247(b, c, d, e);
       };
     }(c));
-    return new cljs.core.async.t29817(c, b, mult, null);
+    return new cljs.core.async.t30247(c, b, mult, null);
   }(), e = cljs.core.async.chan.call(null, 1), f = cljs.core.atom.call(null, null), g = function(b, c, d, e) {
     return function() {
       return 0 === cljs.core.swap_BANG_.call(null, e, cljs.core.dec) ? cljs.core.async.put_BANG_.call(null, d, !0) : null;
@@ -23581,37 +23603,37 @@ cljs.core.async.mult = function mult(b) {
               return new cljs.core.Keyword(null, "recur", "recur", -437573268);
             }
             if (27 === k) {
-              var s = c[9], t = c[10], R = cljs.core._nth.call(null, s, t);
-              c[11] = R;
-              var O = l = c;
-              O[2] = null;
-              O[1] = 32;
+              var s = c[9], t = c[10], O = cljs.core._nth.call(null, t, s);
+              c[11] = O;
+              var T = l = c;
+              T[2] = null;
+              T[1] = 32;
               return new cljs.core.Keyword(null, "recur", "recur", -437573268);
             }
             if (1 === k) {
-              var Q = l = c;
-              Q[2] = null;
-              Q[1] = 2;
+              var V = l = c;
+              V[2] = null;
+              V[1] = 2;
               return new cljs.core.Keyword(null, "recur", "recur", -437573268);
             }
             if (24 === k) {
-              var q = c[7], T = c[2], B = cljs.core.next.call(null, q), x = null, C = 0, D = 0;
-              c[12] = B;
-              c[13] = x;
-              c[14] = C;
-              c[15] = T;
-              c[16] = D;
-              var M = l = c;
-              M[2] = null;
-              M[1] = 8;
+              var q = c[7], W = c[2], E = cljs.core.next.call(null, q), A = null, D = 0, B = 0;
+              c[12] = A;
+              c[13] = D;
+              c[14] = B;
+              c[15] = E;
+              c[16] = W;
+              var P = l = c;
+              P[2] = null;
+              P[1] = 8;
               return new cljs.core.Keyword(null, "recur", "recur", -437573268);
             }
             if (39 === k) {
-              var H = c[17], W = c[2], U = cljs.core.next.call(null, H), s = null, S = 0, t = 0;
+              var M = c[17], U = c[2], S = cljs.core.next.call(null, M), t = null, R = 0, s = 0;
               c[9] = s;
-              c[18] = W;
-              c[19] = U;
+              c[18] = R;
               c[10] = t;
+              c[19] = U;
               c[20] = S;
               var X = l = c;
               X[2] = null;
@@ -23619,65 +23641,65 @@ cljs.core.async.mult = function mult(b) {
               return new cljs.core.Keyword(null, "recur", "recur", -437573268);
             }
             if (4 === k) {
-              var Y = c[21], da = c[2], $ = null == da;
-              c[21] = da;
+              var Y = c[21], ca = c[2], $ = null == ca;
+              c[21] = ca;
               l = c;
               cljs.core.truth_($) ? l[1] = 5 : l[1] = 6;
               return new cljs.core.Keyword(null, "recur", "recur", -437573268);
             }
             if (15 === k) {
-              var B = c[12], x = c[13], C = c[14], D = c[16], ca = c[2], aa = x, ba = C, ea = D + 1;
-              c[12] = B;
-              c[13] = aa;
-              c[14] = ba;
-              c[22] = ca;
-              c[16] = ea;
-              var fa = l = c;
-              fa[2] = null;
-              fa[1] = 8;
+              var A = c[12], D = c[13], B = c[14], ba = E = c[15], aa = A, ea = D, da = B + 1;
+              c[22] = c[2];
+              c[12] = aa;
+              c[13] = ea;
+              c[14] = da;
+              c[15] = ba;
+              var ha = l = c;
+              ha[2] = null;
+              ha[1] = 8;
               return new cljs.core.Keyword(null, "recur", "recur", -437573268);
             }
             if (21 === k) {
-              var ua = c[2], la = l = c;
-              la[2] = ua;
-              la[1] = 18;
+              var ja = c[2], na = l = c;
+              na[2] = ja;
+              na[1] = 18;
               return new cljs.core.Keyword(null, "recur", "recur", -437573268);
             }
             if (31 === k) {
-              var R = c[11], ma = c[2], qa = cljs.core.swap_BANG_.call(null, g, cljs.core.dec), ra = cljs.core.async.untap_STAR_.call(null, e, R);
-              c[23] = qa;
-              c[24] = ma;
+              var O = c[11], oa = c[2], ra = cljs.core.swap_BANG_.call(null, g, cljs.core.dec), sa = cljs.core.async.untap_STAR_.call(null, e, O);
+              c[23] = ra;
+              c[24] = oa;
               l = c;
-              l[2] = ra;
+              l[2] = sa;
               cljs.core.async.impl.ioc_helpers.process_exception.call(null, l);
               return new cljs.core.Keyword(null, "recur", "recur", -437573268);
             }
             if (32 === k) {
+              O = c[11];
               Y = c[21];
-              R = c[11];
               cljs.core.async.impl.ioc_helpers.add_exception_frame.call(null, c, 31, Object, null, 30);
-              var va = cljs.core.async.put_BANG_.call(null, R, Y, h), l = c;
+              var va = cljs.core.async.put_BANG_.call(null, O, Y, h), l = c;
               l[2] = va;
               cljs.core.async.impl.ioc_helpers.process_exception.call(null, l);
               return new cljs.core.Keyword(null, "recur", "recur", -437573268);
             }
             if (40 === k) {
-              var na = c[25], Ja = c[2], Ka = cljs.core.swap_BANG_.call(null, g, cljs.core.dec), Ba = cljs.core.async.untap_STAR_.call(null, e, na);
-              c[26] = Ka;
-              c[27] = Ja;
+              var fa = c[25], Ja = c[2], Ka = cljs.core.swap_BANG_.call(null, g, cljs.core.dec), Ba = cljs.core.async.untap_STAR_.call(null, e, fa);
+              c[26] = Ja;
+              c[27] = Ka;
               l = c;
               l[2] = Ba;
               cljs.core.async.impl.ioc_helpers.process_exception.call(null, l);
               return new cljs.core.Keyword(null, "recur", "recur", -437573268);
             }
             if (33 === k) {
-              var H = c[17], ya = cljs.core.chunked_seq_QMARK_.call(null, H), l = c;
+              var M = c[17], ya = cljs.core.chunked_seq_QMARK_.call(null, M), l = c;
               l[1] = ya ? 36 : 37;
               return new cljs.core.Keyword(null, "recur", "recur", -437573268);
             }
             if (13 === k) {
-              var ia = c[28], ja = cljs.core.async.close_BANG_.call(null, ia), Ca = l = c;
-              Ca[2] = ja;
+              var ka = c[28], la = cljs.core.async.close_BANG_.call(null, ka), Ca = l = c;
+              Ca[2] = la;
               Ca[1] = 15;
               return new cljs.core.Keyword(null, "recur", "recur", -437573268);
             }
@@ -23688,29 +23710,29 @@ cljs.core.async.mult = function mult(b) {
               return new cljs.core.Keyword(null, "recur", "recur", -437573268);
             }
             if (36 === k) {
-              var H = c[17], wa = cljs.core.chunk_first.call(null, H), ha = cljs.core.chunk_rest.call(null, H), sa = cljs.core.count.call(null, wa), U = ha, s = wa, S = sa, t = 0;
+              var M = c[17], wa = cljs.core.chunk_first.call(null, M), ia = cljs.core.chunk_rest.call(null, M), ta = cljs.core.count.call(null, wa), S = ia, t = wa, R = ta, s = 0;
               c[9] = s;
-              c[19] = U;
+              c[18] = R;
               c[10] = t;
               c[20] = S;
-              var oa = l = c;
-              oa[2] = null;
-              oa[1] = 25;
+              var pa = l = c;
+              pa[2] = null;
+              pa[1] = 25;
               return new cljs.core.Keyword(null, "recur", "recur", -437573268);
             }
             if (41 === k) {
-              na = c[25];
+              fa = c[25];
               Y = c[21];
               cljs.core.async.impl.ioc_helpers.add_exception_frame.call(null, c, 40, Object, null, 39);
-              var ta = cljs.core.async.put_BANG_.call(null, na, Y, h), l = c;
-              l[2] = ta;
+              var ua = cljs.core.async.put_BANG_.call(null, fa, Y, h), l = c;
+              l[2] = ua;
               cljs.core.async.impl.ioc_helpers.process_exception.call(null, l);
               return new cljs.core.Keyword(null, "recur", "recur", -437573268);
             }
             if (43 === k) {
-              var ka = l = c;
-              ka[2] = null;
-              ka[1] = 44;
+              var ma = l = c;
+              ma[2] = null;
+              ma[1] = 44;
               return new cljs.core.Keyword(null, "recur", "recur", -437573268);
             }
             if (29 === k) {
@@ -23727,27 +23749,27 @@ cljs.core.async.mult = function mult(b) {
               return new cljs.core.Keyword(null, "recur", "recur", -437573268);
             }
             if (6 === k) {
-              var Z = c[30], Na = cljs.core.deref.call(null, d), za = cljs.core.keys.call(null, Na), pa = cljs.core.count.call(null, za), Aa = cljs.core.reset_BANG_.call(null, g, pa), U = cljs.core.seq.call(null, za), s = null, t = S = 0;
+              var Z = c[30], Na = cljs.core.deref.call(null, d), za = cljs.core.keys.call(null, Na), qa = cljs.core.count.call(null, za), Aa = cljs.core.reset_BANG_.call(null, g, qa), S = cljs.core.seq.call(null, za), t = null, s = R = 0;
               c[9] = s;
               c[31] = Aa;
-              c[30] = za;
-              c[19] = U;
+              c[18] = R;
               c[10] = t;
               c[20] = S;
+              c[30] = za;
               var Ga = l = c;
               Ga[2] = null;
               Ga[1] = 25;
               return new cljs.core.Keyword(null, "recur", "recur", -437573268);
             }
             if (28 === k) {
-              var U = c[19], H = c[17], Ha = cljs.core.seq.call(null, U);
+              var S = c[20], M = c[17], Ha = cljs.core.seq.call(null, S);
               c[17] = Ha;
               l = c;
               l[1] = Ha ? 33 : 34;
               return new cljs.core.Keyword(null, "recur", "recur", -437573268);
             }
             if (25 === k) {
-              var t = c[10], S = c[20], Ia = t < S, l = c;
+              var s = c[9], R = c[18], Ia = s < R, l = c;
               cljs.core.truth_(Ia) ? l[1] = 27 : l[1] = 28;
               return new cljs.core.Keyword(null, "recur", "recur", -437573268);
             }
@@ -23789,18 +23811,18 @@ cljs.core.async.mult = function mult(b) {
               return new cljs.core.Keyword(null, "recur", "recur", -437573268);
             }
             if (19 === k) {
-              var q = c[7], Sa = cljs.core.chunk_first.call(null, q), gb = cljs.core.chunk_rest.call(null, q), hb = cljs.core.count.call(null, Sa), B = gb, x = Sa, C = hb, D = 0;
-              c[12] = B;
-              c[13] = x;
-              c[14] = C;
-              c[16] = D;
+              var q = c[7], Sa = cljs.core.chunk_first.call(null, q), gb = cljs.core.chunk_rest.call(null, q), hb = cljs.core.count.call(null, Sa), E = gb, A = Sa, D = hb, B = 0;
+              c[12] = A;
+              c[13] = D;
+              c[14] = B;
+              c[15] = E;
               var Ta = l = c;
               Ta[2] = null;
               Ta[1] = 8;
               return new cljs.core.Keyword(null, "recur", "recur", -437573268);
             }
             if (11 === k) {
-              var B = c[12], q = c[7], Ua = cljs.core.seq.call(null, B);
+              var q = c[7], E = c[15], Ua = cljs.core.seq.call(null, E);
               c[7] = Ua;
               l = c;
               l[1] = Ua ? 16 : 17;
@@ -23813,11 +23835,11 @@ cljs.core.async.mult = function mult(b) {
               return new cljs.core.Keyword(null, "recur", "recur", -437573268);
             }
             if (5 === k) {
-              var jb = cljs.core.deref.call(null, d), B = cljs.core.seq.call(null, jb), x = null, D = C = 0;
-              c[12] = B;
-              c[13] = x;
-              c[14] = C;
-              c[16] = D;
+              var jb = cljs.core.deref.call(null, d), E = cljs.core.seq.call(null, jb), A = null, B = D = 0;
+              c[12] = A;
+              c[13] = D;
+              c[14] = B;
+              c[15] = E;
               var Wa = l = c;
               Wa[2] = null;
               Wa[1] = 8;
@@ -23854,20 +23876,20 @@ cljs.core.async.mult = function mult(b) {
               return new cljs.core.Keyword(null, "recur", "recur", -437573268);
             }
             if (30 === k) {
-              var s = c[9], U = c[19], t = c[10], S = c[20], pb = c[2], qb = U, rb = S, sb = t + 1;
-              c[9] = s;
-              c[19] = qb;
-              c[10] = sb;
-              c[33] = pb;
-              c[20] = rb;
+              var s = c[9], R = c[18], t = c[10], pb = S = c[20], qb = t, rb = R, sb = s + 1;
+              c[33] = c[2];
+              c[9] = sb;
+              c[18] = rb;
+              c[10] = qb;
+              c[20] = pb;
               var $a = l = c;
               $a[2] = null;
               $a[1] = 25;
               return new cljs.core.Keyword(null, "recur", "recur", -437573268);
             }
             if (10 === k) {
-              var x = c[13], D = c[16], ab = cljs.core._nth.call(null, x, D), ia = cljs.core.nth.call(null, ab, 0, null), tb = cljs.core.nth.call(null, ab, 1, null);
-              c[28] = ia;
+              var A = c[12], B = c[14], ab = cljs.core._nth.call(null, A, B), ka = cljs.core.nth.call(null, ab, 0, null), tb = cljs.core.nth.call(null, ab, 1, null);
+              c[28] = ka;
               l = c;
               cljs.core.truth_(tb) ? l[1] = 13 : l[1] = 14;
               return new cljs.core.Keyword(null, "recur", "recur", -437573268);
@@ -23882,16 +23904,16 @@ cljs.core.async.mult = function mult(b) {
               return l = c, cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, l, 45, f);
             }
             if (37 === k) {
-              H = c[17];
-              na = cljs.core.first.call(null, H);
-              c[25] = na;
+              M = c[17];
+              fa = cljs.core.first.call(null, M);
+              c[25] = fa;
               var cb = l = c;
               cb[2] = null;
               cb[1] = 41;
               return new cljs.core.Keyword(null, "recur", "recur", -437573268);
             }
             if (8 === k) {
-              var C = c[14], D = c[16], vb = D < C, l = c;
+              var D = c[13], B = c[14], vb = B < D, l = c;
               cljs.core.truth_(vb) ? l[1] = 10 : l[1] = 11;
               return new cljs.core.Keyword(null, "recur", "recur", -437573268);
             }
@@ -24012,7 +24034,7 @@ cljs.core.async.mix = function mix(b) {
       cljs.core.remove.call(null, k, cljs.core.keys.call(null, c))), f)], null);
     };
   }(c, d, e, f, g, h, k), m = function() {
-    "undefined" === typeof cljs.core.async.t30206 && (cljs.core.async.t30206 = function(b, c, d, e, f, g, h, k, l, m, n) {
+    "undefined" === typeof cljs.core.async.t30636 && (cljs.core.async.t30636 = function(b, c, d, e, f, g, h, k, l, m, n) {
       this.change = b;
       this.mix = c;
       this.solo_mode = d;
@@ -24023,34 +24045,34 @@ cljs.core.async.mix = function mix(b) {
       this.changed = k;
       this.solo_modes = l;
       this.attrs = m;
-      this.meta30207 = n;
+      this.meta30637 = n;
       this.cljs$lang$protocol_mask$partition1$ = 0;
       this.cljs$lang$protocol_mask$partition0$ = 393216;
-    }, cljs.core.async.t30206.cljs$lang$type = !0, cljs.core.async.t30206.cljs$lang$ctorStr = "cljs.core.async/t30206", cljs.core.async.t30206.cljs$lang$ctorPrWriter = function(b, c, d, e, f, g, h, k) {
+    }, cljs.core.async.t30636.cljs$lang$type = !0, cljs.core.async.t30636.cljs$lang$ctorStr = "cljs.core.async/t30636", cljs.core.async.t30636.cljs$lang$ctorPrWriter = function(b, c, d, e, f, g, h, k) {
       return function(b, c, d) {
-        return cljs.core._write.call(null, c, "cljs.core.async/t30206");
+        return cljs.core._write.call(null, c, "cljs.core.async/t30636");
       };
-    }(c, d, e, f, g, h, k, l), cljs.core.async.t30206.prototype.cljs$core$async$Mix$ = !0, cljs.core.async.t30206.prototype.cljs$core$async$Mix$admix_STAR_$arity$2 = function(b, c, d, e, f, g, h, k) {
+    }(c, d, e, f, g, h, k, l), cljs.core.async.t30636.prototype.cljs$core$async$Mix$ = !0, cljs.core.async.t30636.prototype.cljs$core$async$Mix$admix_STAR_$arity$2 = function(b, c, d, e, f, g, h, k) {
       return function(b, c) {
         cljs.core.swap_BANG_.call(null, this.cs, cljs.core.assoc, c, cljs.core.PersistentArrayMap.EMPTY);
         return this.changed.call(null);
       };
-    }(c, d, e, f, g, h, k, l), cljs.core.async.t30206.prototype.cljs$core$async$Mix$unmix_STAR_$arity$2 = function(b, c, d, e, f, g, h, k) {
+    }(c, d, e, f, g, h, k, l), cljs.core.async.t30636.prototype.cljs$core$async$Mix$unmix_STAR_$arity$2 = function(b, c, d, e, f, g, h, k) {
       return function(b, c) {
         cljs.core.swap_BANG_.call(null, this.cs, cljs.core.dissoc, c);
         return this.changed.call(null);
       };
-    }(c, d, e, f, g, h, k, l), cljs.core.async.t30206.prototype.cljs$core$async$Mix$unmix_all_STAR_$arity$1 = function(b, c, d, e, f, g, h, k) {
+    }(c, d, e, f, g, h, k, l), cljs.core.async.t30636.prototype.cljs$core$async$Mix$unmix_all_STAR_$arity$1 = function(b, c, d, e, f, g, h, k) {
       return function(b) {
         cljs.core.reset_BANG_.call(null, this.cs, cljs.core.PersistentArrayMap.EMPTY);
         return this.changed.call(null);
       };
-    }(c, d, e, f, g, h, k, l), cljs.core.async.t30206.prototype.cljs$core$async$Mix$toggle_STAR_$arity$2 = function(b, c, d, e, f, g, h, k) {
+    }(c, d, e, f, g, h, k, l), cljs.core.async.t30636.prototype.cljs$core$async$Mix$toggle_STAR_$arity$2 = function(b, c, d, e, f, g, h, k) {
       return function(b, c) {
         cljs.core.swap_BANG_.call(null, this.cs, cljs.core.partial.call(null, cljs.core.merge_with, cljs.core.merge), c);
         return this.changed.call(null);
       };
-    }(c, d, e, f, g, h, k, l), cljs.core.async.t30206.prototype.cljs$core$async$Mix$solo_mode_STAR_$arity$2 = function(b, c, d, e, f, g, h, k) {
+    }(c, d, e, f, g, h, k, l), cljs.core.async.t30636.prototype.cljs$core$async$Mix$solo_mode_STAR_$arity$2 = function(b, c, d, e, f, g, h, k) {
       return function(b, c) {
         if (!cljs.core.truth_(this.solo_modes.call(null, c))) {
           throw Error("Assert failed: " + cljs.core.str.cljs$core$IFn$_invoke$arity$1("mode must be one of: " + cljs.core.str.cljs$core$IFn$_invoke$arity$1(this.solo_modes)) + "\n" + cljs.core.str.cljs$core$IFn$_invoke$arity$1(cljs.core.pr_str.call(null, cljs.core.list(new cljs.core.Symbol(null, "solo-modes", "solo-modes", 882180540, null), new cljs.core.Symbol(null, "mode", "mode", -2000032078, null)))));
@@ -24058,28 +24080,28 @@ cljs.core.async.mix = function mix(b) {
         cljs.core.reset_BANG_.call(null, this.solo_mode, c);
         return this.changed.call(null);
       };
-    }(c, d, e, f, g, h, k, l), cljs.core.async.t30206.prototype.cljs$core$async$Mux$ = !0, cljs.core.async.t30206.prototype.cljs$core$async$Mux$muxch_STAR_$arity$1 = function(b, c, d, e, f, g, h, k) {
+    }(c, d, e, f, g, h, k, l), cljs.core.async.t30636.prototype.cljs$core$async$Mux$ = !0, cljs.core.async.t30636.prototype.cljs$core$async$Mux$muxch_STAR_$arity$1 = function(b, c, d, e, f, g, h, k) {
       return function(b) {
         return this.out;
       };
-    }(c, d, e, f, g, h, k, l), cljs.core.async.t30206.prototype.cljs$core$IMeta$_meta$arity$1 = function(b, c, d, e, f, g, h, k) {
+    }(c, d, e, f, g, h, k, l), cljs.core.async.t30636.prototype.cljs$core$IMeta$_meta$arity$1 = function(b, c, d, e, f, g, h, k) {
       return function(b) {
-        return this.meta30207;
+        return this.meta30637;
       };
-    }(c, d, e, f, g, h, k, l), cljs.core.async.t30206.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(b, c, d, e, f, g, h, k) {
+    }(c, d, e, f, g, h, k, l), cljs.core.async.t30636.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(b, c, d, e, f, g, h, k) {
       return function(b, c) {
-        return new cljs.core.async.t30206(this.change, this.mix, this.solo_mode, this.pick, this.cs, this.calc_state, this.out, this.changed, this.solo_modes, this.attrs, c);
+        return new cljs.core.async.t30636(this.change, this.mix, this.solo_mode, this.pick, this.cs, this.calc_state, this.out, this.changed, this.solo_modes, this.attrs, c);
       };
-    }(c, d, e, f, g, h, k, l), cljs.core.async.__GT_t30206 = function(b, c, d, e, f, g, h, k) {
+    }(c, d, e, f, g, h, k, l), cljs.core.async.__GT_t30636 = function(b, c, d, e, f, g, h, k) {
       return function(b, c, d, e, f, g, h, k, l, m, q) {
-        return new cljs.core.async.t30206(b, c, d, e, f, g, h, k, l, m, q);
+        return new cljs.core.async.t30636(b, c, d, e, f, g, h, k, l, m, q);
       };
     }(c, d, e, f, g, h, k, l));
-    return new cljs.core.async.t30206(g, mix, f, k, c, l, b, h, d, e, null);
+    return new cljs.core.async.t30636(g, mix, f, k, c, l, b, h, d, e, null);
   }(), n = cljs.core.async.chan.call(null, 1);
   cljs.core.async.impl.dispatch.run.call(null, function(c, d, e, f, g, h, k, l, m, n) {
     return function() {
-      var V = function() {
+      var K = function() {
         return function(b, c, d, e, f, g, h, k, l, m, q) {
           return function() {
             var c = null, d = function() {
@@ -24145,28 +24167,28 @@ cljs.core.async.mix = function mix(b) {
             }
             if (4 === e) {
               var e = c[9], g = c[2], f = cljs.core.get.call(null, g, new cljs.core.Keyword(null, "reads", "reads", -1215067361)), k = cljs.core.get.call(null, g, new cljs.core.Keyword(null, "mutes", "mutes", 1068806309)), g = cljs.core.get.call(null, g, new cljs.core.Keyword(null, "solos", "solos", 1441458643));
-              c[10] = f;
-              c[11] = g;
+              c[10] = g;
               c[7] = e;
-              c[12] = k;
+              c[11] = k;
+              c[12] = f;
               c[2] = null;
               c[1] = 5;
               return new cljs.core.Keyword(null, "recur", "recur", -437573268);
             }
-            return 15 === e ? (c[2] = null, c[1] = 16, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 21 === e ? (c[2] = null, c[1] = 22, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 13 === e ? (e = c[2], c[2] = e, c[1] = 6, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 22 === e ? (f = c[2], e = c[13], c[14] = f, c[7] = e, c[2] = null, c[1] = 5, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 6 === e ? (e = c[2], cljs.core.async.impl.ioc_helpers.return_chan.call(null, 
-            c, e)) : 17 === e ? (e = c[15], c[2] = e, c[1] = 19, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 3 === e ? (e = c[9], c[2] = e, c[1] = 4, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 12 === e ? (k = c[16], f = c[17], e = f.call(null, k), c[15] = e, cljs.core.truth_(e) ? c[1] = 17 : c[1] = 18, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 2 === e ? (e = c[9], e = cljs.core.apply.call(null, cljs.core.hash_map, e), c[2] = e, c[1] = 4, new cljs.core.Keyword(null, 
+            return 15 === e ? (c[2] = null, c[1] = 16, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 21 === e ? (c[2] = null, c[1] = 22, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 13 === e ? (e = c[2], c[2] = e, c[1] = 6, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 22 === e ? (f = c[2], e = c[13], c[7] = e, c[14] = f, c[2] = null, c[1] = 5, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 6 === e ? (e = c[2], cljs.core.async.impl.ioc_helpers.return_chan.call(null, 
+            c, e)) : 17 === e ? (e = c[15], c[2] = e, c[1] = 19, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 3 === e ? (e = c[9], c[2] = e, c[1] = 4, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 12 === e ? (f = c[16], k = c[17], e = f.call(null, k), c[15] = e, cljs.core.truth_(e) ? c[1] = 17 : c[1] = 18, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 2 === e ? (e = c[9], e = cljs.core.apply.call(null, cljs.core.hash_map, e), c[2] = e, c[1] = 4, new cljs.core.Keyword(null, 
             "recur", "recur", -437573268)) : 23 === e ? (e = c[2], c[2] = e, c[1] = 22, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 19 === e ? (e = c[2], cljs.core.truth_(e) ? c[1] = 20 : c[1] = 21, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 11 === e ? (e = c[8], cljs.core.truth_(null == e) ? c[1] = 14 : c[1] = 15, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 9 === e ? (k = c[2], g = cljs.core.get.call(null, k, new cljs.core.Keyword(null, "reads", 
-            "reads", -1215067361)), e = cljs.core.get.call(null, k, new cljs.core.Keyword(null, "mutes", "mutes", 1068806309)), f = cljs.core.get.call(null, k, new cljs.core.Keyword(null, "solos", "solos", 1441458643)), c[13] = k, c[18] = e, c[17] = f, cljs.core.async.impl.ioc_helpers.ioc_alts_BANG_.call(null, c, 10, g)) : 5 === e ? (e = c[7], e = cljs.core.seq_QMARK_.call(null, e), c[1] = e ? 7 : 8, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 14 === e ? (k = c[16], e = cljs.core.swap_BANG_.call(null, 
-            d, cljs.core.dissoc, k), c[2] = e, c[1] = 16, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 16 === e ? (f = c[2], e = m.call(null), c[7] = e, c[19] = f, c[2] = null, c[1] = 5, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 10 === e ? (f = c[2], e = cljs.core.nth.call(null, f, 0, null), g = cljs.core.nth.call(null, f, 1, null), f = null == e, k = cljs.core._EQ_.call(null, g, h), c[16] = g, c[8] = e, cljs.core.truth_(f || k) ? c[1] = 11 : c[1] = 12, new cljs.core.Keyword(null, 
-            "recur", "recur", -437573268)) : 18 === e ? (k = c[16], e = c[18], f = c[17], f = cljs.core.empty_QMARK_.call(null, f), e = e.call(null, k), e = cljs.core.not.call(null, e), c[2] = f && e, c[1] = 19, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 8 === e ? (e = c[7], c[2] = e, c[1] = 9, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : null;
+            "reads", -1215067361)), e = cljs.core.get.call(null, k, new cljs.core.Keyword(null, "mutes", "mutes", 1068806309)), f = cljs.core.get.call(null, k, new cljs.core.Keyword(null, "solos", "solos", 1441458643)), c[16] = f, c[18] = e, c[13] = k, cljs.core.async.impl.ioc_helpers.ioc_alts_BANG_.call(null, c, 10, g)) : 5 === e ? (e = c[7], e = cljs.core.seq_QMARK_.call(null, e), c[1] = e ? 7 : 8, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 14 === e ? (k = c[17], e = cljs.core.swap_BANG_.call(null, 
+            d, cljs.core.dissoc, k), c[2] = e, c[1] = 16, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 16 === e ? (f = c[2], e = m.call(null), c[7] = e, c[19] = f, c[2] = null, c[1] = 5, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 10 === e ? (f = c[2], e = cljs.core.nth.call(null, f, 0, null), g = cljs.core.nth.call(null, f, 1, null), f = null == e, k = cljs.core._EQ_.call(null, g, h), c[17] = g, c[8] = e, cljs.core.truth_(f || k) ? c[1] = 11 : c[1] = 12, new cljs.core.Keyword(null, 
+            "recur", "recur", -437573268)) : 18 === e ? (f = c[16], e = c[18], k = c[17], f = cljs.core.empty_QMARK_.call(null, f), e = e.call(null, k), e = cljs.core.not.call(null, e), c[2] = f && e, c[1] = 19, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 8 === e ? (e = c[7], c[2] = e, c[1] = 9, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : null;
           };
         }(c, d, e, f, g, h, k, l, m, n), c, d, e, f, g, h, k, l, m, n);
-      }(), F = function() {
-        var b = V.call(null);
+      }(), J = function() {
+        var b = K.call(null);
         b[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c;
         return b;
       }();
-      return cljs.core.async.impl.ioc_helpers.run_state_machine_wrapped.call(null, F);
+      return cljs.core.async.impl.ioc_helpers.run_state_machine_wrapped.call(null, J);
     };
   }(n, c, d, e, f, g, h, k, l, m));
   return m;
@@ -24259,56 +24281,56 @@ cljs.core.async.pub = function() {
         }(c, a)), b);
       };
     }(g), k = function() {
-      "undefined" === typeof cljs.core.async.t30471 && (cljs.core.async.t30471 = function(a, b, c, d, e, f, g) {
+      "undefined" === typeof cljs.core.async.t30901 && (cljs.core.async.t30901 = function(a, b, c, d, e, f, g) {
         this.ensure_mult = a;
         this.mults = b;
         this.buf_fn = c;
         this.topic_fn = d;
         this.ch = e;
         this.pub = f;
-        this.meta30472 = g;
+        this.meta30902 = g;
         this.cljs$lang$protocol_mask$partition1$ = 0;
         this.cljs$lang$protocol_mask$partition0$ = 393216;
-      }, cljs.core.async.t30471.cljs$lang$type = !0, cljs.core.async.t30471.cljs$lang$ctorStr = "cljs.core.async/t30471", cljs.core.async.t30471.cljs$lang$ctorPrWriter = function(a, b) {
+      }, cljs.core.async.t30901.cljs$lang$type = !0, cljs.core.async.t30901.cljs$lang$ctorStr = "cljs.core.async/t30901", cljs.core.async.t30901.cljs$lang$ctorPrWriter = function(a, b) {
         return function(a, b, c) {
-          return cljs.core._write.call(null, b, "cljs.core.async/t30471");
+          return cljs.core._write.call(null, b, "cljs.core.async/t30901");
         };
-      }(g, h), cljs.core.async.t30471.prototype.cljs$core$async$Pub$ = !0, cljs.core.async.t30471.prototype.cljs$core$async$Pub$sub_STAR_$arity$4 = function(a, b) {
+      }(g, h), cljs.core.async.t30901.prototype.cljs$core$async$Pub$ = !0, cljs.core.async.t30901.prototype.cljs$core$async$Pub$sub_STAR_$arity$4 = function(a, b) {
         return function(a, b, c, d) {
           a = this.ensure_mult.call(null, b);
           return cljs.core.async.tap.call(null, a, c, d);
         };
-      }(g, h), cljs.core.async.t30471.prototype.cljs$core$async$Pub$unsub_STAR_$arity$3 = function(a, b) {
+      }(g, h), cljs.core.async.t30901.prototype.cljs$core$async$Pub$unsub_STAR_$arity$3 = function(a, b) {
         return function(a, b, c) {
           a = cljs.core.get.call(null, cljs.core.deref.call(null, this.mults), b);
           return cljs.core.truth_(a) ? cljs.core.async.untap.call(null, a, c) : null;
         };
-      }(g, h), cljs.core.async.t30471.prototype.cljs$core$async$Pub$unsub_all_STAR_$arity$1 = function(a, b) {
+      }(g, h), cljs.core.async.t30901.prototype.cljs$core$async$Pub$unsub_all_STAR_$arity$1 = function(a, b) {
         return function(a) {
           return cljs.core.reset_BANG_.call(null, this.mults, cljs.core.PersistentArrayMap.EMPTY);
         };
-      }(g, h), cljs.core.async.t30471.prototype.cljs$core$async$Pub$unsub_all_STAR_$arity$2 = function(a, b) {
+      }(g, h), cljs.core.async.t30901.prototype.cljs$core$async$Pub$unsub_all_STAR_$arity$2 = function(a, b) {
         return function(a, b) {
           return cljs.core.swap_BANG_.call(null, this.mults, cljs.core.dissoc, b);
         };
-      }(g, h), cljs.core.async.t30471.prototype.cljs$core$async$Mux$ = !0, cljs.core.async.t30471.prototype.cljs$core$async$Mux$muxch_STAR_$arity$1 = function(a, b) {
+      }(g, h), cljs.core.async.t30901.prototype.cljs$core$async$Mux$ = !0, cljs.core.async.t30901.prototype.cljs$core$async$Mux$muxch_STAR_$arity$1 = function(a, b) {
         return function(a) {
           return this.ch;
         };
-      }(g, h), cljs.core.async.t30471.prototype.cljs$core$IMeta$_meta$arity$1 = function(a, b) {
+      }(g, h), cljs.core.async.t30901.prototype.cljs$core$IMeta$_meta$arity$1 = function(a, b) {
         return function(a) {
-          return this.meta30472;
+          return this.meta30902;
         };
-      }(g, h), cljs.core.async.t30471.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(a, b) {
+      }(g, h), cljs.core.async.t30901.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(a, b) {
         return function(a, b) {
-          return new cljs.core.async.t30471(this.ensure_mult, this.mults, this.buf_fn, this.topic_fn, this.ch, this.pub, b);
+          return new cljs.core.async.t30901(this.ensure_mult, this.mults, this.buf_fn, this.topic_fn, this.ch, this.pub, b);
         };
-      }(g, h), cljs.core.async.__GT_t30471 = function(a, b) {
+      }(g, h), cljs.core.async.__GT_t30901 = function(a, b) {
         return function(a, b, c, d, e, f, g) {
-          return new cljs.core.async.t30471(a, b, c, d, e, f, g);
+          return new cljs.core.async.t30901(a, b, c, d, e, f, g);
         };
       }(g, h));
-      return new cljs.core.async.t30471(h, g, f, c, b, a, null);
+      return new cljs.core.async.t30901(h, g, f, c, b, a, null);
     }(), l = cljs.core.async.chan.call(null, 1);
     cljs.core.async.impl.dispatch.run.call(null, function(a, f, g, h) {
       return function() {
@@ -24374,13 +24396,13 @@ cljs.core.async.pub = function() {
                 return a[2] = null, a[1] = 2, new cljs.core.Keyword(null, "recur", "recur", -437573268);
               }
               if (24 === g) {
-                var g = a[7], h = a[8];
+                var h = a[7], g = a[8];
                 cljs.core.async.impl.ioc_helpers.add_exception_frame.call(null, a, 23, Object, null, 22);
                 h = cljs.core.async.muxch_STAR_.call(null, h);
                 return cljs.core.async.impl.ioc_helpers.put_BANG_.call(null, a, 25, h, g);
               }
               if (4 === g) {
-                return g = a[2], a[7] = g, cljs.core.truth_(null == g) ? a[1] = 5 : a[1] = 6, new cljs.core.Keyword(null, "recur", "recur", -437573268);
+                return g = a[2], a[8] = g, cljs.core.truth_(null == g) ? a[1] = 5 : a[1] = 6, new cljs.core.Keyword(null, "recur", "recur", -437573268);
               }
               if (15 === g) {
                 return g = a[2], a[2] = g, a[1] = 12, new cljs.core.Keyword(null, "recur", "recur", -437573268);
@@ -24395,7 +24417,7 @@ cljs.core.async.pub = function() {
                 return g = a[2], a[2] = g, a[1] = 21, new cljs.core.Keyword(null, "recur", "recur", -437573268);
               }
               if (6 === g) {
-                return g = a[7], h = a[11], g = c.call(null, g), h = cljs.core.deref.call(null, f), h = cljs.core.get.call(null, h, g), a[8] = h, a[11] = g, cljs.core.truth_(h) ? a[1] = 19 : a[1] = 20, new cljs.core.Keyword(null, "recur", "recur", -437573268);
+                return h = a[11], g = a[8], g = c.call(null, g), h = cljs.core.deref.call(null, f), h = cljs.core.get.call(null, h, g), a[11] = g, a[7] = h, cljs.core.truth_(h) ? a[1] = 19 : a[1] = 20, new cljs.core.Keyword(null, "recur", "recur", -437573268);
               }
               if (25 === g) {
                 return g = a[2], a[2] = g, cljs.core.async.impl.ioc_helpers.process_exception.call(null, a), new cljs.core.Keyword(null, "recur", "recur", -437573268);
@@ -24403,8 +24425,8 @@ cljs.core.async.pub = function() {
               if (17 === g) {
                 var g = a[10], h = cljs.core.first.call(null, g), h = cljs.core.async.muxch_STAR_.call(null, h), h = cljs.core.async.close_BANG_.call(null, h), k = cljs.core.next.call(null, g), l;
                 a[12] = 0;
-                a[13] = 0;
-                a[14] = h;
+                a[13] = h;
+                a[14] = 0;
                 a[15] = null;
                 a[16] = k;
                 a[2] = null;
@@ -24433,29 +24455,29 @@ cljs.core.async.pub = function() {
                 return g = a[2], a[2] = g, a[1] = 7, new cljs.core.Keyword(null, "recur", "recur", -437573268);
               }
               if (5 === g) {
-                return g = cljs.core.deref.call(null, f), g = cljs.core.vals.call(null, g), k = cljs.core.seq.call(null, g), a[12] = 0, a[13] = 0, a[15] = null, a[16] = k, a[2] = null, a[1] = 8, new cljs.core.Keyword(null, "recur", "recur", -437573268);
+                return g = cljs.core.deref.call(null, f), g = cljs.core.vals.call(null, g), k = cljs.core.seq.call(null, g), a[12] = 0, a[14] = 0, a[15] = null, a[16] = k, a[2] = null, a[1] = 8, new cljs.core.Keyword(null, "recur", "recur", -437573268);
               }
               if (14 === g) {
                 return a[2] = null, a[1] = 15, new cljs.core.Keyword(null, "recur", "recur", -437573268);
               }
               if (16 === g) {
-                return g = a[10], h = cljs.core.chunk_first.call(null, g), g = cljs.core.chunk_rest.call(null, g), k = cljs.core.count.call(null, h), a[12] = 0, a[13] = k, a[15] = h, a[16] = g, a[2] = null, a[1] = 8, new cljs.core.Keyword(null, "recur", "recur", -437573268);
+                return g = a[10], h = cljs.core.chunk_first.call(null, g), g = cljs.core.chunk_rest.call(null, g), k = cljs.core.count.call(null, h), a[12] = 0, a[14] = k, a[15] = h, a[16] = g, a[2] = null, a[1] = 8, new cljs.core.Keyword(null, "recur", "recur", -437573268);
               }
               if (10 === g) {
                 g = a[12];
-                h = a[13];
+                h = a[14];
                 l = a[15];
                 var k = a[16], m = cljs.core._nth.call(null, l, g), m = cljs.core.async.muxch_STAR_.call(null, m), m = cljs.core.async.close_BANG_.call(null, m);
                 a[12] = g + 1;
-                a[13] = h;
-                a[15] = l;
+                a[14] = h;
                 a[18] = m;
+                a[15] = l;
                 a[16] = k;
                 a[2] = null;
                 a[1] = 8;
                 return new cljs.core.Keyword(null, "recur", "recur", -437573268);
               }
-              return 18 === g ? (g = a[2], a[2] = g, a[1] = 15, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 8 === g ? (g = a[12], h = a[13], g = g < h, cljs.core.truth_(g) ? a[1] = 10 : a[1] = 11, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : null;
+              return 18 === g ? (g = a[2], a[2] = g, a[1] = 15, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 8 === g ? (g = a[12], h = a[14], g = g < h, cljs.core.truth_(g) ? a[1] = 10 : a[1] = 11, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : null;
             };
           }(a, f, g, h), a, f, g, h);
         }(), l = function() {
@@ -24596,14 +24618,29 @@ cljs.core.async.map = function() {
                 return b[2] = null, b[1] = 2, new cljs.core.Keyword(null, "recur", "recur", -437573268);
               }
               if (4 === g) {
-                var m = b[7], g = m < f;
-                cljs.core.truth_(g) ? b[1] = 6 : b[1] = 7;
+                return g = b[7], g = g < f, cljs.core.truth_(g) ? b[1] = 6 : b[1] = 7, new cljs.core.Keyword(null, "recur", "recur", -437573268);
+              }
+              if (15 === g) {
+                return g = b[2], b[2] = g, b[1] = 3, new cljs.core.Keyword(null, "recur", "recur", -437573268);
+              }
+              if (13 === g) {
+                return g = cljs.core.async.close_BANG_.call(null, e), b[2] = g, b[1] = 15, new cljs.core.Keyword(null, "recur", "recur", -437573268);
+              }
+              if (6 === g) {
+                return b[2] = null, b[1] = 11, new cljs.core.Keyword(null, "recur", "recur", -437573268);
+              }
+              if (3 === g) {
+                return g = b[2], cljs.core.async.impl.ioc_helpers.return_chan.call(null, b, g);
+              }
+              if (12 === g) {
+                var g = b[8], m = b[2], g = cljs.core.some.call(null, cljs.core.nil_QMARK_, m);
+                b[8] = m;
+                cljs.core.truth_(g) ? b[1] = 13 : b[1] = 14;
                 return new cljs.core.Keyword(null, "recur", "recur", -437573268);
               }
-              return 15 === g ? (g = b[2], b[2] = g, b[1] = 3, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 13 === g ? (g = cljs.core.async.close_BANG_.call(null, e), b[2] = g, b[1] = 15, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 6 === g ? (b[2] = null, b[1] = 11, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 3 === g ? (g = b[2], cljs.core.async.impl.ioc_helpers.return_chan.call(null, b, g)) : 12 === g ? (g = b[8], m = b[2], g = cljs.core.some.call(null, 
-              cljs.core.nil_QMARK_, m), b[8] = m, cljs.core.truth_(g) ? b[1] = 13 : b[1] = 14, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 2 === g ? (g = cljs.core.reset_BANG_.call(null, k, f), b[9] = g, b[7] = 0, b[2] = null, b[1] = 4, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 11 === g ? (m = b[7], cljs.core.async.impl.ioc_helpers.add_exception_frame.call(null, b, 10, Object, null, 9), g = c.call(null, m), m = l.call(null, m), g = cljs.core.async.take_BANG_.call(null, 
-              g, m), b[2] = g, cljs.core.async.impl.ioc_helpers.process_exception.call(null, b), new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 9 === g ? (m = b[7], b[10] = b[2], b[7] = m + 1, b[2] = null, b[1] = 4, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 5 === g ? (b[11] = b[2], cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, b, 12, h)) : 14 === g ? (g = b[8], g = cljs.core.apply.call(null, a, g), cljs.core.async.impl.ioc_helpers.put_BANG_.call(null, b, 
-              16, e, g)) : 16 === g ? (b[12] = b[2], b[2] = null, b[1] = 2, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 10 === g ? (m = b[2], g = cljs.core.swap_BANG_.call(null, k, cljs.core.dec), b[13] = m, b[2] = g, cljs.core.async.impl.ioc_helpers.process_exception.call(null, b), new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 8 === g ? (g = b[2], b[2] = g, b[1] = 5, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : null;
+              return 2 === g ? (g = cljs.core.reset_BANG_.call(null, k, f), b[9] = g, b[7] = 0, b[2] = null, b[1] = 4, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 11 === g ? (g = b[7], cljs.core.async.impl.ioc_helpers.add_exception_frame.call(null, b, 10, Object, null, 9), m = c.call(null, g), g = l.call(null, g), g = cljs.core.async.take_BANG_.call(null, m, g), b[2] = g, cljs.core.async.impl.ioc_helpers.process_exception.call(null, b), new cljs.core.Keyword(null, "recur", "recur", 
+              -437573268)) : 9 === g ? (g = b[7], m = b[2], b[7] = g + 1, b[10] = m, b[2] = null, b[1] = 4, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 5 === g ? (b[11] = b[2], cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, b, 12, h)) : 14 === g ? (g = b[8], g = cljs.core.apply.call(null, a, g), cljs.core.async.impl.ioc_helpers.put_BANG_.call(null, b, 16, e, g)) : 16 === g ? (b[12] = b[2], b[2] = null, b[1] = 2, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 
+              10 === g ? (m = b[2], g = cljs.core.swap_BANG_.call(null, k, cljs.core.dec), b[13] = m, b[2] = g, cljs.core.async.impl.ioc_helpers.process_exception.call(null, b), new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 8 === g ? (g = b[2], b[2] = g, b[1] = 5, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : null;
             };
           }(b, c, e, f, g, h, k, l), b, c, e, f, g, h, k, l);
         }(), n = function() {
@@ -24702,14 +24739,13 @@ cljs.core.async.merge = function() {
                 e[1] = 2;
                 return new cljs.core.Keyword(null, "recur", "recur", -437573268);
               }
-              return 4 === f ? (w = e[10], cljs.core.async.impl.ioc_helpers.ioc_alts_BANG_.call(null, e, 7, w)) : 6 === f ? (l = e[2], e[2] = l, e[1] = 3, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 3 === f ? (l = e[2], cljs.core.async.impl.ioc_helpers.return_chan.call(null, e, l)) : 2 === f ? (w = e[10], l = 0 < cljs.core.count.call(null, w), cljs.core.truth_(l) ? e[1] = 4 : e[1] = 5, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 11 === f ? (w = e[10], l = e[2], e[10] = 
-              w, e[11] = l, e[2] = null, e[1] = 2, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 9 === f ? (h = e[8], cljs.core.async.impl.ioc_helpers.put_BANG_.call(null, e, 11, c, h)) : 5 === f ? (l = cljs.core.async.close_BANG_.call(null, c), e[2] = l, e[1] = 6, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 10 === f ? (l = e[2], e[2] = l, e[1] = 6, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 8 === f ? (g = e[7], h = e[8], w = e[10], m = e[9], l = 
-              function() {
+              return 4 === f ? (w = e[10], cljs.core.async.impl.ioc_helpers.ioc_alts_BANG_.call(null, e, 7, w)) : 6 === f ? (l = e[2], e[2] = l, e[1] = 3, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 3 === f ? (l = e[2], cljs.core.async.impl.ioc_helpers.return_chan.call(null, e, l)) : 2 === f ? (w = e[10], l = 0 < cljs.core.count.call(null, w), cljs.core.truth_(l) ? e[1] = 4 : e[1] = 5, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 11 === f ? (w = e[10], e[11] = e[2], 
+              e[10] = w, e[2] = null, e[1] = 2, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 9 === f ? (h = e[8], cljs.core.async.impl.ioc_helpers.put_BANG_.call(null, e, 11, c, h)) : 5 === f ? (l = cljs.core.async.close_BANG_.call(null, c), e[2] = l, e[1] = 6, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 10 === f ? (l = e[2], e[2] = l, e[1] = 6, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 8 === f ? (w = e[10], g = e[7], h = e[8], m = e[9], l = function() {
                 return function(a, b, c, d, e, f, g, h, k, l, m) {
                   return function(b) {
                     return cljs.core.not_EQ_.call(null, a, b);
                   };
-                }(m, h, g, w, g, h, w, m, f, b, c);
+                }(m, h, g, w, w, g, h, m, f, b, c);
               }(), l = cljs.core.filterv.call(null, l, w), e[10] = l, e[2] = null, e[1] = 2, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : null;
             };
           }(b, c), b, c);
@@ -24901,7 +24937,7 @@ cljs.core.async.unique = function() {
                 return new cljs.core.Keyword(null, "recur", "recur", -437573268);
               }
               return 4 === e ? (e = b[8], e = b[2], f = cljs.core.not.call(null, null == e), b[8] = e, b[1] = f ? 5 : 6, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 6 === e ? (b[2] = null, b[1] = 7, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 3 === e ? (e = b[2], f = cljs.core.async.close_BANG_.call(null, c), b[9] = e, cljs.core.async.impl.ioc_helpers.return_chan.call(null, b, f)) : 2 === e ? cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, b, 4, a) : 11 === 
-              e ? (e = b[8], f = b[2], b[7] = e, b[10] = f, b[2] = null, b[1] = 2, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 9 === e ? (e = b[8], cljs.core.async.impl.ioc_helpers.put_BANG_.call(null, b, 11, c, e)) : 5 === e ? (f = b[7], e = b[8], e = cljs.core._EQ_.call(null, e, f), b[1] = e ? 8 : 9, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 10 === e ? (e = b[2], b[2] = e, b[1] = 7, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 8 === e ? (f = b[7], 
+              e ? (e = b[8], f = b[2], b[10] = f, b[7] = e, b[2] = null, b[1] = 2, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 9 === e ? (e = b[8], cljs.core.async.impl.ioc_helpers.put_BANG_.call(null, b, 11, c, e)) : 5 === e ? (e = b[8], f = b[7], e = cljs.core._EQ_.call(null, e, f), b[1] = e ? 8 : 9, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 10 === e ? (e = b[2], b[2] = e, b[1] = 7, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 8 === e ? (f = b[7], 
               b[7] = f, b[2] = null, b[1] = 2, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : null;
             };
           }(b, c), b, c);
@@ -25004,9 +25040,38 @@ cljs.core.async.partition = function() {
                 c[1] = h ? 5 : 6;
                 return new cljs.core.Keyword(null, "recur", "recur", -437573268);
               }
-              return 15 === g ? (g = c[2], c[2] = g, c[1] = 14, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 13 === g ? (c[2] = null, c[1] = 14, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 6 === g ? (g = c[8], cljs.core.truth_(0 < g) ? c[1] = 12 : c[1] = 13, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 3 === g ? (g = c[2], cljs.core.async.impl.ioc_helpers.return_chan.call(null, c, g)) : 12 === g ? (h = c[7], g = cljs.core.vec.call(null, h), cljs.core.async.impl.ioc_helpers.put_BANG_.call(null, 
-              c, 15, f, g)) : 2 === g ? cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, c, 4, b) : 11 === g ? (g = c[2], h = Array(a), c[7] = h, c[8] = 0, c[10] = g, c[2] = null, c[1] = 2, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 9 === g ? (h = c[7], g = cljs.core.vec.call(null, h), cljs.core.async.impl.ioc_helpers.put_BANG_.call(null, c, 11, f, g)) : 5 === g ? (h = c[7], g = c[8], k = c[11], k = c[9], h = h[g] = k, k = g + 1, g = k < a, c[11] = k, c[12] = h, cljs.core.truth_(g) ? 
-              c[1] = 8 : c[1] = 9, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 14 === g ? (h = c[2], g = cljs.core.async.close_BANG_.call(null, f), c[13] = h, c[2] = g, c[1] = 7, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 10 === g ? (g = c[2], c[2] = g, c[1] = 7, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 8 === g ? (h = c[7], k = c[11], c[7] = h, c[8] = k, c[2] = null, c[1] = 2, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : null;
+              if (15 === g) {
+                return g = c[2], c[2] = g, c[1] = 14, new cljs.core.Keyword(null, "recur", "recur", -437573268);
+              }
+              if (13 === g) {
+                return c[2] = null, c[1] = 14, new cljs.core.Keyword(null, "recur", "recur", -437573268);
+              }
+              if (6 === g) {
+                return g = c[8], cljs.core.truth_(0 < g) ? c[1] = 12 : c[1] = 13, new cljs.core.Keyword(null, "recur", "recur", -437573268);
+              }
+              if (3 === g) {
+                return g = c[2], cljs.core.async.impl.ioc_helpers.return_chan.call(null, c, g);
+              }
+              if (12 === g) {
+                return h = c[7], g = cljs.core.vec.call(null, h), cljs.core.async.impl.ioc_helpers.put_BANG_.call(null, c, 15, f, g);
+              }
+              if (2 === g) {
+                return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, c, 4, b);
+              }
+              if (11 === g) {
+                return g = c[2], h = Array(a), c[7] = h, c[8] = 0, c[10] = g, c[2] = null, c[1] = 2, new cljs.core.Keyword(null, "recur", "recur", -437573268);
+              }
+              if (9 === g) {
+                return h = c[7], g = cljs.core.vec.call(null, h), cljs.core.async.impl.ioc_helpers.put_BANG_.call(null, c, 11, f, g);
+              }
+              if (5 === g) {
+                var h = c[7], g = c[8], k = c[9], l = c[11], h = h[g] = k, k = g + 1, g = k < a;
+                c[12] = h;
+                c[11] = k;
+                cljs.core.truth_(g) ? c[1] = 8 : c[1] = 9;
+                return new cljs.core.Keyword(null, "recur", "recur", -437573268);
+              }
+              return 14 === g ? (h = c[2], g = cljs.core.async.close_BANG_.call(null, f), c[13] = h, c[2] = g, c[1] = 7, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 10 === g ? (g = c[2], c[2] = g, c[1] = 7, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 8 === g ? (h = c[7], l = c[11], c[7] = h, c[8] = l, c[2] = null, c[1] = 2, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : null;
             };
           }(c, f), c, f);
         }(), m = function() {
@@ -25096,8 +25161,8 @@ cljs.core.async.partition_by = function() {
               }
               if (1 === g) {
                 var h = [], g = new cljs.core.Keyword("cljs.core.async", "nothing", "cljs.core.async/nothing", -69252123);
-                c[7] = g;
-                c[8] = h;
+                c[7] = h;
+                c[8] = g;
                 c[2] = null;
                 c[1] = 2;
                 return new cljs.core.Keyword(null, "recur", "recur", -437573268);
@@ -25115,29 +25180,29 @@ cljs.core.async.partition_by = function() {
                 return c[2] = null, c[1] = 14, new cljs.core.Keyword(null, "recur", "recur", -437573268);
               }
               if (6 === g) {
-                return h = c[8], g = 0 < h.length, cljs.core.truth_(g) ? c[1] = 12 : c[1] = 13, new cljs.core.Keyword(null, "recur", "recur", -437573268);
+                return h = c[7], g = 0 < h.length, cljs.core.truth_(g) ? c[1] = 12 : c[1] = 13, new cljs.core.Keyword(null, "recur", "recur", -437573268);
               }
               if (3 === g) {
                 return g = c[2], cljs.core.async.impl.ioc_helpers.return_chan.call(null, c, g);
               }
               if (12 === g) {
-                return h = c[8], g = cljs.core.vec.call(null, h), cljs.core.async.impl.ioc_helpers.put_BANG_.call(null, c, 15, f, g);
+                return h = c[7], g = cljs.core.vec.call(null, h), cljs.core.async.impl.ioc_helpers.put_BANG_.call(null, c, 15, f, g);
               }
               if (2 === g) {
                 return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, c, 4, b);
               }
               if (11 === g) {
                 var k = c[9], g = c[10], h = c[2], l = [], k = l.push(k);
-                c[11] = h;
-                c[7] = g;
-                c[12] = k;
-                c[8] = l;
+                c[11] = k;
+                c[7] = l;
+                c[8] = g;
+                c[12] = h;
                 c[2] = null;
                 c[1] = 2;
                 return new cljs.core.Keyword(null, "recur", "recur", -437573268);
               }
-              return 9 === g ? (h = c[8], g = cljs.core.vec.call(null, h), cljs.core.async.impl.ioc_helpers.put_BANG_.call(null, c, 11, f, g)) : 5 === g ? (g = c[7], k = c[9], h = a.call(null, k), k = cljs.core._EQ_.call(null, h, g), g = cljs.core.keyword_identical_QMARK_.call(null, g, new cljs.core.Keyword("cljs.core.async", "nothing", "cljs.core.async/nothing", -69252123)), c[10] = h, cljs.core.truth_(k || g) ? c[1] = 8 : c[1] = 9, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 14 === 
-              g ? (k = c[2], g = cljs.core.async.close_BANG_.call(null, f), c[13] = k, c[2] = g, c[1] = 7, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 10 === g ? (g = c[2], c[2] = g, c[1] = 7, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 8 === g ? (k = c[9], g = c[10], h = c[8], k = h.push(k), c[7] = g, c[14] = k, c[8] = h, c[2] = null, c[1] = 2, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : null;
+              return 9 === g ? (h = c[7], g = cljs.core.vec.call(null, h), cljs.core.async.impl.ioc_helpers.put_BANG_.call(null, c, 11, f, g)) : 5 === g ? (k = c[9], g = c[8], h = a.call(null, k), k = cljs.core._EQ_.call(null, h, g), g = cljs.core.keyword_identical_QMARK_.call(null, g, new cljs.core.Keyword("cljs.core.async", "nothing", "cljs.core.async/nothing", -69252123)), c[10] = h, cljs.core.truth_(k || g) ? c[1] = 8 : c[1] = 9, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 14 === 
+              g ? (k = c[2], g = cljs.core.async.close_BANG_.call(null, f), c[13] = k, c[2] = g, c[1] = 7, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 10 === g ? (g = c[2], c[2] = g, c[1] = 7, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 8 === g ? (k = c[9], h = c[7], g = c[10], k = h.push(k), c[14] = k, c[7] = h, c[8] = g, c[2] = null, c[1] = 2, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : null;
             };
           }(c, f), c, f);
         }(), m = function() {
@@ -26539,8 +26604,8 @@ clustermap.api.ordered_api_results = function(a, b) {
             var d = c[1];
             if (7 === d) {
               var d = c[7], e = c[2], d = cljs.core.nth.call(null, e, 0, null), e = cljs.core.nth.call(null, e, 1, null), f = cljs.core.sequential_QMARK_.call(null, d);
-              c[7] = d;
               c[8] = e;
+              c[7] = d;
               c[1] = f ? 8 : 9;
               return new cljs.core.Keyword(null, "recur", "recur", -437573268);
             }
@@ -26920,7 +26985,7 @@ clustermap.api.simple_table = function() {
   var a = function(a, b, e, f, g, h, k, l) {
     l = cljs.core.nth.call(null, l, 0, null);
     return clustermap.api.POST.call(null, "/api/" + cljs.core.str.cljs$core$IFn$_invoke$arity$1(clustermap.api.api_prefix) + "/simple-table/" + cljs.core.str.cljs$core$IFn$_invoke$arity$1(a) + "/" + cljs.core.str.cljs$core$IFn$_invoke$arity$1(b) + "?" + cljs.core.str.cljs$core$IFn$_invoke$arity$1(clustermap.api.map_json_params.call(null, l)), new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null, "filter", "filter", -948537934), e, new cljs.core.Keyword(null, "bounds", "bounds", 1691609455), 
-    f, new cljs.core.Keyword(null, "sort", "sort", 953465918), g, new cljs.core.Keyword(null, "offset", "offset", 296498311), h, new cljs.core.Keyword(null, "limit", "limit", -1355822363), k], null));
+    f, new cljs.core.Keyword(null, "sort", "sort", 953465918), g, new cljs.core.Keyword(null, "from", "from", 1815293044), h, new cljs.core.Keyword(null, "size", "size", 1098693007), k], null));
   }, b = function(b, d, e, f, g, h, k, l) {
     var m = null;
     7 < arguments.length && (m = cljs.core.array_seq(Array.prototype.slice.call(arguments, 7), 0));
@@ -27132,13 +27197,13 @@ clustermap.boundarylines.get_or_fetch_best_boundarylines = function() {
   var a = function(a, b, e, f, g, h) {
     var k = cljs.core.seq_QMARK_.call(null, h) ? cljs.core.apply.call(null, cljs.core.hash_map, h) : h, l = cljs.core.get.call(null, k, new cljs.core.Keyword(null, "boundaryline-ids", "boundaryline-ids", 1352066869)), m = clustermap.boundarylines.make_sequential.call(null, b), n = cljs.core.concat.call(null, m, new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "collections", "collections", -2114643505)], null)), p = cljs.core.concat.call(null, 
     m, new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "boundarylines", "boundarylines", 1568915708)], null)), q = cljs.core.get_in.call(null, cljs.core.deref.call(null, a), p), r = cljs.core.truth_(e) ? cljs.core.concat.call(null, n, new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [e], null)) : null, s = cljs.core.truth_(e) ? cljs.core.concat.call(null, r, new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, 
-    [new cljs.core.Keyword(null, "index", "index", -1531685915)], null)) : null, t = cljs.core.truth_(e) ? cljs.core.get_in.call(null, cljs.core.deref.call(null, a), s) : null, u = cljs.core.truth_(r) ? cljs.core.concat.call(null, r, new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "boundarylines", "boundarylines", 1568915708)], null)) : null, v = cljs.core.get_in.call(null, cljs.core.deref.call(null, a), u), y = clustermap.boundarylines.ideal_tolerance.call(null, 
+    [new cljs.core.Keyword(null, "index", "index", -1531685915)], null)) : null, t = cljs.core.truth_(e) ? cljs.core.get_in.call(null, cljs.core.deref.call(null, a), s) : null, u = cljs.core.truth_(r) ? cljs.core.concat.call(null, r, new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "boundarylines", "boundarylines", 1568915708)], null)) : null, v = cljs.core.get_in.call(null, cljs.core.deref.call(null, a), u), x = clustermap.boundarylines.ideal_tolerance.call(null, 
     g);
     b = cljs.core.into.call(null, cljs.core.PersistentArrayMap.EMPTY, cljs.core.map.call(null, function(a, b, c, d, e, f, h, k, l, m, n, p, q) {
       return function(a) {
         return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [a, clustermap.boundarylines.best_version.call(null, h, l, d, g, a)], null);
       };
-    }(m, n, p, q, r, s, t, u, v, y, h, k, l), l));
+    }(m, n, p, q, r, s, t, u, v, x, h, k, l), l));
     h = cljs.core.map.call(null, cljs.core.first, cljs.core.filter.call(null, function(a, b, c, d, e, f, g, h, k, l, m, n, p, q) {
       return function(a) {
         cljs.core.nth.call(null, a, 0, null);
@@ -27147,8 +27212,8 @@ clustermap.boundarylines.get_or_fetch_best_boundarylines = function() {
         cljs.core.nth.call(null, a, 1, null);
         return cljs.core.not_EQ_.call(null, b, l);
       };
-    }(m, n, p, q, r, s, t, u, v, y, b, h, k, l), b));
-    a = cljs.core.truth_(cljs.core.not_empty.call(null, h)) ? clustermap.boundarylines.fetch_boundarylines.call(null, a, p, u, e, y, new cljs.core.Keyword(null, "boundaryline-ids", "boundaryline-ids", 1352066869), h, new cljs.core.Keyword(null, "bounds", "bounds", 1691609455), f) : null;
+    }(m, n, p, q, r, s, t, u, v, x, b, h, k, l), b));
+    a = cljs.core.truth_(cljs.core.not_empty.call(null, h)) ? clustermap.boundarylines.fetch_boundarylines.call(null, a, p, u, e, x, new cljs.core.Keyword(null, "boundaryline-ids", "boundaryline-ids", 1352066869), h, new cljs.core.Keyword(null, "bounds", "bounds", 1691609455), f) : null;
     return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [b, a], null);
   }, b = function(b, d, e, f, g, h) {
     var k = null;
@@ -27289,8 +27354,8 @@ clustermap.boundarylines.fetch_boundaryline_collection_index = function(a, b, c)
                   };
                 }(q, n, q, m, b, d, e, f, g, h, k);
               }(), p = cljs.core.swap_BANG_.call(null, a, cljs.core.update_in, g, p), r = cljs.core.deref.call(null, a), r = cljs.core.get_in.call(null, r, g), r = cljs.core._EQ_.call(null, r, q);
-              l[8] = p;
               l[7] = q;
+              l[8] = p;
               l[1] = r ? 3 : 4;
               return new cljs.core.Keyword(null, "recur", "recur", -437573268);
             }
@@ -34584,340 +34649,509 @@ clustermap.components.table.order_col = function(a, b, c, d, e) {
   }(b, f, g, h)}, sablono.interpreter.interpret.call(null, d), cljs.core._EQ_.call(null, g, e) ? sablono.interpreter.interpret.call(null, cljs.core.truth_(cljs.core._EQ_.call(null, "asc", h)) ? new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "i.icon-asc", "i.icon-asc", 1318187620)], null) : new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "i.icon-desc", "i.icon-desc", -1647067651)], 
   null)) : null);
 };
-clustermap.components.table.paginate = function(a, b, c) {
-  var d = cljs.core.seq_QMARK_.call(null, b) ? cljs.core.apply.call(null, cljs.core.hash_map, b) : b, e = cljs.core.get.call(null, d, new cljs.core.Keyword(null, "size", "size", 1098693007)), f = cljs.core.get.call(null, d, new cljs.core.Keyword(null, "from", "from", 1815293044)), g = cljs.core.get.call(null, d, new cljs.core.Keyword(null, "count", "count", 2139924085)), h = 0 < f ? new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "span.prev", 
-  "span.prev", 1950349585), new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "a", "a", -2123407586), new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "href", "href", -793805698), "#", new cljs.core.Keyword(null, "onClick", "onClick", -1991238530), function(b, d, e, f, g, h) {
-    return function(b) {
-      b.preventDefault();
-      return cljs.core.async.put_BANG_.call(null, a, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [c, new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "from", "from", 1815293044), function() {
-        var a = g - f;
-        return 0 < a ? a : 0;
-      }()], null)], null));
+clustermap.components.table.paginate = function paginate(b, c, d) {
+  var e = cljs.core.seq_QMARK_.call(null, b) ? cljs.core.apply.call(null, cljs.core.hash_map, b) : b, f = cljs.core.get.call(null, e, new cljs.core.Keyword(null, "controls", "controls", 1340701452)), g = cljs.core.get.call(null, e, new cljs.core.Keyword(null, "table-data", "table-data", -1783738205)), h = cljs.core.seq_QMARK_.call(null, g) ? cljs.core.apply.call(null, cljs.core.hash_map, g) : g, k = cljs.core.get.call(null, h, new cljs.core.Keyword(null, "count", "count", 2139924085)), l = cljs.core.get.call(null, 
+  h, new cljs.core.Keyword(null, "from", "from", 1815293044)), m = cljs.core.get.call(null, h, new cljs.core.Keyword(null, "size", "size", 1098693007));
+  "undefined" === typeof clustermap.components.table.t27307 && (clustermap.components.table.t27307 = function(b, c, d, e, f, g, h, k, l, m, y, K) {
+    this.owner = b;
+    this.paginate = c;
+    this.table_data = d;
+    this.map__27305 = e;
+    this.controls = f;
+    this.size = g;
+    this.p__27288 = h;
+    this.map__27306 = k;
+    this.from = l;
+    this.count = m;
+    this.opts = y;
+    this.meta27308 = K;
+    this.cljs$lang$protocol_mask$partition1$ = 0;
+    this.cljs$lang$protocol_mask$partition0$ = 393216;
+  }, clustermap.components.table.t27307.cljs$lang$type = !0, clustermap.components.table.t27307.cljs$lang$ctorStr = "clustermap.components.table/t27307", clustermap.components.table.t27307.cljs$lang$ctorPrWriter = function(b, c, d, e, f, g, h, k, l) {
+    return function(b, c, d) {
+      return cljs.core._write.call(null, c, "clustermap.components.table/t27307");
     };
-  }(b, d, d, e, f, g)], null), new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "i.icon-arrow-left", "i.icon-arrow-left", 1090541868)], null)], null)], null) : new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "span.prev", "span.prev", 1950349585), new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "i.icon-arrow-left", 
-  "i.icon-arrow-left", 1090541868)], null)], null);
-  return cljs.core.apply.call(null, React.DOM.div, cljs.core.map_QMARK_.call(null, h) ? sablono.interpreter.attributes.call(null, sablono.util.merge_with_class.call(null, new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "class", "class", -2030961996), new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, ["paginate"], null)], null), h)) : {className:"paginate"}, cljs.core.remove.call(null, cljs.core.nil_QMARK_, cljs.core.map_QMARK_.call(null, h) ? 
-  new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [function() {
-    var a = "" + cljs.core.str.cljs$core$IFn$_invoke$arity$1(f + 1) + "-" + cljs.core.str.cljs$core$IFn$_invoke$arity$1(function() {
-      var a = f + e;
-      return a < g ? a : g;
-    }()) + " of " + cljs.core.str.cljs$core$IFn$_invoke$arity$1(g);
-    return cljs.core.apply.call(null, React.DOM.span, cljs.core.map_QMARK_.call(null, a) ? sablono.interpreter.attributes.call(null, sablono.util.merge_with_class.call(null, new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "class", "class", -2030961996), new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, ["page"], null)], null), a)) : {className:"page"}, cljs.core.remove.call(null, cljs.core.nil_QMARK_, cljs.core.map_QMARK_.call(null, a) ? cljs.core.PersistentVector.EMPTY : 
-    new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [sablono.interpreter.interpret.call(null, a)], null)));
-  }(), f + e < g ? React.DOM.span({className:"next"}, React.DOM.a({href:"#", onClick:function(b, d, e, f, g, h, r) {
-    return function(b) {
-      b.preventDefault();
-      return cljs.core.async.put_BANG_.call(null, a, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [c, new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "from", "from", 1815293044), h + g], null)], null));
+  }(b, e, f, g, h, h, k, l, m), clustermap.components.table.t27307.prototype.om$core$IRender$ = !0, clustermap.components.table.t27307.prototype.om$core$IRender$render$arity$1 = function(b, c, d, e, f, g, h, k, l) {
+    return function(m) {
+      var y = this;
+      m = cljs.core.truth_(function() {
+        var b = y.from;
+        return cljs.core.truth_(b) ? 0 < y.from : b;
+      }()) ? new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "span.prev", "span.prev", 1950349585), new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "a", "a", -2123407586), new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "href", "href", -793805698), "#", new cljs.core.Keyword(null, "onClick", "onClick", -1991238530), function(b, c, d, e, f, g, h, k, l, 
+      m) {
+        return function(b) {
+          b.preventDefault();
+          return om.core.update_BANG_.call(null, y.controls, new cljs.core.Keyword(null, "from", "from", 1815293044), function() {
+            var b = y.from - y.size;
+            return 0 > b ? 0 : b;
+          }());
+        };
+      }(this, b, c, d, e, f, g, h, k, l)], null), new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "i.icon-arrow-left", "i.icon-arrow-left", 1090541868)], null)], null)], null) : new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "span.prev", "span.prev", 1950349585), new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, 
+      "i.icon-arrow-left", "i.icon-arrow-left", 1090541868)], null)], null);
+      return cljs.core.apply.call(null, React.DOM.div, cljs.core.map_QMARK_.call(null, m) ? sablono.interpreter.attributes.call(null, sablono.util.merge_with_class.call(null, new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "class", "class", -2030961996), new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, ["paginate"], null)], null), m)) : {className:"paginate"}, cljs.core.remove.call(null, cljs.core.nil_QMARK_, cljs.core.map_QMARK_.call(null, 
+      m) ? new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [function() {
+        var b = "" + cljs.core.str.cljs$core$IFn$_invoke$arity$1(y.from + 1) + "-" + cljs.core.str.cljs$core$IFn$_invoke$arity$1(function() {
+          var b = y.from + y.size, c = y.count;
+          return b < c ? b : c;
+        }()) + " of " + cljs.core.str.cljs$core$IFn$_invoke$arity$1(y.count);
+        return cljs.core.apply.call(null, React.DOM.span, cljs.core.map_QMARK_.call(null, b) ? sablono.interpreter.attributes.call(null, sablono.util.merge_with_class.call(null, new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "class", "class", -2030961996), new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, ["page"], null)], null), b)) : {className:"page"}, cljs.core.remove.call(null, cljs.core.nil_QMARK_, cljs.core.map_QMARK_.call(null, b) ? 
+        cljs.core.PersistentVector.EMPTY : new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [sablono.interpreter.interpret.call(null, b)], null)));
+      }(), y.from + y.size < y.count ? React.DOM.span({className:"next"}, React.DOM.a({href:"#", onClick:function(b, c, d, e, f, g, h, k, l, m, n) {
+        return function(b) {
+          b.preventDefault();
+          return om.core.update_BANG_.call(null, y.controls, new cljs.core.Keyword(null, "from", "from", 1815293044), y.from + y.size);
+        };
+      }(m, this, b, c, d, e, f, g, h, k, l)}, React.DOM.i({className:"icon-arrow-right"}))) : React.DOM.span({className:"next"}, React.DOM.i({className:"icon-arrow-right"}))], null) : new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [sablono.interpreter.interpret.call(null, m), function() {
+        var b = "" + cljs.core.str.cljs$core$IFn$_invoke$arity$1(y.from + 1) + "-" + cljs.core.str.cljs$core$IFn$_invoke$arity$1(function() {
+          var b = y.from + y.size, c = y.count;
+          return b < c ? b : c;
+        }()) + " of " + cljs.core.str.cljs$core$IFn$_invoke$arity$1(y.count);
+        return cljs.core.apply.call(null, React.DOM.span, cljs.core.map_QMARK_.call(null, b) ? sablono.interpreter.attributes.call(null, sablono.util.merge_with_class.call(null, new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "class", "class", -2030961996), new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, ["page"], null)], null), b)) : {className:"page"}, cljs.core.remove.call(null, cljs.core.nil_QMARK_, cljs.core.map_QMARK_.call(null, b) ? 
+        cljs.core.PersistentVector.EMPTY : new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [sablono.interpreter.interpret.call(null, b)], null)));
+      }(), y.from + y.size < y.count ? React.DOM.span({className:"next"}, React.DOM.a({href:"#", onClick:function(b, c, d, e, f, g, h, k, l, m, n) {
+        return function(b) {
+          b.preventDefault();
+          return om.core.update_BANG_.call(null, y.controls, new cljs.core.Keyword(null, "from", "from", 1815293044), y.from + y.size);
+        };
+      }(m, this, b, c, d, e, f, g, h, k, l)}, React.DOM.i({className:"icon-arrow-right"}))) : React.DOM.span({className:"next"}, React.DOM.i({className:"icon-arrow-right"}))], null)));
     };
-  }(h, b, d, d, e, f, g)}, React.DOM.i({className:"icon-arrow-right"}))) : React.DOM.span({className:"next"}, React.DOM.i({className:"icon-arrow-right"}))], null) : new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [sablono.interpreter.interpret.call(null, h), function() {
-    var a = "" + cljs.core.str.cljs$core$IFn$_invoke$arity$1(f + 1) + "-" + cljs.core.str.cljs$core$IFn$_invoke$arity$1(function() {
-      var a = f + e;
-      return a < g ? a : g;
-    }()) + " of " + cljs.core.str.cljs$core$IFn$_invoke$arity$1(g);
-    return cljs.core.apply.call(null, React.DOM.span, cljs.core.map_QMARK_.call(null, a) ? sablono.interpreter.attributes.call(null, sablono.util.merge_with_class.call(null, new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "class", "class", -2030961996), new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, ["page"], null)], null), a)) : {className:"page"}, cljs.core.remove.call(null, cljs.core.nil_QMARK_, cljs.core.map_QMARK_.call(null, a) ? cljs.core.PersistentVector.EMPTY : 
-    new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [sablono.interpreter.interpret.call(null, a)], null)));
-  }(), f + e < g ? React.DOM.span({className:"next"}, React.DOM.a({href:"#", onClick:function(b, d, e, f, g, h, r) {
+  }(b, e, f, g, h, h, k, l, m), clustermap.components.table.t27307.prototype.cljs$core$IMeta$_meta$arity$1 = function(b, c, d, e, f, g, h, k, l) {
     return function(b) {
-      b.preventDefault();
-      return cljs.core.async.put_BANG_.call(null, a, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [c, new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "from", "from", 1815293044), h + g], null)], null));
+      return this.meta27308;
     };
-  }(h, b, d, d, e, f, g)}, React.DOM.i({className:"icon-arrow-right"}))) : React.DOM.span({className:"next"}, React.DOM.i({className:"icon-arrow-right"}))], null)));
+  }(b, e, f, g, h, h, k, l, m), clustermap.components.table.t27307.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(b, c, d, e, f, g, h, k, l) {
+    return function(b, c) {
+      return new clustermap.components.table.t27307(this.owner, this.paginate, this.table_data, this.map__27305, this.controls, this.size, this.p__27288, this.map__27306, this.from, this.count, this.opts, c);
+    };
+  }(b, e, f, g, h, h, k, l, m), clustermap.components.table.__GT_t27307 = function(b, c, d, e, f, g, h, k, l) {
+    return function(b, c, d, e, f, g, h, k, l, m, n, p) {
+      return new clustermap.components.table.t27307(b, c, d, e, f, g, h, k, l, m, n, p);
+    };
+  }(b, e, f, g, h, h, k, l, m));
+  return new clustermap.components.table.t27307(c, paginate, h, e, f, m, b, h, l, k, d, null);
 };
 clustermap.components.table.render_table_row = function render_table_row(b) {
   var c = cljs.core.seq_QMARK_.call(null, b) ? cljs.core.apply.call(null, cljs.core.hash_map, b) : b, d = cljs.core.get.call(null, c, new cljs.core.Keyword(null, "record", "record", -779106859)), e = cljs.core.get.call(null, c, new cljs.core.Keyword(null, "columns", "columns", 1998437288));
-  "undefined" === typeof clustermap.components.table.t27023 && (clustermap.components.table.t27023 = function(b, c, d, e, l, m, n) {
+  "undefined" === typeof clustermap.components.table.t27363 && (clustermap.components.table.t27363 = function(b, c, d, e, l, m) {
     this.columns = b;
     this.record = c;
-    this.data = d;
-    this.map__27022 = e;
-    this.p__26981 = l;
-    this.render_table_row = m;
-    this.meta27024 = n;
+    this.map__27362 = d;
+    this.p__27321 = e;
+    this.render_table_row = l;
+    this.meta27364 = m;
     this.cljs$lang$protocol_mask$partition1$ = 0;
     this.cljs$lang$protocol_mask$partition0$ = 393216;
-  }, clustermap.components.table.t27023.cljs$lang$type = !0, clustermap.components.table.t27023.cljs$lang$ctorStr = "clustermap.components.table/t27023", clustermap.components.table.t27023.cljs$lang$ctorPrWriter = function(b, c, d, e, l) {
+  }, clustermap.components.table.t27363.cljs$lang$type = !0, clustermap.components.table.t27363.cljs$lang$ctorStr = "clustermap.components.table/t27363", clustermap.components.table.t27363.cljs$lang$ctorPrWriter = function(b, c, d, e) {
     return function(b, c, d) {
-      return cljs.core._write.call(null, c, "clustermap.components.table/t27023");
+      return cljs.core._write.call(null, c, "clustermap.components.table/t27363");
     };
-  }(b, c, c, d, e), clustermap.components.table.t27023.prototype.om$core$IRender$ = !0, clustermap.components.table.t27023.prototype.om$core$IRender$render$arity$1 = function(b, c, d, e, l) {
-    return function(m) {
-      var n = this, p = this;
+  }(b, c, d, e), clustermap.components.table.t27363.prototype.om$core$IRender$ = !0, clustermap.components.table.t27363.prototype.om$core$IRender$render$arity$1 = function(b, c, d, e) {
+    return function(l) {
+      var m = this, n = this;
       return sablono.interpreter.interpret.call(null, function() {
-        var m = cljs.core.into.call(null, new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "tr", "tr", -1424774646)], null), cljs.core.apply.call(null, cljs.core.concat, function() {
-          return function(b, c, d, e, f, g) {
-            return function E(h) {
-              return new cljs.core.LazySeq(null, function(b, c, d, e, f, g) {
+        return cljs.core.into.call(null, new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "tr", "tr", -1424774646)], null), cljs.core.apply.call(null, cljs.core.concat, function() {
+          return function(b, c, d, e, f) {
+            return function v(g) {
+              return new cljs.core.LazySeq(null, function(b, c, d, e, f) {
                 return function() {
                   for (;;) {
-                    var k = cljs.core.seq.call(null, h);
-                    if (k) {
-                      var l = k;
-                      if (cljs.core.chunked_seq_QMARK_.call(null, l)) {
-                        var m = cljs.core.chunk_first.call(null, l), p = cljs.core.count.call(null, m), q = cljs.core.chunk_buffer.call(null, p);
+                    var h = cljs.core.seq.call(null, g);
+                    if (h) {
+                      var k = h;
+                      if (cljs.core.chunked_seq_QMARK_.call(null, k)) {
+                        var l = cljs.core.chunk_first.call(null, k), n = cljs.core.count.call(null, l), p = cljs.core.chunk_buffer.call(null, n);
                         return function() {
-                          for (var h = 0;;) {
-                            if (h < p) {
-                              var r = cljs.core._nth.call(null, m, h);
-                              cljs.core.chunk_append.call(null, q, function() {
-                                return function(b, c, d, e, f, g, h, k, l, m, p, q, r) {
-                                  return function ba(s) {
-                                    return new cljs.core.LazySeq(null, function(b, c, d, e, f, g, h, k, l, m, p, q, r) {
+                          for (var g = 0;;) {
+                            if (g < n) {
+                              var q = cljs.core._nth.call(null, l, g);
+                              cljs.core.chunk_append.call(null, p, function() {
+                                return function(b, c, d, e, f, g, h, k, l, n, p, q) {
+                                  return function Y(r) {
+                                    return new cljs.core.LazySeq(null, function(b, c, d, e, f, g, h, k, l, n, p, q) {
                                       return function() {
                                         for (;;) {
-                                          var b = cljs.core.seq.call(null, s);
+                                          var b = cljs.core.seq.call(null, r);
                                           if (b) {
                                             if (cljs.core.chunked_seq_QMARK_.call(null, b)) {
                                               var c = cljs.core.chunk_first.call(null, b), d = cljs.core.count.call(null, c), e = cljs.core.chunk_buffer.call(null, d);
-                                              return function() {
-                                                for (var b = 0;;) {
-                                                  if (b < d) {
-                                                    var f = cljs.core._nth.call(null, c, b), g = cljs.core.nth.call(null, f, 0, null), h = cljs.core.nth.call(null, f, 1, null);
-                                                    cljs.core.chunk_append.call(null, e, function() {
-                                                      console.log(cljs.core.clj__GT_js.call(null, new cljs.core.PersistentVector(null, 6, 5, cljs.core.PersistentVector.EMPTY_NODE, ["KEYS", g, cljs.core.type.call(null, g), h, cljs.core.type.call(null, h), cljs.core.get.call(null, n.record, g)], null)));
-                                                      return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "td", "td", 1479933353), cljs.core.get.call(null, n.record, g)], null);
-                                                    }());
-                                                    b += 1;
+                                              a: {
+                                                for (var f = 0;;) {
+                                                  if (f < d) {
+                                                    var g = cljs.core._nth.call(null, c, f), h = cljs.core.nth.call(null, g, 0, null);
+                                                    cljs.core.nth.call(null, g, 1, null);
+                                                    cljs.core.chunk_append.call(null, e, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "td", "td", 1479933353), cljs.core.get.call(null, m.record, h)], null));
+                                                    f += 1;
                                                   } else {
-                                                    return!0;
+                                                    c = !0;
+                                                    break a;
                                                   }
                                                 }
-                                              }() ? cljs.core.chunk_cons.call(null, cljs.core.chunk.call(null, e), ba.call(null, cljs.core.chunk_rest.call(null, b))) : cljs.core.chunk_cons.call(null, cljs.core.chunk.call(null, e), null);
+                                                c = void 0;
+                                              }
+                                              return c ? cljs.core.chunk_cons.call(null, cljs.core.chunk.call(null, e), Y.call(null, cljs.core.chunk_rest.call(null, b))) : cljs.core.chunk_cons.call(null, cljs.core.chunk.call(null, e), null);
                                             }
-                                            var f = cljs.core.first.call(null, b), g = cljs.core.nth.call(null, f, 0, null), h = cljs.core.nth.call(null, f, 1, null);
-                                            return cljs.core.cons.call(null, function() {
-                                              console.log(cljs.core.clj__GT_js.call(null, new cljs.core.PersistentVector(null, 6, 5, cljs.core.PersistentVector.EMPTY_NODE, ["KEYS", g, cljs.core.type.call(null, g), h, cljs.core.type.call(null, h), cljs.core.get.call(null, n.record, g)], null)));
-                                              return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "td", "td", 1479933353), cljs.core.get.call(null, n.record, g)], null);
-                                            }(), ba.call(null, cljs.core.rest.call(null, b)));
+                                            e = cljs.core.first.call(null, b);
+                                            c = cljs.core.nth.call(null, e, 0, null);
+                                            cljs.core.nth.call(null, e, 1, null);
+                                            return cljs.core.cons.call(null, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "td", "td", 1479933353), cljs.core.get.call(null, m.record, c)], null), Y.call(null, cljs.core.rest.call(null, b)));
                                           }
                                           return null;
                                         }
                                       };
-                                    }(b, c, d, e, f, g, h, k, l, m, p, q, r), null, null);
+                                    }(b, c, d, e, f, g, h, k, l, n, p, q), null, null);
                                   };
-                                }(h, r, m, p, q, l, k, b, c, d, e, f, g).call(null, r);
+                                }(g, q, l, n, p, k, h, b, c, d, e, f).call(null, q);
                               }());
-                              h += 1;
+                              g += 1;
                             } else {
                               return!0;
                             }
                           }
-                        }() ? cljs.core.chunk_cons.call(null, cljs.core.chunk.call(null, q), E.call(null, cljs.core.chunk_rest.call(null, l))) : cljs.core.chunk_cons.call(null, cljs.core.chunk.call(null, q), null);
+                        }() ? cljs.core.chunk_cons.call(null, cljs.core.chunk.call(null, p), v.call(null, cljs.core.chunk_rest.call(null, k))) : cljs.core.chunk_cons.call(null, cljs.core.chunk.call(null, p), null);
                       }
-                      var r = cljs.core.first.call(null, l);
+                      var q = cljs.core.first.call(null, k);
                       return cljs.core.cons.call(null, function() {
-                        return function(b, c, d, e, f, g, h, k, l) {
-                          return function X(m) {
-                            return new cljs.core.LazySeq(null, function(b, c, d, e, f, g, h, k, l) {
+                        return function(b, c, d, e, f, g, h, k) {
+                          return function P(l) {
+                            return new cljs.core.LazySeq(null, function(b, c, d, e, f, g, h, k) {
                               return function() {
                                 for (;;) {
-                                  var b = cljs.core.seq.call(null, m);
+                                  var b = cljs.core.seq.call(null, l);
                                   if (b) {
                                     if (cljs.core.chunked_seq_QMARK_.call(null, b)) {
                                       var c = cljs.core.chunk_first.call(null, b), d = cljs.core.count.call(null, c), e = cljs.core.chunk_buffer.call(null, d);
-                                      return function() {
-                                        for (var b = 0;;) {
-                                          if (b < d) {
-                                            var f = cljs.core._nth.call(null, c, b), g = cljs.core.nth.call(null, f, 0, null), h = cljs.core.nth.call(null, f, 1, null);
-                                            cljs.core.chunk_append.call(null, e, function() {
-                                              console.log(cljs.core.clj__GT_js.call(null, new cljs.core.PersistentVector(null, 6, 5, cljs.core.PersistentVector.EMPTY_NODE, ["KEYS", g, cljs.core.type.call(null, g), h, cljs.core.type.call(null, h), cljs.core.get.call(null, n.record, g)], null)));
-                                              return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "td", "td", 1479933353), cljs.core.get.call(null, n.record, g)], null);
-                                            }());
-                                            b += 1;
+                                      a: {
+                                        for (var f = 0;;) {
+                                          if (f < d) {
+                                            var g = cljs.core._nth.call(null, c, f), h = cljs.core.nth.call(null, g, 0, null);
+                                            cljs.core.nth.call(null, g, 1, null);
+                                            cljs.core.chunk_append.call(null, e, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "td", "td", 1479933353), cljs.core.get.call(null, m.record, h)], null));
+                                            f += 1;
                                           } else {
-                                            return!0;
+                                            c = !0;
+                                            break a;
                                           }
                                         }
-                                      }() ? cljs.core.chunk_cons.call(null, cljs.core.chunk.call(null, e), X.call(null, cljs.core.chunk_rest.call(null, b))) : cljs.core.chunk_cons.call(null, cljs.core.chunk.call(null, e), null);
+                                        c = void 0;
+                                      }
+                                      return c ? cljs.core.chunk_cons.call(null, cljs.core.chunk.call(null, e), P.call(null, cljs.core.chunk_rest.call(null, b))) : cljs.core.chunk_cons.call(null, cljs.core.chunk.call(null, e), null);
                                     }
-                                    var f = cljs.core.first.call(null, b), g = cljs.core.nth.call(null, f, 0, null), h = cljs.core.nth.call(null, f, 1, null);
-                                    return cljs.core.cons.call(null, function() {
-                                      console.log(cljs.core.clj__GT_js.call(null, new cljs.core.PersistentVector(null, 6, 5, cljs.core.PersistentVector.EMPTY_NODE, ["KEYS", g, cljs.core.type.call(null, g), h, cljs.core.type.call(null, h), cljs.core.get.call(null, n.record, g)], null)));
-                                      return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "td", "td", 1479933353), cljs.core.get.call(null, n.record, g)], null);
-                                    }(), X.call(null, cljs.core.rest.call(null, b)));
+                                    e = cljs.core.first.call(null, b);
+                                    c = cljs.core.nth.call(null, e, 0, null);
+                                    cljs.core.nth.call(null, e, 1, null);
+                                    return cljs.core.cons.call(null, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "td", "td", 1479933353), cljs.core.get.call(null, m.record, c)], null), P.call(null, cljs.core.rest.call(null, b)));
                                   }
                                   return null;
                                 }
                               };
-                            }(b, c, d, e, f, g, h, k, l), null, null);
+                            }(b, c, d, e, f, g, h, k), null, null);
                           };
-                        }(r, l, k, b, c, d, e, f, g).call(null, r);
-                      }(), E.call(null, cljs.core.rest.call(null, l)));
+                        }(q, k, h, b, c, d, e, f).call(null, q);
+                      }(), v.call(null, cljs.core.rest.call(null, k)));
                     }
                     return null;
                   }
                 };
-              }(b, c, d, e, f, g), null, null);
+              }(b, c, d, e, f), null, null);
             };
-          }(p, b, c, d, e, l).call(null, n.columns);
+          }(n, b, c, d, e).call(null, m.columns);
         }()));
-        console.log(cljs.core.clj__GT_js.call(null, new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, ["ROW", n.columns, n.record, m], null)));
-        return m;
       }());
     };
-  }(b, c, c, d, e), clustermap.components.table.t27023.prototype.cljs$core$IMeta$_meta$arity$1 = function(b, c, d, e, l) {
+  }(b, c, d, e), clustermap.components.table.t27363.prototype.cljs$core$IMeta$_meta$arity$1 = function(b, c, d, e) {
     return function(b) {
-      return this.meta27024;
+      return this.meta27364;
     };
-  }(b, c, c, d, e), clustermap.components.table.t27023.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(b, c, d, e, l) {
+  }(b, c, d, e), clustermap.components.table.t27363.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(b, c, d, e) {
     return function(b, c) {
-      return new clustermap.components.table.t27023(this.columns, this.record, this.data, this.map__27022, this.p__26981, this.render_table_row, c);
+      return new clustermap.components.table.t27363(this.columns, this.record, this.map__27362, this.p__27321, this.render_table_row, c);
     };
-  }(b, c, c, d, e), clustermap.components.table.__GT_t27023 = function(b, c, d, e, l) {
-    return function(b, c, d, e, f, g, h) {
-      return new clustermap.components.table.t27023(b, c, d, e, f, g, h);
+  }(b, c, d, e), clustermap.components.table.__GT_t27363 = function(b, c, d, e) {
+    return function(b, c, d, e, f, g) {
+      return new clustermap.components.table.t27363(b, c, d, e, f, g);
     };
-  }(b, c, c, d, e));
-  return new clustermap.components.table.t27023(e, d, c, c, b, render_table_row, null);
+  }(b, c, d, e));
+  return new clustermap.components.table.t27363(e, d, c, b, render_table_row, null);
 };
 clustermap.components.table.render_table = function(a, b, c) {
-  return React.DOM.div({className:"full-report-list"}, React.DOM.div({className:"table-responsive"}, React.DOM.table({className:"table"}, function() {
+  var d = cljs.core.seq_QMARK_.call(null, a) ? cljs.core.apply.call(null, cljs.core.hash_map, a) : a, e = cljs.core.get.call(null, d, new cljs.core.Keyword(null, "table-data", "table-data", -1783738205)), f = cljs.core.get.call(null, d, new cljs.core.Keyword(null, "controls", "controls", 1340701452)), g = cljs.core.seq_QMARK_.call(null, f) ? cljs.core.apply.call(null, cljs.core.hash_map, f) : f, h = cljs.core.get.call(null, g, new cljs.core.Keyword(null, "columns", "columns", 1998437288)), k = cljs.core.get.call(null, 
+  g, new cljs.core.Keyword(null, "filter-by-view", "filter-by-view", 902292255)), l = om.core.build.call(null, clustermap.components.table.paginate, new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "controls", "controls", 1340701452), g, new cljs.core.Keyword(null, "table-data", "table-data", -1783738205), e], null));
+  return cljs.core.apply.call(null, React.DOM.div, cljs.core.map_QMARK_.call(null, l) ? sablono.interpreter.attributes.call(null, sablono.util.merge_with_class.call(null, new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "class", "class", -2030961996), new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, ["full-report-list"], null)], null), l)) : {className:"full-report-list"}, cljs.core.remove.call(null, cljs.core.nil_QMARK_, cljs.core.map_QMARK_.call(null, 
+  l) ? new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [React.DOM.div({className:"table-responsive"}, React.DOM.table({className:"table"}, function() {
     var b = cljs.core.into.call(null, new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "tr", "tr", -1424774646)], null), cljs.core.apply.call(null, cljs.core.concat, function() {
-      return function f(a) {
-        return new cljs.core.LazySeq(null, function() {
-          for (;;) {
-            var b = cljs.core.seq.call(null, a);
-            if (b) {
-              var c = b;
-              if (cljs.core.chunked_seq_QMARK_.call(null, c)) {
-                var d = cljs.core.chunk_first.call(null, c), m = cljs.core.count.call(null, d), n = cljs.core.chunk_buffer.call(null, m);
-                return function() {
-                  for (var a = 0;;) {
-                    if (a < m) {
-                      var f = cljs.core._nth.call(null, d, a);
-                      cljs.core.chunk_append.call(null, n, function() {
-                        return function(a, b, c, d, f, g, h) {
-                          return function F(k) {
-                            return new cljs.core.LazySeq(null, function(a, b, c, d, f, g, h) {
-                              return function() {
-                                for (;;) {
-                                  var a = cljs.core.seq.call(null, k);
-                                  if (a) {
-                                    if (cljs.core.chunked_seq_QMARK_.call(null, a)) {
-                                      var b = cljs.core.chunk_first.call(null, a), c = cljs.core.count.call(null, b), d = cljs.core.chunk_buffer.call(null, c);
-                                      a: {
-                                        for (var f = 0;;) {
-                                          if (f < c) {
-                                            var g = cljs.core._nth.call(null, b, f);
-                                            cljs.core.nth.call(null, g, 0, null);
-                                            g = cljs.core.nth.call(null, g, 1, null);
-                                            cljs.core.chunk_append.call(null, d, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "th", "th", -545608566), g], null));
-                                            f += 1;
-                                          } else {
-                                            b = !0;
-                                            break a;
+      return function(a, b, c, d, e, f, g, h, k, l) {
+        return function K(m) {
+          return new cljs.core.LazySeq(null, function(a, b, c, d, e, f, g, h, k, l) {
+            return function() {
+              for (;;) {
+                var n = cljs.core.seq.call(null, m);
+                if (n) {
+                  var p = n;
+                  if (cljs.core.chunked_seq_QMARK_.call(null, p)) {
+                    var q = cljs.core.chunk_first.call(null, p), r = cljs.core.count.call(null, q), s = cljs.core.chunk_buffer.call(null, r);
+                    return function() {
+                      for (var m = 0;;) {
+                        if (m < r) {
+                          var u = cljs.core._nth.call(null, q, m);
+                          cljs.core.chunk_append.call(null, s, function() {
+                            return function(a, b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, u) {
+                              return function fa(t) {
+                                return new cljs.core.LazySeq(null, function(a, b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, u) {
+                                  return function() {
+                                    for (;;) {
+                                      var a = cljs.core.seq.call(null, t);
+                                      if (a) {
+                                        if (cljs.core.chunked_seq_QMARK_.call(null, a)) {
+                                          var b = cljs.core.chunk_first.call(null, a), c = cljs.core.count.call(null, b), d = cljs.core.chunk_buffer.call(null, c);
+                                          a: {
+                                            for (var e = 0;;) {
+                                              if (e < c) {
+                                                var f = cljs.core._nth.call(null, b, e);
+                                                cljs.core.nth.call(null, f, 0, null);
+                                                f = cljs.core.nth.call(null, f, 1, null);
+                                                cljs.core.chunk_append.call(null, d, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "th", "th", -545608566), f], null));
+                                                e += 1;
+                                              } else {
+                                                b = !0;
+                                                break a;
+                                              }
+                                            }
+                                            b = void 0;
                                           }
+                                          return b ? cljs.core.chunk_cons.call(null, cljs.core.chunk.call(null, d), fa.call(null, cljs.core.chunk_rest.call(null, a))) : cljs.core.chunk_cons.call(null, cljs.core.chunk.call(null, d), null);
                                         }
-                                        b = void 0;
+                                        d = cljs.core.first.call(null, a);
+                                        cljs.core.nth.call(null, d, 0, null);
+                                        d = cljs.core.nth.call(null, d, 1, null);
+                                        return cljs.core.cons.call(null, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "th", "th", -545608566), d], null), fa.call(null, cljs.core.rest.call(null, a)));
                                       }
-                                      return b ? cljs.core.chunk_cons.call(null, cljs.core.chunk.call(null, d), F.call(null, cljs.core.chunk_rest.call(null, a))) : cljs.core.chunk_cons.call(null, cljs.core.chunk.call(null, d), null);
+                                      return null;
                                     }
-                                    d = cljs.core.first.call(null, a);
-                                    cljs.core.nth.call(null, d, 0, null);
-                                    d = cljs.core.nth.call(null, d, 1, null);
-                                    return cljs.core.cons.call(null, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "th", "th", -545608566), d], null), F.call(null, cljs.core.rest.call(null, a)));
-                                  }
-                                  return null;
-                                }
+                                  };
+                                }(a, b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, u), null, null);
                               };
-                            }(a, b, c, d, f, g, h), null, null);
-                          };
-                        }(a, f, d, m, n, c, b).call(null, f);
-                      }());
-                      a += 1;
-                    } else {
-                      return!0;
-                    }
-                  }
-                }() ? cljs.core.chunk_cons.call(null, cljs.core.chunk.call(null, n), f.call(null, cljs.core.chunk_rest.call(null, c))) : cljs.core.chunk_cons.call(null, cljs.core.chunk.call(null, n), null);
-              }
-              var p = cljs.core.first.call(null, c);
-              return cljs.core.cons.call(null, function() {
-                return function(a, b, c) {
-                  return function u(d) {
-                    return new cljs.core.LazySeq(null, function(a, b, c) {
-                      return function() {
-                        for (;;) {
-                          var a = cljs.core.seq.call(null, d);
-                          if (a) {
-                            if (cljs.core.chunked_seq_QMARK_.call(null, a)) {
-                              var b = cljs.core.chunk_first.call(null, a), c = cljs.core.count.call(null, b), f = cljs.core.chunk_buffer.call(null, c);
-                              a: {
-                                for (var g = 0;;) {
-                                  if (g < c) {
-                                    var h = cljs.core._nth.call(null, b, g);
-                                    cljs.core.nth.call(null, h, 0, null);
-                                    h = cljs.core.nth.call(null, h, 1, null);
-                                    cljs.core.chunk_append.call(null, f, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "th", "th", -545608566), h], null));
-                                    g += 1;
-                                  } else {
-                                    b = !0;
-                                    break a;
-                                  }
-                                }
-                                b = void 0;
-                              }
-                              return b ? cljs.core.chunk_cons.call(null, cljs.core.chunk.call(null, f), u.call(null, cljs.core.chunk_rest.call(null, a))) : cljs.core.chunk_cons.call(null, cljs.core.chunk.call(null, f), null);
-                            }
-                            f = cljs.core.first.call(null, a);
-                            cljs.core.nth.call(null, f, 0, null);
-                            f = cljs.core.nth.call(null, f, 1, null);
-                            return cljs.core.cons.call(null, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "th", "th", -545608566), f], null), u.call(null, cljs.core.rest.call(null, a)));
-                          }
-                          return null;
+                            }(m, u, q, r, s, p, n, a, b, c, d, e, f, g, h, k, l).call(null, u);
+                          }());
+                          m += 1;
+                        } else {
+                          return!0;
                         }
+                      }
+                    }() ? cljs.core.chunk_cons.call(null, cljs.core.chunk.call(null, s), K.call(null, cljs.core.chunk_rest.call(null, p))) : cljs.core.chunk_cons.call(null, cljs.core.chunk.call(null, s), null);
+                  }
+                  var u = cljs.core.first.call(null, p);
+                  return cljs.core.cons.call(null, function() {
+                    return function(a, b, c, d, e, f, g, h, k, l, m, n, p) {
+                      return function ja(q) {
+                        return new cljs.core.LazySeq(null, function(a, b, c, d, e, f, g, h, k, l, m, n, p) {
+                          return function() {
+                            for (;;) {
+                              var a = cljs.core.seq.call(null, q);
+                              if (a) {
+                                if (cljs.core.chunked_seq_QMARK_.call(null, a)) {
+                                  var b = cljs.core.chunk_first.call(null, a), c = cljs.core.count.call(null, b), d = cljs.core.chunk_buffer.call(null, c);
+                                  a: {
+                                    for (var e = 0;;) {
+                                      if (e < c) {
+                                        var f = cljs.core._nth.call(null, b, e);
+                                        cljs.core.nth.call(null, f, 0, null);
+                                        f = cljs.core.nth.call(null, f, 1, null);
+                                        cljs.core.chunk_append.call(null, d, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "th", "th", -545608566), f], null));
+                                        e += 1;
+                                      } else {
+                                        b = !0;
+                                        break a;
+                                      }
+                                    }
+                                    b = void 0;
+                                  }
+                                  return b ? cljs.core.chunk_cons.call(null, cljs.core.chunk.call(null, d), ja.call(null, cljs.core.chunk_rest.call(null, a))) : cljs.core.chunk_cons.call(null, cljs.core.chunk.call(null, d), null);
+                                }
+                                d = cljs.core.first.call(null, a);
+                                cljs.core.nth.call(null, d, 0, null);
+                                d = cljs.core.nth.call(null, d, 1, null);
+                                return cljs.core.cons.call(null, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "th", "th", -545608566), d], null), ja.call(null, cljs.core.rest.call(null, a)));
+                              }
+                              return null;
+                            }
+                          };
+                        }(a, b, c, d, e, f, g, h, k, l, m, n, p), null, null);
                       };
-                    }(a, b, c), null, null);
-                  };
-                }(p, c, b).call(null, p);
-              }(), f.call(null, cljs.core.rest.call(null, c)));
-            }
-            return null;
-          }
-        }, null, null);
-      }.call(null, a);
+                    }(u, p, n, a, b, c, d, e, f, g, h, k, l).call(null, u);
+                  }(), K.call(null, cljs.core.rest.call(null, p)));
+                }
+                return null;
+              }
+            };
+          }(a, b, c, d, e, f, g, h, k, l), null, null);
+        };
+      }(l, a, d, d, e, f, g, g, h, k).call(null, h);
     }()));
     return cljs.core.apply.call(null, React.DOM.thead, cljs.core.map_QMARK_.call(null, b) ? sablono.interpreter.attributes.call(null, b) : null, cljs.core.remove.call(null, cljs.core.nil_QMARK_, cljs.core.map_QMARK_.call(null, b) ? cljs.core.PersistentVector.EMPTY : new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [sablono.interpreter.interpret.call(null, b)], null)));
   }(), function() {
-    var c = om.core.build_all.call(null, clustermap.components.table.render_table_row, (new cljs.core.Keyword(null, "data", "data", -232669377)).cljs$core$IFn$_invoke$arity$1(b), new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "key", "key", -1516042587), new cljs.core.Keyword(null, "key", "key", -1516042587), new cljs.core.Keyword(null, "fn", "fn", -1175266204), function(b) {
-      return new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null, "columns", "columns", 1998437288), a, new cljs.core.Keyword(null, "record", "record", -779106859), b, new cljs.core.Keyword(null, "key", "key", -1516042587), (new cljs.core.Keyword(null, "?natural_id", "?natural_id", -1454211689)).cljs$core$IFn$_invoke$arity$1(b)], null);
-    }], null));
-    return cljs.core.apply.call(null, React.DOM.tbody, cljs.core.map_QMARK_.call(null, c) ? sablono.interpreter.attributes.call(null, c) : null, cljs.core.remove.call(null, cljs.core.nil_QMARK_, cljs.core.map_QMARK_.call(null, c) ? cljs.core.PersistentVector.EMPTY : new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [sablono.interpreter.interpret.call(null, c)], null)));
-  }())));
+    var b = om.core.build_all.call(null, clustermap.components.table.render_table_row, (new cljs.core.Keyword(null, "data", "data", -232669377)).cljs$core$IFn$_invoke$arity$1(e), new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "key", "key", -1516042587), new cljs.core.Keyword(null, "key", "key", -1516042587), new cljs.core.Keyword(null, "fn", "fn", -1175266204), function(a, b, c, d, e, f, g, h, k, l) {
+      return function(a) {
+        return new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null, "columns", "columns", 1998437288), k, new cljs.core.Keyword(null, "record", "record", -779106859), a, new cljs.core.Keyword(null, "key", "key", -1516042587), (new cljs.core.Keyword(null, "?natural_id", "?natural_id", -1454211689)).cljs$core$IFn$_invoke$arity$1(a)], null);
+      };
+    }(l, a, d, d, e, f, g, g, h, k)], null));
+    return cljs.core.apply.call(null, React.DOM.tbody, cljs.core.map_QMARK_.call(null, b) ? sablono.interpreter.attributes.call(null, b) : null, cljs.core.remove.call(null, cljs.core.nil_QMARK_, cljs.core.map_QMARK_.call(null, b) ? cljs.core.PersistentVector.EMPTY : new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [sablono.interpreter.interpret.call(null, b)], null)));
+  }())), sablono.interpreter.interpret.call(null, om.core.build.call(null, clustermap.components.table.paginate, new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "controls", "controls", 1340701452), g, new cljs.core.Keyword(null, "table-data", "table-data", -1783738205), e], null)))], null) : new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [sablono.interpreter.interpret.call(null, l), React.DOM.div({className:"table-responsive"}, React.DOM.table({className:"table"}, 
+  function() {
+    var b = cljs.core.into.call(null, new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "tr", "tr", -1424774646)], null), cljs.core.apply.call(null, cljs.core.concat, function() {
+      return function(a, b, c, d, e, f, g, h, k, l) {
+        return function K(m) {
+          return new cljs.core.LazySeq(null, function(a, b, c, d, e, f, g, h, k, l) {
+            return function() {
+              for (;;) {
+                var n = cljs.core.seq.call(null, m);
+                if (n) {
+                  var p = n;
+                  if (cljs.core.chunked_seq_QMARK_.call(null, p)) {
+                    var q = cljs.core.chunk_first.call(null, p), r = cljs.core.count.call(null, q), s = cljs.core.chunk_buffer.call(null, r);
+                    return function() {
+                      for (var m = 0;;) {
+                        if (m < r) {
+                          var u = cljs.core._nth.call(null, q, m);
+                          cljs.core.chunk_append.call(null, s, function() {
+                            return function(a, b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, u) {
+                              return function fa(t) {
+                                return new cljs.core.LazySeq(null, function(a, b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, u) {
+                                  return function() {
+                                    for (;;) {
+                                      var a = cljs.core.seq.call(null, t);
+                                      if (a) {
+                                        if (cljs.core.chunked_seq_QMARK_.call(null, a)) {
+                                          var b = cljs.core.chunk_first.call(null, a), c = cljs.core.count.call(null, b), d = cljs.core.chunk_buffer.call(null, c);
+                                          a: {
+                                            for (var e = 0;;) {
+                                              if (e < c) {
+                                                var f = cljs.core._nth.call(null, b, e);
+                                                cljs.core.nth.call(null, f, 0, null);
+                                                f = cljs.core.nth.call(null, f, 1, null);
+                                                cljs.core.chunk_append.call(null, d, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "th", "th", -545608566), f], null));
+                                                e += 1;
+                                              } else {
+                                                b = !0;
+                                                break a;
+                                              }
+                                            }
+                                            b = void 0;
+                                          }
+                                          return b ? cljs.core.chunk_cons.call(null, cljs.core.chunk.call(null, d), fa.call(null, cljs.core.chunk_rest.call(null, a))) : cljs.core.chunk_cons.call(null, cljs.core.chunk.call(null, d), null);
+                                        }
+                                        d = cljs.core.first.call(null, a);
+                                        cljs.core.nth.call(null, d, 0, null);
+                                        d = cljs.core.nth.call(null, d, 1, null);
+                                        return cljs.core.cons.call(null, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "th", "th", -545608566), d], null), fa.call(null, cljs.core.rest.call(null, a)));
+                                      }
+                                      return null;
+                                    }
+                                  };
+                                }(a, b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, u), null, null);
+                              };
+                            }(m, u, q, r, s, p, n, a, b, c, d, e, f, g, h, k, l).call(null, u);
+                          }());
+                          m += 1;
+                        } else {
+                          return!0;
+                        }
+                      }
+                    }() ? cljs.core.chunk_cons.call(null, cljs.core.chunk.call(null, s), K.call(null, cljs.core.chunk_rest.call(null, p))) : cljs.core.chunk_cons.call(null, cljs.core.chunk.call(null, s), null);
+                  }
+                  var u = cljs.core.first.call(null, p);
+                  return cljs.core.cons.call(null, function() {
+                    return function(a, b, c, d, e, f, g, h, k, l, m, n, p) {
+                      return function ja(q) {
+                        return new cljs.core.LazySeq(null, function(a, b, c, d, e, f, g, h, k, l, m, n, p) {
+                          return function() {
+                            for (;;) {
+                              var a = cljs.core.seq.call(null, q);
+                              if (a) {
+                                if (cljs.core.chunked_seq_QMARK_.call(null, a)) {
+                                  var b = cljs.core.chunk_first.call(null, a), c = cljs.core.count.call(null, b), d = cljs.core.chunk_buffer.call(null, c);
+                                  a: {
+                                    for (var e = 0;;) {
+                                      if (e < c) {
+                                        var f = cljs.core._nth.call(null, b, e);
+                                        cljs.core.nth.call(null, f, 0, null);
+                                        f = cljs.core.nth.call(null, f, 1, null);
+                                        cljs.core.chunk_append.call(null, d, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "th", "th", -545608566), f], null));
+                                        e += 1;
+                                      } else {
+                                        b = !0;
+                                        break a;
+                                      }
+                                    }
+                                    b = void 0;
+                                  }
+                                  return b ? cljs.core.chunk_cons.call(null, cljs.core.chunk.call(null, d), ja.call(null, cljs.core.chunk_rest.call(null, a))) : cljs.core.chunk_cons.call(null, cljs.core.chunk.call(null, d), null);
+                                }
+                                d = cljs.core.first.call(null, a);
+                                cljs.core.nth.call(null, d, 0, null);
+                                d = cljs.core.nth.call(null, d, 1, null);
+                                return cljs.core.cons.call(null, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "th", "th", -545608566), d], null), ja.call(null, cljs.core.rest.call(null, a)));
+                              }
+                              return null;
+                            }
+                          };
+                        }(a, b, c, d, e, f, g, h, k, l, m, n, p), null, null);
+                      };
+                    }(u, p, n, a, b, c, d, e, f, g, h, k, l).call(null, u);
+                  }(), K.call(null, cljs.core.rest.call(null, p)));
+                }
+                return null;
+              }
+            };
+          }(a, b, c, d, e, f, g, h, k, l), null, null);
+        };
+      }(l, a, d, d, e, f, g, g, h, k).call(null, h);
+    }()));
+    return cljs.core.apply.call(null, React.DOM.thead, cljs.core.map_QMARK_.call(null, b) ? sablono.interpreter.attributes.call(null, b) : null, cljs.core.remove.call(null, cljs.core.nil_QMARK_, cljs.core.map_QMARK_.call(null, b) ? cljs.core.PersistentVector.EMPTY : new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [sablono.interpreter.interpret.call(null, b)], null)));
+  }(), function() {
+    var b = om.core.build_all.call(null, clustermap.components.table.render_table_row, (new cljs.core.Keyword(null, "data", "data", -232669377)).cljs$core$IFn$_invoke$arity$1(e), new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "key", "key", -1516042587), new cljs.core.Keyword(null, "key", "key", -1516042587), new cljs.core.Keyword(null, "fn", "fn", -1175266204), function(a, b, c, d, e, f, g, h, k, l) {
+      return function(a) {
+        return new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null, "columns", "columns", 1998437288), k, new cljs.core.Keyword(null, "record", "record", -779106859), a, new cljs.core.Keyword(null, "key", "key", -1516042587), (new cljs.core.Keyword(null, "?natural_id", "?natural_id", -1454211689)).cljs$core$IFn$_invoke$arity$1(a)], null);
+      };
+    }(l, a, d, d, e, f, g, g, h, k)], null));
+    return cljs.core.apply.call(null, React.DOM.tbody, cljs.core.map_QMARK_.call(null, b) ? sablono.interpreter.attributes.call(null, b) : null, cljs.core.remove.call(null, cljs.core.nil_QMARK_, cljs.core.map_QMARK_.call(null, b) ? cljs.core.PersistentVector.EMPTY : new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [sablono.interpreter.interpret.call(null, b)], null)));
+  }())), sablono.interpreter.interpret.call(null, om.core.build.call(null, clustermap.components.table.paginate, new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "controls", "controls", 1340701452), g, new cljs.core.Keyword(null, "table-data", "table-data", -1783738205), e], null)))], null)));
 };
 clustermap.components.table.request_table_data = function(a, b, c, d, e, f, g, h) {
   return clustermap.ordered_resource.api_call.call(null, a, clustermap.api.simple_table, b, c, d, e, f, g, h);
 };
 clustermap.components.table.table_component = function table_component(b, c) {
   var d = cljs.core.seq_QMARK_.call(null, b) ? cljs.core.apply.call(null, cljs.core.hash_map, b) : b, e = cljs.core.get.call(null, d, new cljs.core.Keyword(null, "table-state", "table-state", -1662785974)), f = cljs.core.seq_QMARK_.call(null, e) ? cljs.core.apply.call(null, cljs.core.hash_map, e) : e, g = cljs.core.get.call(null, f, new cljs.core.Keyword(null, "table-data", "table-data", -1783738205)), h = cljs.core.get.call(null, f, new cljs.core.Keyword(null, "controls", "controls", 1340701452)), 
-  k = cljs.core.seq_QMARK_.call(null, h) ? cljs.core.apply.call(null, cljs.core.hash_map, h) : h, l = cljs.core.get.call(null, k, new cljs.core.Keyword(null, "index", "index", -1531685915)), m = cljs.core.get.call(null, k, new cljs.core.Keyword(null, "sort-spec", "sort-spec", 104043994)), n = cljs.core.get.call(null, k, new cljs.core.Keyword(null, "offset", "offset", 296498311)), p = cljs.core.get.call(null, k, new cljs.core.Keyword(null, "limit", "limit", -1355822363)), q = cljs.core.get.call(null, 
-  k, new cljs.core.Keyword(null, "filter-by-view", "filter-by-view", 902292255)), r = cljs.core.get.call(null, k, new cljs.core.Keyword(null, "columns", "columns", 1998437288)), s = cljs.core.get.call(null, d, new cljs.core.Keyword(null, "filter", "filter", -948537934)), t = cljs.core.get.call(null, d, new cljs.core.Keyword(null, "bounds", "bounds", 1691609455));
-  "undefined" === typeof clustermap.components.table.t27160 && (clustermap.components.table.t27160 = function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, O, Q, T) {
+  k = cljs.core.seq_QMARK_.call(null, h) ? cljs.core.apply.call(null, cljs.core.hash_map, h) : h, l = cljs.core.get.call(null, k, new cljs.core.Keyword(null, "index", "index", -1531685915)), m = cljs.core.get.call(null, k, new cljs.core.Keyword(null, "sort-spec", "sort-spec", 104043994)), n = cljs.core.get.call(null, k, new cljs.core.Keyword(null, "from", "from", 1815293044)), p = cljs.core.get.call(null, k, new cljs.core.Keyword(null, "size", "size", 1098693007)), q = cljs.core.get.call(null, k, 
+  new cljs.core.Keyword(null, "columns", "columns", 1998437288)), r = cljs.core.get.call(null, d, new cljs.core.Keyword(null, "filter-spec", "filter-spec", -1101318648)), s = cljs.core.seq_QMARK_.call(null, r) ? cljs.core.apply.call(null, cljs.core.hash_map, r) : r, t = cljs.core.get.call(null, s, new cljs.core.Keyword(null, "filter-by-view", "filter-by-view", 902292255)), u = cljs.core.get.call(null, s, new cljs.core.Keyword(null, "compiled", "compiled", 850043082)), v = cljs.core.get.call(null, 
+  d, new cljs.core.Keyword(null, "bounds", "bounds", 1691609455));
+  "undefined" === typeof clustermap.components.table.t27589 && (clustermap.components.table.t27589 = function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, u, t, E, v, D) {
     this.sort_spec = b;
     this.table_component = c;
     this.owner = d;
     this.filter_by_view = e;
     this.props = f;
-    this.table_data = g;
-    this.limit = h;
+    this.p__27570 = g;
+    this.table_data = h;
     this.index = k;
-    this.offset = l;
-    this.map__27158 = m;
-    this.filter_spec = n;
-    this.columns = p;
-    this.table_state = q;
-    this.p__27144 = r;
-    this.controls = s;
-    this.map__27159 = t;
-    this.bounds = O;
-    this.map__27157 = Q;
-    this.meta27161 = T;
+    this.filter_spec = l;
+    this.columns = m;
+    this.table_state = n;
+    this.map__27585 = p;
+    this.controls = q;
+    this.map__27586 = r;
+    this.bounds = s;
+    this.size = u;
+    this.map__27587 = t;
+    this.map__27588 = E;
+    this.from = v;
+    this.meta27590 = D;
     this.cljs$lang$protocol_mask$partition1$ = 0;
     this.cljs$lang$protocol_mask$partition0$ = 393216;
-  }, clustermap.components.table.t27160.cljs$lang$type = !0, clustermap.components.table.t27160.cljs$lang$ctorStr = "clustermap.components.table/t27160", clustermap.components.table.t27160.cljs$lang$ctorPrWriter = function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, O, Q) {
+  }, clustermap.components.table.t27589.cljs$lang$type = !0, clustermap.components.table.t27589.cljs$lang$ctorStr = "clustermap.components.table/t27589", clustermap.components.table.t27589.cljs$lang$ctorPrWriter = function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, u, t, E, v, D) {
     return function(b, c, d) {
-      return cljs.core._write.call(null, c, "clustermap.components.table/t27160");
+      return cljs.core._write.call(null, c, "clustermap.components.table/t27589");
     };
-  }(b, d, d, e, f, f, g, h, k, k, l, m, n, p, q, r, s, t), clustermap.components.table.t27160.prototype.om$core$IWillUpdate$ = !0, clustermap.components.table.t27160.prototype.om$core$IWillUpdate$will_update$arity$3 = function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, O, Q) {
+  }(b, d, d, e, f, f, g, h, k, k, l, m, n, p, q, r, s, t, u, v), clustermap.components.table.t27589.prototype.om$core$IWillUpdate$ = !0, clustermap.components.table.t27589.prototype.om$core$IWillUpdate$will_update$arity$3 = function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, u, t, E, v, D) {
     return function(b, c, d) {
       var e = this;
       b = cljs.core.seq_QMARK_.call(null, c) ? cljs.core.apply.call(null, cljs.core.hash_map, c) : c;
@@ -34927,44 +35161,44 @@ clustermap.components.table.table_component = function table_component(b, c) {
       c = cljs.core.get.call(null, c, new cljs.core.Keyword(null, "controls", "controls", 1340701452));
       var g = cljs.core.seq_QMARK_.call(null, c) ? cljs.core.apply.call(null, cljs.core.hash_map, c) : c;
       c = cljs.core.get.call(null, g, new cljs.core.Keyword(null, "index", "index", -1531685915));
-      var h = cljs.core.get.call(null, g, new cljs.core.Keyword(null, "index-type", "index-type", 500383962)), k = cljs.core.get.call(null, g, new cljs.core.Keyword(null, "sort-spec", "sort-spec", 104043994)), l = cljs.core.get.call(null, g, new cljs.core.Keyword(null, "offset", "offset", 296498311)), m = cljs.core.get.call(null, g, new cljs.core.Keyword(null, "limit", "limit", -1355822363)), n = cljs.core.get.call(null, g, new cljs.core.Keyword(null, "filter-by-view", "filter-by-view", 902292255)), 
-      p = cljs.core.get.call(null, b, new cljs.core.Keyword(null, "filter", "filter", -948537934)), q = cljs.core.get.call(null, b, new cljs.core.Keyword(null, "bounds", "bounds", 1691609455));
+      var h = cljs.core.get.call(null, g, new cljs.core.Keyword(null, "index-type", "index-type", 500383962)), k = cljs.core.get.call(null, g, new cljs.core.Keyword(null, "sort-spec", "sort-spec", 104043994)), l = cljs.core.get.call(null, g, new cljs.core.Keyword(null, "from", "from", 1815293044)), m = cljs.core.get.call(null, g, new cljs.core.Keyword(null, "size", "size", 1098693007)), n = cljs.core.get.call(null, b, new cljs.core.Keyword(null, "filter-spec", "filter-spec", -1101318648)), n = cljs.core.seq_QMARK_.call(null, 
+      n) ? cljs.core.apply.call(null, cljs.core.hash_map, n) : n, p = cljs.core.get.call(null, n, new cljs.core.Keyword(null, "filter-by-view", "filter-by-view", 902292255)), q = cljs.core.get.call(null, n, new cljs.core.Keyword(null, "compiled", "compiled", 850043082)), r = cljs.core.get.call(null, b, new cljs.core.Keyword(null, "bounds", "bounds", 1691609455));
       d = cljs.core.seq_QMARK_.call(null, d) ? cljs.core.apply.call(null, cljs.core.hash_map, d) : d;
       d = cljs.core.get.call(null, d, new cljs.core.Keyword(null, "table-data-resource", "table-data-resource", -1272908133));
       return cljs.core.truth_(function() {
         var b = cljs.core.not.call(null, f);
-        return b || (b = cljs.core.not_EQ_.call(null, g, e.controls)) ? b : (b = cljs.core.not_EQ_.call(null, p, e.filter_spec)) ? b : cljs.core.truth_(n) ? cljs.core.not.call(null, e.filter_by_view) || cljs.core.not_EQ_.call(null, q, e.bounds) : n;
-      }()) ? clustermap.components.table.request_table_data.call(null, d, c, h, p, q, k, l, m) : null;
+        return b || (b = cljs.core.not_EQ_.call(null, g, e.controls)) || (b = cljs.core.not_EQ_.call(null, q, e.filter_spec)) ? b : (b = cljs.core.not_EQ_.call(null, p, e.filter_by_view)) ? b : cljs.core.truth_(p) ? cljs.core.not_EQ_.call(null, r, e.bounds) : p;
+      }()) ? clustermap.components.table.request_table_data.call(null, d, c, h, q, cljs.core.truth_(p) ? r : null, k, l, m) : null;
     };
-  }(b, d, d, e, f, f, g, h, k, k, l, m, n, p, q, r, s, t), clustermap.components.table.t27160.prototype.om$core$IRender$ = !0, clustermap.components.table.t27160.prototype.om$core$IRender$render$arity$1 = function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, O, Q) {
+  }(b, d, d, e, f, f, g, h, k, k, l, m, n, p, q, r, s, t, u, v), clustermap.components.table.t27589.prototype.om$core$IRender$ = !0, clustermap.components.table.t27589.prototype.om$core$IRender$render$arity$1 = function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, u, t, E, v, D) {
     return function(b) {
-      return clustermap.components.table.render_table.call(null, this.columns, this.table_data, cljs.core.PersistentArrayMap.EMPTY);
+      return clustermap.components.table.render_table.call(null, new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "table-data", "table-data", -1783738205), this.table_data, new cljs.core.Keyword(null, "controls", "controls", 1340701452), this.controls], null), this.owner, cljs.core.PersistentArrayMap.EMPTY);
     };
-  }(b, d, d, e, f, f, g, h, k, k, l, m, n, p, q, r, s, t), clustermap.components.table.t27160.prototype.om$core$IDidMount$ = !0, clustermap.components.table.t27160.prototype.om$core$IDidMount$did_mount$arity$1 = function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, O, Q) {
-    return function(T) {
-      var B = this;
-      T = clustermap.ordered_resource.make_discard_stale_resource.call(null, "table-data-resource");
-      om.core.set_state_BANG_.call(null, B.owner, new cljs.core.Keyword(null, "table-data-resource", "table-data-resource", -1272908133), T);
-      return clustermap.ordered_resource.retrieve_responses.call(null, T, function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, u, t, v, w, E) {
+  }(b, d, d, e, f, f, g, h, k, k, l, m, n, p, q, r, s, t, u, v), clustermap.components.table.t27589.prototype.om$core$IDidMount$ = !0, clustermap.components.table.t27589.prototype.om$core$IDidMount$did_mount$arity$1 = function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, u, t, E, v, D) {
+    return function(B) {
+      var P = this;
+      B = clustermap.ordered_resource.make_discard_stale_resource.call(null, "table-data-resource");
+      om.core.set_state_BANG_.call(null, P.owner, new cljs.core.Keyword(null, "table-data-resource", "table-data-resource", -1272908133), B);
+      return clustermap.ordered_resource.retrieve_responses.call(null, B, function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, u, t, y, v, E, A, w) {
         return function(b) {
-          return om.core.update_BANG_.call(null, B.table_state, new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "table-data", "table-data", -1783738205)], null), b);
+          return om.core.update_BANG_.call(null, P.table_state, new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "table-data", "table-data", -1783738205)], null), b);
         };
-      }(T, this, b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, O, Q));
+      }(B, this, b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, u, t, E, v, D));
     };
-  }(b, d, d, e, f, f, g, h, k, k, l, m, n, p, q, r, s, t), clustermap.components.table.t27160.prototype.cljs$core$IMeta$_meta$arity$1 = function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, O, Q) {
+  }(b, d, d, e, f, f, g, h, k, k, l, m, n, p, q, r, s, t, u, v), clustermap.components.table.t27589.prototype.cljs$core$IMeta$_meta$arity$1 = function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, u, t, v, A, D) {
     return function(b) {
-      return this.meta27161;
+      return this.meta27590;
     };
-  }(b, d, d, e, f, f, g, h, k, k, l, m, n, p, q, r, s, t), clustermap.components.table.t27160.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, O, Q) {
+  }(b, d, d, e, f, f, g, h, k, k, l, m, n, p, q, r, s, t, u, v), clustermap.components.table.t27589.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, u, t, v, A, D) {
     return function(b, c) {
-      return new clustermap.components.table.t27160(this.sort_spec, this.table_component, this.owner, this.filter_by_view, this.props, this.table_data, this.limit, this.index, this.offset, this.map__27158, this.filter_spec, this.columns, this.table_state, this.p__27144, this.controls, this.map__27159, this.bounds, this.map__27157, c);
+      return new clustermap.components.table.t27589(this.sort_spec, this.table_component, this.owner, this.filter_by_view, this.props, this.p__27570, this.table_data, this.index, this.filter_spec, this.columns, this.table_state, this.map__27585, this.controls, this.map__27586, this.bounds, this.size, this.map__27587, this.map__27588, this.from, c);
     };
-  }(b, d, d, e, f, f, g, h, k, k, l, m, n, p, q, r, s, t), clustermap.components.table.__GT_t27160 = function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, O, Q) {
-    return function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, w) {
-      return new clustermap.components.table.t27160(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, w);
+  }(b, d, d, e, f, f, g, h, k, k, l, m, n, p, q, r, s, t, u, v), clustermap.components.table.__GT_t27589 = function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, u, t, v, A, D) {
+    return function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, u, t, y, v, E) {
+      return new clustermap.components.table.t27589(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, u, t, y, v, E);
     };
-  }(b, d, d, e, f, f, g, h, k, k, l, m, n, p, q, r, s, t));
-  return new clustermap.components.table.t27160(m, table_component, c, q, d, g, p, l, n, f, s, r, f, b, k, k, t, d, null);
+  }(b, d, d, e, f, f, g, h, k, k, l, m, n, p, q, r, s, t, u, v));
+  return new clustermap.components.table.t27589(m, table_component, c, t, d, b, g, l, u, q, f, d, k, f, v, p, k, s, n, null);
 };
 goog.history = {};
 goog.history.EventType = {NAVIGATE:"navigate"};
@@ -35314,24 +35548,24 @@ clustermap.components.full_report.company_list.pos_neg = function(a) {
 };
 clustermap.components.full_report.company_list.portfolio_company = function portfolio_company(b, c, d) {
   var e = cljs.core.seq_QMARK_.call(null, d) ? cljs.core.apply.call(null, cljs.core.hash_map, d) : d, f = cljs.core.get.call(null, e, new cljs.core.Keyword(null, "path-fn", "path-fn", -778614691)), g = cljs.core.get.call(null, e, new cljs.core.Keyword(null, "link-fn", "link-fn", -205760857)), h = f.call(null, new cljs.core.Keyword(null, "portfolio-company", "portfolio-company", 2036028415), b);
-  "undefined" === typeof clustermap.components.full_report.company_list.t26266 && (clustermap.components.full_report.company_list.t26266 = function(b, c, d, e, f, g, h, s, t, u) {
+  "undefined" === typeof clustermap.components.full_report.company_list.t26598 && (clustermap.components.full_report.company_list.t26598 = function(b, c, d, e, f, g, h, s, t, u) {
     this.company_path = b;
     this.link_fn = c;
     this.path_fn = d;
     this.opts = e;
-    this.map__26265 = f;
-    this.p__26252 = g;
+    this.map__26597 = f;
+    this.p__26584 = g;
     this.owner = h;
     this.company = s;
     this.portfolio_company = t;
-    this.meta26267 = u;
+    this.meta26599 = u;
     this.cljs$lang$protocol_mask$partition1$ = 0;
     this.cljs$lang$protocol_mask$partition0$ = 393216;
-  }, clustermap.components.full_report.company_list.t26266.cljs$lang$type = !0, clustermap.components.full_report.company_list.t26266.cljs$lang$ctorStr = "clustermap.components.full-report.company-list/t26266", clustermap.components.full_report.company_list.t26266.cljs$lang$ctorPrWriter = function(b, c, d, e, f, g) {
+  }, clustermap.components.full_report.company_list.t26598.cljs$lang$type = !0, clustermap.components.full_report.company_list.t26598.cljs$lang$ctorStr = "clustermap.components.full-report.company-list/t26598", clustermap.components.full_report.company_list.t26598.cljs$lang$ctorPrWriter = function(b, c, d, e, f, g) {
     return function(b, c, d) {
-      return cljs.core._write.call(null, c, "clustermap.components.full-report.company-list/t26266");
+      return cljs.core._write.call(null, c, "clustermap.components.full-report.company-list/t26598");
     };
-  }(h, d, e, e, f, g), clustermap.components.full_report.company_list.t26266.prototype.om$core$IRender$ = !0, clustermap.components.full_report.company_list.t26266.prototype.om$core$IRender$render$arity$1 = function(b, c, d, e, f, g) {
+  }(h, d, e, e, f, g), clustermap.components.full_report.company_list.t26598.prototype.om$core$IRender$ = !0, clustermap.components.full_report.company_list.t26598.prototype.om$core$IRender$render$arity$1 = function(b, c, d, e, f, g) {
     return function(h) {
       var s = this, t = this;
       return React.DOM.tr(null, function() {
@@ -35376,37 +35610,37 @@ clustermap.components.full_report.company_list.portfolio_company = function port
         }()), ")")], null)));
       }());
     };
-  }(h, d, e, e, f, g), clustermap.components.full_report.company_list.t26266.prototype.cljs$core$IMeta$_meta$arity$1 = function(b, c, d, e, f, g) {
+  }(h, d, e, e, f, g), clustermap.components.full_report.company_list.t26598.prototype.cljs$core$IMeta$_meta$arity$1 = function(b, c, d, e, f, g) {
     return function(b) {
-      return this.meta26267;
+      return this.meta26599;
     };
-  }(h, d, e, e, f, g), clustermap.components.full_report.company_list.t26266.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(b, c, d, e, f, g) {
+  }(h, d, e, e, f, g), clustermap.components.full_report.company_list.t26598.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(b, c, d, e, f, g) {
     return function(b, c) {
-      return new clustermap.components.full_report.company_list.t26266(this.company_path, this.link_fn, this.path_fn, this.opts, this.map__26265, this.p__26252, this.owner, this.company, this.portfolio_company, c);
+      return new clustermap.components.full_report.company_list.t26598(this.company_path, this.link_fn, this.path_fn, this.opts, this.map__26597, this.p__26584, this.owner, this.company, this.portfolio_company, c);
     };
-  }(h, d, e, e, f, g), clustermap.components.full_report.company_list.__GT_t26266 = function(b, c, d, e, f, g) {
+  }(h, d, e, e, f, g), clustermap.components.full_report.company_list.__GT_t26598 = function(b, c, d, e, f, g) {
     return function(b, c, d, e, f, g, h, k, l, m) {
-      return new clustermap.components.full_report.company_list.t26266(b, c, d, e, f, g, h, k, l, m);
+      return new clustermap.components.full_report.company_list.t26598(b, c, d, e, f, g, h, k, l, m);
     };
   }(h, d, e, e, f, g));
-  return new clustermap.components.full_report.company_list.t26266(h, g, f, e, e, d, c, b, portfolio_company, null);
+  return new clustermap.components.full_report.company_list.t26598(h, g, f, e, e, d, c, b, portfolio_company, null);
 };
 clustermap.components.full_report.company_list.company_list = function company_list(b, c, d) {
   var e = om.core.get_shared.call(null, c, new cljs.core.Keyword(null, "comm", "comm", -1689770614));
-  "undefined" === typeof clustermap.components.full_report.company_list.t26297 && (clustermap.components.full_report.company_list.t26297 = function(b, c, d, e, l, m) {
+  "undefined" === typeof clustermap.components.full_report.company_list.t26629 && (clustermap.components.full_report.company_list.t26629 = function(b, c, d, e, l, m) {
     this.comm = b;
     this.opts = c;
     this.owner = d;
     this.companies = e;
     this.company_list = l;
-    this.meta26298 = m;
+    this.meta26630 = m;
     this.cljs$lang$protocol_mask$partition1$ = 0;
     this.cljs$lang$protocol_mask$partition0$ = 393216;
-  }, clustermap.components.full_report.company_list.t26297.cljs$lang$type = !0, clustermap.components.full_report.company_list.t26297.cljs$lang$ctorStr = "clustermap.components.full-report.company-list/t26297", clustermap.components.full_report.company_list.t26297.cljs$lang$ctorPrWriter = function(b) {
+  }, clustermap.components.full_report.company_list.t26629.cljs$lang$type = !0, clustermap.components.full_report.company_list.t26629.cljs$lang$ctorStr = "clustermap.components.full-report.company-list/t26629", clustermap.components.full_report.company_list.t26629.cljs$lang$ctorPrWriter = function(b) {
     return function(b, c, d) {
-      return cljs.core._write.call(null, c, "clustermap.components.full-report.company-list/t26297");
+      return cljs.core._write.call(null, c, "clustermap.components.full-report.company-list/t26629");
     };
-  }(e), clustermap.components.full_report.company_list.t26297.prototype.om$core$IRender$ = !0, clustermap.components.full_report.company_list.t26297.prototype.om$core$IRender$render$arity$1 = function(b) {
+  }(e), clustermap.components.full_report.company_list.t26629.prototype.om$core$IRender$ = !0, clustermap.components.full_report.company_list.t26629.prototype.om$core$IRender$render$arity$1 = function(b) {
     return function(b) {
       var c = this;
       b = clustermap.components.table.paginate.call(null, c.comm, c.companies, new cljs.core.Keyword(null, "update-selection-investment-aggs-table-view", "update-selection-investment-aggs-table-view", 1219799193));
@@ -35438,41 +35672,41 @@ clustermap.components.full_report.company_list.company_list = function company_l
         return cljs.core.apply.call(null, React.DOM.tbody, cljs.core.map_QMARK_.call(null, b) ? sablono.interpreter.attributes.call(null, b) : null, cljs.core.remove.call(null, cljs.core.nil_QMARK_, cljs.core.map_QMARK_.call(null, b) ? cljs.core.PersistentVector.EMPTY : new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [sablono.interpreter.interpret.call(null, b)], null)));
       }())), sablono.interpreter.interpret.call(null, clustermap.components.table.paginate.call(null, c.comm, c.companies, new cljs.core.Keyword(null, "update-selection-investment-aggs-table-view", "update-selection-investment-aggs-table-view", 1219799193)))], null)));
     };
-  }(e), clustermap.components.full_report.company_list.t26297.prototype.cljs$core$IMeta$_meta$arity$1 = function(b) {
+  }(e), clustermap.components.full_report.company_list.t26629.prototype.cljs$core$IMeta$_meta$arity$1 = function(b) {
     return function(b) {
-      return this.meta26298;
+      return this.meta26630;
     };
-  }(e), clustermap.components.full_report.company_list.t26297.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(b) {
+  }(e), clustermap.components.full_report.company_list.t26629.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(b) {
     return function(b, c) {
-      return new clustermap.components.full_report.company_list.t26297(this.comm, this.opts, this.owner, this.companies, this.company_list, c);
+      return new clustermap.components.full_report.company_list.t26629(this.comm, this.opts, this.owner, this.companies, this.company_list, c);
     };
-  }(e), clustermap.components.full_report.company_list.__GT_t26297 = function(b) {
+  }(e), clustermap.components.full_report.company_list.__GT_t26629 = function(b) {
     return function(b, c, d, e, f, n) {
-      return new clustermap.components.full_report.company_list.t26297(b, c, d, e, f, n);
+      return new clustermap.components.full_report.company_list.t26629(b, c, d, e, f, n);
     };
   }(e));
-  return new clustermap.components.full_report.company_list.t26297(e, d, c, b, company_list, null);
+  return new clustermap.components.full_report.company_list.t26629(e, d, c, b, company_list, null);
 };
 clustermap.components.full_report.company_site_list = {};
 clustermap.components.full_report.company_site_list.investment = function(a, b, c) {
   var d = cljs.core.seq_QMARK_.call(null, c) ? cljs.core.apply.call(null, cljs.core.hash_map, c) : c, e = cljs.core.get.call(null, d, new cljs.core.Keyword(null, "path-fn", "path-fn", -778614691)), f = cljs.core.get.call(null, d, new cljs.core.Keyword(null, "link-fn", "link-fn", -205760857)), g = e.call(null, new cljs.core.Keyword(null, "portfolio-company", "portfolio-company", 2036028415), a);
-  "undefined" === typeof clustermap.components.full_report.company_site_list.t26327 && (clustermap.components.full_report.company_site_list.t26327 = function(a, b, c, d, e, f, g, r, s) {
+  "undefined" === typeof clustermap.components.full_report.company_site_list.t26659 && (clustermap.components.full_report.company_site_list.t26659 = function(a, b, c, d, e, f, g, r, s) {
     this.company_path = a;
     this.link_fn = b;
     this.path_fn = c;
     this.opts = d;
-    this.map__26326 = e;
-    this.p__26317 = f;
+    this.map__26658 = e;
+    this.p__26649 = f;
     this.owner = g;
     this.investment = r;
-    this.meta26328 = s;
+    this.meta26660 = s;
     this.cljs$lang$protocol_mask$partition1$ = 0;
     this.cljs$lang$protocol_mask$partition0$ = 393216;
-  }, clustermap.components.full_report.company_site_list.t26327.cljs$lang$type = !0, clustermap.components.full_report.company_site_list.t26327.cljs$lang$ctorStr = "clustermap.components.full-report.company-site-list/t26327", clustermap.components.full_report.company_site_list.t26327.cljs$lang$ctorPrWriter = function(a, b, c, d, e, f) {
+  }, clustermap.components.full_report.company_site_list.t26659.cljs$lang$type = !0, clustermap.components.full_report.company_site_list.t26659.cljs$lang$ctorStr = "clustermap.components.full-report.company-site-list/t26659", clustermap.components.full_report.company_site_list.t26659.cljs$lang$ctorPrWriter = function(a, b, c, d, e, f) {
     return function(a, b, c) {
-      return cljs.core._write.call(null, b, "clustermap.components.full-report.company-site-list/t26327");
+      return cljs.core._write.call(null, b, "clustermap.components.full-report.company-site-list/t26659");
     };
-  }(g, c, d, d, e, f), clustermap.components.full_report.company_site_list.t26327.prototype.om$core$IRender$ = !0, clustermap.components.full_report.company_site_list.t26327.prototype.om$core$IRender$render$arity$1 = function(a, b, c, d, e, f) {
+  }(g, c, d, d, e, f), clustermap.components.full_report.company_site_list.t26659.prototype.om$core$IRender$ = !0, clustermap.components.full_report.company_site_list.t26659.prototype.om$core$IRender$render$arity$1 = function(a, b, c, d, e, f) {
     return function(a) {
       var b = this;
       return React.DOM.tr(null, function() {
@@ -35491,37 +35725,37 @@ clustermap.components.full_report.company_site_list.investment = function(a, b, 
         return cljs.core.apply.call(null, React.DOM.td, cljs.core.map_QMARK_.call(null, a) ? sablono.interpreter.attributes.call(null, a) : null, cljs.core.remove.call(null, cljs.core.nil_QMARK_, cljs.core.map_QMARK_.call(null, a) ? cljs.core.PersistentVector.EMPTY : new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [sablono.interpreter.interpret.call(null, a)], null)));
       }());
     };
-  }(g, c, d, d, e, f), clustermap.components.full_report.company_site_list.t26327.prototype.cljs$core$IMeta$_meta$arity$1 = function(a, b, c, d, e, f) {
+  }(g, c, d, d, e, f), clustermap.components.full_report.company_site_list.t26659.prototype.cljs$core$IMeta$_meta$arity$1 = function(a, b, c, d, e, f) {
     return function(a) {
-      return this.meta26328;
+      return this.meta26660;
     };
-  }(g, c, d, d, e, f), clustermap.components.full_report.company_site_list.t26327.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(a, b, c, d, e, f) {
+  }(g, c, d, d, e, f), clustermap.components.full_report.company_site_list.t26659.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(a, b, c, d, e, f) {
     return function(a, b) {
-      return new clustermap.components.full_report.company_site_list.t26327(this.company_path, this.link_fn, this.path_fn, this.opts, this.map__26326, this.p__26317, this.owner, this.investment, b);
+      return new clustermap.components.full_report.company_site_list.t26659(this.company_path, this.link_fn, this.path_fn, this.opts, this.map__26658, this.p__26649, this.owner, this.investment, b);
     };
-  }(g, c, d, d, e, f), clustermap.components.full_report.company_site_list.__GT_t26327 = function(a, b, c, d, e, f) {
+  }(g, c, d, d, e, f), clustermap.components.full_report.company_site_list.__GT_t26659 = function(a, b, c, d, e, f) {
     return function(a, b, c, d, e, f, g, h, k) {
-      return new clustermap.components.full_report.company_site_list.t26327(a, b, c, d, e, f, g, h, k);
+      return new clustermap.components.full_report.company_site_list.t26659(a, b, c, d, e, f, g, h, k);
     };
   }(g, c, d, d, e, f));
-  return new clustermap.components.full_report.company_site_list.t26327(g, f, e, d, d, c, b, a, null);
+  return new clustermap.components.full_report.company_site_list.t26659(g, f, e, d, d, c, b, a, null);
 };
 clustermap.components.full_report.company_site_list.company_site_list = function company_site_list(b, c, d) {
   var e = om.core.get_shared.call(null, c, new cljs.core.Keyword(null, "comm", "comm", -1689770614));
-  "undefined" === typeof clustermap.components.full_report.company_site_list.t26348 && (clustermap.components.full_report.company_site_list.t26348 = function(b, c, d, e, l, m) {
+  "undefined" === typeof clustermap.components.full_report.company_site_list.t26680 && (clustermap.components.full_report.company_site_list.t26680 = function(b, c, d, e, l, m) {
     this.comm = b;
     this.opts = c;
     this.owner = d;
     this.investments = e;
     this.company_site_list = l;
-    this.meta26349 = m;
+    this.meta26681 = m;
     this.cljs$lang$protocol_mask$partition1$ = 0;
     this.cljs$lang$protocol_mask$partition0$ = 393216;
-  }, clustermap.components.full_report.company_site_list.t26348.cljs$lang$type = !0, clustermap.components.full_report.company_site_list.t26348.cljs$lang$ctorStr = "clustermap.components.full-report.company-site-list/t26348", clustermap.components.full_report.company_site_list.t26348.cljs$lang$ctorPrWriter = function(b) {
+  }, clustermap.components.full_report.company_site_list.t26680.cljs$lang$type = !0, clustermap.components.full_report.company_site_list.t26680.cljs$lang$ctorStr = "clustermap.components.full-report.company-site-list/t26680", clustermap.components.full_report.company_site_list.t26680.cljs$lang$ctorPrWriter = function(b) {
     return function(b, c, d) {
-      return cljs.core._write.call(null, c, "clustermap.components.full-report.company-site-list/t26348");
+      return cljs.core._write.call(null, c, "clustermap.components.full-report.company-site-list/t26680");
     };
-  }(e), clustermap.components.full_report.company_site_list.t26348.prototype.om$core$IRender$ = !0, clustermap.components.full_report.company_site_list.t26348.prototype.om$core$IRender$render$arity$1 = function(b) {
+  }(e), clustermap.components.full_report.company_site_list.t26680.prototype.om$core$IRender$ = !0, clustermap.components.full_report.company_site_list.t26680.prototype.om$core$IRender$render$arity$1 = function(b) {
     return function(b) {
       var c = this;
       b = clustermap.components.table.paginate.call(null, c.comm, c.investments, new cljs.core.Keyword(null, "update-selection-investments-table-view", "update-selection-investments-table-view", 1261701637));
@@ -35559,20 +35793,20 @@ clustermap.components.full_report.company_site_list.company_site_list = function
         return cljs.core.apply.call(null, React.DOM.tbody, cljs.core.map_QMARK_.call(null, b) ? sablono.interpreter.attributes.call(null, b) : null, cljs.core.remove.call(null, cljs.core.nil_QMARK_, cljs.core.map_QMARK_.call(null, b) ? cljs.core.PersistentVector.EMPTY : new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [sablono.interpreter.interpret.call(null, b)], null)));
       }())), sablono.interpreter.interpret.call(null, clustermap.components.table.paginate.call(null, c.comm, c.investments, new cljs.core.Keyword(null, "update-selection-investments-table-view", "update-selection-investments-table-view", 1261701637)))], null)));
     };
-  }(e), clustermap.components.full_report.company_site_list.t26348.prototype.cljs$core$IMeta$_meta$arity$1 = function(b) {
+  }(e), clustermap.components.full_report.company_site_list.t26680.prototype.cljs$core$IMeta$_meta$arity$1 = function(b) {
     return function(b) {
-      return this.meta26349;
+      return this.meta26681;
     };
-  }(e), clustermap.components.full_report.company_site_list.t26348.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(b) {
+  }(e), clustermap.components.full_report.company_site_list.t26680.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(b) {
     return function(b, c) {
-      return new clustermap.components.full_report.company_site_list.t26348(this.comm, this.opts, this.owner, this.investments, this.company_site_list, c);
+      return new clustermap.components.full_report.company_site_list.t26680(this.comm, this.opts, this.owner, this.investments, this.company_site_list, c);
     };
-  }(e), clustermap.components.full_report.company_site_list.__GT_t26348 = function(b) {
+  }(e), clustermap.components.full_report.company_site_list.__GT_t26680 = function(b) {
     return function(b, c, d, e, f, n) {
-      return new clustermap.components.full_report.company_site_list.t26348(b, c, d, e, f, n);
+      return new clustermap.components.full_report.company_site_list.t26680(b, c, d, e, f, n);
     };
   }(e));
-  return new clustermap.components.full_report.company_site_list.t26348(e, d, c, b, company_site_list, null);
+  return new clustermap.components.full_report.company_site_list.t26680(e, d, c, b, company_site_list, null);
 };
 var hiccups = {runtime:{}};
 hiccups.runtime.re_tag = /([^\s\.#]+)(?:#([^\s\.#]+))?(?:\.([^\s#]+))?/;
@@ -36799,27 +37033,27 @@ clustermap.components.timeline_chart.create_chart = function(a, b, c) {
 };
 clustermap.components.timeline_chart.timeline_chart = function timeline_chart(b, c, d) {
   var e = cljs.core.seq_QMARK_.call(null, d) ? cljs.core.apply.call(null, cljs.core.hash_map, d) : d, f = cljs.core.get.call(null, e, new cljs.core.Keyword(null, "id", "id", -1388402092));
-  "undefined" === typeof clustermap.components.timeline_chart.t27184 && (clustermap.components.timeline_chart.t27184 = function(b, c, d, e, f, n, p, q) {
+  "undefined" === typeof clustermap.components.timeline_chart.t27614 && (clustermap.components.timeline_chart.t27614 = function(b, c, d, e, f, n, p, q) {
     this.id = b;
     this.opts = c;
-    this.map__27183 = d;
-    this.p__27178 = e;
+    this.map__27613 = d;
+    this.p__27608 = e;
     this.owner = f;
     this.data = n;
     this.timeline_chart = p;
-    this.meta27185 = q;
+    this.meta27615 = q;
     this.cljs$lang$protocol_mask$partition1$ = 0;
     this.cljs$lang$protocol_mask$partition0$ = 393216;
-  }, clustermap.components.timeline_chart.t27184.cljs$lang$type = !0, clustermap.components.timeline_chart.t27184.cljs$lang$ctorStr = "clustermap.components.timeline-chart/t27184", clustermap.components.timeline_chart.t27184.cljs$lang$ctorPrWriter = function(b, c, d, e) {
+  }, clustermap.components.timeline_chart.t27614.cljs$lang$type = !0, clustermap.components.timeline_chart.t27614.cljs$lang$ctorStr = "clustermap.components.timeline-chart/t27614", clustermap.components.timeline_chart.t27614.cljs$lang$ctorPrWriter = function(b, c, d, e) {
     return function(b, c, d) {
-      return cljs.core._write.call(null, c, "clustermap.components.timeline-chart/t27184");
+      return cljs.core._write.call(null, c, "clustermap.components.timeline-chart/t27614");
     };
-  }(d, e, e, f), clustermap.components.timeline_chart.t27184.prototype.om$core$IDidUpdate$ = !0, clustermap.components.timeline_chart.t27184.prototype.om$core$IDidUpdate$did_update$arity$3 = function(b, c, d, e) {
+  }(d, e, e, f), clustermap.components.timeline_chart.t27614.prototype.om$core$IDidUpdate$ = !0, clustermap.components.timeline_chart.t27614.prototype.om$core$IDidUpdate$did_update$arity$3 = function(b, c, d, e) {
     return function(b, c, d) {
       om.core.get_node.call(null, this.owner);
       return clustermap.components.timeline_chart.create_chart.call(null, this.data, om.core.get_node.call(null, this.owner, "chart"), this.opts);
     };
-  }(d, e, e, f), clustermap.components.timeline_chart.t27184.prototype.om$core$IDidMount$ = !0, clustermap.components.timeline_chart.t27184.prototype.om$core$IDidMount$did_mount$arity$1 = function(b, c, d, e) {
+  }(d, e, e, f), clustermap.components.timeline_chart.t27614.prototype.om$core$IDidMount$ = !0, clustermap.components.timeline_chart.t27614.prototype.om$core$IDidMount$did_mount$arity$1 = function(b, c, d, e) {
     return function(f) {
       var n = this;
       f = om.core.get_node.call(null, n.owner);
@@ -36831,37 +37065,37 @@ clustermap.components.timeline_chart.timeline_chart = function timeline_chart(b,
         };
       }(f, this, b, c, d, e));
     };
-  }(d, e, e, f), clustermap.components.timeline_chart.t27184.prototype.om$core$IRender$ = !0, clustermap.components.timeline_chart.t27184.prototype.om$core$IRender$render$arity$1 = function(b, c, d, e) {
+  }(d, e, e, f), clustermap.components.timeline_chart.t27614.prototype.om$core$IRender$ = !0, clustermap.components.timeline_chart.t27614.prototype.om$core$IRender$render$arity$1 = function(b, c, d, e) {
     return function(b) {
       return React.DOM.div({className:"timeline-chart", id:this.id, ref:"chart"});
     };
-  }(d, e, e, f), clustermap.components.timeline_chart.t27184.prototype.cljs$core$IMeta$_meta$arity$1 = function(b, c, d, e) {
+  }(d, e, e, f), clustermap.components.timeline_chart.t27614.prototype.cljs$core$IMeta$_meta$arity$1 = function(b, c, d, e) {
     return function(b) {
-      return this.meta27185;
+      return this.meta27615;
     };
-  }(d, e, e, f), clustermap.components.timeline_chart.t27184.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(b, c, d, e) {
+  }(d, e, e, f), clustermap.components.timeline_chart.t27614.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(b, c, d, e) {
     return function(b, c) {
-      return new clustermap.components.timeline_chart.t27184(this.id, this.opts, this.map__27183, this.p__27178, this.owner, this.data, this.timeline_chart, c);
+      return new clustermap.components.timeline_chart.t27614(this.id, this.opts, this.map__27613, this.p__27608, this.owner, this.data, this.timeline_chart, c);
     };
-  }(d, e, e, f), clustermap.components.timeline_chart.__GT_t27184 = function(b, c, d, e) {
+  }(d, e, e, f), clustermap.components.timeline_chart.__GT_t27614 = function(b, c, d, e) {
     return function(b, c, d, e, f, g, h, k) {
-      return new clustermap.components.timeline_chart.t27184(b, c, d, e, f, g, h, k);
+      return new clustermap.components.timeline_chart.t27614(b, c, d, e, f, g, h, k);
     };
   }(d, e, e, f));
-  return new clustermap.components.timeline_chart.t27184(f, e, e, d, c, b, timeline_chart, null);
+  return new clustermap.components.timeline_chart.t27614(f, e, e, d, c, b, timeline_chart, null);
 };
 clustermap.components.full_report.charts = {};
 clustermap.components.full_report.charts.charts = function charts(b, c) {
-  "undefined" === typeof clustermap.components.full_report.charts.t26238 && (clustermap.components.full_report.charts.t26238 = function(b, c, f, g) {
+  "undefined" === typeof clustermap.components.full_report.charts.t26570 && (clustermap.components.full_report.charts.t26570 = function(b, c, f, g) {
     this.owner = b;
     this.data = c;
     this.charts = f;
-    this.meta26239 = g;
+    this.meta26571 = g;
     this.cljs$lang$protocol_mask$partition1$ = 0;
     this.cljs$lang$protocol_mask$partition0$ = 393216;
-  }, clustermap.components.full_report.charts.t26238.cljs$lang$type = !0, clustermap.components.full_report.charts.t26238.cljs$lang$ctorStr = "clustermap.components.full-report.charts/t26238", clustermap.components.full_report.charts.t26238.cljs$lang$ctorPrWriter = function(b, c, f) {
-    return cljs.core._write.call(null, c, "clustermap.components.full-report.charts/t26238");
-  }, clustermap.components.full_report.charts.t26238.prototype.om$core$IRender$ = !0, clustermap.components.full_report.charts.t26238.prototype.om$core$IRender$render$arity$1 = function(b) {
+  }, clustermap.components.full_report.charts.t26570.cljs$lang$type = !0, clustermap.components.full_report.charts.t26570.cljs$lang$ctorStr = "clustermap.components.full-report.charts/t26570", clustermap.components.full_report.charts.t26570.cljs$lang$ctorPrWriter = function(b, c, f) {
+    return cljs.core._write.call(null, c, "clustermap.components.full-report.charts/t26570");
+  }, clustermap.components.full_report.charts.t26570.prototype.om$core$IRender$ = !0, clustermap.components.full_report.charts.t26570.prototype.om$core$IRender$render$arity$1 = function(b) {
     b = (new cljs.core.Keyword(null, "selection-investment-account-timelines", "selection-investment-account-timelines", 2127671062)).cljs$core$IFn$_invoke$arity$1(this.data);
     b = cljs.core.truth_(b) ? new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "div.grid", "div.grid", 736588158), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "div.tbl", "div.tbl", 202391088), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "div.tbl-cell.charts", "div.tbl-cell.charts", 1566068393), new cljs.core.PersistentVector(null, 
     2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "div.tbl", "div.tbl", 202391088), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "div.tbl-row", "div.tbl-row", 2102558769), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "div.tbl-cell", "div.tbl-cell", -1480839526), new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, 
@@ -36870,14 +37104,14 @@ clustermap.components.full_report.charts.charts = function charts(b, c) {
     1337881348), "turnover-timeline-chart"], null))], null)], null)], null)], null)], null)], null)], null) : null;
     return cljs.core.apply.call(null, React.DOM.div, cljs.core.map_QMARK_.call(null, b) ? sablono.interpreter.attributes.call(null, sablono.util.merge_with_class.call(null, new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "class", "class", -2030961996), new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, ["full-report-charts"], null)], null), b)) : {className:"full-report-charts"}, cljs.core.remove.call(null, cljs.core.nil_QMARK_, cljs.core.map_QMARK_.call(null, 
     b) ? cljs.core.PersistentVector.EMPTY : new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [sablono.interpreter.interpret.call(null, b)], null)));
-  }, clustermap.components.full_report.charts.t26238.prototype.cljs$core$IMeta$_meta$arity$1 = function(b) {
-    return this.meta26239;
-  }, clustermap.components.full_report.charts.t26238.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(b, c) {
-    return new clustermap.components.full_report.charts.t26238(this.owner, this.data, this.charts, c);
-  }, clustermap.components.full_report.charts.__GT_t26238 = function(b, c, f, g) {
-    return new clustermap.components.full_report.charts.t26238(b, c, f, g);
+  }, clustermap.components.full_report.charts.t26570.prototype.cljs$core$IMeta$_meta$arity$1 = function(b) {
+    return this.meta26571;
+  }, clustermap.components.full_report.charts.t26570.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(b, c) {
+    return new clustermap.components.full_report.charts.t26570(this.owner, this.data, this.charts, c);
+  }, clustermap.components.full_report.charts.__GT_t26570 = function(b, c, f, g) {
+    return new clustermap.components.full_report.charts.t26570(b, c, f, g);
   });
-  return new clustermap.components.full_report.charts.t26238(c, b, charts, null);
+  return new clustermap.components.full_report.charts.t26570(c, b, charts, null);
 };
 clustermap.components.full_report.overview = {};
 clustermap.components.full_report.overview.describe_selection = function(a) {
@@ -36966,21 +37200,21 @@ clustermap.components.full_report.overview.pos_neg = function(a) {
 };
 clustermap.components.full_report.overview.overview = function overview(b) {
   var c = clustermap.components.full_report.overview.overview_data.call(null, b), d = cljs.core.seq_QMARK_.call(null, c) ? cljs.core.apply.call(null, cljs.core.hash_map, c) : c, e = cljs.core.get.call(null, d, new cljs.core.Keyword(null, "benchmark", "benchmark", 667647056)), f = cljs.core.get.call(null, d, new cljs.core.Keyword(null, "averages", "averages", -1747836978)), g = cljs.core.get.call(null, d, new cljs.core.Keyword(null, "selection", "selection", 975998651));
-  "undefined" === typeof clustermap.components.full_report.overview.t26446 && (clustermap.components.full_report.overview.t26446 = function(b, c, d, e, f, g, q) {
+  "undefined" === typeof clustermap.components.full_report.overview.t26778 && (clustermap.components.full_report.overview.t26778 = function(b, c, d, e, f, g, q) {
     this.selection = b;
     this.averages = c;
     this.benchmark = d;
-    this.map__26445 = e;
+    this.map__26777 = e;
     this.data = f;
     this.overview = g;
-    this.meta26447 = q;
+    this.meta26779 = q;
     this.cljs$lang$protocol_mask$partition1$ = 0;
     this.cljs$lang$protocol_mask$partition0$ = 393216;
-  }, clustermap.components.full_report.overview.t26446.cljs$lang$type = !0, clustermap.components.full_report.overview.t26446.cljs$lang$ctorStr = "clustermap.components.full-report.overview/t26446", clustermap.components.full_report.overview.t26446.cljs$lang$ctorPrWriter = function(b, c, d, e, f) {
+  }, clustermap.components.full_report.overview.t26778.cljs$lang$type = !0, clustermap.components.full_report.overview.t26778.cljs$lang$ctorStr = "clustermap.components.full-report.overview/t26778", clustermap.components.full_report.overview.t26778.cljs$lang$ctorPrWriter = function(b, c, d, e, f) {
     return function(b, c, d) {
-      return cljs.core._write.call(null, c, "clustermap.components.full-report.overview/t26446");
+      return cljs.core._write.call(null, c, "clustermap.components.full-report.overview/t26778");
     };
-  }(c, d, e, f, g), clustermap.components.full_report.overview.t26446.prototype.om$core$IRender$ = !0, clustermap.components.full_report.overview.t26446.prototype.om$core$IRender$render$arity$1 = function(b, c, d, e, f) {
+  }(c, d, e, f, g), clustermap.components.full_report.overview.t26778.prototype.om$core$IRender$ = !0, clustermap.components.full_report.overview.t26778.prototype.om$core$IRender$render$arity$1 = function(b, c, d, e, f) {
     return function(b) {
       var c = this;
       return React.DOM.div({className:"full-report-overview"}, React.DOM.h4(null, "Overview of latest filings", React.DOM.small(null, "\u00a0(may span years : see table below for details)")), React.DOM.div({className:"table-responsive"}, React.DOM.table({className:"table-stats"}, React.DOM.thead(null, React.DOM.tr(null, React.DOM.th(null, "\u00a0"), React.DOM.th(null, "Investor-backed companies"), React.DOM.th(null, "Investors"), React.DOM.th(null, "Constituencies"), React.DOM.th(null, "Revenue"), 
@@ -37014,20 +37248,20 @@ clustermap.components.full_report.overview.overview = function overview(b) {
         b) ? cljs.core.PersistentVector.EMPTY : new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [sablono.interpreter.interpret.call(null, b)], null)));
       }()))))));
     };
-  }(c, d, e, f, g), clustermap.components.full_report.overview.t26446.prototype.cljs$core$IMeta$_meta$arity$1 = function(b, c, d, e, f) {
+  }(c, d, e, f, g), clustermap.components.full_report.overview.t26778.prototype.cljs$core$IMeta$_meta$arity$1 = function(b, c, d, e, f) {
     return function(b) {
-      return this.meta26447;
+      return this.meta26779;
     };
-  }(c, d, e, f, g), clustermap.components.full_report.overview.t26446.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(b, c, d, e, f) {
+  }(c, d, e, f, g), clustermap.components.full_report.overview.t26778.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(b, c, d, e, f) {
     return function(b, c) {
-      return new clustermap.components.full_report.overview.t26446(this.selection, this.averages, this.benchmark, this.map__26445, this.data, this.overview, c);
+      return new clustermap.components.full_report.overview.t26778(this.selection, this.averages, this.benchmark, this.map__26777, this.data, this.overview, c);
     };
-  }(c, d, e, f, g), clustermap.components.full_report.overview.__GT_t26446 = function(b, c, d, e, f) {
+  }(c, d, e, f, g), clustermap.components.full_report.overview.__GT_t26778 = function(b, c, d, e, f) {
     return function(b, c, d, e, f, g, h) {
-      return new clustermap.components.full_report.overview.t26446(b, c, d, e, f, g, h);
+      return new clustermap.components.full_report.overview.t26778(b, c, d, e, f, g, h);
     };
   }(c, d, e, f, g));
-  return new clustermap.components.full_report.overview.t26446(g, f, e, d, b, overview, null);
+  return new clustermap.components.full_report.overview.t26778(g, f, e, d, b, overview, null);
 };
 clustermap.components.full_report.single_company_selection_QMARK_ = function(a) {
   return cljs.core._EQ_.call(null, 1, cljs.core.count.call(null, a)) && cljs.core._EQ_.call(null, new cljs.core.Keyword(null, "portfolio-company", "portfolio-company", 2036028415), function() {
@@ -37039,33 +37273,33 @@ clustermap.components.full_report.full_report_component = function full_report_c
   var d = cljs.core.seq_QMARK_.call(null, b) ? cljs.core.apply.call(null, cljs.core.hash_map, b) : b, e = cljs.core.get.call(null, d, new cljs.core.Keyword(null, "all-portfolio-companies-summary", "all-portfolio-companies-summary", 1736783950)), f = cljs.core.get.call(null, d, new cljs.core.Keyword(null, "selection", "selection", 975998651)), g = cljs.core.get.call(null, d, new cljs.core.Keyword(null, "selector", "selector", 762528866)), h = om.core.get_shared.call(null, c), k = cljs.core.seq_QMARK_.call(null, 
   h) ? cljs.core.apply.call(null, cljs.core.hash_map, h) : h, l = cljs.core.get.call(null, k, new cljs.core.Keyword(null, "link-fn", "link-fn", -205760857)), m = cljs.core.get.call(null, k, new cljs.core.Keyword(null, "path-fn", "path-fn", -778614691)), n = cljs.core.get.call(null, k, new cljs.core.Keyword(null, "comm", "comm", -1689770614)), p = cljs.core.partial.call(null, m, new cljs.core.Keyword(null, "lists", "lists", -884730684)), q = cljs.core.partial.call(null, l, new cljs.core.Keyword(null, 
   "lists", "lists", -884730684));
-  "undefined" === typeof clustermap.components.full_report.t26473 && (clustermap.components.full_report.t26473 = function(b, c, d, e, f, g, h, k, l, m, n, p, q) {
+  "undefined" === typeof clustermap.components.full_report.t26805 && (clustermap.components.full_report.t26805 = function(b, c, d, e, f, g, h, k, l, m, n, p, q) {
     this.selection = b;
-    this.p__26464 = c;
-    this.owner = d;
-    this.path_fn = e;
-    this.data = f;
-    this.selector = g;
-    this.link_fn = h;
-    this.map__26471 = k;
-    this.full_report_component = l;
-    this.comm = m;
-    this.all_portfolio_companies_summary = n;
-    this.map__26472 = p;
-    this.meta26474 = q;
+    this.owner = c;
+    this.path_fn = d;
+    this.data = e;
+    this.selector = f;
+    this.link_fn = g;
+    this.map__26803 = h;
+    this.full_report_component = k;
+    this.comm = l;
+    this.all_portfolio_companies_summary = m;
+    this.p__26796 = n;
+    this.map__26804 = p;
+    this.meta26806 = q;
     this.cljs$lang$protocol_mask$partition1$ = 0;
     this.cljs$lang$protocol_mask$partition0$ = 393216;
-  }, clustermap.components.full_report.t26473.cljs$lang$type = !0, clustermap.components.full_report.t26473.cljs$lang$ctorStr = "clustermap.components.full-report/t26473", clustermap.components.full_report.t26473.cljs$lang$ctorPrWriter = function(b, c, d, e, f, g, h, k, l, m, n, p, q) {
+  }, clustermap.components.full_report.t26805.cljs$lang$type = !0, clustermap.components.full_report.t26805.cljs$lang$ctorStr = "clustermap.components.full-report/t26805", clustermap.components.full_report.t26805.cljs$lang$ctorPrWriter = function(b, c, d, e, f, g, h, k, l, m, n, p, q) {
     return function(b, c, d) {
-      return cljs.core._write.call(null, c, "clustermap.components.full-report/t26473");
+      return cljs.core._write.call(null, c, "clustermap.components.full-report/t26805");
     };
-  }(h, k, l, m, n, p, q, b, d, d, e, f, g), clustermap.components.full_report.t26473.prototype.om$core$IDidUpdate$ = !0, clustermap.components.full_report.t26473.prototype.om$core$IDidUpdate$did_update$arity$3 = function(b, c, d, e, f, g, h, k, l, m, n, p, q) {
+  }(h, k, l, m, n, p, q, b, d, d, e, f, g), clustermap.components.full_report.t26805.prototype.om$core$IDidUpdate$ = !0, clustermap.components.full_report.t26805.prototype.om$core$IDidUpdate$did_update$arity$3 = function(b, c, d, e, f, g, h, k, l, m, n, p, q) {
     return function(b, c, d) {
       b = om.core.get_node.call(null, this.owner);
       jayq.core.$.call(null, "[data-toggle\x3d'tooltip']", b).data("bs.tooltip", !1);
       return jayq.core.$.call(null, "[data-toggle\x3d'tooltip']", b).tooltip();
     };
-  }(h, k, l, m, n, p, q, b, d, d, e, f, g), clustermap.components.full_report.t26473.prototype.om$core$IRender$ = !0, clustermap.components.full_report.t26473.prototype.om$core$IRender$render$arity$1 = function(b, c, d, e, f, g, h, k, l, m, n, p, q) {
+  }(h, k, l, m, n, p, q, b, d, d, e, f, g), clustermap.components.full_report.t26805.prototype.om$core$IRender$ = !0, clustermap.components.full_report.t26805.prototype.om$core$IRender$render$arity$1 = function(b, c, d, e, f, g, h, k, l, m, n, p, q) {
     return function(b) {
       b = om.core.build.call(null, clustermap.components.full_report.overview.overview, this.data, new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "opts", "opts", 155075701), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "comm", "comm", -1689770614), this.comm], null), new cljs.core.Keyword(null, "react-key", "react-key", 1337881348), "overview"], null));
       return cljs.core.apply.call(null, React.DOM.div, cljs.core.map_QMARK_.call(null, b) ? sablono.interpreter.attributes.call(null, b) : null, cljs.core.remove.call(null, cljs.core.nil_QMARK_, cljs.core.map_QMARK_.call(null, b) ? new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [sablono.interpreter.interpret.call(null, om.core.build.call(null, clustermap.components.full_report.charts.charts, this.data, new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, 
@@ -37079,20 +37313,20 @@ clustermap.components.full_report.full_report_component = function full_report_c
       null), new cljs.core.Keyword(null, "react-key", "react-key", 1337881348), "selection-investments"], null)) : null) : sablono.interpreter.interpret.call(null, cljs.core.truth_((new cljs.core.Keyword(null, "selection-investment-aggs", "selection-investment-aggs", -292421479)).cljs$core$IFn$_invoke$arity$1(this.data)) ? om.core.build.call(null, clustermap.components.full_report.company_list.company_list, (new cljs.core.Keyword(null, "selection-investment-aggs", "selection-investment-aggs", -292421479)).cljs$core$IFn$_invoke$arity$1(this.data), 
       new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "opts", "opts", 155075701), new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null, "comm", "comm", -1689770614), this.comm, new cljs.core.Keyword(null, "link-fn", "link-fn", -205760857), this.link_fn, new cljs.core.Keyword(null, "path-fn", "path-fn", -778614691), this.path_fn], null), new cljs.core.Keyword(null, "react-key", "react-key", 1337881348), "selection-investments-by-company"], null)) : null)], null)));
     };
-  }(h, k, l, m, n, p, q, b, d, d, e, f, g), clustermap.components.full_report.t26473.prototype.cljs$core$IMeta$_meta$arity$1 = function(b, c, d, e, f, g, h, k, l, m, n, p, q) {
+  }(h, k, l, m, n, p, q, b, d, d, e, f, g), clustermap.components.full_report.t26805.prototype.cljs$core$IMeta$_meta$arity$1 = function(b, c, d, e, f, g, h, k, l, m, n, p, q) {
     return function(b) {
-      return this.meta26474;
+      return this.meta26806;
     };
-  }(h, k, l, m, n, p, q, b, d, d, e, f, g), clustermap.components.full_report.t26473.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(b, c, d, e, f, g, h, k, l, m, n, p, q) {
+  }(h, k, l, m, n, p, q, b, d, d, e, f, g), clustermap.components.full_report.t26805.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(b, c, d, e, f, g, h, k, l, m, n, p, q) {
     return function(b, c) {
-      return new clustermap.components.full_report.t26473(this.selection, this.p__26464, this.owner, this.path_fn, this.data, this.selector, this.link_fn, this.map__26471, this.full_report_component, this.comm, this.all_portfolio_companies_summary, this.map__26472, c);
+      return new clustermap.components.full_report.t26805(this.selection, this.owner, this.path_fn, this.data, this.selector, this.link_fn, this.map__26803, this.full_report_component, this.comm, this.all_portfolio_companies_summary, this.p__26796, this.map__26804, c);
     };
-  }(h, k, l, m, n, p, q, b, d, d, e, f, g), clustermap.components.full_report.__GT_t26473 = function(b, c, d, e, f, g, h, k, l, m, n, p, q) {
+  }(h, k, l, m, n, p, q, b, d, d, e, f, g), clustermap.components.full_report.__GT_t26805 = function(b, c, d, e, f, g, h, k, l, m, n, p, q) {
     return function(b, c, d, e, f, g, h, k, l, m, n, p, q) {
-      return new clustermap.components.full_report.t26473(b, c, d, e, f, g, h, k, l, m, n, p, q);
+      return new clustermap.components.full_report.t26805(b, c, d, e, f, g, h, k, l, m, n, p, q);
     };
   }(h, k, l, m, n, p, q, b, d, d, e, f, g));
-  return new clustermap.components.full_report.t26473(f, b, c, p, d, g, q, d, full_report_component, n, e, k, null);
+  return new clustermap.components.full_report.t26805(f, c, p, d, g, q, d, full_report_component, n, e, b, k, null);
 };
 clustermap.components.full_report.mount = function(a, b, c) {
   return om.core.root.call(null, clustermap.components.full_report.full_report_component, a, new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "target", "target", 253001721), document.getElementById(b), new cljs.core.Keyword(null, "shared", "shared", -384145993), c], null));
@@ -37135,23 +37369,23 @@ clustermap.model.extract_id = function(a, b) {
 clustermap.components.select_chooser = {};
 clustermap.components.select_chooser.select_chooser_component = function select_chooser_component(b, c, d, e, f) {
   var g = cljs.core.seq_QMARK_.call(null, e) ? cljs.core.apply.call(null, cljs.core.hash_map, e) : e;
-  "undefined" === typeof clustermap.components.select_chooser.t26931 && (clustermap.components.select_chooser.t26931 = function(b, c, d, e, f, g, q, r, s) {
+  "undefined" === typeof clustermap.components.select_chooser.t27263 && (clustermap.components.select_chooser.t27263 = function(b, c, d, e, f, g, q, r, s) {
     this.cursor = b;
-    this.map__26930 = c;
+    this.map__27262 = c;
     this.owner = d;
-    this.p__26916 = e;
+    this.p__27248 = e;
     this.value_descriptions = f;
     this.key = g;
     this.title = q;
     this.select_chooser_component = r;
-    this.meta26932 = s;
+    this.meta27264 = s;
     this.cljs$lang$protocol_mask$partition1$ = 0;
     this.cljs$lang$protocol_mask$partition0$ = 393216;
-  }, clustermap.components.select_chooser.t26931.cljs$lang$type = !0, clustermap.components.select_chooser.t26931.cljs$lang$ctorStr = "clustermap.components.select-chooser/t26931", clustermap.components.select_chooser.t26931.cljs$lang$ctorPrWriter = function(b, c, d) {
+  }, clustermap.components.select_chooser.t27263.cljs$lang$type = !0, clustermap.components.select_chooser.t27263.cljs$lang$ctorStr = "clustermap.components.select-chooser/t27263", clustermap.components.select_chooser.t27263.cljs$lang$ctorPrWriter = function(b, c, d) {
     return function(b, c, d) {
-      return cljs.core._write.call(null, c, "clustermap.components.select-chooser/t26931");
+      return cljs.core._write.call(null, c, "clustermap.components.select-chooser/t27263");
     };
-  }(e, g, g), clustermap.components.select_chooser.t26931.prototype.om$core$IRender$ = !0, clustermap.components.select_chooser.t26931.prototype.om$core$IRender$render$arity$1 = function(b, c, d) {
+  }(e, g, g), clustermap.components.select_chooser.t27263.prototype.om$core$IRender$ = !0, clustermap.components.select_chooser.t27263.prototype.om$core$IRender$render$arity$1 = function(b, c, d) {
     return function(e) {
       var f = this, g = this;
       return React.DOM.div({className:"select-chooser"}, React.DOM.div({className:"tbl"}, React.DOM.div({className:"tbl-row"}, function() {
@@ -37202,20 +37436,20 @@ clustermap.components.select_chooser.select_chooser_component = function select_
         }(g, b, c, d).call(null, f.value_descriptions);
       }()))))));
     };
-  }(e, g, g), clustermap.components.select_chooser.t26931.prototype.cljs$core$IMeta$_meta$arity$1 = function(b, c, d) {
+  }(e, g, g), clustermap.components.select_chooser.t27263.prototype.cljs$core$IMeta$_meta$arity$1 = function(b, c, d) {
     return function(b) {
-      return this.meta26932;
+      return this.meta27264;
     };
-  }(e, g, g), clustermap.components.select_chooser.t26931.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(b, c, d) {
+  }(e, g, g), clustermap.components.select_chooser.t27263.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(b, c, d) {
     return function(b, c) {
-      return new clustermap.components.select_chooser.t26931(this.cursor, this.map__26930, this.owner, this.p__26916, this.value_descriptions, this.key, this.title, this.select_chooser_component, c);
+      return new clustermap.components.select_chooser.t27263(this.cursor, this.map__27262, this.owner, this.p__27248, this.value_descriptions, this.key, this.title, this.select_chooser_component, c);
     };
-  }(e, g, g), clustermap.components.select_chooser.__GT_t26931 = function(b, c, d) {
+  }(e, g, g), clustermap.components.select_chooser.__GT_t27263 = function(b, c, d) {
     return function(b, c, d, e, f, g, h, k, l) {
-      return new clustermap.components.select_chooser.t26931(b, c, d, e, f, g, h, k, l);
+      return new clustermap.components.select_chooser.t27263(b, c, d, e, f, g, h, k, l);
     };
   }(e, g, g));
-  return new clustermap.components.select_chooser.t26931(g, g, f, e, d, c, b, select_chooser_component, null);
+  return new clustermap.components.select_chooser.t27263(g, g, f, e, d, c, b, select_chooser_component, null);
 };
 clustermap.ganalytics = {};
 clustermap.ganalytics.send_pageview = function(a) {
@@ -37238,52 +37472,52 @@ clustermap.components.search.DOWN_ARROW = 40;
 clustermap.components.search.search_result_link = function search_result_link(b, c, d) {
   var e = cljs.core.seq_QMARK_.call(null, b) ? cljs.core.apply.call(null, cljs.core.hash_map, b) : b, f = cljs.core.get.call(null, e, new cljs.core.Keyword(null, "type", "type", 1174270348)), g = cljs.core.get.call(null, e, new cljs.core.Keyword(null, "name", "name", 1843675177)), h = cljs.core.seq_QMARK_.call(null, d) ? cljs.core.apply.call(null, cljs.core.hash_map, d) : d, k = cljs.core.get.call(null, h, new cljs.core.Keyword(null, "path-fn", "path-fn", -778614691)), l = cljs.core.get.call(null, 
   h, new cljs.core.Keyword(null, "comm", "comm", -1689770614));
-  "undefined" === typeof clustermap.components.search.t26826 && (clustermap.components.search.t26826 = function(b, c, d, e, f, g, h, k, l, y, w, E, V) {
-    this.map__26824 = b;
+  "undefined" === typeof clustermap.components.search.t27158 && (clustermap.components.search.t27158 = function(b, c, d, e, f, g, h, k, l, x, w, y, K) {
+    this.map__27156 = b;
     this.owner = c;
     this.path_fn = d;
-    this.p__26815 = e;
-    this.search_result_link = f;
+    this.search_result_link = e;
+    this.p__27147 = f;
     this.name = g;
     this.comm = h;
     this.search_result = k;
     this.type = l;
-    this.p__26814 = y;
-    this.map__26825 = w;
-    this.opts = E;
-    this.meta26827 = V;
+    this.p__27146 = x;
+    this.opts = w;
+    this.map__27157 = y;
+    this.meta27159 = K;
     this.cljs$lang$protocol_mask$partition1$ = 0;
     this.cljs$lang$protocol_mask$partition0$ = 393216;
-  }, clustermap.components.search.t26826.cljs$lang$type = !0, clustermap.components.search.t26826.cljs$lang$ctorStr = "clustermap.components.search/t26826", clustermap.components.search.t26826.cljs$lang$ctorPrWriter = function(b, c, d, e, f, g, h, k, l, y) {
+  }, clustermap.components.search.t27158.cljs$lang$type = !0, clustermap.components.search.t27158.cljs$lang$ctorStr = "clustermap.components.search/t27158", clustermap.components.search.t27158.cljs$lang$ctorPrWriter = function(b, c, d, e, f, g, h, k, l, x) {
     return function(b, c, d) {
-      return cljs.core._write.call(null, c, "clustermap.components.search/t26826");
+      return cljs.core._write.call(null, c, "clustermap.components.search/t27158");
     };
-  }(b, e, e, f, g, d, h, h, k, l), clustermap.components.search.t26826.prototype.om$core$IRenderState$ = !0, clustermap.components.search.t26826.prototype.om$core$IRenderState$render_state$arity$2 = function(b, c, d, e, f, g, h, k, l, y) {
-    return function(w, E) {
-      var V = this, F = cljs.core.seq_QMARK_.call(null, E) ? cljs.core.apply.call(null, cljs.core.hash_map, E) : E, z = cljs.core.get.call(null, F, new cljs.core.Keyword(null, "selected", "selected", 574897764)), A = V.path_fn.call(null, V.type, V.search_result);
-      return React.DOM.li({className:cljs.core.truth_(z) ? "selected" : null}, React.DOM.a({href:A, ref:"link", onClick:function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t) {
+  }(b, e, e, f, g, d, h, h, k, l), clustermap.components.search.t27158.prototype.om$core$IRenderState$ = !0, clustermap.components.search.t27158.prototype.om$core$IRenderState$render_state$arity$2 = function(b, c, d, e, f, g, h, k, l, x) {
+    return function(w, y) {
+      var K = this, J = cljs.core.seq_QMARK_.call(null, y) ? cljs.core.apply.call(null, cljs.core.hash_map, y) : y, z = cljs.core.get.call(null, J, new cljs.core.Keyword(null, "selected", "selected", 574897764)), C = K.path_fn.call(null, K.type, K.search_result);
+      return React.DOM.li({className:cljs.core.truth_(z) ? "selected" : null}, React.DOM.a({href:C, ref:"link", onClick:function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t) {
         return function(b) {
-          b = om.core.get_node.call(null, V.owner, "link");
+          b = om.core.get_node.call(null, K.owner, "link");
           b = null == b ? null : jayq.core.$.call(null, b);
           b = null == b ? null : b.parents(".search-component");
           return null == b ? null : b.toggle();
         };
-      }(A, this, E, F, F, z, b, c, d, e, f, g, h, k, l, y)}, sablono.interpreter.interpret.call(null, V.name)));
+      }(C, this, y, J, J, z, b, c, d, e, f, g, h, k, l, x)}, sablono.interpreter.interpret.call(null, K.name)));
     };
-  }(b, e, e, f, g, d, h, h, k, l), clustermap.components.search.t26826.prototype.cljs$core$IMeta$_meta$arity$1 = function(b, c, d, e, f, g, h, k, l, y) {
+  }(b, e, e, f, g, d, h, h, k, l), clustermap.components.search.t27158.prototype.cljs$core$IMeta$_meta$arity$1 = function(b, c, d, e, f, g, h, k, l, x) {
     return function(b) {
-      return this.meta26827;
+      return this.meta27159;
     };
-  }(b, e, e, f, g, d, h, h, k, l), clustermap.components.search.t26826.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(b, c, d, e, f, g, h, k, l, y) {
+  }(b, e, e, f, g, d, h, h, k, l), clustermap.components.search.t27158.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(b, c, d, e, f, g, h, k, l, x) {
     return function(b, c) {
-      return new clustermap.components.search.t26826(this.map__26824, this.owner, this.path_fn, this.p__26815, this.search_result_link, this.name, this.comm, this.search_result, this.type, this.p__26814, this.map__26825, this.opts, c);
+      return new clustermap.components.search.t27158(this.map__27156, this.owner, this.path_fn, this.search_result_link, this.p__27147, this.name, this.comm, this.search_result, this.type, this.p__27146, this.opts, this.map__27157, c);
     };
-  }(b, e, e, f, g, d, h, h, k, l), clustermap.components.search.__GT_t26826 = function(b, c, d, e, f, g, h, k, l, y) {
+  }(b, e, e, f, g, d, h, h, k, l), clustermap.components.search.__GT_t27158 = function(b, c, d, e, f, g, h, k, l, x) {
     return function(b, c, d, e, f, g, h, k, l, m, n, p, q) {
-      return new clustermap.components.search.t26826(b, c, d, e, f, g, h, k, l, m, n, p, q);
+      return new clustermap.components.search.t27158(b, c, d, e, f, g, h, k, l, m, n, p, q);
     };
   }(b, e, e, f, g, d, h, h, k, l));
-  return new clustermap.components.search.t26826(e, c, k, d, search_result_link, g, l, e, f, b, h, h, null);
+  return new clustermap.components.search.t27158(e, c, k, search_result_link, d, g, l, e, f, b, h, h, null);
 };
 clustermap.components.search.nth_search_result = function(a, b) {
   var c = cljs.core.seq_QMARK_.call(null, a) ? cljs.core.apply.call(null, cljs.core.hash_map, a) : a, d = cljs.core.get.call(null, c, new cljs.core.Keyword(null, "investor_companies", "investor_companies", 493714407)), e = cljs.core.get.call(null, c, new cljs.core.Keyword(null, "portfolio_companies", "portfolio_companies", 1223322975)), c = cljs.core.get.call(null, c, new cljs.core.Keyword(null, "constituencies", "constituencies", -1590769020)), f = cljs.core.truth_(c) ? c : cljs.core.PersistentVector.EMPTY, 
@@ -37310,210 +37544,210 @@ clustermap.components.search.search_component = function search_component(b, c) 
   var d = cljs.core.seq_QMARK_.call(null, b) ? cljs.core.apply.call(null, cljs.core.hash_map, b) : b, e = cljs.core.get.call(null, d, new cljs.core.Keyword(null, "selection", "selection", 975998651)), f = cljs.core.seq_QMARK_.call(null, e) ? cljs.core.apply.call(null, cljs.core.hash_map, e) : e, g = cljs.core.get.call(null, f, new cljs.core.Keyword(null, "type", "type", 1174270348)), h = cljs.core.get.call(null, f, new cljs.core.Keyword(null, "value", "value", 305978217)), k = cljs.core.get.call(null, 
   d, new cljs.core.Keyword(null, "view", "view", 1247994814)), l = cljs.core.get.call(null, d, new cljs.core.Keyword(null, "search-results", "search-results", 306464634)), m = om.core.get_shared.call(null, c), n = cljs.core.seq_QMARK_.call(null, m) ? cljs.core.apply.call(null, cljs.core.hash_map, m) : m, p = cljs.core.get.call(null, n, new cljs.core.Keyword(null, "path-fn", "path-fn", -778614691)), q = cljs.core.get.call(null, n, new cljs.core.Keyword(null, "comm", "comm", -1689770614)), r = cljs.core.partial.call(null, 
   p, k), s = cljs.core.seq_QMARK_.call(null, l) ? cljs.core.apply.call(null, cljs.core.hash_map, l) : l, t = cljs.core.get.call(null, s, new cljs.core.Keyword(null, "investor_companies", "investor_companies", 493714407)), u = cljs.core.get.call(null, s, new cljs.core.Keyword(null, "portfolio_companies", "portfolio_companies", 1223322975)), v = cljs.core.get.call(null, s, new cljs.core.Keyword(null, "constituencies", "constituencies", -1590769020));
-  "undefined" === typeof clustermap.components.search.t26886 && (clustermap.components.search.t26886 = function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u) {
+  "undefined" === typeof clustermap.components.search.t27218 && (clustermap.components.search.t27218 = function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u) {
     this.search_results = b;
     this.search_component = c;
     this.owner = d;
     this.path_fn = e;
-    this.view = f;
-    this.portfolio_companies = g;
-    this.constituencies = h;
-    this.investor_companies = k;
-    this.map__26882 = l;
-    this.selection_value = m;
-    this.comm = n;
-    this.map__26885 = p;
+    this.map__27216 = f;
+    this.view = g;
+    this.portfolio_companies = h;
+    this.map__27215 = k;
+    this.constituencies = l;
+    this.investor_companies = m;
+    this.selection_value = n;
+    this.comm = p;
     this.selection_type = q;
-    this.map__26883 = r;
-    this.p__26850 = s;
-    this.map__26884 = t;
-    this.meta26887 = u;
+    this.map__27214 = r;
+    this.p__27182 = s;
+    this.map__27217 = t;
+    this.meta27219 = u;
     this.cljs$lang$protocol_mask$partition1$ = 0;
     this.cljs$lang$protocol_mask$partition0$ = 393216;
-  }, clustermap.components.search.t26886.cljs$lang$type = !0, clustermap.components.search.t26886.cljs$lang$ctorStr = "clustermap.components.search/t26886", clustermap.components.search.t26886.cljs$lang$ctorPrWriter = function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, B) {
+  }, clustermap.components.search.t27218.cljs$lang$type = !0, clustermap.components.search.t27218.cljs$lang$ctorStr = "clustermap.components.search/t27218", clustermap.components.search.t27218.cljs$lang$ctorPrWriter = function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, E) {
     return function(b, c, d) {
-      return cljs.core._write.call(null, c, "clustermap.components.search/t26886");
+      return cljs.core._write.call(null, c, "clustermap.components.search/t27218");
     };
-  }(m, n, p, q, r, l, s, t, u, v, b, d, e, f, g, h, k, l), clustermap.components.search.t26886.prototype.om$core$IRenderState$ = !0, clustermap.components.search.t26886.prototype.om$core$IRenderState$render_state$arity$2 = function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, B) {
-    return function(x, C) {
-      var D = this, v = this;
-      return React.DOM.div({className:"search-component", ref:"search-component", id:"search", onKeyDown:function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, B, u, x) {
+  }(m, n, p, q, r, l, s, t, u, v, b, d, e, f, g, h, k, l), clustermap.components.search.t27218.prototype.om$core$IRenderState$ = !0, clustermap.components.search.t27218.prototype.om$core$IRenderState$render_state$arity$2 = function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, E) {
+    return function(A, D) {
+      var B = this, v = this;
+      return React.DOM.div({className:"search-component", ref:"search-component", id:"search", onKeyDown:function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, E, y) {
         return function(b) {
-          return clustermap.components.search.key_down.call(null, b, D.search_results, D.owner, D.comm);
+          return clustermap.components.search.key_down.call(null, b, B.search_results, B.owner, B.comm);
         };
-      }(v, b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, B)}, React.DOM.div({className:"tbl"}, React.DOM.div({className:"tbl-cell", style:{width:"100%"}}, sablono.interpreter.input.call(null, {ref:"search-field", type:"text", placeholder:"Search", onChange:function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, B, u, x) {
+      }(v, b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, E)}, React.DOM.div({className:"tbl"}, React.DOM.div({className:"tbl-cell", style:{width:"100%"}}, sablono.interpreter.input.call(null, {ref:"search-field", type:"text", placeholder:"Search", onChange:function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, E, y) {
         return function(b) {
-          return cljs.core.async.put_BANG_.call(null, D.comm, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "search", "search", 1564939822), b.target.value], null));
+          return cljs.core.async.put_BANG_.call(null, B.comm, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "search", "search", 1564939822), b.target.value], null));
         };
-      }(v, b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, B)})), React.DOM.div({className:"tbl-cell", style:{width:"34"}}, React.DOM.button({type:"reset", onClick:function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, B, u, x) {
+      }(v, b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, E)})), React.DOM.div({className:"tbl-cell", style:{width:"34"}}, React.DOM.button({type:"reset", onClick:function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, E, y) {
         return function(b) {
-          cljs.core.async.put_BANG_.call(null, D.comm, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "search", "search", 1564939822), ""], null));
-          return om.core.get_node.call(null, D.owner, "search-field").value = "";
+          cljs.core.async.put_BANG_.call(null, B.comm, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "search", "search", 1564939822), ""], null));
+          return om.core.get_node.call(null, B.owner, "search-field").value = "";
         };
-      }(v, b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, B)}, "\u00d7"))), sablono.interpreter.interpret.call(null, cljs.core.truth_(function() {
-        var b = cljs.core.not_empty.call(null, D.constituencies);
+      }(v, b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, E)}, "\u00d7"))), sablono.interpreter.interpret.call(null, cljs.core.truth_(function() {
+        var b = cljs.core.not_empty.call(null, B.constituencies);
         if (cljs.core.truth_(b)) {
           return b;
         }
-        b = cljs.core.not_empty.call(null, D.portfolio_companies);
-        return cljs.core.truth_(b) ? b : cljs.core.not_empty.call(null, D.investor_companies);
+        b = cljs.core.not_empty.call(null, B.portfolio_companies);
+        return cljs.core.truth_(b) ? b : cljs.core.not_empty.call(null, B.investor_companies);
       }()) ? function() {
-        var x = cljs.core.map.call(null, cljs.core.vector, cljs.core.iterate.call(null, cljs.core.inc, 0), D.constituencies), W = cljs.core.map.call(null, cljs.core.vector, cljs.core.iterate.call(null, cljs.core.inc, cljs.core.count.call(null, x)), D.portfolio_companies), U = cljs.core.map.call(null, cljs.core.vector, cljs.core.iterate.call(null, cljs.core.inc, cljs.core.count.call(null, x) + cljs.core.count.call(null, W)), D.investor_companies), S = cljs.core.mod.call(null, function() {
-          var b = (new cljs.core.Keyword(null, "selected-idx", "selected-idx", 1303670439)).cljs$core$IFn$_invoke$arity$1(C);
+        var A = cljs.core.map.call(null, cljs.core.vector, cljs.core.iterate.call(null, cljs.core.inc, 0), B.constituencies), U = cljs.core.map.call(null, cljs.core.vector, cljs.core.iterate.call(null, cljs.core.inc, cljs.core.count.call(null, A)), B.portfolio_companies), S = cljs.core.map.call(null, cljs.core.vector, cljs.core.iterate.call(null, cljs.core.inc, cljs.core.count.call(null, A) + cljs.core.count.call(null, U)), B.investor_companies), R = cljs.core.mod.call(null, function() {
+          var b = (new cljs.core.Keyword(null, "selected-idx", "selected-idx", 1303670439)).cljs$core$IFn$_invoke$arity$1(D);
           return cljs.core.truth_(b) ? b : 0;
-        }(), cljs.core.count.call(null, x) + cljs.core.count.call(null, W) + cljs.core.count.call(null, U)), X = cljs.core.not_EQ_.call(null, S, (new cljs.core.Keyword(null, "selected-idx", "selected-idx", 1303670439)).cljs$core$IFn$_invoke$arity$1(C)) ? om.core.set_state_BANG_.call(null, D.owner, new cljs.core.Keyword(null, "selected-idx", "selected-idx", 1303670439), S) : null;
+        }(), cljs.core.count.call(null, A) + cljs.core.count.call(null, U) + cljs.core.count.call(null, S)), X = cljs.core.not_EQ_.call(null, R, (new cljs.core.Keyword(null, "selected-idx", "selected-idx", 1303670439)).cljs$core$IFn$_invoke$arity$1(D)) ? om.core.set_state_BANG_.call(null, B.owner, new cljs.core.Keyword(null, "selected-idx", "selected-idx", 1303670439), R) : null;
         return new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "div", "div", 1057191632), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "class", "class", -2030961996), "search-results"], null), new cljs.core.PersistentVector(null, 7, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "ul", "ul", -1349521403), cljs.core.filter.call(null, cljs.core.identity, new cljs.core.PersistentVector(null, 
-        1, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.truth_(cljs.core.not_empty.call(null, x)) ? new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "li", "li", 723558921), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "class", "class", -2030961996), "search-results-header"], null), "Constituencies"], null) : null], null)), cljs.core.truth_(cljs.core.not_empty.call(null, x)) ? function() {
-          return function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, B, x, u, C, v, w, E, z) {
-            return function ha(y) {
-              return new cljs.core.LazySeq(null, function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, B, x, u, C, v, w, E, z) {
+        1, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.truth_(cljs.core.not_empty.call(null, A)) ? new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "li", "li", 723558921), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "class", "class", -2030961996), "search-results-header"], null), "Constituencies"], null) : null], null)), cljs.core.truth_(cljs.core.not_empty.call(null, A)) ? function() {
+          return function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, E, A, y, D, v, w, z) {
+            return function ia(x) {
+              return new cljs.core.LazySeq(null, function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, E, A, y, D, v, w, z) {
                 return function() {
                   for (;;) {
-                    var A = cljs.core.seq.call(null, y);
-                    if (A) {
-                      var M = A;
-                      if (cljs.core.chunked_seq_QMARK_.call(null, M)) {
-                        var K = cljs.core.chunk_first.call(null, M), H = cljs.core.count.call(null, K), I = cljs.core.chunk_buffer.call(null, H);
+                    var C = cljs.core.seq.call(null, x);
+                    if (C) {
+                      var G = C;
+                      if (cljs.core.chunked_seq_QMARK_.call(null, G)) {
+                        var P = cljs.core.chunk_first.call(null, G), J = cljs.core.count.call(null, P), H = cljs.core.chunk_buffer.call(null, J);
                         return function() {
-                          for (var y = 0;;) {
-                            if (y < H) {
-                              var F = cljs.core._nth.call(null, K, y), J = cljs.core.nth.call(null, F, 0, null), G = cljs.core.nth.call(null, F, 1, null);
-                              cljs.core.chunk_append.call(null, I, om.core.build.call(null, clustermap.components.search.search_result_link, G, new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null, "opts", "opts", 155075701), new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "comm", "comm", -1689770614), D.comm, new cljs.core.Keyword(null, "path-fn", "path-fn", -778614691), D.path_fn], null), new cljs.core.Keyword(null, "state", "state", -1988618099), new cljs.core.PersistentArrayMap(null, 
-                              1, [new cljs.core.Keyword(null, "selected", "selected", 574897764), cljs.core._EQ_.call(null, J, e)], null), new cljs.core.Keyword(null, "fn", "fn", -1175266204), function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, B, x, u, C, D, v, w, E, z, y, A, M, K, H, F, I, J) {
+                          for (var x = 0;;) {
+                            if (x < J) {
+                              var K = cljs.core._nth.call(null, P, x), I = cljs.core.nth.call(null, K, 0, null), F = cljs.core.nth.call(null, K, 1, null);
+                              cljs.core.chunk_append.call(null, H, om.core.build.call(null, clustermap.components.search.search_result_link, F, new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null, "opts", "opts", 155075701), new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "comm", "comm", -1689770614), B.comm, new cljs.core.Keyword(null, "path-fn", "path-fn", -778614691), B.path_fn], null), new cljs.core.Keyword(null, "state", "state", -1988618099), new cljs.core.PersistentArrayMap(null, 
+                              1, [new cljs.core.Keyword(null, "selected", "selected", 574897764), cljs.core._EQ_.call(null, I, e)], null), new cljs.core.Keyword(null, "fn", "fn", -1175266204), function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, E, A, y, D, v, B, w, z, x, C, G, K, H, P, J, I) {
                                 return function(b) {
                                   return cljs.core.assoc.call(null, b, new cljs.core.Keyword(null, "type", "type", 1174270348), new cljs.core.Keyword(null, "constituency", "constituency", 1803637324), new cljs.core.Keyword(null, "id", "id", -1388402092), cljs.core.get.call(null, b, new cljs.core.Keyword(null, "boundaryline_id", "boundaryline_id", -1827697395)), new cljs.core.Keyword(null, "uid", "uid", -1447769400), "constituency-" + cljs.core.str.cljs$core$IFn$_invoke$arity$1(cljs.core.get.call(null, 
                                   b, new cljs.core.Keyword(null, "boundaryline_id", "boundaryline_id", -1827697395))));
                                 };
-                              }(y, F, J, G, K, H, I, M, A, b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, B, x, u, C, v, w, E, z), new cljs.core.Keyword(null, "key", "key", -1516042587), new cljs.core.Keyword(null, "uid", "uid", -1447769400)], null)));
-                              y += 1;
+                              }(x, K, I, F, P, J, H, G, C, b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, E, A, y, D, v, w, z), new cljs.core.Keyword(null, "key", "key", -1516042587), new cljs.core.Keyword(null, "uid", "uid", -1447769400)], null)));
+                              x += 1;
                             } else {
                               return!0;
                             }
                           }
-                        }() ? cljs.core.chunk_cons.call(null, cljs.core.chunk.call(null, I), ha.call(null, cljs.core.chunk_rest.call(null, M))) : cljs.core.chunk_cons.call(null, cljs.core.chunk.call(null, I), null);
+                        }() ? cljs.core.chunk_cons.call(null, cljs.core.chunk.call(null, H), ia.call(null, cljs.core.chunk_rest.call(null, G))) : cljs.core.chunk_cons.call(null, cljs.core.chunk.call(null, H), null);
                       }
-                      var F = cljs.core.first.call(null, M), J = cljs.core.nth.call(null, F, 0, null), G = cljs.core.nth.call(null, F, 1, null);
-                      return cljs.core.cons.call(null, om.core.build.call(null, clustermap.components.search.search_result_link, G, new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null, "opts", "opts", 155075701), new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "comm", "comm", -1689770614), D.comm, new cljs.core.Keyword(null, "path-fn", "path-fn", -778614691), D.path_fn], null), new cljs.core.Keyword(null, "state", "state", -1988618099), new cljs.core.PersistentArrayMap(null, 
-                      1, [new cljs.core.Keyword(null, "selected", "selected", 574897764), cljs.core._EQ_.call(null, J, e)], null), new cljs.core.Keyword(null, "fn", "fn", -1175266204), function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, B, x, u, C, D, v, w, E, z, y, A, M, K) {
+                      var K = cljs.core.first.call(null, G), I = cljs.core.nth.call(null, K, 0, null), F = cljs.core.nth.call(null, K, 1, null);
+                      return cljs.core.cons.call(null, om.core.build.call(null, clustermap.components.search.search_result_link, F, new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null, "opts", "opts", 155075701), new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "comm", "comm", -1689770614), B.comm, new cljs.core.Keyword(null, "path-fn", "path-fn", -778614691), B.path_fn], null), new cljs.core.Keyword(null, "state", "state", -1988618099), new cljs.core.PersistentArrayMap(null, 
+                      1, [new cljs.core.Keyword(null, "selected", "selected", 574897764), cljs.core._EQ_.call(null, I, e)], null), new cljs.core.Keyword(null, "fn", "fn", -1175266204), function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, E, A, y, D, v, B, w, z, x, C, G, K) {
                         return function(b) {
                           return cljs.core.assoc.call(null, b, new cljs.core.Keyword(null, "type", "type", 1174270348), new cljs.core.Keyword(null, "constituency", "constituency", 1803637324), new cljs.core.Keyword(null, "id", "id", -1388402092), cljs.core.get.call(null, b, new cljs.core.Keyword(null, "boundaryline_id", "boundaryline_id", -1827697395)), new cljs.core.Keyword(null, "uid", "uid", -1447769400), "constituency-" + cljs.core.str.cljs$core$IFn$_invoke$arity$1(cljs.core.get.call(null, b, 
                           new cljs.core.Keyword(null, "boundaryline_id", "boundaryline_id", -1827697395))));
                         };
-                      }(F, J, G, M, A, b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, B, x, u, C, v, w, E, z), new cljs.core.Keyword(null, "key", "key", -1516042587), new cljs.core.Keyword(null, "uid", "uid", -1447769400)], null)), ha.call(null, cljs.core.rest.call(null, M)));
+                      }(K, I, F, G, C, b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, E, A, y, D, v, w, z), new cljs.core.Keyword(null, "key", "key", -1516042587), new cljs.core.Keyword(null, "uid", "uid", -1447769400)], null)), ia.call(null, cljs.core.rest.call(null, G)));
                     }
                     return null;
                   }
                 };
-              }(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, B, x, u, C, v, w, E, z), null, null);
+              }(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, E, A, y, D, v, w, z), null, null);
             };
-          }(x, W, U, S, X, v, b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, B).call(null, x);
-        }() : null, cljs.core.filter.call(null, cljs.core.identity, new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.truth_(cljs.core.not_empty.call(null, W)) ? new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "li", "li", 723558921), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "class", "class", -2030961996), "search-results-header"], null), "Investor-backed companies"], 
-        null) : null], null)), cljs.core.truth_(cljs.core.not_empty.call(null, W)) ? function() {
-          return function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, B, x, u, C, v, w, E, z) {
-            return function ha(y) {
-              return new cljs.core.LazySeq(null, function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, B, x, u, C, v, w, E, z) {
+          }(A, U, S, R, X, v, b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, E).call(null, A);
+        }() : null, cljs.core.filter.call(null, cljs.core.identity, new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.truth_(cljs.core.not_empty.call(null, U)) ? new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "li", "li", 723558921), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "class", "class", -2030961996), "search-results-header"], null), "Investor-backed companies"], 
+        null) : null], null)), cljs.core.truth_(cljs.core.not_empty.call(null, U)) ? function() {
+          return function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, E, A, y, D, v, w, z) {
+            return function ia(x) {
+              return new cljs.core.LazySeq(null, function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, E, A, y, D, v, w, z) {
                 return function() {
                   for (;;) {
-                    var A = cljs.core.seq.call(null, y);
-                    if (A) {
-                      var M = A;
-                      if (cljs.core.chunked_seq_QMARK_.call(null, M)) {
-                        var K = cljs.core.chunk_first.call(null, M), H = cljs.core.count.call(null, K), F = cljs.core.chunk_buffer.call(null, H);
+                    var C = cljs.core.seq.call(null, x);
+                    if (C) {
+                      var G = C;
+                      if (cljs.core.chunked_seq_QMARK_.call(null, G)) {
+                        var K = cljs.core.chunk_first.call(null, G), H = cljs.core.count.call(null, K), P = cljs.core.chunk_buffer.call(null, H);
                         return function() {
-                          for (var y = 0;;) {
-                            if (y < H) {
-                              var I = cljs.core._nth.call(null, K, y), J = cljs.core.nth.call(null, I, 0, null), G = cljs.core.nth.call(null, I, 1, null);
-                              cljs.core.chunk_append.call(null, F, om.core.build.call(null, clustermap.components.search.search_result_link, G, new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null, "opts", "opts", 155075701), new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "comm", "comm", -1689770614), D.comm, new cljs.core.Keyword(null, "path-fn", "path-fn", -778614691), D.path_fn], null), new cljs.core.Keyword(null, "state", "state", -1988618099), new cljs.core.PersistentArrayMap(null, 
-                              1, [new cljs.core.Keyword(null, "selected", "selected", 574897764), cljs.core._EQ_.call(null, J, e)], null), new cljs.core.Keyword(null, "fn", "fn", -1175266204), function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, B, x, u, C, D, v, w, E, z, y, M, A, K, I, H, F, J) {
+                          for (var x = 0;;) {
+                            if (x < H) {
+                              var J = cljs.core._nth.call(null, K, x), I = cljs.core.nth.call(null, J, 0, null), F = cljs.core.nth.call(null, J, 1, null);
+                              cljs.core.chunk_append.call(null, P, om.core.build.call(null, clustermap.components.search.search_result_link, F, new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null, "opts", "opts", 155075701), new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "comm", "comm", -1689770614), B.comm, new cljs.core.Keyword(null, "path-fn", "path-fn", -778614691), B.path_fn], null), new cljs.core.Keyword(null, "state", "state", -1988618099), new cljs.core.PersistentArrayMap(null, 
+                              1, [new cljs.core.Keyword(null, "selected", "selected", 574897764), cljs.core._EQ_.call(null, I, e)], null), new cljs.core.Keyword(null, "fn", "fn", -1175266204), function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, E, A, y, D, v, B, w, x, z, C, G, J, K, P, H, I) {
                                 return function(b) {
                                   return cljs.core.assoc.call(null, b, new cljs.core.Keyword(null, "type", "type", 1174270348), new cljs.core.Keyword(null, "portfolio-company", "portfolio-company", 2036028415), new cljs.core.Keyword(null, "id", "id", -1388402092), cljs.core.get.call(null, b, new cljs.core.Keyword(null, "company_no", "company_no", 1886326649)), new cljs.core.Keyword(null, "uid", "uid", -1447769400), "portfolio-company-" + cljs.core.str.cljs$core$IFn$_invoke$arity$1(cljs.core.get.call(null, 
                                   b, new cljs.core.Keyword(null, "company_no", "company_no", 1886326649))));
                                 };
-                              }(y, I, J, G, K, H, F, M, A, b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, B, x, u, C, v, w, E, z), new cljs.core.Keyword(null, "key", "key", -1516042587), new cljs.core.Keyword(null, "uid", "uid", -1447769400)], null)));
-                              y += 1;
+                              }(x, J, I, F, K, H, P, G, C, b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, E, A, y, D, v, w, z), new cljs.core.Keyword(null, "key", "key", -1516042587), new cljs.core.Keyword(null, "uid", "uid", -1447769400)], null)));
+                              x += 1;
                             } else {
                               return!0;
                             }
                           }
-                        }() ? cljs.core.chunk_cons.call(null, cljs.core.chunk.call(null, F), ha.call(null, cljs.core.chunk_rest.call(null, M))) : cljs.core.chunk_cons.call(null, cljs.core.chunk.call(null, F), null);
+                        }() ? cljs.core.chunk_cons.call(null, cljs.core.chunk.call(null, P), ia.call(null, cljs.core.chunk_rest.call(null, G))) : cljs.core.chunk_cons.call(null, cljs.core.chunk.call(null, P), null);
                       }
-                      var I = cljs.core.first.call(null, M), J = cljs.core.nth.call(null, I, 0, null), G = cljs.core.nth.call(null, I, 1, null);
-                      return cljs.core.cons.call(null, om.core.build.call(null, clustermap.components.search.search_result_link, G, new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null, "opts", "opts", 155075701), new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "comm", "comm", -1689770614), D.comm, new cljs.core.Keyword(null, "path-fn", "path-fn", -778614691), D.path_fn], null), new cljs.core.Keyword(null, "state", "state", -1988618099), new cljs.core.PersistentArrayMap(null, 
-                      1, [new cljs.core.Keyword(null, "selected", "selected", 574897764), cljs.core._EQ_.call(null, J, e)], null), new cljs.core.Keyword(null, "fn", "fn", -1175266204), function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, B, x, u, C, D, v, w, E, z, y, M, A, K) {
+                      var J = cljs.core.first.call(null, G), I = cljs.core.nth.call(null, J, 0, null), F = cljs.core.nth.call(null, J, 1, null);
+                      return cljs.core.cons.call(null, om.core.build.call(null, clustermap.components.search.search_result_link, F, new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null, "opts", "opts", 155075701), new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "comm", "comm", -1689770614), B.comm, new cljs.core.Keyword(null, "path-fn", "path-fn", -778614691), B.path_fn], null), new cljs.core.Keyword(null, "state", "state", -1988618099), new cljs.core.PersistentArrayMap(null, 
+                      1, [new cljs.core.Keyword(null, "selected", "selected", 574897764), cljs.core._EQ_.call(null, I, e)], null), new cljs.core.Keyword(null, "fn", "fn", -1175266204), function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, E, A, y, D, v, B, w, x, z, C, G, J) {
                         return function(b) {
                           return cljs.core.assoc.call(null, b, new cljs.core.Keyword(null, "type", "type", 1174270348), new cljs.core.Keyword(null, "portfolio-company", "portfolio-company", 2036028415), new cljs.core.Keyword(null, "id", "id", -1388402092), cljs.core.get.call(null, b, new cljs.core.Keyword(null, "company_no", "company_no", 1886326649)), new cljs.core.Keyword(null, "uid", "uid", -1447769400), "portfolio-company-" + cljs.core.str.cljs$core$IFn$_invoke$arity$1(cljs.core.get.call(null, 
                           b, new cljs.core.Keyword(null, "company_no", "company_no", 1886326649))));
                         };
-                      }(I, J, G, M, A, b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, B, x, u, C, v, w, E, z), new cljs.core.Keyword(null, "key", "key", -1516042587), new cljs.core.Keyword(null, "uid", "uid", -1447769400)], null)), ha.call(null, cljs.core.rest.call(null, M)));
+                      }(J, I, F, G, C, b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, E, A, y, D, v, w, z), new cljs.core.Keyword(null, "key", "key", -1516042587), new cljs.core.Keyword(null, "uid", "uid", -1447769400)], null)), ia.call(null, cljs.core.rest.call(null, G)));
                     }
                     return null;
                   }
                 };
-              }(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, B, x, u, C, v, w, E, z), null, null);
+              }(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, E, A, y, D, v, w, z), null, null);
             };
-          }(x, W, U, S, X, v, b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, B).call(null, W);
-        }() : null, cljs.core.filter.call(null, cljs.core.identity, new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.truth_(cljs.core.not_empty.call(null, U)) ? new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "li", "li", 723558921), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "class", "class", -2030961996), "search-results-header"], null), "Investors"], null) : null], 
-        null)), cljs.core.truth_(cljs.core.not_empty.call(null, U)) ? function() {
-          return function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, B, x, u, C, v, w, E, z) {
-            return function ha(y) {
-              return new cljs.core.LazySeq(null, function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, B, x, u, C, v, w, E, z) {
+          }(A, U, S, R, X, v, b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, E).call(null, U);
+        }() : null, cljs.core.filter.call(null, cljs.core.identity, new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.truth_(cljs.core.not_empty.call(null, S)) ? new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "li", "li", 723558921), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "class", "class", -2030961996), "search-results-header"], null), "Investors"], null) : null], 
+        null)), cljs.core.truth_(cljs.core.not_empty.call(null, S)) ? function() {
+          return function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, E, A, y, D, v, w, x) {
+            return function ia(z) {
+              return new cljs.core.LazySeq(null, function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, E, A, y, D, v, w, x) {
                 return function() {
                   for (;;) {
-                    var M = cljs.core.seq.call(null, y);
-                    if (M) {
-                      var A = M;
-                      if (cljs.core.chunked_seq_QMARK_.call(null, A)) {
-                        var K = cljs.core.chunk_first.call(null, A), I = cljs.core.count.call(null, K), H = cljs.core.chunk_buffer.call(null, I);
+                    var C = cljs.core.seq.call(null, z);
+                    if (C) {
+                      var G = C;
+                      if (cljs.core.chunked_seq_QMARK_.call(null, G)) {
+                        var J = cljs.core.chunk_first.call(null, G), K = cljs.core.count.call(null, J), P = cljs.core.chunk_buffer.call(null, K);
                         return function() {
-                          for (var y = 0;;) {
-                            if (y < I) {
-                              var F = cljs.core._nth.call(null, K, y), J = cljs.core.nth.call(null, F, 0, null), G = cljs.core.nth.call(null, F, 1, null);
-                              cljs.core.chunk_append.call(null, H, om.core.build.call(null, clustermap.components.search.search_result_link, G, new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null, "opts", "opts", 155075701), new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "comm", "comm", -1689770614), D.comm, new cljs.core.Keyword(null, "path-fn", "path-fn", -778614691), D.path_fn], null), new cljs.core.Keyword(null, "state", "state", -1988618099), new cljs.core.PersistentArrayMap(null, 
-                              1, [new cljs.core.Keyword(null, "selected", "selected", 574897764), cljs.core._EQ_.call(null, J, e)], null), new cljs.core.Keyword(null, "fn", "fn", -1175266204), function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, B, x, u, C, D, v, w, E, y, z, A, M, F, K, H, I, J) {
+                          for (var z = 0;;) {
+                            if (z < K) {
+                              var H = cljs.core._nth.call(null, J, z), I = cljs.core.nth.call(null, H, 0, null), F = cljs.core.nth.call(null, H, 1, null);
+                              cljs.core.chunk_append.call(null, P, om.core.build.call(null, clustermap.components.search.search_result_link, F, new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null, "opts", "opts", 155075701), new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "comm", "comm", -1689770614), B.comm, new cljs.core.Keyword(null, "path-fn", "path-fn", -778614691), B.path_fn], null), new cljs.core.Keyword(null, "state", "state", -1988618099), new cljs.core.PersistentArrayMap(null, 
+                              1, [new cljs.core.Keyword(null, "selected", "selected", 574897764), cljs.core._EQ_.call(null, I, e)], null), new cljs.core.Keyword(null, "fn", "fn", -1175266204), function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, E, A, y, D, v, B, w, z, x, C, G, J, H, K, P, I) {
                                 return function(b) {
                                   return cljs.core.assoc.call(null, b, new cljs.core.Keyword(null, "type", "type", 1174270348), new cljs.core.Keyword(null, "investor-company", "investor-company", 13706558), new cljs.core.Keyword(null, "id", "id", -1388402092), cljs.core.get.call(null, b, new cljs.core.Keyword(null, "investor_company_uid", "investor_company_uid", -841847830)), new cljs.core.Keyword(null, "uid", "uid", -1447769400), "investor-company-" + cljs.core.str.cljs$core$IFn$_invoke$arity$1(cljs.core.get.call(null, 
                                   b, new cljs.core.Keyword(null, "investor_company_uid", "investor_company_uid", -841847830))));
                                 };
-                              }(y, F, J, G, K, I, H, A, M, b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, B, x, u, C, v, w, E, z), new cljs.core.Keyword(null, "key", "key", -1516042587), new cljs.core.Keyword(null, "uid", "uid", -1447769400)], null)));
-                              y += 1;
+                              }(z, H, I, F, J, K, P, G, C, b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, E, A, y, D, v, w, x), new cljs.core.Keyword(null, "key", "key", -1516042587), new cljs.core.Keyword(null, "uid", "uid", -1447769400)], null)));
+                              z += 1;
                             } else {
                               return!0;
                             }
                           }
-                        }() ? cljs.core.chunk_cons.call(null, cljs.core.chunk.call(null, H), ha.call(null, cljs.core.chunk_rest.call(null, A))) : cljs.core.chunk_cons.call(null, cljs.core.chunk.call(null, H), null);
+                        }() ? cljs.core.chunk_cons.call(null, cljs.core.chunk.call(null, P), ia.call(null, cljs.core.chunk_rest.call(null, G))) : cljs.core.chunk_cons.call(null, cljs.core.chunk.call(null, P), null);
                       }
-                      var F = cljs.core.first.call(null, A), J = cljs.core.nth.call(null, F, 0, null), G = cljs.core.nth.call(null, F, 1, null);
-                      return cljs.core.cons.call(null, om.core.build.call(null, clustermap.components.search.search_result_link, G, new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null, "opts", "opts", 155075701), new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "comm", "comm", -1689770614), D.comm, new cljs.core.Keyword(null, "path-fn", "path-fn", -778614691), D.path_fn], null), new cljs.core.Keyword(null, "state", "state", -1988618099), new cljs.core.PersistentArrayMap(null, 
-                      1, [new cljs.core.Keyword(null, "selected", "selected", 574897764), cljs.core._EQ_.call(null, J, e)], null), new cljs.core.Keyword(null, "fn", "fn", -1175266204), function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, B, x, u, C, D, v, w, E, y, z, A, M, F) {
+                      var H = cljs.core.first.call(null, G), I = cljs.core.nth.call(null, H, 0, null), F = cljs.core.nth.call(null, H, 1, null);
+                      return cljs.core.cons.call(null, om.core.build.call(null, clustermap.components.search.search_result_link, F, new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null, "opts", "opts", 155075701), new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "comm", "comm", -1689770614), B.comm, new cljs.core.Keyword(null, "path-fn", "path-fn", -778614691), B.path_fn], null), new cljs.core.Keyword(null, "state", "state", -1988618099), new cljs.core.PersistentArrayMap(null, 
+                      1, [new cljs.core.Keyword(null, "selected", "selected", 574897764), cljs.core._EQ_.call(null, I, e)], null), new cljs.core.Keyword(null, "fn", "fn", -1175266204), function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, E, A, y, D, v, B, w, z, x, C, G, J) {
                         return function(b) {
                           return cljs.core.assoc.call(null, b, new cljs.core.Keyword(null, "type", "type", 1174270348), new cljs.core.Keyword(null, "investor-company", "investor-company", 13706558), new cljs.core.Keyword(null, "id", "id", -1388402092), cljs.core.get.call(null, b, new cljs.core.Keyword(null, "investor_company_uid", "investor_company_uid", -841847830)), new cljs.core.Keyword(null, "uid", "uid", -1447769400), "investor-company-" + cljs.core.str.cljs$core$IFn$_invoke$arity$1(cljs.core.get.call(null, 
                           b, new cljs.core.Keyword(null, "investor_company_uid", "investor_company_uid", -841847830))));
                         };
-                      }(F, J, G, A, M, b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, B, x, u, C, v, w, E, z), new cljs.core.Keyword(null, "key", "key", -1516042587), new cljs.core.Keyword(null, "uid", "uid", -1447769400)], null)), ha.call(null, cljs.core.rest.call(null, A)));
+                      }(H, I, F, G, C, b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, E, A, y, D, v, w, x), new cljs.core.Keyword(null, "key", "key", -1516042587), new cljs.core.Keyword(null, "uid", "uid", -1447769400)], null)), ia.call(null, cljs.core.rest.call(null, G)));
                     }
                     return null;
                   }
                 };
-              }(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, B, x, u, C, v, w, E, z), null, null);
+              }(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, E, A, y, D, v, w, x), null, null);
             };
-          }(x, W, U, S, X, v, b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, B).call(null, U);
+          }(A, U, S, R, X, v, b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, E).call(null, S);
         }() : null], null)], null);
       }() : null));
     };
-  }(m, n, p, q, r, l, s, t, u, v, b, d, e, f, g, h, k, l), clustermap.components.search.t26886.prototype.cljs$core$IMeta$_meta$arity$1 = function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, B) {
+  }(m, n, p, q, r, l, s, t, u, v, b, d, e, f, g, h, k, l), clustermap.components.search.t27218.prototype.cljs$core$IMeta$_meta$arity$1 = function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, E) {
     return function(b) {
-      return this.meta26887;
+      return this.meta27219;
     };
-  }(m, n, p, q, r, l, s, t, u, v, b, d, e, f, g, h, k, l), clustermap.components.search.t26886.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, B) {
+  }(m, n, p, q, r, l, s, t, u, v, b, d, e, f, g, h, k, l), clustermap.components.search.t27218.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, E) {
     return function(b, c) {
-      return new clustermap.components.search.t26886(this.search_results, this.search_component, this.owner, this.path_fn, this.view, this.portfolio_companies, this.constituencies, this.investor_companies, this.map__26882, this.selection_value, this.comm, this.map__26885, this.selection_type, this.map__26883, this.p__26850, this.map__26884, c);
+      return new clustermap.components.search.t27218(this.search_results, this.search_component, this.owner, this.path_fn, this.map__27216, this.view, this.portfolio_companies, this.map__27215, this.constituencies, this.investor_companies, this.selection_value, this.comm, this.selection_type, this.map__27214, this.p__27182, this.map__27217, c);
     };
-  }(m, n, p, q, r, l, s, t, u, v, b, d, e, f, g, h, k, l), clustermap.components.search.__GT_t26886 = function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, B) {
-    return function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, B) {
-      return new clustermap.components.search.t26886(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, B);
+  }(m, n, p, q, r, l, s, t, u, v, b, d, e, f, g, h, k, l), clustermap.components.search.__GT_t27218 = function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, E) {
+    return function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u) {
+      return new clustermap.components.search.t27218(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u);
     };
   }(m, n, p, q, r, l, s, t, u, v, b, d, e, f, g, h, k, l));
-  return new clustermap.components.search.t26886(l, search_component, c, r, k, u, v, t, d, h, q, s, g, f, b, n, null);
+  return new clustermap.components.search.t27218(l, search_component, c, r, n, k, u, f, v, t, h, q, g, d, b, s, null);
 };
 clustermap.components.search.mount = function(a, b, c) {
   return om.core.root.call(null, clustermap.components.search.search_component, a, new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "shared", "shared", -384145993), c, new cljs.core.Keyword(null, "target", "target", 253001721), document.getElementById(b)], null));
@@ -37740,11 +37974,11 @@ goog.dom.classes.toggle = function(a, b) {
   goog.dom.classes.enable(a, b, c);
   return c;
 };
-var domina = {support:{}}, div_33237 = document.createElement("div"), test_html_33238 = "   \x3clink/\x3e\x3ctable\x3e\x3c/table\x3e\x3ca href\x3d'/a' style\x3d'top:1px;float:left;opacity:.55;'\x3ea\x3c/a\x3e\x3cinput type\x3d'checkbox'/\x3e";
-div_33237.innerHTML = test_html_33238;
-domina.support.leading_whitespace_QMARK_ = cljs.core._EQ_.call(null, div_33237.firstChild.nodeType, 3);
-domina.support.extraneous_tbody_QMARK_ = cljs.core._EQ_.call(null, div_33237.getElementsByTagName("tbody").length, 0);
-domina.support.unscoped_html_elements_QMARK_ = cljs.core._EQ_.call(null, div_33237.getElementsByTagName("link").length, 0);
+var domina = {support:{}}, div_33667 = document.createElement("div"), test_html_33668 = "   \x3clink/\x3e\x3ctable\x3e\x3c/table\x3e\x3ca href\x3d'/a' style\x3d'top:1px;float:left;opacity:.55;'\x3ea\x3c/a\x3e\x3cinput type\x3d'checkbox'/\x3e";
+div_33667.innerHTML = test_html_33668;
+domina.support.leading_whitespace_QMARK_ = cljs.core._EQ_.call(null, div_33667.firstChild.nodeType, 3);
+domina.support.extraneous_tbody_QMARK_ = cljs.core._EQ_.call(null, div_33667.getElementsByTagName("tbody").length, 0);
+domina.support.unscoped_html_elements_QMARK_ = cljs.core._EQ_.call(null, div_33667.getElementsByTagName("link").length, 0);
 goog.dom.vendor = {};
 goog.dom.vendor.getVendorJsPrefix = function() {
   return goog.userAgent.WEBKIT ? "Webkit" : goog.userAgent.GECKO ? "Moz" : goog.userAgent.IE ? "ms" : goog.userAgent.OPERA ? "O" : null;
@@ -38629,11 +38863,11 @@ domina.re_xhtml_tag = /<(?!area|br|col|embed|hr|img|input|link|meta|param)(([\w:
 domina.re_tag_name = /<([\w:]+)/;
 domina.re_no_inner_html = /<(?:script|style)/i;
 domina.re_tbody = /<tbody/i;
-var opt_wrapper_32787 = new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [1, "\x3cselect multiple\x3d'multiple'\x3e", "\x3c/select\x3e"], null), table_section_wrapper_32788 = new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [1, "\x3ctable\x3e", "\x3c/table\x3e"], null), cell_wrapper_32789 = new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [3, "\x3ctable\x3e\x3ctbody\x3e\x3ctr\x3e", "\x3c/tr\x3e\x3c/tbody\x3e\x3c/table\x3e"], 
+var opt_wrapper_33217 = new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [1, "\x3cselect multiple\x3d'multiple'\x3e", "\x3c/select\x3e"], null), table_section_wrapper_33218 = new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [1, "\x3ctable\x3e", "\x3c/table\x3e"], null), cell_wrapper_33219 = new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [3, "\x3ctable\x3e\x3ctbody\x3e\x3ctr\x3e", "\x3c/tr\x3e\x3c/tbody\x3e\x3c/table\x3e"], 
 null);
-domina.wrap_map = cljs.core.PersistentHashMap.fromArrays(["td", "optgroup", "tfoot", "tr", "area", new cljs.core.Keyword(null, "default", "default", -1987822328), "option", "legend", "thead", "col", "caption", "th", "colgroup", "tbody"], [cell_wrapper_32789, opt_wrapper_32787, table_section_wrapper_32788, new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [2, "\x3ctable\x3e\x3ctbody\x3e", "\x3c/tbody\x3e\x3c/table\x3e"], null), new cljs.core.PersistentVector(null, 3, 
-5, cljs.core.PersistentVector.EMPTY_NODE, [1, "\x3cmap\x3e", "\x3c/map\x3e"], null), new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [0, "", ""], null), opt_wrapper_32787, new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [1, "\x3cfieldset\x3e", "\x3c/fieldset\x3e"], null), table_section_wrapper_32788, new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [2, "\x3ctable\x3e\x3ctbody\x3e\x3c/tbody\x3e\x3ccolgroup\x3e", 
-"\x3c/colgroup\x3e\x3c/table\x3e"], null), table_section_wrapper_32788, cell_wrapper_32789, table_section_wrapper_32788, table_section_wrapper_32788]);
+domina.wrap_map = cljs.core.PersistentHashMap.fromArrays(["td", "optgroup", "tfoot", "tr", "area", new cljs.core.Keyword(null, "default", "default", -1987822328), "option", "legend", "thead", "col", "caption", "th", "colgroup", "tbody"], [cell_wrapper_33219, opt_wrapper_33217, table_section_wrapper_33218, new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [2, "\x3ctable\x3e\x3ctbody\x3e", "\x3c/tbody\x3e\x3c/table\x3e"], null), new cljs.core.PersistentVector(null, 3, 
+5, cljs.core.PersistentVector.EMPTY_NODE, [1, "\x3cmap\x3e", "\x3c/map\x3e"], null), new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [0, "", ""], null), opt_wrapper_33217, new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [1, "\x3cfieldset\x3e", "\x3c/fieldset\x3e"], null), table_section_wrapper_33218, new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [2, "\x3ctable\x3e\x3ctbody\x3e\x3c/tbody\x3e\x3ccolgroup\x3e", 
+"\x3c/colgroup\x3e\x3c/table\x3e"], null), table_section_wrapper_33218, cell_wrapper_33219, table_section_wrapper_33218, table_section_wrapper_33218]);
 domina.remove_extraneous_tbody_BANG_ = function(a, b, c, d) {
   b = cljs.core.not.call(null, cljs.core.re_find.call(null, domina.re_tbody, b));
   cljs.core._EQ_.call(null, c, "table") && b ? (c = a.firstChild, a = cljs.core.truth_(c) ? a.firstChild.childNodes : c) : a = cljs.core._EQ_.call(null, d, "\x3ctable\x3e") && b ? a.childNodes : cljs.core.PersistentVector.EMPTY;
@@ -39336,41 +39570,41 @@ domina.events.root_element = window.document.documentElement;
 domina.events.create_listener_function = function create_listener_function(b) {
   return function(c) {
     b.call(null, function() {
-      "undefined" === typeof domina.events.t32330 && (domina.events.t32330 = function(b, c, f, g) {
+      "undefined" === typeof domina.events.t32760 && (domina.events.t32760 = function(b, c, f, g) {
         this.evt = b;
         this.f = c;
         this.create_listener_function = f;
-        this.meta32331 = g;
+        this.meta32761 = g;
         this.cljs$lang$protocol_mask$partition1$ = 0;
         this.cljs$lang$protocol_mask$partition0$ = 393472;
-      }, domina.events.t32330.cljs$lang$type = !0, domina.events.t32330.cljs$lang$ctorStr = "domina.events/t32330", domina.events.t32330.cljs$lang$ctorPrWriter = function(b, c, f) {
-        return cljs.core._write.call(null, c, "domina.events/t32330");
-      }, domina.events.t32330.prototype.cljs$core$ILookup$_lookup$arity$2 = function(b, c) {
+      }, domina.events.t32760.cljs$lang$type = !0, domina.events.t32760.cljs$lang$ctorStr = "domina.events/t32760", domina.events.t32760.cljs$lang$ctorPrWriter = function(b, c, f) {
+        return cljs.core._write.call(null, c, "domina.events/t32760");
+      }, domina.events.t32760.prototype.cljs$core$ILookup$_lookup$arity$2 = function(b, c) {
         var f = this.evt[c];
         return cljs.core.truth_(f) ? f : this.evt[cljs.core.name.call(null, c)];
-      }, domina.events.t32330.prototype.cljs$core$ILookup$_lookup$arity$3 = function(b, c, f) {
+      }, domina.events.t32760.prototype.cljs$core$ILookup$_lookup$arity$3 = function(b, c, f) {
         b = cljs.core._lookup.call(null, this, c);
         return cljs.core.truth_(b) ? b : f;
-      }, domina.events.t32330.prototype.domina$events$Event$ = !0, domina.events.t32330.prototype.domina$events$Event$prevent_default$arity$1 = function(b) {
+      }, domina.events.t32760.prototype.domina$events$Event$ = !0, domina.events.t32760.prototype.domina$events$Event$prevent_default$arity$1 = function(b) {
         return this.evt.preventDefault();
-      }, domina.events.t32330.prototype.domina$events$Event$stop_propagation$arity$1 = function(b) {
+      }, domina.events.t32760.prototype.domina$events$Event$stop_propagation$arity$1 = function(b) {
         return this.evt.stopPropagation();
-      }, domina.events.t32330.prototype.domina$events$Event$target$arity$1 = function(b) {
+      }, domina.events.t32760.prototype.domina$events$Event$target$arity$1 = function(b) {
         return this.evt.target;
-      }, domina.events.t32330.prototype.domina$events$Event$current_target$arity$1 = function(b) {
+      }, domina.events.t32760.prototype.domina$events$Event$current_target$arity$1 = function(b) {
         return this.evt.currentTarget;
-      }, domina.events.t32330.prototype.domina$events$Event$event_type$arity$1 = function(b) {
+      }, domina.events.t32760.prototype.domina$events$Event$event_type$arity$1 = function(b) {
         return this.evt.type;
-      }, domina.events.t32330.prototype.domina$events$Event$raw_event$arity$1 = function(b) {
+      }, domina.events.t32760.prototype.domina$events$Event$raw_event$arity$1 = function(b) {
         return this.evt;
-      }, domina.events.t32330.prototype.cljs$core$IMeta$_meta$arity$1 = function(b) {
-        return this.meta32331;
-      }, domina.events.t32330.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(b, c) {
-        return new domina.events.t32330(this.evt, this.f, this.create_listener_function, c);
-      }, domina.events.__GT_t32330 = function(b, c, f, g) {
-        return new domina.events.t32330(b, c, f, g);
+      }, domina.events.t32760.prototype.cljs$core$IMeta$_meta$arity$1 = function(b) {
+        return this.meta32761;
+      }, domina.events.t32760.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(b, c) {
+        return new domina.events.t32760(this.evt, this.f, this.create_listener_function, c);
+      }, domina.events.__GT_t32760 = function(b, c, f, g) {
+        return new domina.events.t32760(b, c, f, g);
       });
-      return new domina.events.t32330(c, b, create_listener_function, null);
+      return new domina.events.t32760(c, b, create_listener_function, null);
     }());
     return!0;
   };
@@ -39390,8 +39624,8 @@ domina.events.listen_internal_BANG_ = function(a, b, c, d, e) {
                   a: {
                     for (var v = 0;;) {
                       if (v < h) {
-                        var y = cljs.core._nth.call(null, g, v);
-                        cljs.core.chunk_append.call(null, k, cljs.core.truth_(e) ? goog.events.listenOnce(y, b, a, d) : goog.events.listen(y, b, a, d));
+                        var x = cljs.core._nth.call(null, g, v);
+                        cljs.core.chunk_append.call(null, k, cljs.core.truth_(e) ? goog.events.listenOnce(x, b, a, d) : goog.events.listen(x, b, a, d));
                         v += 1;
                       } else {
                         g = !0;
@@ -39670,24 +39904,25 @@ clustermap.components.map_report.full_report_button = function(a, b) {
   return React.DOM.a({className:"btn btn-link", href:b.call(null, new cljs.core.Keyword(null, "lists", "lists", -884730684))}, React.DOM.i({className:"icon-lists-sm"}), "Full report");
 };
 clustermap.components.map_report.summary_stats_report = function(a, b, c, d) {
-  var e = cljs.core.seq_QMARK_.call(null, d) ? cljs.core.apply.call(null, cljs.core.hash_map, d) : d, f = cljs.core.get.call(null, e, new cljs.core.Keyword(null, "data", "data", -232669377)), g = cljs.core.seq_QMARK_.call(null, f) ? cljs.core.apply.call(null, cljs.core.hash_map, f) : f, h = cljs.core.get.call(null, g, new cljs.core.Keyword(null, "!latest_employee_count", "!latest_employee_count", -1445524938)), k = cljs.core.seq_QMARK_.call(null, h) ? cljs.core.apply.call(null, cljs.core.hash_map, 
-  h) : h, l = cljs.core.get.call(null, k, new cljs.core.Keyword(null, "sum", "sum", 136986814)), m = cljs.core.get.call(null, k, new cljs.core.Keyword(null, "viewfilter_doc_count", "viewfilter_doc_count", 231005032)), n = cljs.core.get.call(null, g, new cljs.core.Keyword(null, "!latest_turnover", "!latest_turnover", -1853433972)), p = cljs.core.seq_QMARK_.call(null, n) ? cljs.core.apply.call(null, cljs.core.hash_map, n) : n, q = cljs.core.get.call(null, p, new cljs.core.Keyword(null, "sum", "sum", 
-  136986814));
-  return React.DOM.div(null, React.DOM.div({className:"header secondary"}, React.DOM.h2(null, "Summary stats")), React.DOM.ul(null, React.DOM.li(null, sablono.interpreter.input.call(null, {type:"checkbox", name:"filter-by-view", value:"true", onChange:function(b, c, d, e, f, g, h, k, l, m, n, p, q) {
-    return function(b) {
-      b = b.target.checked;
-      return om.core.update_BANG_.call(null, a, new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "controls", "controls", 1340701452), new cljs.core.Keyword(null, "summary-stats", "summary-stats", -1745571251), new cljs.core.Keyword(null, "filter-by-view", "filter-by-view", 902292255)], null), b);
-    };
-  }(d, e, e, f, g, g, h, k, l, m, n, p, q)}), React.DOM.small(null, "Filter by view")), function() {
-    var a = clustermap.formats.number.fnum.call(null, m, new cljs.core.Keyword(null, "default", "default", -1987822328), "-");
+  a = cljs.core.seq_QMARK_.call(null, d) ? cljs.core.apply.call(null, cljs.core.hash_map, d) : d;
+  a = cljs.core.get.call(null, a, new cljs.core.Keyword(null, "data", "data", -232669377));
+  a = cljs.core.seq_QMARK_.call(null, a) ? cljs.core.apply.call(null, cljs.core.hash_map, a) : a;
+  d = cljs.core.get.call(null, a, new cljs.core.Keyword(null, "!latest_employee_count", "!latest_employee_count", -1445524938));
+  d = cljs.core.seq_QMARK_.call(null, d) ? cljs.core.apply.call(null, cljs.core.hash_map, d) : d;
+  var e = cljs.core.get.call(null, d, new cljs.core.Keyword(null, "sum", "sum", 136986814)), f = cljs.core.get.call(null, d, new cljs.core.Keyword(null, "viewfilter_doc_count", "viewfilter_doc_count", 231005032));
+  a = cljs.core.get.call(null, a, new cljs.core.Keyword(null, "!latest_turnover", "!latest_turnover", -1853433972));
+  a = cljs.core.seq_QMARK_.call(null, a) ? cljs.core.apply.call(null, cljs.core.hash_map, a) : a;
+  var g = cljs.core.get.call(null, a, new cljs.core.Keyword(null, "sum", "sum", 136986814));
+  return React.DOM.div(null, React.DOM.div({className:"header secondary"}, React.DOM.h2(null, "Summary stats")), React.DOM.ul(null, function() {
+    var a = clustermap.formats.number.fnum.call(null, f, new cljs.core.Keyword(null, "default", "default", -1987822328), "-");
     return cljs.core.apply.call(null, React.DOM.li, cljs.core.map_QMARK_.call(null, a) ? sablono.interpreter.attributes.call(null, a) : null, cljs.core.remove.call(null, cljs.core.nil_QMARK_, cljs.core.map_QMARK_.call(null, a) ? new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [React.DOM.small(null, "Companies")], null) : new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [sablono.interpreter.interpret.call(null, a), React.DOM.small(null, 
     "Companies")], null)));
   }(), function() {
-    var a = clustermap.formats.money.fmoney.call(null, q, new cljs.core.Keyword(null, "sf", "sf", -1949491738), 2, new cljs.core.Keyword(null, "default", "default", -1987822328), "-");
+    var a = clustermap.formats.money.fmoney.call(null, g, new cljs.core.Keyword(null, "sf", "sf", -1949491738), 2, new cljs.core.Keyword(null, "default", "default", -1987822328), "-");
     return cljs.core.apply.call(null, React.DOM.li, cljs.core.map_QMARK_.call(null, a) ? sablono.interpreter.attributes.call(null, a) : null, cljs.core.remove.call(null, cljs.core.nil_QMARK_, cljs.core.map_QMARK_.call(null, a) ? new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [React.DOM.small(null, "Total revenue")], null) : new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [sablono.interpreter.interpret.call(null, a), React.DOM.small(null, 
     "Total revenue")], null)));
   }(), function() {
-    var a = clustermap.formats.number.fnum.call(null, l, new cljs.core.Keyword(null, "dec", "dec", 1888433436), 0, new cljs.core.Keyword(null, "default", "default", -1987822328), "-");
+    var a = clustermap.formats.number.fnum.call(null, e, new cljs.core.Keyword(null, "dec", "dec", 1888433436), 0, new cljs.core.Keyword(null, "default", "default", -1987822328), "-");
     return cljs.core.apply.call(null, React.DOM.li, cljs.core.map_QMARK_.call(null, a) ? sablono.interpreter.attributes.call(null, a) : null, cljs.core.remove.call(null, cljs.core.nil_QMARK_, cljs.core.map_QMARK_.call(null, a) ? new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [React.DOM.small(null, "Total employees")], null) : new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [sablono.interpreter.interpret.call(null, a), React.DOM.small(null, 
     "Total employees")], null)));
   }()), sablono.interpreter.interpret.call(null, clustermap.components.map_report.full_report_button.call(null, b, c)));
@@ -39696,92 +39931,95 @@ clustermap.components.map_report.request_summary_stats = function(a, b, c, d, e,
   return clustermap.ordered_resource.api_call.call(null, a, clustermap.api.summary_stats, b, c, d, e, f);
 };
 clustermap.components.map_report.map_report_component = function map_report_component(b, c) {
-  var d = cljs.core.seq_QMARK_.call(null, b) ? cljs.core.apply.call(null, cljs.core.hash_map, b) : b, e = cljs.core.get.call(null, d, new cljs.core.Keyword(null, "filter", "filter", -948537934)), f = cljs.core.get.call(null, d, new cljs.core.Keyword(null, "map-report", "map-report", -254073588)), g = cljs.core.seq_QMARK_.call(null, f) ? cljs.core.apply.call(null, cljs.core.hash_map, f) : f, h = cljs.core.get.call(null, g, new cljs.core.Keyword(null, "controls", "controls", 1340701452)), k = cljs.core.seq_QMARK_.call(null, 
-  h) ? cljs.core.apply.call(null, cljs.core.hash_map, h) : h, l = cljs.core.get.call(null, k, new cljs.core.Keyword(null, "summary-stats", "summary-stats", -1745571251)), m = cljs.core.seq_QMARK_.call(null, l) ? cljs.core.apply.call(null, cljs.core.hash_map, l) : l, n = cljs.core.get.call(null, m, new cljs.core.Keyword(null, "filter-by-view", "filter-by-view", 902292255)), p = cljs.core.get.call(null, m, new cljs.core.Keyword(null, "variables", "variables", 1563680814)), q = cljs.core.get.call(null, 
-  m, new cljs.core.Keyword(null, "index-type", "index-type", 500383962)), r = cljs.core.get.call(null, m, new cljs.core.Keyword(null, "index", "index", -1531685915)), s = cljs.core.get.call(null, g, new cljs.core.Keyword(null, "summary-stats-data", "summary-stats-data", 1509580588)), t = cljs.core.get.call(null, d, new cljs.core.Keyword(null, "map-controls", "map-controls", -1453318552)), u = cljs.core.seq_QMARK_.call(null, t) ? cljs.core.apply.call(null, cljs.core.hash_map, t) : t, v = cljs.core.get.call(null, 
-  u, new cljs.core.Keyword(null, "bounds", "bounds", 1691609455));
-  "undefined" === typeof clustermap.components.map_report.t26743 && (clustermap.components.map_report.t26743 = function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, B, x, C) {
-    this.filt = b;
-    this.index_type = c;
-    this.owner = d;
-    this.filter_by_view = e;
-    this.data = f;
-    this.index = g;
-    this.map__26738 = h;
-    this.map__26740 = k;
-    this.controls = l;
-    this.summary_stats_data = m;
-    this.map_report = n;
-    this.summary_stats = p;
-    this.map_report_component = q;
-    this.map__26741 = r;
-    this.variables = s;
-    this.bounds = t;
-    this.map__26742 = u;
-    this.p__26720 = B;
-    this.map__26739 = x;
-    this.meta26744 = C;
+  var d = cljs.core.seq_QMARK_.call(null, b) ? cljs.core.apply.call(null, cljs.core.hash_map, b) : b, e = cljs.core.get.call(null, d, new cljs.core.Keyword(null, "filter-spec", "filter-spec", -1101318648)), f = cljs.core.seq_QMARK_.call(null, e) ? cljs.core.apply.call(null, cljs.core.hash_map, e) : e, g = cljs.core.get.call(null, f, new cljs.core.Keyword(null, "filter-by-view", "filter-by-view", 902292255)), h = cljs.core.get.call(null, f, new cljs.core.Keyword(null, "compiled", "compiled", 850043082)), 
+  k = cljs.core.get.call(null, d, new cljs.core.Keyword(null, "map-report", "map-report", -254073588)), l = cljs.core.seq_QMARK_.call(null, k) ? cljs.core.apply.call(null, cljs.core.hash_map, k) : k, m = cljs.core.get.call(null, l, new cljs.core.Keyword(null, "controls", "controls", 1340701452)), n = cljs.core.seq_QMARK_.call(null, m) ? cljs.core.apply.call(null, cljs.core.hash_map, m) : m, p = cljs.core.get.call(null, n, new cljs.core.Keyword(null, "summary-stats", "summary-stats", -1745571251)), 
+  q = cljs.core.seq_QMARK_.call(null, p) ? cljs.core.apply.call(null, cljs.core.hash_map, p) : p, r = cljs.core.get.call(null, q, new cljs.core.Keyword(null, "variables", "variables", 1563680814)), s = cljs.core.get.call(null, q, new cljs.core.Keyword(null, "index-type", "index-type", 500383962)), t = cljs.core.get.call(null, q, new cljs.core.Keyword(null, "index", "index", -1531685915)), u = cljs.core.get.call(null, l, new cljs.core.Keyword(null, "summary-stats-data", "summary-stats-data", 1509580588)), 
+  v = cljs.core.get.call(null, d, new cljs.core.Keyword(null, "map-controls", "map-controls", -1453318552)), x = cljs.core.seq_QMARK_.call(null, v) ? cljs.core.apply.call(null, cljs.core.hash_map, v) : v, w = cljs.core.get.call(null, x, new cljs.core.Keyword(null, "bounds", "bounds", 1691609455));
+  "undefined" === typeof clustermap.components.map_report.t27074 && (clustermap.components.map_report.t27074 = function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, B, w, x) {
+    this.p__27048 = b;
+    this.filt = c;
+    this.index_type = d;
+    this.owner = e;
+    this.map__27072 = f;
+    this.filter_by_view = g;
+    this.data = h;
+    this.map__27070 = k;
+    this.index = l;
+    this.map__27071 = m;
+    this.map__27069 = n;
+    this.controls = p;
+    this.summary_stats_data = q;
+    this.map_report = r;
+    this.summary_stats = s;
+    this.map_report_component = t;
+    this.variables = u;
+    this.bounds = v;
+    this.map__27068 = B;
+    this.map__27073 = w;
+    this.meta27075 = x;
     this.cljs$lang$protocol_mask$partition1$ = 0;
     this.cljs$lang$protocol_mask$partition0$ = 393216;
-  }, clustermap.components.map_report.t26743.cljs$lang$type = !0, clustermap.components.map_report.t26743.cljs$lang$ctorStr = "clustermap.components.map-report/t26743", clustermap.components.map_report.t26743.cljs$lang$ctorPrWriter = function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, B, x, C, D) {
+  }, clustermap.components.map_report.t27074.cljs$lang$type = !0, clustermap.components.map_report.t27074.cljs$lang$ctorStr = "clustermap.components.map-report/t27074", clustermap.components.map_report.t27074.cljs$lang$ctorPrWriter = function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, B, w, x, U, S) {
     return function(b, c, d) {
-      return cljs.core._write.call(null, c, "clustermap.components.map-report/t26743");
+      return cljs.core._write.call(null, c, "clustermap.components.map-report/t27074");
     };
-  }(b, d, d, e, f, g, g, h, k, k, l, m, m, n, p, q, r, s, t, u, v), clustermap.components.map_report.t26743.prototype.om$core$IWillUpdate$ = !0, clustermap.components.map_report.t26743.prototype.om$core$IWillUpdate$will_update$arity$3 = function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, B, x, C, D) {
+  }(b, d, d, e, f, g, h, k, l, l, m, n, n, p, q, q, r, s, t, u, v, x, w), clustermap.components.map_report.t27074.prototype.om$core$IWillUpdate$ = !0, clustermap.components.map_report.t27074.prototype.om$core$IWillUpdate$will_update$arity$3 = function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, B, w, x, U, S) {
     return function(b, c, d) {
       var e = this;
       b = cljs.core.seq_QMARK_.call(null, c) ? cljs.core.apply.call(null, cljs.core.hash_map, c) : c;
-      var f = cljs.core.get.call(null, b, new cljs.core.Keyword(null, "filter", "filter", -948537934));
+      c = cljs.core.get.call(null, b, new cljs.core.Keyword(null, "filter-spec", "filter-spec", -1101318648));
+      c = cljs.core.seq_QMARK_.call(null, c) ? cljs.core.apply.call(null, cljs.core.hash_map, c) : c;
+      var f = cljs.core.get.call(null, c, new cljs.core.Keyword(null, "filter-by-view", "filter-by-view", 902292255)), g = cljs.core.get.call(null, c, new cljs.core.Keyword(null, "compiled", "compiled", 850043082));
       c = cljs.core.get.call(null, b, new cljs.core.Keyword(null, "map-report", "map-report", -254073588));
-      var g = cljs.core.seq_QMARK_.call(null, c) ? cljs.core.apply.call(null, cljs.core.hash_map, c) : c;
-      c = cljs.core.get.call(null, g, new cljs.core.Keyword(null, "controls", "controls", 1340701452));
+      var h = cljs.core.seq_QMARK_.call(null, c) ? cljs.core.apply.call(null, cljs.core.hash_map, c) : c;
+      c = cljs.core.get.call(null, h, new cljs.core.Keyword(null, "controls", "controls", 1340701452));
       c = cljs.core.seq_QMARK_.call(null, c) ? cljs.core.apply.call(null, cljs.core.hash_map, c) : c;
       c = cljs.core.get.call(null, c, new cljs.core.Keyword(null, "summary-stats", "summary-stats", -1745571251));
-      var h = cljs.core.seq_QMARK_.call(null, c) ? cljs.core.apply.call(null, cljs.core.hash_map, c) : c;
-      c = cljs.core.get.call(null, h, new cljs.core.Keyword(null, "index", "index", -1531685915));
-      var k = cljs.core.get.call(null, h, new cljs.core.Keyword(null, "index-type", "index-type", 500383962)), l = cljs.core.get.call(null, h, new cljs.core.Keyword(null, "variables", "variables", 1563680814)), m = cljs.core.get.call(null, h, new cljs.core.Keyword(null, "filter-by-view", "filter-by-view", 902292255)), n = cljs.core.get.call(null, g, new cljs.core.Keyword(null, "summary-stats-data", "summary-stats-data", 1509580588));
+      var k = cljs.core.seq_QMARK_.call(null, c) ? cljs.core.apply.call(null, cljs.core.hash_map, c) : c;
+      c = cljs.core.get.call(null, k, new cljs.core.Keyword(null, "index", "index", -1531685915));
+      var l = cljs.core.get.call(null, k, new cljs.core.Keyword(null, "index-type", "index-type", 500383962)), k = cljs.core.get.call(null, k, new cljs.core.Keyword(null, "variables", "variables", 1563680814)), m = cljs.core.get.call(null, h, new cljs.core.Keyword(null, "summary-stats-data", "summary-stats-data", 1509580588));
       b = cljs.core.get.call(null, b, new cljs.core.Keyword(null, "map-controls", "map-controls", -1453318552));
       b = cljs.core.seq_QMARK_.call(null, b) ? cljs.core.apply.call(null, cljs.core.hash_map, b) : b;
-      var p = cljs.core.get.call(null, b, new cljs.core.Keyword(null, "bounds", "bounds", 1691609455));
+      var n = cljs.core.get.call(null, b, new cljs.core.Keyword(null, "bounds", "bounds", 1691609455));
       d = cljs.core.seq_QMARK_.call(null, d) ? cljs.core.apply.call(null, cljs.core.hash_map, d) : d;
       d = cljs.core.get.call(null, d, new cljs.core.Keyword(null, "summary-stats-resource", "summary-stats-resource", -2107619160));
       return cljs.core.truth_(function() {
-        var b = cljs.core.not.call(null, n);
-        return b || (b = cljs.core.not_EQ_.call(null, f, e.filt)) ? b : (b = cljs.core.not_EQ_.call(null, m, e.filter_by_view)) ? b : cljs.core.truth_(m) ? cljs.core.not_EQ_.call(null, p, e.bounds) : m;
-      }()) ? clustermap.components.map_report.request_summary_stats.call(null, d, c, k, l, f, cljs.core.truth_(m) ? om.core._value.call(null, p) : null) : null;
+        var b = cljs.core.not.call(null, m);
+        return b || (b = cljs.core.not_EQ_.call(null, g, e.filt)) ? b : (b = cljs.core.not_EQ_.call(null, f, e.filter_by_view)) ? b : cljs.core.truth_(f) ? cljs.core.not_EQ_.call(null, n, e.bounds) : f;
+      }()) ? clustermap.components.map_report.request_summary_stats.call(null, d, c, l, k, g, cljs.core.truth_(f) ? om.core._value.call(null, n) : null) : null;
     };
-  }(b, d, d, e, f, g, g, h, k, k, l, m, m, n, p, q, r, s, t, u, v), clustermap.components.map_report.t26743.prototype.om$core$IRenderState$ = !0, clustermap.components.map_report.t26743.prototype.om$core$IRenderState$render_state$arity$2 = function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, B, x, C, D) {
+  }(b, d, d, e, f, g, h, k, l, l, m, n, n, p, q, q, r, s, t, u, v, x, w), clustermap.components.map_report.t27074.prototype.om$core$IRenderState$ = !0, clustermap.components.map_report.t27074.prototype.om$core$IRenderState$render_state$arity$2 = function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, w, x, M, U, S) {
     return function(b, c) {
       var d = om.core.get_shared.call(null, this.owner), e = cljs.core.seq_QMARK_.call(null, d) ? cljs.core.apply.call(null, cljs.core.hash_map, d) : d, d = cljs.core.get.call(null, e, new cljs.core.Keyword(null, "view-path-fn", "view-path-fn", 630487502));
       cljs.core.get.call(null, e, new cljs.core.Keyword(null, "path-fn", "path-fn", -778614691));
       e = cljs.core.get.call(null, e, new cljs.core.Keyword(null, "comm", "comm", -1689770614));
       return clustermap.components.map_report.summary_stats_report.call(null, this.map_report, e, d, this.summary_stats_data);
     };
-  }(b, d, d, e, f, g, g, h, k, k, l, m, m, n, p, q, r, s, t, u, v), clustermap.components.map_report.t26743.prototype.om$core$IDidMount$ = !0, clustermap.components.map_report.t26743.prototype.om$core$IDidMount$did_mount$arity$1 = function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, B, x, C, D) {
-    return function(v) {
-      var H = this;
-      v = clustermap.ordered_resource.make_discard_stale_resource.call(null, "summary-stats");
-      om.core.set_state_BANG_.call(null, H.owner, new cljs.core.Keyword(null, "summary-stats-resource", "summary-stats-resource", -2107619160), v);
-      return clustermap.ordered_resource.retrieve_responses.call(null, v, function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, B, x, u, C, v, D, w) {
+  }(b, d, d, e, f, g, h, k, l, l, m, n, n, p, q, q, r, s, t, u, v, x, w), clustermap.components.map_report.t27074.prototype.om$core$IDidMount$ = !0, clustermap.components.map_report.t27074.prototype.om$core$IDidMount$did_mount$arity$1 = function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, w, x, M, U, S) {
+    return function(R) {
+      var X = this;
+      R = clustermap.ordered_resource.make_discard_stale_resource.call(null, "summary-stats");
+      om.core.set_state_BANG_.call(null, X.owner, new cljs.core.Keyword(null, "summary-stats-resource", "summary-stats-resource", -2107619160), R);
+      return clustermap.ordered_resource.retrieve_responses.call(null, R, function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, E, A, y, v, D, w, B, x) {
         return function(b) {
-          return om.core.update_BANG_.call(null, H.map_report, new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "summary-stats-data", "summary-stats-data", 1509580588)], null), b);
+          return om.core.update_BANG_.call(null, X.map_report, new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "summary-stats-data", "summary-stats-data", 1509580588)], null), b);
         };
-      }(v, this, b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, B, x, C, D));
+      }(R, this, b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, w, x, M, U, S));
     };
-  }(b, d, d, e, f, g, g, h, k, k, l, m, m, n, p, q, r, s, t, u, v), clustermap.components.map_report.t26743.prototype.cljs$core$IMeta$_meta$arity$1 = function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, B, x, C, v) {
+  }(b, d, d, e, f, g, h, k, l, l, m, n, n, p, q, q, r, s, t, u, v, x, w), clustermap.components.map_report.t27074.prototype.cljs$core$IMeta$_meta$arity$1 = function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, w, x, M, U, S) {
     return function(b) {
-      return this.meta26744;
+      return this.meta27075;
     };
-  }(b, d, d, e, f, g, g, h, k, k, l, m, m, n, p, q, r, s, t, u, v), clustermap.components.map_report.t26743.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, B, x, C, v) {
+  }(b, d, d, e, f, g, h, k, l, l, m, n, n, p, q, q, r, s, t, u, v, x, w), clustermap.components.map_report.t27074.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, w, x, M, U, S) {
     return function(b, c) {
-      return new clustermap.components.map_report.t26743(this.filt, this.index_type, this.owner, this.filter_by_view, this.data, this.index, this.map__26738, this.map__26740, this.controls, this.summary_stats_data, this.map_report, this.summary_stats, this.map_report_component, this.map__26741, this.variables, this.bounds, this.map__26742, this.p__26720, this.map__26739, c);
+      return new clustermap.components.map_report.t27074(this.p__27048, this.filt, this.index_type, this.owner, this.map__27072, this.filter_by_view, this.data, this.map__27070, this.index, this.map__27071, this.map__27069, this.controls, this.summary_stats_data, this.map_report, this.summary_stats, this.map_report_component, this.variables, this.bounds, this.map__27068, this.map__27073, c);
     };
-  }(b, d, d, e, f, g, g, h, k, k, l, m, m, n, p, q, r, s, t, u, v), clustermap.components.map_report.__GT_t26743 = function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, B, x, C, v) {
-    return function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, B, x, u, C) {
-      return new clustermap.components.map_report.t26743(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, B, x, u, C);
+  }(b, d, d, e, f, g, h, k, l, l, m, n, n, p, q, q, r, s, t, u, v, x, w), clustermap.components.map_report.__GT_t27074 = function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, w, x, M, U, S) {
+    return function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, E, A, y, v) {
+      return new clustermap.components.map_report.t27074(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, E, A, y, v);
     };
-  }(b, d, d, e, f, g, g, h, k, k, l, m, m, n, p, q, r, s, t, u, v));
-  return new clustermap.components.map_report.t26743(e, q, c, n, d, r, d, k, k, s, g, m, map_report_component, m, p, v, u, b, g, null);
+  }(b, d, d, e, f, g, h, k, l, l, m, n, n, p, q, q, r, s, t, u, v, x, w));
+  return new clustermap.components.map_report.t27074(b, h, s, c, q, g, d, l, t, n, f, n, u, l, q, map_report_component, r, w, d, x, null);
 };
 clustermap.data = {};
 clustermap.data.picker = {};
@@ -39957,99 +40195,127 @@ clustermap.data.colorchooser.choose = function(a, b, c, d, e) {
 };
 clustermap.components.filter = {};
 clustermap.components.filter.render = function(a, b, c) {
-  return React.DOM.div({className:"filter-component"}, React.DOM.div({className:"tbl"}, React.DOM.div({className:"tbl-row"}, React.DOM.div({className:"tbl-cell"}, React.DOM.h3(null, "Filter"))), React.DOM.div({className:"tbl-row"}, React.DOM.div({className:"tbl-cell"}, "age"), React.DOM.div({className:"tbl-cell"}, React.DOM.select({onChange:function(b) {
-    var c = b.target.value;
-    console.log(c);
-    return om.core.update_BANG_.call(null, a, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "components", "components", -1073188942), new cljs.core.Keyword(null, "age", "age", -604307804)], null), function() {
-      var a = cljs.core._EQ_;
-      return cljs.core.truth_(a.call(null, "new", c)) ? new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "range", "range", 1639692286), new cljs.core.PersistentArrayMap(null, 1, ["!formation_date", new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "gte", "gte", 1000474126), "2009-01-01"], null)], null)], null) : cljs.core.truth_(a.call(null, "old", c)) ? new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "range", "range", 1639692286), 
-      new cljs.core.PersistentArrayMap(null, 1, ["!formation_date", new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "lt", "lt", 421989243), "2009-01-01"], null)], null)], null) : null;
-    }());
-  }}, sablono.interpreter.option.call(null, {value:""}, "any"), sablono.interpreter.option.call(null, {value:"new"}, "\x3c 5 years old"), sablono.interpreter.option.call(null, {value:"old"}, "\x3e\x3d 5 years old")))), React.DOM.div({className:"tbl-row"}, React.DOM.div({className:"tbl-cell"}, "group ?"), React.DOM.div({className:"tbl-cell"}, React.DOM.select({onChange:function(b) {
-    var c = b.target.value;
-    console.log(c);
-    return om.core.update_BANG_.call(null, a, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "components", "components", -1073188942), new cljs.core.Keyword(null, "group", "group", 582596132)], null), function() {
-      var a = cljs.core._EQ_;
-      return cljs.core.truth_(a.call(null, "group", c)) ? new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "term", "term", -1817390416), new cljs.core.PersistentArrayMap(null, 1, ["!is_group", !0], null)], null) : cljs.core.truth_(a.call(null, "notgroup", c)) ? new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "term", "term", -1817390416), new cljs.core.PersistentArrayMap(null, 1, ["!is_group", !1], null)], null) : null;
-    }());
-  }}, sablono.interpreter.option.call(null, {value:""}, "any"), sablono.interpreter.option.call(null, {value:"group"}, "group"), sablono.interpreter.option.call(null, {value:"notgroup"}, "not group")))), React.DOM.div({className:"tbl-row"}, React.DOM.div({className:"tbl-cell"}, "turnover"), React.DOM.div({className:"tbl-cell"}, React.DOM.select({onChange:function(b) {
-    var c = b.target.value;
-    console.log(c);
-    return om.core.update_BANG_.call(null, a, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "components", "components", -1073188942), new cljs.core.Keyword(null, "turnover", "turnover", -1778310555)], null), function() {
-      var a = cljs.core._EQ_;
-      return cljs.core.truth_(a.call(null, "low", c)) ? new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "range", "range", 1639692286), new cljs.core.PersistentArrayMap(null, 1, ["!latest_turnover", new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "lt", "lt", 421989243), 1E6], null)], null)], null) : cljs.core.truth_(a.call(null, "high", c)) ? new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "range", "range", 1639692286), new cljs.core.PersistentArrayMap(null, 
-      1, ["!latest_turnover", new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "gte", "gte", 1000474126), 1E6], null)], null)], null) : null;
-    }());
-  }}, sablono.interpreter.option.call(null, {value:""}, "any"), sablono.interpreter.option.call(null, {value:"low"}, "\x3c \u00a31 million"), sablono.interpreter.option.call(null, {value:"high"}, "\x3e\x3d \u00a31 million")))), React.DOM.div({className:"tbl-row"}, React.DOM.div({className:"tbl-cell"}, "SIC section"), React.DOM.div({className:"tbl-cell"}, React.DOM.select({style:{width:"100%"}, onChange:function(b) {
-    var c = b.target.value;
-    console.log(b.target.value);
-    return om.core.update_BANG_.call(null, a, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "components", "components", -1073188942), new cljs.core.Keyword(null, "sic", "sic", 589884826)], null), function() {
-      var a = cljs.core._EQ_;
-      return cljs.core.truth_(a.call(null, "A", c)) ? new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "range", "range", 1639692286), new cljs.core.PersistentArrayMap(null, 1, ["!sic07", new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "gte", "gte", 1000474126), "01110", new cljs.core.Keyword(null, "lte", "lte", 1005402135), "03220"], null)], null)], null) : cljs.core.truth_(a.call(null, "B", c)) ? new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, 
-      "range", "range", 1639692286), new cljs.core.PersistentArrayMap(null, 1, ["!sic07", new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "gte", "gte", 1000474126), "05101", new cljs.core.Keyword(null, "lte", "lte", 1005402135), "09900"], null)], null)], null) : cljs.core.truth_(a.call(null, "C", c)) ? new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "range", "range", 1639692286), new cljs.core.PersistentArrayMap(null, 1, ["!sic07", new cljs.core.PersistentArrayMap(null, 
-      2, [new cljs.core.Keyword(null, "gte", "gte", 1000474126), "10110", new cljs.core.Keyword(null, "lte", "lte", 1005402135), "33200"], null)], null)], null) : cljs.core.truth_(a.call(null, "D", c)) ? new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "range", "range", 1639692286), new cljs.core.PersistentArrayMap(null, 1, ["!sic07", new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "gte", "gte", 1000474126), "35110", new cljs.core.Keyword(null, "lte", 
-      "lte", 1005402135), "35300"], null)], null)], null) : cljs.core.truth_(a.call(null, "E", c)) ? new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "range", "range", 1639692286), new cljs.core.PersistentArrayMap(null, 1, ["!sic07", new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "gte", "gte", 1000474126), "36000", new cljs.core.Keyword(null, "lte", "lte", 1005402135), "39000"], null)], null)], null) : cljs.core.truth_(a.call(null, "F", c)) ? new cljs.core.PersistentArrayMap(null, 
-      1, [new cljs.core.Keyword(null, "range", "range", 1639692286), new cljs.core.PersistentArrayMap(null, 1, ["!sic07", new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "gte", "gte", 1000474126), "41100", new cljs.core.Keyword(null, "lte", "lte", 1005402135), "43999"], null)], null)], null) : cljs.core.truth_(a.call(null, "G", c)) ? new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "range", "range", 1639692286), new cljs.core.PersistentArrayMap(null, 1, 
-      ["!sic07", new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "gte", "gte", 1000474126), "45111", new cljs.core.Keyword(null, "lte", "lte", 1005402135), "47990"], null)], null)], null) : cljs.core.truth_(a.call(null, "H", c)) ? new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "range", "range", 1639692286), new cljs.core.PersistentArrayMap(null, 1, ["!sic07", new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "gte", "gte", 1000474126), 
-      "49100", new cljs.core.Keyword(null, "lte", "lte", 1005402135), "53202"], null)], null)], null) : cljs.core.truth_(a.call(null, "I", c)) ? new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "range", "range", 1639692286), new cljs.core.PersistentArrayMap(null, 1, ["!sic07", new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "gte", "gte", 1000474126), "55100", new cljs.core.Keyword(null, "lte", "lte", 1005402135), "56302"], null)], null)], null) : cljs.core.truth_(a.call(null, 
-      "J", c)) ? new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "range", "range", 1639692286), new cljs.core.PersistentArrayMap(null, 1, ["!sic07", new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "gte", "gte", 1000474126), "58110", new cljs.core.Keyword(null, "lte", "lte", 1005402135), "63990"], null)], null)], null) : cljs.core.truth_(a.call(null, "K", c)) ? new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "range", "range", 1639692286), 
-      new cljs.core.PersistentArrayMap(null, 1, ["!sic07", new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "gte", "gte", 1000474126), "64110", new cljs.core.Keyword(null, "lte", "lte", 1005402135), "66300"], null)], null)], null) : cljs.core.truth_(a.call(null, "L", c)) ? new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "range", "range", 1639692286), new cljs.core.PersistentArrayMap(null, 1, ["!sic07", new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, 
-      "gte", "gte", 1000474126), "68100", new cljs.core.Keyword(null, "lte", "lte", 1005402135), "68320"], null)], null)], null) : cljs.core.truth_(a.call(null, "M", c)) ? new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "range", "range", 1639692286), new cljs.core.PersistentArrayMap(null, 1, ["!sic07", new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "gte", "gte", 1000474126), "69101", new cljs.core.Keyword(null, "lte", "lte", 1005402135), "75000"], null)], 
-      null)], null) : cljs.core.truth_(a.call(null, "N", c)) ? new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "range", "range", 1639692286), new cljs.core.PersistentArrayMap(null, 1, ["!sic07", new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "gte", "gte", 1000474126), "77110", new cljs.core.Keyword(null, "lte", "lte", 1005402135), "82990"], null)], null)], null) : cljs.core.truth_(a.call(null, "O", c)) ? new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, 
-      "range", "range", 1639692286), new cljs.core.PersistentArrayMap(null, 1, ["!sic07", new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "gte", "gte", 1000474126), "84110", new cljs.core.Keyword(null, "lte", "lte", 1005402135), "84300"], null)], null)], null) : cljs.core.truth_(a.call(null, "P", c)) ? new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "range", "range", 1639692286), new cljs.core.PersistentArrayMap(null, 1, ["!sic07", new cljs.core.PersistentArrayMap(null, 
-      2, [new cljs.core.Keyword(null, "gte", "gte", 1000474126), "85100", new cljs.core.Keyword(null, "lte", "lte", 1005402135), "85600"], null)], null)], null) : cljs.core.truth_(a.call(null, "Q", c)) ? new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "range", "range", 1639692286), new cljs.core.PersistentArrayMap(null, 1, ["!sic07", new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "gte", "gte", 1000474126), "86101", new cljs.core.Keyword(null, "lte", 
-      "lte", 1005402135), "88990"], null)], null)], null) : cljs.core.truth_(a.call(null, "R", c)) ? new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "range", "range", 1639692286), new cljs.core.PersistentArrayMap(null, 1, ["!sic07", new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "gte", "gte", 1000474126), "90010", new cljs.core.Keyword(null, "lte", "lte", 1005402135), "93290"], null)], null)], null) : cljs.core.truth_(a.call(null, "S", c)) ? new cljs.core.PersistentArrayMap(null, 
-      1, [new cljs.core.Keyword(null, "range", "range", 1639692286), new cljs.core.PersistentArrayMap(null, 1, ["!sic07", new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "gte", "gte", 1000474126), "94110", new cljs.core.Keyword(null, "lte", "lte", 1005402135), "96090"], null)], null)], null) : cljs.core.truth_(a.call(null, "T", c)) ? new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "range", "range", 1639692286), new cljs.core.PersistentArrayMap(null, 1, 
-      ["!sic07", new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "gte", "gte", 1000474126), "97000", new cljs.core.Keyword(null, "lte", "lte", 1005402135), "98200"], null)], null)], null) : cljs.core.truth_(a.call(null, "U", c)) ? new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "range", "range", 1639692286), new cljs.core.PersistentArrayMap(null, 1, ["!sic07", new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "gte", "gte", 1000474126), 
-      "99000", new cljs.core.Keyword(null, "lte", "lte", 1005402135), "99999"], null)], null)], null) : null;
-    }());
-  }}, sablono.interpreter.option.call(null, {value:""}, "all"), sablono.interpreter.option.call(null, {value:"A"}, "A : Agriculture, Forestry and Fishing"), sablono.interpreter.option.call(null, {value:"B"}, "B : Mining and Quarrying"), sablono.interpreter.option.call(null, {value:"C"}, "C : Manufacturing"), sablono.interpreter.option.call(null, {value:"D"}, "D : Electricity, gas, steam and air conditioning supply"), sablono.interpreter.option.call(null, {value:"E"}, "E : Water supply, sewerage, waste management and remediation activities"), 
+  b = cljs.core.seq_QMARK_.call(null, a) ? cljs.core.apply.call(null, cljs.core.hash_map, a) : a;
+  c = cljs.core.get.call(null, b, new cljs.core.Keyword(null, "bounds", "bounds", 1691609455));
+  var d = cljs.core.get.call(null, b, new cljs.core.Keyword(null, "filter-spec", "filter-spec", -1101318648));
+  return React.DOM.div({className:"filter-component"}, React.DOM.div({className:"tbl"}, React.DOM.div({className:"tbl-row"}, React.DOM.div({className:"tbl-cell"}, React.DOM.h3(null, "Filter"))), React.DOM.div({className:"tbl-row"}, React.DOM.div({className:"tbl-cell"}, "filter by view"), React.DOM.div({className:"tbl-cell"}, sablono.interpreter.input.call(null, {type:"checkbox", name:"filter-by-view", value:"true", onChange:function(a, b, c, d) {
+    return function(a) {
+      a = a.target.checked;
+      return om.core.update_BANG_.call(null, d, new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "filter-by-view", "filter-by-view", 902292255)], null), a);
+    };
+  }(a, b, c, d)}))), React.DOM.div({className:"tbl-row"}, React.DOM.div({className:"tbl-cell"}, "age"), React.DOM.div({className:"tbl-cell"}, React.DOM.select({onChange:function(a, b, c, d) {
+    return function(a) {
+      var b = a.target.value;
+      console.log(b);
+      return om.core.update_BANG_.call(null, d, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "components", "components", -1073188942), new cljs.core.Keyword(null, "age", "age", -604307804)], null), function() {
+        var a = cljs.core._EQ_;
+        return cljs.core.truth_(a.call(null, "new", b)) ? new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "range", "range", 1639692286), new cljs.core.PersistentArrayMap(null, 1, ["!formation_date", new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "gte", "gte", 1000474126), "2009-01-01"], null)], null)], null) : cljs.core.truth_(a.call(null, "old", b)) ? new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "range", "range", 1639692286), 
+        new cljs.core.PersistentArrayMap(null, 1, ["!formation_date", new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "lt", "lt", 421989243), "2009-01-01"], null)], null)], null) : null;
+      }());
+    };
+  }(a, b, c, d)}, sablono.interpreter.option.call(null, {value:""}, "any"), sablono.interpreter.option.call(null, {value:"new"}, "\x3c 5 years old"), sablono.interpreter.option.call(null, {value:"old"}, "\x3e\x3d 5 years old")))), React.DOM.div({className:"tbl-row"}, React.DOM.div({className:"tbl-cell"}, "group ?"), React.DOM.div({className:"tbl-cell"}, React.DOM.select({onChange:function(a, b, c, d) {
+    return function(a) {
+      var b = a.target.value;
+      console.log(b);
+      return om.core.update_BANG_.call(null, d, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "components", "components", -1073188942), new cljs.core.Keyword(null, "group", "group", 582596132)], null), function() {
+        var a = cljs.core._EQ_;
+        return cljs.core.truth_(a.call(null, "group", b)) ? new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "term", "term", -1817390416), new cljs.core.PersistentArrayMap(null, 1, ["!is_group", !0], null)], null) : cljs.core.truth_(a.call(null, "notgroup", b)) ? new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "term", "term", -1817390416), new cljs.core.PersistentArrayMap(null, 1, ["!is_group", !1], null)], null) : null;
+      }());
+    };
+  }(a, b, c, d)}, sablono.interpreter.option.call(null, {value:""}, "any"), sablono.interpreter.option.call(null, {value:"group"}, "group"), sablono.interpreter.option.call(null, {value:"notgroup"}, "not group")))), React.DOM.div({className:"tbl-row"}, React.DOM.div({className:"tbl-cell"}, "turnover"), React.DOM.div({className:"tbl-cell"}, React.DOM.select({onChange:function(a, b, c, d) {
+    return function(a) {
+      var b = a.target.value;
+      console.log(b);
+      return om.core.update_BANG_.call(null, d, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "components", "components", -1073188942), new cljs.core.Keyword(null, "turnover", "turnover", -1778310555)], null), function() {
+        var a = cljs.core._EQ_;
+        return cljs.core.truth_(a.call(null, "low", b)) ? new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "range", "range", 1639692286), new cljs.core.PersistentArrayMap(null, 1, ["!latest_turnover", new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "lt", "lt", 421989243), 1E6], null)], null)], null) : cljs.core.truth_(a.call(null, "high", b)) ? new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "range", "range", 1639692286), new cljs.core.PersistentArrayMap(null, 
+        1, ["!latest_turnover", new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "gte", "gte", 1000474126), 1E6], null)], null)], null) : null;
+      }());
+    };
+  }(a, b, c, d)}, sablono.interpreter.option.call(null, {value:""}, "any"), sablono.interpreter.option.call(null, {value:"low"}, "\x3c \u00a31 million"), sablono.interpreter.option.call(null, {value:"high"}, "\x3e\x3d \u00a31 million")))), React.DOM.div({className:"tbl-row"}, React.DOM.div({className:"tbl-cell"}, "SIC section"), React.DOM.div({className:"tbl-cell"}, React.DOM.select({style:{width:"100%"}, onChange:function(a, b, c, d) {
+    return function(a) {
+      var b = a.target.value;
+      console.log(a.target.value);
+      return om.core.update_BANG_.call(null, d, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "components", "components", -1073188942), new cljs.core.Keyword(null, "sic", "sic", 589884826)], null), function() {
+        var a = cljs.core._EQ_;
+        return cljs.core.truth_(a.call(null, "A", b)) ? new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "range", "range", 1639692286), new cljs.core.PersistentArrayMap(null, 1, ["!sic07", new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "gte", "gte", 1000474126), "01110", new cljs.core.Keyword(null, "lte", "lte", 1005402135), "03220"], null)], null)], null) : cljs.core.truth_(a.call(null, "B", b)) ? new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, 
+        "range", "range", 1639692286), new cljs.core.PersistentArrayMap(null, 1, ["!sic07", new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "gte", "gte", 1000474126), "05101", new cljs.core.Keyword(null, "lte", "lte", 1005402135), "09900"], null)], null)], null) : cljs.core.truth_(a.call(null, "C", b)) ? new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "range", "range", 1639692286), new cljs.core.PersistentArrayMap(null, 1, ["!sic07", new cljs.core.PersistentArrayMap(null, 
+        2, [new cljs.core.Keyword(null, "gte", "gte", 1000474126), "10110", new cljs.core.Keyword(null, "lte", "lte", 1005402135), "33200"], null)], null)], null) : cljs.core.truth_(a.call(null, "D", b)) ? new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "range", "range", 1639692286), new cljs.core.PersistentArrayMap(null, 1, ["!sic07", new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "gte", "gte", 1000474126), "35110", new cljs.core.Keyword(null, "lte", 
+        "lte", 1005402135), "35300"], null)], null)], null) : cljs.core.truth_(a.call(null, "E", b)) ? new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "range", "range", 1639692286), new cljs.core.PersistentArrayMap(null, 1, ["!sic07", new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "gte", "gte", 1000474126), "36000", new cljs.core.Keyword(null, "lte", "lte", 1005402135), "39000"], null)], null)], null) : cljs.core.truth_(a.call(null, "F", b)) ? new cljs.core.PersistentArrayMap(null, 
+        1, [new cljs.core.Keyword(null, "range", "range", 1639692286), new cljs.core.PersistentArrayMap(null, 1, ["!sic07", new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "gte", "gte", 1000474126), "41100", new cljs.core.Keyword(null, "lte", "lte", 1005402135), "43999"], null)], null)], null) : cljs.core.truth_(a.call(null, "G", b)) ? new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "range", "range", 1639692286), new cljs.core.PersistentArrayMap(null, 
+        1, ["!sic07", new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "gte", "gte", 1000474126), "45111", new cljs.core.Keyword(null, "lte", "lte", 1005402135), "47990"], null)], null)], null) : cljs.core.truth_(a.call(null, "H", b)) ? new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "range", "range", 1639692286), new cljs.core.PersistentArrayMap(null, 1, ["!sic07", new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "gte", "gte", 1000474126), 
+        "49100", new cljs.core.Keyword(null, "lte", "lte", 1005402135), "53202"], null)], null)], null) : cljs.core.truth_(a.call(null, "I", b)) ? new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "range", "range", 1639692286), new cljs.core.PersistentArrayMap(null, 1, ["!sic07", new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "gte", "gte", 1000474126), "55100", new cljs.core.Keyword(null, "lte", "lte", 1005402135), "56302"], null)], null)], null) : cljs.core.truth_(a.call(null, 
+        "J", b)) ? new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "range", "range", 1639692286), new cljs.core.PersistentArrayMap(null, 1, ["!sic07", new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "gte", "gte", 1000474126), "58110", new cljs.core.Keyword(null, "lte", "lte", 1005402135), "63990"], null)], null)], null) : cljs.core.truth_(a.call(null, "K", b)) ? new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "range", "range", 1639692286), 
+        new cljs.core.PersistentArrayMap(null, 1, ["!sic07", new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "gte", "gte", 1000474126), "64110", new cljs.core.Keyword(null, "lte", "lte", 1005402135), "66300"], null)], null)], null) : cljs.core.truth_(a.call(null, "L", b)) ? new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "range", "range", 1639692286), new cljs.core.PersistentArrayMap(null, 1, ["!sic07", new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, 
+        "gte", "gte", 1000474126), "68100", new cljs.core.Keyword(null, "lte", "lte", 1005402135), "68320"], null)], null)], null) : cljs.core.truth_(a.call(null, "M", b)) ? new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "range", "range", 1639692286), new cljs.core.PersistentArrayMap(null, 1, ["!sic07", new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "gte", "gte", 1000474126), "69101", new cljs.core.Keyword(null, "lte", "lte", 1005402135), "75000"], 
+        null)], null)], null) : cljs.core.truth_(a.call(null, "N", b)) ? new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "range", "range", 1639692286), new cljs.core.PersistentArrayMap(null, 1, ["!sic07", new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "gte", "gte", 1000474126), "77110", new cljs.core.Keyword(null, "lte", "lte", 1005402135), "82990"], null)], null)], null) : cljs.core.truth_(a.call(null, "O", b)) ? new cljs.core.PersistentArrayMap(null, 
+        1, [new cljs.core.Keyword(null, "range", "range", 1639692286), new cljs.core.PersistentArrayMap(null, 1, ["!sic07", new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "gte", "gte", 1000474126), "84110", new cljs.core.Keyword(null, "lte", "lte", 1005402135), "84300"], null)], null)], null) : cljs.core.truth_(a.call(null, "P", b)) ? new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "range", "range", 1639692286), new cljs.core.PersistentArrayMap(null, 
+        1, ["!sic07", new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "gte", "gte", 1000474126), "85100", new cljs.core.Keyword(null, "lte", "lte", 1005402135), "85600"], null)], null)], null) : cljs.core.truth_(a.call(null, "Q", b)) ? new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "range", "range", 1639692286), new cljs.core.PersistentArrayMap(null, 1, ["!sic07", new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "gte", "gte", 1000474126), 
+        "86101", new cljs.core.Keyword(null, "lte", "lte", 1005402135), "88990"], null)], null)], null) : cljs.core.truth_(a.call(null, "R", b)) ? new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "range", "range", 1639692286), new cljs.core.PersistentArrayMap(null, 1, ["!sic07", new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "gte", "gte", 1000474126), "90010", new cljs.core.Keyword(null, "lte", "lte", 1005402135), "93290"], null)], null)], null) : cljs.core.truth_(a.call(null, 
+        "S", b)) ? new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "range", "range", 1639692286), new cljs.core.PersistentArrayMap(null, 1, ["!sic07", new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "gte", "gte", 1000474126), "94110", new cljs.core.Keyword(null, "lte", "lte", 1005402135), "96090"], null)], null)], null) : cljs.core.truth_(a.call(null, "T", b)) ? new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "range", "range", 1639692286), 
+        new cljs.core.PersistentArrayMap(null, 1, ["!sic07", new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "gte", "gte", 1000474126), "97000", new cljs.core.Keyword(null, "lte", "lte", 1005402135), "98200"], null)], null)], null) : cljs.core.truth_(a.call(null, "U", b)) ? new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "range", "range", 1639692286), new cljs.core.PersistentArrayMap(null, 1, ["!sic07", new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, 
+        "gte", "gte", 1000474126), "99000", new cljs.core.Keyword(null, "lte", "lte", 1005402135), "99999"], null)], null)], null) : null;
+      }());
+    };
+  }(a, b, c, d)}, sablono.interpreter.option.call(null, {value:""}, "all"), sablono.interpreter.option.call(null, {value:"A"}, "A : Agriculture, Forestry and Fishing"), sablono.interpreter.option.call(null, {value:"B"}, "B : Mining and Quarrying"), sablono.interpreter.option.call(null, {value:"C"}, "C : Manufacturing"), sablono.interpreter.option.call(null, {value:"D"}, "D : Electricity, gas, steam and air conditioning supply"), sablono.interpreter.option.call(null, {value:"E"}, "E : Water supply, sewerage, waste management and remediation activities"), 
   sablono.interpreter.option.call(null, {value:"F"}, "F : Construction"), sablono.interpreter.option.call(null, {value:"G"}, "G : Wholesale and retail trade; repair of motor vehicles and motorcycles"), sablono.interpreter.option.call(null, {value:"H"}, "H : Transportation and storage"), sablono.interpreter.option.call(null, {value:"I"}, "I : Accommodation and food service activities"), sablono.interpreter.option.call(null, {value:"J"}, "J : Information and communication"), sablono.interpreter.option.call(null, 
   {value:"K"}, "K : Financial and insurance activities"), sablono.interpreter.option.call(null, {value:"L"}, "L : Real estate activities"), sablono.interpreter.option.call(null, {value:"M"}, "M : Professional, scientific and technical activities"), sablono.interpreter.option.call(null, {value:"N"}, "N : Administrative and support service activities"), sablono.interpreter.option.call(null, {value:"O"}, "O : Public administration and defence; compulsory social security"), sablono.interpreter.option.call(null, 
   {value:"P"}, "P : Education"), sablono.interpreter.option.call(null, {value:"Q"}, "Q : Human health and social work activities"), sablono.interpreter.option.call(null, {value:"R"}, "R : Arts, entertainment and recreation"), sablono.interpreter.option.call(null, {value:"S"}, "S : Other service activities"), sablono.interpreter.option.call(null, {value:"T"}, "T : Activities of households as employers"), sablono.interpreter.option.call(null, {value:"U"}, "U : Activities of extraterritorial organisations and bodies"))))));
 };
 clustermap.components.filter.filter_component = function filter_component(b, c) {
-  var d = cljs.core.seq_QMARK_.call(null, b) ? cljs.core.apply.call(null, cljs.core.hash_map, b) : b, e = cljs.core.get.call(null, d, new cljs.core.Keyword(null, "components", "components", -1073188942)), f = cljs.core.get.call(null, d, new cljs.core.Keyword(null, "compiled", "compiled", 850043082));
-  "undefined" === typeof clustermap.components.filter.t26229 && (clustermap.components.filter.t26229 = function(b, c, d, e, f, n, p, q) {
-    this.compiled = b;
-    this.components = c;
-    this.cursor = d;
-    this.map__26228 = e;
-    this.owner = f;
-    this.p__26221 = n;
-    this.filter_component = p;
-    this.meta26230 = q;
+  var d = cljs.core.seq_QMARK_.call(null, b) ? cljs.core.apply.call(null, cljs.core.hash_map, b) : b, e = cljs.core.get.call(null, d, new cljs.core.Keyword(null, "filter-spec", "filter-spec", -1101318648)), f = cljs.core.seq_QMARK_.call(null, e) ? cljs.core.apply.call(null, cljs.core.hash_map, e) : e, g = cljs.core.get.call(null, f, new cljs.core.Keyword(null, "components", "components", -1073188942)), h = cljs.core.get.call(null, f, new cljs.core.Keyword(null, "filter-by-view", "filter-by-view", 
+  902292255)), k = cljs.core.get.call(null, f, new cljs.core.Keyword(null, "compiled", "compiled", 850043082)), l = cljs.core.get.call(null, d, new cljs.core.Keyword(null, "bounds", "bounds", 1691609455));
+  "undefined" === typeof clustermap.components.filter.t26560 && (clustermap.components.filter.t26560 = function(b, c, d, e, f, g, h, k, l, x, w, y) {
+    this.filter_component = b;
+    this.owner = c;
+    this.filter_by_view = d;
+    this.props = e;
+    this.map__26558 = f;
+    this.p__26549 = g;
+    this.map__26559 = h;
+    this.filter_spec = k;
+    this.compiled = l;
+    this.bounds = x;
+    this.components = w;
+    this.meta26561 = y;
     this.cljs$lang$protocol_mask$partition1$ = 0;
     this.cljs$lang$protocol_mask$partition0$ = 393216;
-  }, clustermap.components.filter.t26229.cljs$lang$type = !0, clustermap.components.filter.t26229.cljs$lang$ctorStr = "clustermap.components.filter/t26229", clustermap.components.filter.t26229.cljs$lang$ctorPrWriter = function(b, c, d, e, f) {
+  }, clustermap.components.filter.t26560.cljs$lang$type = !0, clustermap.components.filter.t26560.cljs$lang$ctorStr = "clustermap.components.filter/t26560", clustermap.components.filter.t26560.cljs$lang$ctorPrWriter = function(b, c, d, e, f, g, h, k, l, x) {
     return function(b, c, d) {
-      return cljs.core._write.call(null, c, "clustermap.components.filter/t26229");
+      return cljs.core._write.call(null, c, "clustermap.components.filter/t26560");
     };
-  }(b, d, d, e, f), clustermap.components.filter.t26229.prototype.om$core$IWillUpdate$ = !0, clustermap.components.filter.t26229.prototype.om$core$IWillUpdate$will_update$arity$3 = function(b, c, d, e, f) {
+  }(b, d, d, e, f, f, g, h, k, l), clustermap.components.filter.t26560.prototype.om$core$IWillUpdate$ = !0, clustermap.components.filter.t26560.prototype.om$core$IWillUpdate$will_update$arity$3 = function(b, c, d, e, f, g, h, k, l, x) {
     return function(b, c, d) {
+      var e = this;
       b = cljs.core.seq_QMARK_.call(null, c) ? cljs.core.apply.call(null, cljs.core.hash_map, c) : c;
-      c = cljs.core.get.call(null, b, new cljs.core.Keyword(null, "components", "components", -1073188942));
-      cljs.core.get.call(null, b, new cljs.core.Keyword(null, "compiled", "compiled", 850043082));
-      return cljs.core.not_EQ_.call(null, c, this.components) ? om.core.update_BANG_.call(null, this.cursor, new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "compiled", "compiled", 850043082)], null), cljs.core.into.call(null, cljs.core.PersistentVector.EMPTY, cljs.core.filter.call(null, cljs.core.identity, cljs.core.map.call(null, om.core._value, cljs.core.vals.call(null, c))))) : null;
+      c = cljs.core.get.call(null, b, new cljs.core.Keyword(null, "filter-spec", "filter-spec", -1101318648));
+      c = cljs.core.seq_QMARK_.call(null, c) ? cljs.core.apply.call(null, cljs.core.hash_map, c) : c;
+      var f = cljs.core.get.call(null, c, new cljs.core.Keyword(null, "components", "components", -1073188942)), g = cljs.core.get.call(null, c, new cljs.core.Keyword(null, "filter-by-view", "filter-by-view", 902292255));
+      cljs.core.get.call(null, c, new cljs.core.Keyword(null, "compiled", "compiled", 850043082));
+      var h = cljs.core.get.call(null, b, new cljs.core.Keyword(null, "bounds", "bounds", 1691609455));
+      return cljs.core.truth_(function() {
+        var b = cljs.core.not_EQ_.call(null, f, e.components);
+        return b ? b : (b = cljs.core.not_EQ_.call(null, g, e.filter_by_view)) ? b : cljs.core.truth_(g) ? cljs.core.not_EQ_.call(null, h, e.bounds) : g;
+      }()) ? om.core.update_BANG_.call(null, e.filter_spec, new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "compiled", "compiled", 850043082)], null), cljs.core.into.call(null, cljs.core.PersistentVector.EMPTY, cljs.core.filter.call(null, cljs.core.identity, cljs.core.map.call(null, om.core._value, cljs.core.vals.call(null, f))))) : null;
     };
-  }(b, d, d, e, f), clustermap.components.filter.t26229.prototype.om$core$IRenderState$ = !0, clustermap.components.filter.t26229.prototype.om$core$IRenderState$render_state$arity$2 = function(b, c, d, e, f) {
+  }(b, d, d, e, f, f, g, h, k, l), clustermap.components.filter.t26560.prototype.om$core$IRenderState$ = !0, clustermap.components.filter.t26560.prototype.om$core$IRenderState$render_state$arity$2 = function(b, c, d, e, f, g, h, k, l, x) {
     return function(b, c) {
-      return clustermap.components.filter.render.call(null, this.cursor, this.owner, c);
+      return clustermap.components.filter.render.call(null, this.props, this.owner, c);
     };
-  }(b, d, d, e, f), clustermap.components.filter.t26229.prototype.cljs$core$IMeta$_meta$arity$1 = function(b, c, d, e, f) {
+  }(b, d, d, e, f, f, g, h, k, l), clustermap.components.filter.t26560.prototype.cljs$core$IMeta$_meta$arity$1 = function(b, c, d, e, f, g, h, k, l, x) {
     return function(b) {
-      return this.meta26230;
+      return this.meta26561;
     };
-  }(b, d, d, e, f), clustermap.components.filter.t26229.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(b, c, d, e, f) {
+  }(b, d, d, e, f, f, g, h, k, l), clustermap.components.filter.t26560.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(b, c, d, e, f, g, h, k, l, x) {
     return function(b, c) {
-      return new clustermap.components.filter.t26229(this.compiled, this.components, this.cursor, this.map__26228, this.owner, this.p__26221, this.filter_component, c);
+      return new clustermap.components.filter.t26560(this.filter_component, this.owner, this.filter_by_view, this.props, this.map__26558, this.p__26549, this.map__26559, this.filter_spec, this.compiled, this.bounds, this.components, c);
     };
-  }(b, d, d, e, f), clustermap.components.filter.__GT_t26229 = function(b, c, d, e, f) {
-    return function(b, c, d, e, f, g, h, k) {
-      return new clustermap.components.filter.t26229(b, c, d, e, f, g, h, k);
+  }(b, d, d, e, f, f, g, h, k, l), clustermap.components.filter.__GT_t26560 = function(b, c, d, e, f, g, h, k, l, x) {
+    return function(b, c, d, e, f, g, h, k, l, m, n, p) {
+      return new clustermap.components.filter.t26560(b, c, d, e, f, g, h, k, l, m, n, p);
     };
-  }(b, d, d, e, f));
-  return new clustermap.components.filter.t26229(f, e, d, d, c, b, filter_component, null);
+  }(b, d, d, e, f, f, g, h, k, l));
+  return new clustermap.components.filter.t26560(filter_component, c, h, d, d, b, f, f, k, l, g, null);
 };
 clustermap.components.mount = {};
 clustermap.components.mount.make_sequential = function(a) {
@@ -40404,43 +40670,43 @@ secretary.core.compile_route = function compile_route(b) {
     b = secretary.core.re_escape.call(null, b);
     return new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [b], null);
   }], null)], null), d = secretary.core.lex_route.call(null, b, c), e = cljs.core.nth.call(null, d, 0, null), f = cljs.core.nth.call(null, d, 1, null);
-  "undefined" === typeof secretary.core.t31943 && (secretary.core.t31943 = function(b, c, d, e, f, n, p) {
+  "undefined" === typeof secretary.core.t32373 && (secretary.core.t32373 = function(b, c, d, e, f, n, p) {
     this.params = b;
     this.re = c;
-    this.vec__31942 = d;
+    this.vec__32372 = d;
     this.clauses = e;
     this.orig_route = f;
     this.compile_route = n;
-    this.meta31944 = p;
+    this.meta32374 = p;
     this.cljs$lang$protocol_mask$partition1$ = 0;
     this.cljs$lang$protocol_mask$partition0$ = 393216;
-  }, secretary.core.t31943.cljs$lang$type = !0, secretary.core.t31943.cljs$lang$ctorStr = "secretary.core/t31943", secretary.core.t31943.cljs$lang$ctorPrWriter = function(b, c, d, e) {
+  }, secretary.core.t32373.cljs$lang$type = !0, secretary.core.t32373.cljs$lang$ctorStr = "secretary.core/t32373", secretary.core.t32373.cljs$lang$ctorPrWriter = function(b, c, d, e) {
     return function(b, c, d) {
-      return cljs.core._write.call(null, c, "secretary.core/t31943");
+      return cljs.core._write.call(null, c, "secretary.core/t32373");
     };
-  }(c, d, e, f), secretary.core.t31943.prototype.secretary$core$IRouteMatches$ = !0, secretary.core.t31943.prototype.secretary$core$IRouteMatches$route_matches$arity$2 = function(b, c, d, e) {
+  }(c, d, e, f), secretary.core.t32373.prototype.secretary$core$IRouteMatches$ = !0, secretary.core.t32373.prototype.secretary$core$IRouteMatches$route_matches$arity$2 = function(b, c, d, e) {
     return function(b, c) {
       var d = secretary.core.re_matches_STAR_.call(null, this.re, c);
       return cljs.core.truth_(d) ? (cljs.core.nth.call(null, d, 0, null), d = cljs.core.nthnext.call(null, d, 1), cljs.core.merge_with.call(null, cljs.core.vector, cljs.core.PersistentArrayMap.EMPTY, cljs.core.partition.call(null, 2, cljs.core.interleave.call(null, this.params, cljs.core.map.call(null, secretary.core.decode, d))))) : null;
     };
-  }(c, d, e, f), secretary.core.t31943.prototype.secretary$core$IRouteValue$ = !0, secretary.core.t31943.prototype.secretary$core$IRouteValue$route_value$arity$1 = function(b, c, d, e) {
+  }(c, d, e, f), secretary.core.t32373.prototype.secretary$core$IRouteValue$ = !0, secretary.core.t32373.prototype.secretary$core$IRouteValue$route_value$arity$1 = function(b, c, d, e) {
     return function(b) {
       return this.orig_route;
     };
-  }(c, d, e, f), secretary.core.t31943.prototype.cljs$core$IMeta$_meta$arity$1 = function(b, c, d, e) {
+  }(c, d, e, f), secretary.core.t32373.prototype.cljs$core$IMeta$_meta$arity$1 = function(b, c, d, e) {
     return function(b) {
-      return this.meta31944;
+      return this.meta32374;
     };
-  }(c, d, e, f), secretary.core.t31943.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(b, c, d, e) {
+  }(c, d, e, f), secretary.core.t32373.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(b, c, d, e) {
     return function(b, c) {
-      return new secretary.core.t31943(this.params, this.re, this.vec__31942, this.clauses, this.orig_route, this.compile_route, c);
+      return new secretary.core.t32373(this.params, this.re, this.vec__32372, this.clauses, this.orig_route, this.compile_route, c);
     };
-  }(c, d, e, f), secretary.core.__GT_t31943 = function(b, c, d, e) {
+  }(c, d, e, f), secretary.core.__GT_t32373 = function(b, c, d, e) {
     return function(b, c, d, e, f, g, h) {
-      return new secretary.core.t31943(b, c, d, e, f, g, h);
+      return new secretary.core.t32373(b, c, d, e, f, g, h);
     };
   }(c, d, e, f));
-  return new secretary.core.t31943(f, e, d, c, b, compile_route, null);
+  return new secretary.core.t32373(f, e, d, c, b, compile_route, null);
 };
 secretary.core.render_route_STAR_ = function() {
   var a = function(a, b) {
@@ -40579,16 +40845,16 @@ secretary.core.render_route.string = function(a, b) {
 };
 clustermap.components.color_scale = {};
 clustermap.components.color_scale.color_scale_component = function color_scale_component(b, c) {
-  "undefined" === typeof clustermap.components.color_scale.t26041 && (clustermap.components.color_scale.t26041 = function(b, c, f, g) {
+  "undefined" === typeof clustermap.components.color_scale.t26362 && (clustermap.components.color_scale.t26362 = function(b, c, f, g) {
     this.owner = b;
     this.threshold_colors = c;
     this.color_scale_component = f;
-    this.meta26042 = g;
+    this.meta26363 = g;
     this.cljs$lang$protocol_mask$partition1$ = 0;
     this.cljs$lang$protocol_mask$partition0$ = 393216;
-  }, clustermap.components.color_scale.t26041.cljs$lang$type = !0, clustermap.components.color_scale.t26041.cljs$lang$ctorStr = "clustermap.components.color-scale/t26041", clustermap.components.color_scale.t26041.cljs$lang$ctorPrWriter = function(b, c, f) {
-    return cljs.core._write.call(null, c, "clustermap.components.color-scale/t26041");
-  }, clustermap.components.color_scale.t26041.prototype.om$core$IRender$ = !0, clustermap.components.color_scale.t26041.prototype.om$core$IRender$render$arity$1 = function(b) {
+  }, clustermap.components.color_scale.t26362.cljs$lang$type = !0, clustermap.components.color_scale.t26362.cljs$lang$ctorStr = "clustermap.components.color-scale/t26362", clustermap.components.color_scale.t26362.cljs$lang$ctorPrWriter = function(b, c, f) {
+    return cljs.core._write.call(null, c, "clustermap.components.color-scale/t26362");
+  }, clustermap.components.color_scale.t26362.prototype.om$core$IRender$ = !0, clustermap.components.color_scale.t26362.prototype.om$core$IRender$render$arity$1 = function(b) {
     var c = this, f = this;
     return React.DOM.div({className:"color-scale"}, React.DOM.div({className:"tbl"}, React.DOM.div({className:"tbl-row"}, cljs.core.into_array.call(null, function() {
       return function(b) {
@@ -40627,14 +40893,14 @@ clustermap.components.color_scale.color_scale_component = function color_scale_c
         };
       }(f).call(null, c.threshold_colors);
     }()))));
-  }, clustermap.components.color_scale.t26041.prototype.cljs$core$IMeta$_meta$arity$1 = function(b) {
-    return this.meta26042;
-  }, clustermap.components.color_scale.t26041.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(b, c) {
-    return new clustermap.components.color_scale.t26041(this.owner, this.threshold_colors, this.color_scale_component, c);
-  }, clustermap.components.color_scale.__GT_t26041 = function(b, c, f, g) {
-    return new clustermap.components.color_scale.t26041(b, c, f, g);
+  }, clustermap.components.color_scale.t26362.prototype.cljs$core$IMeta$_meta$arity$1 = function(b) {
+    return this.meta26363;
+  }, clustermap.components.color_scale.t26362.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(b, c) {
+    return new clustermap.components.color_scale.t26362(this.owner, this.threshold_colors, this.color_scale_component, c);
+  }, clustermap.components.color_scale.__GT_t26362 = function(b, c, f, g) {
+    return new clustermap.components.color_scale.t26362(b, c, f, g);
   });
-  return new clustermap.components.color_scale.t26041(c, b, color_scale_component, null);
+  return new clustermap.components.color_scale.t26362(c, b, color_scale_component, null);
 };
 /*
  Portions of this code are from the Dojo Toolkit, received by
@@ -40825,7 +41091,7 @@ goog.dom.query = function() {
     return function(a) {
       return s(a) == h;
     };
-  }}, y = goog.userAgent.IE ? function(a) {
+  }}, x = goog.userAgent.IE ? function(a) {
     var b = a.toLowerCase();
     "class" == b && (a = "className");
     return function(c) {
@@ -40858,7 +41124,7 @@ goog.dom.query = function() {
     });
     b.attrs || goog.array.forEach(a.attrs, function(a) {
       var b, d = a.attr;
-      a.type && k[a.type] ? b = k[a.type](d, a.matchFor) : d.length && (b = y(d));
+      a.type && k[a.type] ? b = k[a.type](d, a.matchFor) : d.length && (b = x(d));
       b && (c = f(c, b));
     });
     b.id || a.id && (c = f(c, function(b) {
@@ -40866,21 +41132,21 @@ goog.dom.query = function() {
     }));
     c || "default" in b || (c = goog.functions.TRUE);
     return c;
-  }, E = function(a) {
+  }, y = function(a) {
     return function(b, c, d) {
       for (;b = b[m];) {
         if (!l || g(b)) {
-          d && !O(b, d) || !a(b) || c.push(b);
+          d && !T(b, d) || !a(b) || c.push(b);
           break;
         }
       }
       return c;
     };
-  }, V = function(a) {
+  }, K = function(a) {
     return function(b, c, d) {
       for (b = b[m];b;) {
         if (p(b)) {
-          if (d && !O(b, d)) {
+          if (d && !T(b, d)) {
             break;
           }
           a(b) && c.push(b);
@@ -40889,22 +41155,22 @@ goog.dom.query = function() {
       }
       return c;
     };
-  }, F = function(a) {
+  }, J = function(a) {
     a = a || goog.functions.TRUE;
     return function(b, d, e) {
       for (var f = 0, g = b[c];b = g[f++];) {
-        p(b) && (!e || O(b, e)) && a(b, f) && d.push(b);
+        p(b) && (!e || T(b, e)) && a(b, f) && d.push(b);
       }
       return d;
     };
-  }, z = {}, A = function(c) {
+  }, z = {}, C = function(c) {
     var d = z[c.query];
     if (d) {
       return d;
     }
     var e = c.infixOper, e = e ? e.oper : "", f = w(c, {el:1}), g = "*" == c.tag, h = goog.dom.getDocument().getElementsByClassName;
     if (e) {
-      h = {el:1}, g && (h.tag = 1), f = w(c, h), "+" == e ? d = E(f) : "~" == e ? d = V(f) : "\x3e" == e && (d = F(f));
+      h = {el:1}, g && (h.tag = 1), f = w(c, h), "+" == e ? d = y(f) : "~" == e ? d = K(f) : "\x3e" == e && (d = J(f));
     } else {
       if (c.id) {
         f = !c.loops && g ? goog.functions.TRUE : w(c, {el:1, id:1}), d = function(b, d) {
@@ -40945,10 +41211,10 @@ goog.dom.query = function() {
       }
     }
     return z[c.query] = d;
-  }, G = {}, N = {}, I = function(b) {
+  }, F = {}, N = {}, H = function(b) {
     var c = e(goog.string.trim(b));
     if (1 == c.length) {
-      var d = A(c[0]);
+      var d = C(c[0]);
       return function(a) {
         if (a = d(a, [])) {
           a.nozip = !0;
@@ -40963,7 +41229,7 @@ goog.dom.query = function() {
         d = c[k];
         e = b.length - 1;
         0 < e && (g = {}, h.nozip = !0);
-        e = A(d);
+        e = C(d);
         for (var l = 0;d = b[l];l++) {
           e(d, h, g);
         }
@@ -40974,23 +41240,23 @@ goog.dom.query = function() {
       }
       return h;
     };
-  }, J = !!goog.dom.getDocument().querySelectorAll && (!goog.userAgent.WEBKIT || goog.userAgent.isVersionOrHigher("526")), K = function(a, c) {
-    if (J) {
+  }, I = !!goog.dom.getDocument().querySelectorAll && (!goog.userAgent.WEBKIT || goog.userAgent.isVersionOrHigher("526")), G = function(a, c) {
+    if (I) {
       var d = N[a];
       if (d && !c) {
         return d;
       }
     }
-    if (d = G[a]) {
+    if (d = F[a]) {
       return d;
     }
     var d = a.charAt(0), e = -1 == a.indexOf(" ");
     0 <= a.indexOf("#") && e && (c = !0);
-    if (!J || c || -1 != "\x3e~+".indexOf(d) || goog.userAgent.IE && -1 != a.indexOf(":") || b && 0 <= a.indexOf(".") || -1 != a.indexOf(":contains") || -1 != a.indexOf("|\x3d")) {
+    if (!I || c || -1 != "\x3e~+".indexOf(d) || goog.userAgent.IE && -1 != a.indexOf(":") || b && 0 <= a.indexOf(".") || -1 != a.indexOf(":contains") || -1 != a.indexOf("|\x3d")) {
       var f = a.split(/\s*,\s*/);
-      return G[a] = 2 > f.length ? I(a) : function(a) {
+      return F[a] = 2 > f.length ? H(a) : function(a) {
         for (var b = 0, c = [], d;d = f[b++];) {
-          c = c.concat(I(d)(a));
+          c = c.concat(H(d)(a));
         }
         return c;
       };
@@ -41005,20 +41271,20 @@ goog.dom.query = function() {
         goog.userAgent.IE ? c.commentStrip = !0 : c.nozip = !0;
         return c;
       } catch (d) {
-        return K(a, !0)(b);
+        return G(a, !0)(b);
       }
     };
-  }, P = 0, R = goog.userAgent.IE ? function(a) {
-    return d ? a.getAttribute("_uid") || a.setAttribute("_uid", ++P) || P : a.uniqueID;
+  }, Q = 0, O = goog.userAgent.IE ? function(a) {
+    return d ? a.getAttribute("_uid") || a.setAttribute("_uid", ++Q) || Q : a.uniqueID;
   } : function(a) {
-    return a._uid || (a._uid = ++P);
-  }, O = function(a, b) {
+    return a._uid || (a._uid = ++Q);
+  }, T = function(a, b) {
     if (!b) {
       return 1;
     }
-    var c = R(a);
+    var c = O(a);
     return b[c] ? 0 : b[c] = 1;
-  }, Q = function(a) {
+  }, V = function(a) {
     if (a && a.nozip) {
       return a;
     }
@@ -41030,9 +41296,9 @@ goog.dom.query = function() {
     if (2 > a.length) {
       return b;
     }
-    P++;
+    Q++;
     if (goog.userAgent.IE && d) {
-      var c = P + "";
+      var c = Q + "";
       a[0].setAttribute("_zipIdx", c);
       for (var e = 1, f;f = a[e];e++) {
         a[e].getAttribute("_zipIdx") != c && b.push(f), f.setAttribute("_zipIdx", c);
@@ -41046,13 +41312,13 @@ goog.dom.query = function() {
         } catch (h) {
         }
       } else {
-        for (a[0] && (a[0]._zipIdx = P), e = 1;f = a[e];e++) {
-          a[e]._zipIdx != P && b.push(f), f._zipIdx = P;
+        for (a[0] && (a[0]._zipIdx = Q), e = 1;f = a[e];e++) {
+          a[e]._zipIdx != Q && b.push(f), f._zipIdx = Q;
         }
       }
     }
     return b;
-  }, T = function(a, b) {
+  }, W = function(a, b) {
     if (!a) {
       return[];
     }
@@ -41068,10 +41334,10 @@ goog.dom.query = function() {
     b = b || goog.dom.getDocument();
     var c = b.ownerDocument || b.documentElement;
     d = b.contentType && "application/xml" == b.contentType || goog.userAgent.OPERA && (b.doctype || "[object XMLDocument]" == c.toString()) || !!c && (goog.userAgent.IE ? c.xml : b.xmlVersion || c.xmlVersion);
-    return(c = K(a)(b)) && c.nozip ? c : Q(c);
+    return(c = G(a)(b)) && c.nozip ? c : V(c);
   };
-  T.pseudos = v;
-  return T;
+  W.pseudos = v;
+  return W;
 }();
 goog.exportSymbol("goog.dom.query", goog.dom.query);
 goog.exportSymbol("goog.dom.query.pseudos", goog.dom.query.pseudos);
@@ -41083,37 +41349,37 @@ domina.css.sel = function() {
   var a = null, b = function(b) {
     return a.call(null, domina.css.root_element.call(null), b);
   }, c = function(b, c) {
-    "undefined" === typeof domina.css.t32784 && (domina.css.t32784 = function(a, b, c, d) {
+    "undefined" === typeof domina.css.t33214 && (domina.css.t33214 = function(a, b, c, d) {
       this.expr = a;
       this.base = b;
       this.sel = c;
-      this.meta32785 = d;
+      this.meta33215 = d;
       this.cljs$lang$protocol_mask$partition1$ = 0;
       this.cljs$lang$protocol_mask$partition0$ = 393216;
-    }, domina.css.t32784.cljs$lang$type = !0, domina.css.t32784.cljs$lang$ctorStr = "domina.css/t32784", domina.css.t32784.cljs$lang$ctorPrWriter = function(a, b, c) {
-      return cljs.core._write.call(null, b, "domina.css/t32784");
-    }, domina.css.t32784.prototype.domina$DomContent$ = !0, domina.css.t32784.prototype.domina$DomContent$nodes$arity$1 = function(a) {
+    }, domina.css.t33214.cljs$lang$type = !0, domina.css.t33214.cljs$lang$ctorStr = "domina.css/t33214", domina.css.t33214.cljs$lang$ctorPrWriter = function(a, b, c) {
+      return cljs.core._write.call(null, b, "domina.css/t33214");
+    }, domina.css.t33214.prototype.domina$DomContent$ = !0, domina.css.t33214.prototype.domina$DomContent$nodes$arity$1 = function(a) {
       var b = this;
       return cljs.core.mapcat.call(null, function(a) {
         return function(a) {
           return domina.normalize_seq.call(null, goog.dom.query(b.expr, a));
         };
       }(this), domina.nodes.call(null, b.base));
-    }, domina.css.t32784.prototype.domina$DomContent$single_node$arity$1 = function(a) {
+    }, domina.css.t33214.prototype.domina$DomContent$single_node$arity$1 = function(a) {
       var b = this;
       return cljs.core.first.call(null, cljs.core.filter.call(null, cljs.core.complement.call(null, cljs.core.nil_QMARK_), cljs.core.mapcat.call(null, function(a) {
         return function(a) {
           return domina.normalize_seq.call(null, goog.dom.query(b.expr, a));
         };
       }(this), domina.nodes.call(null, b.base))));
-    }, domina.css.t32784.prototype.cljs$core$IMeta$_meta$arity$1 = function(a) {
-      return this.meta32785;
-    }, domina.css.t32784.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(a, b) {
-      return new domina.css.t32784(this.expr, this.base, this.sel, b);
-    }, domina.css.__GT_t32784 = function(a, b, c, d) {
-      return new domina.css.t32784(a, b, c, d);
+    }, domina.css.t33214.prototype.cljs$core$IMeta$_meta$arity$1 = function(a) {
+      return this.meta33215;
+    }, domina.css.t33214.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(a, b) {
+      return new domina.css.t33214(this.expr, this.base, this.sel, b);
+    }, domina.css.__GT_t33214 = function(a, b, c, d) {
+      return new domina.css.t33214(a, b, c, d);
     });
-    return new domina.css.t32784(c, b, a, null);
+    return new domina.css.t33214(c, b, a, null);
   }, a = function(a, e) {
     switch(arguments.length) {
       case 1:
@@ -41171,27 +41437,27 @@ domina.xpath.xpath = function() {
   var a = null, b = function(b) {
     return a.call(null, domina.xpath.root_element.call(null), b);
   }, c = function(b, c) {
-    "undefined" === typeof domina.xpath.t33244 && (domina.xpath.t33244 = function(a, b, c, d) {
+    "undefined" === typeof domina.xpath.t33674 && (domina.xpath.t33674 = function(a, b, c, d) {
       this.expr = a;
       this.base = b;
       this.xpath = c;
-      this.meta33245 = d;
+      this.meta33675 = d;
       this.cljs$lang$protocol_mask$partition1$ = 0;
       this.cljs$lang$protocol_mask$partition0$ = 393216;
-    }, domina.xpath.t33244.cljs$lang$type = !0, domina.xpath.t33244.cljs$lang$ctorStr = "domina.xpath/t33244", domina.xpath.t33244.cljs$lang$ctorPrWriter = function(a, b, c) {
-      return cljs.core._write.call(null, b, "domina.xpath/t33244");
-    }, domina.xpath.t33244.prototype.domina$DomContent$ = !0, domina.xpath.t33244.prototype.domina$DomContent$nodes$arity$1 = function(a) {
+    }, domina.xpath.t33674.cljs$lang$type = !0, domina.xpath.t33674.cljs$lang$ctorStr = "domina.xpath/t33674", domina.xpath.t33674.cljs$lang$ctorPrWriter = function(a, b, c) {
+      return cljs.core._write.call(null, b, "domina.xpath/t33674");
+    }, domina.xpath.t33674.prototype.domina$DomContent$ = !0, domina.xpath.t33674.prototype.domina$DomContent$nodes$arity$1 = function(a) {
       return cljs.core.mapcat.call(null, cljs.core.partial.call(null, domina.xpath.select_nodes, this.expr), domina.nodes.call(null, this.base));
-    }, domina.xpath.t33244.prototype.domina$DomContent$single_node$arity$1 = function(a) {
+    }, domina.xpath.t33674.prototype.domina$DomContent$single_node$arity$1 = function(a) {
       return cljs.core.first.call(null, cljs.core.filter.call(null, cljs.core.complement.call(null, cljs.core.nil_QMARK_), cljs.core.map.call(null, cljs.core.partial.call(null, domina.xpath.select_node, this.expr), domina.nodes.call(null, this.base))));
-    }, domina.xpath.t33244.prototype.cljs$core$IMeta$_meta$arity$1 = function(a) {
-      return this.meta33245;
-    }, domina.xpath.t33244.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(a, b) {
-      return new domina.xpath.t33244(this.expr, this.base, this.xpath, b);
-    }, domina.xpath.__GT_t33244 = function(a, b, c, d) {
-      return new domina.xpath.t33244(a, b, c, d);
+    }, domina.xpath.t33674.prototype.cljs$core$IMeta$_meta$arity$1 = function(a) {
+      return this.meta33675;
+    }, domina.xpath.t33674.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(a, b) {
+      return new domina.xpath.t33674(this.expr, this.base, this.xpath, b);
+    }, domina.xpath.__GT_t33674 = function(a, b, c, d) {
+      return new domina.xpath.t33674(a, b, c, d);
     });
-    return new domina.xpath.t33244(c, b, a, null);
+    return new domina.xpath.t33674(c, b, a, null);
   }, a = function(a, e) {
     switch(arguments.length) {
       case 1:
@@ -41320,29 +41586,29 @@ clustermap.components.page_title.page_title_component = function page_title_comp
     var b = null == d ? null : (new cljs.core.Keyword(null, "value", "value", 305978217)).cljs$core$IFn$_invoke$arity$1(d);
     return null == b ? null : (new cljs.core.Keyword(null, "web_url", "web_url", 2107881046)).cljs$core$IFn$_invoke$arity$1(b);
   }();
-  "undefined" === typeof clustermap.components.page_title.t26809 && (clustermap.components.page_title.t26809 = function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, J) {
+  "undefined" === typeof clustermap.components.page_title.t27141 && (clustermap.components.page_title.t27141 = function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, I) {
     this.selection = b;
     this.owner = c;
     this.path_fn = d;
     this.type_descr = e;
-    this.value = f;
-    this.name = g;
-    this.comm = h;
-    this.page_title_component = k;
-    this.type = l;
-    this.view_path_fn = m;
-    this.p__26793 = n;
-    this.url = p;
-    this.map__26804 = q;
-    this.map__26805 = r;
-    this.meta26810 = J;
+    this.map__27137 = f;
+    this.value = g;
+    this.name = h;
+    this.comm = k;
+    this.p__27125 = l;
+    this.page_title_component = m;
+    this.type = n;
+    this.view_path_fn = p;
+    this.map__27136 = q;
+    this.url = r;
+    this.meta27142 = I;
     this.cljs$lang$protocol_mask$partition1$ = 0;
     this.cljs$lang$protocol_mask$partition0$ = 393216;
-  }, clustermap.components.page_title.t26809.cljs$lang$type = !0, clustermap.components.page_title.t26809.cljs$lang$ctorStr = "clustermap.components.page-title/t26809", clustermap.components.page_title.t26809.cljs$lang$ctorPrWriter = function(b, c, d, e, f, g, h, k, l, m, n, p, q, r) {
+  }, clustermap.components.page_title.t27141.cljs$lang$type = !0, clustermap.components.page_title.t27141.cljs$lang$ctorStr = "clustermap.components.page-title/t27141", clustermap.components.page_title.t27141.cljs$lang$ctorPrWriter = function(b, c, d, e, f, g, h, k, l, m, n, p, q, r) {
     return function(b, c, d) {
-      return cljs.core._write.call(null, c, "clustermap.components.page-title/t26809");
+      return cljs.core._write.call(null, c, "clustermap.components.page-title/t27141");
     };
-  }(g, h, k, l, m, n, p, q, r, b, d, d, e, f), clustermap.components.page_title.t26809.prototype.om$core$IRender$ = !0, clustermap.components.page_title.t26809.prototype.om$core$IRender$render$arity$1 = function(b, c, d, e, f, g, h, k, l, m, n, p, q, r) {
+  }(g, h, k, l, m, n, p, q, r, b, d, d, e, f), clustermap.components.page_title.t27141.prototype.om$core$IRender$ = !0, clustermap.components.page_title.t27141.prototype.om$core$IRender$render$arity$1 = function(b, c, d, e, f, g, h, k, l, m, n, p, q, r) {
     return function(b) {
       var c = this;
       return React.DOM.div({id:"page-title"}, React.DOM.a({className:"btn btn-link", href:c.view_path_fn.call(null, new cljs.core.Keyword(null, "map", "map", 1371690461))}, "View on map"), sablono.interpreter.interpret.call(null, cljs.core.truth_(c.type_descr) ? clustermap.components.reset_selection_button.reset_selection_button.call(null, c.path_fn) : null), function() {
@@ -41360,20 +41626,20 @@ clustermap.components.page_title.page_title_component = function page_title_comp
         ")"], null) : null)], null)));
       }(), cljs.core.truth_(c.url) ? React.DOM.a({href:c.url, target:"_blank"}, sablono.interpreter.interpret.call(null, c.url)) : null);
     };
-  }(g, h, k, l, m, n, p, q, r, b, d, d, e, f), clustermap.components.page_title.t26809.prototype.cljs$core$IMeta$_meta$arity$1 = function(b, c, d, e, f, g, h, k, l, m, n, p, q, r) {
+  }(g, h, k, l, m, n, p, q, r, b, d, d, e, f), clustermap.components.page_title.t27141.prototype.cljs$core$IMeta$_meta$arity$1 = function(b, c, d, e, f, g, h, k, l, m, n, p, q, r) {
     return function(b) {
-      return this.meta26810;
+      return this.meta27142;
     };
-  }(g, h, k, l, m, n, p, q, r, b, d, d, e, f), clustermap.components.page_title.t26809.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(b, c, d, e, f, g, h, k, l, m, n, p, q, r) {
+  }(g, h, k, l, m, n, p, q, r, b, d, d, e, f), clustermap.components.page_title.t27141.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(b, c, d, e, f, g, h, k, l, m, n, p, q, r) {
     return function(b, c) {
-      return new clustermap.components.page_title.t26809(this.selection, this.owner, this.path_fn, this.type_descr, this.value, this.name, this.comm, this.page_title_component, this.type, this.view_path_fn, this.p__26793, this.url, this.map__26804, this.map__26805, c);
+      return new clustermap.components.page_title.t27141(this.selection, this.owner, this.path_fn, this.type_descr, this.map__27137, this.value, this.name, this.comm, this.p__27125, this.page_title_component, this.type, this.view_path_fn, this.map__27136, this.url, c);
     };
-  }(g, h, k, l, m, n, p, q, r, b, d, d, e, f), clustermap.components.page_title.__GT_t26809 = function(b, c, d, e, f, g, h, k, l, m, n, p, q, r) {
+  }(g, h, k, l, m, n, p, q, r, b, d, d, e, f), clustermap.components.page_title.__GT_t27141 = function(b, c, d, e, f, g, h, k, l, m, n, p, q, r) {
     return function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s) {
-      return new clustermap.components.page_title.t26809(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s);
+      return new clustermap.components.page_title.t27141(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s);
     };
   }(g, h, k, l, m, n, p, q, r, b, d, d, e, f));
-  return new clustermap.components.page_title.t26809(d, c, n, p, e, q, m, page_title_component, f, k, b, r, d, h, null);
+  return new clustermap.components.page_title.t27141(d, c, n, p, h, e, q, m, b, page_title_component, f, k, d, r, null);
 };
 clustermap.components.page_title.mount = function(a, b, c) {
   return om.core.root.call(null, clustermap.om.burrow.call(null, clustermap.components.page_title.page_title_component, new cljs.core.Keyword(null, "selection", "selection", 975998651)), a, new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "shared", "shared", -384145993), c, new cljs.core.Keyword(null, "target", "target", 253001721), document.getElementById(b)], null));
@@ -41577,7 +41843,7 @@ clustermap.components.map.update_paths = function(a, b, c, d, e, f, g) {
       var b = cljs.core.get.call(null, m, a), c = cljs.core.nth.call(null, b, 0, null), b = cljs.core.nth.call(null, b, 1, null);
       return cljs.core.truth_(cljs.core.truth_(a) ? cljs.core.truth_(c) ? b : c : a) ? new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [a, c, b], null) : null;
     };
-  }(h, k, l, m, n, p, q, r, s, t, u, b), p))), y = cljs.core.map.call(null, function(b, d, e, h, k, l, m, n, p, q, r, s, t) {
+  }(h, k, l, m, n, p, q, r, s, t, u, b), p))), x = cljs.core.map.call(null, function(b, d, e, h, k, l, m, n, p, q, r, s, t) {
     return function(d) {
       var e = cljs.core.nth.call(null, d, 0, null), k = cljs.core.nth.call(null, d, 1, null);
       d = cljs.core.nth.call(null, d, 2, null);
@@ -41607,7 +41873,7 @@ clustermap.components.map.update_paths = function(a, b, c, d, e, f, g) {
       var c = cljs.core.seq_QMARK_.call(null, b) ? cljs.core.apply.call(null, cljs.core.hash_map, b) : b, d = cljs.core.get.call(null, c, new cljs.core.Keyword(null, "id", "id", -1388402092));
       return cljs.core.assoc.call(null, a, d, c);
     };
-  }(h, k, l, m, n, p, q, r, s, t, u, b, v, y, w), cljs.core.PersistentArrayMap.EMPTY, cljs.core.filter.call(null, cljs.core.identity, cljs.core.concat.call(null, v, y)));
+  }(h, k, l, m, n, p, q, r, s, t, u, b, v, x, w), cljs.core.PersistentArrayMap.EMPTY, cljs.core.filter.call(null, cljs.core.identity, cljs.core.concat.call(null, v, x)));
   cljs.core.reset_BANG_.call(null, e, m);
   cljs.core.reset_BANG_.call(null, d, k);
   return b;
@@ -41636,34 +41902,34 @@ clustermap.components.map.map_component = function map_component(b, c) {
   f, new cljs.core.Keyword(null, "boundaryline-collections", "boundaryline-collections", 1750591980)), l = cljs.core.get.call(null, f, new cljs.core.Keyword(null, "controls", "controls", 1340701452)), m = cljs.core.seq_QMARK_.call(null, l) ? cljs.core.apply.call(null, cljs.core.hash_map, l) : l, n = cljs.core.get.call(null, m, new cljs.core.Keyword(null, "threshold-colors", "threshold-colors", 615635983)), p = cljs.core.get.call(null, m, new cljs.core.Keyword(null, "boundaryline-agg", "boundaryline-agg", 
   1246510775)), q = cljs.core.get.call(null, m, new cljs.core.Keyword(null, "colorchooser", "colorchooser", 1990432729)), r = cljs.core.get.call(null, m, new cljs.core.Keyword(null, "boundaryline-collection", "boundaryline-collection", 853329936)), s = cljs.core.get.call(null, m, new cljs.core.Keyword(null, "zoom", "zoom", -1827487038)), t = cljs.core.get.call(null, m, new cljs.core.Keyword(null, "bounds", "bounds", 1691609455)), u = cljs.core.get.call(null, m, new cljs.core.Keyword(null, "initial-bounds", 
   "initial-bounds", -1404401542)), v = cljs.core.get.call(null, d, new cljs.core.Keyword(null, "filter", "filter", -948537934));
-  "undefined" === typeof clustermap.components.map.t26622 && (clustermap.components.map.t26622 = function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, x, C) {
+  "undefined" === typeof clustermap.components.map.t26954 && (clustermap.components.map.t26954 = function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, A, D) {
     this.colorchooser = b;
     this.initial_bounds = c;
-    this.owner = d;
-    this.data = e;
-    this.zoom = f;
-    this.map__26621 = g;
-    this.cursor_data = h;
-    this.map__26620 = k;
-    this.map_component = l;
-    this.boundaryline_collections = m;
-    this.cursor = n;
-    this.p__26580 = p;
-    this.threshold_colors = q;
-    this.bounds = r;
-    this.boundaryline_collection = s;
-    this.map__26619 = t;
+    this.map__26951 = d;
+    this.owner = e;
+    this.map__26952 = f;
+    this.data = g;
+    this.zoom = h;
+    this.p__26912 = k;
+    this.map__26953 = l;
+    this.cursor_data = m;
+    this.map_component = n;
+    this.boundaryline_collections = p;
+    this.cursor = q;
+    this.threshold_colors = r;
+    this.bounds = s;
+    this.boundaryline_collection = t;
     this.filter = u;
     this.point_data = v;
-    this.boundaryline_agg = x;
-    this.meta26623 = C;
+    this.boundaryline_agg = A;
+    this.meta26955 = D;
     this.cljs$lang$protocol_mask$partition1$ = 0;
     this.cljs$lang$protocol_mask$partition0$ = 393216;
-  }, clustermap.components.map.t26622.cljs$lang$type = !0, clustermap.components.map.t26622.cljs$lang$ctorStr = "clustermap.components.map/t26622", clustermap.components.map.t26622.cljs$lang$ctorPrWriter = function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, x) {
+  }, clustermap.components.map.t26954.cljs$lang$type = !0, clustermap.components.map.t26954.cljs$lang$ctorStr = "clustermap.components.map/t26954", clustermap.components.map.t26954.cljs$lang$ctorPrWriter = function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, A) {
     return function(b, c, d) {
-      return cljs.core._write.call(null, c, "clustermap.components.map/t26622");
+      return cljs.core._write.call(null, c, "clustermap.components.map/t26954");
     };
-  }(b, d, d, e, f, f, g, h, k, l, m, n, p, q, r, s, t, u, v), clustermap.components.map.t26622.prototype.om$core$IWillUnmount$ = !0, clustermap.components.map.t26622.prototype.om$core$IWillUnmount$will_unmount$arity$1 = function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, x) {
+  }(b, d, d, e, f, f, g, h, k, l, m, n, p, q, r, s, t, u, v), clustermap.components.map.t26954.prototype.om$core$IWillUnmount$ = !0, clustermap.components.map.t26954.prototype.om$core$IWillUnmount$will_unmount$arity$1 = function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, A) {
     return function(b) {
       b = om.core.get_state.call(null, this.owner);
       var c = cljs.core.seq_QMARK_.call(null, b) ? cljs.core.apply.call(null, cljs.core.hash_map, b) : b;
@@ -41672,59 +41938,59 @@ clustermap.components.map.map_component = function map_component(b, c) {
       clustermap.ordered_resource.close.call(null, c);
       return clustermap.ordered_resource.close.call(null, b);
     };
-  }(b, d, d, e, f, f, g, h, k, l, m, n, p, q, r, s, t, u, v), clustermap.components.map.t26622.prototype.om$core$IWillUpdate$ = !0, clustermap.components.map.t26622.prototype.om$core$IWillUpdate$will_update$arity$3 = function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, x) {
-    return function(C, D, M) {
-      var H = this;
-      C = cljs.core.seq_QMARK_.call(null, D) ? cljs.core.apply.call(null, cljs.core.hash_map, D) : D;
-      var W = cljs.core.get.call(null, C, new cljs.core.Keyword(null, "map-state", "map-state", -1227493550)), U = cljs.core.seq_QMARK_.call(null, W) ? cljs.core.apply.call(null, cljs.core.hash_map, W) : W, S = cljs.core.get.call(null, U, new cljs.core.Keyword(null, "data", "data", -232669377)), X = cljs.core.get.call(null, U, new cljs.core.Keyword(null, "point-data", "point-data", -1294572970)), Y = cljs.core.get.call(null, U, new cljs.core.Keyword(null, "boundaryline-collections", "boundaryline-collections", 
-      1750591980)), da = cljs.core.get.call(null, U, new cljs.core.Keyword(null, "controls", "controls", 1340701452)), $ = cljs.core.seq_QMARK_.call(null, da) ? cljs.core.apply.call(null, cljs.core.hash_map, da) : da, ca = cljs.core.get.call(null, $, new cljs.core.Keyword(null, "zoom", "zoom", -1827487038)), aa = cljs.core.get.call(null, $, new cljs.core.Keyword(null, "bounds", "bounds", 1691609455)), ba = cljs.core.get.call(null, $, new cljs.core.Keyword(null, "boundaryline-collection", "boundaryline-collection", 
-      853329936)), ea = cljs.core.get.call(null, $, new cljs.core.Keyword(null, "colorchooser", "colorchooser", 1990432729)), fa = cljs.core.get.call(null, $, new cljs.core.Keyword(null, "boundaryline-agg", "boundaryline-agg", 1246510775)), ua = cljs.core.get.call(null, $, new cljs.core.Keyword(null, "threshold-colors", "threshold-colors", 615635983)), la = cljs.core.get.call(null, C, new cljs.core.Keyword(null, "filter", "filter", -948537934)), ma = cljs.core.seq_QMARK_.call(null, M) ? cljs.core.apply.call(null, 
-      cljs.core.hash_map, M) : M, qa = cljs.core.get.call(null, ma, new cljs.core.Keyword(null, "map", "map", 1371690461)), ra = cljs.core.seq_QMARK_.call(null, qa) ? cljs.core.apply.call(null, cljs.core.hash_map, qa) : qa, va = cljs.core.get.call(null, ra, new cljs.core.Keyword(null, "markers", "markers", -246919693)), na = cljs.core.get.call(null, ra, new cljs.core.Keyword(null, "paths", "paths", -1807389588)), Ja = cljs.core.get.call(null, ra, new cljs.core.Keyword(null, "path-selections", "path-selections", 
-      -1495179033)), Ka = cljs.core.get.call(null, ma, new cljs.core.Keyword(null, "path-highlights", "path-highlights", -1452960411)), Ba = cljs.core.get.call(null, ma, new cljs.core.Keyword(null, "aggregation-data-resource", "aggregation-data-resource", 992435689)), ya = cljs.core.get.call(null, ma, new cljs.core.Keyword(null, "point-data-resource", "point-data-resource", -64127097)), ia = om.core.get_shared.call(null, H.owner), ja = cljs.core.seq_QMARK_.call(null, ia) ? cljs.core.apply.call(null, 
-      cljs.core.hash_map, ia) : ia, Ca = cljs.core.get.call(null, ja, new cljs.core.Keyword(null, "point-in-boundarylines-fn", "point-in-boundarylines-fn", -1836497614)), La = cljs.core.get.call(null, ja, new cljs.core.Keyword(null, "fetch-boundarylines-fn", "fetch-boundarylines-fn", 1291845393)), Da = cljs.core.get.call(null, ja, new cljs.core.Keyword(null, "link-fn", "link-fn", -205760857)), wa = cljs.core.get.call(null, ja, new cljs.core.Keyword(null, "path-fn", "path-fn", -778614691)), ha = cljs.core.get.call(null, 
-      ja, new cljs.core.Keyword(null, "comm", "comm", -1689770614)), sa = om.core.get_state.call(null, H.owner), oa = cljs.core.seq_QMARK_.call(null, sa) ? cljs.core.apply.call(null, cljs.core.hash_map, sa) : sa, ta = cljs.core.get.call(null, oa, new cljs.core.Keyword(null, "map", "map", 1371690461)), ka = cljs.core.seq_QMARK_.call(null, ta) ? cljs.core.apply.call(null, cljs.core.hash_map, ta) : ta, Ma = cljs.core.get.call(null, ka, new cljs.core.Keyword(null, "path-selections", "path-selections", 
-      -1495179033)), Ea = cljs.core.get.call(null, ka, new cljs.core.Keyword(null, "paths", "paths", -1807389588)), Fa = cljs.core.get.call(null, ka, new cljs.core.Keyword(null, "markers", "markers", -246919693)), Z = cljs.core.get.call(null, ka, new cljs.core.Keyword(null, "leaflet-map", "leaflet-map", -132492747)), Na = cljs.core.get.call(null, oa, new cljs.core.Keyword(null, "pan-pending", "pan-pending", -1898979779)), za = cljs.core.get.call(null, oa, new cljs.core.Keyword(null, "path-highlights", 
+  }(b, d, d, e, f, f, g, h, k, l, m, n, p, q, r, s, t, u, v), clustermap.components.map.t26954.prototype.om$core$IWillUpdate$ = !0, clustermap.components.map.t26954.prototype.om$core$IWillUpdate$will_update$arity$3 = function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, A) {
+    return function(D, B, P) {
+      var M = this;
+      D = cljs.core.seq_QMARK_.call(null, B) ? cljs.core.apply.call(null, cljs.core.hash_map, B) : B;
+      var U = cljs.core.get.call(null, D, new cljs.core.Keyword(null, "map-state", "map-state", -1227493550)), S = cljs.core.seq_QMARK_.call(null, U) ? cljs.core.apply.call(null, cljs.core.hash_map, U) : U, R = cljs.core.get.call(null, S, new cljs.core.Keyword(null, "data", "data", -232669377)), X = cljs.core.get.call(null, S, new cljs.core.Keyword(null, "point-data", "point-data", -1294572970)), Y = cljs.core.get.call(null, S, new cljs.core.Keyword(null, "boundaryline-collections", "boundaryline-collections", 
+      1750591980)), ca = cljs.core.get.call(null, S, new cljs.core.Keyword(null, "controls", "controls", 1340701452)), $ = cljs.core.seq_QMARK_.call(null, ca) ? cljs.core.apply.call(null, cljs.core.hash_map, ca) : ca, ba = cljs.core.get.call(null, $, new cljs.core.Keyword(null, "zoom", "zoom", -1827487038)), aa = cljs.core.get.call(null, $, new cljs.core.Keyword(null, "bounds", "bounds", 1691609455)), ea = cljs.core.get.call(null, $, new cljs.core.Keyword(null, "boundaryline-collection", "boundaryline-collection", 
+      853329936)), da = cljs.core.get.call(null, $, new cljs.core.Keyword(null, "colorchooser", "colorchooser", 1990432729)), ha = cljs.core.get.call(null, $, new cljs.core.Keyword(null, "boundaryline-agg", "boundaryline-agg", 1246510775)), ja = cljs.core.get.call(null, $, new cljs.core.Keyword(null, "threshold-colors", "threshold-colors", 615635983)), na = cljs.core.get.call(null, D, new cljs.core.Keyword(null, "filter", "filter", -948537934)), oa = cljs.core.seq_QMARK_.call(null, P) ? cljs.core.apply.call(null, 
+      cljs.core.hash_map, P) : P, ra = cljs.core.get.call(null, oa, new cljs.core.Keyword(null, "map", "map", 1371690461)), sa = cljs.core.seq_QMARK_.call(null, ra) ? cljs.core.apply.call(null, cljs.core.hash_map, ra) : ra, va = cljs.core.get.call(null, sa, new cljs.core.Keyword(null, "markers", "markers", -246919693)), fa = cljs.core.get.call(null, sa, new cljs.core.Keyword(null, "paths", "paths", -1807389588)), Ja = cljs.core.get.call(null, sa, new cljs.core.Keyword(null, "path-selections", "path-selections", 
+      -1495179033)), Ka = cljs.core.get.call(null, oa, new cljs.core.Keyword(null, "path-highlights", "path-highlights", -1452960411)), Ba = cljs.core.get.call(null, oa, new cljs.core.Keyword(null, "aggregation-data-resource", "aggregation-data-resource", 992435689)), ya = cljs.core.get.call(null, oa, new cljs.core.Keyword(null, "point-data-resource", "point-data-resource", -64127097)), ka = om.core.get_shared.call(null, M.owner), la = cljs.core.seq_QMARK_.call(null, ka) ? cljs.core.apply.call(null, 
+      cljs.core.hash_map, ka) : ka, Ca = cljs.core.get.call(null, la, new cljs.core.Keyword(null, "point-in-boundarylines-fn", "point-in-boundarylines-fn", -1836497614)), La = cljs.core.get.call(null, la, new cljs.core.Keyword(null, "fetch-boundarylines-fn", "fetch-boundarylines-fn", 1291845393)), Da = cljs.core.get.call(null, la, new cljs.core.Keyword(null, "link-fn", "link-fn", -205760857)), wa = cljs.core.get.call(null, la, new cljs.core.Keyword(null, "path-fn", "path-fn", -778614691)), ia = cljs.core.get.call(null, 
+      la, new cljs.core.Keyword(null, "comm", "comm", -1689770614)), ta = om.core.get_state.call(null, M.owner), pa = cljs.core.seq_QMARK_.call(null, ta) ? cljs.core.apply.call(null, cljs.core.hash_map, ta) : ta, ua = cljs.core.get.call(null, pa, new cljs.core.Keyword(null, "map", "map", 1371690461)), ma = cljs.core.seq_QMARK_.call(null, ua) ? cljs.core.apply.call(null, cljs.core.hash_map, ua) : ua, Ma = cljs.core.get.call(null, ma, new cljs.core.Keyword(null, "path-selections", "path-selections", 
+      -1495179033)), Ea = cljs.core.get.call(null, ma, new cljs.core.Keyword(null, "paths", "paths", -1807389588)), Fa = cljs.core.get.call(null, ma, new cljs.core.Keyword(null, "markers", "markers", -246919693)), Z = cljs.core.get.call(null, ma, new cljs.core.Keyword(null, "leaflet-map", "leaflet-map", -132492747)), Na = cljs.core.get.call(null, pa, new cljs.core.Keyword(null, "pan-pending", "pan-pending", -1898979779)), za = cljs.core.get.call(null, pa, new cljs.core.Keyword(null, "path-highlights", 
       "path-highlights", -1452960411));
-      cljs.core.truth_(cljs.core.truth_(Z) ? cljs.core.truth_(ca) ? cljs.core.not_EQ_.call(null, ca, H.zoom) && cljs.core.not_EQ_.call(null, ca, Z.getZoom()) : ca : Z) && Z.setZoom(ca);
-      cljs.core.truth_(cljs.core.truth_(Z) ? cljs.core.truth_(aa) ? cljs.core.not_EQ_.call(null, aa, H.bounds) && cljs.core.not_EQ_.call(null, aa, clustermap.components.map.bounds_array.call(null, Z.getBounds())) : aa : Z) && (Z.fitBounds(cljs.core.clj__GT_js.call(null, aa)), om.core.update_BANG_.call(null, H.cursor, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "controls", "controls", 1340701452), new cljs.core.Keyword(null, "bounds", 
+      cljs.core.truth_(cljs.core.truth_(Z) ? cljs.core.truth_(ba) ? cljs.core.not_EQ_.call(null, ba, M.zoom) && cljs.core.not_EQ_.call(null, ba, Z.getZoom()) : ba : Z) && Z.setZoom(ba);
+      cljs.core.truth_(cljs.core.truth_(Z) ? cljs.core.truth_(aa) ? cljs.core.not_EQ_.call(null, aa, M.bounds) && cljs.core.not_EQ_.call(null, aa, clustermap.components.map.bounds_array.call(null, Z.getBounds())) : aa : Z) && (Z.fitBounds(cljs.core.clj__GT_js.call(null, aa)), om.core.update_BANG_.call(null, M.cursor, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "controls", "controls", 1340701452), new cljs.core.Keyword(null, "bounds", 
       "bounds", 1691609455)], null), clustermap.components.map.bounds_array.call(null, Z.getBounds())));
       cljs.core.truth_(function() {
         if (cljs.core.truth_(Z)) {
-          var b = H.boundaryline_collections;
-          return cljs.core.truth_(b) ? cljs.core.not_EQ_.call(null, ba, clustermap.components.map.choose_boundaryline_collection.call(null, Y, Z.getZoom())) : b;
+          var b = M.boundaryline_collections;
+          return cljs.core.truth_(b) ? cljs.core.not_EQ_.call(null, ea, clustermap.components.map.choose_boundaryline_collection.call(null, Y, Z.getZoom())) : b;
         }
         return Z;
-      }()) && (console.log(cljs.core.clj__GT_js.call(null, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, ["change-collection", clustermap.components.map.choose_boundaryline_collection.call(null, Y, Z.getZoom())], null))), om.core.update_BANG_.call(null, H.cursor, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "controls", "controls", 1340701452), new cljs.core.Keyword(null, "boundaryline-collection", 
+      }()) && (console.log(cljs.core.clj__GT_js.call(null, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, ["change-collection", clustermap.components.map.choose_boundaryline_collection.call(null, Y, Z.getZoom())], null))), om.core.update_BANG_.call(null, M.cursor, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "controls", "controls", 1340701452), new cljs.core.Keyword(null, "boundaryline-collection", 
       "boundaryline-collection", 853329936)], null), clustermap.components.map.choose_boundaryline_collection.call(null, Y, Z.getZoom())));
       if (cljs.core.truth_(function() {
-        if (cljs.core.truth_(ba)) {
+        if (cljs.core.truth_(ea)) {
           var b;
-          b = cljs.core.truth_(fa) ? cljs.core.not_EQ_.call(null, fa, H.boundaryline_agg) : fa;
-          return cljs.core.truth_(b) ? b : cljs.core.not_EQ_.call(null, la, H.filter) || cljs.core.not_EQ_.call(null, aa, H.bounds);
+          b = cljs.core.truth_(ha) ? cljs.core.not_EQ_.call(null, ha, M.boundaryline_agg) : ha;
+          return cljs.core.truth_(b) ? b : cljs.core.not_EQ_.call(null, na, M.filter) || cljs.core.not_EQ_.call(null, aa, M.bounds);
         }
-        return ba;
+        return ea;
       }())) {
-        var pa = clustermap.components.map.next_ticket.call(null);
-        om.core.update_BANG_.call(null, H.cursor, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "controls", "controls", 1340701452), new cljs.core.Keyword(null, "ticket", "ticket", 1810559700)], null), pa);
-        clustermap.components.map.request_aggregation_data.call(null, Ba, (new cljs.core.Keyword(null, "index", "index", -1531685915)).cljs$core$IFn$_invoke$arity$1(fa), (new cljs.core.Keyword(null, "index-type", "index-type", 500383962)).cljs$core$IFn$_invoke$arity$1(fa), clustermap.components.map.choose_boundaryline_collection.call(null, Y, Z.getZoom()), (new cljs.core.Keyword(null, "variable", "variable", -281346492)).cljs$core$IFn$_invoke$arity$1(fa), om.core._value.call(null, la), clustermap.components.map.bounds_array.call(null, 
+        var qa = clustermap.components.map.next_ticket.call(null);
+        om.core.update_BANG_.call(null, M.cursor, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "controls", "controls", 1340701452), new cljs.core.Keyword(null, "ticket", "ticket", 1810559700)], null), qa);
+        clustermap.components.map.request_aggregation_data.call(null, Ba, (new cljs.core.Keyword(null, "index", "index", -1531685915)).cljs$core$IFn$_invoke$arity$1(ha), (new cljs.core.Keyword(null, "index-type", "index-type", 500383962)).cljs$core$IFn$_invoke$arity$1(ha), clustermap.components.map.choose_boundaryline_collection.call(null, Y, Z.getZoom()), (new cljs.core.Keyword(null, "variable", "variable", -281346492)).cljs$core$IFn$_invoke$arity$1(ha), om.core._value.call(null, na), clustermap.components.map.bounds_array.call(null, 
         Z.getBounds()));
-        clustermap.components.map.request_point_data.call(null, ya, (new cljs.core.Keyword(null, "index", "index", -1531685915)).cljs$core$IFn$_invoke$arity$1(fa), (new cljs.core.Keyword(null, "index-type", "index-type", 500383962)).cljs$core$IFn$_invoke$arity$1(fa), om.core._value.call(null, la), clustermap.components.map.bounds_array.call(null, Z.getBounds()));
+        clustermap.components.map.request_point_data.call(null, ya, (new cljs.core.Keyword(null, "index", "index", -1531685915)).cljs$core$IFn$_invoke$arity$1(ha), (new cljs.core.Keyword(null, "index-type", "index-type", 500383962)).cljs$core$IFn$_invoke$arity$1(ha), om.core._value.call(null, na), clustermap.components.map.bounds_array.call(null, Z.getBounds()));
       }
-      if (cljs.core.not_EQ_.call(null, S, H.data) || cljs.core.not_EQ_.call(null, ea, H.colorchooser)) {
-        var pa = clustermap.data.colorchooser.choose.call(null, (new cljs.core.Keyword(null, "scheme", "scheme", 90199613)).cljs$core$IFn$_invoke$arity$1(ea), cljs.core.keyword.call(null, (new cljs.core.Keyword(null, "scale", "scale", -230427353)).cljs$core$IFn$_invoke$arity$1(ea)), new cljs.core.Keyword(null, "boundaryline_id", "boundaryline_id", -1827697395), cljs.core.keyword.call(null, (new cljs.core.Keyword(null, "variable", "variable", -281346492)).cljs$core$IFn$_invoke$arity$1(ea)), (new cljs.core.Keyword(null, 
-        "records", "records", 1326822832)).cljs$core$IFn$_invoke$arity$1(S)), Aa = cljs.core.nth.call(null, pa, 0, null), Ga = cljs.core.nth.call(null, pa, 1, null), Ha = function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, w, E, y, z, A, I, J, F, B, G, K, x, D, C, N, H, V, O, R, P, M, Q, T, S, U, W, xa, Z, X, Y, fa, ha, $, aa, ba, ca, da, ea, la, ma, ja, qa, ia, ka, va, na, oa, pa, ua, ra) {
+      if (cljs.core.not_EQ_.call(null, R, M.data) || cljs.core.not_EQ_.call(null, da, M.colorchooser)) {
+        var qa = clustermap.data.colorchooser.choose.call(null, (new cljs.core.Keyword(null, "scheme", "scheme", 90199613)).cljs$core$IFn$_invoke$arity$1(da), cljs.core.keyword.call(null, (new cljs.core.Keyword(null, "scale", "scale", -230427353)).cljs$core$IFn$_invoke$arity$1(da)), new cljs.core.Keyword(null, "boundaryline_id", "boundaryline_id", -1827697395), cljs.core.keyword.call(null, (new cljs.core.Keyword(null, "variable", "variable", -281346492)).cljs$core$IFn$_invoke$arity$1(da)), (new cljs.core.Keyword(null, 
+        "records", "records", 1326822832)).cljs$core$IFn$_invoke$arity$1(R)), Aa = cljs.core.nth.call(null, qa, 0, null), Ga = cljs.core.nth.call(null, qa, 1, null), Ha = function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, y, w, x, z, C, G, H, I, K, J, F, B, E, A, D, N, O, Q, M, T, P, V, W, R, S, U, xa, Z, X, Y, ha, fa, ja, ia, $, aa, ba, ca, da, na, oa, la, ea, ra, ka, ma, va, pa, qa, sa) {
           return function() {
-            return clustermap.components.map.update_paths.call(null, m, cljs.core.partial.call(null, h, V), v, xa, Z, X, d);
+            return clustermap.components.map.update_paths.call(null, m, cljs.core.partial.call(null, h, O), v, xa, Z, X, d);
           };
-        }(pa, Aa, Ga, ia, ja, Ca, La, Da, wa, ha, sa, oa, ta, ka, Ma, Ea, Fa, Z, Na, za, this, D, C, C, W, U, U, S, X, Y, da, $, ca, aa, ba, ea, fa, ua, la, M, ma, qa, ra, va, na, Ja, Ka, Ba, ya, b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, x);
-        cljs.core.not_EQ_.call(null, Aa, ua) && om.core.update_BANG_.call(null, H.cursor, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "controls", "controls", 1340701452), new cljs.core.Keyword(null, "threshold-colors", "threshold-colors", 615635983)], null), Aa);
+        }(qa, Aa, Ga, ka, la, Ca, La, Da, wa, ia, ta, pa, ua, ma, Ma, Ea, Fa, Z, Na, za, this, B, D, D, U, S, S, R, X, Y, ca, $, ba, aa, ea, da, ha, ja, na, P, oa, ra, sa, va, fa, Ja, Ka, Ba, ya, b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, A);
+        cljs.core.not_EQ_.call(null, Aa, ja) && om.core.update_BANG_.call(null, M.cursor, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "controls", "controls", 1340701452), new cljs.core.Keyword(null, "threshold-colors", "threshold-colors", 615635983)], null), Aa);
         var Ia = Ha.call(null);
         if (cljs.core.truth_(Ia)) {
           var xa = cljs.core.async.chan.call(null, 1);
-          cljs.core.async.impl.dispatch.run.call(null, function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, w, E, y, z, A, I, J, F, B, G, K, x, D, C, N, H, V, O, R, P, M, Q, T, S, U, W, xa, Z, X, Y, fa, ha, $, aa, ba, ca, da, ea, la, ma, ja, qa, ia, ka, va, na, oa, pa, ua, ra, ya, sa, ta, wa) {
+          cljs.core.async.impl.dispatch.run.call(null, function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, y, w, x, z, C, G, H, I, K, J, F, B, E, A, D, N, O, Q, M, T, P, V, W, R, S, U, xa, Z, X, Y, ha, fa, ja, ia, $, aa, ba, ca, da, na, oa, la, ea, ra, ka, ma, va, pa, qa, sa, ya, ta, ua, wa) {
             return function() {
               var za = function() {
-                return function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, w, E, y, z, A, I, J, F, B, G, K, x, D, C, N, H, V, O, R, P, M, Q, T, S, U, W, xa, Z, X, Y, fa, ha, $, aa, ba, ca, da, ea, la, ma, ja, qa, ia, ka, va, na, oa, pa, ua, ra, ya, sa, ta, wa, za) {
+                return function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, y, w, x, z, C, G, H, I, K, J, F, B, E, A, D, N, O, Q, M, T, P, V, W, R, S, U, xa, Z, X, Y, ha, fa, ja, ia, $, aa, ba, ca, da, na, oa, la, ea, ra, ka, ma, va, pa, qa, sa, ya, ta, ua, wa, za) {
                   return function() {
                     var c = null, d = function() {
                       var b = [null, null, null, null, null, null, null, null];
@@ -41772,7 +42038,7 @@ clustermap.components.map.map_component = function map_component(b, c) {
                     c.cljs$core$IFn$_invoke$arity$1 = e;
                     return c;
                   }();
-                }(function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, w, E, y, z, A, I, J, F, B, G, K, x, D, C, N, H, V, O, R, P, M, Q, T, S, U, W, xa, Z, X, Y, fa, ha, $, aa, ba, ca, da, ea, la, ma, ja, qa, ia, ka, va, na, oa, pa, ua, ra, ya, sa, ta, wa) {
+                }(function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, y, w, x, z, C, G, H, I, K, J, F, B, E, A, D, N, O, Q, M, T, P, V, W, R, S, U, xa, Z, X, Y, ha, fa, ja, ia, $, aa, ba, ca, da, na, oa, la, ea, ra, ka, ma, va, pa, qa, sa, ya, ta, ua, wa) {
                   return function(b) {
                     var d = b[1];
                     if (2 === d) {
@@ -41782,7 +42048,7 @@ clustermap.components.map.map_component = function map_component(b, c) {
                     }
                     return 1 === d ? cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, b, 2, c) : null;
                   };
-                }(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, w, E, y, z, A, I, J, F, B, G, K, x, D, C, N, H, V, O, R, P, M, Q, T, S, U, W, xa, Z, X, Y, fa, ha, $, aa, ba, ca, da, ea, la, ma, ja, qa, ia, ka, va, na, oa, pa, ua, ra, ya, sa, ta, wa), b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, w, E, y, z, A, I, J, F, B, G, K, x, D, C, N, H, V, O, R, P, M, Q, T, S, U, W, xa, Z, X, Y, fa, ha, $, aa, ba, ca, da, ea, la, ma, ja, qa, ia, ka, va, na, oa, pa, ua, ra, ya, sa, ta, wa);
+                }(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, y, w, x, z, C, G, H, I, K, J, F, B, E, A, D, N, O, Q, M, T, P, V, W, R, S, U, xa, Z, X, Y, ha, fa, ja, ia, $, aa, ba, ca, da, na, oa, la, ea, ra, ka, ma, va, pa, qa, sa, ya, ta, ua, wa), b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, y, w, x, z, C, G, H, I, K, J, F, B, E, A, D, N, O, Q, M, T, P, V, W, R, S, U, xa, Z, X, Y, ha, fa, ja, ia, $, aa, ba, ca, da, na, oa, la, ea, ra, ka, ma, va, pa, qa, sa, ya, ta, ua, wa);
               }(), Aa = function() {
                 var c = za.call(null);
                 c[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = b;
@@ -41790,119 +42056,116 @@ clustermap.components.map.map_component = function map_component(b, c) {
               }();
               return cljs.core.async.impl.ioc_helpers.run_state_machine_wrapped.call(null, Aa);
             };
-          }(xa, Ia, Ia, pa, Aa, Ga, Ha, ia, ja, Ca, La, Da, wa, ha, sa, oa, ta, ka, Ma, Ea, Fa, Z, Na, za, this, D, C, C, W, U, U, S, X, Y, da, $, ca, aa, ba, ea, fa, ua, la, M, ma, qa, ra, va, na, Ja, Ka, Ba, ya, b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, x));
+          }(xa, Ia, Ia, qa, Aa, Ga, Ha, ka, la, Ca, La, Da, wa, ia, ta, pa, ua, ma, Ma, Ea, Fa, Z, Na, za, this, B, D, D, U, S, S, R, X, Y, ca, $, ba, aa, ea, da, ha, ja, na, P, oa, ra, sa, va, fa, Ja, Ka, Ba, ya, b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, A));
         }
       }
-      return cljs.core.not_EQ_.call(null, X, H.point_data) ? clustermap.components.map.update_markers.call(null, wa, Z, va, (new cljs.core.Keyword(null, "records", "records", 1326822832)).cljs$core$IFn$_invoke$arity$1(X)) : null;
+      return cljs.core.not_EQ_.call(null, X, M.point_data) ? clustermap.components.map.update_markers.call(null, wa, Z, va, (new cljs.core.Keyword(null, "records", "records", 1326822832)).cljs$core$IFn$_invoke$arity$1(X)) : null;
     };
-  }(b, d, d, e, f, f, g, h, k, l, m, n, p, q, r, s, t, u, v), clustermap.components.map.t26622.prototype.om$core$IDidMount$ = !0, clustermap.components.map.t26622.prototype.om$core$IDidMount$did_mount$arity$1 = function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, x) {
-    return function(C) {
-      var D = this;
-      C = om.core.get_node.call(null, D.owner);
-      var M = clustermap.components.map.create_map.call(null, C, D.initial_bounds), H = cljs.core.seq_QMARK_.call(null, M) ? cljs.core.apply.call(null, cljs.core.hash_map, M) : M, W = cljs.core.get.call(null, H, new cljs.core.Keyword(null, "path", "path", -188191168)), U = cljs.core.get.call(null, H, new cljs.core.Keyword(null, "markers", "markers", -246919693)), S = cljs.core.get.call(null, H, new cljs.core.Keyword(null, "leaflet-map", "leaflet-map", -132492747)), X = om.core.get_shared.call(null, 
-      D.owner), Y = cljs.core.seq_QMARK_.call(null, X) ? cljs.core.apply.call(null, cljs.core.hash_map, X) : X, da = cljs.core.get.call(null, Y, new cljs.core.Keyword(null, "path-fn", "path-fn", -778614691)), $ = cljs.core.get.call(null, Y, new cljs.core.Keyword(null, "link-fn", "link-fn", -205760857)), ca = cljs.core.get.call(null, Y, new cljs.core.Keyword(null, "point-in-boundarylines-fn", "point-in-boundarylines-fn", -1836497614)), aa = cljs.core.get.call(null, Y, new cljs.core.Keyword(null, "fetch-boundarylines-fn", 
-      "fetch-boundarylines-fn", 1291845393)), ba = cljs.core.get.call(null, Y, new cljs.core.Keyword(null, "comm", "comm", -1689770614));
-      om.core.update_BANG_.call(null, D.cursor, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "controls", "controls", 1340701452), new cljs.core.Keyword(null, "zoom", "zoom", -1827487038)], null), S.getZoom());
-      om.core.update_BANG_.call(null, D.cursor, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "controls", "controls", 1340701452), new cljs.core.Keyword(null, "bounds", "bounds", 1691609455)], null), clustermap.components.map.bounds_array.call(null, S.getBounds()));
-      om.core.set_state_BANG_.call(null, D.owner, new cljs.core.Keyword(null, "map", "map", 1371690461), H);
-      om.core.set_state_BANG_.call(null, D.owner, new cljs.core.Keyword(null, "path-highlights", "path-highlights", -1452960411), cljs.core.PersistentHashSet.EMPTY);
-      S.on("moveend", function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, w, E, y, z, A, I, J, x, F, B, G, K, C, H, N, V) {
+  }(b, d, d, e, f, f, g, h, k, l, m, n, p, q, r, s, t, u, v), clustermap.components.map.t26954.prototype.om$core$IDidMount$ = !0, clustermap.components.map.t26954.prototype.om$core$IDidMount$did_mount$arity$1 = function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, A) {
+    return function(D) {
+      var B = this;
+      D = om.core.get_node.call(null, B.owner);
+      var P = clustermap.components.map.create_map.call(null, D, B.initial_bounds), M = cljs.core.seq_QMARK_.call(null, P) ? cljs.core.apply.call(null, cljs.core.hash_map, P) : P, U = cljs.core.get.call(null, M, new cljs.core.Keyword(null, "path", "path", -188191168)), S = cljs.core.get.call(null, M, new cljs.core.Keyword(null, "markers", "markers", -246919693)), R = cljs.core.get.call(null, M, new cljs.core.Keyword(null, "leaflet-map", "leaflet-map", -132492747)), X = om.core.get_shared.call(null, 
+      B.owner), Y = cljs.core.seq_QMARK_.call(null, X) ? cljs.core.apply.call(null, cljs.core.hash_map, X) : X, ca = cljs.core.get.call(null, Y, new cljs.core.Keyword(null, "path-fn", "path-fn", -778614691)), $ = cljs.core.get.call(null, Y, new cljs.core.Keyword(null, "link-fn", "link-fn", -205760857)), ba = cljs.core.get.call(null, Y, new cljs.core.Keyword(null, "point-in-boundarylines-fn", "point-in-boundarylines-fn", -1836497614)), aa = cljs.core.get.call(null, Y, new cljs.core.Keyword(null, "fetch-boundarylines-fn", 
+      "fetch-boundarylines-fn", 1291845393)), ea = cljs.core.get.call(null, Y, new cljs.core.Keyword(null, "comm", "comm", -1689770614));
+      om.core.update_BANG_.call(null, B.cursor, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "controls", "controls", 1340701452), new cljs.core.Keyword(null, "zoom", "zoom", -1827487038)], null), R.getZoom());
+      om.core.update_BANG_.call(null, B.cursor, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "controls", "controls", 1340701452), new cljs.core.Keyword(null, "bounds", "bounds", 1691609455)], null), clustermap.components.map.bounds_array.call(null, R.getBounds()));
+      om.core.set_state_BANG_.call(null, B.owner, new cljs.core.Keyword(null, "map", "map", 1371690461), M);
+      om.core.set_state_BANG_.call(null, B.owner, new cljs.core.Keyword(null, "path-highlights", "path-highlights", -1452960411), cljs.core.PersistentHashSet.EMPTY);
+      R.on("moveend", function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, y, w, x, z, C, G, H, I, K, J, F, A, D, E, N, M) {
         return function(b) {
           console.log("moveend");
-          om.core.update_BANG_.call(null, D.cursor, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "controls", "controls", 1340701452), new cljs.core.Keyword(null, "zoom", "zoom", -1827487038)], null), h.getZoom());
-          return om.core.update_BANG_.call(null, D.cursor, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "controls", "controls", 1340701452), new cljs.core.Keyword(null, "bounds", "bounds", 1691609455)], null), clustermap.components.map.bounds_array.call(null, h.getBounds()));
+          om.core.update_BANG_.call(null, B.cursor, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "controls", "controls", 1340701452), new cljs.core.Keyword(null, "zoom", "zoom", -1827487038)], null), h.getZoom());
+          return om.core.update_BANG_.call(null, B.cursor, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "controls", "controls", 1340701452), new cljs.core.Keyword(null, "bounds", "bounds", 1691609455)], null), clustermap.components.map.bounds_array.call(null, h.getBounds()));
         };
-      }(C, M, H, H, W, U, S, X, Y, da, $, ca, aa, ba, this, b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, x));
-      S.on("popupopen", function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, w, E, y, z, A, I, J, x, F, B, G, K, C, H, N, V) {
-        return function(M) {
-          M = M.popup._container;
-          var O = jayq.core.$.call(null, M).find(".map-marker-popup-location-list").length;
-          0 < O && om.core.set_state_BANG_.call(null, D.owner, new cljs.core.Keyword(null, "popup-selected", "popup-selected", 1632807134), !0);
-          return jayq.core.$.call(null, M).on("mousemove", function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, w, E, y, z, A, I, J, x, F, B, D, G, K, C, H, N, M, V) {
+      }(D, P, M, M, U, S, R, X, Y, ca, $, ba, aa, ea, this, b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, A));
+      R.on("popupopen", function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, y, w, x, z, C, G, H, I, K, J, F, A, D, E, N, M) {
+        return function(O) {
+          O = O.popup._container;
+          var Q = jayq.core.$.call(null, O).find(".map-marker-popup-location-list").length;
+          0 < Q && om.core.set_state_BANG_.call(null, B.owner, new cljs.core.Keyword(null, "popup-selected", "popup-selected", 1632807134), !0);
+          return jayq.core.$.call(null, O).on("mousemove", function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, y, w, x, z, C, G, H, I, B, K, J, F, A, D, E, N, O, M) {
             return function(b) {
               b.preventDefault();
               return!1;
             };
-          }(M, O, b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, w, E, y, z, A, I, J, x, F, B, G, K, C, H, N, V));
+          }(O, Q, b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, y, w, x, z, C, G, H, I, K, J, F, A, D, E, N, M));
         };
-      }(C, M, H, H, W, U, S, X, Y, da, $, ca, aa, ba, this, b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, x));
-      S.on("popupclose", function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, w, E, y, z, A, I, J, x, F, B, G, K, C, H, N, M) {
+      }(D, P, M, M, U, S, R, X, Y, ca, $, ba, aa, ea, this, b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, A));
+      R.on("popupclose", function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, y, w, x, z, C, G, H, I, K, J, F, A, D, E, N, O) {
         return function(b) {
-          return om.core.set_state_BANG_.call(null, D.owner, new cljs.core.Keyword(null, "popup-selected", "popup-selected", 1632807134), null);
+          return om.core.set_state_BANG_.call(null, B.owner, new cljs.core.Keyword(null, "popup-selected", "popup-selected", 1632807134), null);
         };
-      }(C, M, H, H, W, U, S, X, Y, da, $, ca, aa, ba, this, b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, x));
-      S.on("mousemove", function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, w, E, y, z, A, I, J, x, F, B, G, K, C, H, N, M) {
+      }(D, P, M, M, U, S, R, X, Y, ca, $, ba, aa, ea, this, b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, A));
+      R.on("mousemove", function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, y, w, x, z, C, G, H, I, K, J, F, A, D, E, N, O) {
         return function(b) {
           var c = b.latlng.lat;
           b = b.latlng.lng;
-          var d = p.call(null, b, c), d = cljs.core.first.call(null, d), e = (new cljs.core.Keyword(null, "id", "id", -1388402092)).cljs$core$IFn$_invoke$arity$1(d), e = cljs.core.truth_(e) ? cljs.core.set.call(null, new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [e], null)) : null, f = om.core.get_state.call(null, D.owner, new cljs.core.Keyword(null, "path-highlights", "path-highlights", -1452960411));
-          cljs.core.truth_(cljs.core.truth_(d) ? cljs.core.not_EQ_.call(null, f, e) && cljs.core.not.call(null, om.core.get_state.call(null, D.owner, new cljs.core.Keyword(null, "popup-selected", "popup-selected", 1632807134))) : d) && (f = L.popup(), f.setLatLng(cljs.core.clj__GT_js.call(null, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [c, b], null))), f.setContent(clustermap.components.map.constituency_marker_popup_content.call(null, m, d)), f.openOn(h));
-          return om.core.set_state_BANG_.call(null, D.owner, new cljs.core.Keyword(null, "path-highlights", "path-highlights", -1452960411), e);
+          var d = p.call(null, b, c), d = cljs.core.first.call(null, d), e = (new cljs.core.Keyword(null, "id", "id", -1388402092)).cljs$core$IFn$_invoke$arity$1(d), e = cljs.core.truth_(e) ? cljs.core.set.call(null, new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [e], null)) : null, f = om.core.get_state.call(null, B.owner, new cljs.core.Keyword(null, "path-highlights", "path-highlights", -1452960411));
+          cljs.core.truth_(cljs.core.truth_(d) ? cljs.core.not_EQ_.call(null, f, e) && cljs.core.not.call(null, om.core.get_state.call(null, B.owner, new cljs.core.Keyword(null, "popup-selected", "popup-selected", 1632807134))) : d) && (f = L.popup(), f.setLatLng(cljs.core.clj__GT_js.call(null, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [c, b], null))), f.setContent(clustermap.components.map.constituency_marker_popup_content.call(null, m, d)), f.openOn(h));
+          return om.core.set_state_BANG_.call(null, B.owner, new cljs.core.Keyword(null, "path-highlights", "path-highlights", -1452960411), e);
         };
-      }(C, M, H, H, W, U, S, X, Y, da, $, ca, aa, ba, this, b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, x));
-      S.on("click", function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, w, E, y, z, A, I, J, x, F, B, G, K, C, D, H, N) {
+      }(D, P, M, M, U, S, R, X, Y, ca, $, ba, aa, ea, this, b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, A));
+      R.on("click", function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, y, w, x, z, C, G, H, I, B, K, J, F, A, D, E, N) {
         return function(b) {
           b = p.call(null, b.latlng.lng, b.latlng.lat);
           b = null == b ? null : cljs.core.first.call(null, b);
           b = null == b ? null : (new cljs.core.Keyword(null, "id", "id", -1388402092)).cljs$core$IFn$_invoke$arity$1(b);
           return cljs.core.truth_(b) ? cljs.core.async.put_BANG_.call(null, r, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "select", "select", 1147833503), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "constituency", "constituency", 1803637324), b], null)], null)) : null;
         };
-      }(C, M, H, H, W, U, S, X, Y, da, $, ca, aa, ba, this, b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, x));
-      var ea = clustermap.ordered_resource.make_discard_stale_resource.call(null, "aggregation-data-resource");
-      om.core.set_state_BANG_.call(null, D.owner, new cljs.core.Keyword(null, "aggregation-data-resource", "aggregation-data-resource", 992435689), ea);
-      clustermap.ordered_resource.retrieve_responses.call(null, ea, function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, w, E, y, z, A, I, J, x, F, B, G, K, C, H, N, M, V) {
+      }(D, P, M, M, U, S, R, X, Y, ca, $, ba, aa, ea, this, b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, A));
+      var da = clustermap.ordered_resource.make_discard_stale_resource.call(null, "aggregation-data-resource");
+      om.core.set_state_BANG_.call(null, B.owner, new cljs.core.Keyword(null, "aggregation-data-resource", "aggregation-data-resource", 992435689), da);
+      clustermap.ordered_resource.retrieve_responses.call(null, da, function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, y, w, x, z, C, G, H, I, K, J, F, A, D, E, N, O, M) {
         return function(b) {
-          return om.core.update_BANG_.call(null, D.cursor, new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "data", "data", -232669377)], null), b);
+          return om.core.update_BANG_.call(null, B.cursor, new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "data", "data", -232669377)], null), b);
         };
-      }(ea, C, M, H, H, W, U, S, X, Y, da, $, ca, aa, ba, this, b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, x));
-      ea = clustermap.ordered_resource.make_discard_stale_resource.call(null, "point-data-resource");
-      om.core.set_state_BANG_.call(null, D.owner, new cljs.core.Keyword(null, "point-data-resource", "point-data-resource", -64127097), ea);
-      return clustermap.ordered_resource.retrieve_responses.call(null, ea, function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, w, E, y, z, A, I, J, x, F, B, G, K, C, H, N, M, V) {
+      }(da, D, P, M, M, U, S, R, X, Y, ca, $, ba, aa, ea, this, b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, A));
+      da = clustermap.ordered_resource.make_discard_stale_resource.call(null, "point-data-resource");
+      om.core.set_state_BANG_.call(null, B.owner, new cljs.core.Keyword(null, "point-data-resource", "point-data-resource", -64127097), da);
+      return clustermap.ordered_resource.retrieve_responses.call(null, da, function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, y, w, x, z, C, G, H, I, K, J, F, A, D, E, N, O, M) {
         return function(b) {
-          return om.core.update_BANG_.call(null, D.cursor, new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "point-data", "point-data", -1294572970)], null), b);
+          return om.core.update_BANG_.call(null, B.cursor, new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "point-data", "point-data", -1294572970)], null), b);
         };
-      }(ea, C, M, H, H, W, U, S, X, Y, da, $, ca, aa, ba, this, b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, x));
+      }(da, D, P, M, M, U, S, R, X, Y, ca, $, ba, aa, ea, this, b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, A));
     };
-  }(b, d, d, e, f, f, g, h, k, l, m, n, p, q, r, s, t, u, v), clustermap.components.map.t26622.prototype.om$core$IRender$ = !0, clustermap.components.map.t26622.prototype.om$core$IRender$render$arity$1 = function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, x) {
+  }(b, d, d, e, f, f, g, h, k, l, m, n, p, q, r, s, t, u, v), clustermap.components.map.t26954.prototype.om$core$IRender$ = !0, clustermap.components.map.t26954.prototype.om$core$IRender$render$arity$1 = function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, A) {
     return function(b) {
       return React.DOM.div({className:"map", ref:"map"});
     };
-  }(b, d, d, e, f, f, g, h, k, l, m, n, p, q, r, s, t, u, v), clustermap.components.map.t26622.prototype.cljs$core$IMeta$_meta$arity$1 = function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, x) {
+  }(b, d, d, e, f, f, g, h, k, l, m, n, p, q, r, s, t, u, v), clustermap.components.map.t26954.prototype.cljs$core$IMeta$_meta$arity$1 = function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, A) {
     return function(b) {
-      return this.meta26623;
+      return this.meta26955;
     };
-  }(b, d, d, e, f, f, g, h, k, l, m, n, p, q, r, s, t, u, v), clustermap.components.map.t26622.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, x) {
+  }(b, d, d, e, f, f, g, h, k, l, m, n, p, q, r, s, t, u, v), clustermap.components.map.t26954.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, A) {
     return function(b, c) {
-      return new clustermap.components.map.t26622(this.colorchooser, this.initial_bounds, this.owner, this.data, this.zoom, this.map__26621, this.cursor_data, this.map__26620, this.map_component, this.boundaryline_collections, this.cursor, this.p__26580, this.threshold_colors, this.bounds, this.boundaryline_collection, this.map__26619, this.filter, this.point_data, this.boundaryline_agg, c);
+      return new clustermap.components.map.t26954(this.colorchooser, this.initial_bounds, this.map__26951, this.owner, this.map__26952, this.data, this.zoom, this.p__26912, this.map__26953, this.cursor_data, this.map_component, this.boundaryline_collections, this.cursor, this.threshold_colors, this.bounds, this.boundaryline_collection, this.filter, this.point_data, this.boundaryline_agg, c);
     };
-  }(b, d, d, e, f, f, g, h, k, l, m, n, p, q, r, s, t, u, v), clustermap.components.map.__GT_t26622 = function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, x) {
-    return function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, w, E) {
-      return new clustermap.components.map.t26622(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, w, E);
+  }(b, d, d, e, f, f, g, h, k, l, m, n, p, q, r, s, t, u, v), clustermap.components.map.__GT_t26954 = function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, A) {
+    return function(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, y, w) {
+      return new clustermap.components.map.t26954(b, c, d, e, f, g, h, k, l, m, n, p, q, r, s, t, u, v, y, w);
     };
   }(b, d, d, e, f, f, g, h, k, l, m, n, p, q, r, s, t, u, v));
-  return new clustermap.components.map.t26622(q, u, c, g, s, m, d, f, map_component, k, f, b, n, t, r, d, v, h, p, null);
+  return new clustermap.components.map.t26954(q, u, d, c, f, g, s, b, m, d, map_component, k, f, n, t, r, v, h, p, null);
 };
 clustermap.app = {};
-clustermap.app.state = cljs.core.atom.call(null, cljs.core.PersistentHashMap.fromArrays([new cljs.core.Keyword(null, "selector", "selector", 762528866), new cljs.core.Keyword(null, "zoom", "zoom", -1827487038), new cljs.core.Keyword(null, "turnover_timeline", "turnover_timeline", -2042271101), new cljs.core.Keyword(null, "table", "table", -564943036), new cljs.core.Keyword(null, "uk-constituencies-rtree", "uk-constituencies-rtree", -1849185402), new cljs.core.Keyword(null, "all-investment-stats", 
-"all-investment-stats", 1476039495), new cljs.core.Keyword(null, "uk-constituencies", "uk-constituencies", -685500855), new cljs.core.Keyword(null, "map-report", "map-report", -254073588), new cljs.core.Keyword(null, "selection-investment-stats", "selection-investment-stats", -1048685843), new cljs.core.Keyword(null, "selection-portfolio-company-locations", "selection-portfolio-company-locations", -1948963855), new cljs.core.Keyword(null, "filter", "filter", -948537934), new cljs.core.Keyword(null, 
-"selection-investment-account-timelines", "selection-investment-account-timelines", 2127671062), new cljs.core.Keyword(null, "selection-investment-aggs-table-view", "selection-investment-aggs-table-view", -1031011048), new cljs.core.Keyword(null, "all-portfolio-company-site-stats", "all-portfolio-company-site-stats", 1602114424), new cljs.core.Keyword(null, "selection-investment-aggs", "selection-investment-aggs", -292421479), new cljs.core.Keyword(null, "selection-investments-table-view", "selection-investments-table-view", 
-1654650362), new cljs.core.Keyword(null, "search-results", "search-results", 306464634), new cljs.core.Keyword(null, "selection", "selection", 975998651), new cljs.core.Keyword(null, "boundarylines", "boundarylines", 1568915708), new cljs.core.Keyword(null, "map", "map", 1371690461), new cljs.core.Keyword(null, "selection-investments", "selection-investments", -647516610), new cljs.core.Keyword(null, "view", "view", 1247994814)], [null, null, new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null, 
-"type", "type", 1174270348), new cljs.core.Keyword(null, "timeline", "timeline", 192903161), new cljs.core.Keyword(null, "datasource", "datasource", -246060221), "company_accounts", new cljs.core.Keyword(null, "controls", "controls", 1340701452), new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null, "variable", "variable", -281346492), "accounts_date", new cljs.core.Keyword(null, "after", "after", 594996914), "2003-01-01", new cljs.core.Keyword(null, "before", "before", -1633692388), 
-"2012-01-01", new cljs.core.Keyword(null, "interval", "interval", 1708495417), "year"], null), new cljs.core.Keyword(null, "data", "data", -232669377), null], null), new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null, "type", "type", 1174270348), new cljs.core.Keyword(null, "table", "table", -564943036), new cljs.core.Keyword(null, "controls", "controls", 1340701452), new cljs.core.PersistentArrayMap(null, 7, [new cljs.core.Keyword(null, "index", "index", -1531685915), "companies", 
-new cljs.core.Keyword(null, "index-type", "index-type", 500383962), "company", new cljs.core.Keyword(null, "sort-spec", "sort-spec", 104043994), null, new cljs.core.Keyword(null, "offset", "offset", 296498311), 0, new cljs.core.Keyword(null, "limit", "limit", -1355822363), 50, new cljs.core.Keyword(null, "filter-by-view", "filter-by-view", 902292255), !1, new cljs.core.Keyword(null, "columns", "columns", 1998437288), new cljs.core.PersistentVector(null, 6, 5, cljs.core.PersistentVector.EMPTY_NODE, 
-[new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "!name", "!name", 1164538490), "Name"], null), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "!postcode", "!postcode", 1728852280), "Postcode"], null), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "!formation_date", "!formation_date", -1967327335), "Formation date"], null), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "!latest_accounts_date", "!latest_accounts_date", 
--259857093), "Filing date"], null), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "!latest_employee_count", "!latest_employee_count", -1445524938), "Employees"], null), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "!latest_turnover", "!latest_turnover", -1853433972), "Turnover"], null)], null)], null), new cljs.core.Keyword(null, "table-data", "table-data", -1783738205), null], null), null, null, null, new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, 
-"controls", "controls", 1340701452), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "summary-stats", "summary-stats", -1745571251), new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null, "index", "index", -1531685915), "companies", new cljs.core.Keyword(null, "index-type", "index-type", 500383962), "company", new cljs.core.Keyword(null, "variables", "variables", 1563680814), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, ["!latest_employee_count", 
-"!latest_turnover"], null), new cljs.core.Keyword(null, "filter-by-view", "filter-by-view", 902292255), !1], null)], null), new cljs.core.Keyword(null, "summary-stats", "summary-stats", -1745571251), null], null), null, null, new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "components", "components", -1073188942), cljs.core.PersistentArrayMap.EMPTY, new cljs.core.Keyword(null, "compiled", "compiled", 850043082), null], null), null, null, null, null, null, cljs.core.PersistentArrayMap.EMPTY, 
-null, new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "collections", "collections", -2114643505), new cljs.core.PersistentArrayMap(null, 3, ["uk_boroughs", new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null, "index", "index", -1531685915), null, new cljs.core.Keyword(null, "rtree", "rtree", -82448827), null, new cljs.core.Keyword(null, "boundarylines", "boundarylines", 1568915708), cljs.core.PersistentArrayMap.EMPTY], null), "uk_wards", new cljs.core.PersistentArrayMap(null, 
-3, [new cljs.core.Keyword(null, "index", "index", -1531685915), null, new cljs.core.Keyword(null, "rtree", "rtree", -82448827), null, new cljs.core.Keyword(null, "boundarylines", "boundarylines", 1568915708), cljs.core.PersistentArrayMap.EMPTY], null), "uk_regions", new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null, "index", "index", -1531685915), null, new cljs.core.Keyword(null, "rtree", "rtree", -82448827), null, new cljs.core.Keyword(null, "boundarylines", "boundarylines", 
-1568915708), cljs.core.PersistentArrayMap.EMPTY], null)], null), new cljs.core.Keyword(null, "boundarylines", "boundarylines", 1568915708), cljs.core.PersistentArrayMap.EMPTY], null), new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null, "type", "type", 1174270348), new cljs.core.Keyword(null, "geoport", "geoport", 534549910), new cljs.core.Keyword(null, "datasource", "datasource", -246060221), "companies", new cljs.core.Keyword(null, "boundaryline-collections", "boundaryline-collections", 
-1750591980), new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [0, "uk_regions"], null), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [5, "uk_counties"], null), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [7, "uk_boroughs"], null), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, 
-[10, "uk_wards"], null)], null), new cljs.core.Keyword(null, "controls", "controls", 1340701452), new cljs.core.PersistentArrayMap(null, 6, [new cljs.core.Keyword(null, "initial-bounds", "initial-bounds", -1404401542), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [59.54, 2.3], null), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [49.29, -11.29], 
-null)], null), new cljs.core.Keyword(null, "zoom", "zoom", -1827487038), null, new cljs.core.Keyword(null, "bounds", "bounds", 1691609455), null, new cljs.core.Keyword(null, "boundaryline-collection", "boundaryline-collection", 853329936), null, new cljs.core.Keyword(null, "boundaryline-agg", "boundaryline-agg", 1246510775), new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null, "type", "type", 1174270348), new cljs.core.Keyword(null, "stats", "stats", -85643011), new cljs.core.Keyword(null, 
-"index", "index", -1531685915), "companies", new cljs.core.Keyword(null, "index-type", "index-type", 500383962), "company", new cljs.core.Keyword(null, "key", "key", -1516042587), "boundaryline_id", new cljs.core.Keyword(null, "variable", "variable", -281346492), "!latest_employee_count"], null), new cljs.core.Keyword(null, "colorchooser", "colorchooser", 1990432729), new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null, "scheme", "scheme", 90199613), new cljs.core.PersistentVector(null, 
-2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "Oranges", "Oranges", 1752319702), new cljs.core.Keyword(null, "9", "9", 1664767314)], null), new cljs.core.Keyword(null, "scale", "scale", -230427353), new cljs.core.Keyword(null, "log", "log", -1595516004), new cljs.core.Keyword(null, "variable", "variable", -281346492), new cljs.core.Keyword(null, "sum", "sum", 136986814)], null)], null), new cljs.core.Keyword(null, "data", "data", -232669377), null], null), null, new cljs.core.Keyword(null, 
-"map", "map", 1371690461)]));
+clustermap.app.state = cljs.core.atom.call(null, new cljs.core.PersistentArrayMap(null, 7, [new cljs.core.Keyword(null, "boundarylines", "boundarylines", 1568915708), new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "collections", "collections", -2114643505), new cljs.core.PersistentArrayMap(null, 3, ["uk_boroughs", new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null, "index", "index", -1531685915), null, new cljs.core.Keyword(null, "rtree", "rtree", -82448827), 
+null, new cljs.core.Keyword(null, "boundarylines", "boundarylines", 1568915708), cljs.core.PersistentArrayMap.EMPTY], null), "uk_wards", new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null, "index", "index", -1531685915), null, new cljs.core.Keyword(null, "rtree", "rtree", -82448827), null, new cljs.core.Keyword(null, "boundarylines", "boundarylines", 1568915708), cljs.core.PersistentArrayMap.EMPTY], null), "uk_regions", new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null, 
+"index", "index", -1531685915), null, new cljs.core.Keyword(null, "rtree", "rtree", -82448827), null, new cljs.core.Keyword(null, "boundarylines", "boundarylines", 1568915708), cljs.core.PersistentArrayMap.EMPTY], null)], null), new cljs.core.Keyword(null, "boundarylines", "boundarylines", 1568915708), cljs.core.PersistentArrayMap.EMPTY], null), new cljs.core.Keyword(null, "filter-spec", "filter-spec", -1101318648), new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null, "components", 
+"components", -1073188942), cljs.core.PersistentArrayMap.EMPTY, new cljs.core.Keyword(null, "filter-by-view", "filter-by-view", 902292255), !1, new cljs.core.Keyword(null, "bounds", "bounds", 1691609455), null, new cljs.core.Keyword(null, "compiled", "compiled", 850043082), null], null), new cljs.core.Keyword(null, "map", "map", 1371690461), new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null, "type", "type", 1174270348), new cljs.core.Keyword(null, "geoport", "geoport", 534549910), 
+new cljs.core.Keyword(null, "datasource", "datasource", -246060221), "companies", new cljs.core.Keyword(null, "boundaryline-collections", "boundaryline-collections", 1750591980), new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [0, "uk_regions"], null), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [5, "uk_counties"], null), new cljs.core.PersistentVector(null, 
+2, 5, cljs.core.PersistentVector.EMPTY_NODE, [7, "uk_boroughs"], null), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [10, "uk_wards"], null)], null), new cljs.core.Keyword(null, "controls", "controls", 1340701452), new cljs.core.PersistentArrayMap(null, 6, [new cljs.core.Keyword(null, "initial-bounds", "initial-bounds", -1404401542), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, 
+[59.54, 2.3], null), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [49.29, -11.29], null)], null), new cljs.core.Keyword(null, "zoom", "zoom", -1827487038), null, new cljs.core.Keyword(null, "bounds", "bounds", 1691609455), null, new cljs.core.Keyword(null, "boundaryline-collection", "boundaryline-collection", 853329936), null, new cljs.core.Keyword(null, "boundaryline-agg", "boundaryline-agg", 1246510775), new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null, 
+"type", "type", 1174270348), new cljs.core.Keyword(null, "stats", "stats", -85643011), new cljs.core.Keyword(null, "index", "index", -1531685915), "companies", new cljs.core.Keyword(null, "index-type", "index-type", 500383962), "company", new cljs.core.Keyword(null, "key", "key", -1516042587), "boundaryline_id", new cljs.core.Keyword(null, "variable", "variable", -281346492), "!latest_employee_count"], null), new cljs.core.Keyword(null, "colorchooser", "colorchooser", 1990432729), new cljs.core.PersistentArrayMap(null, 
+3, [new cljs.core.Keyword(null, "scheme", "scheme", 90199613), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "Oranges", "Oranges", 1752319702), new cljs.core.Keyword(null, "9", "9", 1664767314)], null), new cljs.core.Keyword(null, "scale", "scale", -230427353), new cljs.core.Keyword(null, "log", "log", -1595516004), new cljs.core.Keyword(null, "variable", "variable", -281346492), new cljs.core.Keyword(null, "sum", "sum", 136986814)], 
+null)], null), new cljs.core.Keyword(null, "data", "data", -232669377), null], null), new cljs.core.Keyword(null, "map-report", "map-report", -254073588), new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "controls", "controls", 1340701452), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "summary-stats", "summary-stats", -1745571251), new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null, "index", "index", -1531685915), "companies", new cljs.core.Keyword(null, 
+"index-type", "index-type", 500383962), "company", new cljs.core.Keyword(null, "variables", "variables", 1563680814), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, ["!latest_employee_count", "!latest_turnover"], null)], null)], null), new cljs.core.Keyword(null, "summary-stats", "summary-stats", -1745571251), null], null), new cljs.core.Keyword(null, "table", "table", -564943036), new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null, "type", "type", 
+1174270348), new cljs.core.Keyword(null, "table", "table", -564943036), new cljs.core.Keyword(null, "controls", "controls", 1340701452), new cljs.core.PersistentArrayMap(null, 6, [new cljs.core.Keyword(null, "index", "index", -1531685915), "companies", new cljs.core.Keyword(null, "index-type", "index-type", 500383962), "company", new cljs.core.Keyword(null, "sort-spec", "sort-spec", 104043994), null, new cljs.core.Keyword(null, "from", "from", 1815293044), 0, new cljs.core.Keyword(null, "size", "size", 
+1098693007), 50, new cljs.core.Keyword(null, "columns", "columns", 1998437288), new cljs.core.PersistentVector(null, 6, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "!name", "!name", 1164538490), "Name"], null), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "!postcode", "!postcode", 1728852280), "Postcode"], null), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "!formation_date", 
+"!formation_date", -1967327335), "Formation date"], null), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "!latest_accounts_date", "!latest_accounts_date", -259857093), "Filing date"], null), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "!latest_employee_count", "!latest_employee_count", -1445524938), "Employees"], null), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "!latest_turnover", "!latest_turnover", -1853433972), "Turnover"], 
+null)], null)], null), new cljs.core.Keyword(null, "table-data", "table-data", -1783738205), null], null), new cljs.core.Keyword(null, "turnover_timeline", "turnover_timeline", -2042271101), new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null, "type", "type", 1174270348), new cljs.core.Keyword(null, "timeline", "timeline", 192903161), new cljs.core.Keyword(null, "datasource", "datasource", -246060221), "company_accounts", new cljs.core.Keyword(null, "controls", "controls", 1340701452), 
+new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null, "variable", "variable", -281346492), "accounts_date", new cljs.core.Keyword(null, "after", "after", 594996914), "2003-01-01", new cljs.core.Keyword(null, "before", "before", -1633692388), "2012-01-01", new cljs.core.Keyword(null, "interval", "interval", 1708495417), "year"], null), new cljs.core.Keyword(null, "data", "data", -232669377), null], null), new cljs.core.Keyword(null, "view", "view", 1247994814), new cljs.core.Keyword(null, 
+"map", "map", 1371690461)], null));
 clustermap.app.new_state = function(a, b) {
   return cljs.core.reduce.call(null, function(a, b) {
     var e = cljs.core.nth.call(null, b, 0, null), f = cljs.core.nth.call(null, b, 1, null), g = cljs.core.sequential_QMARK_.call(null, e) ? e : new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [e], null);
@@ -42278,12 +42541,12 @@ clustermap.app.init = function() {
   clustermap.app.init_routes.call(null, a);
   clustermap.app.load_boundaryline_collection_indexes.call(null);
   clustermap.components.mount.mount.call(null, new cljs.core.Keyword(null, "map", "map", 1371690461), clustermap.components.map.map_component, clustermap.app.state, new cljs.core.Keyword(null, "target", "target", 253001721), "map-component", new cljs.core.Keyword(null, "shared", "shared", -384145993), d, new cljs.core.Keyword(null, "paths", "paths", -1807389588), new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "map-state", "map-state", -1227493550), new cljs.core.PersistentVector(null, 
-  1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "map", "map", 1371690461)], null), new cljs.core.Keyword(null, "filter", "filter", -948537934), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "filter", "filter", -948537934), new cljs.core.Keyword(null, "compiled", "compiled", 850043082)], null)], null));
-  clustermap.components.mount.mount.call(null, new cljs.core.Keyword(null, "map-report", "map-report", -254073588), clustermap.components.map_report.map_report_component, clustermap.app.state, new cljs.core.Keyword(null, "target", "target", 253001721), "map-report-component", new cljs.core.Keyword(null, "shared", "shared", -384145993), d, new cljs.core.Keyword(null, "paths", "paths", -1807389588), new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null, "filter", "filter", -948537934), 
-  new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "filter", "filter", -948537934), new cljs.core.Keyword(null, "compiled", "compiled", 850043082)], null), new cljs.core.Keyword(null, "map-controls", "map-controls", -1453318552), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "map", "map", 1371690461), new cljs.core.Keyword(null, "controls", "controls", 1340701452)], null), 
-  new cljs.core.Keyword(null, "map-report", "map-report", -254073588), new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "map-report", "map-report", -254073588)], null)], null));
-  clustermap.components.mount.mount.call(null, new cljs.core.Keyword(null, "search", "search", 1564939822), clustermap.components.filter.filter_component, clustermap.app.state, new cljs.core.Keyword(null, "target", "target", 253001721), "search-component", new cljs.core.Keyword(null, "shared", "shared", -384145993), d, new cljs.core.Keyword(null, "path", "path", -188191168), new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "filter", "filter", 
-  -948537934)], null));
+  1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "map", "map", 1371690461)], null), new cljs.core.Keyword(null, "filter", "filter", -948537934), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "filter-spec", "filter-spec", -1101318648), new cljs.core.Keyword(null, "compiled", "compiled", 850043082)], null)], null));
+  clustermap.components.mount.mount.call(null, new cljs.core.Keyword(null, "map-report", "map-report", -254073588), clustermap.components.map_report.map_report_component, clustermap.app.state, new cljs.core.Keyword(null, "target", "target", 253001721), "map-report-component", new cljs.core.Keyword(null, "shared", "shared", -384145993), d, new cljs.core.Keyword(null, "paths", "paths", -1807389588), new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null, "filter-spec", "filter-spec", 
+  -1101318648), new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "filter-spec", "filter-spec", -1101318648)], null), new cljs.core.Keyword(null, "map-controls", "map-controls", -1453318552), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "map", "map", 1371690461), new cljs.core.Keyword(null, "controls", "controls", 1340701452)], null), new cljs.core.Keyword(null, "map-report", 
+  "map-report", -254073588), new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "map-report", "map-report", -254073588)], null)], null));
+  clustermap.components.mount.mount.call(null, new cljs.core.Keyword(null, "search", "search", 1564939822), clustermap.components.filter.filter_component, clustermap.app.state, new cljs.core.Keyword(null, "target", "target", 253001721), "search-component", new cljs.core.Keyword(null, "shared", "shared", -384145993), d, new cljs.core.Keyword(null, "paths", "paths", -1807389588), new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "filter-spec", "filter-spec", -1101318648), new cljs.core.PersistentVector(null, 
+  1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "filter-spec", "filter-spec", -1101318648)], null), new cljs.core.Keyword(null, "bounds", "bounds", 1691609455), new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "map", "map", 1371690461), new cljs.core.Keyword(null, "controls", "controls", 1340701452), new cljs.core.Keyword(null, "bounds", "bounds", 1691609455)], null)], null));
   clustermap.components.mount.mount.call(null, new cljs.core.Keyword(null, "var-select", "var-select", -284006595), cljs.core.partial.call(null, clustermap.components.select_chooser.select_chooser_component, "Variable", new cljs.core.Keyword(null, "variable", "variable", -281346492), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, ["!latest_employee_count", "Employee count"], null), 
   new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, ["!latest_turnover", "Turnover"], null)], null)), clustermap.app.state, new cljs.core.Keyword(null, "target", "target", 253001721), "variable-selection-component", new cljs.core.Keyword(null, "shared", "shared", -384145993), d, new cljs.core.Keyword(null, "path", "path", -188191168), new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "map", "map", 1371690461), 
   new cljs.core.Keyword(null, "controls", "controls", 1340701452), new cljs.core.Keyword(null, "boundaryline-agg", "boundaryline-agg", 1246510775)], null));
@@ -42296,8 +42559,8 @@ clustermap.app.init = function() {
   clustermap.components.mount.mount.call(null, new cljs.core.Keyword(null, "color-scale", "color-scale", -2117745622), clustermap.components.color_scale.color_scale_component, clustermap.app.state, new cljs.core.Keyword(null, "target", "target", 253001721), "color-scale-component", new cljs.core.Keyword(null, "shared", "shared", -384145993), d, new cljs.core.Keyword(null, "path", "path", -188191168), new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, 
   "map", "map", 1371690461), new cljs.core.Keyword(null, "controls", "controls", 1340701452), new cljs.core.Keyword(null, "threshold-colors", "threshold-colors", 615635983)], null));
   clustermap.components.mount.mount.call(null, new cljs.core.Keyword(null, "table", "table", -564943036), clustermap.components.table.table_component, clustermap.app.state, new cljs.core.Keyword(null, "target", "target", 253001721), "full-report-table", new cljs.core.Keyword(null, "shared", "shared", -384145993), d, new cljs.core.Keyword(null, "paths", "paths", -1807389588), new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null, "table-state", "table-state", -1662785974), new cljs.core.PersistentVector(null, 
-  1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "table", "table", -564943036)], null), new cljs.core.Keyword(null, "filter", "filter", -948537934), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "filter", "filter", -948537934), new cljs.core.Keyword(null, "compiled", "compiled", 850043082)], null), new cljs.core.Keyword(null, "bounds", "bounds", 1691609455), new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, 
-  [new cljs.core.Keyword(null, "map", "map", 1371690461), new cljs.core.Keyword(null, "controls", "controls", 1340701452), new cljs.core.Keyword(null, "bounds", "bounds", 1691609455)], null)], null));
+  1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "table", "table", -564943036)], null), new cljs.core.Keyword(null, "filter-spec", "filter-spec", -1101318648), new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "filter-spec", "filter-spec", -1101318648)], null), new cljs.core.Keyword(null, "bounds", "bounds", 1691609455), new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, 
+  "map", "map", 1371690461), new cljs.core.Keyword(null, "controls", "controls", 1340701452), new cljs.core.Keyword(null, "bounds", "bounds", 1691609455)], null)], null));
   var e = cljs.core.async.chan.call(null, 1);
   cljs.core.async.impl.dispatch.run.call(null, function(a, b, c, d, e) {
     return function() {

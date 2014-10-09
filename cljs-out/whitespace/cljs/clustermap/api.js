@@ -714,12 +714,12 @@ return location_lists;
 * @param {...*} var_args
 */
 clustermap.api.simple_table = (function() { 
-var simple_table__delegate = function (index,type,filter_spec,bounds,sort_spec,offset,limit,p__8859){var vec__8861 = p__8859;var type_ids = cljs.core.nth.call(null,vec__8861,(0),null);return clustermap.api.POST.call(null,("/api/"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(clustermap.api.api_prefix)+"/simple-table/"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(index)+"/"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(type)+"?"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(clustermap.api.map_json_params.call(null,type_ids))),new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null,"filter","filter",-948537934),filter_spec,new cljs.core.Keyword(null,"bounds","bounds",1691609455),bounds,new cljs.core.Keyword(null,"sort","sort",953465918),sort_spec,new cljs.core.Keyword(null,"offset","offset",296498311),offset,new cljs.core.Keyword(null,"limit","limit",-1355822363),limit], null));
+var simple_table__delegate = function (index,type,filter_spec,bounds,sort_spec,from,size,p__8859){var vec__8861 = p__8859;var type_ids = cljs.core.nth.call(null,vec__8861,(0),null);return clustermap.api.POST.call(null,("/api/"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(clustermap.api.api_prefix)+"/simple-table/"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(index)+"/"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(type)+"?"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(clustermap.api.map_json_params.call(null,type_ids))),new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null,"filter","filter",-948537934),filter_spec,new cljs.core.Keyword(null,"bounds","bounds",1691609455),bounds,new cljs.core.Keyword(null,"sort","sort",953465918),sort_spec,new cljs.core.Keyword(null,"from","from",1815293044),from,new cljs.core.Keyword(null,"size","size",1098693007),size], null));
 };
-var simple_table = function (index,type,filter_spec,bounds,sort_spec,offset,limit,var_args){
+var simple_table = function (index,type,filter_spec,bounds,sort_spec,from,size,var_args){
 var p__8859 = null;if (arguments.length > 7) {
   p__8859 = cljs.core.array_seq(Array.prototype.slice.call(arguments, 7),0);} 
-return simple_table__delegate.call(this,index,type,filter_spec,bounds,sort_spec,offset,limit,p__8859);};
+return simple_table__delegate.call(this,index,type,filter_spec,bounds,sort_spec,from,size,p__8859);};
 simple_table.cljs$lang$maxFixedArity = 7;
 simple_table.cljs$lang$applyTo = (function (arglist__8862){
 var index = cljs.core.first(arglist__8862);
@@ -732,11 +732,11 @@ var bounds = cljs.core.first(arglist__8862);
 arglist__8862 = cljs.core.next(arglist__8862);
 var sort_spec = cljs.core.first(arglist__8862);
 arglist__8862 = cljs.core.next(arglist__8862);
-var offset = cljs.core.first(arglist__8862);
+var from = cljs.core.first(arglist__8862);
 arglist__8862 = cljs.core.next(arglist__8862);
-var limit = cljs.core.first(arglist__8862);
+var size = cljs.core.first(arglist__8862);
 var p__8859 = cljs.core.rest(arglist__8862);
-return simple_table__delegate(index,type,filter_spec,bounds,sort_spec,offset,limit,p__8859);
+return simple_table__delegate(index,type,filter_spec,bounds,sort_spec,from,size,p__8859);
 });
 simple_table.cljs$core$IFn$_invoke$arity$variadic = simple_table__delegate;
 return simple_table;

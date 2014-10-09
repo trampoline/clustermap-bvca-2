@@ -29,10 +29,6 @@
             ;; [:h3 "UK wide"]
             ]
          [:ul
-          [:li [:input {:type "checkbox" :name "filter-by-view" :value "true"
-                        :onChange (fn [e] (let [val (-> e .-target .-checked)]
-                                            (om/update! map-report-data [:controls :summary-stats :filter-by-view] val)))}]
-           [:small "Filter by view"]]
           [:li (fnum count :default "-") [:small "Companies"]]
           [:li (fmoney sum-turnover :sf 2 :default "-") [:small "Total revenue"]]
           [:li (fnum sum-employee-count :dec 0 :default "-") [:small "Total employees"]]]
@@ -49,8 +45,9 @@
                              bounds))
 
 (defn map-report-component
-  [{filt :filter
-    {{{:keys [index index-type variables filter-by-view]
+  [{{filter-by-view :filter-by-view
+     filt :compiled} :filter-spec
+    {{{:keys [index index-type variables]
        :as summary-stats} :summary-stats
        :as controls} :controls
        summary-stats-data :summary-stats-data
@@ -74,11 +71,11 @@
 
     om/IWillUpdate
     (will-update [_
-                  {next-filt :filter
+                  {{next-filter-by-view :filter-by-view
+                    next-filt :compiled} :filter-spec
                    {{{next-index :index
                       next-index-type :index-type
                       next-variables :variables
-                      next-filter-by-view :filter-by-view
                       :as next-summary-stats} :summary-stats
                       :as next-controls} :controls
                       next-summary-stats-data :summary-stats-data

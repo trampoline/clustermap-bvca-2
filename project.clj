@@ -10,6 +10,7 @@
                  [domina "1.0.2"]
                  [jayq "2.5.2"]
                  [om "0.7.3"]
+                 [prismatic/om-tools "0.3.2" :exclusions [org.clojure/clojure]]
                  [sablono "0.2.22"]
                  [hiccups "0.3.0"]
                  [secretary "1.2.0"]

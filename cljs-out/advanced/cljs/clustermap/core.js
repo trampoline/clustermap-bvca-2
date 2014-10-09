@@ -10,8 +10,8 @@ goog.require('weasel.repl');
 clustermap.core.init = (function init(){return clustermap.app.init();
 });
 if(cljs.core.truth_(config.repl))
-{weasel.repl.connect.cljs$core$IFn$_invoke$arity$variadic("ws://localhost:9001",cljs.core.array_seq([cljs.core.constant$keyword$1259,true], 0));
-figwheel.client.watch_and_reload.cljs$core$IFn$_invoke$arity$variadic(cljs.core.array_seq([cljs.core.constant$keyword$1265,"ws://localhost:3449/figwheel-ws",cljs.core.constant$keyword$1277,(function (){return console.log("reloaded");
+{weasel.repl.connect.cljs$core$IFn$_invoke$arity$variadic("ws://localhost:9001",cljs.core.array_seq([cljs.core.constant$keyword$1355,true], 0));
+figwheel.client.watch_and_reload.cljs$core$IFn$_invoke$arity$variadic(cljs.core.array_seq([cljs.core.constant$keyword$1361,"ws://localhost:3449/figwheel-ws",cljs.core.constant$keyword$1373,(function (){return console.log("reloaded");
 })], 0));
 clustermap.core.init();
 } else

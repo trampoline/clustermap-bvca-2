@@ -64,6 +64,7 @@ goog.addDependency("promise/resolver.js", ['goog.promise.Resolver'], []);
 goog.addDependency("promise/promise.js", ['goog.Promise'], ['goog.Thenable', 'goog.asserts', 'goog.async.run', 'goog.async.throwException', 'goog.debug.Error', 'goog.promise.Resolver']);
 goog.addDependency("mochikit/async/deferred.js", ['goog.async.Deferred', 'goog.async.Deferred.AlreadyCalledError', 'goog.async.Deferred.CanceledError'], ['goog.Promise', 'goog.Thenable', 'goog.array', 'goog.asserts', 'goog.debug.Error']);
 goog.addDependency("net/jsloader.js", ['goog.net.jsloader', 'goog.net.jsloader.Error', 'goog.net.jsloader.ErrorCode', 'goog.net.jsloader.Options'], ['goog.array', 'goog.async.Deferred', 'goog.debug.Error', 'goog.dom', 'goog.dom.TagName']);
+goog.addDependency("string/stringformat.js", ['goog.string.format'], ['goog.string']);
 goog.addDependency("events/eventhandler.js", ['goog.events.EventHandler'], ['goog.Disposable', 'goog.events', 'goog.object']);
 goog.addDependency("net/xpc/directtransport.js", ['goog.net.xpc.DirectTransport'], ['goog.Timer', 'goog.async.Deferred', 'goog.events.EventHandler', 'goog.log', 'goog.net.xpc', 'goog.net.xpc.CfgFields', 'goog.net.xpc.CrossPageChannelRole', 'goog.net.xpc.Transport', 'goog.net.xpc.TransportTypes', 'goog.object']);
 goog.addDependency("net/xpc/nixtransport.js", ['goog.net.xpc.NixTransport'], ['goog.log', 'goog.net.xpc', 'goog.net.xpc.CfgFields', 'goog.net.xpc.CrossPageChannelRole', 'goog.net.xpc.Transport', 'goog.net.xpc.TransportTypes', 'goog.reflect']);
@@ -89,7 +90,6 @@ goog.addDependency("history/event.js", ['goog.history.Event'], ['goog.events.Eve
 goog.addDependency("labs/useragent/device.js", ['goog.labs.userAgent.device'], ['goog.labs.userAgent.util']);
 goog.addDependency("memoize/memoize.js", ['goog.memoize'], []);
 goog.addDependency("history/history.js", ['goog.History', 'goog.History.Event', 'goog.History.EventType'], ['goog.Timer', 'goog.dom', 'goog.events.EventHandler', 'goog.events.EventTarget', 'goog.events.EventType', 'goog.history.Event', 'goog.history.EventType', 'goog.labs.userAgent.device', 'goog.memoize', 'goog.string', 'goog.userAgent']);
-goog.addDependency("string/stringformat.js", ['goog.string.format'], ['goog.string']);
 goog.addDependency("dom/forms.js", ['goog.dom.forms'], ['goog.structs.Map']);
 goog.addDependency("dom/classes.js", ['goog.dom.classes'], ['goog.array']);
 goog.addDependency("dom/vendor.js", ['goog.dom.vendor'], ['goog.string', 'goog.userAgent']);

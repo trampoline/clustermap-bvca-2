@@ -8,10 +8,10 @@
  "names":
  ["clustermap.formats.money/money-suffixes",
   "clustermap.formats.money/money-suffix", "exp", "or__3558__auto__",
-  "p__54297", "map__54300", "cljs.core/seq?", "cljs.core/apply",
+  "p__62029", "map__62032", "cljs.core/seq?", "cljs.core/apply",
   "cljs.core/hash-map", "cljs.core/get",
   "clustermap.formats.money/readable", "n", "sf", "curr", "plus?",
-  "default", "vec__54301", "cljs.core/nth", "sig",
+  "default", "vec__62033", "cljs.core/nth", "sig",
   "clustermap.formats.number/eng-notation", "abs-sig", "js/Math.abs",
   "suffix", "cljs.core/str", "cljs.core/filter", "cljs.core/identity",
   "and__3546__auto__", "clustermap.formats.money/fmoney"]}

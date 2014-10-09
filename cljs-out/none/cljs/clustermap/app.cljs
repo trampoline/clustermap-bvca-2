@@ -22,6 +22,7 @@
    [clustermap.components.page-title :as page-title]
    [clustermap.components.search :as search]
    [clustermap.components.table :as table]
+   [clustermap.components.timeline-chart :as timeline-chart]
    [clustermap.boundarylines :as bl]
    [clustermap.data.colorchooser :as colorchooser])
   (:import [goog History]
@@ -83,13 +84,14 @@
                                        {:!latest_turnover "Turnover"}]}
                   :table-data nil}
 
-         :turnover_timeline {:type :timeline
+         :turnover-timeline {:type :timeline
                              :datasource "company_accounts"
-                             :controls {:variable "accounts_date"
-                                        :after "2003-01-01"
-                                        :before "2012-01-01"
+                             :controls {:index "company-accounts"
+                                        :index-type "accounts"
+                                        :time-variable "?accounts_date"
+                                        :measure-variables "!turnover"
                                         :interval "year"}
-                             :data nil}
+                             :timeline-data nil}
 
          :view :map
 
@@ -383,6 +385,16 @@
                  :paths {:table-state [:table]
                          :filter-spec [:filter-spec]
                          :bounds [:map :controls :bounds]})
+
+    (mount/mount :turnover-timeline
+                 timeline-chart/timeline-chart
+                 state
+                 :target "turnover-timeline"
+                 :shared shared
+                 :paths {:timeline-chart [:turnover-timeline]
+                         :filter-spec [:filter-spec]
+                         :bounds [:map :controls :bounds]
+                         })
 
 
     ;; (search/mount state "search-component" shared)

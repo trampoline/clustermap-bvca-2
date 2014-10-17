@@ -1,5 +1,6 @@
 (ns clustermap.core
   (:require
+   [clojure.string :as str]
    [weasel.repl :as ws-repl]
    [figwheel.client :as fw :include-macros true]
    [clustermap.app :as app]
@@ -16,9 +17,14 @@
    [clustermap.components.search :as search]
    [clustermap.components.table :as table]
    [clustermap.components.timeline-chart :as timeline-chart]
+   [clustermap.routes :as routes]
+   [clustermap.boundarylines :as bl]
+   [clustermap.nav :as nav]
+   [secretary.core :as secretary :include-macros true :refer [defroute]]
+   [cljs.core.async :refer [chan <! put! sliding-buffer]]
 
 
-   ))
+))
 
 (def initial-state
   {:boundarylines {
@@ -149,29 +155,141 @@
    ]
   )
 
-;; the IApp object
-(def app-instance (atom nil))
+;;;;;;;;;;;;;;;;;;;;;;;; load and index boundarylines
 
-(defn start-or-restart-app
+(def bl-collections ["uk_regions" "uk_counties" "uk_boroughs" "uk_wards"])
+
+(defn load-boundaryline-collection-indexes
+  [state]
+  (doseq [blcoll bl-collections]
+    (bl/fetch-boundaryline-collection-index state :boundarylines blcoll)))
+
+;;;;;;;;;;;;;;;;;;;;;;;
+
+(defn parse-route
+  [history]
+  (let [fragment (.getToken history)
+        [_ view type id] (re-matches #"/([^/]+)(?:/([^/]+)/(.+))?$" fragment)
+        type (when (> (some-> type str/trim count) 0) (str/trim type))
+        id (when (> (some-> id str/trim count) 0) (str/trim id))]
+    {:view view
+     :type type
+     :id id}))
+
+(defn change-view
+  [state view]
+  (let [view (keyword view)]
+    (when (not= view (:view @state))
+      (swap! state assoc :view view)
+      (nav/change-view (name view)))))
+
+(defn set-route
+  [history view type id]
+  (cond
+   (and type id)
+   (.setToken history (str "/" (-> view (or "map") name) "/" (name type) "/" (name id)))
+
+   view
+   (.setToken history (str "/" (name view)))
+
+   true
+   (.setToken history (str ""))))
+
+(defn parse-route
+  [history]
+  (let [fragment (.getToken history)
+        [_ view type id] (re-matches #"/([^/]+)(?:/([^/]+)/(.+))?$" fragment)
+        type (when (> (some-> type str/trim count) 0) (str/trim type))
+        id (when (> (some-> id str/trim count) 0) (str/trim id))]
+    {:view view
+     :type type
+     :id id}))
+
+(defn set-view-route
+  [history view]
+  (let [{:keys [type id]} (parse-route history)]
+    (set-route history view type id)))
+
+(defn create-event-handlers-map
+  [state history]
+  {:change-view (partial set-view-route history)
+   :route-change-view (partial change-view state)
+   :select (fn [t v] (.log js/console (clj->js [":select (ignored)" t v])))})
+
+(defn choose-event-handler
+  [event-handlers-map type val]
+  (let [handler (get event-handlers-map type)]
+    (if-not handler (throw (js/Error. (str "no handler for event-type: " type))))
+    (handler val)))
+
+
+
+
+(defn init-routes
+  [history comm]
+
+  (defroute "" []
+    ;; (put! comm [:route-select nil])
+    )
+
+  (defroute "/" []
+    ;; (put! comm [:route-select nil])
+    )
+
+  (defroute "/:view" [view]
+    (put! comm [:route-change-view view])
+    ;; (put! comm [:route-select nil])
+    )
+
+  (defroute "/:view/:type/:id" [view type id]
+    (put! comm [:route-change-view view])
+    ;; (put! comm [:route-select [(keyword type) id]])
+    ))
+
+
+(defn create-app-service
   []
-  (swap! app-instance
-         (fn [a]
-           (when a (app/stop a))
-           (let [new-app (app/create-app-instance initial-state components)]
-             (app/start new-app)
-             new-app))))
+  (let [event-handlers (atom nil)]
+    (reify
+      app/IAppService
+      (init [this app]
+
+        (nav/init (app/get-comm app))
+        (init-routes (app/get-history app) (app/get-comm app))
+        (load-boundaryline-collection-indexes (app/get-state app))
+        (reset! event-handlers (create-event-handlers-map (app/get-state app) (app/get-history app)))
+
+        {:path-fn routes/path-for
+         :link-fn routes/link-for
+         :view-path-fn (partial routes/path-for-view (partial parse-route (app/get-history app)))
+         :fetch-boundarylines-fn (partial bl/get-or-fetch-best-boundarylines (app/get-state app) :boundarylines)
+         :point-in-boundarylines-fn (partial bl/point-in-boundarylines (app/get-state app) :boundarylines :uk_boroughs)})
+
+      (destroy [this app])
+
+      (handle-event [this app type val]
+        (choose-event-handler @event-handlers type val)))))
+
+;; the IApp object
+(def ^:private app-instance (atom nil))
+
+(defn init
+  []
+  (app/start-or-restart-app app-instance initial-state components (create-app-service)))
 
 (cond
 
+ ;; dev mode : configure repl and figwheel code-reloading
  js/config.repl
  (do
    (ws-repl/connect "ws://localhost:9001" :verbose true)
    (fw/watch-and-reload
     :websocket-url "ws://localhost:3449/figwheel-ws"
     :jsload-callback (fn []
-                       (start-or-restart-app)
+                       (init)
                        (.log js/console "restarted")))
-   (start-or-restart-app))
+   (init))
 
+ ;; production : just run the app
  true
- (start-or-restart-app))
+ (init))

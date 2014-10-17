@@ -31,10 +31,6 @@
   (:import [goog History]
            [goog.history EventType]))
 
-(defprotocol IApp
-  (start [this])
-  (stop [this]))
-
 (def initial-state
   {:boundarylines {
                    :collections {
@@ -105,6 +101,65 @@
 
 
    })
+
+(def components
+  [{:name :map
+    :f map/map-component
+    :target "map-component"
+    :paths {:map-state [:map]
+            :filter [:filter-spec :compiled]}}
+
+   {:name :map-report
+    :f map-report/map-report-component
+    :target "map-report-component"
+    :paths {:filter-spec [:filter-spec]
+            :map-controls [:map :controls]
+            :map-report [:map-report]}}
+
+   {:name :search
+    :f filter/filter-component
+    :target "search-component"
+    :paths {:filter-spec [:filter-spec]
+            :bounds [:map :controls :bounds]}}
+
+   {:name :var-select
+    :f (partial select-chooser/select-chooser-component "Variable" :variable [["!latest_employee_count" "Employee count"] ["!latest_turnover" "Turnover"]])
+    :target "variable-selection-component"
+    :paths [:map :controls :boundaryline-agg]}
+
+   {:name :stat-select
+    :f (partial select-chooser/select-chooser-component "Statistic" :variable [["sum" "Sum"] ["max" "Maximum"] ["avg" "Mean"] ["boundaryline_id_doc_count" "Count"]])
+    :target "stat-selection-component"
+    :paths [:map :controls :colorchooser]}
+
+   {:name :scale-select
+    :f (partial select-chooser/select-chooser-component "Scale" :scale [["log" "Log"] ["linear" "Linear"]])
+    :target "scale-selection-component"
+    :paths [:map :controls :colorchooser]}
+
+   ;; {:name :color-scale
+   ;;  :f color-scale/color-scale-component
+   ;;  :target "color-scale-component"
+   ;;  :paths [:map :controls :threshold-colors]}
+
+   {:name :table
+    :f table/table-component
+    :target "full-report-table"
+    :paths {:table-state [:table]
+            :filter-spec [:filter-spec]
+            :bounds [:map :controls :bounds]}}
+
+   {:name :turnover-timeline
+    :f timeline-chart/timeline-chart
+    :target "turnover-timeline"
+    :paths {:timeline-chart [:turnover-timeline]
+            :filter-spec [:filter-spec]
+            :bounds [:map :controls :bounds]
+            }}
+
+   ]
+  )
+
 
 (defn- new-state
   "create a new app-state based on the old state
@@ -220,6 +275,10 @@
 
 (def ^:private history* (History.))
 
+(defprotocol IApp
+  (start [this])
+  (stop [this]))
+
 (defn create-app-instance
   []
   (let [comm (chan)
@@ -244,78 +303,14 @@
 
           (load-boundaryline-collection-indexes state)
 
-          (mount/mount :map
-                       map/map-component
-                       state
-                       :target "map-component"
-                       :shared shared
-                       :paths {:map-state [:map]
-                               :filter [:filter-spec :compiled]})
-
-          (mount/mount :map-report
-                       map-report/map-report-component
-                       state
-                       :target "map-report-component"
-                       :shared shared
-                       :paths {:filter-spec [:filter-spec]
-                               :map-controls [:map :controls]
-                               :map-report [:map-report]})
-
-          (mount/mount :search
-                       filter/filter-component
-                       state
-                       :target "search-component"
-                       :shared shared
-                       :paths {:filter-spec [:filter-spec]
-                               :bounds [:map :controls :bounds]})
-
-          (mount/mount :var-select
-                       (partial select-chooser/select-chooser-component "Variable" :variable [["!latest_employee_count" "Employee count"] ["!latest_turnover" "Turnover"]])
-                       state
-                       :target "variable-selection-component"
-                       :shared shared
-                       :path [:map :controls :boundaryline-agg])
-
-          (mount/mount :stat-select
-                       (partial select-chooser/select-chooser-component "Statistic" :variable [["sum" "Sum"] ["max" "Maximum"] ["avg" "Mean"] ["boundaryline_id_doc_count" "Count"]])
-                       state
-                       :target "stat-selection-component"
-                       :shared shared
-                       :path [:map :controls :colorchooser])
-
-          (mount/mount :scale-select
-                       (partial select-chooser/select-chooser-component "Scale" :scale [["log" "Log"] ["linear" "Linear"]])
-                       state
-                       :target "scale-selection-component"
-                       :shared shared
-                       :path [:map :controls :colorchooser])
-
-          (mount/mount :color-scale
-                       color-scale/color-scale-component
-                       state
-                       :target "color-scale-component"
-                       :shared shared
-                       :path [:map :controls :threshold-colors])
-
-          (mount/mount :table
-                       table/table-component
-                       state
-                       :target "full-report-table"
-                       :shared shared
-                       :paths {:table-state [:table]
-                               :filter-spec [:filter-spec]
-                               :bounds [:map :controls :bounds]})
-
-          (mount/mount :turnover-timeline
-                       timeline-chart/timeline-chart
-                       state
-                       :target "turnover-timeline"
-                       :shared shared
-                       :paths {:timeline-chart [:turnover-timeline]
-                               :filter-spec [:filter-spec]
-                               :bounds [:map :controls :bounds]
-                               })
-
+          (doseq [{:keys [name f target paths]} components]
+            (.log js/console (clj->js ["component" name f target paths]))
+            (mount/mount name
+                         f
+                         state
+                         :target target
+                         :shared shared
+                         :paths paths))
 
           ;; (search/mount state "search-component" shared)
           ;; (map-report/mount state "map-report-component" shared)
@@ -331,10 +326,7 @@
         (.removeAllListeners history*)
         (secretary/reset-routes!)
 
-        (for [target ["map-component" "map-report-component" "search-component"
-                      "variable-selection-component" "stat-selection-component"
-                      "scale-selection-component" "color-scale-component" "full-report-table"
-                      "turnover-timeline"]]
+        (doseq [{:keys [target]} components]
           (mount/unmount target)))
       )))
 

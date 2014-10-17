@@ -125,22 +125,22 @@
    {:name :var-select
     :f (partial select-chooser/select-chooser-component "Variable" :variable [["!latest_employee_count" "Employee count"] ["!latest_turnover" "Turnover"]])
     :target "variable-selection-component"
-    :paths [:map :controls :boundaryline-agg]}
+    :path [:map :controls :boundaryline-agg]}
 
    {:name :stat-select
     :f (partial select-chooser/select-chooser-component "Statistic" :variable [["sum" "Sum"] ["max" "Maximum"] ["avg" "Mean"] ["boundaryline_id_doc_count" "Count"]])
     :target "stat-selection-component"
-    :paths [:map :controls :colorchooser]}
+    :path [:map :controls :colorchooser]}
 
    {:name :scale-select
     :f (partial select-chooser/select-chooser-component "Scale" :scale [["log" "Log"] ["linear" "Linear"]])
     :target "scale-selection-component"
-    :paths [:map :controls :colorchooser]}
+    :path [:map :controls :colorchooser]}
 
-   ;; {:name :color-scale
-   ;;  :f color-scale/color-scale-component
-   ;;  :target "color-scale-component"
-   ;;  :paths [:map :controls :threshold-colors]}
+   {:name :color-scale
+    :f color-scale/color-scale-component
+    :target "color-scale-component"
+    :path [:map :controls :threshold-colors]}
 
    {:name :table
     :f table/table-component
@@ -277,12 +277,13 @@
 
 (defprotocol IApp
   (start [this])
-  (stop [this]))
+  (stop [this])
+  (value [this]))
 
 (defn create-app-instance
-  []
+  [initial-state-value]
   (let [comm (chan)
-        state (atom initial-state)
+        state (atom initial-state-value)
         event-handlers-map (create-event-handlers-map state history*)
         handle-event (partial choose-event-handler event-handlers-map)]
 
@@ -303,13 +304,14 @@
 
           (load-boundaryline-collection-indexes state)
 
-          (doseq [{:keys [name f target paths]} components]
+          (doseq [{:keys [name f target path paths]} components]
             (.log js/console (clj->js ["component" name f target paths]))
             (mount/mount name
                          f
                          state
                          :target target
                          :shared shared
+                         :path path
                          :paths paths))
 
           ;; (search/mount state "search-component" shared)
@@ -320,7 +322,8 @@
           (go
             (while true
               (let [[type val] (<! comm)]
-                (handle-event type val))))))
+                (handle-event type val))))
+          ))
 
       (stop [_]
         (.removeAllListeners history*)
@@ -328,6 +331,9 @@
 
         (doseq [{:keys [target]} components]
           (mount/unmount target)))
+
+      (value [_]
+        @state)
       )))
 
 (def app-instance (atom nil))
@@ -335,9 +341,10 @@
 (defn start-or-restart-app
   []
   (swap! app-instance
-         (fn [app]
-           (when app (stop app))
-           (let [new-app (create-app-instance)]
+         (fn [a]
+           (when a (stop a))
+           (let [new-app (create-app-instance initial-state)]
              (start new-app)
+             (.log js/console new-app)
              new-app)
            )))

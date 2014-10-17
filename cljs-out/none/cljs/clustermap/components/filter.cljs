@@ -122,6 +122,26 @@
         [:option {:value "T"} "T : Activities of households as employers"]
         [:option {:value "U"} "U : Activities of extraterritorial organisations and bodies"]
         ]]]
+
+     [:div.tbl-row
+      [:div.tbl-cell "ONS sector"]
+      [:div.tbl-cell
+       [:select {:style {:width "100%"}
+                 :onChange (fn [e]
+                             (let [val (-> e .-target .-value)]
+                               (.log js/console (-> e .-target .-value))
+                               (om/update! filter-spec [:components :sector]
+                                           (when (not-empty val)
+                                             {:nested {:path "?tags"
+                                                       :filter {:bool {:must [{:term {"type" "ons_sector"}}
+                                                                              {:term {"tag" val}}]}}}}))))}
+        [:option {:value ""} "all"]
+        [:option {:value "other_scitechmanf"} "Other scientific/technological manufacture"]
+        [:option {:value "lifesci_health"} "Life Sciences & Healthcare"]
+        [:option {:value "digi_tech"} "Digital Technologies"]
+        [:option {:value "pub_broad"} "Publishing & Broadcasting"]
+        [:option {:value "other_scitech_serv"} "Other scientific/technological services"]
+        ]]]
      ]]))
 
 

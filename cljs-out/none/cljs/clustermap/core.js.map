@@ -2,10 +2,10 @@
  "file":
  "/Users/mccraig/dev/clustermap.all/clustermap-eustartupdata/resources/public/cljs/clustermap/core.js",
  "sources":["core.cljs"],
- "lineCount":22,
+ "lineCount":23,
  "mappings":
- ";AAAA;;;;;;;;AAMA,uBAAA,iBAAA,xCAAMA,wCACJ,OAACC;;AAEH,oBAECC;CACA,AACE,8BAAA,sBAAA,2DAAA,/GAACC;AACD,2CAAA,uEAAA,kCAAA,pJAACC,gOAEiB,aAAA,AAAO,mBAAA,ZAAMC;;AAC/B,AAACL;;CARJ,AAWC,AAACA",
+ ";AAAA;;;;;;;;AAMA,uBAAA,iBAAA,xCAAMA,wCACJ,OAACC;;AAEH,oBAECC;CACA,AACE,8BAAA,sBAAA,2DAAA,/GAACC;AACD,2CAAA,uEAAA,kCAAA,pJAACC,gOAEiB,aAAA,AACE,AAACJ;AACD,mBAAA,ZAAMK;;AAC1B,AAACL;;CAVJ,AAaC,AAACA",
  "names":
- ["clustermap.core/init", "clustermap.app/init", "js/config.repl",
-  "weasel.repl/connect", "figwheel.client/watch-and-reload",
-  "js/console"]}
+ ["clustermap.core/init", "clustermap.app/start-or-restart-app",
+  "js/config.repl", "weasel.repl/connect",
+  "figwheel.client/watch-and-reload", "js/console"]}

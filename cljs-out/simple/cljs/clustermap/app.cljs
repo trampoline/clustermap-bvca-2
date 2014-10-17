@@ -31,79 +31,141 @@
   (:import [goog History]
            [goog.history EventType]))
 
-(def state
-  (atom {
+(defprotocol IApp
+  (start [this])
+  (stop [this]))
 
-         :boundarylines {
-                         :collections {
-                                       "uk_boroughs" {:index nil
-                                                      :rtree nil
-                                                      :boundarylines {}}
-                                       "uk_wards" {:index nil
-                                                   :rtree nil
-                                                   :boundarylines {}}
-                                       "uk_regions" {:index nil
-                                                     :rtree nil
-                                                     :boundarylines {}}}
-                         :boundarylines {}}
+(def initial-state
+  {:boundarylines {
+                   :collections {
+                                 "uk_boroughs" {:index nil
+                                                :rtree nil
+                                                :boundarylines {}}
+                                 "uk_wards" {:index nil
+                                             :rtree nil
+                                             :boundarylines {}}
+                                 "uk_regions" {:index nil
+                                               :rtree nil
+                                               :boundarylines {}}}
+                   :boundarylines {}}
 
-         :filter-spec {:components {}
-                       :filter-by-view false
-                       :bounds nil
-                       :compiled nil}
+   :filter-spec {:components {}
+                 :filter-by-view false
+                 :bounds nil
+                 :compiled nil}
 
-         :map {:type :geoport
-               :datasource "companies"
-               :boundaryline-collections [[0 "uk_regions"] [5 "uk_counties"] [7 "uk_boroughs"] [10 "uk_wards"]]
-               :controls {:initial-bounds [[59.54 2.3] [49.29 -11.29]]
-                          :zoom nil
-                          :bounds nil
-                          :boundaryline-collection nil
-                          :boundaryline-agg {:type :stats
-                                             :index "companies"
-                                             :index-type "company"
-                                             :key "boundaryline_id"
-                                             :variable "!latest_employee_count"}
-                          :colorchooser {:scheme [:Oranges :9]
-                                         :scale :log
-                                         :variable :sum}}
-               :data nil}
+   :map {:type :geoport
+         :datasource "companies"
+         ;; :boundaryline-collections [[0 "nuts_0"] [4 "nuts_1"] [6 "nuts_2"] [7 "nuts_3"] [8 "uk_boroughs"] [10 "uk_wards"]]
+         :boundaryline-collections [[0 "uk_regions"] [5 "uk_counties"] [7 "uk_boroughs"] [10 "uk_wards"]]
+         :controls {:initial-bounds [[59.54 2.3] [49.29 -11.29]]
+                    :zoom nil
+                    :bounds nil
+                    :boundaryline-collection nil
+                    :boundaryline-agg {:type :stats
+                                       :index "companies"
+                                       :index-type "company"
+                                       :key "boundaryline_id"
+                                       :variable "!latest_employee_count"}
+                    :colorchooser {:scheme [:Oranges :9]
+                                   :scale :log
+                                   :variable :sum}}
+         :data nil}
 
-         :map-report {:controls {:summary-stats {:index "companies"
-                                                 :index-type "company"
-                                                 :variables ["!latest_employee_count" "!latest_turnover"]}}
-                      :summary-stats nil
-                      }
+   :map-report {:controls {:summary-stats {:index "companies"
+                                           :index-type "company"
+                                           :variables ["!latest_employee_count" "!latest_turnover"]}}
+                :summary-stats nil
+                }
 
-         :table  {:type :table
-                  :controls {:index "companies"
-                             :index-type "company"
-                             :sort-spec {:!latest_turnover {:order "desc"}}
-                             :from 0
-                             :size 50
-                             :columns [[:!name "Name"]
-                                       [:!postcode "Postcode"]
-                                       [:!formation_date "Formation date" #(time/format-date %)]
-                                       [:!latest_accounts_date "Filing date" #(time/format-date %)]
-                                       [:!latest_employee_count "Employees" #(num/readable % :dec 0)]
-                                       [:!latest_turnover "Turnover" #(money/readable % :sf 3 :curr "")]]}
-                  :table-data nil}
+   :table  {:type :table
+            :controls {:index "companies"
+                       :index-type "company"
+                       :sort-spec {:!latest_turnover {:order "desc"}}
+                       :from 0
+                       :size 50
+                       :columns [[:!name "Name"]
+                                 [:!postcode "Postcode"]
+                                 [:!formation_date "Formation date" #(time/format-date %)]
+                                 [:!latest_accounts_date "Filing date" #(time/format-date %)]
+                                 [:!latest_employee_count "Employees" #(num/readable % :dec 0)]
+                                 [:!latest_turnover "Turnover" #(money/readable % :sf 3 :curr "")]]}
+            :table-data nil}
 
-         :turnover-timeline {:type :timeline
-                             :datasource "company_accounts"
-                             :controls {:index "company-accounts"
-                                        :index-type "accounts"
-                                        :time-variable "?accounts_date"
-                                        :measure-variables "!turnover"
-                                        :interval "year"}
-                             :timeline-data nil}
+   :turnover-timeline {:type :timeline
+                       :datasource "company_accounts"
+                       :controls {:index "company-accounts"
+                                  :index-type "accounts"
+                                  :time-variable "?accounts_date"
+                                  :measure-variables "!turnover"
+                                  :interval "year"}
+                       :timeline-data nil}
 
-         :view :map
+   :view :map
 
 
-         }))
+   })
 
-(defn new-state
+(def components
+  [{:name :map
+    :f map/map-component
+    :target "map-component"
+    :paths {:map-state [:map]
+            :filter [:filter-spec :compiled]}}
+
+   {:name :map-report
+    :f map-report/map-report-component
+    :target "map-report-component"
+    :paths {:filter-spec [:filter-spec]
+            :map-controls [:map :controls]
+            :map-report [:map-report]}}
+
+   {:name :search
+    :f filter/filter-component
+    :target "search-component"
+    :paths {:filter-spec [:filter-spec]
+            :bounds [:map :controls :bounds]}}
+
+   {:name :var-select
+    :f (partial select-chooser/select-chooser-component "Variable" :variable [["!latest_employee_count" "Employee count"] ["!latest_turnover" "Turnover"]])
+    :target "variable-selection-component"
+    :paths [:map :controls :boundaryline-agg]}
+
+   {:name :stat-select
+    :f (partial select-chooser/select-chooser-component "Statistic" :variable [["sum" "Sum"] ["max" "Maximum"] ["avg" "Mean"] ["boundaryline_id_doc_count" "Count"]])
+    :target "stat-selection-component"
+    :paths [:map :controls :colorchooser]}
+
+   {:name :scale-select
+    :f (partial select-chooser/select-chooser-component "Scale" :scale [["log" "Log"] ["linear" "Linear"]])
+    :target "scale-selection-component"
+    :paths [:map :controls :colorchooser]}
+
+   ;; {:name :color-scale
+   ;;  :f color-scale/color-scale-component
+   ;;  :target "color-scale-component"
+   ;;  :paths [:map :controls :threshold-colors]}
+
+   {:name :table
+    :f table/table-component
+    :target "full-report-table"
+    :paths {:table-state [:table]
+            :filter-spec [:filter-spec]
+            :bounds [:map :controls :bounds]}}
+
+   {:name :turnover-timeline
+    :f timeline-chart/timeline-chart
+    :target "turnover-timeline"
+    :paths {:timeline-chart [:turnover-timeline]
+            :filter-spec [:filter-spec]
+            :bounds [:map :controls :bounds]
+            }}
+
+   ]
+  )
+
+
+(defn- new-state
   "create a new app-state based on the old state
    - state : the old state
    - path-values : a seq of [key-or-path value-or-fn] pairs
@@ -119,104 +181,33 @@
           path-values))
 
 (defn set-state
-  [& {:as path-values}]
+  [state & {:as path-values}]
   (swap! state new-state path-values))
 
 (defn get-state
-  [& path]
+  [state & path]
   (get-in @state (flatten path)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;; load and index boundarylines
 
-(def bl-collections ["uk_regions" "uk_boroughs" "uk_wards"])
+(def bl-collections ["uk_regions" "uk_counties" "uk_boroughs" "uk_wards"])
 
 (defn load-boundaryline-collection-indexes
-  []
+  [state]
   (doseq [blcoll bl-collections]
     (bl/fetch-boundaryline-collection-index state :boundarylines blcoll)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;
 
-
-(defn load-all-investment-stats
-  []
-  (go
-    (let [all-investment-stats (<! (api/investment-stats))]
-      (set-state :all-investment-stats all-investment-stats))))
-
-
-
-(defn process-search-results
-  "process a search"
-  [results]
-  (set-state :search-results (js->clj results)))
-
-(defn process-selection
-  [[selection
-    selection-investment-stats
-    selection-investment-account-timelines
-    selection-investment-aggs
-    selection-investments
-    selection-portfolio-company-locations] type]
-  ;; (.log js/console (clj->js [result type]))
-  (set-state :selection {:type type :value selection}
-             :selection-investment-stats selection-investment-stats
-             :selection-investment-account-timelines selection-investment-account-timelines
-             :selection-investment-aggs selection-investment-aggs
-             :selection-investments selection-investments
-             :selection-portfolio-company-locations) selection-portfolio-company-locations)
-
-(defn make-selection
-  "set the selection
-   - extractor selector id
-   - record selector
-   - kick-off selection retrievals"
-  [[type id]]
-  ;; (.log js/console (clj->js val))
-  (let [selector (if type {type id} {})
-        old-selector (:selector @state)]
-
-    (when (not= selector old-selector)
-      (set-state :selector selector)
-
-      (condp = type
-        :portfolio-company [[(api/portfolio-company id)
-                             (api/investment-stats selector)
-                             (api/investment-account-timelines selector)
-                             (api/investment-aggs selector)
-                             (api/investments selector)
-                             (api/portfolio-company-locations selector)] type]
-        :investor-company [[(api/investor-company id)
-                            (api/investment-stats selector)
-                            (api/investment-account-timelines selector)
-                            (api/investment-aggs selector)
-                            (api/investments selector)
-                            (api/portfolio-company-locations selector)] type]
-        :constituency [[(api/constituency id)
-                        (api/investment-stats selector)
-                        (api/investment-account-timelines selector)
-                        (api/investment-aggs selector)
-                        (api/investments selector)
-                        (api/portfolio-company-locations selector)] type]
-        [[nil
-          (api/investment-stats selector)
-          (api/investment-account-timelines selector)
-          (api/investment-aggs selector)
-          (api/investments selector)
-          nil ;; (api/portfolio-company-locations selector)
-          ] type]))))
-
 (defn change-view
-  [view]
+  [state view]
   (let [view (keyword view)]
     (when (not= view (:view @state))
-      (set-state :view view)
+      (set-state state :view view)
       (nav/change-view (name view)))))
 
-(def history (History.))
-
 (defn set-route
-  [view type id]
+  [history view type id]
   (cond
    (and type id)
    (.setToken history (str "/" (-> view (or "map") name) "/" (name type) "/" (name id)))
@@ -228,7 +219,7 @@
    (.setToken history (str ""))))
 
 (defn parse-route
-  []
+  [history]
   (let [fragment (.getToken history)
         [_ view type id] (re-matches #"/([^/]+)(?:/([^/]+)/(.+))?$" fragment)
         type (when (> (some-> type str/trim count) 0) (str/trim type))
@@ -237,54 +228,27 @@
      :type type
      :id id}))
 
-(def change-view-path
-  (partial routes/path-for-view parse-route))
-
-(defn set-selection-route
-  [[type id]]
-  (let [{:keys [view]} (parse-route)]
-    (set-route view type id)))
-
 (defn set-view-route
-  [view]
-  (let [{:keys [type id]} (parse-route)]
-    (set-route view type id)))
+  [history view]
+  (let [{:keys [type id]} (parse-route history)]
+    (set-route history view type id)))
 
-(defn update-selection-investment-aggs-table-view
-  [table-view]
-  (go
-    (let [new-view (merge (:selection-investment-aggs-table-view @state) table-view)
-          r (<! (api/investment-aggs (merge (:selector @state) new-view)))]
-      (set-state :selection-investment-aggs-table-view new-view
-                 :selection-investment-aggs r))))
+(defn create-event-handlers-map
+  [state history]
+  {:change-view (partial set-view-route history)
+   :route-change-view (partial change-view state)
+   :select (fn [t v] (.log js/console (clj->js [":select (ignored)" t v])))})
 
-(defn update-selection-investments-table-view
-  [table-view]
-  (go
-    (let [new-view (merge (:selection-investments-table-view @state) table-view)
-          r (<! (api/investments (merge (:selector @state) new-view)))]
-      (set-state :selection-investments-table-view new-view
-                 :selection-investments r))))
-
-(def event-handlers
-  {:search (api/ordered-api api/search process-search-results)
-   :select set-selection-route
-   :route-select (api/ordered-api make-selection process-selection)
-   :change-view set-view-route
-   :route-change-view change-view
-   :update-selection-investment-aggs-table-view update-selection-investment-aggs-table-view
-   :update-selection-investments-table-view update-selection-investments-table-view})
-
-(defn handle-event
-  [type val]
-  (let [handler (get event-handlers type)]
+(defn choose-event-handler
+  [event-handlers-map type val]
+  (let [handler (get event-handlers-map type)]
     (if-not handler (throw (js/Error. (str "no handler for event-type: " type))))
     (handler val)))
 
 ;;; routing
 
 (defn init-routes
-  [comm]
+  [history comm]
 
   (defroute "" []
     ;; (put! comm [:route-select nil])
@@ -308,107 +272,73 @@
                  EventType.NAVIGATE
                  (fn [e]
                    (let [token (.-token e)]
-                     (ga/send-pageview token)
+                     ;; (ga/send-pageview token)
                      (secretary/dispatch! token))))
 
   (.setEnabled history true))
 
-(defn init
+(def ^:private history* (History.))
+
+
+(defn create-app-instance
   []
   (let [comm (chan)
-        path-fn routes/path-for
-        link-fn routes/link-for
-        shared {:comm comm
-                :path-fn path-fn
-                :link-fn link-fn
-                :view-path-fn change-view-path
-                :fetch-boundarylines-fn (partial bl/get-or-fetch-best-boundarylines state :boundarylines)
-                :point-in-boundarylines-fn (partial bl/point-in-boundarylines state :boundarylines :uk_boroughs)}]
-    (nav/init comm)
-    (init-routes comm)
+        state (atom initial-state)
+        event-handlers-map (create-event-handlers-map state history*)
+        handle-event (partial choose-event-handler event-handlers-map)]
 
-    (load-boundaryline-collection-indexes)
+    (reify
+      IApp
+      (start [_]
+        (let [path-fn routes/path-for
+              link-fn routes/link-for
+              shared {:comm comm
+                      :path-fn path-fn
+                      :link-fn link-fn
+                      :view-path-fn (partial routes/path-for-view (partial parse-route history*))
+                      :fetch-boundarylines-fn (partial bl/get-or-fetch-best-boundarylines state :boundarylines)
+                      :point-in-boundarylines-fn (partial bl/point-in-boundarylines state :boundarylines :uk_boroughs)}]
 
-    (mount/mount :map
-                 map/map-component
-                 state
-                 :target "map-component"
-                 :shared shared
-                 :paths {:map-state [:map]
-                         :filter [:filter-spec :compiled]})
+          (nav/init comm)
+          (init-routes history* comm)
 
-    (mount/mount :map-report
-                 map-report/map-report-component
-                 state
-                 :target "map-report-component"
-                 :shared shared
-                 :paths {:filter-spec [:filter-spec]
-                         :map-controls [:map :controls]
-                         :map-report [:map-report]})
+          (load-boundaryline-collection-indexes state)
 
-    (mount/mount :search
-                 filter/filter-component
-                 state
-                 :target "search-component"
-                 :shared shared
-                 :paths {:filter-spec [:filter-spec]
-                         :bounds [:map :controls :bounds]})
+          (doseq [{:keys [name f target paths]} components]
+            (.log js/console (clj->js ["component" name f target paths]))
+            (mount/mount name
+                         f
+                         state
+                         :target target
+                         :shared shared
+                         :paths paths))
 
-    (mount/mount :var-select
-                 (partial select-chooser/select-chooser-component "Variable" :variable [["!latest_employee_count" "Employee count"] ["!latest_turnover" "Turnover"]])
-                 state
-                 :target "variable-selection-component"
-                 :shared shared
-                 :path [:map :controls :boundaryline-agg])
+          ;; (search/mount state "search-component" shared)
+          ;; (map-report/mount state "map-report-component" shared)
+          ;; (page-title/mount state "page-title-component" shared)
+          ;; (full-report/mount state "full-report-component" shared)
 
-    (mount/mount :stat-select
-                 (partial select-chooser/select-chooser-component "Statistic" :variable [["sum" "Sum"] ["max" "Maximum"] ["avg" "Mean"] ["boundaryline_id_doc_count" "Count"]])
-                 state
-                 :target "stat-selection-component"
-                 :shared shared
-                 :path [:map :controls :colorchooser])
+          (go
+            (while true
+              (let [[type val] (<! comm)]
+                (handle-event type val))))))
 
-    (mount/mount :scale-select
-                 (partial select-chooser/select-chooser-component "Scale" :scale [["log" "Log"] ["linear" "Linear"]])
-                 state
-                 :target "scale-selection-component"
-                 :shared shared
-                 :path [:map :controls :colorchooser])
+      (stop [_]
+        (.removeAllListeners history*)
+        (secretary/reset-routes!)
 
-    (mount/mount :color-scale
-                 color-scale/color-scale-component
-                 state
-                 :target "color-scale-component"
-                 :shared shared
-                 :path [:map :controls :threshold-colors])
+        (doseq [{:keys [target]} components]
+          (mount/unmount target)))
+      )))
 
-    (mount/mount :table
-                 table/table-component
-                 state
-                 :target "full-report-table"
-                 :shared shared
-                 :paths {:table-state [:table]
-                         :filter-spec [:filter-spec]
-                         :bounds [:map :controls :bounds]})
+(def app-instance (atom nil))
 
-    (mount/mount :turnover-timeline
-                 timeline-chart/timeline-chart
-                 state
-                 :target "turnover-timeline"
-                 :shared shared
-                 :paths {:timeline-chart [:turnover-timeline]
-                         :filter-spec [:filter-spec]
-                         :bounds [:map :controls :bounds]
-                         })
-
-
-    ;; (search/mount state "search-component" shared)
-    ;; (map-report/mount state "map-report-component" shared)
-    ;; (page-title/mount state "page-title-component" shared)
-    ;; (full-report/mount state "full-report-component" shared)
-
-    (go
-     (while true
-       (let [[type val] (<! comm)]
-         (handle-event type val))))
-    ))
+(defn start-or-restart-app
+  []
+  (swap! app-instance
+         (fn [app]
+           (when app (stop app))
+           (let [new-app (create-app-instance)]
+             (start new-app)
+             new-app)
+           )))

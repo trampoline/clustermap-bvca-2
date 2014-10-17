@@ -345,6 +345,4 @@
            (when a (stop a))
            (let [new-app (create-app-instance initial-state)]
              (start new-app)
-             (.log js/console new-app)
-             new-app)
-           )))
+             new-app))))

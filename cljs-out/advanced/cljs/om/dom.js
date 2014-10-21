@@ -1,21 +1,21 @@
-// Compiled by ClojureScript 0.0-2322
+// Compiled by ClojureScript 0.0-2356
 goog.provide('om.dom');
 goog.require('cljs.core');
 /**
 * @param {...*} var_args
 */
 om.dom.a = (function() { 
-var a__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.a.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var a__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.a.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var a = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return a__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var a = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return a__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 a.cljs$lang$maxFixedArity = 1;
-a.cljs$lang$applyTo = (function (arglist__49281){
-var opts__9486__auto__ = cljs.core.first(arglist__49281);
-var children__9487__auto__ = cljs.core.rest(arglist__49281);
-return a__delegate(opts__9486__auto__,children__9487__auto__);
+a.cljs$lang$applyTo = (function (arglist__66878){
+var opts__10053__auto__ = cljs.core.first(arglist__66878);
+var children__10054__auto__ = cljs.core.rest(arglist__66878);
+return a__delegate(opts__10053__auto__,children__10054__auto__);
 });
 a.cljs$core$IFn$_invoke$arity$variadic = a__delegate;
 return a;
@@ -25,17 +25,17 @@ return a;
 * @param {...*} var_args
 */
 om.dom.abbr = (function() { 
-var abbr__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.abbr.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var abbr__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.abbr.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var abbr = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return abbr__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var abbr = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return abbr__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 abbr.cljs$lang$maxFixedArity = 1;
-abbr.cljs$lang$applyTo = (function (arglist__49282){
-var opts__9486__auto__ = cljs.core.first(arglist__49282);
-var children__9487__auto__ = cljs.core.rest(arglist__49282);
-return abbr__delegate(opts__9486__auto__,children__9487__auto__);
+abbr.cljs$lang$applyTo = (function (arglist__66879){
+var opts__10053__auto__ = cljs.core.first(arglist__66879);
+var children__10054__auto__ = cljs.core.rest(arglist__66879);
+return abbr__delegate(opts__10053__auto__,children__10054__auto__);
 });
 abbr.cljs$core$IFn$_invoke$arity$variadic = abbr__delegate;
 return abbr;
@@ -45,17 +45,17 @@ return abbr;
 * @param {...*} var_args
 */
 om.dom.address = (function() { 
-var address__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.address.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var address__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.address.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var address = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return address__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var address = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return address__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 address.cljs$lang$maxFixedArity = 1;
-address.cljs$lang$applyTo = (function (arglist__49283){
-var opts__9486__auto__ = cljs.core.first(arglist__49283);
-var children__9487__auto__ = cljs.core.rest(arglist__49283);
-return address__delegate(opts__9486__auto__,children__9487__auto__);
+address.cljs$lang$applyTo = (function (arglist__66880){
+var opts__10053__auto__ = cljs.core.first(arglist__66880);
+var children__10054__auto__ = cljs.core.rest(arglist__66880);
+return address__delegate(opts__10053__auto__,children__10054__auto__);
 });
 address.cljs$core$IFn$_invoke$arity$variadic = address__delegate;
 return address;
@@ -65,17 +65,17 @@ return address;
 * @param {...*} var_args
 */
 om.dom.area = (function() { 
-var area__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.area.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var area__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.area.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var area = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return area__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var area = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return area__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 area.cljs$lang$maxFixedArity = 1;
-area.cljs$lang$applyTo = (function (arglist__49284){
-var opts__9486__auto__ = cljs.core.first(arglist__49284);
-var children__9487__auto__ = cljs.core.rest(arglist__49284);
-return area__delegate(opts__9486__auto__,children__9487__auto__);
+area.cljs$lang$applyTo = (function (arglist__66881){
+var opts__10053__auto__ = cljs.core.first(arglist__66881);
+var children__10054__auto__ = cljs.core.rest(arglist__66881);
+return area__delegate(opts__10053__auto__,children__10054__auto__);
 });
 area.cljs$core$IFn$_invoke$arity$variadic = area__delegate;
 return area;
@@ -85,17 +85,17 @@ return area;
 * @param {...*} var_args
 */
 om.dom.article = (function() { 
-var article__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.article.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var article__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.article.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var article = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return article__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var article = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return article__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 article.cljs$lang$maxFixedArity = 1;
-article.cljs$lang$applyTo = (function (arglist__49285){
-var opts__9486__auto__ = cljs.core.first(arglist__49285);
-var children__9487__auto__ = cljs.core.rest(arglist__49285);
-return article__delegate(opts__9486__auto__,children__9487__auto__);
+article.cljs$lang$applyTo = (function (arglist__66882){
+var opts__10053__auto__ = cljs.core.first(arglist__66882);
+var children__10054__auto__ = cljs.core.rest(arglist__66882);
+return article__delegate(opts__10053__auto__,children__10054__auto__);
 });
 article.cljs$core$IFn$_invoke$arity$variadic = article__delegate;
 return article;
@@ -105,17 +105,17 @@ return article;
 * @param {...*} var_args
 */
 om.dom.aside = (function() { 
-var aside__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.aside.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var aside__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.aside.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var aside = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return aside__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var aside = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return aside__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 aside.cljs$lang$maxFixedArity = 1;
-aside.cljs$lang$applyTo = (function (arglist__49286){
-var opts__9486__auto__ = cljs.core.first(arglist__49286);
-var children__9487__auto__ = cljs.core.rest(arglist__49286);
-return aside__delegate(opts__9486__auto__,children__9487__auto__);
+aside.cljs$lang$applyTo = (function (arglist__66883){
+var opts__10053__auto__ = cljs.core.first(arglist__66883);
+var children__10054__auto__ = cljs.core.rest(arglist__66883);
+return aside__delegate(opts__10053__auto__,children__10054__auto__);
 });
 aside.cljs$core$IFn$_invoke$arity$variadic = aside__delegate;
 return aside;
@@ -125,17 +125,17 @@ return aside;
 * @param {...*} var_args
 */
 om.dom.audio = (function() { 
-var audio__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.audio.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var audio__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.audio.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var audio = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return audio__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var audio = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return audio__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 audio.cljs$lang$maxFixedArity = 1;
-audio.cljs$lang$applyTo = (function (arglist__49287){
-var opts__9486__auto__ = cljs.core.first(arglist__49287);
-var children__9487__auto__ = cljs.core.rest(arglist__49287);
-return audio__delegate(opts__9486__auto__,children__9487__auto__);
+audio.cljs$lang$applyTo = (function (arglist__66884){
+var opts__10053__auto__ = cljs.core.first(arglist__66884);
+var children__10054__auto__ = cljs.core.rest(arglist__66884);
+return audio__delegate(opts__10053__auto__,children__10054__auto__);
 });
 audio.cljs$core$IFn$_invoke$arity$variadic = audio__delegate;
 return audio;
@@ -145,17 +145,17 @@ return audio;
 * @param {...*} var_args
 */
 om.dom.b = (function() { 
-var b__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.b.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var b__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.b.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var b = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return b__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var b = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return b__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 b.cljs$lang$maxFixedArity = 1;
-b.cljs$lang$applyTo = (function (arglist__49288){
-var opts__9486__auto__ = cljs.core.first(arglist__49288);
-var children__9487__auto__ = cljs.core.rest(arglist__49288);
-return b__delegate(opts__9486__auto__,children__9487__auto__);
+b.cljs$lang$applyTo = (function (arglist__66885){
+var opts__10053__auto__ = cljs.core.first(arglist__66885);
+var children__10054__auto__ = cljs.core.rest(arglist__66885);
+return b__delegate(opts__10053__auto__,children__10054__auto__);
 });
 b.cljs$core$IFn$_invoke$arity$variadic = b__delegate;
 return b;
@@ -165,17 +165,17 @@ return b;
 * @param {...*} var_args
 */
 om.dom.base = (function() { 
-var base__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.base.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var base__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.base.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var base = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return base__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var base = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return base__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 base.cljs$lang$maxFixedArity = 1;
-base.cljs$lang$applyTo = (function (arglist__49289){
-var opts__9486__auto__ = cljs.core.first(arglist__49289);
-var children__9487__auto__ = cljs.core.rest(arglist__49289);
-return base__delegate(opts__9486__auto__,children__9487__auto__);
+base.cljs$lang$applyTo = (function (arglist__66886){
+var opts__10053__auto__ = cljs.core.first(arglist__66886);
+var children__10054__auto__ = cljs.core.rest(arglist__66886);
+return base__delegate(opts__10053__auto__,children__10054__auto__);
 });
 base.cljs$core$IFn$_invoke$arity$variadic = base__delegate;
 return base;
@@ -185,17 +185,17 @@ return base;
 * @param {...*} var_args
 */
 om.dom.bdi = (function() { 
-var bdi__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.bdi.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var bdi__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.bdi.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var bdi = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return bdi__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var bdi = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return bdi__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 bdi.cljs$lang$maxFixedArity = 1;
-bdi.cljs$lang$applyTo = (function (arglist__49290){
-var opts__9486__auto__ = cljs.core.first(arglist__49290);
-var children__9487__auto__ = cljs.core.rest(arglist__49290);
-return bdi__delegate(opts__9486__auto__,children__9487__auto__);
+bdi.cljs$lang$applyTo = (function (arglist__66887){
+var opts__10053__auto__ = cljs.core.first(arglist__66887);
+var children__10054__auto__ = cljs.core.rest(arglist__66887);
+return bdi__delegate(opts__10053__auto__,children__10054__auto__);
 });
 bdi.cljs$core$IFn$_invoke$arity$variadic = bdi__delegate;
 return bdi;
@@ -205,17 +205,17 @@ return bdi;
 * @param {...*} var_args
 */
 om.dom.bdo = (function() { 
-var bdo__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.bdo.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var bdo__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.bdo.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var bdo = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return bdo__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var bdo = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return bdo__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 bdo.cljs$lang$maxFixedArity = 1;
-bdo.cljs$lang$applyTo = (function (arglist__49291){
-var opts__9486__auto__ = cljs.core.first(arglist__49291);
-var children__9487__auto__ = cljs.core.rest(arglist__49291);
-return bdo__delegate(opts__9486__auto__,children__9487__auto__);
+bdo.cljs$lang$applyTo = (function (arglist__66888){
+var opts__10053__auto__ = cljs.core.first(arglist__66888);
+var children__10054__auto__ = cljs.core.rest(arglist__66888);
+return bdo__delegate(opts__10053__auto__,children__10054__auto__);
 });
 bdo.cljs$core$IFn$_invoke$arity$variadic = bdo__delegate;
 return bdo;
@@ -225,17 +225,17 @@ return bdo;
 * @param {...*} var_args
 */
 om.dom.big = (function() { 
-var big__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.big.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var big__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.big.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var big = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return big__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var big = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return big__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 big.cljs$lang$maxFixedArity = 1;
-big.cljs$lang$applyTo = (function (arglist__49292){
-var opts__9486__auto__ = cljs.core.first(arglist__49292);
-var children__9487__auto__ = cljs.core.rest(arglist__49292);
-return big__delegate(opts__9486__auto__,children__9487__auto__);
+big.cljs$lang$applyTo = (function (arglist__66889){
+var opts__10053__auto__ = cljs.core.first(arglist__66889);
+var children__10054__auto__ = cljs.core.rest(arglist__66889);
+return big__delegate(opts__10053__auto__,children__10054__auto__);
 });
 big.cljs$core$IFn$_invoke$arity$variadic = big__delegate;
 return big;
@@ -245,17 +245,17 @@ return big;
 * @param {...*} var_args
 */
 om.dom.blockquote = (function() { 
-var blockquote__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.blockquote.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var blockquote__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.blockquote.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var blockquote = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return blockquote__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var blockquote = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return blockquote__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 blockquote.cljs$lang$maxFixedArity = 1;
-blockquote.cljs$lang$applyTo = (function (arglist__49293){
-var opts__9486__auto__ = cljs.core.first(arglist__49293);
-var children__9487__auto__ = cljs.core.rest(arglist__49293);
-return blockquote__delegate(opts__9486__auto__,children__9487__auto__);
+blockquote.cljs$lang$applyTo = (function (arglist__66890){
+var opts__10053__auto__ = cljs.core.first(arglist__66890);
+var children__10054__auto__ = cljs.core.rest(arglist__66890);
+return blockquote__delegate(opts__10053__auto__,children__10054__auto__);
 });
 blockquote.cljs$core$IFn$_invoke$arity$variadic = blockquote__delegate;
 return blockquote;
@@ -265,17 +265,17 @@ return blockquote;
 * @param {...*} var_args
 */
 om.dom.body = (function() { 
-var body__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.body.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var body__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.body.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var body = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return body__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var body = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return body__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 body.cljs$lang$maxFixedArity = 1;
-body.cljs$lang$applyTo = (function (arglist__49294){
-var opts__9486__auto__ = cljs.core.first(arglist__49294);
-var children__9487__auto__ = cljs.core.rest(arglist__49294);
-return body__delegate(opts__9486__auto__,children__9487__auto__);
+body.cljs$lang$applyTo = (function (arglist__66891){
+var opts__10053__auto__ = cljs.core.first(arglist__66891);
+var children__10054__auto__ = cljs.core.rest(arglist__66891);
+return body__delegate(opts__10053__auto__,children__10054__auto__);
 });
 body.cljs$core$IFn$_invoke$arity$variadic = body__delegate;
 return body;
@@ -285,17 +285,17 @@ return body;
 * @param {...*} var_args
 */
 om.dom.br = (function() { 
-var br__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.br.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var br__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.br.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var br = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return br__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var br = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return br__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 br.cljs$lang$maxFixedArity = 1;
-br.cljs$lang$applyTo = (function (arglist__49295){
-var opts__9486__auto__ = cljs.core.first(arglist__49295);
-var children__9487__auto__ = cljs.core.rest(arglist__49295);
-return br__delegate(opts__9486__auto__,children__9487__auto__);
+br.cljs$lang$applyTo = (function (arglist__66892){
+var opts__10053__auto__ = cljs.core.first(arglist__66892);
+var children__10054__auto__ = cljs.core.rest(arglist__66892);
+return br__delegate(opts__10053__auto__,children__10054__auto__);
 });
 br.cljs$core$IFn$_invoke$arity$variadic = br__delegate;
 return br;
@@ -305,17 +305,17 @@ return br;
 * @param {...*} var_args
 */
 om.dom.button = (function() { 
-var button__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.button.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var button__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.button.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var button = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return button__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var button = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return button__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 button.cljs$lang$maxFixedArity = 1;
-button.cljs$lang$applyTo = (function (arglist__49296){
-var opts__9486__auto__ = cljs.core.first(arglist__49296);
-var children__9487__auto__ = cljs.core.rest(arglist__49296);
-return button__delegate(opts__9486__auto__,children__9487__auto__);
+button.cljs$lang$applyTo = (function (arglist__66893){
+var opts__10053__auto__ = cljs.core.first(arglist__66893);
+var children__10054__auto__ = cljs.core.rest(arglist__66893);
+return button__delegate(opts__10053__auto__,children__10054__auto__);
 });
 button.cljs$core$IFn$_invoke$arity$variadic = button__delegate;
 return button;
@@ -325,17 +325,17 @@ return button;
 * @param {...*} var_args
 */
 om.dom.canvas = (function() { 
-var canvas__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.canvas.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var canvas__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.canvas.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var canvas = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return canvas__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var canvas = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return canvas__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 canvas.cljs$lang$maxFixedArity = 1;
-canvas.cljs$lang$applyTo = (function (arglist__49297){
-var opts__9486__auto__ = cljs.core.first(arglist__49297);
-var children__9487__auto__ = cljs.core.rest(arglist__49297);
-return canvas__delegate(opts__9486__auto__,children__9487__auto__);
+canvas.cljs$lang$applyTo = (function (arglist__66894){
+var opts__10053__auto__ = cljs.core.first(arglist__66894);
+var children__10054__auto__ = cljs.core.rest(arglist__66894);
+return canvas__delegate(opts__10053__auto__,children__10054__auto__);
 });
 canvas.cljs$core$IFn$_invoke$arity$variadic = canvas__delegate;
 return canvas;
@@ -345,17 +345,17 @@ return canvas;
 * @param {...*} var_args
 */
 om.dom.caption = (function() { 
-var caption__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.caption.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var caption__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.caption.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var caption = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return caption__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var caption = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return caption__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 caption.cljs$lang$maxFixedArity = 1;
-caption.cljs$lang$applyTo = (function (arglist__49298){
-var opts__9486__auto__ = cljs.core.first(arglist__49298);
-var children__9487__auto__ = cljs.core.rest(arglist__49298);
-return caption__delegate(opts__9486__auto__,children__9487__auto__);
+caption.cljs$lang$applyTo = (function (arglist__66895){
+var opts__10053__auto__ = cljs.core.first(arglist__66895);
+var children__10054__auto__ = cljs.core.rest(arglist__66895);
+return caption__delegate(opts__10053__auto__,children__10054__auto__);
 });
 caption.cljs$core$IFn$_invoke$arity$variadic = caption__delegate;
 return caption;
@@ -365,17 +365,17 @@ return caption;
 * @param {...*} var_args
 */
 om.dom.cite = (function() { 
-var cite__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.cite.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var cite__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.cite.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var cite = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return cite__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var cite = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return cite__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 cite.cljs$lang$maxFixedArity = 1;
-cite.cljs$lang$applyTo = (function (arglist__49299){
-var opts__9486__auto__ = cljs.core.first(arglist__49299);
-var children__9487__auto__ = cljs.core.rest(arglist__49299);
-return cite__delegate(opts__9486__auto__,children__9487__auto__);
+cite.cljs$lang$applyTo = (function (arglist__66896){
+var opts__10053__auto__ = cljs.core.first(arglist__66896);
+var children__10054__auto__ = cljs.core.rest(arglist__66896);
+return cite__delegate(opts__10053__auto__,children__10054__auto__);
 });
 cite.cljs$core$IFn$_invoke$arity$variadic = cite__delegate;
 return cite;
@@ -385,17 +385,17 @@ return cite;
 * @param {...*} var_args
 */
 om.dom.code = (function() { 
-var code__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.code.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var code__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.code.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var code = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return code__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var code = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return code__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 code.cljs$lang$maxFixedArity = 1;
-code.cljs$lang$applyTo = (function (arglist__49300){
-var opts__9486__auto__ = cljs.core.first(arglist__49300);
-var children__9487__auto__ = cljs.core.rest(arglist__49300);
-return code__delegate(opts__9486__auto__,children__9487__auto__);
+code.cljs$lang$applyTo = (function (arglist__66897){
+var opts__10053__auto__ = cljs.core.first(arglist__66897);
+var children__10054__auto__ = cljs.core.rest(arglist__66897);
+return code__delegate(opts__10053__auto__,children__10054__auto__);
 });
 code.cljs$core$IFn$_invoke$arity$variadic = code__delegate;
 return code;
@@ -405,17 +405,17 @@ return code;
 * @param {...*} var_args
 */
 om.dom.col = (function() { 
-var col__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.col.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var col__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.col.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var col = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return col__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var col = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return col__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 col.cljs$lang$maxFixedArity = 1;
-col.cljs$lang$applyTo = (function (arglist__49301){
-var opts__9486__auto__ = cljs.core.first(arglist__49301);
-var children__9487__auto__ = cljs.core.rest(arglist__49301);
-return col__delegate(opts__9486__auto__,children__9487__auto__);
+col.cljs$lang$applyTo = (function (arglist__66898){
+var opts__10053__auto__ = cljs.core.first(arglist__66898);
+var children__10054__auto__ = cljs.core.rest(arglist__66898);
+return col__delegate(opts__10053__auto__,children__10054__auto__);
 });
 col.cljs$core$IFn$_invoke$arity$variadic = col__delegate;
 return col;
@@ -425,17 +425,17 @@ return col;
 * @param {...*} var_args
 */
 om.dom.colgroup = (function() { 
-var colgroup__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.colgroup.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var colgroup__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.colgroup.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var colgroup = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return colgroup__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var colgroup = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return colgroup__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 colgroup.cljs$lang$maxFixedArity = 1;
-colgroup.cljs$lang$applyTo = (function (arglist__49302){
-var opts__9486__auto__ = cljs.core.first(arglist__49302);
-var children__9487__auto__ = cljs.core.rest(arglist__49302);
-return colgroup__delegate(opts__9486__auto__,children__9487__auto__);
+colgroup.cljs$lang$applyTo = (function (arglist__66899){
+var opts__10053__auto__ = cljs.core.first(arglist__66899);
+var children__10054__auto__ = cljs.core.rest(arglist__66899);
+return colgroup__delegate(opts__10053__auto__,children__10054__auto__);
 });
 colgroup.cljs$core$IFn$_invoke$arity$variadic = colgroup__delegate;
 return colgroup;
@@ -445,17 +445,17 @@ return colgroup;
 * @param {...*} var_args
 */
 om.dom.data = (function() { 
-var data__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.data.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var data__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.data.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var data = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return data__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var data = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return data__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 data.cljs$lang$maxFixedArity = 1;
-data.cljs$lang$applyTo = (function (arglist__49303){
-var opts__9486__auto__ = cljs.core.first(arglist__49303);
-var children__9487__auto__ = cljs.core.rest(arglist__49303);
-return data__delegate(opts__9486__auto__,children__9487__auto__);
+data.cljs$lang$applyTo = (function (arglist__66900){
+var opts__10053__auto__ = cljs.core.first(arglist__66900);
+var children__10054__auto__ = cljs.core.rest(arglist__66900);
+return data__delegate(opts__10053__auto__,children__10054__auto__);
 });
 data.cljs$core$IFn$_invoke$arity$variadic = data__delegate;
 return data;
@@ -465,17 +465,17 @@ return data;
 * @param {...*} var_args
 */
 om.dom.datalist = (function() { 
-var datalist__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.datalist.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var datalist__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.datalist.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var datalist = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return datalist__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var datalist = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return datalist__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 datalist.cljs$lang$maxFixedArity = 1;
-datalist.cljs$lang$applyTo = (function (arglist__49304){
-var opts__9486__auto__ = cljs.core.first(arglist__49304);
-var children__9487__auto__ = cljs.core.rest(arglist__49304);
-return datalist__delegate(opts__9486__auto__,children__9487__auto__);
+datalist.cljs$lang$applyTo = (function (arglist__66901){
+var opts__10053__auto__ = cljs.core.first(arglist__66901);
+var children__10054__auto__ = cljs.core.rest(arglist__66901);
+return datalist__delegate(opts__10053__auto__,children__10054__auto__);
 });
 datalist.cljs$core$IFn$_invoke$arity$variadic = datalist__delegate;
 return datalist;
@@ -485,17 +485,17 @@ return datalist;
 * @param {...*} var_args
 */
 om.dom.dd = (function() { 
-var dd__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.dd.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var dd__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.dd.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var dd = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return dd__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var dd = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return dd__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 dd.cljs$lang$maxFixedArity = 1;
-dd.cljs$lang$applyTo = (function (arglist__49305){
-var opts__9486__auto__ = cljs.core.first(arglist__49305);
-var children__9487__auto__ = cljs.core.rest(arglist__49305);
-return dd__delegate(opts__9486__auto__,children__9487__auto__);
+dd.cljs$lang$applyTo = (function (arglist__66902){
+var opts__10053__auto__ = cljs.core.first(arglist__66902);
+var children__10054__auto__ = cljs.core.rest(arglist__66902);
+return dd__delegate(opts__10053__auto__,children__10054__auto__);
 });
 dd.cljs$core$IFn$_invoke$arity$variadic = dd__delegate;
 return dd;
@@ -505,17 +505,17 @@ return dd;
 * @param {...*} var_args
 */
 om.dom.del = (function() { 
-var del__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.del.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var del__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.del.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var del = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return del__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var del = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return del__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 del.cljs$lang$maxFixedArity = 1;
-del.cljs$lang$applyTo = (function (arglist__49306){
-var opts__9486__auto__ = cljs.core.first(arglist__49306);
-var children__9487__auto__ = cljs.core.rest(arglist__49306);
-return del__delegate(opts__9486__auto__,children__9487__auto__);
+del.cljs$lang$applyTo = (function (arglist__66903){
+var opts__10053__auto__ = cljs.core.first(arglist__66903);
+var children__10054__auto__ = cljs.core.rest(arglist__66903);
+return del__delegate(opts__10053__auto__,children__10054__auto__);
 });
 del.cljs$core$IFn$_invoke$arity$variadic = del__delegate;
 return del;
@@ -525,17 +525,17 @@ return del;
 * @param {...*} var_args
 */
 om.dom.dfn = (function() { 
-var dfn__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.dfn.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var dfn__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.dfn.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var dfn = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return dfn__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var dfn = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return dfn__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 dfn.cljs$lang$maxFixedArity = 1;
-dfn.cljs$lang$applyTo = (function (arglist__49307){
-var opts__9486__auto__ = cljs.core.first(arglist__49307);
-var children__9487__auto__ = cljs.core.rest(arglist__49307);
-return dfn__delegate(opts__9486__auto__,children__9487__auto__);
+dfn.cljs$lang$applyTo = (function (arglist__66904){
+var opts__10053__auto__ = cljs.core.first(arglist__66904);
+var children__10054__auto__ = cljs.core.rest(arglist__66904);
+return dfn__delegate(opts__10053__auto__,children__10054__auto__);
 });
 dfn.cljs$core$IFn$_invoke$arity$variadic = dfn__delegate;
 return dfn;
@@ -545,17 +545,17 @@ return dfn;
 * @param {...*} var_args
 */
 om.dom.div = (function() { 
-var div__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.div.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var div__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.div.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var div = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return div__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var div = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return div__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 div.cljs$lang$maxFixedArity = 1;
-div.cljs$lang$applyTo = (function (arglist__49308){
-var opts__9486__auto__ = cljs.core.first(arglist__49308);
-var children__9487__auto__ = cljs.core.rest(arglist__49308);
-return div__delegate(opts__9486__auto__,children__9487__auto__);
+div.cljs$lang$applyTo = (function (arglist__66905){
+var opts__10053__auto__ = cljs.core.first(arglist__66905);
+var children__10054__auto__ = cljs.core.rest(arglist__66905);
+return div__delegate(opts__10053__auto__,children__10054__auto__);
 });
 div.cljs$core$IFn$_invoke$arity$variadic = div__delegate;
 return div;
@@ -565,17 +565,17 @@ return div;
 * @param {...*} var_args
 */
 om.dom.dl = (function() { 
-var dl__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.dl.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var dl__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.dl.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var dl = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return dl__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var dl = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return dl__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 dl.cljs$lang$maxFixedArity = 1;
-dl.cljs$lang$applyTo = (function (arglist__49309){
-var opts__9486__auto__ = cljs.core.first(arglist__49309);
-var children__9487__auto__ = cljs.core.rest(arglist__49309);
-return dl__delegate(opts__9486__auto__,children__9487__auto__);
+dl.cljs$lang$applyTo = (function (arglist__66906){
+var opts__10053__auto__ = cljs.core.first(arglist__66906);
+var children__10054__auto__ = cljs.core.rest(arglist__66906);
+return dl__delegate(opts__10053__auto__,children__10054__auto__);
 });
 dl.cljs$core$IFn$_invoke$arity$variadic = dl__delegate;
 return dl;
@@ -585,17 +585,17 @@ return dl;
 * @param {...*} var_args
 */
 om.dom.dt = (function() { 
-var dt__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.dt.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var dt__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.dt.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var dt = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return dt__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var dt = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return dt__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 dt.cljs$lang$maxFixedArity = 1;
-dt.cljs$lang$applyTo = (function (arglist__49310){
-var opts__9486__auto__ = cljs.core.first(arglist__49310);
-var children__9487__auto__ = cljs.core.rest(arglist__49310);
-return dt__delegate(opts__9486__auto__,children__9487__auto__);
+dt.cljs$lang$applyTo = (function (arglist__66907){
+var opts__10053__auto__ = cljs.core.first(arglist__66907);
+var children__10054__auto__ = cljs.core.rest(arglist__66907);
+return dt__delegate(opts__10053__auto__,children__10054__auto__);
 });
 dt.cljs$core$IFn$_invoke$arity$variadic = dt__delegate;
 return dt;
@@ -605,17 +605,17 @@ return dt;
 * @param {...*} var_args
 */
 om.dom.em = (function() { 
-var em__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.em.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var em__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.em.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var em = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return em__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var em = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return em__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 em.cljs$lang$maxFixedArity = 1;
-em.cljs$lang$applyTo = (function (arglist__49311){
-var opts__9486__auto__ = cljs.core.first(arglist__49311);
-var children__9487__auto__ = cljs.core.rest(arglist__49311);
-return em__delegate(opts__9486__auto__,children__9487__auto__);
+em.cljs$lang$applyTo = (function (arglist__66908){
+var opts__10053__auto__ = cljs.core.first(arglist__66908);
+var children__10054__auto__ = cljs.core.rest(arglist__66908);
+return em__delegate(opts__10053__auto__,children__10054__auto__);
 });
 em.cljs$core$IFn$_invoke$arity$variadic = em__delegate;
 return em;
@@ -625,17 +625,17 @@ return em;
 * @param {...*} var_args
 */
 om.dom.embed = (function() { 
-var embed__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.embed.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var embed__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.embed.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var embed = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return embed__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var embed = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return embed__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 embed.cljs$lang$maxFixedArity = 1;
-embed.cljs$lang$applyTo = (function (arglist__49312){
-var opts__9486__auto__ = cljs.core.first(arglist__49312);
-var children__9487__auto__ = cljs.core.rest(arglist__49312);
-return embed__delegate(opts__9486__auto__,children__9487__auto__);
+embed.cljs$lang$applyTo = (function (arglist__66909){
+var opts__10053__auto__ = cljs.core.first(arglist__66909);
+var children__10054__auto__ = cljs.core.rest(arglist__66909);
+return embed__delegate(opts__10053__auto__,children__10054__auto__);
 });
 embed.cljs$core$IFn$_invoke$arity$variadic = embed__delegate;
 return embed;
@@ -645,17 +645,17 @@ return embed;
 * @param {...*} var_args
 */
 om.dom.fieldset = (function() { 
-var fieldset__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.fieldset.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var fieldset__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.fieldset.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var fieldset = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return fieldset__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var fieldset = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return fieldset__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 fieldset.cljs$lang$maxFixedArity = 1;
-fieldset.cljs$lang$applyTo = (function (arglist__49313){
-var opts__9486__auto__ = cljs.core.first(arglist__49313);
-var children__9487__auto__ = cljs.core.rest(arglist__49313);
-return fieldset__delegate(opts__9486__auto__,children__9487__auto__);
+fieldset.cljs$lang$applyTo = (function (arglist__66910){
+var opts__10053__auto__ = cljs.core.first(arglist__66910);
+var children__10054__auto__ = cljs.core.rest(arglist__66910);
+return fieldset__delegate(opts__10053__auto__,children__10054__auto__);
 });
 fieldset.cljs$core$IFn$_invoke$arity$variadic = fieldset__delegate;
 return fieldset;
@@ -665,17 +665,17 @@ return fieldset;
 * @param {...*} var_args
 */
 om.dom.figcaption = (function() { 
-var figcaption__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.figcaption.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var figcaption__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.figcaption.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var figcaption = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return figcaption__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var figcaption = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return figcaption__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 figcaption.cljs$lang$maxFixedArity = 1;
-figcaption.cljs$lang$applyTo = (function (arglist__49314){
-var opts__9486__auto__ = cljs.core.first(arglist__49314);
-var children__9487__auto__ = cljs.core.rest(arglist__49314);
-return figcaption__delegate(opts__9486__auto__,children__9487__auto__);
+figcaption.cljs$lang$applyTo = (function (arglist__66911){
+var opts__10053__auto__ = cljs.core.first(arglist__66911);
+var children__10054__auto__ = cljs.core.rest(arglist__66911);
+return figcaption__delegate(opts__10053__auto__,children__10054__auto__);
 });
 figcaption.cljs$core$IFn$_invoke$arity$variadic = figcaption__delegate;
 return figcaption;
@@ -685,17 +685,17 @@ return figcaption;
 * @param {...*} var_args
 */
 om.dom.figure = (function() { 
-var figure__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.figure.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var figure__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.figure.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var figure = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return figure__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var figure = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return figure__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 figure.cljs$lang$maxFixedArity = 1;
-figure.cljs$lang$applyTo = (function (arglist__49315){
-var opts__9486__auto__ = cljs.core.first(arglist__49315);
-var children__9487__auto__ = cljs.core.rest(arglist__49315);
-return figure__delegate(opts__9486__auto__,children__9487__auto__);
+figure.cljs$lang$applyTo = (function (arglist__66912){
+var opts__10053__auto__ = cljs.core.first(arglist__66912);
+var children__10054__auto__ = cljs.core.rest(arglist__66912);
+return figure__delegate(opts__10053__auto__,children__10054__auto__);
 });
 figure.cljs$core$IFn$_invoke$arity$variadic = figure__delegate;
 return figure;
@@ -705,17 +705,17 @@ return figure;
 * @param {...*} var_args
 */
 om.dom.footer = (function() { 
-var footer__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.footer.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var footer__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.footer.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var footer = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return footer__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var footer = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return footer__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 footer.cljs$lang$maxFixedArity = 1;
-footer.cljs$lang$applyTo = (function (arglist__49316){
-var opts__9486__auto__ = cljs.core.first(arglist__49316);
-var children__9487__auto__ = cljs.core.rest(arglist__49316);
-return footer__delegate(opts__9486__auto__,children__9487__auto__);
+footer.cljs$lang$applyTo = (function (arglist__66913){
+var opts__10053__auto__ = cljs.core.first(arglist__66913);
+var children__10054__auto__ = cljs.core.rest(arglist__66913);
+return footer__delegate(opts__10053__auto__,children__10054__auto__);
 });
 footer.cljs$core$IFn$_invoke$arity$variadic = footer__delegate;
 return footer;
@@ -725,17 +725,17 @@ return footer;
 * @param {...*} var_args
 */
 om.dom.form = (function() { 
-var form__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.form.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var form__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.form.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var form = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return form__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var form = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return form__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 form.cljs$lang$maxFixedArity = 1;
-form.cljs$lang$applyTo = (function (arglist__49317){
-var opts__9486__auto__ = cljs.core.first(arglist__49317);
-var children__9487__auto__ = cljs.core.rest(arglist__49317);
-return form__delegate(opts__9486__auto__,children__9487__auto__);
+form.cljs$lang$applyTo = (function (arglist__66914){
+var opts__10053__auto__ = cljs.core.first(arglist__66914);
+var children__10054__auto__ = cljs.core.rest(arglist__66914);
+return form__delegate(opts__10053__auto__,children__10054__auto__);
 });
 form.cljs$core$IFn$_invoke$arity$variadic = form__delegate;
 return form;
@@ -745,17 +745,17 @@ return form;
 * @param {...*} var_args
 */
 om.dom.h1 = (function() { 
-var h1__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.h1.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var h1__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.h1.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var h1 = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return h1__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var h1 = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return h1__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 h1.cljs$lang$maxFixedArity = 1;
-h1.cljs$lang$applyTo = (function (arglist__49318){
-var opts__9486__auto__ = cljs.core.first(arglist__49318);
-var children__9487__auto__ = cljs.core.rest(arglist__49318);
-return h1__delegate(opts__9486__auto__,children__9487__auto__);
+h1.cljs$lang$applyTo = (function (arglist__66915){
+var opts__10053__auto__ = cljs.core.first(arglist__66915);
+var children__10054__auto__ = cljs.core.rest(arglist__66915);
+return h1__delegate(opts__10053__auto__,children__10054__auto__);
 });
 h1.cljs$core$IFn$_invoke$arity$variadic = h1__delegate;
 return h1;
@@ -765,17 +765,17 @@ return h1;
 * @param {...*} var_args
 */
 om.dom.h2 = (function() { 
-var h2__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.h2.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var h2__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.h2.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var h2 = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return h2__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var h2 = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return h2__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 h2.cljs$lang$maxFixedArity = 1;
-h2.cljs$lang$applyTo = (function (arglist__49319){
-var opts__9486__auto__ = cljs.core.first(arglist__49319);
-var children__9487__auto__ = cljs.core.rest(arglist__49319);
-return h2__delegate(opts__9486__auto__,children__9487__auto__);
+h2.cljs$lang$applyTo = (function (arglist__66916){
+var opts__10053__auto__ = cljs.core.first(arglist__66916);
+var children__10054__auto__ = cljs.core.rest(arglist__66916);
+return h2__delegate(opts__10053__auto__,children__10054__auto__);
 });
 h2.cljs$core$IFn$_invoke$arity$variadic = h2__delegate;
 return h2;
@@ -785,17 +785,17 @@ return h2;
 * @param {...*} var_args
 */
 om.dom.h3 = (function() { 
-var h3__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.h3.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var h3__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.h3.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var h3 = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return h3__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var h3 = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return h3__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 h3.cljs$lang$maxFixedArity = 1;
-h3.cljs$lang$applyTo = (function (arglist__49320){
-var opts__9486__auto__ = cljs.core.first(arglist__49320);
-var children__9487__auto__ = cljs.core.rest(arglist__49320);
-return h3__delegate(opts__9486__auto__,children__9487__auto__);
+h3.cljs$lang$applyTo = (function (arglist__66917){
+var opts__10053__auto__ = cljs.core.first(arglist__66917);
+var children__10054__auto__ = cljs.core.rest(arglist__66917);
+return h3__delegate(opts__10053__auto__,children__10054__auto__);
 });
 h3.cljs$core$IFn$_invoke$arity$variadic = h3__delegate;
 return h3;
@@ -805,17 +805,17 @@ return h3;
 * @param {...*} var_args
 */
 om.dom.h4 = (function() { 
-var h4__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.h4.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var h4__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.h4.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var h4 = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return h4__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var h4 = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return h4__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 h4.cljs$lang$maxFixedArity = 1;
-h4.cljs$lang$applyTo = (function (arglist__49321){
-var opts__9486__auto__ = cljs.core.first(arglist__49321);
-var children__9487__auto__ = cljs.core.rest(arglist__49321);
-return h4__delegate(opts__9486__auto__,children__9487__auto__);
+h4.cljs$lang$applyTo = (function (arglist__66918){
+var opts__10053__auto__ = cljs.core.first(arglist__66918);
+var children__10054__auto__ = cljs.core.rest(arglist__66918);
+return h4__delegate(opts__10053__auto__,children__10054__auto__);
 });
 h4.cljs$core$IFn$_invoke$arity$variadic = h4__delegate;
 return h4;
@@ -825,17 +825,17 @@ return h4;
 * @param {...*} var_args
 */
 om.dom.h5 = (function() { 
-var h5__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.h5.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var h5__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.h5.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var h5 = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return h5__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var h5 = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return h5__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 h5.cljs$lang$maxFixedArity = 1;
-h5.cljs$lang$applyTo = (function (arglist__49322){
-var opts__9486__auto__ = cljs.core.first(arglist__49322);
-var children__9487__auto__ = cljs.core.rest(arglist__49322);
-return h5__delegate(opts__9486__auto__,children__9487__auto__);
+h5.cljs$lang$applyTo = (function (arglist__66919){
+var opts__10053__auto__ = cljs.core.first(arglist__66919);
+var children__10054__auto__ = cljs.core.rest(arglist__66919);
+return h5__delegate(opts__10053__auto__,children__10054__auto__);
 });
 h5.cljs$core$IFn$_invoke$arity$variadic = h5__delegate;
 return h5;
@@ -845,17 +845,17 @@ return h5;
 * @param {...*} var_args
 */
 om.dom.h6 = (function() { 
-var h6__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.h6.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var h6__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.h6.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var h6 = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return h6__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var h6 = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return h6__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 h6.cljs$lang$maxFixedArity = 1;
-h6.cljs$lang$applyTo = (function (arglist__49323){
-var opts__9486__auto__ = cljs.core.first(arglist__49323);
-var children__9487__auto__ = cljs.core.rest(arglist__49323);
-return h6__delegate(opts__9486__auto__,children__9487__auto__);
+h6.cljs$lang$applyTo = (function (arglist__66920){
+var opts__10053__auto__ = cljs.core.first(arglist__66920);
+var children__10054__auto__ = cljs.core.rest(arglist__66920);
+return h6__delegate(opts__10053__auto__,children__10054__auto__);
 });
 h6.cljs$core$IFn$_invoke$arity$variadic = h6__delegate;
 return h6;
@@ -865,17 +865,17 @@ return h6;
 * @param {...*} var_args
 */
 om.dom.head = (function() { 
-var head__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.head.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var head__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.head.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var head = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return head__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var head = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return head__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 head.cljs$lang$maxFixedArity = 1;
-head.cljs$lang$applyTo = (function (arglist__49324){
-var opts__9486__auto__ = cljs.core.first(arglist__49324);
-var children__9487__auto__ = cljs.core.rest(arglist__49324);
-return head__delegate(opts__9486__auto__,children__9487__auto__);
+head.cljs$lang$applyTo = (function (arglist__66921){
+var opts__10053__auto__ = cljs.core.first(arglist__66921);
+var children__10054__auto__ = cljs.core.rest(arglist__66921);
+return head__delegate(opts__10053__auto__,children__10054__auto__);
 });
 head.cljs$core$IFn$_invoke$arity$variadic = head__delegate;
 return head;
@@ -885,17 +885,17 @@ return head;
 * @param {...*} var_args
 */
 om.dom.header = (function() { 
-var header__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.header.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var header__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.header.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var header = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return header__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var header = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return header__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 header.cljs$lang$maxFixedArity = 1;
-header.cljs$lang$applyTo = (function (arglist__49325){
-var opts__9486__auto__ = cljs.core.first(arglist__49325);
-var children__9487__auto__ = cljs.core.rest(arglist__49325);
-return header__delegate(opts__9486__auto__,children__9487__auto__);
+header.cljs$lang$applyTo = (function (arglist__66922){
+var opts__10053__auto__ = cljs.core.first(arglist__66922);
+var children__10054__auto__ = cljs.core.rest(arglist__66922);
+return header__delegate(opts__10053__auto__,children__10054__auto__);
 });
 header.cljs$core$IFn$_invoke$arity$variadic = header__delegate;
 return header;
@@ -905,17 +905,17 @@ return header;
 * @param {...*} var_args
 */
 om.dom.hr = (function() { 
-var hr__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.hr.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var hr__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.hr.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var hr = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return hr__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var hr = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return hr__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 hr.cljs$lang$maxFixedArity = 1;
-hr.cljs$lang$applyTo = (function (arglist__49326){
-var opts__9486__auto__ = cljs.core.first(arglist__49326);
-var children__9487__auto__ = cljs.core.rest(arglist__49326);
-return hr__delegate(opts__9486__auto__,children__9487__auto__);
+hr.cljs$lang$applyTo = (function (arglist__66923){
+var opts__10053__auto__ = cljs.core.first(arglist__66923);
+var children__10054__auto__ = cljs.core.rest(arglist__66923);
+return hr__delegate(opts__10053__auto__,children__10054__auto__);
 });
 hr.cljs$core$IFn$_invoke$arity$variadic = hr__delegate;
 return hr;
@@ -925,17 +925,17 @@ return hr;
 * @param {...*} var_args
 */
 om.dom.html = (function() { 
-var html__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.html.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var html__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.html.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var html = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return html__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var html = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return html__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 html.cljs$lang$maxFixedArity = 1;
-html.cljs$lang$applyTo = (function (arglist__49327){
-var opts__9486__auto__ = cljs.core.first(arglist__49327);
-var children__9487__auto__ = cljs.core.rest(arglist__49327);
-return html__delegate(opts__9486__auto__,children__9487__auto__);
+html.cljs$lang$applyTo = (function (arglist__66924){
+var opts__10053__auto__ = cljs.core.first(arglist__66924);
+var children__10054__auto__ = cljs.core.rest(arglist__66924);
+return html__delegate(opts__10053__auto__,children__10054__auto__);
 });
 html.cljs$core$IFn$_invoke$arity$variadic = html__delegate;
 return html;
@@ -945,17 +945,17 @@ return html;
 * @param {...*} var_args
 */
 om.dom.i = (function() { 
-var i__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.i.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var i__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.i.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var i = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return i__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var i = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return i__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 i.cljs$lang$maxFixedArity = 1;
-i.cljs$lang$applyTo = (function (arglist__49328){
-var opts__9486__auto__ = cljs.core.first(arglist__49328);
-var children__9487__auto__ = cljs.core.rest(arglist__49328);
-return i__delegate(opts__9486__auto__,children__9487__auto__);
+i.cljs$lang$applyTo = (function (arglist__66925){
+var opts__10053__auto__ = cljs.core.first(arglist__66925);
+var children__10054__auto__ = cljs.core.rest(arglist__66925);
+return i__delegate(opts__10053__auto__,children__10054__auto__);
 });
 i.cljs$core$IFn$_invoke$arity$variadic = i__delegate;
 return i;
@@ -965,17 +965,17 @@ return i;
 * @param {...*} var_args
 */
 om.dom.iframe = (function() { 
-var iframe__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.iframe.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var iframe__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.iframe.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var iframe = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return iframe__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var iframe = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return iframe__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 iframe.cljs$lang$maxFixedArity = 1;
-iframe.cljs$lang$applyTo = (function (arglist__49329){
-var opts__9486__auto__ = cljs.core.first(arglist__49329);
-var children__9487__auto__ = cljs.core.rest(arglist__49329);
-return iframe__delegate(opts__9486__auto__,children__9487__auto__);
+iframe.cljs$lang$applyTo = (function (arglist__66926){
+var opts__10053__auto__ = cljs.core.first(arglist__66926);
+var children__10054__auto__ = cljs.core.rest(arglist__66926);
+return iframe__delegate(opts__10053__auto__,children__10054__auto__);
 });
 iframe.cljs$core$IFn$_invoke$arity$variadic = iframe__delegate;
 return iframe;
@@ -985,17 +985,17 @@ return iframe;
 * @param {...*} var_args
 */
 om.dom.img = (function() { 
-var img__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.img.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var img__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.img.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var img = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return img__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var img = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return img__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 img.cljs$lang$maxFixedArity = 1;
-img.cljs$lang$applyTo = (function (arglist__49330){
-var opts__9486__auto__ = cljs.core.first(arglist__49330);
-var children__9487__auto__ = cljs.core.rest(arglist__49330);
-return img__delegate(opts__9486__auto__,children__9487__auto__);
+img.cljs$lang$applyTo = (function (arglist__66927){
+var opts__10053__auto__ = cljs.core.first(arglist__66927);
+var children__10054__auto__ = cljs.core.rest(arglist__66927);
+return img__delegate(opts__10053__auto__,children__10054__auto__);
 });
 img.cljs$core$IFn$_invoke$arity$variadic = img__delegate;
 return img;
@@ -1005,17 +1005,17 @@ return img;
 * @param {...*} var_args
 */
 om.dom.ins = (function() { 
-var ins__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.ins.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var ins__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.ins.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var ins = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return ins__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var ins = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return ins__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 ins.cljs$lang$maxFixedArity = 1;
-ins.cljs$lang$applyTo = (function (arglist__49331){
-var opts__9486__auto__ = cljs.core.first(arglist__49331);
-var children__9487__auto__ = cljs.core.rest(arglist__49331);
-return ins__delegate(opts__9486__auto__,children__9487__auto__);
+ins.cljs$lang$applyTo = (function (arglist__66928){
+var opts__10053__auto__ = cljs.core.first(arglist__66928);
+var children__10054__auto__ = cljs.core.rest(arglist__66928);
+return ins__delegate(opts__10053__auto__,children__10054__auto__);
 });
 ins.cljs$core$IFn$_invoke$arity$variadic = ins__delegate;
 return ins;
@@ -1025,17 +1025,17 @@ return ins;
 * @param {...*} var_args
 */
 om.dom.kbd = (function() { 
-var kbd__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.kbd.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var kbd__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.kbd.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var kbd = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return kbd__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var kbd = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return kbd__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 kbd.cljs$lang$maxFixedArity = 1;
-kbd.cljs$lang$applyTo = (function (arglist__49332){
-var opts__9486__auto__ = cljs.core.first(arglist__49332);
-var children__9487__auto__ = cljs.core.rest(arglist__49332);
-return kbd__delegate(opts__9486__auto__,children__9487__auto__);
+kbd.cljs$lang$applyTo = (function (arglist__66929){
+var opts__10053__auto__ = cljs.core.first(arglist__66929);
+var children__10054__auto__ = cljs.core.rest(arglist__66929);
+return kbd__delegate(opts__10053__auto__,children__10054__auto__);
 });
 kbd.cljs$core$IFn$_invoke$arity$variadic = kbd__delegate;
 return kbd;
@@ -1045,17 +1045,17 @@ return kbd;
 * @param {...*} var_args
 */
 om.dom.keygen = (function() { 
-var keygen__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.keygen.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var keygen__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.keygen.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var keygen = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return keygen__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var keygen = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return keygen__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 keygen.cljs$lang$maxFixedArity = 1;
-keygen.cljs$lang$applyTo = (function (arglist__49333){
-var opts__9486__auto__ = cljs.core.first(arglist__49333);
-var children__9487__auto__ = cljs.core.rest(arglist__49333);
-return keygen__delegate(opts__9486__auto__,children__9487__auto__);
+keygen.cljs$lang$applyTo = (function (arglist__66930){
+var opts__10053__auto__ = cljs.core.first(arglist__66930);
+var children__10054__auto__ = cljs.core.rest(arglist__66930);
+return keygen__delegate(opts__10053__auto__,children__10054__auto__);
 });
 keygen.cljs$core$IFn$_invoke$arity$variadic = keygen__delegate;
 return keygen;
@@ -1065,17 +1065,17 @@ return keygen;
 * @param {...*} var_args
 */
 om.dom.label = (function() { 
-var label__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.label.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var label__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.label.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var label = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return label__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var label = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return label__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 label.cljs$lang$maxFixedArity = 1;
-label.cljs$lang$applyTo = (function (arglist__49334){
-var opts__9486__auto__ = cljs.core.first(arglist__49334);
-var children__9487__auto__ = cljs.core.rest(arglist__49334);
-return label__delegate(opts__9486__auto__,children__9487__auto__);
+label.cljs$lang$applyTo = (function (arglist__66931){
+var opts__10053__auto__ = cljs.core.first(arglist__66931);
+var children__10054__auto__ = cljs.core.rest(arglist__66931);
+return label__delegate(opts__10053__auto__,children__10054__auto__);
 });
 label.cljs$core$IFn$_invoke$arity$variadic = label__delegate;
 return label;
@@ -1085,17 +1085,17 @@ return label;
 * @param {...*} var_args
 */
 om.dom.legend = (function() { 
-var legend__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.legend.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var legend__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.legend.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var legend = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return legend__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var legend = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return legend__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 legend.cljs$lang$maxFixedArity = 1;
-legend.cljs$lang$applyTo = (function (arglist__49335){
-var opts__9486__auto__ = cljs.core.first(arglist__49335);
-var children__9487__auto__ = cljs.core.rest(arglist__49335);
-return legend__delegate(opts__9486__auto__,children__9487__auto__);
+legend.cljs$lang$applyTo = (function (arglist__66932){
+var opts__10053__auto__ = cljs.core.first(arglist__66932);
+var children__10054__auto__ = cljs.core.rest(arglist__66932);
+return legend__delegate(opts__10053__auto__,children__10054__auto__);
 });
 legend.cljs$core$IFn$_invoke$arity$variadic = legend__delegate;
 return legend;
@@ -1105,17 +1105,17 @@ return legend;
 * @param {...*} var_args
 */
 om.dom.li = (function() { 
-var li__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.li.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var li__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.li.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var li = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return li__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var li = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return li__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 li.cljs$lang$maxFixedArity = 1;
-li.cljs$lang$applyTo = (function (arglist__49336){
-var opts__9486__auto__ = cljs.core.first(arglist__49336);
-var children__9487__auto__ = cljs.core.rest(arglist__49336);
-return li__delegate(opts__9486__auto__,children__9487__auto__);
+li.cljs$lang$applyTo = (function (arglist__66933){
+var opts__10053__auto__ = cljs.core.first(arglist__66933);
+var children__10054__auto__ = cljs.core.rest(arglist__66933);
+return li__delegate(opts__10053__auto__,children__10054__auto__);
 });
 li.cljs$core$IFn$_invoke$arity$variadic = li__delegate;
 return li;
@@ -1125,17 +1125,17 @@ return li;
 * @param {...*} var_args
 */
 om.dom.link = (function() { 
-var link__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.link.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var link__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.link.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var link = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return link__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var link = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return link__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 link.cljs$lang$maxFixedArity = 1;
-link.cljs$lang$applyTo = (function (arglist__49337){
-var opts__9486__auto__ = cljs.core.first(arglist__49337);
-var children__9487__auto__ = cljs.core.rest(arglist__49337);
-return link__delegate(opts__9486__auto__,children__9487__auto__);
+link.cljs$lang$applyTo = (function (arglist__66934){
+var opts__10053__auto__ = cljs.core.first(arglist__66934);
+var children__10054__auto__ = cljs.core.rest(arglist__66934);
+return link__delegate(opts__10053__auto__,children__10054__auto__);
 });
 link.cljs$core$IFn$_invoke$arity$variadic = link__delegate;
 return link;
@@ -1145,17 +1145,17 @@ return link;
 * @param {...*} var_args
 */
 om.dom.main = (function() { 
-var main__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.main.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var main__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.main.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var main = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return main__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var main = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return main__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 main.cljs$lang$maxFixedArity = 1;
-main.cljs$lang$applyTo = (function (arglist__49338){
-var opts__9486__auto__ = cljs.core.first(arglist__49338);
-var children__9487__auto__ = cljs.core.rest(arglist__49338);
-return main__delegate(opts__9486__auto__,children__9487__auto__);
+main.cljs$lang$applyTo = (function (arglist__66935){
+var opts__10053__auto__ = cljs.core.first(arglist__66935);
+var children__10054__auto__ = cljs.core.rest(arglist__66935);
+return main__delegate(opts__10053__auto__,children__10054__auto__);
 });
 main.cljs$core$IFn$_invoke$arity$variadic = main__delegate;
 return main;
@@ -1165,17 +1165,17 @@ return main;
 * @param {...*} var_args
 */
 om.dom.map = (function() { 
-var map__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.map.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var map__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.map.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var map = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return map__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var map = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return map__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 map.cljs$lang$maxFixedArity = 1;
-map.cljs$lang$applyTo = (function (arglist__49339){
-var opts__9486__auto__ = cljs.core.first(arglist__49339);
-var children__9487__auto__ = cljs.core.rest(arglist__49339);
-return map__delegate(opts__9486__auto__,children__9487__auto__);
+map.cljs$lang$applyTo = (function (arglist__66936){
+var opts__10053__auto__ = cljs.core.first(arglist__66936);
+var children__10054__auto__ = cljs.core.rest(arglist__66936);
+return map__delegate(opts__10053__auto__,children__10054__auto__);
 });
 map.cljs$core$IFn$_invoke$arity$variadic = map__delegate;
 return map;
@@ -1185,17 +1185,17 @@ return map;
 * @param {...*} var_args
 */
 om.dom.mark = (function() { 
-var mark__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.mark.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var mark__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.mark.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var mark = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return mark__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var mark = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return mark__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 mark.cljs$lang$maxFixedArity = 1;
-mark.cljs$lang$applyTo = (function (arglist__49340){
-var opts__9486__auto__ = cljs.core.first(arglist__49340);
-var children__9487__auto__ = cljs.core.rest(arglist__49340);
-return mark__delegate(opts__9486__auto__,children__9487__auto__);
+mark.cljs$lang$applyTo = (function (arglist__66937){
+var opts__10053__auto__ = cljs.core.first(arglist__66937);
+var children__10054__auto__ = cljs.core.rest(arglist__66937);
+return mark__delegate(opts__10053__auto__,children__10054__auto__);
 });
 mark.cljs$core$IFn$_invoke$arity$variadic = mark__delegate;
 return mark;
@@ -1204,18 +1204,38 @@ return mark;
 /**
 * @param {...*} var_args
 */
-om.dom.menu = (function() { 
-var menu__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.menu.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+om.dom.marquee = (function() { 
+var marquee__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.marquee.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var menu = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return menu__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var marquee = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return marquee__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
+marquee.cljs$lang$maxFixedArity = 1;
+marquee.cljs$lang$applyTo = (function (arglist__66938){
+var opts__10053__auto__ = cljs.core.first(arglist__66938);
+var children__10054__auto__ = cljs.core.rest(arglist__66938);
+return marquee__delegate(opts__10053__auto__,children__10054__auto__);
+});
+marquee.cljs$core$IFn$_invoke$arity$variadic = marquee__delegate;
+return marquee;
+})()
+;
+/**
+* @param {...*} var_args
+*/
+om.dom.menu = (function() { 
+var menu__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.menu.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
+};
+var menu = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return menu__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 menu.cljs$lang$maxFixedArity = 1;
-menu.cljs$lang$applyTo = (function (arglist__49341){
-var opts__9486__auto__ = cljs.core.first(arglist__49341);
-var children__9487__auto__ = cljs.core.rest(arglist__49341);
-return menu__delegate(opts__9486__auto__,children__9487__auto__);
+menu.cljs$lang$applyTo = (function (arglist__66939){
+var opts__10053__auto__ = cljs.core.first(arglist__66939);
+var children__10054__auto__ = cljs.core.rest(arglist__66939);
+return menu__delegate(opts__10053__auto__,children__10054__auto__);
 });
 menu.cljs$core$IFn$_invoke$arity$variadic = menu__delegate;
 return menu;
@@ -1225,17 +1245,17 @@ return menu;
 * @param {...*} var_args
 */
 om.dom.menuitem = (function() { 
-var menuitem__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.menuitem.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var menuitem__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.menuitem.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var menuitem = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return menuitem__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var menuitem = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return menuitem__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 menuitem.cljs$lang$maxFixedArity = 1;
-menuitem.cljs$lang$applyTo = (function (arglist__49342){
-var opts__9486__auto__ = cljs.core.first(arglist__49342);
-var children__9487__auto__ = cljs.core.rest(arglist__49342);
-return menuitem__delegate(opts__9486__auto__,children__9487__auto__);
+menuitem.cljs$lang$applyTo = (function (arglist__66940){
+var opts__10053__auto__ = cljs.core.first(arglist__66940);
+var children__10054__auto__ = cljs.core.rest(arglist__66940);
+return menuitem__delegate(opts__10053__auto__,children__10054__auto__);
 });
 menuitem.cljs$core$IFn$_invoke$arity$variadic = menuitem__delegate;
 return menuitem;
@@ -1245,17 +1265,17 @@ return menuitem;
 * @param {...*} var_args
 */
 om.dom.meta = (function() { 
-var meta__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.meta.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var meta__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.meta.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var meta = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return meta__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var meta = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return meta__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 meta.cljs$lang$maxFixedArity = 1;
-meta.cljs$lang$applyTo = (function (arglist__49343){
-var opts__9486__auto__ = cljs.core.first(arglist__49343);
-var children__9487__auto__ = cljs.core.rest(arglist__49343);
-return meta__delegate(opts__9486__auto__,children__9487__auto__);
+meta.cljs$lang$applyTo = (function (arglist__66941){
+var opts__10053__auto__ = cljs.core.first(arglist__66941);
+var children__10054__auto__ = cljs.core.rest(arglist__66941);
+return meta__delegate(opts__10053__auto__,children__10054__auto__);
 });
 meta.cljs$core$IFn$_invoke$arity$variadic = meta__delegate;
 return meta;
@@ -1265,17 +1285,17 @@ return meta;
 * @param {...*} var_args
 */
 om.dom.meter = (function() { 
-var meter__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.meter.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var meter__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.meter.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var meter = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return meter__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var meter = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return meter__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 meter.cljs$lang$maxFixedArity = 1;
-meter.cljs$lang$applyTo = (function (arglist__49344){
-var opts__9486__auto__ = cljs.core.first(arglist__49344);
-var children__9487__auto__ = cljs.core.rest(arglist__49344);
-return meter__delegate(opts__9486__auto__,children__9487__auto__);
+meter.cljs$lang$applyTo = (function (arglist__66942){
+var opts__10053__auto__ = cljs.core.first(arglist__66942);
+var children__10054__auto__ = cljs.core.rest(arglist__66942);
+return meter__delegate(opts__10053__auto__,children__10054__auto__);
 });
 meter.cljs$core$IFn$_invoke$arity$variadic = meter__delegate;
 return meter;
@@ -1285,17 +1305,17 @@ return meter;
 * @param {...*} var_args
 */
 om.dom.nav = (function() { 
-var nav__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.nav.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var nav__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.nav.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var nav = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return nav__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var nav = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return nav__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 nav.cljs$lang$maxFixedArity = 1;
-nav.cljs$lang$applyTo = (function (arglist__49345){
-var opts__9486__auto__ = cljs.core.first(arglist__49345);
-var children__9487__auto__ = cljs.core.rest(arglist__49345);
-return nav__delegate(opts__9486__auto__,children__9487__auto__);
+nav.cljs$lang$applyTo = (function (arglist__66943){
+var opts__10053__auto__ = cljs.core.first(arglist__66943);
+var children__10054__auto__ = cljs.core.rest(arglist__66943);
+return nav__delegate(opts__10053__auto__,children__10054__auto__);
 });
 nav.cljs$core$IFn$_invoke$arity$variadic = nav__delegate;
 return nav;
@@ -1305,17 +1325,17 @@ return nav;
 * @param {...*} var_args
 */
 om.dom.noscript = (function() { 
-var noscript__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.noscript.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var noscript__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.noscript.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var noscript = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return noscript__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var noscript = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return noscript__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 noscript.cljs$lang$maxFixedArity = 1;
-noscript.cljs$lang$applyTo = (function (arglist__49346){
-var opts__9486__auto__ = cljs.core.first(arglist__49346);
-var children__9487__auto__ = cljs.core.rest(arglist__49346);
-return noscript__delegate(opts__9486__auto__,children__9487__auto__);
+noscript.cljs$lang$applyTo = (function (arglist__66944){
+var opts__10053__auto__ = cljs.core.first(arglist__66944);
+var children__10054__auto__ = cljs.core.rest(arglist__66944);
+return noscript__delegate(opts__10053__auto__,children__10054__auto__);
 });
 noscript.cljs$core$IFn$_invoke$arity$variadic = noscript__delegate;
 return noscript;
@@ -1325,17 +1345,17 @@ return noscript;
 * @param {...*} var_args
 */
 om.dom.object = (function() { 
-var object__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.object.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var object__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.object.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var object = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return object__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var object = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return object__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 object.cljs$lang$maxFixedArity = 1;
-object.cljs$lang$applyTo = (function (arglist__49347){
-var opts__9486__auto__ = cljs.core.first(arglist__49347);
-var children__9487__auto__ = cljs.core.rest(arglist__49347);
-return object__delegate(opts__9486__auto__,children__9487__auto__);
+object.cljs$lang$applyTo = (function (arglist__66945){
+var opts__10053__auto__ = cljs.core.first(arglist__66945);
+var children__10054__auto__ = cljs.core.rest(arglist__66945);
+return object__delegate(opts__10053__auto__,children__10054__auto__);
 });
 object.cljs$core$IFn$_invoke$arity$variadic = object__delegate;
 return object;
@@ -1345,17 +1365,17 @@ return object;
 * @param {...*} var_args
 */
 om.dom.ol = (function() { 
-var ol__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.ol.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var ol__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.ol.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var ol = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return ol__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var ol = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return ol__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 ol.cljs$lang$maxFixedArity = 1;
-ol.cljs$lang$applyTo = (function (arglist__49348){
-var opts__9486__auto__ = cljs.core.first(arglist__49348);
-var children__9487__auto__ = cljs.core.rest(arglist__49348);
-return ol__delegate(opts__9486__auto__,children__9487__auto__);
+ol.cljs$lang$applyTo = (function (arglist__66946){
+var opts__10053__auto__ = cljs.core.first(arglist__66946);
+var children__10054__auto__ = cljs.core.rest(arglist__66946);
+return ol__delegate(opts__10053__auto__,children__10054__auto__);
 });
 ol.cljs$core$IFn$_invoke$arity$variadic = ol__delegate;
 return ol;
@@ -1365,17 +1385,17 @@ return ol;
 * @param {...*} var_args
 */
 om.dom.optgroup = (function() { 
-var optgroup__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.optgroup.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var optgroup__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.optgroup.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var optgroup = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return optgroup__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var optgroup = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return optgroup__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 optgroup.cljs$lang$maxFixedArity = 1;
-optgroup.cljs$lang$applyTo = (function (arglist__49349){
-var opts__9486__auto__ = cljs.core.first(arglist__49349);
-var children__9487__auto__ = cljs.core.rest(arglist__49349);
-return optgroup__delegate(opts__9486__auto__,children__9487__auto__);
+optgroup.cljs$lang$applyTo = (function (arglist__66947){
+var opts__10053__auto__ = cljs.core.first(arglist__66947);
+var children__10054__auto__ = cljs.core.rest(arglist__66947);
+return optgroup__delegate(opts__10053__auto__,children__10054__auto__);
 });
 optgroup.cljs$core$IFn$_invoke$arity$variadic = optgroup__delegate;
 return optgroup;
@@ -1385,17 +1405,17 @@ return optgroup;
 * @param {...*} var_args
 */
 om.dom.output = (function() { 
-var output__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.output.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var output__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.output.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var output = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return output__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var output = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return output__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 output.cljs$lang$maxFixedArity = 1;
-output.cljs$lang$applyTo = (function (arglist__49350){
-var opts__9486__auto__ = cljs.core.first(arglist__49350);
-var children__9487__auto__ = cljs.core.rest(arglist__49350);
-return output__delegate(opts__9486__auto__,children__9487__auto__);
+output.cljs$lang$applyTo = (function (arglist__66948){
+var opts__10053__auto__ = cljs.core.first(arglist__66948);
+var children__10054__auto__ = cljs.core.rest(arglist__66948);
+return output__delegate(opts__10053__auto__,children__10054__auto__);
 });
 output.cljs$core$IFn$_invoke$arity$variadic = output__delegate;
 return output;
@@ -1405,17 +1425,17 @@ return output;
 * @param {...*} var_args
 */
 om.dom.p = (function() { 
-var p__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.p.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var p__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.p.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var p = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return p__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var p = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return p__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 p.cljs$lang$maxFixedArity = 1;
-p.cljs$lang$applyTo = (function (arglist__49351){
-var opts__9486__auto__ = cljs.core.first(arglist__49351);
-var children__9487__auto__ = cljs.core.rest(arglist__49351);
-return p__delegate(opts__9486__auto__,children__9487__auto__);
+p.cljs$lang$applyTo = (function (arglist__66949){
+var opts__10053__auto__ = cljs.core.first(arglist__66949);
+var children__10054__auto__ = cljs.core.rest(arglist__66949);
+return p__delegate(opts__10053__auto__,children__10054__auto__);
 });
 p.cljs$core$IFn$_invoke$arity$variadic = p__delegate;
 return p;
@@ -1425,17 +1445,17 @@ return p;
 * @param {...*} var_args
 */
 om.dom.param = (function() { 
-var param__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.param.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var param__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.param.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var param = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return param__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var param = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return param__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 param.cljs$lang$maxFixedArity = 1;
-param.cljs$lang$applyTo = (function (arglist__49352){
-var opts__9486__auto__ = cljs.core.first(arglist__49352);
-var children__9487__auto__ = cljs.core.rest(arglist__49352);
-return param__delegate(opts__9486__auto__,children__9487__auto__);
+param.cljs$lang$applyTo = (function (arglist__66950){
+var opts__10053__auto__ = cljs.core.first(arglist__66950);
+var children__10054__auto__ = cljs.core.rest(arglist__66950);
+return param__delegate(opts__10053__auto__,children__10054__auto__);
 });
 param.cljs$core$IFn$_invoke$arity$variadic = param__delegate;
 return param;
@@ -1445,17 +1465,17 @@ return param;
 * @param {...*} var_args
 */
 om.dom.pre = (function() { 
-var pre__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.pre.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var pre__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.pre.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var pre = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return pre__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var pre = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return pre__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 pre.cljs$lang$maxFixedArity = 1;
-pre.cljs$lang$applyTo = (function (arglist__49353){
-var opts__9486__auto__ = cljs.core.first(arglist__49353);
-var children__9487__auto__ = cljs.core.rest(arglist__49353);
-return pre__delegate(opts__9486__auto__,children__9487__auto__);
+pre.cljs$lang$applyTo = (function (arglist__66951){
+var opts__10053__auto__ = cljs.core.first(arglist__66951);
+var children__10054__auto__ = cljs.core.rest(arglist__66951);
+return pre__delegate(opts__10053__auto__,children__10054__auto__);
 });
 pre.cljs$core$IFn$_invoke$arity$variadic = pre__delegate;
 return pre;
@@ -1465,17 +1485,17 @@ return pre;
 * @param {...*} var_args
 */
 om.dom.progress = (function() { 
-var progress__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.progress.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var progress__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.progress.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var progress = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return progress__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var progress = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return progress__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 progress.cljs$lang$maxFixedArity = 1;
-progress.cljs$lang$applyTo = (function (arglist__49354){
-var opts__9486__auto__ = cljs.core.first(arglist__49354);
-var children__9487__auto__ = cljs.core.rest(arglist__49354);
-return progress__delegate(opts__9486__auto__,children__9487__auto__);
+progress.cljs$lang$applyTo = (function (arglist__66952){
+var opts__10053__auto__ = cljs.core.first(arglist__66952);
+var children__10054__auto__ = cljs.core.rest(arglist__66952);
+return progress__delegate(opts__10053__auto__,children__10054__auto__);
 });
 progress.cljs$core$IFn$_invoke$arity$variadic = progress__delegate;
 return progress;
@@ -1485,17 +1505,17 @@ return progress;
 * @param {...*} var_args
 */
 om.dom.q = (function() { 
-var q__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.q.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var q__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.q.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var q = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return q__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var q = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return q__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 q.cljs$lang$maxFixedArity = 1;
-q.cljs$lang$applyTo = (function (arglist__49355){
-var opts__9486__auto__ = cljs.core.first(arglist__49355);
-var children__9487__auto__ = cljs.core.rest(arglist__49355);
-return q__delegate(opts__9486__auto__,children__9487__auto__);
+q.cljs$lang$applyTo = (function (arglist__66953){
+var opts__10053__auto__ = cljs.core.first(arglist__66953);
+var children__10054__auto__ = cljs.core.rest(arglist__66953);
+return q__delegate(opts__10053__auto__,children__10054__auto__);
 });
 q.cljs$core$IFn$_invoke$arity$variadic = q__delegate;
 return q;
@@ -1505,17 +1525,17 @@ return q;
 * @param {...*} var_args
 */
 om.dom.rp = (function() { 
-var rp__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.rp.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var rp__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.rp.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var rp = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return rp__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var rp = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return rp__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 rp.cljs$lang$maxFixedArity = 1;
-rp.cljs$lang$applyTo = (function (arglist__49356){
-var opts__9486__auto__ = cljs.core.first(arglist__49356);
-var children__9487__auto__ = cljs.core.rest(arglist__49356);
-return rp__delegate(opts__9486__auto__,children__9487__auto__);
+rp.cljs$lang$applyTo = (function (arglist__66954){
+var opts__10053__auto__ = cljs.core.first(arglist__66954);
+var children__10054__auto__ = cljs.core.rest(arglist__66954);
+return rp__delegate(opts__10053__auto__,children__10054__auto__);
 });
 rp.cljs$core$IFn$_invoke$arity$variadic = rp__delegate;
 return rp;
@@ -1525,17 +1545,17 @@ return rp;
 * @param {...*} var_args
 */
 om.dom.rt = (function() { 
-var rt__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.rt.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var rt__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.rt.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var rt = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return rt__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var rt = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return rt__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 rt.cljs$lang$maxFixedArity = 1;
-rt.cljs$lang$applyTo = (function (arglist__49357){
-var opts__9486__auto__ = cljs.core.first(arglist__49357);
-var children__9487__auto__ = cljs.core.rest(arglist__49357);
-return rt__delegate(opts__9486__auto__,children__9487__auto__);
+rt.cljs$lang$applyTo = (function (arglist__66955){
+var opts__10053__auto__ = cljs.core.first(arglist__66955);
+var children__10054__auto__ = cljs.core.rest(arglist__66955);
+return rt__delegate(opts__10053__auto__,children__10054__auto__);
 });
 rt.cljs$core$IFn$_invoke$arity$variadic = rt__delegate;
 return rt;
@@ -1545,17 +1565,17 @@ return rt;
 * @param {...*} var_args
 */
 om.dom.ruby = (function() { 
-var ruby__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.ruby.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var ruby__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.ruby.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var ruby = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return ruby__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var ruby = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return ruby__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 ruby.cljs$lang$maxFixedArity = 1;
-ruby.cljs$lang$applyTo = (function (arglist__49358){
-var opts__9486__auto__ = cljs.core.first(arglist__49358);
-var children__9487__auto__ = cljs.core.rest(arglist__49358);
-return ruby__delegate(opts__9486__auto__,children__9487__auto__);
+ruby.cljs$lang$applyTo = (function (arglist__66956){
+var opts__10053__auto__ = cljs.core.first(arglist__66956);
+var children__10054__auto__ = cljs.core.rest(arglist__66956);
+return ruby__delegate(opts__10053__auto__,children__10054__auto__);
 });
 ruby.cljs$core$IFn$_invoke$arity$variadic = ruby__delegate;
 return ruby;
@@ -1565,17 +1585,17 @@ return ruby;
 * @param {...*} var_args
 */
 om.dom.s = (function() { 
-var s__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.s.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var s__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.s.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var s = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return s__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var s = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return s__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 s.cljs$lang$maxFixedArity = 1;
-s.cljs$lang$applyTo = (function (arglist__49359){
-var opts__9486__auto__ = cljs.core.first(arglist__49359);
-var children__9487__auto__ = cljs.core.rest(arglist__49359);
-return s__delegate(opts__9486__auto__,children__9487__auto__);
+s.cljs$lang$applyTo = (function (arglist__66957){
+var opts__10053__auto__ = cljs.core.first(arglist__66957);
+var children__10054__auto__ = cljs.core.rest(arglist__66957);
+return s__delegate(opts__10053__auto__,children__10054__auto__);
 });
 s.cljs$core$IFn$_invoke$arity$variadic = s__delegate;
 return s;
@@ -1585,17 +1605,17 @@ return s;
 * @param {...*} var_args
 */
 om.dom.samp = (function() { 
-var samp__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.samp.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var samp__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.samp.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var samp = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return samp__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var samp = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return samp__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 samp.cljs$lang$maxFixedArity = 1;
-samp.cljs$lang$applyTo = (function (arglist__49360){
-var opts__9486__auto__ = cljs.core.first(arglist__49360);
-var children__9487__auto__ = cljs.core.rest(arglist__49360);
-return samp__delegate(opts__9486__auto__,children__9487__auto__);
+samp.cljs$lang$applyTo = (function (arglist__66958){
+var opts__10053__auto__ = cljs.core.first(arglist__66958);
+var children__10054__auto__ = cljs.core.rest(arglist__66958);
+return samp__delegate(opts__10053__auto__,children__10054__auto__);
 });
 samp.cljs$core$IFn$_invoke$arity$variadic = samp__delegate;
 return samp;
@@ -1605,17 +1625,17 @@ return samp;
 * @param {...*} var_args
 */
 om.dom.script = (function() { 
-var script__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.script.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var script__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.script.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var script = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return script__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var script = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return script__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 script.cljs$lang$maxFixedArity = 1;
-script.cljs$lang$applyTo = (function (arglist__49361){
-var opts__9486__auto__ = cljs.core.first(arglist__49361);
-var children__9487__auto__ = cljs.core.rest(arglist__49361);
-return script__delegate(opts__9486__auto__,children__9487__auto__);
+script.cljs$lang$applyTo = (function (arglist__66959){
+var opts__10053__auto__ = cljs.core.first(arglist__66959);
+var children__10054__auto__ = cljs.core.rest(arglist__66959);
+return script__delegate(opts__10053__auto__,children__10054__auto__);
 });
 script.cljs$core$IFn$_invoke$arity$variadic = script__delegate;
 return script;
@@ -1625,17 +1645,17 @@ return script;
 * @param {...*} var_args
 */
 om.dom.section = (function() { 
-var section__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.section.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var section__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.section.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var section = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return section__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var section = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return section__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 section.cljs$lang$maxFixedArity = 1;
-section.cljs$lang$applyTo = (function (arglist__49362){
-var opts__9486__auto__ = cljs.core.first(arglist__49362);
-var children__9487__auto__ = cljs.core.rest(arglist__49362);
-return section__delegate(opts__9486__auto__,children__9487__auto__);
+section.cljs$lang$applyTo = (function (arglist__66960){
+var opts__10053__auto__ = cljs.core.first(arglist__66960);
+var children__10054__auto__ = cljs.core.rest(arglist__66960);
+return section__delegate(opts__10053__auto__,children__10054__auto__);
 });
 section.cljs$core$IFn$_invoke$arity$variadic = section__delegate;
 return section;
@@ -1645,17 +1665,17 @@ return section;
 * @param {...*} var_args
 */
 om.dom.select = (function() { 
-var select__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.select.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var select__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.select.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var select = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return select__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var select = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return select__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 select.cljs$lang$maxFixedArity = 1;
-select.cljs$lang$applyTo = (function (arglist__49363){
-var opts__9486__auto__ = cljs.core.first(arglist__49363);
-var children__9487__auto__ = cljs.core.rest(arglist__49363);
-return select__delegate(opts__9486__auto__,children__9487__auto__);
+select.cljs$lang$applyTo = (function (arglist__66961){
+var opts__10053__auto__ = cljs.core.first(arglist__66961);
+var children__10054__auto__ = cljs.core.rest(arglist__66961);
+return select__delegate(opts__10053__auto__,children__10054__auto__);
 });
 select.cljs$core$IFn$_invoke$arity$variadic = select__delegate;
 return select;
@@ -1665,17 +1685,17 @@ return select;
 * @param {...*} var_args
 */
 om.dom.small = (function() { 
-var small__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.small.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var small__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.small.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var small = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return small__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var small = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return small__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 small.cljs$lang$maxFixedArity = 1;
-small.cljs$lang$applyTo = (function (arglist__49364){
-var opts__9486__auto__ = cljs.core.first(arglist__49364);
-var children__9487__auto__ = cljs.core.rest(arglist__49364);
-return small__delegate(opts__9486__auto__,children__9487__auto__);
+small.cljs$lang$applyTo = (function (arglist__66962){
+var opts__10053__auto__ = cljs.core.first(arglist__66962);
+var children__10054__auto__ = cljs.core.rest(arglist__66962);
+return small__delegate(opts__10053__auto__,children__10054__auto__);
 });
 small.cljs$core$IFn$_invoke$arity$variadic = small__delegate;
 return small;
@@ -1685,17 +1705,17 @@ return small;
 * @param {...*} var_args
 */
 om.dom.source = (function() { 
-var source__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.source.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var source__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.source.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var source = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return source__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var source = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return source__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 source.cljs$lang$maxFixedArity = 1;
-source.cljs$lang$applyTo = (function (arglist__49365){
-var opts__9486__auto__ = cljs.core.first(arglist__49365);
-var children__9487__auto__ = cljs.core.rest(arglist__49365);
-return source__delegate(opts__9486__auto__,children__9487__auto__);
+source.cljs$lang$applyTo = (function (arglist__66963){
+var opts__10053__auto__ = cljs.core.first(arglist__66963);
+var children__10054__auto__ = cljs.core.rest(arglist__66963);
+return source__delegate(opts__10053__auto__,children__10054__auto__);
 });
 source.cljs$core$IFn$_invoke$arity$variadic = source__delegate;
 return source;
@@ -1705,17 +1725,17 @@ return source;
 * @param {...*} var_args
 */
 om.dom.span = (function() { 
-var span__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.span.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var span__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.span.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var span = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return span__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var span = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return span__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 span.cljs$lang$maxFixedArity = 1;
-span.cljs$lang$applyTo = (function (arglist__49366){
-var opts__9486__auto__ = cljs.core.first(arglist__49366);
-var children__9487__auto__ = cljs.core.rest(arglist__49366);
-return span__delegate(opts__9486__auto__,children__9487__auto__);
+span.cljs$lang$applyTo = (function (arglist__66964){
+var opts__10053__auto__ = cljs.core.first(arglist__66964);
+var children__10054__auto__ = cljs.core.rest(arglist__66964);
+return span__delegate(opts__10053__auto__,children__10054__auto__);
 });
 span.cljs$core$IFn$_invoke$arity$variadic = span__delegate;
 return span;
@@ -1725,17 +1745,17 @@ return span;
 * @param {...*} var_args
 */
 om.dom.strong = (function() { 
-var strong__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.strong.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var strong__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.strong.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var strong = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return strong__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var strong = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return strong__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 strong.cljs$lang$maxFixedArity = 1;
-strong.cljs$lang$applyTo = (function (arglist__49367){
-var opts__9486__auto__ = cljs.core.first(arglist__49367);
-var children__9487__auto__ = cljs.core.rest(arglist__49367);
-return strong__delegate(opts__9486__auto__,children__9487__auto__);
+strong.cljs$lang$applyTo = (function (arglist__66965){
+var opts__10053__auto__ = cljs.core.first(arglist__66965);
+var children__10054__auto__ = cljs.core.rest(arglist__66965);
+return strong__delegate(opts__10053__auto__,children__10054__auto__);
 });
 strong.cljs$core$IFn$_invoke$arity$variadic = strong__delegate;
 return strong;
@@ -1745,17 +1765,17 @@ return strong;
 * @param {...*} var_args
 */
 om.dom.style = (function() { 
-var style__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.style.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var style__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.style.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var style = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return style__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var style = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return style__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 style.cljs$lang$maxFixedArity = 1;
-style.cljs$lang$applyTo = (function (arglist__49368){
-var opts__9486__auto__ = cljs.core.first(arglist__49368);
-var children__9487__auto__ = cljs.core.rest(arglist__49368);
-return style__delegate(opts__9486__auto__,children__9487__auto__);
+style.cljs$lang$applyTo = (function (arglist__66966){
+var opts__10053__auto__ = cljs.core.first(arglist__66966);
+var children__10054__auto__ = cljs.core.rest(arglist__66966);
+return style__delegate(opts__10053__auto__,children__10054__auto__);
 });
 style.cljs$core$IFn$_invoke$arity$variadic = style__delegate;
 return style;
@@ -1765,17 +1785,17 @@ return style;
 * @param {...*} var_args
 */
 om.dom.sub = (function() { 
-var sub__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.sub.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var sub__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.sub.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var sub = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return sub__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var sub = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return sub__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 sub.cljs$lang$maxFixedArity = 1;
-sub.cljs$lang$applyTo = (function (arglist__49369){
-var opts__9486__auto__ = cljs.core.first(arglist__49369);
-var children__9487__auto__ = cljs.core.rest(arglist__49369);
-return sub__delegate(opts__9486__auto__,children__9487__auto__);
+sub.cljs$lang$applyTo = (function (arglist__66967){
+var opts__10053__auto__ = cljs.core.first(arglist__66967);
+var children__10054__auto__ = cljs.core.rest(arglist__66967);
+return sub__delegate(opts__10053__auto__,children__10054__auto__);
 });
 sub.cljs$core$IFn$_invoke$arity$variadic = sub__delegate;
 return sub;
@@ -1785,17 +1805,17 @@ return sub;
 * @param {...*} var_args
 */
 om.dom.summary = (function() { 
-var summary__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.summary.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var summary__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.summary.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var summary = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return summary__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var summary = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return summary__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 summary.cljs$lang$maxFixedArity = 1;
-summary.cljs$lang$applyTo = (function (arglist__49370){
-var opts__9486__auto__ = cljs.core.first(arglist__49370);
-var children__9487__auto__ = cljs.core.rest(arglist__49370);
-return summary__delegate(opts__9486__auto__,children__9487__auto__);
+summary.cljs$lang$applyTo = (function (arglist__66968){
+var opts__10053__auto__ = cljs.core.first(arglist__66968);
+var children__10054__auto__ = cljs.core.rest(arglist__66968);
+return summary__delegate(opts__10053__auto__,children__10054__auto__);
 });
 summary.cljs$core$IFn$_invoke$arity$variadic = summary__delegate;
 return summary;
@@ -1805,17 +1825,17 @@ return summary;
 * @param {...*} var_args
 */
 om.dom.sup = (function() { 
-var sup__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.sup.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var sup__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.sup.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var sup = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return sup__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var sup = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return sup__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 sup.cljs$lang$maxFixedArity = 1;
-sup.cljs$lang$applyTo = (function (arglist__49371){
-var opts__9486__auto__ = cljs.core.first(arglist__49371);
-var children__9487__auto__ = cljs.core.rest(arglist__49371);
-return sup__delegate(opts__9486__auto__,children__9487__auto__);
+sup.cljs$lang$applyTo = (function (arglist__66969){
+var opts__10053__auto__ = cljs.core.first(arglist__66969);
+var children__10054__auto__ = cljs.core.rest(arglist__66969);
+return sup__delegate(opts__10053__auto__,children__10054__auto__);
 });
 sup.cljs$core$IFn$_invoke$arity$variadic = sup__delegate;
 return sup;
@@ -1825,17 +1845,17 @@ return sup;
 * @param {...*} var_args
 */
 om.dom.table = (function() { 
-var table__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.table.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var table__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.table.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var table = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return table__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var table = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return table__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 table.cljs$lang$maxFixedArity = 1;
-table.cljs$lang$applyTo = (function (arglist__49372){
-var opts__9486__auto__ = cljs.core.first(arglist__49372);
-var children__9487__auto__ = cljs.core.rest(arglist__49372);
-return table__delegate(opts__9486__auto__,children__9487__auto__);
+table.cljs$lang$applyTo = (function (arglist__66970){
+var opts__10053__auto__ = cljs.core.first(arglist__66970);
+var children__10054__auto__ = cljs.core.rest(arglist__66970);
+return table__delegate(opts__10053__auto__,children__10054__auto__);
 });
 table.cljs$core$IFn$_invoke$arity$variadic = table__delegate;
 return table;
@@ -1845,17 +1865,17 @@ return table;
 * @param {...*} var_args
 */
 om.dom.tbody = (function() { 
-var tbody__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.tbody.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var tbody__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.tbody.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var tbody = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return tbody__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var tbody = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return tbody__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 tbody.cljs$lang$maxFixedArity = 1;
-tbody.cljs$lang$applyTo = (function (arglist__49373){
-var opts__9486__auto__ = cljs.core.first(arglist__49373);
-var children__9487__auto__ = cljs.core.rest(arglist__49373);
-return tbody__delegate(opts__9486__auto__,children__9487__auto__);
+tbody.cljs$lang$applyTo = (function (arglist__66971){
+var opts__10053__auto__ = cljs.core.first(arglist__66971);
+var children__10054__auto__ = cljs.core.rest(arglist__66971);
+return tbody__delegate(opts__10053__auto__,children__10054__auto__);
 });
 tbody.cljs$core$IFn$_invoke$arity$variadic = tbody__delegate;
 return tbody;
@@ -1865,17 +1885,17 @@ return tbody;
 * @param {...*} var_args
 */
 om.dom.td = (function() { 
-var td__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.td.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var td__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.td.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var td = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return td__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var td = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return td__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 td.cljs$lang$maxFixedArity = 1;
-td.cljs$lang$applyTo = (function (arglist__49374){
-var opts__9486__auto__ = cljs.core.first(arglist__49374);
-var children__9487__auto__ = cljs.core.rest(arglist__49374);
-return td__delegate(opts__9486__auto__,children__9487__auto__);
+td.cljs$lang$applyTo = (function (arglist__66972){
+var opts__10053__auto__ = cljs.core.first(arglist__66972);
+var children__10054__auto__ = cljs.core.rest(arglist__66972);
+return td__delegate(opts__10053__auto__,children__10054__auto__);
 });
 td.cljs$core$IFn$_invoke$arity$variadic = td__delegate;
 return td;
@@ -1885,17 +1905,17 @@ return td;
 * @param {...*} var_args
 */
 om.dom.tfoot = (function() { 
-var tfoot__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.tfoot.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var tfoot__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.tfoot.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var tfoot = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return tfoot__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var tfoot = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return tfoot__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 tfoot.cljs$lang$maxFixedArity = 1;
-tfoot.cljs$lang$applyTo = (function (arglist__49375){
-var opts__9486__auto__ = cljs.core.first(arglist__49375);
-var children__9487__auto__ = cljs.core.rest(arglist__49375);
-return tfoot__delegate(opts__9486__auto__,children__9487__auto__);
+tfoot.cljs$lang$applyTo = (function (arglist__66973){
+var opts__10053__auto__ = cljs.core.first(arglist__66973);
+var children__10054__auto__ = cljs.core.rest(arglist__66973);
+return tfoot__delegate(opts__10053__auto__,children__10054__auto__);
 });
 tfoot.cljs$core$IFn$_invoke$arity$variadic = tfoot__delegate;
 return tfoot;
@@ -1905,17 +1925,17 @@ return tfoot;
 * @param {...*} var_args
 */
 om.dom.th = (function() { 
-var th__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.th.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var th__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.th.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var th = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return th__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var th = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return th__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 th.cljs$lang$maxFixedArity = 1;
-th.cljs$lang$applyTo = (function (arglist__49376){
-var opts__9486__auto__ = cljs.core.first(arglist__49376);
-var children__9487__auto__ = cljs.core.rest(arglist__49376);
-return th__delegate(opts__9486__auto__,children__9487__auto__);
+th.cljs$lang$applyTo = (function (arglist__66974){
+var opts__10053__auto__ = cljs.core.first(arglist__66974);
+var children__10054__auto__ = cljs.core.rest(arglist__66974);
+return th__delegate(opts__10053__auto__,children__10054__auto__);
 });
 th.cljs$core$IFn$_invoke$arity$variadic = th__delegate;
 return th;
@@ -1925,17 +1945,17 @@ return th;
 * @param {...*} var_args
 */
 om.dom.thead = (function() { 
-var thead__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.thead.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var thead__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.thead.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var thead = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return thead__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var thead = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return thead__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 thead.cljs$lang$maxFixedArity = 1;
-thead.cljs$lang$applyTo = (function (arglist__49377){
-var opts__9486__auto__ = cljs.core.first(arglist__49377);
-var children__9487__auto__ = cljs.core.rest(arglist__49377);
-return thead__delegate(opts__9486__auto__,children__9487__auto__);
+thead.cljs$lang$applyTo = (function (arglist__66975){
+var opts__10053__auto__ = cljs.core.first(arglist__66975);
+var children__10054__auto__ = cljs.core.rest(arglist__66975);
+return thead__delegate(opts__10053__auto__,children__10054__auto__);
 });
 thead.cljs$core$IFn$_invoke$arity$variadic = thead__delegate;
 return thead;
@@ -1945,17 +1965,17 @@ return thead;
 * @param {...*} var_args
 */
 om.dom.time = (function() { 
-var time__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.time.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var time__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.time.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var time = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return time__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var time = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return time__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 time.cljs$lang$maxFixedArity = 1;
-time.cljs$lang$applyTo = (function (arglist__49378){
-var opts__9486__auto__ = cljs.core.first(arglist__49378);
-var children__9487__auto__ = cljs.core.rest(arglist__49378);
-return time__delegate(opts__9486__auto__,children__9487__auto__);
+time.cljs$lang$applyTo = (function (arglist__66976){
+var opts__10053__auto__ = cljs.core.first(arglist__66976);
+var children__10054__auto__ = cljs.core.rest(arglist__66976);
+return time__delegate(opts__10053__auto__,children__10054__auto__);
 });
 time.cljs$core$IFn$_invoke$arity$variadic = time__delegate;
 return time;
@@ -1965,17 +1985,17 @@ return time;
 * @param {...*} var_args
 */
 om.dom.title = (function() { 
-var title__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.title.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var title__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.title.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var title = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return title__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var title = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return title__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 title.cljs$lang$maxFixedArity = 1;
-title.cljs$lang$applyTo = (function (arglist__49379){
-var opts__9486__auto__ = cljs.core.first(arglist__49379);
-var children__9487__auto__ = cljs.core.rest(arglist__49379);
-return title__delegate(opts__9486__auto__,children__9487__auto__);
+title.cljs$lang$applyTo = (function (arglist__66977){
+var opts__10053__auto__ = cljs.core.first(arglist__66977);
+var children__10054__auto__ = cljs.core.rest(arglist__66977);
+return title__delegate(opts__10053__auto__,children__10054__auto__);
 });
 title.cljs$core$IFn$_invoke$arity$variadic = title__delegate;
 return title;
@@ -1985,17 +2005,17 @@ return title;
 * @param {...*} var_args
 */
 om.dom.tr = (function() { 
-var tr__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.tr.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var tr__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.tr.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var tr = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return tr__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var tr = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return tr__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 tr.cljs$lang$maxFixedArity = 1;
-tr.cljs$lang$applyTo = (function (arglist__49380){
-var opts__9486__auto__ = cljs.core.first(arglist__49380);
-var children__9487__auto__ = cljs.core.rest(arglist__49380);
-return tr__delegate(opts__9486__auto__,children__9487__auto__);
+tr.cljs$lang$applyTo = (function (arglist__66978){
+var opts__10053__auto__ = cljs.core.first(arglist__66978);
+var children__10054__auto__ = cljs.core.rest(arglist__66978);
+return tr__delegate(opts__10053__auto__,children__10054__auto__);
 });
 tr.cljs$core$IFn$_invoke$arity$variadic = tr__delegate;
 return tr;
@@ -2005,17 +2025,17 @@ return tr;
 * @param {...*} var_args
 */
 om.dom.track = (function() { 
-var track__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.track.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var track__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.track.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var track = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return track__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var track = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return track__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 track.cljs$lang$maxFixedArity = 1;
-track.cljs$lang$applyTo = (function (arglist__49381){
-var opts__9486__auto__ = cljs.core.first(arglist__49381);
-var children__9487__auto__ = cljs.core.rest(arglist__49381);
-return track__delegate(opts__9486__auto__,children__9487__auto__);
+track.cljs$lang$applyTo = (function (arglist__66979){
+var opts__10053__auto__ = cljs.core.first(arglist__66979);
+var children__10054__auto__ = cljs.core.rest(arglist__66979);
+return track__delegate(opts__10053__auto__,children__10054__auto__);
 });
 track.cljs$core$IFn$_invoke$arity$variadic = track__delegate;
 return track;
@@ -2025,17 +2045,17 @@ return track;
 * @param {...*} var_args
 */
 om.dom.u = (function() { 
-var u__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.u.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var u__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.u.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var u = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return u__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var u = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return u__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 u.cljs$lang$maxFixedArity = 1;
-u.cljs$lang$applyTo = (function (arglist__49382){
-var opts__9486__auto__ = cljs.core.first(arglist__49382);
-var children__9487__auto__ = cljs.core.rest(arglist__49382);
-return u__delegate(opts__9486__auto__,children__9487__auto__);
+u.cljs$lang$applyTo = (function (arglist__66980){
+var opts__10053__auto__ = cljs.core.first(arglist__66980);
+var children__10054__auto__ = cljs.core.rest(arglist__66980);
+return u__delegate(opts__10053__auto__,children__10054__auto__);
 });
 u.cljs$core$IFn$_invoke$arity$variadic = u__delegate;
 return u;
@@ -2045,17 +2065,17 @@ return u;
 * @param {...*} var_args
 */
 om.dom.ul = (function() { 
-var ul__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.ul.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var ul__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.ul.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var ul = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return ul__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var ul = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return ul__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 ul.cljs$lang$maxFixedArity = 1;
-ul.cljs$lang$applyTo = (function (arglist__49383){
-var opts__9486__auto__ = cljs.core.first(arglist__49383);
-var children__9487__auto__ = cljs.core.rest(arglist__49383);
-return ul__delegate(opts__9486__auto__,children__9487__auto__);
+ul.cljs$lang$applyTo = (function (arglist__66981){
+var opts__10053__auto__ = cljs.core.first(arglist__66981);
+var children__10054__auto__ = cljs.core.rest(arglist__66981);
+return ul__delegate(opts__10053__auto__,children__10054__auto__);
 });
 ul.cljs$core$IFn$_invoke$arity$variadic = ul__delegate;
 return ul;
@@ -2065,17 +2085,17 @@ return ul;
 * @param {...*} var_args
 */
 om.dom.var$ = (function() { 
-var var$__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.var$.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var var$__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.var$.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var var$ = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return var$__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var var$ = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return var$__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 var$.cljs$lang$maxFixedArity = 1;
-var$.cljs$lang$applyTo = (function (arglist__49384){
-var opts__9486__auto__ = cljs.core.first(arglist__49384);
-var children__9487__auto__ = cljs.core.rest(arglist__49384);
-return var$__delegate(opts__9486__auto__,children__9487__auto__);
+var$.cljs$lang$applyTo = (function (arglist__66982){
+var opts__10053__auto__ = cljs.core.first(arglist__66982);
+var children__10054__auto__ = cljs.core.rest(arglist__66982);
+return var$__delegate(opts__10053__auto__,children__10054__auto__);
 });
 var$.cljs$core$IFn$_invoke$arity$variadic = var$__delegate;
 return var$;
@@ -2085,17 +2105,17 @@ return var$;
 * @param {...*} var_args
 */
 om.dom.video = (function() { 
-var video__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.video.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var video__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.video.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var video = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return video__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var video = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return video__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 video.cljs$lang$maxFixedArity = 1;
-video.cljs$lang$applyTo = (function (arglist__49385){
-var opts__9486__auto__ = cljs.core.first(arglist__49385);
-var children__9487__auto__ = cljs.core.rest(arglist__49385);
-return video__delegate(opts__9486__auto__,children__9487__auto__);
+video.cljs$lang$applyTo = (function (arglist__66983){
+var opts__10053__auto__ = cljs.core.first(arglist__66983);
+var children__10054__auto__ = cljs.core.rest(arglist__66983);
+return video__delegate(opts__10053__auto__,children__10054__auto__);
 });
 video.cljs$core$IFn$_invoke$arity$variadic = video__delegate;
 return video;
@@ -2105,17 +2125,17 @@ return video;
 * @param {...*} var_args
 */
 om.dom.wbr = (function() { 
-var wbr__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.wbr.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var wbr__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.wbr.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var wbr = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return wbr__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var wbr = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return wbr__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 wbr.cljs$lang$maxFixedArity = 1;
-wbr.cljs$lang$applyTo = (function (arglist__49386){
-var opts__9486__auto__ = cljs.core.first(arglist__49386);
-var children__9487__auto__ = cljs.core.rest(arglist__49386);
-return wbr__delegate(opts__9486__auto__,children__9487__auto__);
+wbr.cljs$lang$applyTo = (function (arglist__66984){
+var opts__10053__auto__ = cljs.core.first(arglist__66984);
+var children__10054__auto__ = cljs.core.rest(arglist__66984);
+return wbr__delegate(opts__10053__auto__,children__10054__auto__);
 });
 wbr.cljs$core$IFn$_invoke$arity$variadic = wbr__delegate;
 return wbr;
@@ -2125,17 +2145,17 @@ return wbr;
 * @param {...*} var_args
 */
 om.dom.circle = (function() { 
-var circle__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.circle.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var circle__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.circle.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var circle = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return circle__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var circle = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return circle__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 circle.cljs$lang$maxFixedArity = 1;
-circle.cljs$lang$applyTo = (function (arglist__49387){
-var opts__9486__auto__ = cljs.core.first(arglist__49387);
-var children__9487__auto__ = cljs.core.rest(arglist__49387);
-return circle__delegate(opts__9486__auto__,children__9487__auto__);
+circle.cljs$lang$applyTo = (function (arglist__66985){
+var opts__10053__auto__ = cljs.core.first(arglist__66985);
+var children__10054__auto__ = cljs.core.rest(arglist__66985);
+return circle__delegate(opts__10053__auto__,children__10054__auto__);
 });
 circle.cljs$core$IFn$_invoke$arity$variadic = circle__delegate;
 return circle;
@@ -2145,17 +2165,17 @@ return circle;
 * @param {...*} var_args
 */
 om.dom.ellipse = (function() { 
-var ellipse__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.ellipse.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var ellipse__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.ellipse.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var ellipse = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return ellipse__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var ellipse = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return ellipse__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 ellipse.cljs$lang$maxFixedArity = 1;
-ellipse.cljs$lang$applyTo = (function (arglist__49388){
-var opts__9486__auto__ = cljs.core.first(arglist__49388);
-var children__9487__auto__ = cljs.core.rest(arglist__49388);
-return ellipse__delegate(opts__9486__auto__,children__9487__auto__);
+ellipse.cljs$lang$applyTo = (function (arglist__66986){
+var opts__10053__auto__ = cljs.core.first(arglist__66986);
+var children__10054__auto__ = cljs.core.rest(arglist__66986);
+return ellipse__delegate(opts__10053__auto__,children__10054__auto__);
 });
 ellipse.cljs$core$IFn$_invoke$arity$variadic = ellipse__delegate;
 return ellipse;
@@ -2165,17 +2185,17 @@ return ellipse;
 * @param {...*} var_args
 */
 om.dom.g = (function() { 
-var g__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.g.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var g__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.g.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var g = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return g__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var g = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return g__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 g.cljs$lang$maxFixedArity = 1;
-g.cljs$lang$applyTo = (function (arglist__49389){
-var opts__9486__auto__ = cljs.core.first(arglist__49389);
-var children__9487__auto__ = cljs.core.rest(arglist__49389);
-return g__delegate(opts__9486__auto__,children__9487__auto__);
+g.cljs$lang$applyTo = (function (arglist__66987){
+var opts__10053__auto__ = cljs.core.first(arglist__66987);
+var children__10054__auto__ = cljs.core.rest(arglist__66987);
+return g__delegate(opts__10053__auto__,children__10054__auto__);
 });
 g.cljs$core$IFn$_invoke$arity$variadic = g__delegate;
 return g;
@@ -2185,17 +2205,17 @@ return g;
 * @param {...*} var_args
 */
 om.dom.line = (function() { 
-var line__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.line.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var line__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.line.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var line = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return line__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var line = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return line__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 line.cljs$lang$maxFixedArity = 1;
-line.cljs$lang$applyTo = (function (arglist__49390){
-var opts__9486__auto__ = cljs.core.first(arglist__49390);
-var children__9487__auto__ = cljs.core.rest(arglist__49390);
-return line__delegate(opts__9486__auto__,children__9487__auto__);
+line.cljs$lang$applyTo = (function (arglist__66988){
+var opts__10053__auto__ = cljs.core.first(arglist__66988);
+var children__10054__auto__ = cljs.core.rest(arglist__66988);
+return line__delegate(opts__10053__auto__,children__10054__auto__);
 });
 line.cljs$core$IFn$_invoke$arity$variadic = line__delegate;
 return line;
@@ -2205,17 +2225,17 @@ return line;
 * @param {...*} var_args
 */
 om.dom.path = (function() { 
-var path__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.path.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var path__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.path.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var path = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return path__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var path = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return path__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 path.cljs$lang$maxFixedArity = 1;
-path.cljs$lang$applyTo = (function (arglist__49391){
-var opts__9486__auto__ = cljs.core.first(arglist__49391);
-var children__9487__auto__ = cljs.core.rest(arglist__49391);
-return path__delegate(opts__9486__auto__,children__9487__auto__);
+path.cljs$lang$applyTo = (function (arglist__66989){
+var opts__10053__auto__ = cljs.core.first(arglist__66989);
+var children__10054__auto__ = cljs.core.rest(arglist__66989);
+return path__delegate(opts__10053__auto__,children__10054__auto__);
 });
 path.cljs$core$IFn$_invoke$arity$variadic = path__delegate;
 return path;
@@ -2225,17 +2245,17 @@ return path;
 * @param {...*} var_args
 */
 om.dom.polyline = (function() { 
-var polyline__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.polyline.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var polyline__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.polyline.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var polyline = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return polyline__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var polyline = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return polyline__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 polyline.cljs$lang$maxFixedArity = 1;
-polyline.cljs$lang$applyTo = (function (arglist__49392){
-var opts__9486__auto__ = cljs.core.first(arglist__49392);
-var children__9487__auto__ = cljs.core.rest(arglist__49392);
-return polyline__delegate(opts__9486__auto__,children__9487__auto__);
+polyline.cljs$lang$applyTo = (function (arglist__66990){
+var opts__10053__auto__ = cljs.core.first(arglist__66990);
+var children__10054__auto__ = cljs.core.rest(arglist__66990);
+return polyline__delegate(opts__10053__auto__,children__10054__auto__);
 });
 polyline.cljs$core$IFn$_invoke$arity$variadic = polyline__delegate;
 return polyline;
@@ -2245,17 +2265,17 @@ return polyline;
 * @param {...*} var_args
 */
 om.dom.rect = (function() { 
-var rect__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.rect.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var rect__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.rect.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var rect = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return rect__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var rect = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return rect__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 rect.cljs$lang$maxFixedArity = 1;
-rect.cljs$lang$applyTo = (function (arglist__49393){
-var opts__9486__auto__ = cljs.core.first(arglist__49393);
-var children__9487__auto__ = cljs.core.rest(arglist__49393);
-return rect__delegate(opts__9486__auto__,children__9487__auto__);
+rect.cljs$lang$applyTo = (function (arglist__66991){
+var opts__10053__auto__ = cljs.core.first(arglist__66991);
+var children__10054__auto__ = cljs.core.rest(arglist__66991);
+return rect__delegate(opts__10053__auto__,children__10054__auto__);
 });
 rect.cljs$core$IFn$_invoke$arity$variadic = rect__delegate;
 return rect;
@@ -2265,17 +2285,17 @@ return rect;
 * @param {...*} var_args
 */
 om.dom.svg = (function() { 
-var svg__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.svg.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var svg__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.svg.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var svg = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return svg__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var svg = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return svg__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 svg.cljs$lang$maxFixedArity = 1;
-svg.cljs$lang$applyTo = (function (arglist__49394){
-var opts__9486__auto__ = cljs.core.first(arglist__49394);
-var children__9487__auto__ = cljs.core.rest(arglist__49394);
-return svg__delegate(opts__9486__auto__,children__9487__auto__);
+svg.cljs$lang$applyTo = (function (arglist__66992){
+var opts__10053__auto__ = cljs.core.first(arglist__66992);
+var children__10054__auto__ = cljs.core.rest(arglist__66992);
+return svg__delegate(opts__10053__auto__,children__10054__auto__);
 });
 svg.cljs$core$IFn$_invoke$arity$variadic = svg__delegate;
 return svg;
@@ -2285,17 +2305,17 @@ return svg;
 * @param {...*} var_args
 */
 om.dom.text = (function() { 
-var text__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.text.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var text__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.text.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var text = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return text__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var text = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return text__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 text.cljs$lang$maxFixedArity = 1;
-text.cljs$lang$applyTo = (function (arglist__49395){
-var opts__9486__auto__ = cljs.core.first(arglist__49395);
-var children__9487__auto__ = cljs.core.rest(arglist__49395);
-return text__delegate(opts__9486__auto__,children__9487__auto__);
+text.cljs$lang$applyTo = (function (arglist__66993){
+var opts__10053__auto__ = cljs.core.first(arglist__66993);
+var children__10054__auto__ = cljs.core.rest(arglist__66993);
+return text__delegate(opts__10053__auto__,children__10054__auto__);
 });
 text.cljs$core$IFn$_invoke$arity$variadic = text__delegate;
 return text;
@@ -2305,17 +2325,17 @@ return text;
 * @param {...*} var_args
 */
 om.dom.defs = (function() { 
-var defs__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.defs.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var defs__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.defs.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var defs = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return defs__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var defs = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return defs__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 defs.cljs$lang$maxFixedArity = 1;
-defs.cljs$lang$applyTo = (function (arglist__49396){
-var opts__9486__auto__ = cljs.core.first(arglist__49396);
-var children__9487__auto__ = cljs.core.rest(arglist__49396);
-return defs__delegate(opts__9486__auto__,children__9487__auto__);
+defs.cljs$lang$applyTo = (function (arglist__66994){
+var opts__10053__auto__ = cljs.core.first(arglist__66994);
+var children__10054__auto__ = cljs.core.rest(arglist__66994);
+return defs__delegate(opts__10053__auto__,children__10054__auto__);
 });
 defs.cljs$core$IFn$_invoke$arity$variadic = defs__delegate;
 return defs;
@@ -2325,17 +2345,17 @@ return defs;
 * @param {...*} var_args
 */
 om.dom.linearGradient = (function() { 
-var linearGradient__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.linearGradient.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var linearGradient__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.linearGradient.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var linearGradient = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return linearGradient__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var linearGradient = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return linearGradient__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 linearGradient.cljs$lang$maxFixedArity = 1;
-linearGradient.cljs$lang$applyTo = (function (arglist__49397){
-var opts__9486__auto__ = cljs.core.first(arglist__49397);
-var children__9487__auto__ = cljs.core.rest(arglist__49397);
-return linearGradient__delegate(opts__9486__auto__,children__9487__auto__);
+linearGradient.cljs$lang$applyTo = (function (arglist__66995){
+var opts__10053__auto__ = cljs.core.first(arglist__66995);
+var children__10054__auto__ = cljs.core.rest(arglist__66995);
+return linearGradient__delegate(opts__10053__auto__,children__10054__auto__);
 });
 linearGradient.cljs$core$IFn$_invoke$arity$variadic = linearGradient__delegate;
 return linearGradient;
@@ -2345,17 +2365,17 @@ return linearGradient;
 * @param {...*} var_args
 */
 om.dom.polygon = (function() { 
-var polygon__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.polygon.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var polygon__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.polygon.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var polygon = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return polygon__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var polygon = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return polygon__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 polygon.cljs$lang$maxFixedArity = 1;
-polygon.cljs$lang$applyTo = (function (arglist__49398){
-var opts__9486__auto__ = cljs.core.first(arglist__49398);
-var children__9487__auto__ = cljs.core.rest(arglist__49398);
-return polygon__delegate(opts__9486__auto__,children__9487__auto__);
+polygon.cljs$lang$applyTo = (function (arglist__66996){
+var opts__10053__auto__ = cljs.core.first(arglist__66996);
+var children__10054__auto__ = cljs.core.rest(arglist__66996);
+return polygon__delegate(opts__10053__auto__,children__10054__auto__);
 });
 polygon.cljs$core$IFn$_invoke$arity$variadic = polygon__delegate;
 return polygon;
@@ -2365,17 +2385,17 @@ return polygon;
 * @param {...*} var_args
 */
 om.dom.radialGradient = (function() { 
-var radialGradient__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.radialGradient.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var radialGradient__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.radialGradient.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var radialGradient = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return radialGradient__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var radialGradient = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return radialGradient__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 radialGradient.cljs$lang$maxFixedArity = 1;
-radialGradient.cljs$lang$applyTo = (function (arglist__49399){
-var opts__9486__auto__ = cljs.core.first(arglist__49399);
-var children__9487__auto__ = cljs.core.rest(arglist__49399);
-return radialGradient__delegate(opts__9486__auto__,children__9487__auto__);
+radialGradient.cljs$lang$applyTo = (function (arglist__66997){
+var opts__10053__auto__ = cljs.core.first(arglist__66997);
+var children__10054__auto__ = cljs.core.rest(arglist__66997);
+return radialGradient__delegate(opts__10053__auto__,children__10054__auto__);
 });
 radialGradient.cljs$core$IFn$_invoke$arity$variadic = radialGradient__delegate;
 return radialGradient;
@@ -2385,17 +2405,17 @@ return radialGradient;
 * @param {...*} var_args
 */
 om.dom.stop = (function() { 
-var stop__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.stop.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var stop__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.stop.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var stop = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return stop__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var stop = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return stop__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 stop.cljs$lang$maxFixedArity = 1;
-stop.cljs$lang$applyTo = (function (arglist__49400){
-var opts__9486__auto__ = cljs.core.first(arglist__49400);
-var children__9487__auto__ = cljs.core.rest(arglist__49400);
-return stop__delegate(opts__9486__auto__,children__9487__auto__);
+stop.cljs$lang$applyTo = (function (arglist__66998){
+var opts__10053__auto__ = cljs.core.first(arglist__66998);
+var children__10054__auto__ = cljs.core.rest(arglist__66998);
+return stop__delegate(opts__10053__auto__,children__10054__auto__);
 });
 stop.cljs$core$IFn$_invoke$arity$variadic = stop__delegate;
 return stop;
@@ -2405,33 +2425,34 @@ return stop;
 * @param {...*} var_args
 */
 om.dom.tspan = (function() { 
-var tspan__delegate = function (opts__9486__auto__,children__9487__auto__){return React.DOM.tspan.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__9486__auto__,children__9487__auto__)));
+var tspan__delegate = function (opts__10053__auto__,children__10054__auto__){return React.DOM.tspan.apply(null,cljs.core.into_array.cljs$core$IFn$_invoke$arity$1(cljs.core.cons(opts__10053__auto__,children__10054__auto__)));
 };
-var tspan = function (opts__9486__auto__,var_args){
-var children__9487__auto__ = null;if (arguments.length > 1) {
-  children__9487__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
-return tspan__delegate.call(this,opts__9486__auto__,children__9487__auto__);};
+var tspan = function (opts__10053__auto__,var_args){
+var children__10054__auto__ = null;if (arguments.length > 1) {
+  children__10054__auto__ = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1),0);} 
+return tspan__delegate.call(this,opts__10053__auto__,children__10054__auto__);};
 tspan.cljs$lang$maxFixedArity = 1;
-tspan.cljs$lang$applyTo = (function (arglist__49401){
-var opts__9486__auto__ = cljs.core.first(arglist__49401);
-var children__9487__auto__ = cljs.core.rest(arglist__49401);
-return tspan__delegate(opts__9486__auto__,children__9487__auto__);
+tspan.cljs$lang$applyTo = (function (arglist__66999){
+var opts__10053__auto__ = cljs.core.first(arglist__66999);
+var children__10054__auto__ = cljs.core.rest(arglist__66999);
+return tspan__delegate(opts__10053__auto__,children__10054__auto__);
 });
 tspan.cljs$core$IFn$_invoke$arity$variadic = tspan__delegate;
 return tspan;
 })()
 ;
-om.dom.wrap_form_element = (function wrap_form_element(ctor,display_name){return React.createClass({"render": (function (){var this$ = this;return this$.transferPropsTo((ctor.cljs$core$IFn$_invoke$arity$1 ? ctor.cljs$core$IFn$_invoke$arity$1({"children": (this$.props["children"]), "onChange": (this$["onChange"]), "value": (this$.state["value"])}) : ctor.call(null,{"children": (this$.props["children"]), "onChange": (this$["onChange"]), "value": (this$.state["value"])})));
+om.dom.wrap_form_element = (function wrap_form_element(ctor,display_name){var G__67003 = {"render": (function (){var this$ = this;return this$.transferPropsTo((function (){var G__67005 = {"children": (this$.props["children"]), "onChange": (this$["onChange"]), "value": (this$.state["value"])};return (ctor.cljs$core$IFn$_invoke$arity$1 ? ctor.cljs$core$IFn$_invoke$arity$1(G__67005) : ctor.call(null,G__67005));
+})());
 }), "componentWillReceiveProps": (function (new_props){var this$ = this;return this$.setState({"value": (new_props["value"])});
 }), "onChange": (function (e){var this$ = this;var handler = (this$.props["onChange"]);if((handler == null))
 {return null;
 } else
-{(handler.cljs$core$IFn$_invoke$arity$1 ? handler.cljs$core$IFn$_invoke$arity$1(e) : handler.call(null,e));
+{var G__67004_67006 = e;(handler.cljs$core$IFn$_invoke$arity$1 ? handler.cljs$core$IFn$_invoke$arity$1(G__67004_67006) : handler.call(null,G__67004_67006));
 return this$.setState({"value": e.target.value});
 }
 }), "getInitialState": (function (){var this$ = this;return {"value": (this$.props["value"])};
 }), "getDisplayName": (function (){return display_name;
-})});
+})};return React.createClass(G__67003);
 });
 om.dom.input = om.dom.wrap_form_element(React.DOM.input,"input");
 om.dom.textarea = om.dom.wrap_form_element(React.DOM.textarea,"textarea");
@@ -2439,10 +2460,10 @@ om.dom.option = om.dom.wrap_form_element(React.DOM.option,"option");
 /**
 * Equivalent to React.renderComponent
 */
-om.dom.render = (function render(component,el){return React.renderComponent(component,el);
+om.dom.render = (function render(component,el){var G__67009 = component;var G__67010 = el;return React.renderComponent(G__67009,G__67010);
 });
 /**
 * Equivalent to React.renderComponentToString
 */
-om.dom.render_to_str = (function render_to_str(c){return React.renderComponentToString(c);
+om.dom.render_to_str = (function render_to_str(c){var G__67012 = c;return React.renderComponentToString(G__67012);
 });

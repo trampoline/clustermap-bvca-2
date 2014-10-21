@@ -1,1 +1,1 @@
-../cljs-out/none/clustermap.js
+../cljs-out/simple/clustermap.js

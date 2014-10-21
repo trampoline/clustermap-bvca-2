@@ -1,4 +1,4 @@
-// Compiled by ClojureScript 0.0-2322
+// Compiled by ClojureScript 0.0-2356
 goog.provide('cljs.core.async.impl.buffers');
 goog.require('cljs.core');
 goog.require('cljs.core.async.impl.protocols');
@@ -7,8 +7,8 @@ cljs.core.async.impl.buffers.acopy = (function acopy(src,src_start,dest,dest_sta
 if((cnt < len))
 {(dest[(dest_start + cnt)] = (src[(src_start + cnt)]));
 {
-var G__21123 = (cnt + (1));
-cnt = G__21123;
+var G__22369 = (cnt + (1));
+cnt = G__22369;
 continue;
 }
 } else
@@ -29,7 +29,7 @@ this.arr = arr;
 })
 cljs.core.async.impl.buffers.RingBuffer.cljs$lang$type = true;
 cljs.core.async.impl.buffers.RingBuffer.cljs$lang$ctorStr = "cljs.core.async.impl.buffers/RingBuffer";
-cljs.core.async.impl.buffers.RingBuffer.cljs$lang$ctorPrWriter = (function (this__4125__auto__,writer__4126__auto__,opt__4127__auto__){return cljs.core._write.call(null,writer__4126__auto__,"cljs.core.async.impl.buffers/RingBuffer");
+cljs.core.async.impl.buffers.RingBuffer.cljs$lang$ctorPrWriter = (function (this__4213__auto__,writer__4214__auto__,opt__4215__auto__){return cljs.core._write.call(null,writer__4214__auto__,"cljs.core.async.impl.buffers/RingBuffer");
 });
 cljs.core.async.impl.buffers.RingBuffer.prototype.pop = (function (){var self__ = this;
 var _ = this;if((self__.length === (0)))
@@ -79,15 +79,15 @@ return self__.arr = new_arr;
 }
 });
 cljs.core.async.impl.buffers.RingBuffer.prototype.cleanup = (function (keep_QMARK_){var self__ = this;
-var this$ = this;var n__4414__auto__ = self__.length;var x = (0);while(true){
-if((x < n__4414__auto__))
-{var v_21124 = this$.pop();if(keep_QMARK_.call(null,v_21124))
-{this$.unshift(v_21124);
+var this$ = this;var n__4506__auto__ = self__.length;var x = (0);while(true){
+if((x < n__4506__auto__))
+{var v_22370 = this$.pop();if(keep_QMARK_.call(null,v_22370))
+{this$.unshift(v_22370);
 } else
 {}
 {
-var G__21125 = (x + (1));
-x = G__21125;
+var G__22371 = (x + (1));
+x = G__22371;
 continue;
 }
 } else
@@ -116,7 +116,7 @@ this.cljs$lang$protocol_mask$partition0$ = 2;
 })
 cljs.core.async.impl.buffers.FixedBuffer.cljs$lang$type = true;
 cljs.core.async.impl.buffers.FixedBuffer.cljs$lang$ctorStr = "cljs.core.async.impl.buffers/FixedBuffer";
-cljs.core.async.impl.buffers.FixedBuffer.cljs$lang$ctorPrWriter = (function (this__4125__auto__,writer__4126__auto__,opt__4127__auto__){return cljs.core._write.call(null,writer__4126__auto__,"cljs.core.async.impl.buffers/FixedBuffer");
+cljs.core.async.impl.buffers.FixedBuffer.cljs$lang$ctorPrWriter = (function (this__4213__auto__,writer__4214__auto__,opt__4215__auto__){return cljs.core._write.call(null,writer__4214__auto__,"cljs.core.async.impl.buffers/FixedBuffer");
 });
 cljs.core.async.impl.buffers.FixedBuffer.prototype.cljs$core$ICounted$_count$arity$1 = (function (this$){var self__ = this;
 var this$__$1 = this;return self__.buf.length;
@@ -128,12 +128,9 @@ var this$__$1 = this;return (self__.buf.length === self__.n);
 cljs.core.async.impl.buffers.FixedBuffer.prototype.cljs$core$async$impl$protocols$Buffer$remove_BANG_$arity$1 = (function (this$){var self__ = this;
 var this$__$1 = this;return self__.buf.pop();
 });
-cljs.core.async.impl.buffers.FixedBuffer.prototype.cljs$core$async$impl$protocols$Buffer$add_BANG_$arity$2 = (function (this$,itm){var self__ = this;
-var this$__$1 = this;if(cljs.core.not.call(null,cljs.core.async.impl.protocols.full_QMARK_.call(null,this$__$1)))
-{} else
-{throw (new Error(("Assert failed: Can't add to a full buffer\n"+cljs.core.str.cljs$core$IFn$_invoke$arity$1(cljs.core.pr_str.call(null,cljs.core.list(new cljs.core.Symbol(null,"not","not",1044554643,null),cljs.core.list(new cljs.core.Symbol("impl","full?","impl/full?",-97582774,null),new cljs.core.Symbol(null,"this","this",1028897902,null))))))));
-}
-return self__.buf.unshift(itm);
+cljs.core.async.impl.buffers.FixedBuffer.prototype.cljs$core$async$impl$protocols$Buffer$add_BANG__STAR_$arity$2 = (function (this$,itm){var self__ = this;
+var this$__$1 = this;self__.buf.unbounded_unshift(itm);
+return this$__$1;
 });
 cljs.core.async.impl.buffers.__GT_FixedBuffer = (function __GT_FixedBuffer(buf,n){return (new cljs.core.async.impl.buffers.FixedBuffer(buf,n));
 });
@@ -151,7 +148,7 @@ this.cljs$lang$protocol_mask$partition0$ = 2;
 })
 cljs.core.async.impl.buffers.DroppingBuffer.cljs$lang$type = true;
 cljs.core.async.impl.buffers.DroppingBuffer.cljs$lang$ctorStr = "cljs.core.async.impl.buffers/DroppingBuffer";
-cljs.core.async.impl.buffers.DroppingBuffer.cljs$lang$ctorPrWriter = (function (this__4125__auto__,writer__4126__auto__,opt__4127__auto__){return cljs.core._write.call(null,writer__4126__auto__,"cljs.core.async.impl.buffers/DroppingBuffer");
+cljs.core.async.impl.buffers.DroppingBuffer.cljs$lang$ctorPrWriter = (function (this__4213__auto__,writer__4214__auto__,opt__4215__auto__){return cljs.core._write.call(null,writer__4214__auto__,"cljs.core.async.impl.buffers/DroppingBuffer");
 });
 cljs.core.async.impl.buffers.DroppingBuffer.prototype.cljs$core$ICounted$_count$arity$1 = (function (this$){var self__ = this;
 var this$__$1 = this;return self__.buf.length;
@@ -163,12 +160,12 @@ var this$__$1 = this;return false;
 cljs.core.async.impl.buffers.DroppingBuffer.prototype.cljs$core$async$impl$protocols$Buffer$remove_BANG_$arity$1 = (function (this$){var self__ = this;
 var this$__$1 = this;return self__.buf.pop();
 });
-cljs.core.async.impl.buffers.DroppingBuffer.prototype.cljs$core$async$impl$protocols$Buffer$add_BANG_$arity$2 = (function (this$,itm){var self__ = this;
+cljs.core.async.impl.buffers.DroppingBuffer.prototype.cljs$core$async$impl$protocols$Buffer$add_BANG__STAR_$arity$2 = (function (this$,itm){var self__ = this;
 var this$__$1 = this;if((self__.buf.length === self__.n))
-{return null;
-} else
-{return self__.buf.unshift(itm);
+{} else
+{self__.buf.unshift(itm);
 }
+return this$__$1;
 });
 cljs.core.async.impl.buffers.DroppingBuffer.prototype.cljs$core$async$impl$protocols$UnblockingBuffer$ = true;
 cljs.core.async.impl.buffers.__GT_DroppingBuffer = (function __GT_DroppingBuffer(buf,n){return (new cljs.core.async.impl.buffers.DroppingBuffer(buf,n));
@@ -187,7 +184,7 @@ this.cljs$lang$protocol_mask$partition0$ = 2;
 })
 cljs.core.async.impl.buffers.SlidingBuffer.cljs$lang$type = true;
 cljs.core.async.impl.buffers.SlidingBuffer.cljs$lang$ctorStr = "cljs.core.async.impl.buffers/SlidingBuffer";
-cljs.core.async.impl.buffers.SlidingBuffer.cljs$lang$ctorPrWriter = (function (this__4125__auto__,writer__4126__auto__,opt__4127__auto__){return cljs.core._write.call(null,writer__4126__auto__,"cljs.core.async.impl.buffers/SlidingBuffer");
+cljs.core.async.impl.buffers.SlidingBuffer.cljs$lang$ctorPrWriter = (function (this__4213__auto__,writer__4214__auto__,opt__4215__auto__){return cljs.core._write.call(null,writer__4214__auto__,"cljs.core.async.impl.buffers/SlidingBuffer");
 });
 cljs.core.async.impl.buffers.SlidingBuffer.prototype.cljs$core$ICounted$_count$arity$1 = (function (this$){var self__ = this;
 var this$__$1 = this;return self__.buf.length;
@@ -199,12 +196,13 @@ var this$__$1 = this;return false;
 cljs.core.async.impl.buffers.SlidingBuffer.prototype.cljs$core$async$impl$protocols$Buffer$remove_BANG_$arity$1 = (function (this$){var self__ = this;
 var this$__$1 = this;return self__.buf.pop();
 });
-cljs.core.async.impl.buffers.SlidingBuffer.prototype.cljs$core$async$impl$protocols$Buffer$add_BANG_$arity$2 = (function (this$,itm){var self__ = this;
+cljs.core.async.impl.buffers.SlidingBuffer.prototype.cljs$core$async$impl$protocols$Buffer$add_BANG__STAR_$arity$2 = (function (this$,itm){var self__ = this;
 var this$__$1 = this;if((self__.buf.length === self__.n))
 {cljs.core.async.impl.protocols.remove_BANG_.call(null,this$__$1);
 } else
 {}
-return self__.buf.unshift(itm);
+self__.buf.unshift(itm);
+return this$__$1;
 });
 cljs.core.async.impl.buffers.SlidingBuffer.prototype.cljs$core$async$impl$protocols$UnblockingBuffer$ = true;
 cljs.core.async.impl.buffers.__GT_SlidingBuffer = (function __GT_SlidingBuffer(buf,n){return (new cljs.core.async.impl.buffers.SlidingBuffer(buf,n));

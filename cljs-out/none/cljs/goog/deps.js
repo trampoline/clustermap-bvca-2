@@ -36,6 +36,7 @@ goog.addDependency("disposable/disposable.js", ['goog.Disposable', 'goog.dispose
 goog.addDependency("net/xpc/transport.js", ['goog.net.xpc.Transport'], ['goog.Disposable', 'goog.dom', 'goog.net.xpc.TransportNames']);
 goog.addDependency("net/xpc/iframepollingtransport.js", ['goog.net.xpc.IframePollingTransport', 'goog.net.xpc.IframePollingTransport.Receiver', 'goog.net.xpc.IframePollingTransport.Sender'], ['goog.array', 'goog.dom', 'goog.log', 'goog.log.Level', 'goog.net.xpc', 'goog.net.xpc.CfgFields', 'goog.net.xpc.CrossPageChannelRole', 'goog.net.xpc.Transport', 'goog.net.xpc.TransportTypes', 'goog.userAgent']);
 goog.addDependency("debug/entrypointregistry.js", ['goog.debug.EntryPointMonitor', 'goog.debug.entryPointRegistry'], ['goog.asserts']);
+goog.addDependency("async/nexttick.js", ['goog.async.nextTick', 'goog.async.throwException'], ['goog.debug.entryPointRegistry', 'goog.functions']);
 goog.addDependency("events/browserfeature.js", ['goog.events.BrowserFeature'], ['goog.userAgent']);
 goog.addDependency("events/eventid.js", ['goog.events.EventId'], []);
 goog.addDependency("events/event.js", ['goog.events.Event', 'goog.events.EventLike'], ['goog.Disposable', 'goog.events.EventId']);
@@ -59,7 +60,6 @@ goog.addDependency("net/xmlhttp.js", ['goog.net.DefaultXmlHttpFactory', 'goog.ne
 goog.addDependency("net/xhrio.js", ['goog.net.XhrIo', 'goog.net.XhrIo.ResponseType'], ['goog.Timer', 'goog.array', 'goog.debug.entryPointRegistry', 'goog.events.EventTarget', 'goog.json', 'goog.log', 'goog.net.ErrorCode', 'goog.net.EventType', 'goog.net.HttpStatus', 'goog.net.XmlHttp', 'goog.object', 'goog.string', 'goog.structs', 'goog.structs.Map', 'goog.uri.utils', 'goog.userAgent']);
 goog.addDependency("string/stringformat.js", ['goog.string.format'], ['goog.string']);
 goog.addDependency("promise/thenable.js", ['goog.Thenable'], []);
-goog.addDependency("async/nexttick.js", ['goog.async.nextTick', 'goog.async.throwException'], ['goog.debug.entryPointRegistry', 'goog.functions']);
 goog.addDependency("testing/watchers.js", ['goog.testing.watchers'], []);
 goog.addDependency("async/run.js", ['goog.async.run'], ['goog.async.nextTick', 'goog.async.throwException', 'goog.testing.watchers']);
 goog.addDependency("promise/resolver.js", ['goog.promise.Resolver'], []);

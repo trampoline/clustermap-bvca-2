@@ -251,9 +251,10 @@
   []
   (let [event-handlers (atom nil)]
     (reify
-      app/IAppService
-      (init [this app]
 
+      app/IAppService
+
+      (init [this app]
         (nav/init (app/get-comm app))
         (init-routes (app/get-history app) (app/get-comm app))
         (load-boundaryline-collection-indexes (app/get-state app))

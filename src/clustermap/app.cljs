@@ -41,11 +41,7 @@
 (defn create-app-instance
   [initial-state-value component-defs app-service]
   (let [comm (chan)
-        state (atom initial-state-value)
-
-        ;; event-handlers-map (create-event-handlers-map state history*)
-        ;; handle-event (partial choose-event-handler event-handlers-map)
-        ]
+        state (atom initial-state-value)]
 
     (reify
       IAppControl

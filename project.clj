@@ -15,6 +15,8 @@
                  [hiccups "0.3.0"]
                  [secretary "1.2.0"]
                  [com.andrewmcveigh/cljs-time "0.2.2"]
+
+                 [clustermap-components "0.1.0-SNAPSHOT"]
                  ]
 
 ;;  :exclusions [org.clojure/google-closure-library
@@ -34,7 +36,8 @@
 
   :cljsbuild {
               :builds {:none
-                       {:source-paths ["src"]
+                       {:source-paths ["src"
+                                       "../clustermap-components/src"]
                         :compiler {
                                    :output-to  "resources/public/clustermap.js"
                                    :source-map true

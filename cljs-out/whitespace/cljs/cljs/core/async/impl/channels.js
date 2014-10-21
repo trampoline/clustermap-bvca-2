@@ -7,36 +7,36 @@ goog.require('cljs.core.async.impl.dispatch');
 goog.require('cljs.core.async.impl.dispatch');
 goog.require('cljs.core.async.impl.protocols');
 goog.require('cljs.core.async.impl.protocols');
-cljs.core.async.impl.channels.box = (function box(val){if(typeof cljs.core.async.impl.channels.t22378 !== 'undefined')
+cljs.core.async.impl.channels.box = (function box(val){if(typeof cljs.core.async.impl.channels.t21996 !== 'undefined')
 {} else
 {
 /**
 * @constructor
 */
-cljs.core.async.impl.channels.t22378 = (function (val,box,meta22379){
+cljs.core.async.impl.channels.t21996 = (function (val,box,meta21997){
 this.val = val;
 this.box = box;
-this.meta22379 = meta22379;
+this.meta21997 = meta21997;
 this.cljs$lang$protocol_mask$partition1$ = 0;
 this.cljs$lang$protocol_mask$partition0$ = 425984;
 })
-cljs.core.async.impl.channels.t22378.cljs$lang$type = true;
-cljs.core.async.impl.channels.t22378.cljs$lang$ctorStr = "cljs.core.async.impl.channels/t22378";
-cljs.core.async.impl.channels.t22378.cljs$lang$ctorPrWriter = (function (this__4213__auto__,writer__4214__auto__,opt__4215__auto__){return cljs.core._write.call(null,writer__4214__auto__,"cljs.core.async.impl.channels/t22378");
+cljs.core.async.impl.channels.t21996.cljs$lang$type = true;
+cljs.core.async.impl.channels.t21996.cljs$lang$ctorStr = "cljs.core.async.impl.channels/t21996";
+cljs.core.async.impl.channels.t21996.cljs$lang$ctorPrWriter = (function (this__4213__auto__,writer__4214__auto__,opt__4215__auto__){return cljs.core._write.call(null,writer__4214__auto__,"cljs.core.async.impl.channels/t21996");
 });
-cljs.core.async.impl.channels.t22378.prototype.cljs$core$IDeref$_deref$arity$1 = (function (_){var self__ = this;
+cljs.core.async.impl.channels.t21996.prototype.cljs$core$IDeref$_deref$arity$1 = (function (_){var self__ = this;
 var ___$1 = this;return self__.val;
 });
-cljs.core.async.impl.channels.t22378.prototype.cljs$core$IMeta$_meta$arity$1 = (function (_22380){var self__ = this;
-var _22380__$1 = this;return self__.meta22379;
+cljs.core.async.impl.channels.t21996.prototype.cljs$core$IMeta$_meta$arity$1 = (function (_21998){var self__ = this;
+var _21998__$1 = this;return self__.meta21997;
 });
-cljs.core.async.impl.channels.t22378.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = (function (_22380,meta22379__$1){var self__ = this;
-var _22380__$1 = this;return (new cljs.core.async.impl.channels.t22378(self__.val,self__.box,meta22379__$1));
+cljs.core.async.impl.channels.t21996.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = (function (_21998,meta21997__$1){var self__ = this;
+var _21998__$1 = this;return (new cljs.core.async.impl.channels.t21996(self__.val,self__.box,meta21997__$1));
 });
-cljs.core.async.impl.channels.__GT_t22378 = (function __GT_t22378(val__$1,box__$1,meta22379){return (new cljs.core.async.impl.channels.t22378(val__$1,box__$1,meta22379));
+cljs.core.async.impl.channels.__GT_t21996 = (function __GT_t21996(val__$1,box__$1,meta21997){return (new cljs.core.async.impl.channels.t21996(val__$1,box__$1,meta21997));
 });
 }
-return (new cljs.core.async.impl.channels.t22378(val,box,null));
+return (new cljs.core.async.impl.channels.t21996(val,box,null));
 });
 
 /**
@@ -55,7 +55,7 @@ cljs.core.async.impl.channels.__GT_PutBox = (function __GT_PutBox(handler,val){r
 cljs.core.async.impl.channels.put_active_QMARK_ = (function put_active_QMARK_(box){return cljs.core.async.impl.protocols.active_QMARK_.call(null,box.handler);
 });
 cljs.core.async.impl.channels.MAX_DIRTY = (64);
-cljs.core.async.impl.channels.MMC = (function (){var obj22382 = {};return obj22382;
+cljs.core.async.impl.channels.MMC = (function (){var obj22000 = {};return obj22000;
 })();
 cljs.core.async.impl.channels.abort = (function abort(this$){if((function (){var and__3625__auto__ = this$;if(and__3625__auto__)
 {return this$.cljs$core$async$impl$channels$MMC$abort$arity$1;
@@ -113,17 +113,17 @@ if(cljs.core.truth_((function (){var and__3625__auto__ = self__.buf;if(cljs.core
 } else
 {}
 while(true){
-var taker_22383 = self__.takes.pop();if((taker_22383 == null))
+var taker_22001 = self__.takes.pop();if((taker_22001 == null))
 {} else
-{if(cljs.core.async.impl.protocols.active_QMARK_.call(null,taker_22383))
-{var take_cb_22384 = cljs.core.async.impl.protocols.commit.call(null,taker_22383);var val_22385 = (cljs.core.truth_((function (){var and__3625__auto__ = self__.buf;if(cljs.core.truth_(and__3625__auto__))
+{if(cljs.core.async.impl.protocols.active_QMARK_.call(null,taker_22001))
+{var take_cb_22002 = cljs.core.async.impl.protocols.commit.call(null,taker_22001);var val_22003 = (cljs.core.truth_((function (){var and__3625__auto__ = self__.buf;if(cljs.core.truth_(and__3625__auto__))
 {return (cljs.core.count.call(null,self__.buf) > (0));
 } else
 {return and__3625__auto__;
 }
-})())?cljs.core.async.impl.protocols.remove_BANG_.call(null,self__.buf):null);cljs.core.async.impl.dispatch.run.call(null,((function (take_cb_22384,val_22385,taker_22383,this$__$1){
-return (function (){return take_cb_22384.call(null,val_22385);
-});})(take_cb_22384,val_22385,taker_22383,this$__$1))
+})())?cljs.core.async.impl.protocols.remove_BANG_.call(null,self__.buf):null);cljs.core.async.impl.dispatch.run.call(null,((function (take_cb_22002,val_22003,taker_22001,this$__$1){
+return (function (){return take_cb_22002.call(null,val_22003);
+});})(take_cb_22002,val_22003,taker_22001,this$__$1))
 );
 } else
 {}
@@ -145,15 +145,15 @@ var this$__$1 = this;if(!(cljs.core.async.impl.protocols.active_QMARK_.call(null
 {var _ = cljs.core.async.impl.protocols.commit.call(null,handler);var retval = cljs.core.async.impl.channels.box.call(null,cljs.core.async.impl.protocols.remove_BANG_.call(null,self__.buf));while(true){
 if(cljs.core.truth_(cljs.core.async.impl.protocols.full_QMARK_.call(null,self__.buf)))
 {} else
-{var putter_22386 = self__.puts.pop();if((putter_22386 == null))
+{var putter_22004 = self__.puts.pop();if((putter_22004 == null))
 {} else
-{var put_handler_22387 = putter_22386.handler;var val_22388 = putter_22386.val;if(cljs.core.async.impl.protocols.active_QMARK_.call(null,put_handler_22387))
-{var put_cb_22389 = cljs.core.async.impl.protocols.commit.call(null,put_handler_22387);cljs.core.async.impl.protocols.commit.call(null,handler);
-cljs.core.async.impl.dispatch.run.call(null,((function (put_cb_22389,put_handler_22387,val_22388,putter_22386,_,retval,this$__$1){
-return (function (){return put_cb_22389.call(null,true);
-});})(put_cb_22389,put_handler_22387,val_22388,putter_22386,_,retval,this$__$1))
+{var put_handler_22005 = putter_22004.handler;var val_22006 = putter_22004.val;if(cljs.core.async.impl.protocols.active_QMARK_.call(null,put_handler_22005))
+{var put_cb_22007 = cljs.core.async.impl.protocols.commit.call(null,put_handler_22005);cljs.core.async.impl.protocols.commit.call(null,handler);
+cljs.core.async.impl.dispatch.run.call(null,((function (put_cb_22007,put_handler_22005,val_22006,putter_22004,_,retval,this$__$1){
+return (function (){return put_cb_22007.call(null,true);
+});})(put_cb_22007,put_handler_22005,val_22006,putter_22004,_,retval,this$__$1))
 );
-if(cljs.core.reduced_QMARK_.call(null,self__.add_BANG_.call(null,self__.buf,val_22388)))
+if(cljs.core.reduced_QMARK_.call(null,self__.add_BANG_.call(null,self__.buf,val_22006)))
 {cljs.core.async.impl.channels.abort.call(null,this$__$1);
 } else
 {}
@@ -246,10 +246,10 @@ var closed__$1 = self__.closed;if((closed__$1) || (!(cljs.core.async.impl.protoc
 {cljs.core.async.impl.protocols.commit.call(null,handler);
 var done_QMARK_ = cljs.core.reduced_QMARK_.call(null,self__.add_BANG_.call(null,self__.buf,val));while(true){
 if(((self__.takes.length > (0))) && ((cljs.core.count.call(null,self__.buf) > (0))))
-{var taker_22390 = self__.takes.pop();if(cljs.core.async.impl.protocols.active_QMARK_.call(null,taker_22390))
-{var take_cb_22391 = cljs.core.async.impl.protocols.commit.call(null,taker_22390);var val_22392__$1 = cljs.core.async.impl.protocols.remove_BANG_.call(null,self__.buf);cljs.core.async.impl.dispatch.run.call(null,((function (take_cb_22391,val_22392__$1,taker_22390,done_QMARK_,closed__$1,this$__$1){
-return (function (){return take_cb_22391.call(null,val_22392__$1);
-});})(take_cb_22391,val_22392__$1,taker_22390,done_QMARK_,closed__$1,this$__$1))
+{var taker_22008 = self__.takes.pop();if(cljs.core.async.impl.protocols.active_QMARK_.call(null,taker_22008))
+{var take_cb_22009 = cljs.core.async.impl.protocols.commit.call(null,taker_22008);var val_22010__$1 = cljs.core.async.impl.protocols.remove_BANG_.call(null,self__.buf);cljs.core.async.impl.dispatch.run.call(null,((function (take_cb_22009,val_22010__$1,taker_22008,done_QMARK_,closed__$1,this$__$1){
+return (function (){return take_cb_22009.call(null,val_22010__$1);
+});})(take_cb_22009,val_22010__$1,taker_22008,done_QMARK_,closed__$1,this$__$1))
 );
 } else
 {{
@@ -307,12 +307,12 @@ return null;
 cljs.core.async.impl.channels.ManyToManyChannel.prototype.cljs$core$async$impl$channels$MMC$ = true;
 cljs.core.async.impl.channels.ManyToManyChannel.prototype.cljs$core$async$impl$channels$MMC$abort$arity$1 = (function (this$){var self__ = this;
 var this$__$1 = this;while(true){
-var putter_22393 = self__.puts.pop();if((putter_22393 == null))
+var putter_22011 = self__.puts.pop();if((putter_22011 == null))
 {} else
-{var put_handler_22394 = putter_22393.handler;var val_22395 = putter_22393.val;if(cljs.core.async.impl.protocols.active_QMARK_.call(null,put_handler_22394))
-{var put_cb_22396 = cljs.core.async.impl.protocols.commit.call(null,put_handler_22394);cljs.core.async.impl.dispatch.run.call(null,((function (put_cb_22396,put_handler_22394,val_22395,putter_22393,this$__$1){
-return (function (){return put_cb_22396.call(null,true);
-});})(put_cb_22396,put_handler_22394,val_22395,putter_22393,this$__$1))
+{var put_handler_22012 = putter_22011.handler;var val_22013 = putter_22011.val;if(cljs.core.async.impl.protocols.active_QMARK_.call(null,put_handler_22012))
+{var put_cb_22014 = cljs.core.async.impl.protocols.commit.call(null,put_handler_22012);cljs.core.async.impl.dispatch.run.call(null,((function (put_cb_22014,put_handler_22012,val_22013,putter_22011,this$__$1){
+return (function (){return put_cb_22014.call(null,true);
+});})(put_cb_22014,put_handler_22012,val_22013,putter_22011,this$__$1))
 );
 } else
 {{
@@ -349,25 +349,25 @@ var chan__2 = (function (buf,xform){return chan.call(null,buf,xform,null);
 });
 var chan__3 = (function (buf,xform,exh){return (new cljs.core.async.impl.channels.ManyToManyChannel(cljs.core.async.impl.buffers.ring_buffer.call(null,(32)),(0),cljs.core.async.impl.buffers.ring_buffer.call(null,(32)),(0),buf,false,(function (){var add_BANG_ = (cljs.core.truth_(xform)?xform.call(null,cljs.core.async.impl.protocols.add_BANG_):cljs.core.async.impl.protocols.add_BANG_);return ((function (add_BANG_){
 return (function() {
-var G__22401 = null;
-var G__22401__1 = (function (buf__$1){try{return add_BANG_.call(null,buf__$1);
-}catch (e22399){var t = e22399;return cljs.core.async.impl.channels.handle.call(null,buf__$1,exh,t);
+var G__22019 = null;
+var G__22019__1 = (function (buf__$1){try{return add_BANG_.call(null,buf__$1);
+}catch (e22017){var t = e22017;return cljs.core.async.impl.channels.handle.call(null,buf__$1,exh,t);
 }});
-var G__22401__2 = (function (buf__$1,val){try{return add_BANG_.call(null,buf__$1,val);
-}catch (e22400){var t = e22400;return cljs.core.async.impl.channels.handle.call(null,buf__$1,exh,t);
+var G__22019__2 = (function (buf__$1,val){try{return add_BANG_.call(null,buf__$1,val);
+}catch (e22018){var t = e22018;return cljs.core.async.impl.channels.handle.call(null,buf__$1,exh,t);
 }});
-G__22401 = function(buf__$1,val){
+G__22019 = function(buf__$1,val){
 switch(arguments.length){
 case 1:
-return G__22401__1.call(this,buf__$1);
+return G__22019__1.call(this,buf__$1);
 case 2:
-return G__22401__2.call(this,buf__$1,val);
+return G__22019__2.call(this,buf__$1,val);
 }
 throw(new Error('Invalid arity: ' + arguments.length));
 };
-G__22401.cljs$core$IFn$_invoke$arity$1 = G__22401__1;
-G__22401.cljs$core$IFn$_invoke$arity$2 = G__22401__2;
-return G__22401;
+G__22019.cljs$core$IFn$_invoke$arity$1 = G__22019__1;
+G__22019.cljs$core$IFn$_invoke$arity$2 = G__22019__2;
+return G__22019;
 })()
 ;})(add_BANG_))
 })()));

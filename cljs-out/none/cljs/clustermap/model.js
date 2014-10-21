@@ -1,16 +1,16 @@
 // Compiled by ClojureScript 0.0-2356
 goog.provide('clustermap.model');
 goog.require('cljs.core');
-clustermap.model.extract_id = (function extract_id(type,obj){var pred__79910 = cljs.core._EQ_;var expr__79911 = type;if(cljs.core.truth_(pred__79910.call(null,new cljs.core.Keyword(null,"portfolio-company","portfolio-company",2036028415),expr__79911)))
+clustermap.model.extract_id = (function extract_id(type,obj){var pred__83494 = cljs.core._EQ_;var expr__83495 = type;if(cljs.core.truth_(pred__83494.call(null,new cljs.core.Keyword(null,"portfolio-company","portfolio-company",2036028415),expr__83495)))
 {return new cljs.core.Keyword(null,"company_no","company_no",1886326649).cljs$core$IFn$_invoke$arity$1(obj);
 } else
-{if(cljs.core.truth_(pred__79910.call(null,new cljs.core.Keyword(null,"investor-company","investor-company",13706558),expr__79911)))
+{if(cljs.core.truth_(pred__83494.call(null,new cljs.core.Keyword(null,"investor-company","investor-company",13706558),expr__83495)))
 {return new cljs.core.Keyword(null,"investor_company_uid","investor_company_uid",-841847830).cljs$core$IFn$_invoke$arity$1(obj);
 } else
-{if(cljs.core.truth_(pred__79910.call(null,new cljs.core.Keyword(null,"constituency","constituency",1803637324),expr__79911)))
+{if(cljs.core.truth_(pred__83494.call(null,new cljs.core.Keyword(null,"constituency","constituency",1803637324),expr__83495)))
 {return new cljs.core.Keyword(null,"boundaryline_id","boundaryline_id",-1827697395).cljs$core$IFn$_invoke$arity$1(obj);
 } else
-{throw (new Error(("No matching clause: "+cljs.core.str.cljs$core$IFn$_invoke$arity$1(expr__79911))));
+{throw (new Error(("No matching clause: "+cljs.core.str.cljs$core$IFn$_invoke$arity$1(expr__83495))));
 }
 }
 }

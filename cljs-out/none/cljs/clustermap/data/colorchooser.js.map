@@ -12,7 +12,7 @@
   "Math/log", "log-max", "log-linear-scale", "n", "Math/pow", "Math/E",
   "clustermap.data.colorchooser/choose-from-scheme", "scheme",
   "thresholds", "value", "scheme-thresholds", "cljs.core/vector",
-  "chosen", "cljs.core/filter", "p__79866", "vec__79867",
+  "chosen", "cljs.core/filter", "p__84900", "vec__84901",
   "cljs.core/nth", "t", "cljs.core/first", "cljs.core/last",
   "or__3637__auto__", "clustermap.data.colorchooser/choose",
   "color-scheme-spec", "scale", "key", "variable", "data",

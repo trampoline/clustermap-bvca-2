@@ -5,21 +5,21 @@ goog.require('goog.events.EventType');
 goog.require('goog.events.EventTarget');
 goog.require('goog.events');
 goog.require('goog.events');
-clojure.browser.event.IEventType = (function (){var obj27826 = {};return obj27826;
+clojure.browser.event.IEventType = (function (){var obj65114 = {};return obj65114;
 })();
-clojure.browser.event.event_types = (function event_types(this$){if((function (){var and__7888__auto__ = this$;if(and__7888__auto__)
+clojure.browser.event.event_types = (function event_types(this$){if((function (){var and__3546__auto__ = this$;if(and__3546__auto__)
 {return this$.clojure$browser$event$IEventType$event_types$arity$1;
 } else
-{return and__7888__auto__;
+{return and__3546__auto__;
 }
 })())
 {return this$.clojure$browser$event$IEventType$event_types$arity$1(this$);
 } else
-{var x__8527__auto__ = (((this$ == null))?null:this$);return (function (){var or__7900__auto__ = (clojure.browser.event.event_types[goog.typeOf(x__8527__auto__)]);if(or__7900__auto__)
-{return or__7900__auto__;
+{var x__4185__auto__ = (((this$ == null))?null:this$);return (function (){var or__3558__auto__ = (clojure.browser.event.event_types[goog.typeOf(x__4185__auto__)]);if(or__3558__auto__)
+{return or__3558__auto__;
 } else
-{var or__7900__auto____$1 = (clojure.browser.event.event_types["_"]);if(or__7900__auto____$1)
-{return or__7900__auto____$1;
+{var or__3558__auto____$1 = (clojure.browser.event.event_types["_"]);if(or__3558__auto____$1)
+{return or__3558__auto____$1;
 } else
 {throw cljs.core.missing_protocol.call(null,"IEventType.event-types",this$);
 }
@@ -29,14 +29,14 @@ clojure.browser.event.event_types = (function event_types(this$){if((function ()
 });
 goog.events.EventTarget.prototype.clojure$browser$event$IEventType$ = true;
 goog.events.EventTarget.prototype.clojure$browser$event$IEventType$event_types$arity$1 = (function (this$){var this$__$1 = this;return cljs.core.into.call(null,cljs.core.PersistentArrayMap.EMPTY,cljs.core.map.call(null,((function (this$__$1){
-return (function (p__27827){var vec__27828 = p__27827;var k = cljs.core.nth.call(null,vec__27828,(0),null);var v = cljs.core.nth.call(null,vec__27828,(1),null);return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.keyword.call(null,k.toLowerCase()),v], null);
+return (function (p__65115){var vec__65116 = p__65115;var k = cljs.core.nth.call(null,vec__65116,(0),null);var v = cljs.core.nth.call(null,vec__65116,(1),null);return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.keyword.call(null,k.toLowerCase()),v], null);
 });})(this$__$1))
 ,cljs.core.merge.call(null,cljs.core.js__GT_clj.call(null,goog.events.EventType))));
 });
 if(typeof Element !== 'undefined')
 {Element.prototype.clojure$browser$event$IEventType$ = true;
 Element.prototype.clojure$browser$event$IEventType$event_types$arity$1 = (function (this$){var this$__$1 = this;return cljs.core.into.call(null,cljs.core.PersistentArrayMap.EMPTY,cljs.core.map.call(null,((function (this$__$1){
-return (function (p__27829){var vec__27830 = p__27829;var k = cljs.core.nth.call(null,vec__27830,(0),null);var v = cljs.core.nth.call(null,vec__27830,(1),null);return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.keyword.call(null,k.toLowerCase()),v], null);
+return (function (p__65117){var vec__65118 = p__65117;var k = cljs.core.nth.call(null,vec__65118,(0),null);var v = cljs.core.nth.call(null,vec__65118,(1),null);return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.keyword.call(null,k.toLowerCase()),v], null);
 });})(this$__$1))
 ,cljs.core.merge.call(null,cljs.core.js__GT_clj.call(null,goog.events.EventType))));
 });

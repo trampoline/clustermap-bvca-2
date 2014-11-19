@@ -27,7 +27,7 @@
 
   :source-paths ["src"]
 
-  :plugins [[lein-cljsbuild "1.0.2"]]
+  :plugins [[lein-cljsbuild "1.0.3"]]
 
   :cljsbuild {
               :builds {:none

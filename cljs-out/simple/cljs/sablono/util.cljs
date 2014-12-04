@@ -30,12 +30,24 @@
               join
               keyword)))))
 
+(defn camel-case-keys
+  "Recursively transforms all map keys into camel case."
+  [m]
+  (if (map? m)
+    (let [ks (keys m)
+          kmap (zipmap ks (map camel-case ks))]
+      (-> (rename-keys m kmap)
+          (cond->
+           (map? (:style m))
+           (update-in [:style] camel-case-keys))))
+    m))
+
 (defn html-to-dom-attrs
   "Converts all HTML attributes to their DOM equivalents."
   [attrs]
-  (let [dom-attrs (merge (zipmap (keys attrs) (map camel-case (keys attrs)))
-                         {:class :className :for :htmlFor})]
-    (rename-keys attrs dom-attrs)))
+  (rename-keys (camel-case-keys attrs)
+               {:class :className
+                :for :htmlFor}))
 
 (defn compact-map
   "Removes all map entries where the value of the entry is empty."
@@ -104,10 +116,9 @@
 (defn react-fn
   "Same as `react-symbol` but wrap input and text elements."
   [tag]
-  (let [dom-fn (react-symbol tag)]
-    (if (contains? #{:input :textarea} (keyword tag))
-      (symbol "sablono.interpreter" (name tag))
-      dom-fn)))
+  (if (contains? #{:input :option :textarea} (keyword tag))
+    (symbol "sablono.interpreter" (name tag))
+    (react-symbol tag)))
 
 (defn attr-pattern
   "Returns a regular expression that matches the HTML attribute `attr`

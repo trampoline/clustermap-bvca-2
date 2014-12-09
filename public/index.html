@@ -77,7 +77,7 @@
             <button type="button" data-dismiss="modal" aria-hidden="true" class="close">&times;</button>
             <h4>BVCA Private Equity Map</h4>
           </div>
-          <div class="modal-body">
+          <div id="page-info-content" class="modal-body">
             <p>
               Private equity and venture capital play a key role in the British economy.
               Over the last five years £33bn has been invested in over 4,500 UK companies.
@@ -104,7 +104,7 @@
             <button type="button" data-dismiss="modal" aria-hidden="true" class="close">&times;</button>
             <h4>Methodology</h4>
           </div>
-          <div class="modal-body">
+          <div id="page-methodology-content" class="modal-body">
             <p>We track and regularly update investment information as supplied by our members covering Investor-backed company sites across the UK.</p>
             <p>Investor-backed companies were matched up with the Companies House database and site addresses were matched to Parliamentary Constituencies using the ONS Postcode database and the Ordnance Survey Boundary-Line product.</p>
             <p>Historical turnover and employment information was then taken from Companies House accounts filings. In cases where investments were made in Investor-backed companies with multiple sites, the declared revenue and employees of those companies were shared equally amongst the company's sites</p>
@@ -365,7 +365,7 @@
             <div class="inner">
               <div class="trampoline">
                 <p>Produced by the&nbsp;<a href="http://www.bvca.co.uk">BVCA</a>&nbsp;and&nbsp;<a href="http://www.trampolinesystems.com/">Trampoline Systems</a></p>
-                <p><a href="mailto:bvca-pemap-issues@trampolinesystems.com?subject=BVCA Private Equity Map issue report">Report issue</a></p>
+                <p><a id="issue-email" href="mailto:bvca-pemap-issues@trampolinesystems.com?subject=BVCA Private Equity Map issue report">Report issue</a></p>
               </div>
               <!--   p-->
               <!--     a(href='#') Terms-->
@@ -393,7 +393,18 @@
     <!--repl-js
     <script type="text/javascript">{{{repl-js}}}</script>
     
+    
     -->
+    <script>
+      mc = (config && config.app && config.app.html_snippets && config.app.html_snippets.methodology) || 'Methodology'
+      $('#page-methodology-content').html(mc)
+      ic = (config && config.app && config.app.html_snippets && config.app.html_snippets.info) || 'Info'
+      $('#page-info-content').html(ic)
+      
+      issue_email = (config && config.app && config.app.text_snippets && config.app.text_snippets.issue_email) || '#'
+      $('#issue-email').attr('href', 'mailto:' + issue_email)
+      
+    </script>
   </body>
 </html>
 <!--end-->

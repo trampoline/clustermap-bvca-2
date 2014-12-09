@@ -46,7 +46,7 @@
        [:td (link-fn :portfolio-company company)]
        [:td (render-many-links link-fn company-path :investor-company (:investor_companies company))]
        [:td (render-many-links link-fn company-path :constituency (some->> company :boundarylines (filter (fn [bl] (= "uk_constituencies" (:collection_id bl))))))]
-       (money-or-default (:latest_turnover company) {:year (get-year (:latest_accounts_date company)) :default [:td [:small "\u00A0(no info)"]]})
+       (money-or-default (:latest_turnover company) {:year (get-year (:latest_accounts_date company)) :default [:td [:small "\u00A0(not available)"]]})
        ;; [:td (fmoney (:latest_turnover company) :sf 2 :default "-") [:small "\u00A0(" (or (get-year (:latest_accounts_date company)) "no info") ")" ]]
        [:td (pos-neg (:latest_turnover_delta company))]
        (money-or-default (:latest_turnover_delta company) {:default [:td]})

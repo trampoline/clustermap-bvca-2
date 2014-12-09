@@ -31,7 +31,7 @@
                    :labels {:rotation 270}}
            :yAxis [{:title {:text y0-title}
                     :min 0
-                    :labels {:formatter (fn [] (this-as this (money/readable (.-value this) :curr "")))}
+                    :labels {:formatter (fn [] (this-as this (money/readable (.-value this) :sf 3 :curr "")))}
                     ;; :type "logarithmic"
                     }
                    ;; {:title {:text y1-title} :opposite true}

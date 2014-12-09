@@ -24,6 +24,19 @@
    (< value 0) (html [:i.icon-negative])
    true nil))
 
+(defn value-or-default
+  "if the value is non-nil and non-zero then format and display the year"
+  [value-formatter value & [{:keys [year default]}]]
+  (if (and value (> value 0))
+    [:td (value-formatter value) (when year [:small "\u00A0(" year ")"])]
+    default))
+
+(def money-or-default
+  (partial value-or-default #(fmoney % :sf 2 :default "-")))
+
+(def int-or-default
+  (partial value-or-default #(fnum % :dec 0 :default "-")))
+
 (defn portfolio-company
   [company owner {:keys [link-fn path-fn] :as opts}]
   (let [company-path (path-fn :portfolio-company company)]
@@ -33,10 +46,13 @@
        [:td (link-fn :portfolio-company company)]
        [:td (render-many-links link-fn company-path :investor-company (:investor_companies company))]
        [:td (render-many-links link-fn company-path :constituency (some->> company :boundarylines (filter (fn [bl] (= "uk_constituencies" (:collection_id bl))))))]
-       [:td (fmoney (:latest_turnover company) :sf 2 :default "-") [:small "\u00A0(" (or (get-year (:latest_accounts_date company)) "no info") ")" ]]
+       (money-or-default (:latest_turnover company) {:year (get-year (:latest_accounts_date company)) :default [:td [:small "\u00A0(no info)"]]})
+       ;; [:td (fmoney (:latest_turnover company) :sf 2 :default "-") [:small "\u00A0(" (or (get-year (:latest_accounts_date company)) "no info") ")" ]]
        [:td (pos-neg (:latest_turnover_delta company))]
-       [:td (fmoney (:latest_turnover_delta company) :sf 2 :default "-")]
-       [:td (fnum (:latest_employee_count company) :dec 0 :default "-") [:small "\u00A0(" (or (get-year (:latest_accounts_date company)) "no info") ")" ]]
+       (money-or-default (:latest_turnover_delta company) {:default [:td]})
+       ;; [:td (fmoney (:latest_turnover_delta company) :sf 2 :default "-")]
+       (int-or-default (:latest_employee_count company) {:year (get-year (:latest_accounts_date company)) :default [:td]})
+       ;; [:td (fnum (:latest_employee_count company) :dec 0 :default "-") [:small "\u00A0(" (or (get-year (:latest_accounts_date company)) "no info") ")" ]]
        ;; [:td (pos-neg (:latest_employee_count_delta company))]
        ;;[:td (fnum (:latest_employee_count_delta company) :dec 0 :default "-") ]
        ]))))

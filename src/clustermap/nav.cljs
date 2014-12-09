@@ -83,9 +83,16 @@
                       (events/prevent-default e)
                       (put! comm [:change-view v])))))
 
+(defn- show-methodology-modal
+  []
+  (-> "#page-methodology"
+      $
+      .modal))
+
 (defn init
   [comm]
   (init-bootstrap-tooltips)
   (handle-toggle-nav-search)
   (handle-hide-show-map-report)
-  (handle-view-switches comm))
+  (handle-view-switches comm)
+  (show-methodology-modal))

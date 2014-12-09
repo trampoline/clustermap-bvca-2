@@ -89,7 +89,7 @@ html(lang='en')
             button.close(type='button' data-dismiss='modal' aria-hidden='true') &times;
             h4.
               BVCA Private Equity Map
-          .modal-body
+          #page-info-content.modal-body
             p.
               Private equity and venture capital play a key role in the British economy.
               Over the last five years £33bn has been invested in over 4,500 UK companies.
@@ -116,7 +116,7 @@ html(lang='en')
             button.close(type='button' data-dismiss='modal' aria-hidden='true') &times;
             h4.
               Methodology
-          .modal-body
+          #page-methodology-content.modal-body
             p.
               We track and regularly update investment information as supplied by our members covering Investor-backed company sites across the UK.
             p.
@@ -387,7 +387,7 @@ html(lang='en')
                   | &nbsp;and&nbsp;
                   a(href='http://www.trampolinesystems.com/') Trampoline Systems
                 p
-                  a(href='mailto:bvca-pemap-issues@trampolinesystems.com?subject=BVCA Private Equity Map issue report') Report issue
+                  a#issue-email(href='mailto:bvca-pemap-issues@trampolinesystems.com?subject=BVCA Private Equity Map issue report') Report issue
               //   p
               //     a(href='#') Terms
               // .issues
@@ -408,5 +408,15 @@ html(lang='en')
     //end-static-repl-js
     //repl-js
       <script type="text/javascript">{{{repl-js}}}</script>
+
+
+    script.
+      mc = (config && config.app && config.app.html_snippets && config.app.html_snippets.methodology) || 'Methodology'
+      $('#page-methodology-content').html(mc)
+      ic = (config && config.app && config.app.html_snippets && config.app.html_snippets.info) || 'Info'
+      $('#page-info-content').html(ic)
+
+      issue_email = (config && config.app && config.app.text_snippets && config.app.text_snippets.issue_email) || '#'
+      $('#issue-email').attr('href', 'mailto:' + issue_email)
 
 //end

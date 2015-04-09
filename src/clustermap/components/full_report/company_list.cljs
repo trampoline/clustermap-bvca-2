@@ -27,7 +27,7 @@
 (defn value-or-default
   "if the value is non-nil and non-zero then format and display the year"
   [value-formatter value & [{:keys [year default]}]]
-  (if (and value (> value 0))
+  (if (and value (not= value 0))
     [:td (value-formatter value) (when year [:small "\u00A0(" year ")"])]
     default))
 
@@ -46,12 +46,12 @@
        [:td (link-fn :portfolio-company company)]
        [:td (render-many-links link-fn company-path :investor-company (:investor_companies company))]
        [:td (render-many-links link-fn company-path :constituency (some->> company :boundarylines (filter (fn [bl] (= "uk_constituencies" (:collection_id bl))))))]
-       (money-or-default (:latest_turnover company) {:year (get-year (:latest_accounts_date company)) :default [:td [:small "\u00A0(not available)"]]})
+       (money-or-default (:latest_turnover company) {:year (get-year (:latest_accounts_date company)) :default [:td [:small "\u00A0(n/a)"]]})
        ;; [:td (fmoney (:latest_turnover company) :sf 2 :default "-") [:small "\u00A0(" (or (get-year (:latest_accounts_date company)) "no info") ")" ]]
        [:td (pos-neg (:latest_turnover_delta company))]
-       (money-or-default (:latest_turnover_delta company) {:default [:td]})
+       (money-or-default (and (:latest_turnover company) (:latest_turnover_delta company)) {:default [:td [:small "\u00A0(n/a)"]]})
        ;; [:td (fmoney (:latest_turnover_delta company) :sf 2 :default "-")]
-       (int-or-default (:latest_employee_count company) {:year (get-year (:latest_accounts_date company)) :default [:td]})
+       (int-or-default (:latest_employee_count company) {:year (get-year (:latest_accounts_date company)) :default [:td [:small "\u00A0(n/a)"]]})
        ;; [:td (fnum (:latest_employee_count company) :dec 0 :default "-") [:small "\u00A0(" (or (get-year (:latest_accounts_date company)) "no info") ")" ]]
        ;; [:td (pos-neg (:latest_employee_count_delta company))]
        ;;[:td (fnum (:latest_employee_count_delta company) :dec 0 :default "-") ]

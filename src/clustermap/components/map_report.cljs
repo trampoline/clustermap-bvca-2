@@ -7,6 +7,7 @@
             [clustermap.formats.number :as nf :refer [fnum]]
             [clustermap.formats.money :as mf :refer [fmoney]]
             [clustermap.formats.string :as sf :refer [pluralize]]
+            [clustermap.formats.name :as n :refer [reverse-name]]
             [clustermap.components.reset-selection-button :as rsb]))
 
 (defn full-report-button
@@ -80,7 +81,7 @@
              [:h3 (:name constituency)
               [:br]
               (if (or (:mp constituency) (:political_party constituency))
-                [:small "(" (:mp constituency) ", " (:political_party constituency) ")"])]
+                [:small "(" (reverse-name (:mp constituency)) ", " (:political_party constituency) ")"])]
              (rsb/reset-selection-button path-fn)]
             [:ul
              [:li (fnum pc-count) [:small (pluralize pc-count "Investor-backed company" "Investor-backed companies")]]

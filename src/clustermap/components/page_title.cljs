@@ -6,6 +6,7 @@
             [sablono.core :as html :refer-macros [html]]
             [clustermap.formats.number :as nf :refer [fnum]]
             [clustermap.formats.money :as mf :refer [fmoney]]
+            [clustermap.formats.name :as n :refer [reverse-name]]
             [clustermap.components.reset-selection-button :as rsb]))
 
 (defn describe-type
@@ -30,7 +31,7 @@
               (rsb/reset-selection-button path-fn))
             [:h2 (or type-descr "All investor-backed companies")]
             [:h3 (or name "UK wide")
-             (when (= type :constituency) [:small "\u00A0(" (:mp value) ", " (:political_party value) ")"])]
+             (when (= type :constituency) [:small "\u00A0(" (reverse-name (:mp value)) ", " (:political_party value) ")"])]
             (if url [:a {:href url :target "_blank"} url])
             ]))))
 

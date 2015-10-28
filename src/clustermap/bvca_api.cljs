@@ -1,27 +1,11 @@
-(ns clustermap.api
+(ns clustermap.bvca-api
   (:require-macros
    [cljs.core.async.macros :refer [go]])
   (:require
    [clojure.string :as str]
+   [clustermap.api :refer [GET]]
    [cljs.core.async :as async :refer [<! chan close! put! sliding-buffer to-chan]]
    [goog.net.XhrIo :as xhr]))
-
-(defn GET [url & {:keys [raw]}]
-  "send a GET request, returning a channel with a single result value"
-  (let [comm (chan 1)]
-    (xhr/send url
-              (fn [event]
-                (put! comm (-> event
-                               .-target
-                               .getResponseText
-                               js/JSON.parse
-                               (aget "data")
-                               ((fn [d]
-                                  (if raw
-                                    d
-                                    (js->clj d :keywordize-keys true))))))
-                (close! comm)))
-    comm))
 
 (defn- ordered-api-results
   "- ocomm : a channel containing [result-chans result-handler-args]

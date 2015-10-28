@@ -3,7 +3,7 @@
    [cljs.core.async.macros :refer [go]])
   (:require
    [cljs.core.async :as async :refer [<! chan close! put! sliding-buffer to-chan]]
-   [clustermap.api :as api]))
+   [clustermap.bvca-api :as api]))
 
 (def ^:private zoom-tolerances
   [[7 0.01]

@@ -1,14 +1,14 @@
-(ns clustermap.app
+(ns clustermap.bvca-app
   (:require-macros
    [cljs.core.async.macros :refer [go]])
   (:require
    [clojure.string :as str]
    [goog.events :as events]
    [cljs.core.async :refer [chan <! put! sliding-buffer]]
-   [secretary.core :as secretary :include-macros true :refer [defroute]]
+   [secretary.core :as secretary  :refer-macros [defroute]]
    [om.core :as om :include-macros true]
    [om.dom :as dom :include-macros true]
-   [clustermap.api :as api]
+   [clustermap.bvca-api :as api]
    [clustermap.routes :as routes]
    [clustermap.nav :as nav]
    [clustermap.ganalytics :as ga]
@@ -236,7 +236,7 @@
                  EventType.NAVIGATE
                  (fn [e]
                    (let [token (.-token e)]
-                     (ga/send-pageview token)
+                     ;;(ga/send-pageview token)
                      (secretary/dispatch! token))))
 
   (.setEnabled history true))

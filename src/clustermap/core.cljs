@@ -1,6 +1,6 @@
 (ns clustermap.core
   (:require clojure.browser.repl
-            [clustermap.app :as app]))
+            [clustermap.bvca-app :as app]))
 
 (defn init []
   (app/init))

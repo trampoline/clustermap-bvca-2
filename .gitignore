@@ -6,3 +6,6 @@
 /dump
 /target
 /checkouts
+/cljs-out/simple/cljs
+/cljs-out/simple/clustermap.js.map
+/cljs-out/none/cljs

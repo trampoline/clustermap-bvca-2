@@ -40,7 +40,7 @@ html(lang='en')
 
     script(type='text/javascript', src='http://api.tiles.mapbox.com/mapbox.js/v1.6.4/mapbox.js')
     script(type='text/javascript', src='/js/vendor.js')
-    script(type='text/javascript', src='https://cdnjs.cloudflare.com/ajax/libs/react/0.9.0/react.js')
+    //- script(type='text/javascript', src='https://cdnjs.cloudflare.com/ajax/libs/react/0.9.0/react.js')
 
     //begin-static-app-config
     script(type='text/javascript').
@@ -393,16 +393,17 @@ html(lang='en')
               // .issues
 
     //begin-static-base-js
-    script(type="text/javascript", src="cljs/goog/base.js")
+    //- script(type="text/javascript", src="cljs/goog/base.js")
     //end-static-base-js
     //base-js
-      {{{base-js}}}
+      //- {{{base-js}}}
 
     //begin-dynamic-js
-    <script type="text/javascript" src="clustermap.js"></script><script type="text/javascript">goog.require("clustermap.core");</script>
+    <script type="text/javascript" src="clustermap.js">
+    //</script><script type="text/javascript">goog.require("clustermap.core");</script>
     //end-dynamic-js
     //dynamic-js
-      <!-- <script type="text/javascript" src="clustermap.js"></script><script type="text/javascript">goog.require("clustermap.core");</script> -->
+     // <!-- <script type="text/javascript" src="clustermap.js"></script><script type="text/javascript">goog.require("clustermap.core");</script> -->
 
     //begin-static-repl-js
     //end-static-repl-js

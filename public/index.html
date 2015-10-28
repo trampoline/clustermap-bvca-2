@@ -29,7 +29,6 @@
     </script>
     <script type="text/javascript" src="http://api.tiles.mapbox.com/mapbox.js/v1.6.4/mapbox.js"></script>
     <script type="text/javascript" src="/js/vendor.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/react/0.9.0/react.js"></script>
     <!--begin-static-app-config-->
     <script type="text/javascript">window.config={"api":{"prefix": ""}}</script>
     <!--end-static-app-config-->
@@ -376,13 +375,13 @@
       </section>
     </div>
     <!--begin-static-base-js-->
-    <script type="text/javascript" src="cljs/goog/base.js"></script>
     <!--end-static-base-js-->
     <!--base-js
-    {{{base-js}}}
+    //- {{{base-js}}}
     
     -->
-    <!--begin-dynamic-js--><script type="text/javascript" src="clustermap.js"></script><script type="text/javascript">goog.require("clustermap.core");</script>
+    <!--begin-dynamic-js--><script type="text/javascript" src="clustermap.js">
+    <!--</script><script type="text/javascript">goog.require("clustermap.core");</script>-->
     <!--end-dynamic-js-->
     <!--dynamic-js
     <!-- <script type="text/javascript" src="clustermap.js"></script><script type="text/javascript">goog.require("clustermap.core");</script> -->

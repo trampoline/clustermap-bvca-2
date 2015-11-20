@@ -3,22 +3,22 @@
   :url "http://example.com/FIXME"
 
   :dependencies [[org.clojure/clojure "1.7.0"]
-                 [org.clojure/clojurescript "1.7.145" :scope "provided"]
-                 [org.clojure/core.async "0.1.346.0-17112a-alpha" :scope "provided"]
+                 [org.clojure/clojurescript "1.7.170" :scope "provided"]
+                 [org.clojure/core.async "0.2.374" :scope "provided"]
                  [domina "1.0.3"]
                  [jayq "2.5.4"]
                  [org.omcljs/om "0.9.0"]
                  [prismatic/om-tools "0.4.0" :exclusions [org.clojure/clojure]]
-                 [sablono "0.3.6"]
+                 [sablono "0.4.0"]
                  [hiccups "0.3.0"]
                  [secretary "1.2.3"]
                  [com.andrewmcveigh/cljs-time "0.3.14"]
-                 ;;[binaryage/devtools "0.4.0"]
+                 [binaryage/devtools "0.4.1"]
                  [clustermap-components "0.1.0-SNAPSHOT"]
                  ]
 
-  :profiles {:dev {:dependencies [[weasel "0.5.0"]
-                                  [figwheel "0.4.1"]]}}
+  :profiles {:dev {:dependencies [[weasel "0.7.0"]
+                                  [figwheel "0.5.0-1"]]}}
   ;;  :exclusions [org.clojure/google-closure-library
   ;;               org.clojure/google-closure-library-third-party
   ;;               goog-jar]
@@ -31,8 +31,8 @@
 
   :source-paths ["src"]
 
-  :plugins [[lein-cljsbuild "1.1.0"]
-            [lein-figwheel "0.4.1"]]
+  :plugins [[lein-cljsbuild "1.1.1"]
+            [lein-figwheel "0.5.0-1"]]
 
   :cljsbuild {
               :builds {:none

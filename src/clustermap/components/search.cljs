@@ -74,11 +74,14 @@
             [:input {:ref "search-field"
                      :type "text"
                      :placeholder "Search"
-                     :onChange (fn [e]  (put! comm [:search (.. e -target -value)]))}]]
+                     :value (:text state)
+                     :onChange (fn [e] (let [v (.. e -target -value)]
+                                         (om/set-state! owner :text v)
+                                         (put! comm [:search v])))}]]
            [:div {:class "tbl-cell" :style {:width "34"}}
             [:button {:type "reset"
                       :onClick (fn [e] (put! comm [:search ""])
-                                 (set! (.-value (om/get-node owner "search-field")) ""))}
+                                 (om/set-state! owner :text ""))}
              "\u00D7"]]
            ;; (if selection-value
            ;;   [:div {:class "tbl-cell" :style {:width "136"}}
